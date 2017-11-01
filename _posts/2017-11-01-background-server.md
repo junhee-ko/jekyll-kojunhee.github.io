@@ -13,7 +13,6 @@ aws ec2 접속해서
 
 ````
 sudo nohup node index.js &
-
 ````
 	
 * 관리자 권한으로 실행해야 SSL protocol 끊겨도 지속
