@@ -2,7 +2,7 @@
 layout: post
 title:  "1406:에디터"
 date:   2017-09-05 00:27:03 +0900
-categories: BOJ
+categories: algorithm
 ---
 
 
