@@ -7,14 +7,14 @@ google_analytics:
 
 # SEO settings
 title: junhee.ko
-description: 
-url: ""
+description: running and running
+url: "https://kojunhee.github.io/"
 twitter_username: 
 default_img: 
 
 # Profile settings
-name: junhee.ko
-profile_img: 
+name: 'KoJunHee'
+profile_img: 'https://avatars3.githubusercontent.com/u/23334403?s=460&v=4'
 profile: 
 social:
   github: 'https://github.com/kojunhee'
