@@ -1,16 +1,16 @@
 # Site settings
 email: kjh338076@gmail.com
-baseurl: ""
+baseurl: "https://github.com/KoJunHee/kojunhee.github.io"
 paginate: 5
 paginate_path: "/blog/page-:num"
-google_analytics: 
+google_analytics:
 
 # SEO settings
 title: junhee.ko
 description: running and running
 url: "https://kojunhee.github.io/"
-twitter_username: 
-default_img: 
+twitter_username:
+default_img:
 
 # Profile settings
 name: 'KoJunHee'
@@ -19,7 +19,7 @@ profile: 'Developer'
 social:
   github: 'https://github.com/kojunhee',
   facebook: 'https://www.facebook.com/profile.php?id=100008926413477'
-  
+
 
 # Build settings
 exclude: ["_screenshots", "Gemfile", "Gemfile.lock", "LICENSE.txt", "README.md"]
