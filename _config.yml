@@ -1,5 +1,5 @@
 # Site settings
-email: 
+email: kjh338076@gmail.com
 baseurl: ""
 paginate: 5
 paginate_path: "/blog/page-:num"
@@ -13,11 +13,11 @@ twitter_username:
 default_img: 
 
 # Profile settings
-name: 
+name: junhee.ko
 profile_img: 
 profile: 
 social:
-  github: 
+  github: 'https://github.com/kojunhee'
 
 # Build settings
 exclude: ["_screenshots", "Gemfile", "Gemfile.lock", "LICENSE.txt", "README.md"]
