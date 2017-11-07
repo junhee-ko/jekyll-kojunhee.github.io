@@ -1,0 +1,68 @@
+O:8:"stdClass":25:{s:2:"ID";s:2:"28";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2006-11-22 10:43:00";s:13:"post_date_gmt";s:19:"2006-11-22 18:43:00";s:12:"post_content";s:4211:"What should I do this thanksgiving break?
+<br style="font-weight: bold" /><span style="font-weight: bold"> 1; <em>levitra cialis viagra</em>.Write a host auditing application</span>
+<span style="font-weight: bold">
+Existing Features -</span>
+Generates XML configs based on specific command generation
+Outputs to flat XML database
+<span style="font-weight: bold">New Features -</span>
+Runs from central monitoring platform
+Gathers host information first by shelling into boxes and gathering packages / processes
+Verifies application application by NMAP of high number ports
+Outputs into individual HTTP / XML formatted files
+Creates index for easy host data access
+Could run locally to create a host status page
+Create nagios byhost config on output
+Should I output through Apache, or a servlet...
+<span style="font-weight: bold">Thoughts</span>
+This could go over really well
+Would be fun to write
+Could land me in scope creep hell
+
+<span style="font-weight: bold"> 2 - levitra cialis viagra.Update the Real Time System config generator</span>
+
+<span style="font-weight: bold">  Existing Features-</span>
+Generates Content Switching configs from application data
+Has a web interface for development access
+Notifies help desk
+<span style="font-weight: bold">New Features -</span>
+Create firewall definition files
+Create nagios probe config
+Integrate XML submission probe generation
+<span style="font-weight: bold">Thoughts</span>
+Nice to have <em>levitra cialis viagra</em>, but 90% of the functionality is already there
+
+<span style="font-weight: bold"> 3. <strong>Levitra cialis viagra</strong>: update Nagios system config generator (nagiosuploader)</span>
+
+<span style="font-weight: bold">Existing Features- </span>
+Grabs system info when run locally
+Posts configs to monitoring server for processing
+<span style="font-weight: bold">        New features</span><br style="font-weight: bold" />           Host auditing to determine services monitored
+Clean up error condition handling
+Web interface for config generation
+<span style="font-weight: bold">        Thoughts</span><br style="font-weight: bold" />           Having a web interface for users to fill out would lower my workload
+
+<span style="font-weight: bold">4.Automate web application error reporting</span><br style="font-weight: bold" />
+<span style="font-weight: bold">        Existing features -</span><br style="font-weight: bold" />          None <strong>levitra cialis viagra</strong>, well..manually executed text processing on log files.I wouldn't call that an application
+<span style="font-weight: bold">       New features -</span><br style="font-weight: bold" />            Automation of customer / error code matrix grep statements
+Output in XML / http format web page and email
+Text only output in commented form &lt;-- text --&gt; for command line mail clients
+<span style="font-weight: bold">        Thoughts -</span><br style="font-weight: bold" />           Proves the point that certain people can be replaced by very small shell scripts (Unix humor)
+Should be a big with with Client services
+Could drive the application "digital dashboard"
+Should be a fun to practice using AWK for formatting data in a standard output
+Serious danger of scope creep
+May be better implemented in a MySQL back-end
+
+<span style="font-weight: bold">5.Do some personal growth items</span><br style="font-weight: bold" />
+Finish the Vmware image for the 7206 emulator and post to Vmware Technology Network for general use (delete IOS files before uploading)
+Read some more of Long's storage book
+Write a sample chapter for Stay at Home Photography
+Get GTK pod to run under my cmcnamar account, not root (I think the IPOD's file system doesn't like changing ownership or file attributes)
+Redo the 2cups homepage
+Clean the Garage........
+<a href="http://www.colinmcnamara.com" title="Copyright ©2008 | Colin McNamara | CCIE 18233 | All Rights Reserved">Copyright ©2008 | Colin McNamara | CCIE 18233 | All Rights Reserved"</a>
+
+<p class="blogger-post-footer">Colin McNamara
+CCIE #18233
+http://www.2cups.com
+"The difficult we do immediately, the impossible just takes a little longer."";s:10:"post_title";s:21:"Levitra Cialis Viagra";s:13:"post_category";s:1:"0";s:12:"post_excerpt";s:0:"";s:11:"post_status";s:7:"publish";s:14:"comment_status";s:4:"open";s:11:"ping_status";s:4:"open";s:13:"post_password";s:0:"";s:9:"post_name";s:2:"28";s:7:"to_ping";s:0:"";s:6:"pinged";s:0:"";s:13:"post_modified";s:19:"2008-01-06 11:14:10";s:17:"post_modified_gmt";s:19:"2008-01-06 19:14:10";s:21:"post_content_filtered";s:0:"";s:11:"post_parent";s:1:"0";s:4:"guid";s:43:"http://www.colinmcnamara.com/2006/11/22/28/";s:10:"menu_order";s:1:"0";s:9:"post_type";s:4:"post";s:14:"post_mime_type";s:0:"";s:13:"comment_count";s:1:"2";s:10:"robotsmeta";N;}

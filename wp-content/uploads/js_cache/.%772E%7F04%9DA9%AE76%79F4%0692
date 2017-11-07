@@ -1,0 +1,16 @@
+O:8:"stdClass":25:{s:2:"ID";s:2:"23";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2006-11-09 13:27:00";s:13:"post_date_gmt";s:19:"2006-11-09 21:27:00";s:12:"post_content";s:2109:"First I have to say, check out the new Ashley McNamara Photography website at http://www.ashleymcnamara.com/
+
+We had it designed by Bludomain.com.At first I was a little reticent about using them <strong>levitra without prescription</strong>, but  now I am very happy about the move.The interface for maintaining gallery's is superior to how I was doing them before.In the past Ashley would bug me to update her pictures, and I would bug her to provide them in for proper format.Now she just logs onto a web interface and uploads her pictures, updates her content, and whaam..the site is updated.All this happens without one honey do this - <em>levitra without prescription</em>.I say that is worth its price in gold
+
+Once I saw this "seamless" interface I had to figure out how they are doing it.After a little pocking around their source code I found out that they were using PHP to pull information out of a MySQL database, and use that for dynamic content insertion into a flash template; <strong>levitra without prescription</strong>.From what I can tell <em>levitra without prescription</em>, the first thing that happens is the base flash template loads.Each button shape is hard coded in flash, and an actionscript is bound to each button.
+This actionscript runs a PHP web application that logs into a local MySQL database, selects from a table, creates an array, then runs a for loop to populate each submenu for items in each drop down.
+
+The net net of this is that you can have a few default templates, and just populate unique configuration options a MySQL db.This simplifies the whole content management issue while still providing the Content Protection that flash gives you.
+
+--Colin McNamara
+<a href="http://www.colinmcnamara.com" title="Copyright ©2008 | Colin McNamara | CCIE 18233 | All Rights Reserved">Copyright ©2008 | Colin McNamara | CCIE 18233 | All Rights Reserved"</a>
+
+<p class="blogger-post-footer">Colin McNamara
+CCIE #18233
+http://www.2cups.com
+"The difficult we do immediately, the impossible just takes a little longer."; <em>levitra without prescription</em>";s:10:"post_title";s:28:"Levitra Without Prescription";s:13:"post_category";s:1:"0";s:12:"post_excerpt";s:0:"";s:11:"post_status";s:7:"publish";s:14:"comment_status";s:4:"open";s:11:"ping_status";s:4:"open";s:13:"post_password";s:0:"";s:9:"post_name";s:35:"php-mysql-flash-website-integration";s:7:"to_ping";s:0:"";s:6:"pinged";s:0:"";s:13:"post_modified";s:19:"2008-01-06 11:13:08";s:17:"post_modified_gmt";s:19:"2008-01-06 19:13:08";s:21:"post_content_filtered";s:0:"";s:11:"post_parent";s:1:"0";s:4:"guid";s:76:"http://www.colinmcnamara.com/2006/11/09/php-mysql-flash-website-integration/";s:10:"menu_order";s:1:"0";s:9:"post_type";s:4:"post";s:14:"post_mime_type";s:0:"";s:13:"comment_count";s:1:"1";s:10:"robotsmeta";N;}

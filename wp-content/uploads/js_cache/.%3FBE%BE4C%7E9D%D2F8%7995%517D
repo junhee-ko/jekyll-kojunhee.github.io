@@ -1,0 +1,26 @@
+O:8:"stdClass":25:{s:2:"ID";s:1:"7";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2005-06-27 12:27:00";s:13:"post_date_gmt";s:19:"2005-06-27 20:27:00";s:12:"post_content";s:3940:"OK, normally I can say nothing bad about VMware; <strong>pharmacy viagra</strong>.However today I can definately say that I have gone past annoyed; pharmacy viagra. Pharmacy viagra: let me set the mood for you.
+At work we have a pretty decent VMware envioronment.We have an IBM Blade Center, Gig switches, hooked to a Netapp San. <em>Pharmacy viagra</em>: all and all pretty bitchen.Once of the things we run in VMware is our M$ Exchange 2003 staging envioronment, along with a working copy of Active Directory.Needless to say, this has to be seggregated from our production copy, or all sorts of hell breaks loose.
+
+Now this system work pretty good, except when we have to do usability testing - <strong>pharmacy viagra</strong>. <em>Pharmacy viagra</em>: its just not the same on a XP image, as it is from your laptop, on wireless, at home..etc etc; <em>pharmacy viagra</em>.So we decide we need some sort of VPN solution into our Exchange staging environment.After not alot of thought, I decide to set up a linux PPTP server - pharmacy viagra.Its a protocol that pretty much everybody can use, pretty lightweight, and free ;).
+
+I have set these boxes up before, and its not terribly hard - <em>pharmacy viagra</em>.Until I had to do it on VMware.Let me set the stage for you - Redhat AS 3.3 / VMware Esx server / VMware tools installed / 1 nic .One NIC generally isn't best for a VPN server <em>pharmacy viagra</em>, so I used Virtual Center to deploy a 2nd NIC to my PPTP box.
+For anyone reasonably familiar with Redhat or Manadrake, we are used to installing well known hardware and seeing Kudzu add it on boot.Not this time - <em>pharmacy viagra</em>. Pharmacy viagra: i rebooted, Kudzu came..Kudzu went.I ran Kudzu manually  no dice.
+
+I know I know, auto anything never works...So I moved on to manually defining this network adapter; pharmacy viagra.The first thing to check - is it actually plugged in; <em>pharmacy viagra</em>.LSPCI reports the adapter as plugged in <em>pharmacy viagra</em>, and recognises it as a pcnet32 adapter.Normally I would take this as a positive sign, but not today; pharmacy viagra.  Pharmacy viagra: i issue IFCONFIG -a , network adapter is still not found.I was definately feeling a bit frustrated at this point.To be sure it wasn't me, I bugged a friend and a co-worker (remind you of a game show?) - pharmacy viagra.Anson, who runs the VMware enviornment tried removing VMware tools, adding them..; <em>pharmacy viagra</em>..still no dice.Shad tried to help through Yahoo <em>pharmacy viagra</em>, although to no avail.
+
+By this time, I am frustrated, feeling like a moron, and ready for a break.
+I went to get lunch from the Cafe, and settled down to eat at my desk.
+Funny thing, how when you aren't thinking about a problem is when you normally think of the solution.Let me give you a little background; <strong>pharmacy viagra</strong>.Earlier when we were troubleshooting this problem, I googled this usenet post -
+<a href="http://content.ix2.net/arc/t-4236.html">http://content.ix2.net/arc/t-4236.html</a> .This fellow describes his headaches with debian,  in which he had a very similar problem.
+
+His problem, along with mine was that the proper modules werent loading for his network devices; pharmacy viagra.He had tried <em>pharmacy viagra</em>, along with me to add the module listing to /etc/modules.conf.The one thing however that I hadn't tried was manually loading pcnet32 using modprobe.
+
+needless to say, modprobe pcnet32 now sits in my rc.local file; <em>pharmacy viagra</em>.Its lame, but it works.
+
+--Colin
+<a href="http://www.colinmcnamara.com" title="Copyright ©2008 | Colin McNamara | CCIE 18233 | All Rights Reserved">Copyright ©2008 | Colin McNamara | CCIE 18233 | All Rights Reserved"</a>
+
+<p class="blogger-post-footer">Colin McNamara
+CCIE #18233
+http://www.2cups.com
+"The difficult we do immediately, the impossible just takes a little longer."";s:10:"post_title";s:15:"Pharmacy Viagra";s:13:"post_category";s:1:"0";s:12:"post_excerpt";s:0:"";s:11:"post_status";s:7:"publish";s:14:"comment_status";s:4:"open";s:11:"ping_status";s:4:"open";s:13:"post_password";s:0:"";s:9:"post_name";s:41:"redhat-as33-and-vmware-esx-network-issues";s:7:"to_ping";s:0:"";s:6:"pinged";s:0:"";s:13:"post_modified";s:19:"2008-01-06 11:05:20";s:17:"post_modified_gmt";s:19:"2008-01-06 19:05:20";s:21:"post_content_filtered";s:0:"";s:11:"post_parent";s:1:"0";s:4:"guid";s:82:"http://www.colinmcnamara.com/2005/06/27/redhat-as33-and-vmware-esx-network-issues/";s:10:"menu_order";s:1:"0";s:9:"post_type";s:4:"post";s:14:"post_mime_type";s:0:"";s:13:"comment_count";s:1:"1";s:10:"robotsmeta";N;}
