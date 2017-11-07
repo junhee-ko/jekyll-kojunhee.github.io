@@ -4,7 +4,7 @@ email: colin@2cups.com
 description: > # this means to ignore newlines until "baseurl:"
   CCIE #18233, DevOps, OpenStack, Containers, SDN, People, Process, Technology
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.colinmcnamara.com" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 twitter_username: colinmcnamara
 #github_username:  colinmcnamara
 
