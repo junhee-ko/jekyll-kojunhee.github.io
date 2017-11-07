@@ -15,9 +15,11 @@ default_img:
 # Profile settings
 name: 'KoJunHee'
 profile_img: 'https://avatars3.githubusercontent.com/u/23334403?s=460&v=4'
-profile: 
+profile: 'Developer'
 social:
-  github: 'https://github.com/kojunhee'
+  github: 'https://github.com/kojunhee',
+  facebook: 'https://www.facebook.com/profile.php?id=100008926413477'
+  
 
 # Build settings
 exclude: ["_screenshots", "Gemfile", "Gemfile.lock", "LICENSE.txt", "README.md"]
