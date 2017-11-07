@@ -1,29 +1,75 @@
-# Site settings
-title: DevOps Deciple in an Enterprise World
-email: colin@2cups.com
-description: > # this means to ignore newlines until "baseurl:"
-  CCIE #18233, DevOps, OpenStack, Containers, SDN, People, Process, Technology
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.colinmcnamara.com" # the base hostname & protocol for your site
-twitter_username: colinmcnamara
-#github_username:  colinmcnamara
-
-# Build settings
+# Jykell configuration
+#markdown: redcarpet
+#highlighter: pygments
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
+paginate: 5
+language: 'en-uk'
 
-kramdown:
-  auto_ids:       true
-  footnote_nr:    1
-  entity_output:  as_char
-  toc_levels:     1..6
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+# Website info
+name: 'Finding The Way Home'
+description: "A beautiful narrative written with the world's most elegant publishing platform. The story begins here."
 
-  coderay:
-    coderay_wrap:              div
-    coderay_line_numbers:      inline
-    coderay_line_number_start: 1
-    coderay_tab_width:         4
-    coderay_bold_every:        10
-    coderay_css:               style
+# Author's info
+author: 'Casper McFadden'
+# edit 'categories' in the front matter of every post to match this username
+nickname: casper
+bio: 'A paranormal expert and his daughter bunk in an abandoned house populated by 3 mischievous ghosts and one friendly one.'
+location: 'Maine, USA'
+url: 'http://biomadeira.github.io/jasper/'
+image: 'assets/images/casper.png'
+
+short_url: 'biomadeira.github.io/jasper/'
+google_analytics: UA-69281367-1
+disqus: username
+# edit baseurl to simply '/' if using as your personal page (instead of a project page)
+baseurl: /jasper/
+
+# Permalinks
+permalink: /:title
+# permalink: /author/:username
+# permalink: /tag/:tag
+
+
+# gems and other configs
+gems: [jekyll-paginate]
+exclude: [vendor]
+
+# Additional settings available on the front-matter
+# Site logo in the index.html (as in demo.ghost.io)
+# Author's page cover in _layouts/author.html
+# The same for page.html and tag.html layouts
+# Post's page cover as a per-post basis _posts/...
+# Disqus comments as a per-post basis
+# ...
+
+
+# Settings for builing master branch with travis-ci
+# with jekyll-travis
+
+# Settings for deploy rake task
+# Username and repo of Github repo, e.g.
+# https://github.com/USERNAME/REPO.git
+# username defaults to ENV['GIT_NAME'] used by Travis
+# repo defaults to USERNAME.github.io
+# Branch defaults to "source" for USERNAME.github.io
+# or "master" otherwise
+safe: false
+lsi: false
+username: biomadeira
+repo: jasper
+branch: master
+relative_source: ../jasper/
+destination: ../jasper-pages/
+production_url:  https://biomadeira.github.io/jasper/
+source_url:      https://github.com/biomadeira/jasper/
+
+exclude:
+  - README.md
+  - Rakefile
+  - Gemfile
+  - Gemfile.lock
+  - changelog.md
+  - "*.Rmd"
+  - vendor
+  - .travis.yml
