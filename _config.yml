@@ -1,0 +1,29 @@
+# Site settings
+title: DevOps Deciple in an Enterprise World
+email: colin@2cups.com
+description: > # this means to ignore newlines until "baseurl:"
+  CCIE #18233, DevOps, OpenStack, Containers, SDN, People, Process, Technology
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.colinmcnamara.com" # the base hostname & protocol for your site
+twitter_username: colinmcnamara
+#github_username:  colinmcnamara
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+  coderay:
+    coderay_wrap:              div
+    coderay_line_numbers:      inline
+    coderay_line_number_start: 1
+    coderay_tab_width:         4
+    coderay_bold_every:        10
+    coderay_css:               style

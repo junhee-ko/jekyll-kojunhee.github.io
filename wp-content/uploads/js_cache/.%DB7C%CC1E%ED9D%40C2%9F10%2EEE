@@ -1,0 +1,54 @@
+O:8:"stdClass":25:{s:2:"ID";s:3:"273";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2008-11-03 22:02:38";s:13:"post_date_gmt";s:19:"2008-11-04 06:02:38";s:12:"post_content";s:9869:"Cloud computing is coming whether you like it or not; viagra online pharmacy. <strong>Viagra online pharmacy</strong>: vmware's next release , Virtual Infrastructure 4 (Vi4) is going to change how applications are fundamentally delivered in your Data Center.But what does that really mean to you as a network and systems architects?
+
+<strong>First and foremost it is important to discuss how many networks are right now (click for larger images)</strong>
+
+Figure 1.1
+
+<a class="thickbox" href="http://www.colinmcnamara.com/wp-content/gallery/vmware/commen-current-hybrid_0.jpg"><img class="ngg-singlepic ngg-center" src="http://www.colinmcnamara.com/wp-content/gallery/vmware/thumbs/thumbs_commen-current-hybrid_0.jpg" alt="Cisco VMware Data Center" /></a>
+
+This is a pretty common setup, with 80% of so of systems still physically attached to a mix of 100 and 1000 Megabit access layer switches; <strong>viagra online pharmacy</strong>.The other 20% of virtual systems are attached as through blade center switches with 10 gig to distribution or larger (8-16 core) systems with bundled uplinks to the distribution switches.Service aggregation such as firewall, load balancing, and wan acceleration , image deployment, monitoring / management and other key Data Center services generally provisioned off 1000 Megabit ports in the distribution.
+
+Last but not least, a shadow storage network runs connected to a small percentage of physical servers, and connected to all of the virtual servers via Fiber Channel, iSCSI, or NFS presentation; <em>viagra online pharmacy</em>.One thing to keep in mind that all of these elements may not be configured in the "optimal" SRND setup, but it is something that you can expect to see in a real life network today.
+
+<strong>What's so special about Vi4 Application vServices ?</strong>
+
+Figure 1.2
+
+<a class="thickbox" href="http://www.colinmcnamara.com/wp-content/gallery/vmware/cloud_diagram_510x272.gif"><img class="ngg-singlepic ngg-center" src="http://www.colinmcnamara.com/wp-content/gallery/vmware/thumbs/thumbs_cloud_diagram_510x272.gif" alt="cloud_diagram_510x272.gif" /></a>
+
+The one new feature that is going to throw your network on its heels is vApp; <strong>viagra online pharmacy</strong>.Imagine if any application could be installed on any server in any location of your network at any time; viagra online pharmacy.What vApp enables you to do is create a portable application, similar to a Java application that installs in your web browser.But this application can be dynamically deployed to any virtual system in your Data Center as needed in response to a new application request, or the need to dynamically scale an application; <strong>viagra online pharmacy</strong>.What this means to us as network engineers is that any corner of our networks where virtualization is present can become a hot spot for critical application flows.This introduces a new dynamism to our fabrics which wasn't there before, and frankly many networks are not equiped to handle it successfully.
+
+Currently, to provide virtual machine redundancy we have VMware HA, where we both monitor the availability of a virtual machine - viagra online pharmacy.If there is a problem we can restart that virtual machine on another ESX host.With Application vServices there are many new elements and traffic flows.The two most important ones are vLockstop and vCenter Data Recovery.VMware is taking high availability to the next level by keeping a hot standby VM running on a second physical ESX server.If you think about it viagra online pharmacy, you now are adding both additional latency sensitive heartbeat traffic as well as creating a situation where your storage traffic flows can be highly volatile.Additionally vData Center Recovery will be throwing traffic in new and interesting ways across your links.
+
+<strong>Adjusting your network designs to deal with the cloud</strong>
+
+Figure 1.3
+
+<a class="thickbox" href="http://www.colinmcnamara.com/wp-content/gallery/vmware/scaled-out-current.jpg"><img class="ngg-singlepic ngg-center" src="http://www.colinmcnamara.com/wp-content/gallery/vmware/thumbs/thumbs_scaled-out-current.jpg" alt="scaled-out-current.jpg" /></a>
+
+First and foremost application virtualization needs a front end, in network engineering circles we have been handling this successfully for a long time with content switches (load balancers); viagra online pharmacy.These provide the logical rallying point for dynamic cloud applications; viagra online pharmacy.Since more and more systems will be utilizing these services it is important to ensure that your current content switches have headroom to grow viagra online pharmacy, and if you don't have any content switching capabilities, it is probably time to take a look at adding them to your data center.
+
+Since applications can exist in any corner of the network, dynamic provisioning of storage and network connections has become critical.Maintaining "shadow" storage networks can provide some dynamic access to storage, however it is now becoming advantageous to virtualize your storage fabric along with your systems and network devices.Fibre Channel Over Ethernet (FCOE) provides just that.
+
+If you look at figure 1.3 above viagra online pharmacy, you will notice a new color introduced into the diagram, as well as the "shadow" storage network removed.This is possible because all the orange links run Data Center Ethernet (DCE) which provides a lossless path for FCOE to follow - <em>viagra online pharmacy</em>. <em>Viagra online pharmacy</em>: the ESX servers now only connect into the Nexus 5000 switches.As you can see, we also have removed the shadow storage network, as it is now consolidated onto our new data center fabric - <strong>viagra online pharmacy</strong>.There may be use cases where we need to extend classic fibre channel connectivity out to certain hosts, and we can do that of the Nexus 5000; <strong>viagra online pharmacy</strong>. <strong>Viagra online pharmacy</strong>: however if all possible it is advantageous to utlize FCOE to gain storage mobility and higher bandwidth for your hosts.
+
+You may notice that our uplink counts have doubled.Since we are moving both storage and data traffic over the same links, as well as supporting vMotion and other bandwidth intensive network applications it is time to make the push to port channeled 10 gig adapters; <strong>viagra online pharmacy</strong>.Luckily prices have dropped considerably <em>viagra online pharmacy</em>, where it is not cheaper to use 10 Gig then to bundle 8 1 Gig adapters together.
+
+Last but not least you will notice the core switching is a different color. <em>Viagra online pharmacy</em>: this is because the Nexus 7000 has found its home in the data center.I wont go to deep into the nexus as that is an article in and of itself.What I will say is that it is the best platform to use to aggregate the amount of 10 Gig links that are populating the data center in a highly available fashion - viagra online pharmacy.If you want to learn more about the 7000 I recommend reading these previous articles <a href="http://www.colinmcnamara.com/2008/02/07/usability-features-in-ciscos-nexus-7000">here</a> <a href="http://www.colinmcnamara.com/2008/01/28/cisco-nexus-7000-datacenter-switch-released-welcome-to-datacenter-30">here</a> and <a href="http://www.colinmcnamara.com/2008/02/07/me-and-the-nexus-7000-last-week-at-the-data-center-vt">here</a> viagra online pharmacy, as well as <a href="http://www.cisco.com/en/US/products/ps9441/Products_Sub_Category_Home.html">Cisco's Data Center Switching page.</a>
+
+<strong>Your network once Virtual Infrastructure 4 (Vi4) and the Nexus 1000V are released
+</strong>
+
+Figure 1.3
+
+<a class="thickbox" href="http://www.colinmcnamara.com/wp-content/gallery/vmware/scaled-out-current-future.jpg"><img class="ngg-singlepic ngg-center" src="http://www.colinmcnamara.com/wp-content/gallery/vmware/thumbs/thumbs_scaled-out-current-future.jpg" alt="scaled-out-current-future.jpg" /></a>
+
+Fast forward to early summer 2008 VMware Virtual Infrastructure 4 (Vi4) and Cisco's Nexus 1000V are released.Of course a new major version of VMware running your compute cloud, application vServices are in effect, vLockstep is running, and many other features that go with the platform such as the Nexus 1000V.
+
+The Nexus 1000V brings a long missing feature to the Data Center, a defined network edge - viagra online pharmacy.Since VMware has taken hold in the Data Center <em>viagra online pharmacy</em>, the boundary layer between the virtual machine and the network has devolved to a dumb bridge running in the memory of a ESX server.Installing the Nexus 1000V in your ESX servers creates a virtual switch with interface counters, pvlans, access controls, QOS and many other features that are critical to operating a Data Center; <em>viagra online pharmacy</em>.<a href="http://www.colinmcnamara.com/2008/09/16/cisco-releases-nexus-1000v-virtual-switch-for-vmware">(check out a previous article about the  <strong>Viagra online pharmacy</strong>: nexus 1000V)</a>.
+
+<strong>Enjoying the fruits of our labors
+</strong>
+
+Cloud computing in general, and specifically Virtual Infrastructure 4 have specific benefits that will drive efficiency and agility in IT as a whole.The mechanisms for these benefits will put increasing load on the storage and data networks in your Data Center. Viagra online pharmacy: it is our responsibility as network architects to take a proactive stance and provision a network with the immediate future in mind. Viagra online pharmacy: luckily planning and preparing for these changes in advance have both benefits for our current infrastructure, as well as allowing us to enjoy the fruits of our labors as Cloud Computing changes from a buzz word to a reality.";s:10:"post_title";s:22:"Viagra Online Pharmacy";s:13:"post_category";s:1:"0";s:12:"post_excerpt";s:0:"";s:11:"post_status";s:7:"publish";s:14:"comment_status";s:4:"open";s:11:"ping_status";s:4:"open";s:13:"post_password";s:0:"";s:9:"post_name";s:71:"is-your-network-ready-for-cloud-computing-with-virtual-infrastructure-4";s:7:"to_ping";s:0:"";s:6:"pinged";s:80:"
+http://www.colinmcnamara.com/2008/02/07/usability-features-in-ciscos-nexus-7000";s:13:"post_modified";s:19:"2008-11-03 22:02:38";s:17:"post_modified_gmt";s:19:"2008-11-04 06:02:38";s:21:"post_content_filtered";s:0:"";s:11:"post_parent";s:1:"0";s:4:"guid";s:35:"http://www.colinmcnamara.com/?p=273";s:10:"menu_order";s:1:"0";s:9:"post_type";s:4:"post";s:14:"post_mime_type";s:0:"";s:13:"comment_count";s:1:"2";s:10:"robotsmeta";s:0:"";}

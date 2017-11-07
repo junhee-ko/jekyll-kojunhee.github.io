@@ -1,0 +1,40 @@
+O:8:"stdClass":25:{s:2:"ID";s:3:"782";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2009-09-29 10:28:32";s:13:"post_date_gmt";s:19:"2009-09-29 18:28:32";s:12:"post_content";s:3823:"Cisco's vision of the unified data center took another step forward today with the announcement of the Nexus 4000 series blade center switches - cialis online.This switch is another step forward  in Cisco's view of a true multiprotocol network.
+
+What does this mean?  In Cisco's view of the world this means supporting the transport of Fibre Channel, Fibre Channel over Ethernet, iSCSI, NFS and CIFS in a scalable and dependable fashion.
+
+<strong>What is the Nexus 4000?</strong>
+
+[singlepic id=105 w=500 h=400 float=]
+
+The Nexus 4000 is the 5th release of the Nexus line of switches (counting the UCS 6100 as a release).  This switch fits in the blade center form factor - <em>cialis online</em>.It is intended to be used in the place of the Catalyst 3000 and 3100 series blade switches. Cialis online: it is a full featured Nexus switch, very similar to it's big brother the Nexus 5000.
+
+<strong>What protocols will it support?</strong>
+
+In keeping with Cisco's vision of a Unified IO platform in the data center the Nexus 4000 will support Converged Enhanced Ethernet (CEE) (yes, they finally caved on the naming) as well as providing the same reliable transport of iSCSI, NFS, and CIFS that you get with the Nexus 5000.
+
+[singlepic id=103 w=500 h=400 float=]
+
+<strong>What blade centers will it work with?</strong>
+
+Cisco is playing close to the chest announcing what blade server vendors will support this product.
+
+My initial gut reaction was that HP would not be supporting this product, however I just saw that HP is OEM'ing the Nexus 5020.It would make sense that they would support the Nexus 4000 in their C Class blade centers, though only time will tell.
+
+IBM however has been very supportive of integrating Cisco technology, as well as OEM'ing the Nexus 5000 switch in their portfolio; cialis online. Cialis online: i fully expect the Nexus 4000 to be supported in the IBM BladeCenter platform, though again I cannot confirm.
+
+Dell also has resold Cisco blade switches, and although they do not OEM the nexus 5000 they have been large proponents of the Nexus solution and unification of IO workloads throughout their platforms.
+
+<strong>Is it the same as a Fabric Extender?
+</strong>
+
+The Nexus 4000 is not a Fabric Extender. Cialis online: what is the difference? A Fabric Extender is a really efficient multiplexer. <em>Cialis online</em>: while using a Fabric Extender the main goal is vast simplification.What you end up with is a dumbed down remote line card that provides simple, fast services to your access layer - <em>cialis online</em>.This is great for most uses, however there are instances where you need to provide richer services; <em>cialis online</em>. <em>Cialis online</em>: a full function switch like the Nexus 4000 is appropriate in this case.
+
+<strong>What does it run?</strong>
+
+[singlepic id=104 w=500 h=400 float=]
+
+The Nexus 4000 runs NX-OS, Cisco's data center switching operating system.This is the fourth release of what was previously named SAN-OS which ran on Cisco's MDS line of SAN switches; cialis online.This operating system is shared between the Nexus 7000, 5000, 4000, 1000v,UCS Fabric Interconnect and MDS line of SAN switches.Now you can have a consistent operating system platform from your data center core, all the way down through your blade switches and into your virtualization layer.
+
+<strong>When will it be available?</strong>
+
+Just like when the 3000 and 3100 series blade switches got announced, we are going to have to wait on the individual server manufactures to announce support at their own pace.<strong> </strong>My gut feel says we will be waiting a couple months for units to get out, and for the vendor certification process to complete.Though with business picking back up, this product may get out sooner.";s:10:"post_title";s:13:"Cialis Online";s:13:"post_category";s:1:"0";s:12:"post_excerpt";s:0:"";s:11:"post_status";s:7:"publish";s:14:"comment_status";s:4:"open";s:11:"ping_status";s:4:"open";s:13:"post_password";s:0:"";s:9:"post_name";s:29:"cisco-nexus-4000-blade-switch";s:7:"to_ping";s:0:"";s:6:"pinged";s:0:"";s:13:"post_modified";s:19:"2009-09-29 10:28:32";s:17:"post_modified_gmt";s:19:"2009-09-29 18:28:32";s:21:"post_content_filtered";s:0:"";s:11:"post_parent";s:1:"0";s:4:"guid";s:35:"http://www.colinmcnamara.com/?p=782";s:10:"menu_order";s:1:"0";s:9:"post_type";s:4:"post";s:14:"post_mime_type";s:0:"";s:13:"comment_count";s:1:"0";s:10:"robotsmeta";s:12:"index,follow";}

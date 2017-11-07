@@ -1,0 +1,30 @@
+O:8:"stdClass":25:{s:2:"ID";s:2:"97";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2008-02-22 13:53:56";s:13:"post_date_gmt";s:19:"2008-02-22 21:53:56";s:12:"post_content";s:4861:"Eplus, Cisco, Hewlett Packard and PG&amp;E held a luncheon this last Friday focused on Green Data Center.I'll be the first to admit that at first I thought "green" Data Center initiatives were just political and corporate marketing initiatives - <em>best online viagra scams</em>. <strong>Best online viagra scams</strong>: i thought they saw Al Gore give some rocking presentation and decided it would be great to market their products as "green" while continuing to spew toxins and club baby seals in their manufacturing plants.
+
+I was wrong, the Green Data Center is not about saving baby seals, it is about saving cold hard cash.Saving the world is just a nice side benefit.
+
+That being said, saving cold hard cash is a very important discussion item in any IT Operations group as they are normally seen as a cost center; <strong>best online viagra scams</strong>. <strong>Best online viagra scams</strong>: for them, a penny saved is literally a penny earned.Not only can you save money by not paying for power, but PG&amp;E will actually has a budget to pay you NOT to use their power.Most people here this and get a puzzled look on their face."why would the power company, who makes money on power, not want me to buy it from them?" The answer is that Californians use more power then PG&amp;E can produce at peak times; best online viagra scams.When they have to buy it from another state it can cost them 10 times or more then they charge us.This is the reason why PG&amp;E will pay you to use less - <strong>best online viagra scams</strong>.Each penny they give to the consumer for saving a watt, saves them 4 pennies (80% return on investment).
+
+<strong>Great, PG&amp;E saves money by giving it to me.How do I get this cash? Well there are a couple ways to get this.</strong>
+<ol>
+	<li>Incentives for new buying new energy efficient servers</li>
+	<li>Rebates for moving to virtualized servers</li>
+	<li>Rebates and incentives for moving to thin client desktop systems</li>
+	<li>Audit teams for cooling and power if your Data Center is 10,000 square feet or more</li>
+	<li>Incentives for airflow control systems</li>
+	<li>Incentives for high efficiency UPS and power distribution systems</li>
+	<li>Technical services for cooling system evaluation (PG&amp;E funded)</li>
+</ol>
+That is a pretty comprehensive list of how to get money from the power company, but you can save even more money buy not using the power in the first place. <strong>Best online viagra scams</strong>: not unsurprisingly this starts with the server.
+
+First thing you can do, is virtualize, virtualize, and virtualize some more. Best online viagra scams: for most people this means VMware.For others this may mean Xen, or Microsofts virtualization product - <em>best online viagra scams</em>.Whatever flavor you chose, the key message is to consolidate from many servers to few - best online viagra scams.A server sitting "idle" still pulls 50% of its max current.Now, howe many servers do you have that are just sitting there? My guess is a large amount.By virtualizing these servers, you allow them to be stacked onto high performance server that can be run at a higher utilization - best online viagra scams.This lowers the over all power utilization for your DataCenter; <em>best online viagra scams</em>.Another side benefit is that ever watt that you remove from a server, you get another watt removed from your cooling.
+
+These same virtualization techniques can also be applied to your network devices, which account for 6 to 12 percent of your datacenters power draw.
+
+Ask yourself a few questions
+<ul>
+	<li> " Do I need 4 different firewall clusters?" - best online viagra scams.It is likely that these are leftovers from organic growth, and that you could consolidate them into virtual firewalls on a more efficient chassis (ASA comes to mind).</li>
+	<li>" Do I need to maintain physically separate infrastructure?". <strong>Best online viagra scams</strong>: there are technologies like MPLS, VFR-Lite, Virtual Switching and more that allow you to consolidate onto a shared network infrastructure, taking a service provider approach to providing transport in your network.</li>
+	<li>" Am I running old inefficient gear?".Power supplies have increased in efficiency over the last few years.There may be a good return on investment for you to upgrade.</li>
+	<li>" Can I consolidate into larger chassis?".Ask the question, which is more efficient - a closet full of 3560's or a 4507? There is efficiency in scaling out.</li>
+</ul>
+I hope that reading this has caused you to ask some questions, and maybe look at the larger impact of your network operations on both the ecosystem and your operational expenses.With these questions in hand, you might want to talk to PG&amp;E and your Cisco / HP parter about going "Green" in the data center.";s:10:"post_title";s:24:"Best Online Viagra Scams";s:13:"post_category";s:1:"0";s:12:"post_excerpt";s:0:"";s:11:"post_status";s:7:"publish";s:14:"comment_status";s:4:"open";s:11:"ping_status";s:4:"open";s:13:"post_password";s:0:"";s:9:"post_name";s:56:"moving-towards-a-green-data-center-truth-behind-the-hype";s:7:"to_ping";s:0:"";s:6:"pinged";s:0:"";s:13:"post_modified";s:19:"2008-02-22 13:53:56";s:17:"post_modified_gmt";s:19:"2008-02-22 21:53:56";s:21:"post_content_filtered";s:0:"";s:11:"post_parent";s:1:"0";s:4:"guid";s:96:"http://www.colinmcnamara.com/2008/02/22/moving-towards-a-green-data-center-truth-behind-the-hype";s:10:"menu_order";s:1:"0";s:9:"post_type";s:4:"post";s:14:"post_mime_type";s:0:"";s:13:"comment_count";s:1:"1";s:10:"robotsmeta";N;}
