@@ -17,9 +17,7 @@ name: 'KoJunHee'
 profile_img: 'https://avatars3.githubusercontent.com/u/23334403?s=460&v=4'
 profile: 'Developer'
 social:
-  github: 'https://github.com/kojunhee',
-  facebook: 'https://www.facebook.com/profile.php?id=100008926413477'
-
+  github: 'https://github.com/kojunhee'
 
 # Build settings
 exclude: ["_screenshots", "Gemfile", "Gemfile.lock", "LICENSE.txt", "README.md"]
