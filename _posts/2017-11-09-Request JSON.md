@@ -6,7 +6,16 @@ categories: node
 image: https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/18.png
 ---
 
-## Request module에 headers 추가
+## JSON으로 요청하고 받는 방법
+
+1. headers
+
+	'Accept': 'application/json'
+
+2. parsing
+
+	JSON.parse(body)
+
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/18.png)
 	
