@@ -47,7 +47,7 @@ min(D[n-1], D[n-4], D[n-5]) + 1
 
 ## 예제 
 
-- https://www.acmicpc.net/problem/11399
+<https://www.acmicpc.net/problem/11399>
 
 - 줄 서 있는 사람 N, 각 사람의 인출 시간 Pi. 각 사람이 인출하는데 필요한 시간의 합의 최소값은?
 
