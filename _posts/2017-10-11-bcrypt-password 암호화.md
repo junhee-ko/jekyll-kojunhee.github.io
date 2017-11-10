@@ -11,8 +11,9 @@ categories: programming
 
 - 회원 생성
 
-![img](http://cfile25.uf.tistory.com/image/23)
+	![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/23.png)
 
-![img](http://cfile25.uf.tistory.com/image/24)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/24.png)
+
 
 
