@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Array.prototype.splice()"
+date:   2017-11-10 00:27:03 +0900
+categories: programming
+---
+
+## 기존 요소를 제거하거나 새 요소를 추가하여 배열의 내용을 변경
+
+````
+var arr = [1, 2, 3, 4, 5];
+
+arr.splice(2, 1);	//	index 2번째 요소를 시작점으로 1개 원소 삭제
+
+console.log(arr);	//	[1,2,4,5]
+````
+
+
