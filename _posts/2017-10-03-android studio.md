@@ -2,7 +2,7 @@
 layout: post
 title:  "android studio"
 date:   2017-10-03 00:27:03 +0900
-categories: programming
+categories: shortcut
 ---
 
 - cmd + option + l : 자동정렬

@@ -2,7 +2,7 @@
 layout: post
 title:  "splice()"
 date:   2017-11-10 00:27:03 +0900
-categories: programming
+categories: node
 ---
 
 ## 배열에 기존 요소를 제거, 새 요소를 추가

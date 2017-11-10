@@ -2,7 +2,7 @@
 layout: post
 title:  "Greedy Algorithm"
 date:   2017-09-17 00:27:03 +0900
-categories: algorithm
+categories: algorithm-concept
 ---
 
 

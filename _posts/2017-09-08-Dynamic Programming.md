@@ -2,7 +2,7 @@
 layout: post
 title:  "Dynamic Programming"
 date:   2017-09-08 00:27:03 +0900
-categories: algorithm
+categories: algorithm-concept
 ---
 
 

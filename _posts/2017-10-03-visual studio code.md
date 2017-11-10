@@ -2,7 +2,7 @@
 layout: post
 title:  "visual studio code"
 date:   2017-10-03 00:27:03 +0900
-categories: programming
+categories: shortcut
 ---
 
 - option shfit f : 자동정렬

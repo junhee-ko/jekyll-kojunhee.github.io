@@ -2,7 +2,7 @@
 layout: post
 title:  "background server"
 date:   2017-11-01 00:27:03 +0900
-categories: programming
+categories: node
 ---
 
 
