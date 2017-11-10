@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Array.prototype.splice()"
+title:  "splice()"
 date:   2017-11-10 00:27:03 +0900
 categories: programming
 ---
