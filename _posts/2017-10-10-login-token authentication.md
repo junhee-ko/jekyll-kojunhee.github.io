@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "login-token authentication"
-date:   2017-11-10 00:27:03 +0900
+date:   2017-10-10 00:27:03 +0900
 categories: node
 ---
 
