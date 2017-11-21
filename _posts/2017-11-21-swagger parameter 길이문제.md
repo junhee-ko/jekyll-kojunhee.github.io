@@ -10,7 +10,7 @@ categories: node
 ## Swagger parameter 많아 졌을 때
 
 * 옆 부분 짤리는 문제 발생
-* 다음과 같이 해결
+* 다음과 같이 object로 묶어주자
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/39.png)
 
