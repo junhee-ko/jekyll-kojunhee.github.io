@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Swagger parameter 길이 문제"
+date:   2017-11-20 00:27:03 +0900
+categories: node
+---
+
+<https://www.acmicpc.net/problem/1676>
+
+## Swagger parameter 많아 졌을 때
+
+* 옆 부분 짤리는 문제 발생
+* 다음과 같이 해결
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/39.png)
+
+
+
+
+
+	
