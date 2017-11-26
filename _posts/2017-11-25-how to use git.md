@@ -1,0 +1,45 @@
+---
+layout: post
+title:  "How to use git"
+date:   2017-11-26 00:27:03 +0900
+categories: git
+image: https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/48.png
+---
+
+# 핵심 명령어 
+
+- git init
+	
+	- 여기에 git을 적용시키겠다
+
+- git status
+
+	- 변경된 파일 내용 확인 
+
+- git branch
+
+	- 현재 branch 확인
+	- 초기 commit 실행하지 않고 하면 아무것도 안나옴
+
+- git add 
+
+	- stage에 올리겠다
+	- commit 전에 add 하는 이유는 commit하고 싶은 파일만 선별하고 싶어서.
+
+- git commit -m 'message'
+
+	- message를 남기며 commit을 하겠다
+	- 새로운 version이 생김
+
+- git remote add origin 'repository address'
+
+	- 'repository address' 를 origin 이라는 이름으로 설정하겠다
+
+- git push origin master
+
+	- master branch를 origin 이라는 repository에 push 하겠다
+
+
+
+
+
