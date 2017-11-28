@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "swagger - object array"
+title:  "node - object array"
 date:   2017-11-26 00:27:03 +0900
 categories: node
 ---
