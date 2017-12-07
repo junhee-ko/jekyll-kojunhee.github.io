@@ -2,7 +2,9 @@
 layout: post
 title:  "Dynamic Programming"
 date:   2017-09-08 00:27:03 +0900
-categories: algorithm-concept
+categories: algorithm
+image: https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/algorithm.png
+
 ---
 
 
