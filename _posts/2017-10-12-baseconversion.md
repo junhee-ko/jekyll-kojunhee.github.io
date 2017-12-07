@@ -3,7 +3,7 @@ layout: post
 title:  "11576:base conversion"
 date:   2017-10-12 00:27:03 +0900
 categories: algorithm
-image: http://cfile23.uf.tistory.com/image/99FDC63359DF6E222CDB02
+image: https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/algorithm.png
 ---
 
 

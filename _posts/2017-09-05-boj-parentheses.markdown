@@ -3,6 +3,7 @@ layout: post
 title:  "9012:괄호"
 date:   2017-09-05 00:27:03 +0900
 categories: algorithm
+image: https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/algorithm.png
 ---
 
 <https://www.acmicpc.net/problem/9012>
