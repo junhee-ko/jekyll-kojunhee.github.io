@@ -3,6 +3,7 @@ layout: post
 title:  "object array"
 date:   2017-11-26 00:27:03 +0900
 categories: node
+https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/node.png
 ---
 
 ## array 에 object 를
