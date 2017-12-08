@@ -3,7 +3,7 @@ layout: post
 title:  "Swagger parameter 길이 문제"
 date:   2017-11-21 00:27:03 +0900
 categories: node
-https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/node.png
+image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/node.png
 ---
 
 ## Swagger parameter 많아 졌을 때
