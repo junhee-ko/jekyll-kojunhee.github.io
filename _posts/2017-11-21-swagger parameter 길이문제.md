@@ -6,8 +6,6 @@ categories: node
 https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/node.png
 ---
 
-<https://www.acmicpc.net/problem/1676>
-
 ## Swagger parameter 많아 졌을 때
 
 * 옆 부분 짤리는 문제 발생
