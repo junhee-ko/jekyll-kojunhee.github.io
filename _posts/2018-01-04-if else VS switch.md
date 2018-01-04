@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "PM2"
+title:  "if else VS switch"
 date:   2018-01-04 00:27:03 +0900
 categories: algorithm
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/algorithm.png
