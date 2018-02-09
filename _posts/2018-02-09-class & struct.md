@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "difference between class(reference type) & struct(value type)"
+title:  "class(reference type) & struct(value type)"
 date:   2018-02-06 00:27:03 +0900
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.png
