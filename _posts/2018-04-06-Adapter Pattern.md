@@ -8,9 +8,20 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 
 
-```
-In software engineering, the adapter pattern is a software design pattern (also known as Wrapper, an alternative naming shared with the Decorator pattern) that allows the interface of an existing class to be used as another interface. It is often used to make existing classes work with others without modifying their source code. [wiki]
-```
+- allows the interface of an existing class to be used as another interface
+
+- makes existing classes work with others without modifying their source code
+
+- ​
+
+- Clinet -> request() -> Adapter - translatedRequest() -> Adaptee
+
+- EX)
+
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/duck.png)
+
+  - Target : Duck
+  - Adaptee : Turkey
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/11111.png)
 
