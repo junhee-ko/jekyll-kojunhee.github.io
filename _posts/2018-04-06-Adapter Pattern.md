@@ -12,16 +12,16 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 - makes existing classes work with others without modifying their source code
 
-- ​
+  ​
 
-- Clinet -> request() -> Adapter - translatedRequest() -> Adaptee
+  ​
 
-- EX)
-
-  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/duck.png)
+- EX) 
 
   - Target : Duck
   - Adaptee : Turkey
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/duck.png)
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/11111.png)
 
