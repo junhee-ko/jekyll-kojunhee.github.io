@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Composite Pattern"
+title:  "Bridge Pattern"
 date:   2018-04-09 00:27:03 +0900
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
