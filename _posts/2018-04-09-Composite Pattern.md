@@ -32,6 +32,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 - Reference
   - <http://www.oodesign.com/composite-pattern.html>
+  - Java 객체지향 디자인 패턴 (정인상, 채홍석 지음)
 
 
 
