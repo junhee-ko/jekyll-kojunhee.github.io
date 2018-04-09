@@ -10,7 +10,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 - Intent
 
-  - Decouples abstraction from implementation so that the two can vary independently.
+  - decouple an abstraction from its implementation so that the two can vary independently.
 
 - Implementation
 
@@ -35,7 +35,6 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 - Reference
   - <https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm>
-  - <https://ko.wikipedia.org/wiki/%EB%B8%8C%EB%A6%AC%EC%A7%80_%ED%8C%A8%ED%84%B4>
 
 
 
