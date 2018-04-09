@@ -31,7 +31,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 
 - Reference
-  - http://www.oodesign.com/composite-pattern.html
+  - <http://www.oodesign.com/composite-pattern.html>
 
 
 
