@@ -34,7 +34,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 
 - Reference
-  - <http://www.oodesign.com/bridge-pattern.html>
+  - <https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm>
   - <https://ko.wikipedia.org/wiki/%EB%B8%8C%EB%A6%AC%EC%A7%80_%ED%8C%A8%ED%84%B4>
 
 
