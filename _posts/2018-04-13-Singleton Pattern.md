@@ -26,7 +26,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 - Reference
   - <http://www.oodesign.com/singleton-pattern.html>
-  - https://www.tutorialspoint.com/design_pattern/singleton_pattern.htm
+  - https://www.tutorialspoint.com/design_pattern/singleton_pattern.html
 
 
 
