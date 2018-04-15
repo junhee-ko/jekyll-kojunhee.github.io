@@ -23,9 +23,17 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 - EX
 
+
+
+#### Mediator class
+
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/m03.png)
 
+#### Create user class
+
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/m04.png)
+
+#### Use the *User* object to show communications between them.
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/m05.png)
 
