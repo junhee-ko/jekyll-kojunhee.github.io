@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "함수형 자바스크립트 프로그래밍"
-date:   2018-01-06 00:27:03 +0900
+title:  "functional programming"
+date:   2018-01-06
 categories: node
 image: https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/node.png
 ---

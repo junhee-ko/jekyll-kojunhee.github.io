@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Node Architecture"
-date:   2018-02-27 00:27:03 +0900
+date:   2018-02-27
 categories: node
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/node.png
 ---

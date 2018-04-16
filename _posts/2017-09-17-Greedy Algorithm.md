@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Greedy Algorithm"
-date:   2017-09-17 00:27:03 +0900
+date:   2017-09-17
 categories: algorithm
 image: https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/algorithm.png
 ---

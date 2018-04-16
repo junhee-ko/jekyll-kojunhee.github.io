@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ViewPager"
-date:   2018-01-07 00:27:03 +0900
+date:   2018-01-07
 categories: android
 image: https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/android.png
 ---

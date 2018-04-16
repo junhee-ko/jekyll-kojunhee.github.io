@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Generations of Tribbles"
-date:   2017-12-09 00:27:03 +0900
+date:   2017-12-09
 categories: algorithm
 image: https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/algorithm.png
 ---

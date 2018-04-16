@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "bcrypt-password 암호화"
-date:   2017-10-11 00:27:03 +0900
+date:   2017-10-11
 categories: node
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/node.png
 ---

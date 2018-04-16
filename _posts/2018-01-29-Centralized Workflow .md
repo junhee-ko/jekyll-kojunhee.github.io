@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Centralized Workflow"
-date:   2018-01-29 00:27:03 +0900
+date:   2018-01-29
 categories: git
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/48.png
 ---
