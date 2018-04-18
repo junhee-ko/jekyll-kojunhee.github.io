@@ -45,3 +45,6 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad02.png)
 
 
+
+- Reference
+  - https://www.tutorialspoint.com/design_pattern/adapter_pattern.htm
