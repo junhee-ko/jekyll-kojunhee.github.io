@@ -8,6 +8,8 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad01.png)
 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/mydi.png)
+
 ### Interface : Media Player and Advanced Media Player
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad03.png)
