@@ -10,38 +10,38 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 ### Interface : Media Player and Advanced Media Player
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/add03.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad03.png)
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/add04.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad04.png)
 
 ### concrete classes 
 
 ### implementing the *AdvancedMediaPlayer* interface.
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/add05.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad05.png)
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/add06.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad06.png)
 
 ### adapter class 
 
 ### implementing the *MediaPlayer* interface.
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/add07.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad07.png)
 
 ### concrete class 
 
 ### implementing the *MediaPlayer* interface.
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/add08.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad08.png)
 
 ### Use the AudioPlayer  
 
 ### to play different types of audio formats. 
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/add09.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad09.png)
 
 ### Result
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/add02.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad02.png)
 
 
