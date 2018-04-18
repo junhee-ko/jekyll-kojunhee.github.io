@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Adapter Pattern"
+title:  "Adapter Pattern01"
 date:   2018-04-06
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
