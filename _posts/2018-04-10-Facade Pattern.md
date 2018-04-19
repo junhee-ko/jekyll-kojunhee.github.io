@@ -20,7 +20,11 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 - EX
 
+#### Create an interface
+
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fa01.png)
+
+#### Create concrete classes implementing the same interface
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fa02.png)
 
@@ -28,7 +32,11 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fa04.png)
 
+#### Create a facade class
+
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fa05.png)
+
+#### Use the facade to draw various types of shapes.
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fa06.png)
 
