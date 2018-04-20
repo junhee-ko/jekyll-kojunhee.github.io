@@ -28,7 +28,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 #### 02 : Lazy instantiation using double locking mechanism
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/singleton_doublech.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sgg.png)
 
 
 
