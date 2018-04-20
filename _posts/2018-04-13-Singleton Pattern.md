@@ -20,7 +20,19 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 - EX
 
+#### 01 : Early instantiation using implementation with static field
+
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/SingleObject.png)
+
+
+
+#### 02 : Lazy instantiation using double locking mechanism
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/singleton_doublech.png)
+
+
+
+#### Client
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/SingletonPatternDemo.png)
 
