@@ -11,8 +11,14 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 - Intent
 
   - decouple an abstraction from its implementation so that the two can vary independently.
+  - 추상을 구현으로부터 분리하여, 
+  - 독립적으로 변하게 함
+
+
 
 - Implementation
+
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridge.png)
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bridgee.png)
 
