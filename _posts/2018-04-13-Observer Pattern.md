@@ -6,13 +6,17 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
-
-
 - Intent
 
   - Defines a one-to-many dependency between objects 
   - so that when one object changes state, 
   - all its dependents are notified and updated automatically.
+  - 객체 사이에 1:n의 의존 관계이며,
+  - 객체 상태의 변화가 다른 의존 객체에 통지되고 자동으로 업데이트 되게 함
+
+- 다른 이름 
+
+  - Publisher-Subscriber
 
 - Implementation
 
