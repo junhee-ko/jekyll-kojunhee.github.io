@@ -6,19 +6,18 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tm01.png)
 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tm02.png)
 
-- ```java
-  package singleton_practice_tickets;
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tm03.png)
 
-  public interface Ticket {
-      public int getTicketNum();
-  }
-  ```
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tm04.png)
 
-- ​
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tm05.png)
 
-  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/s.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tm06.png)
+
 
 
 
