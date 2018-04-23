@@ -30,14 +30,14 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
     - Mediator : Subject 
     - Colleague : Observer
 
-- Implementation
+- Class Diagram
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/m01.png)
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/m02.png)
 
 
-- EX
+- Code
 
 
 
