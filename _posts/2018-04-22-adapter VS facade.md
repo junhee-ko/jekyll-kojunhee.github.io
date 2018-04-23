@@ -6,6 +6,9 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
+- Adapter와 Facade 모두 여러 개의 클래스를 감쌀 수 있다. BUT
+  - Adapter : 인터페이스를 다른 인터페이스로 변환
+  - Facade : 인터페이스를 단순화 
 - 이미 존재하는 클래스가 있는가?
   - adpater : yes
   - facade : yes
