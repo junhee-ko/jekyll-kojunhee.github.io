@@ -13,17 +13,21 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
   - decouple an abstraction from its implementation so that the two can vary independently.
   - 추상을 구현으로부터 분리하여, 
   - 독립적으로 변하게 함
+  - 여기에서 구현의 의미
+    - 추상을 구현한 concrete class X
+    - 궂은 일을 하는 로직 / 코드
+  - 구현 뿐만 아니라 추상화된 부분까지 변경시켜야 하는 경우에는 bridge pattern을 사용
 
 
 
-- Implementation
+- Class Diagram
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridge.png)
 
-  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bridgee.png)
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridgee.png)
 
 
-- EX )
+- Code
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b01.png)
 

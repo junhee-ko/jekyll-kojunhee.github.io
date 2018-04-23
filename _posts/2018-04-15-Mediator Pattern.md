@@ -6,14 +6,11 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
-
-
 - Intent
 
-  - Define an object that encapsulates how a set of objects interact. 
-  - Loose coupling by keeping objects from referring to each other explicitly, 
-  - and it lets you vary their interaction independently.
-  - 부품 객체들 간의 연결을 느슨하게 만든다
+  - 여러 객체들 간의 상호 작용 자체를 캡슐화
+  - 객체들 끼리 직접 참조하는 것을 피함으로 객체들 간의 연결 강도를 줄임( loose coupling)
+  - client는 객체들의 상호작용을 독립적으로 변경할 수 있음 
   - 각 부품 객체들간의 상호작용을 도맡아 처리하는 객체를 둔다
   - 각 객체들은 Mediator 객체를 제외한 다른 객체는 알지 못한다
   - M:N 의 관계를 M:1로 만든다
