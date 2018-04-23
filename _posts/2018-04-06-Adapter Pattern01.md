@@ -13,14 +13,16 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
   - Wrapper로도 불림
 
 
-- EX) 
-
-  - Target : Duck
-  - Adaptee : Turkey
+- Class Diagram
+  - Clinet : Target Interface 만 볼 수 있다
+  - Adapter : Target Interface를 구현, Adaptee로 구성
+  - Adaptee : 모든 요청은 Adaptee에게 위임
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/duck.png)
 
 
+
+- Code
 
 ### Target Interface
 
@@ -48,4 +50,5 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 ### Reference
 
-<http://www.oodesign.com/adapter-pattern.html>
+- <http://www.oodesign.com/adapter-pattern.html>
+- Head First Design Patterns
