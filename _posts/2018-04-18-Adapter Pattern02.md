@@ -6,13 +6,15 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ad01.png)
+- 설명 
+  - 기존에 MediaPlayer 인터페이스 : mp3 포맷만 play
+  - 새로운 AdvancedMediaPlayer 인터페이스 :  vlc, mp4 포맷 play
+  - AudioPlayer로 mp3 뿐만 아니라, vlc, mp4 도 play 하고자 한다
+- Class Diagram
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myAda.png)
 
-
-
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/mydi.png)
+- Code
 
 ### Interface : Media Player and Advanced Media Player
 
