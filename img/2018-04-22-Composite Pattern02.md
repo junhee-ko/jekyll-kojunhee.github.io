@@ -25,7 +25,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 - Result
 
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compRes.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compositeRes.png)
 
 - Reference
   - Java 객체지향 디자인 패턴 ( 정인상, 채흥석 지음 )
