@@ -10,6 +10,15 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/boostcours
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/smvc.png)
 
+   - 클라이언트가 요청을 보내면 이 모든 요청을 Dispatcher Servlet이 받아
+   - Dispatcher Servlet은 이 요청을 처리하는 컨트롤러와 메소드가 무엇인지 Handler Mapping 에게 물어봐
+   - Handler Adapter에게 실행을 요청. 
+   - 결정된 컨트롤러와 메소드가 실행이 됨
+   - 그 결과를 모델에 받아서, Dispatcher Servlet에게 전달
+  - 컨트롤러가 return한 view name으로 적절한 View Resolver로 출력
+
+  
+
 - DispatcherServlet
 
   - 프론트 컨트롤러 (Front Controller)
@@ -23,7 +32,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/boostcours
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dispatch01.png)
 
-- DispatcherServlet 내부 동작흐름 상세 - 요청 선처리 작업
+- DispatcherServlet 내부 동작흐름 상세 - 요청 선처리 작
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dispatch02.png)
 
@@ -82,8 +91,6 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/boostcours
 - DispatcherServlet 내부 동작흐름 상세 - 뷰 렌더링 과정
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dispatch06.png)
-
-  - 
 
 - 뷰 렌더링 과정시 사용된 컴포넌트
 
