@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Chain of Responsibility Pattern"
+title:  "Chain of Responsibility Pattern01"
 date:   2018-05-09
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
