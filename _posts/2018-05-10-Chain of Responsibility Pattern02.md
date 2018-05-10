@@ -20,6 +20,10 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp06.png)
 
+- Result
+
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corResult.png)
+
 - Reference
 
   - <http://www.oodesign.com/proxy-pattern.html>
