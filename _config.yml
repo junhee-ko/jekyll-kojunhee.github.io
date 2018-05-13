@@ -30,3 +30,6 @@ sass:
 
 # Gems
 gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer]
+
+# Google Analytics
+google_analytics: UA-119123844-1
