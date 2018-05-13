@@ -25,7 +25,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp08.png)
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp08.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp09.png)
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp10.png)
 
