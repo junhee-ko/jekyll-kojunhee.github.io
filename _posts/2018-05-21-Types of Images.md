@@ -2,8 +2,8 @@
 layout: post
 title:  "Types of Images"
 date:   2018-05-21
-categories: cs
-image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
+categories: DIP
+image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lenna.jpg
 ---
 
 #### 8 bit color format

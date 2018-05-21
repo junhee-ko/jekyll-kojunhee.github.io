@@ -2,8 +2,8 @@
 layout: post
 title:  "Bits Per Pixel"
 date:   2018-05-21
-categories: cs
-image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
+categories: DIP
+image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lenna.jpg
 ---
 
 Bpp or bits per pixel denotes the number of bits per pixel.
