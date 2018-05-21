@@ -48,6 +48,12 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lenna.jpg
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE06.png)
 
+- Now map these new values you are onto histogram, and you are done.
+
+- Lets apply this technique to our original image. 
+
+- After applying we got the following image and its following histogram.
+
 ## Cumulative Distributive function of this image
 
  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE07.png)
