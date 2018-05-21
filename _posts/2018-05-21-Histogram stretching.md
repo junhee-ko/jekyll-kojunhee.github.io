@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Histogram stretching"
+title:  "Histogram Stretching"
 date:   2018-05-21
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
