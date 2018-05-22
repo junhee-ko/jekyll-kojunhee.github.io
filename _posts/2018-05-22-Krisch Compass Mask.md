@@ -39,7 +39,7 @@ Suppose we have a sample picture from which we have to find all the edges. Here 
 
 ## Example
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/krisch03.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/krisch04.png)
 
 As you can see that by applying all the above masks you will get edges in all the direction. 
 
