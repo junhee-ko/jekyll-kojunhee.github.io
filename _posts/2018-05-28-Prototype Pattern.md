@@ -17,25 +17,21 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
   - ConcretePrototype
     -  implements the operation for cloning itself.
 
-![image-20180528152012650](/var/folders/_f/gngr61ld6_lgrpr0gzzgzd540000gn/T/abnerworks.Typora/image-20180528152012650.png) 
-
-
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/proto01.png) 
 
 - Code
 
-  ![image-20180528152545121](/var/folders/_f/gngr61ld6_lgrpr0gzzgzd540000gn/T/abnerworks.Typora/image-20180528152545121.png)
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/proto02.png) 
 
-  ![image-20180528152604784](/var/folders/_f/gngr61ld6_lgrpr0gzzgzd540000gn/T/abnerworks.Typora/image-20180528152604784.png)
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/proto03.png) 
 
-  ![image-20180528152614792](/var/folders/_f/gngr61ld6_lgrpr0gzzgzd540000gn/T/abnerworks.Typora/image-20180528152614792.png)
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/proto04.png) 
 
-  ![image-20180528152621871](/var/folders/_f/gngr61ld6_lgrpr0gzzgzd540000gn/T/abnerworks.Typora/image-20180528152621871.png)
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/proto05.png) 
 
-  ![image-20180528152630796](/var/folders/_f/gngr61ld6_lgrpr0gzzgzd540000gn/T/abnerworks.Typora/image-20180528152630796.png)
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/proto06.png) 
 
-  ![image-20180528152637190](/var/folders/_f/gngr61ld6_lgrpr0gzzgzd540000gn/T/abnerworks.Typora/image-20180528152637190.png)
-
-
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/proto07.png) 
 
 - Reference
   - <https://www.tutorialspoint.com/design_pattern/prototype_pattern.htm>
