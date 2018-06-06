@@ -32,6 +32,8 @@ Define a family of algorithms, encapsulate each one, and make them interchangeab
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern07.png) 
 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern08.png) 
+
 ## Reference
 
 - <https://www.oodesign.com/strategy-pattern.html>
