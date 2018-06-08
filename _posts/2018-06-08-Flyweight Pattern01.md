@@ -6,6 +6,18 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
+## Motivation
+
+Some programs require a large number of objects that have some shared state among them. 
+
+Consider for example a game of war, were there is a large number of soldier objects; 
+
+a soldier object maintain the graphical representation of a soldier, soldier behavior such as motion, and firing weapons, in addition soldier's health and location on the war terrain. 
+
+Creating a large number of soldier objects is a necessity however it would incur a huge memory cost. 
+
+Note that although the representation and behavior of a soldier is the same their health and location can vary greatly.
+
 ## Intent
 
 To use sharing to support a large number of objects that have part of their internal state in common where the other part of state can vary.
