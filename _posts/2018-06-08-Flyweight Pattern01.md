@@ -26,6 +26,6 @@ To use sharing to support a large number of objects that have part of their inte
 
 - A client needs a flyweight object; it calls the factory to get the flyweight object. The factory checks a pool of flyweights to determine if a flyweight object of the requested type is in the pool, if there is, the reference to that object is returned. If there is no object of the required type, the factory creates a flyweight of the requested type, adds it to the pool, and returns a reference to the flyweight. The flyweight maintains intrinsic state (state that is shared among the large number of objects that we have created the flyweight for) and provides methods to manipulate external state (State that vary from object to object and is not common among the objects we have created the flyweight for).
 
-  ##Reference
+## Reference
 
-  <https://www.oodesign.com/flyweight-pattern.html>
+<https://www.oodesign.com/flyweight-pattern.html>
