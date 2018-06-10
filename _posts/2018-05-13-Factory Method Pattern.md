@@ -6,8 +6,19 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/factoryMethod01.png)
 
-- Code
+The Factory Method Pattern defines an interface for creating an object, 
+
+but lets subclasses decide which class to instantiate. 
+
+Factory Method lets a class defer instantiation to subclasses. 
+
+## Class Diagram
+
+ ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/factoryMethod02.png)
+
+## Code
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm01.png)
 
@@ -41,9 +52,11 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm15.png)
 
-- Reference
+  
 
-  - Head First Design Pattern
+  ## Reference
+
+  Head First Design Pattern
 
 
 
