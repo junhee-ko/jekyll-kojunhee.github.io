@@ -1,12 +1,10 @@
 ---
 layout: post
-title:  "Strategy Pattern"
+title:  "Strategy Pattern01"
 date:   2018-06-06
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
-
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa.png) 
 
 ## Motivation
 
