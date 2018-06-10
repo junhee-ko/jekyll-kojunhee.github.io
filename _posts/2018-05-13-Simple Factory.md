@@ -6,8 +6,13 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
+The Simple Factory isn’t actually a Design Pattern; it’s more of a programming idiom. 
 
-- Code
+## Class Diagram
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/simpleFactoryUML.png)
+
+## Code
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pizza01.png)
 
@@ -29,9 +34,8 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pizza09.png)
 
-- Reference
-
-  - Head First Design Pattern
 
 
+## Reference
 
+Head First Design Pattern
