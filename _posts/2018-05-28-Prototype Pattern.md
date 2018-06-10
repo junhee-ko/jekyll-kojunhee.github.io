@@ -6,6 +6,8 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/prototype.png) 
+
 Use the Prototype Pattern when creating an instance of a given class is either expensive or complicated. 
 
 The Prototype Pattern allows you to make new instances by copying existing instances. 
