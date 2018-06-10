@@ -10,11 +10,15 @@ Use the Memento Pattern when you need to be able to return an object to one of i
 
 for instance, if your user requests an “undo.” 
 
+
+
 ## Intent
 
 To capture the internal state of an object without violating encapsulation and thus providing a mean for restoring the object into initial state when needed.
 
-##Class Diagram
+
+
+## Class Diagram
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento01.png) 
 
@@ -30,6 +34,8 @@ To capture the internal state of an object without violating encapsulation and t
   - Responsible for keeping the memento.
   - The memento is opaque to the caretaker, and the caretaker must not operate on it.
 
+
+
 ## Code
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento02.png) 
@@ -41,6 +47,8 @@ To capture the internal state of an object without violating encapsulation and t
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento05.png) 
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento06.png) 
+
+
 
 ##Reference
 
