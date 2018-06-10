@@ -6,8 +6,13 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/abstractFactoryPattern.png)
 
-- Code
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/abstarct001.png)
+
+The Abstract Factory Pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. 
+
+##Code
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp01.png)
 
@@ -85,9 +90,11 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp37.png)
 
-- Reference
+  
 
-  - Head First Design Pattern
+  ## Reference
+
+  Head First Design Pattern
 
 
 
