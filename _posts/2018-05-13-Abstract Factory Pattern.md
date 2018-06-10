@@ -12,7 +12,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 The Abstract Factory Pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. 
 
-##Code
+## Code
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp01.png)
 
@@ -86,15 +86,13 @@ The Abstract Factory Pattern provides an interface for creating families of rela
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp36.png)
 
-- Result
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp37.png)
 
-  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp37.png)
 
-  
 
-  ## Reference
+## Reference
 
-  Head First Design Pattern
+Head First Design Pattern
 
 
 
