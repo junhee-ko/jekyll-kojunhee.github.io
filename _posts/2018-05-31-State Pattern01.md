@@ -6,11 +6,27 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
-In State pattern, we create objects which represent various states and a context object whose behavior varies as its state object changes.
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML02.png) 
 
-- Class Diagram
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML03.png) 
 
-  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePattern01.png) 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML04.png) 
 
-- Reference
-  - <https://www.tutorialspoint.com/design_pattern/state_pattern.htm>
+## Definition
+
+The State Pattern allows an object to alter its behavior when its internal state changes. 
+
+The object will appear to change its class. 
+
+## Explanation
+
+- The first part of this description makes a lot of sense, right?  Because the pattern encapsulates state into separate classes and delegates to the object representing the current state, we know that behavior changes along with the internal state. The Gumball Machine provides a good example: when the gumball machine is in the NoQuarterState and you insert a quarter, you get different behavior (the machine accepts the quarter) than if you insert a quarter when it’s in the HasQuarterState (the machine rejects the quarter). 
+- What about the second part of the definition? What does it mean for an object to “appear to change its class?” Think about it from the perspective of a client: if an object you’re using can completely change its behavior, then it appears to you that the object is actually instantiated from another class. In reality, however, you know that we are using composition to give the appearance of a class change by simply referencing different state objects. 
+
+## Class Diagram
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML01.png) 
+
+##Reference
+
+Head First Design Pattern
