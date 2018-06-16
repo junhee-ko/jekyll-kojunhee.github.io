@@ -36,3 +36,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
   - State
 - ON, OFF
   - State1, State2
+
+## Reference
+
+Java 객체지향 디자인 패턴 <정인상, 채흥석 지음>
