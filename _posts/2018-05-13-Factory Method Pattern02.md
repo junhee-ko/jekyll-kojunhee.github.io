@@ -3,7 +3,7 @@ layout: post
 title:  "Factory Method Pattern02"
 date:   2018-05-13
 categories: cs
-image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/factoryMethod01.png)
+image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
 ## Definition 
