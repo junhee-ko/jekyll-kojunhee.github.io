@@ -18,7 +18,7 @@ The Iterator Pattern provides a way to access the elements of an aggregate objec
 
  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator02.png)
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator03.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator09.png)
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator04.png)
 
@@ -30,7 +30,7 @@ The Iterator Pattern provides a way to access the elements of an aggregate objec
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator08.png)
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator09.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator03.png)
 
 ## Reference
 
