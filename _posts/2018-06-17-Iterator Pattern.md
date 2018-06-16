@@ -12,7 +12,25 @@ The Iterator Pattern provides a way to access the elements of an aggregate objec
 
 ## Class diagram
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator01.png) 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator01.png)
+
+## Example
+
+ ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator02.png)
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator03.png)
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator04.png)
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator05.png)
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator06.png)
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator07.png)
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator08.png)
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iterator09.png)
 
 ## Reference
 
