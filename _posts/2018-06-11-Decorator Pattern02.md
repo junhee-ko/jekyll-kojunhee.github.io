@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Decorator Pattern03"
+title:  "Decorator Pattern02"
 date:   2018-06-06
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
