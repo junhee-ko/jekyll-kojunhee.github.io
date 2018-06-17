@@ -6,6 +6,12 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
+## Definition
+
+The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. 
+
+Strategy lets the algorithm vary independently from clients that use it. 
+
 ## Class Diagram
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa.png) 
