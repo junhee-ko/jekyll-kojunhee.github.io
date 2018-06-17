@@ -42,12 +42,6 @@ This way you can add new types of complex objects by only defining the structure
 
 The Client is the only one that needs to know about the new types, the Director needing to know which methods of the Builder to call.
 
-## Head First Example
-
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/builderPattern33.png) 
-
 ## Reference
 
 <https://www.oodesign.com/builder-pattern.html>
-
-Head First
