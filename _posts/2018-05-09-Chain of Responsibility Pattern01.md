@@ -6,8 +6,6 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corrr.png)
-
 - Intent
 
   - It avoids attaching the sender of a request to its receiver, giving this way other objects the possibility of handling the request too.
