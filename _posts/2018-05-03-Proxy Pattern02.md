@@ -11,6 +11,10 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 - The Proxy Pattern provides a surrogate or placeholder for another object to control access to it. 
 - Use the Proxy Pattern to create a representative object that controls access to another object, which may be remote, expensive to create or in need of securing. 
 
+## Class Diagram
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/proxyUML02.png)
+
 ## RMI (Remote Method Invocation)
 
 RMI gives us a way to find objects in a remote JVM and allows us to invoke their methods. 

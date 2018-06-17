@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Proxy Pattern"
+title:  "Proxy Pattern01"
 date:   2018-05-03
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
