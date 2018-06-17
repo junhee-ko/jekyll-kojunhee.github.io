@@ -1,57 +1,56 @@
 ---
 layout: post
-title:  "Memento Pattern"
+title:  "Memento Pattern02"
 date:   2018-05-28
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
+## Definition
+
 Use the Memento Pattern when you need to be able to return an object to one of its previous states; 
 
 for instance, if your user requests an “undo.” 
 
+## Scenario 
 
+Your interactive role playing game is hugely successful, and has created a legion of addicts, all trying to get
+ to the fabled “level 13.” 
 
-## Intent
+As users progress to more challenging game levels, the odds of encountering a game-ending situation increase. 
 
-To capture the internal state of an object without violating encapsulation and thus providing a mean for restoring the object into initial state when needed.
+Fans who have spent days progressing to an advanced level are understandably miffed when their character gets snuffed, and they have to start all over. 
 
+The cry goes out for a “save progress” command, so that players can store their game progress and at least recover most of their efforts when their character is unfairly extinguished. 
 
+The “save progress” function needs to be designed to return a resurrected player to the last level she completed successfully. 
 
-## Class Diagram
+## Solution
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento01.png) 
+The Memento has two goals:
 
-- Memento
-  - Stores internal state of the Originator object. The state can include any number of state variables.
-  - The Memento must have two interfaces.
-    - an interface to the caretaker. This interface must not allow any operations or any access to internal state stored by the memento and thus honors encapsulation. 
-    - The other interface is to the originator and allows the originator to access any state variables necessary to for the originator to restore previous state.
-- Originator
-  - Creates a memento object capturing the originators internal state.
-  - Use the memento object to restore its previous state.
-- Caretaker
-  - Responsible for keeping the memento.
-  - The memento is opaque to the caretaker, and the caretaker must not operate on it.
+- Saving the important state of a system’s key object. 
+- Maintaining the key object’s encapsulation. 
 
+Keeping the single responsibility principle in mind, 
 
+it’s also a good idea to keep the state that you’re saving separate from the key object. 
 
-## Code
+This separate object that holds the state is known as the Memento object. 
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento02.png) 
+## Example
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento03.png) 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/mementoo01.png)
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento04.png) 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/mementoo02.png)
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento05.png) 
+## Benefits
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento06.png) 
+- Keeping the saved state external from the key object helps to maintain cohesion. 
+- Keeps the key object’s data encapsulated.
+- Provides easy-to-implement recovery capability. 
 
+## Reference
 
+Head First Design Pattern
 
-##Reference
-
-- <https://www.tutorialspoint.com/design_pattern/prototype_pattern.htm>
-- <https://www.oodesign.com/prototype-pattern.html>
-- Head First Design Pattern
