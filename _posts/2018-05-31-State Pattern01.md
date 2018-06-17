@@ -36,8 +36,8 @@ The State and Strategy Patterns have the same class diagram, but they differ in 
 - Strategy Pattern 
   - typically configures Context classes with a behavior or algorithm. 
 - State Pattern 
-  - allows a Context to change its behavior as the state of the Context changes. 
+  - allows a Context to change its behavior as the state of the Context changes.
 
-##Reference
+## Reference
 
 Head First Design Pattern
