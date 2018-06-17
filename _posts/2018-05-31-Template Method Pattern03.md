@@ -6,6 +6,24 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
+## Definition 
+
+The Template Method Pattern defines the skeleton of an algorithm in a method, deferring some steps to subclasses. 
+
+Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure. 
+
+## Class Diagram
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/templateh01.png)
+
+## Code
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern01.png) 
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern02.png) 
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern03.png)
+
 ## Using the hook 
 
 To use the hook, we override it in our subclass. 

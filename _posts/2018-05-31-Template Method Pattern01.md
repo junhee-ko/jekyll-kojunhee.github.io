@@ -6,12 +6,6 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern01.png) 
-
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern02.png) 
-
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern03.png) 
-
 ## Intent
 
 - Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. 
@@ -29,5 +23,4 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 ## Reference
 
-- <https://www.oodesign.com/template-method-pattern.html>
-- Head First Design Pattern
+<https://www.oodesign.com/template-method-pattern.html>
