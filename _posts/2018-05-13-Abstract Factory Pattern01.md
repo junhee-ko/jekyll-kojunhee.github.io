@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Abstract Factory Pattern"
+title:  "Abstract Factory Pattern01"
 date:   2018-05-13
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
