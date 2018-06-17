@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "State Pattern03"
+title:  "State Pattern02"
 date:   2018-05-31
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
@@ -15,7 +15,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sp031.png) 
 
 - State
-  - 시스템의 모든 상태에 공통의 인터페잇를 제공
+  - 시스템의 모든 상태에 공통의 인터페이스를 제공
   - 이 인터페이스를 실체화한 어떤 상태 클래스도 기존 상태 클래스를 대신해 고체해서 사용할 수 있다.
 - State1, State2, State3
   - Context 객체가 요청한 작업을 자신의 방식으로 실제 실행
