@@ -6,12 +6,6 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML02.png) 
-
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML03.png) 
-
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML04.png) 
-
 ## Definition
 
 The State Pattern allows an object to alter its behavior when its internal state changes. 
@@ -26,6 +20,14 @@ The object will appear to change its class.
 ## Class Diagram
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML01.png) 
+
+## Code
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML02.png) 
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML03.png) 
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML04.png) 
 
 ## Compared to 'Strategy Pattern'
 
