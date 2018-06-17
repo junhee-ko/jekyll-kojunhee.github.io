@@ -8,7 +8,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 ## Intent
 
-To capture the internal state of an object without violating encapsulation and thus providing a mean for restoring the object into initial state when needed.
+The intent of this pattern is to capture the internal state of an object without violating encapsulation and thus providing a mean for restoring the object into initial state when needed.
 
 ## Class Diagram
 
@@ -42,10 +42,7 @@ To capture the internal state of an object without violating encapsulation and t
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/memento06.png) 
 
+## Reference
 
-
-##Reference
-
-- <https://www.tutorialspoint.com/design_pattern/prototype_pattern.htm>
-- <https://www.oodesign.com/prototype-pattern.html>
-- Head First Design Pattern
+- <https://www.tutorialspoint.com/design_pattern/memento_pattern.htm>
+- <https://www.oodesign.com/memento-pattern.html>
