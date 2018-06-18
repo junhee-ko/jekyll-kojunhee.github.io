@@ -6,7 +6,7 @@ categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 ---
 
-- Code
+## Code
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp01.png)
 
@@ -20,13 +20,13 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp06.png)
 
-- Result
+## Result
 
-  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corResult.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corResult.png)
 
-- Reference
+## Reference
 
-  - <http://www.oodesign.com/proxy-pattern.html>
+<http://www.oodesign.com/proxy-pattern.html>
 
 
 
