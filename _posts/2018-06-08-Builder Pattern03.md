@@ -10,7 +10,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 
 Use the Builder Pattern to encapsulate the construction of a product and allow it to be constructed in steps. 
 
-# Scenario 
+##Scenario
 
 You’ve just been asked to build a vacation planner for a new theme  park. 
 
