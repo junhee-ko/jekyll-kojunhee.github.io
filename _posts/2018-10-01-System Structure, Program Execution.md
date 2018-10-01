@@ -1,4 +1,5 @@
 ---
+
 layout: post
 title:  "System Structure, Program Execution"
 date:   2018-10-01
@@ -47,22 +48,22 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os.png
   - system call을 함 (운영체제의 함수를 호출)
   - 인터럽트를 직접 걸어서(trap) mode bit이 0으로 바껴
 
-- 동기식 입출력과 비동기식 입출력
+## 동기식 입출력과 비동기식 입출력
 
-  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os102.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os102.png)
 
-  - 두 경우 모두 io 완료는 인터럽트로알려줌
-  - syncronous I/O
-    - I/O 요청 후 입출력 작업이 완료 된 후에야 제어가 사용자 프로그램에게 넘어감
-    - 구현 방법 1
-      - io가 긑날떄 까지 cpu낭비
-      - 매시점 하나의 io만 일어남
-    - 구현 방법2
-      - io가 완료될때까지 해당 프로그램에게서 cpu를 빼앗음
-      - io 처리를 기다리는 줄에 그 프로그램을 줄 세움
-      - 다른 프로그램에게 cpu를 줌
-  - asyncronous I/O
-    - I/O가 시작된후 입출력 작업이 끝나기를 기다리지 않고 제어가 사용자 프로그램에게 즉시 넘어감
+- 두 경우 모두 io 완료는 인터럽트로알려줌
+- syncronous I/O
+  - I/O 요청 후 입출력 작업이 완료 된 후에야 제어가 사용자 프로그램에게 넘어감
+  - 구현 방법 1
+    - io가 긑날떄 까지 cpu낭비
+    - 매시점 하나의 io만 일어남
+  - 구현 방법2
+    - io가 완료될때까지 해당 프로그램에게서 cpu를 빼앗음
+    - io 처리를 기다리는 줄에 그 프로그램을 줄 세움
+    - 다른 프로그램에게 cpu를 줌
+- asyncronous I/O
+  - I/O가 시작된후 입출력 작업이 끝나기를 기다리지 않고 제어가 사용자 프로그램에게 즉시 넘어감
 
 ## Interrupt
 

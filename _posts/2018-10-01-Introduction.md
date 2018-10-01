@@ -11,7 +11,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os.png
 
 ## 운영체제란
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss101.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss1011.png)
 
 - 컴퓨터 하드웨어 바로 위에 설치되어 사용자 및 다른 모든 소프트웨어와 하드웨어를 연결하느 소픝웨어 계층
   - 협의의 운영체제(커널)
@@ -95,4 +95,3 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os.png
 ## 운영체제의 구조
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss103.png)
-
