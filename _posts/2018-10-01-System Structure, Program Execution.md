@@ -50,7 +50,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os.png
 
 ## 동기식 입출력과 비동기식 입출력
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os102.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss0111.png)
 
 - 두 경우 모두 io 완료는 인터럽트로알려줌
 - syncronous I/O
@@ -121,6 +121,6 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os.png
 
 ## 프로그램의 실행
 
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os105.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss0112.png)
 
 시스템 콜을 하면 커널 모드가 되고, 시스템 콜 끝나면 다시 A가 cpu 제어권을 가짐
