@@ -135,10 +135,11 @@ CPU burst time이 가장 짧은 프로세스를 제일 먼저 스케쥴.
 
 - Ready queue를 여러 개로 분할
   - foreground (interactive)
-  - background (batch-no human interaction)
+  - background (batch - no human interaction)
 - 각 큐는 독립적인 스케쥴링 알고리즘을 가짐
   - foreground - RB
   - background - FCFS
+- 어느 큐에 CPU를 줄지 결정하고, 그 큐 안에서 누구에게 CPU를 줄지 결정해야해
 - 큐에 대한 스케쥴링이 필요
   - fixed priority scheduling	
     - serve all from foreground then from background
@@ -159,6 +160,7 @@ CPU burst time이 가장 짧은 프로세스를 제일 먼저 스케쥴.
   - Process를 상위 큐로 보내는 기준
   - Process를 하 큐로 내쫓는 기준
   - 프로세스가 CPU 서비스를 받으려 할 때 들어갈 큐를 결정하는 기준
+- 할당 시간 끝나면 아래로 강등됨. CPU 사용 시간이 짧은 프로세스에게 우선 순위를 많이 줌
 
 ## Multiple-Processor Scheduling
 
@@ -198,7 +200,9 @@ CPU가 여러개인 경우
   ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100605.png)
 
 - Implemetatation(구현) & Measurement(성능 측정)
+
   - 실제 시스템에 알고리즘을 구현하여 실제 작업에 대해서 성능을 측정 비교
 - Simulation (모의 실험)
+
   - 알고리즘을 모의 프로그램으로 작성후 trace(input data) 를 입력으로 하여 결과 비교
 
