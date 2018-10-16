@@ -46,19 +46,17 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os.png
 
 ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem02.png)
 
-open도 시스템 콜
+1. open시스템 콜을 하면 운영체제에게 CPU 제어권이 넘어가
 
-운영체제에게 CPU 제어권이 넘어가
+2. 운영체제는 root를 먼저 open하여 root의 content를 찾아
 
-운영체제는 root를 먼저 open
+3. a라는 파일의 메타데이터를 찾아서 이걸 메모리에 올려
 
-root의 content를 찾아
+4. a의 메타데이터로부터 a의 내용을 찾아
 
-a라는 파일의 메타데이터를 찾아서 이걸 메모리에 올려
+5. a안의 b의 metadata를 메모리에 올려
 
-a의 메타데이터로부터 a의 내용을 찾아
 
-a안의 b의 metadata를 메모리에 올려
 
 각 프로세스마다 그 프로세스가 오픈한 파일들에 대한 메타데이터 포인터를 가지고 있는 일종의 배열이 있어
 
@@ -70,7 +68,7 @@ fd를 가진 파일에서 읽어와
 
 A의 PCB에 가서 해당 fd에 대응하는 파일의 metadata로부터 b의 내용에 접근
 
-b 내용을 읽어서 운영체제가 자신의 메모리 공간 일부에 읽어놔
+b 내용을 읽어서 운영체제가 자신의 메모리 공간 일부에 읽어놓음.
 
 copy해서 사용자 프로그램에게 전달
 
@@ -78,7 +76,7 @@ copy해서 사용자 프로그램에게 전달
 
 디스크까지 가는것이 아니라 운영체제가 읽어놓은거 바로 전달 
 
-이게 바로 buffer caching
+이게 바로 Buffer caching
 
 ## File Protection
 
@@ -249,28 +247,28 @@ jeep이란 파일의 시작은 9번이고, 두번째 블럭은 9번에 적혀 �
 
 ## Directory Implementation
 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem14.png)
+
 - Linear list
-
-  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem14.png)
-
   - <file name, file의 metadata)의 list
   - 구현이 간단
   - 디렉토리 내에 파일이 있는지 찾기위해서는 linear search 필요
-
 - Hash table
-
-  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem15.png)
-
   - linear list + hashing
   - file name을 이 파일의 linear list의 위치로 바꿔줌
   - search time을 없앰
   - collision 발생 가능
 
 - file 의 metadata 보관 위치
+
   - 디렉토리 내에 직접 보관
   - 디렉토리에는 포인터를 두고 다른 곳에 보관
     - inode, FAT 등
+
 - Long file name의 지원
+
+  ![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem15.png)
+
   - <file name, file의 메타데이터> 의 리스트에서 각 entry는 일반적으로 고정 크기
   - file name이 고정 크기의 entry길이보다 길어지는 경우 entry의 마지막 부분에 이름의 뒷 부분이 위치한 곳의 포인터를 두는 방법
   - 이름의 나머지 부분은 동일한 directory file의 일부에 존재
