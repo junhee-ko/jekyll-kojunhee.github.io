@@ -1,5 +1,5 @@
 # Site settings
-email: kjh338076@gmail.com
+email: junheee.ko@gmail.com
 baseurl: ""
 paginate: 5
 paginate_path: "/blog/page-:num"
@@ -8,7 +8,7 @@ google_analytics:
 # SEO settings
 title: junhee.ko
 description: learning everyday
-url: 'http://junheeko.com/'
+url: 'https://kojunhee.github.io'
 twitter_username:
 default_img:
 
@@ -29,4 +29,4 @@ sass:
   style: compressed
 
 # Gems
-# gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer]
+gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer]
