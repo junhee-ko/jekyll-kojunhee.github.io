@@ -22,6 +22,10 @@ Java에는 8 개의 기본 데이터 타입이 있다.
 
 한 type의 값을 다른 type의 변수에 할당하는 것이다. 두 가지로 나뉜다.
 
+화살표 방향으로 casting 하는 것이 Widening Casting, 반대가 Narrow Casting 이다.
+
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javatypecasting04.png)
+
 1. Widening Casting
 
    target type이 source type보다 클 때 일어난다.
@@ -37,8 +41,6 @@ Java에는 8 개의 기본 데이터 타입이 있다.
 byte보다 더 큰 type 인 int 형 변수 b와 c에 byte형 값을 저장하고 있다. 
 
 casting이 implicit 하게 되기 때문에, cast 연산자를 명시하는 것과 명시하지 않는 것의 결과가 같다.
-
-![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javatypecasting01.png)
 
 ## Narrowing Casting
 
