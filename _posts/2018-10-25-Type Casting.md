@@ -42,6 +42,8 @@ byte보다 더 큰 type 인 int 형 변수 b와 c에 byte형 값을 저장하고
 
 casting이 implicit 하게 되기 때문에, cast 연산자를 명시하는 것과 명시하지 않는 것의 결과가 같다.
 
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javatypecasting01.png)
+
 ## Narrowing Casting
 
 다음과 같이 double 형 변수 a 에 3.14를 저장하고, 이를 int 형 변수 b에 casting 하지 않고 저장하려면 에러가 발생한다.
