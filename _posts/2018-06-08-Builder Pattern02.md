@@ -2,8 +2,8 @@
 layout: post
 title:  "Builder Pattern02"
 date:   2018-06-08
-categories: cs
-image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
+categories: DesignPattern
+image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dpci.png
 ---
 
 ## Implementation

@@ -2,8 +2,8 @@
 layout: post
 title:  "adapter VS facade"
 date:   2018-04-22
-categories: cs
-image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
+categories: DesignPattern
+image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dpci.png
 ---
 
 - Adapter와 Facade 모두 여러 개의 클래스를 감쌀 수 있다. BUT

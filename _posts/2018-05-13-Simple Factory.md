@@ -2,8 +2,8 @@
 layout: post
 title:  "Simple Factory"
 date:   2018-05-13
-categories: cs
-image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
+categories: DesignPattern
+image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dpci.png
 ---
 
 The Simple Factory isn’t actually a Design Pattern; it’s more of a programming idiom. 
