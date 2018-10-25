@@ -2,8 +2,8 @@
 layout: post
 title:  "Proxy Pattern02"
 date:   2018-05-03
-categories: cs
-image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
+categories: Design Pattern
+image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dpCover.jpg
 ---
 
 ## Definition
