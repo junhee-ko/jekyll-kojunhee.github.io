@@ -2,7 +2,7 @@
 layout: post
 title:  "Proxy Pattern02"
 date:   2018-05-03
-categories: Design Pattern
+categories: DesignPattern
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dpci.png
 ---
 
