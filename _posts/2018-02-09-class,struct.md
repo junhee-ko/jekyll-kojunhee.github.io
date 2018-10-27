@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "class VS struct"
+title:  "class,struct"
 date:   2018-02-06
 categories: cs
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
@@ -62,4 +62,4 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cs_img.jpg
 	- Therefore, value types should be immutable.
 
 
-	
+​	
