@@ -7,7 +7,7 @@ google_analytics:
 
 # SEO settings
 title: junhee.ko
-description: learning everyday
+description: Always Learning
 url: http://junheeko.com/
 twitter_username:
 default_img:
@@ -15,7 +15,7 @@ default_img:
 # Profile settings
 name: 'Junhee Ko'
 profile_img: 'https://avatars3.githubusercontent.com/u/23334403?s=460&v=4'
-profile: 'Learning Everyday'
+profile: 'Always Learning'
 social:
   github: 'https://github.com/kojunhee'
 
