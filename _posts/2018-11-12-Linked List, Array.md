@@ -2,7 +2,7 @@
 layout: post
 title:  "Array, Linked List"
 date:   2018-11-12
-categories: data structure
+categories: dataStructure
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dataStructureImg.png
 ---
 
