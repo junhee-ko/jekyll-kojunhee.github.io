@@ -6,7 +6,7 @@ categories: dataStructure
 image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dataStructureImg.png
 ---
 
-#### Array
+## Array
 
 배열은 연관된 데이터를 모아서 관리하기 위해 사용되는 자료구조이다. 논리적 저장 순서와 물리적 저장 순서가 일치한다. 따라서 인덱스(index)로 해당 원소(element)에 접근할 수 있다. 그렇기 때문에 찾고자 하는 원소의 인덱스 값을 알고 있으면  Big-O(1) 에 해당 원소로 접근할 수 있다. 즉 random access가 가능하다.
 
@@ -14,7 +14,7 @@ image : https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dataStruct
 
 삽입의 경우도 마찬가지이다. 만약 첫번째 자리에 새로운 원소를 추가하고자 한다면 모든 원소들의 인덱스를 1 씩 shift 해줘야 하므로 이 경우도 O(n)의 시간을 요구하게 된다.
 
-#### Linked List
+## Linked List
 
 Element 간의 연결을 이용해서 리스트를 구현한 것이다. 원하는 위치에 삽입을 하고자 하면 원하는 위치를 Search 과정에 있어서 첫번째 원소부터 다 확인해봐야 한다는 것이다. Array 와는 달리 논리적 저장 순서와 물리적 저장 순서가 일치하지 않기 때문이다. 이것은 일단 삽입하고 정렬하는 것과 마찬가지이다. 이 과정 때문에, 어떠한 원소를 삭제 또는 삽입하고자 했을 때, 그 원소를 찾기 위해서 O(n)의 시간이 추가적으로 발생하게 된다.
 
