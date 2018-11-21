@@ -1,12 +1,8 @@
 ---
+# Only the main Sass file needs front matter (the dashes are enough)
+sitemap: false
 ---
 
-@import
-  'base',
-  'mixins',
-  'extends',
-  'layout',
-  'components',
-  'animations',
-  'helpers'
-;
+@charset "utf-8";
+
+@import "so-simple";
