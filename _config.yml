@@ -19,7 +19,7 @@ locale: en-US
 title: "junhee.ko"
 description: "Always Learning"
 baseurl: # the subpath of your site, e.g. "/blog"
-url: "http://junheeko.com/"
+url: "https://kojunhee.github.io/"
 logo: # path of site logo, e.g. "/images/logo.png"
 date_format: "%B %-d, %Y"
 read_time: # reading time estimates, e.g. true
