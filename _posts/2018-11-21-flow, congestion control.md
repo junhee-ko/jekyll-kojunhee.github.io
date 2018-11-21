@@ -28,3 +28,7 @@ stop and wait, sliding window 방식이 있습니다.
 결국 혼잡만 가중시켜 오버플로우나 데이터 손실을 발생시키게 됩니다. 이러한 네트워크의 혼잡을 피하기 위해 송신측에서 보내는 데이터의 전송 속도를  강제로 줄이는 congestion control 이 필요합니다.
 
 AIMD, Slow Start, Fast Transmit, Fast Recovery 방식이 있습니다.
+
+## Reference
+
+<http://jwprogramming.tistory.com/36>
