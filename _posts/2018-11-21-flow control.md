@@ -12,7 +12,7 @@ flow control은 송신측과 수신측의 데이터 처리 속도 차이를 해�
 
 매번 전송한 패킷에 대해 확인응답을 받아야만 그 다음 패킷을 전송하는 방법입니다. 다음 그림과 같이 동작합니다.
 
-![img](/Users/junhee/dev/mysite/img/flowcontrol01.png)
+![img](https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/flowcontrol01.png)
 
 ## sliding window
 
