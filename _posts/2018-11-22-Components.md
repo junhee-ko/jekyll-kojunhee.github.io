@@ -6,8 +6,7 @@ categories: android
 image: https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/android.png
 ---
 
-안드로이드 애플리케이션은 컴포넌트(component)로 구성되어있습니다. 안드로이드의 4대 컴포넌트는 액티비티(activity), 서비스(service), 콘텐트 제공자(content provider), 방송수신자(broadcast receiver) 입니다.
-
+안드로이드 애플리케이션은 컴포넌트(component)로 구성되어있습니다. 안드로이드의 4대 컴포넌트는 액티비티(activity), 서비스(service), 콘텐트 제공자(content provider), 방송수신자(broadcast receiver) 입니다. 
 각 컴포넌트들은 하나의 독립된 형태로 존재하며, 정해진 역할을 수행합니다. 이때, 인텐트를 통하여 다른 애플리케이션의 컴포넌트를 활성화시킬 수 있습니다. 인텐트는 서로 독립적으로 동작하는 4가지 컴포넌트들 간의 상호 통신을 위한 장치입니다. 즉, 컴포넌트 간의 통신수단입니다. 인텐트를 통하여 다른 애플리케이션의 컴포넌트를 활성화시킬 수 있습니다.
 
 ## 액티비티(activity)
