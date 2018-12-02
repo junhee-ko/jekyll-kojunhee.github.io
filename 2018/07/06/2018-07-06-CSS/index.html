@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>CSS - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"HTML에 CSS 삽입하는 방법\ninline \n1&lt;h1 style=\"color:red\"&gt;Hello World&lt;/h1&gt;\n\nstyle tag\n123&lt;style&gt;     h2&#123;color:blue&#125;&lt;/style&gt;\n\n\n선택자(selector)와 선언(declaration)\n선택하고 (선택자)\n\n선택한 대상에게 효과 (선언)\n\n\n\n선택자의 종류\n아이디 선택자\n123456789101112131415161718192021&lt;!DOCTYPE html&gt;&lt;html&gt;  &lt;head&gt;    &lt;style&gt;      li&#123;        color:red;        text-decoration:underline;      &#125;      #select&#123;        font-size:50px;      &#125;    &lt;/style&gt;  &lt;/head&gt;  &lt;body&gt;    &lt;ul&gt;      &lt;li&gt;HTML&lt;/li&gt;      &lt;li id=\"select\"&gt;CSS&lt;/li&gt;      &lt;li&gt;JavaScript&lt;/li&gt;    &lt;/ul&gt;  &lt;/body&gt;&lt;/html&gt;\n\n클래스 선택자\n12345678910111213141516171819202122232425&lt;!DOCTYPE html&gt;&lt;html&gt;  &lt;head&gt;    &lt;style&gt;      li&#123;        color:red;        text-decoration:underline;      &#125;      #select&#123;        font-size:50px;      &#125;      .deactive&#123;          text-decoration: line-through;      &#125;    &lt;/style&gt;  &lt;/head&gt;  &lt;body&gt;    &lt;h1 class=\"deactive\"&gt;수업의 순서&lt;/h1&gt;    &lt;ul&gt;      &lt;li class=\"deactive\"&gt;HTML&lt;/li&gt;      &lt;li id=\"select\"&gt;CSS&lt;/li&gt;      &lt;li class=\"deactive\"&gt;JavaScript&lt;/li&gt;    &lt;/ul&gt;  &lt;/body&gt;&lt;/html&gt;\n\n\n부모 자식 선택자1234567891011&lt;style&gt;      ul li&#123;        color:red;      &#125;      #lecture&gt;li&#123;        border:1px solid red;      &#125;      ul,ol&#123;        background-color: powderblue;      &#125;&lt;/style&gt;\n상속부모 엘리먼트의 속성을 자식 엘리먼트가 물려받는 것.\n모든 속성이 상속을 지원하는 것은 아님.\nCascadingCSS : Cascading Style Sheet\n1234567891011121314151617181920212223&lt;!DOCTYPE html&gt;&lt;html&gt;  &lt;head&gt;    &lt;style&gt;      li&#123;color:red;&#125;      #idsel&#123;color:blue;&#125;      .classsel&#123;color:green;&#125;    &lt;/style&gt;  &lt;/head&gt;  &lt;body&gt;    &lt;ul&gt;      &lt;li&gt;html&lt;/li&gt;      &lt;li id=\"idsel\" class=\"classsel\" style=\"color:powderblue\"&gt;css&lt;/li&gt;      &lt;li&gt;javascript&lt;/li&gt;    &lt;/ul&gt;    &lt;ol&gt;      &lt;li&gt;style attribute&lt;/li&gt;      &lt;li&gt;id selector&lt;/li&gt;      &lt;li&gt;class selector&lt;/li&gt;      &lt;li&gt;tag selector&lt;/li&gt;    &lt;/ol&gt;  &lt;/body&gt;&lt;/html&gt;\n하나의 태그에 중첩해서 css 적용하면 ?\nstyle attribute &gt; id selector &gt; class selector &gt; tag selector \n왜?\n더 구체적이고 명시적인 style attribute의 우선순위가 가장 높아\n다음과 같이 하면 가장 우선순위가 높아져\n1li&#123;color: red !important&#125;\ninline, block level\n화면 전체를 사용하는 태그 =&gt; block element\n화면의 일부를 차지하는 태그 =&gt; inline level element\n\n123456789101112131415&lt;!DOCTYPE html&gt;&lt;html&gt;  &lt;head&gt;    &lt;meta charset=\"utf-8\"&gt;    &lt;style&gt;        h1,a&#123;border:1px solid red;&#125;        h1&#123;display: inline;&#125;        a&#123;display:block;&#125;    &lt;/style&gt;  &lt;/head&gt;  &lt;body&gt;    &lt;h1&gt;Hello world&lt;/h1&gt;    안녕하세요. &lt;a href=\"https://opentutorials.org\"&gt;생활코딩&lt;/a&gt;입니다.  &lt;/body&gt;&lt;/html&gt;\nbox model123456789101112131415161718192021&lt;html&gt;  &lt;head&gt;    &lt;style&gt;      p,a &#123;        border: 10px solid red;        padding: 20px;        margin: 50px;        height: 30px;      &#125;        &lt;/style&gt;  &lt;/head&gt;  &lt;body&gt;    &lt;p&gt;      test    &lt;/p&gt;    &lt;p&gt;      kojunhee    &lt;/p&gt;    안녕하세요. &lt;a href=\"test.com\"&gt; 고준희&lt;/a&gt;입니다.  &lt;/body&gt;  &lt;/html&gt;\nbox sizing123456789101112131415161718192021222324&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;    &lt;style&gt;        *&#123;            box-sizing:border-box;        &#125;        div&#123;            margin:10px;            width:150px;        &#125;        #small&#123;            border:10px solid black;        &#125;        #large&#123;            border:30px solid black;        &#125;    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;       &lt;div id=\"small\"&gt;Hello&lt;/div&gt;       &lt;div id=\"large\"&gt;Hello&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;\nmargin-collapsing위 태그와 아래 태그의 마진 값 중에 더 큰 값이 두 태그 사이의 간경이 됨\n123456789101112131415&lt;!DOCTYPE html&gt;&lt;html&gt;  &lt;head&gt;      &lt;style&gt;          h1&#123;              border:1px solid red;              margin:100px;          &#125;      &lt;/style&gt;  &lt;/head&gt;  &lt;body&gt;  &lt;h1&gt;Hello world&lt;/h1&gt;  &lt;h1&gt;Hello world&lt;/h1&gt;  &lt;/body&gt;&lt;/html&gt;\nparent element가 시각적인 요소가 없는 투명한 상태일 때,\nparent element 의 마진값과 child element의 마진 값 중에 \n큰 쪽의 margin값이 child element의 margin값으로 사용\n12345678910111213141516171819202122&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;    &lt;style&gt;        #parent&#123;/*            border:1px solid tomato;*/            margin-top:100px;        &#125;        #child&#123;            background-color: powderblue;            margin-top:50px;        &#125;    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=\"parent\"&gt;        &lt;div id=\"child\"&gt;            Hello world        &lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;\n어떤 태그의 시각적인 요소가 없다면 그 태그의 margin 값은 위 쪽의 margin 값과 아랜 쪽의 margin 중에 더 큰 값이 그 태그의 마진 값이 됨 \n1234567891011121314151617181920&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;    &lt;style&gt;        #empty&#123;            margin-top:50px;            margin-bottom: 100px;/*            border:1px solid tomato;*/        &#125;        #normal&#123;            background-color: powderblue;            margin-top:100px;        &#125;    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=\"empty\"&gt;&lt;/div&gt;    &lt;div id=\"normal\"&gt;normal&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;\n포지션element의 위치를 지정\n\nstatic, relative\nabsolute\nfixed\n\nflexLayout 방법\ntable\nposition\nfloat\nflex. 가장 트렌디\n\nflex의 기본123456789101112131415161718192021222324252627&lt;!doctype&gt;&lt;html&gt;&lt;head&gt;    &lt;style&gt;        .container&#123;            background-color: powderblue;            height:200px;            display:flex;            flex-direction:row;        &#125;        .item&#123;            background-color: tomato;            color:white;            border:1px solid white;        &#125;    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;div class=\"container\"&gt;        &lt;div class=\"item\"&gt;1&lt;/div&gt;        &lt;div class=\"item\"&gt;2&lt;/div&gt;        &lt;div class=\"item\"&gt;3&lt;/div&gt;        &lt;div class=\"item\"&gt;4&lt;/div&gt;        &lt;div class=\"item\"&gt;5&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;\ngrow &amp; shrink아이템이 작아지고, 커지는 비율을 지정하는 방법\nHoly Grail layout성배 레이아웃\nReference생활코딩\n","dateCreated":"2018-07-06T00:00:00+09:00","dateModified":"2018-07-07T14:18:34+09:00","datePublished":"2018-07-06T00:00:00+09:00","description":"","headline":"CSS","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/07/06/2018-07-06-CSS/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/07/06/2018-07-06-CSS/"}</script>
+    <meta name="description" content="HTML에 CSS 삽입하는 방법 inline  1&amp;lt;h1 style=&quot;color:red&quot;&amp;gt;Hello World&amp;lt;/h1&amp;gt;  style tag 123&amp;lt;style&amp;gt;     h2&amp;#123;color:blue&amp;#125;&amp;lt;/style&amp;gt;   선택자(selector)와 선언(declaration) 선택하고 (선택자)  선택한 대상">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="CSS">
+<meta property="og:url" content="http://junheeko.com/2018/07/06/2018-07-06-CSS/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="HTML에 CSS 삽입하는 방법 inline  1&amp;lt;h1 style=&quot;color:red&quot;&amp;gt;Hello World&amp;lt;/h1&amp;gt;  style tag 123&amp;lt;style&amp;gt;     h2&amp;#123;color:blue&amp;#125;&amp;lt;/style&amp;gt;   선택자(selector)와 선언(declaration) 선택하고 (선택자)  선택한 대상">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/selector.png">
+<meta property="og:updated_time" content="2018-07-07T05:18:34.622Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS">
+<meta name="twitter:description" content="HTML에 CSS 삽입하는 방법 inline  1&amp;lt;h1 style=&quot;color:red&quot;&amp;gt;Hello World&amp;lt;/h1&amp;gt;  style tag 123&amp;lt;style&amp;gt;     h2&amp;#123;color:blue&amp;#125;&amp;lt;/style&amp;gt;   선택자(selector)와 선언(declaration) 선택하고 (선택자)  선택한 대상">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/selector.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            CSS
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-07-06T00:00:00+09:00">
+	
+		    Jul 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/cs/">cs</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h2 id="HTML에-CSS-삽입하는-방법"><a href="#HTML에-CSS-삽입하는-방법" class="headerlink" title="HTML에 CSS 삽입하는 방법"></a>HTML에 CSS 삽입하는 방법</h2><ol>
+<li><p>inline </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>style tag</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">     h2&#123;color:blue&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="선택자-selector-와-선언-declaration"><a href="#선택자-selector-와-선언-declaration" class="headerlink" title="선택자(selector)와 선언(declaration)"></a>선택자(selector)와 선언(declaration)</h2><ol>
+<li><p>선택하고 (선택자)</p>
+</li>
+<li><p>선택한 대상에게 효과 (선언)</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/selector.png" alt="img"></p>
+</li>
+</ol>
+<h2 id="선택자의-종류"><a href="#선택자의-종류" class="headerlink" title="선택자의 종류"></a>선택자의 종류</h2><ol>
+<li><p>아이디 선택자</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      li&#123;</span></span><br><span class="line"><span class="undefined">        color:red;</span></span><br><span class="line"><span class="undefined">        text-decoration:underline;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      #select&#123;</span></span><br><span class="line"><span class="undefined">        font-size:50px;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"select"</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>클래스 선택자</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      li&#123;</span></span><br><span class="line"><span class="undefined">        color:red;</span></span><br><span class="line"><span class="undefined">        text-decoration:underline;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      #select&#123;</span></span><br><span class="line"><span class="undefined">        font-size:50px;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      .deactive&#123;</span></span><br><span class="line"><span class="undefined">          text-decoration: line-through;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"deactive"</span>&gt;</span>수업의 순서<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"deactive"</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"select"</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"deactive"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="부모-자식-선택자"><a href="#부모-자식-선택자" class="headerlink" title="부모 자식 선택자"></a>부모 자식 선택자</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      ul li&#123;</span></span><br><span class="line"><span class="undefined">        color:red;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      #lecture&gt;li&#123;</span></span><br><span class="line"><span class="undefined">        border:1px solid red;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      ul,ol&#123;</span></span><br><span class="line"><span class="undefined">        background-color: powderblue;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="상속"><a href="#상속" class="headerlink" title="상속"></a>상속</h2><p>부모 엘리먼트의 속성을 자식 엘리먼트가 물려받는 것.</p>
+<p>모든 속성이 상속을 지원하는 것은 아님.</p>
+<h2 id="Cascading"><a href="#Cascading" class="headerlink" title="Cascading"></a>Cascading</h2><p>CSS : Cascading Style Sheet</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      li&#123;color:red;&#125;</span></span><br><span class="line"><span class="undefined">      #idsel&#123;color:blue;&#125;</span></span><br><span class="line"><span class="undefined">      .classsel&#123;color:green;&#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>html<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"idsel"</span> <span class="attr">class</span>=<span class="string">"classsel"</span> <span class="attr">style</span>=<span class="string">"color:powderblue"</span>&gt;</span>css<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>javascript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>style attribute<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>id selector<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>class selector<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>tag selector<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>하나의 태그에 중첩해서 css 적용하면 ?</p>
+<p>style attribute &gt; id selector &gt; class selector &gt; tag selector </p>
+<p>왜?</p>
+<p>더 구체적이고 명시적인 style attribute의 우선순위가 가장 높아</p>
+<p>다음과 같이 하면 가장 우선순위가 높아져</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">li&#123;color: red !important&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="inline-block-level"><a href="#inline-block-level" class="headerlink" title="inline, block level"></a>inline, block level</h2><ul>
+<li>화면 전체를 사용하는 태그 =&gt; block element</li>
+<li>화면의 일부를 차지하는 태그 =&gt; inline level element</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        h1,a&#123;border:1px solid red;&#125;</span></span><br><span class="line"><span class="undefined">        h1&#123;display: inline;&#125;</span></span><br><span class="line"><span class="undefined">        a&#123;display:block;&#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    안녕하세요. <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://opentutorials.org"</span>&gt;</span>생활코딩<span class="tag">&lt;/<span class="name">a</span>&gt;</span>입니다.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="box-model"><a href="#box-model" class="headerlink" title="box model"></a>box model</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      p,a &#123;</span></span><br><span class="line"><span class="undefined">        border: 10px solid red;</span></span><br><span class="line"><span class="undefined">        padding: 20px;</span></span><br><span class="line"><span class="undefined">        margin: 50px;</span></span><br><span class="line"><span class="undefined">        height: 30px;</span></span><br><span class="line"><span class="undefined">      &#125;    </span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      test</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      kojunhee</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    안녕하세요. <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"test.com"</span>&gt;</span> 고준희<span class="tag">&lt;/<span class="name">a</span>&gt;</span>입니다.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box sizing"></a>box sizing</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        *&#123;</span></span><br><span class="line"><span class="undefined">            box-sizing:border-box;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        div&#123;</span></span><br><span class="line"><span class="undefined">            margin:10px;</span></span><br><span class="line"><span class="undefined">            width:150px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        #small&#123;</span></span><br><span class="line"><span class="undefined">            border:10px solid black;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        #large&#123;</span></span><br><span class="line"><span class="undefined">            border:30px solid black;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"small"</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"large"</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="margin-collapsing"><a href="#margin-collapsing" class="headerlink" title="margin-collapsing"></a>margin-collapsing</h2><p>위 태그와 아래 태그의 마진 값 중에 더 큰 값이 두 태그 사이의 간경이 됨</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">          h1&#123;</span></span><br><span class="line"><span class="undefined">              border:1px solid red;</span></span><br><span class="line"><span class="undefined">              margin:100px;</span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">      </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>parent element가 시각적인 요소가 없는 투명한 상태일 때,</p>
+<p>parent element 의 마진값과 child element의 마진 값 중에 </p>
+<p>큰 쪽의 margin값이 child element의 margin값으로 사용</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        #parent&#123;</span></span><br><span class="line"><span class="undefined">/*            border:1px solid tomato;*/</span></span><br><span class="line"><span class="undefined">            margin-top:100px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        #child&#123;</span></span><br><span class="line"><span class="undefined">            background-color: powderblue;</span></span><br><span class="line"><span class="undefined">            margin-top:50px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"parent"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"child"</span>&gt;</span></span><br><span class="line">            Hello world</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>어떤 태그의 시각적인 요소가 없다면 그 태그의 margin 값은 위 쪽의 margin 값과 아랜 쪽의 margin 중에 더 큰 값이 그 태그의 마진 값이 됨 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        #empty&#123;</span></span><br><span class="line"><span class="undefined">            margin-top:50px;</span></span><br><span class="line"><span class="undefined">            margin-bottom: 100px;</span></span><br><span class="line"><span class="undefined">/*            border:1px solid tomato;*/</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        #normal&#123;</span></span><br><span class="line"><span class="undefined">            background-color: powderblue;</span></span><br><span class="line"><span class="undefined">            margin-top:100px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"empty"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"normal"</span>&gt;</span>normal<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="포지션"><a href="#포지션" class="headerlink" title="포지션"></a>포지션</h2><p>element의 위치를 지정</p>
+<ol>
+<li>static, relative</li>
+<li>absolute</li>
+<li>fixed</li>
+</ol>
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><h4 id="Layout-방법"><a href="#Layout-방법" class="headerlink" title="Layout 방법"></a>Layout 방법</h4><ol>
+<li>table</li>
+<li>position</li>
+<li>float</li>
+<li>flex. 가장 트렌디</li>
+</ol>
+<h4 id="flex의-기본"><a href="#flex의-기본" class="headerlink" title="flex의 기본"></a>flex의 기본</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .container&#123;</span></span><br><span class="line"><span class="undefined">            background-color: powderblue;</span></span><br><span class="line"><span class="undefined">            height:200px;</span></span><br><span class="line"><span class="undefined">            display:flex;</span></span><br><span class="line"><span class="undefined">            flex-direction:row;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        .item&#123;</span></span><br><span class="line"><span class="undefined">            background-color: tomato;</span></span><br><span class="line"><span class="undefined">            color:white;</span></span><br><span class="line"><span class="undefined">            border:1px solid white;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="grow-amp-shrink"><a href="#grow-amp-shrink" class="headerlink" title="grow &amp; shrink"></a>grow &amp; shrink</h4><p>아이템이 작아지고, 커지는 비율을 지정하는 방법</p>
+<h4 id="Holy-Grail-layout"><a href="#Holy-Grail-layout" class="headerlink" title="Holy Grail layout"></a>Holy Grail layout</h4><p>성배 레이아웃</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>생활코딩</p>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/18/2018-07-18-마지막 생존자/" data-tooltip="마지막 생존자" aria-label="PREVIOUS: 마지막 생존자">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/05/2018-07-05-HTML/" data-tooltip="HTML" aria-label="NEXT: HTML">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/07/06/2018-07-06-CSS/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/07/06/2018-07-06-CSS/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/07/06/2018-07-06-CSS/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/18/2018-07-18-마지막 생존자/" data-tooltip="마지막 생존자" aria-label="PREVIOUS: 마지막 생존자">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/05/2018-07-05-HTML/" data-tooltip="HTML" aria-label="NEXT: HTML">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/07/06/2018-07-06-CSS/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/07/06/2018-07-06-CSS/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/07/06/2018-07-06-CSS/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/07/06/2018-07-06-CSS/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/07/06/2018-07-06-CSS/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/07/06/2018-07-06-CSS/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
