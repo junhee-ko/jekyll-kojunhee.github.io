@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/10/09/2018-10-09-활주로 건설/">
-                            활주로 건설
+                        <a class="link-unstyled" href="/2018/10/09/2018-10-09-탐주범 검거/">
+                            탈주범 검거
                         </a>
                     
                 </h1>
@@ -189,27 +189,21 @@
             </div>
             
                 <div class="postShorten-content">
-                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeW7FakkUDFAVH" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeW7FakkUDFAVH</a></p>
-<p>경우의 수를 나눈 후 조건에 맞게 짜려고 하였다. 해설을 보고 DFS로 풀면 쉽게 풀 수 있다는 것을 알았다.</p>
+                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpLlKAQ4DFAUq" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpLlKAQ4DFAUq</a></p>
+<p>소요시간 1시간. BFS 문제이다. 쉬운 문제이다. Queue에 넣어야 하는 경우의 수의 조건에서 시간이 오래 걸렸다.</p>
+<p>더럽게 코드를 작성했다. 더 나은 방법은 없을까?</p>
 <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
-<li><p>모든 행과 열을 차례대로 체크한다.</p>
-</li>
-<li><p>현재 위치와 다음 위치를 비교한다.</p>
-<ul>
-<li><p>같은 높이인 경우 : 다음 위치 부터 체크</p>
-</li>
-<li><p>오르막인 경우 : 현재 위치 기준해서 왼쪽으로 경사로 둘 수 있는지 체크</p>
-</li>
-<li><p>내리막인 경우 : 현재 위치 기준해서 오른쪽으로 경사로 둘 수 있는지 체크</p>
-</li>
-<li>그 이외의 경우 : 이번 행이나 열은 실패</li>
-</ul>
-</li>
+<li>map에 터널 상태를 저장한다.</li>
+<li>현재 위치에서 이동 가능한 위치를 큐에 넣는다. (이동 가능한 위치는 터널 상태를 보고 파악한다)</li>
+<li>큐에서 pop한 위치에서 2번을 반복한다.</li>
+<li>depth가 문제에서 주어진 시간이 되었을 때, 큐에 넣었던 위치 개수를 출력한다.</li>
 </ol>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy04.png" alt="img"></p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tennel01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tennel02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tennel03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tennel04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tennel05.png" alt="img"></p>
+<p>### </p>
 
                     
                         
@@ -217,7 +211,7 @@
                     
                     
                         <p>
-                            <a href="/2018/10/09/2018-10-09-활주로 건설/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/10/09/2018-10-09-탐주범 검거/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -1006,6 +1000,71 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/10/04/2018-10-04-보물상자 비밀번호/">
+                            보물상자 비밀번호
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-10-04T00:00:00+09:00">
+	
+		    Oct 04, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&amp;categoryId=AWXRUN9KfZ8DFAUo&amp;categoryType=CODE" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&amp;categoryId=AWXRUN9KfZ8DFAUo&amp;categoryType=CODE</a></p>
+<p>쉬운 문제이다. 이 문제에서는 정렬과 진법 변환을 배울 수 있다.</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li>회전 시키고</li>
+<li>각 변 확인하며 리스트에 저장</li>
+</ol>
+<h2 id="개념"><a href="#개념" class="headerlink" title="개념"></a>개념</h2><ol>
+<li><p>정렬</p>
+<p>오름차순 정렬 : Collections.sort(list)</p>
+<p>내림차순 정렬 : Collections.sort(list) –&gt;  Collections.reverse(list)</p>
+</li>
+<li><p>진법 변환</p>
+<p>string 을 radix 진법으로 변환 : Integer.parseInt(String s, int radix) </p>
+</li>
+</ol>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/treasurepwd01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/treasurepwd02.png" alt="img"></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/10/04/2018-10-04-보물상자 비밀번호/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/10/04/2018-10-04-Process Managemnet/">
                             Process Management
                         </a>
@@ -1149,71 +1208,6 @@
                     
                         <p>
                             <a href="/2018/10/04/2018-10-04-Process Managemnet/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/10/04/2018-10-04-보물상자 비밀번호/">
-                            보물상자 비밀번호
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-10-04T00:00:00+09:00">
-	
-		    Oct 04, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/algorithm/">algorithm</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&amp;categoryId=AWXRUN9KfZ8DFAUo&amp;categoryType=CODE" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&amp;categoryId=AWXRUN9KfZ8DFAUo&amp;categoryType=CODE</a></p>
-<p>쉬운 문제이다. 이 문제에서는 정렬과 진법 변환을 배울 수 있다.</p>
-<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
-<li>회전 시키고</li>
-<li>각 변 확인하며 리스트에 저장</li>
-</ol>
-<h2 id="개념"><a href="#개념" class="headerlink" title="개념"></a>개념</h2><ol>
-<li><p>정렬</p>
-<p>오름차순 정렬 : Collections.sort(list)</p>
-<p>내림차순 정렬 : Collections.sort(list) –&gt;  Collections.reverse(list)</p>
-</li>
-<li><p>진법 변환</p>
-<p>string 을 radix 진법으로 변환 : Integer.parseInt(String s, int radix) </p>
-</li>
-</ol>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/treasurepwd01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/treasurepwd02.png" alt="img"></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/10/04/2018-10-04-보물상자 비밀번호/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

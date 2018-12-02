@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/15/2018-05-15-Pixel/">
-                            Pixel
+                        <a class="link-unstyled" href="/2018/05/15/2018-05-15-Sampling, Quantization/">
+                            Sampling, Quantization
                         </a>
                     
                 </h1>
@@ -189,50 +189,43 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h4 id="Pixel"><a href="#Pixel" class="headerlink" title="Pixel"></a>Pixel</h4><ul>
-<li>Pixel is the smallest element of an image.</li>
-<li>Each pixel correspond to any one value.<ul>
-<li>In an 8-bit gray scale image, the value of the pixel between 0 and 255</li>
-<li>each value denotes the intensity of light at that point of the image.</li>
+                    <ul>
+<li><p>Conversion of analog signal to digital signal</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sampling.png" alt="img"></p>
+<ul>
+<li>The output of most of the image sensors is an analog signal, </li>
+<li>and we can not apply digital processing on it </li>
+<li>because we can not store it. </li>
+<li>We can not store it because it requires infinite memory </li>
+<li>to store a signal that can have infinite values.</li>
+<li>So we have to convert an analog signal into a digital signal.</li>
+<li>To create an image which is digital, </li>
+<li>we need to covert continuous data into digital form. </li>
+<li>There are two steps in which it is done.<ul>
+<li>Sampling</li>
+<li>Quantization</li>
 </ul>
 </li>
 </ul>
-<h4 id="Calculation-of-total-number-of-pixels"><a href="#Calculation-of-total-number-of-pixels" class="headerlink" title="Calculation of total number of pixels"></a>Calculation of total number of pixels</h4><ul>
-<li>We have define an image as a two dimensional signal or matrix.</li>
-<li>Total number of pixels<ul>
-<li>number of rows ( X ) number of columns</li>
-<li>the number of (x,y) coordinate pairs</li>
-</ul>
+</li>
+<li><p>Sampling</p>
+<ul>
+<li><p>It is done on X axis.</p>
+</li>
+<li><p>It is the conversion of x axis (infinite values) to digital values.</p>
 </li>
 </ul>
-<h4 id="Gray-Scale"><a href="#Gray-Scale" class="headerlink" title="Gray Scale"></a>Gray Scale</h4><ul>
-<li>The value of the pixel at any point denotes the intensity of image at that location, and that is also known as gray level.</li>
+</li>
+<li><p>Quantization</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/quantization.png" alt="img"></p>
+<ul>
+<li>It is done on Y axis.</li>
+<li>digitizing the amplitudes is known as Quantization</li>
+<li>In the figure shown above, </li>
+<li>these vertically ranging values have been quantized into 5 different levels or partitions. </li>
+<li>Ranging from 0 black to 4 white. </li>
 </ul>
-<h4 id="Pixel-value-0"><a href="#Pixel-value-0" class="headerlink" title="Pixel value (0)"></a>Pixel value (0)</h4><ul>
-<li><p>each pixel can have only one value and each value denotes the intensity of light at that point of the image.</p>
 </li>
-<li><p>The value 0 means absence of light. </p>
-</li>
-<li><p>It means that 0 denotes dark, </p>
-</li>
-<li><p>and it further means that when ever a pixel has a value of 0, it means at that point, black color would be formed.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pixelTable.png" alt="img"></p>
-</li>
-<li><p>this image matrix has all filled up with 0. </p>
-</li>
-<li><p>All the pixels have a value of 0. </p>
-</li>
-<li><p>an image would be formed with 9 pixels, </p>
-</li>
-<li><p>and that image would have a dimension of 3 rows and 3 column </p>
-</li>
-<li><p>and most importantly that image would be black.</p>
-</li>
-<li><p>Because all the pixels in the image had a value of 0.</p>
-</li>
-</ul>
-<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><ul>
-<li><a href="https://www.tutorialspoint.com/dip/concept_of_pixel.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/dip/concept_of_pixel.htm</a></li>
 </ul>
 
                     
@@ -241,7 +234,7 @@
                     
                     
                         <p>
-                            <a href="/2018/05/15/2018-05-15-Pixel/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/15/2018-05-15-Sampling, Quantization/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

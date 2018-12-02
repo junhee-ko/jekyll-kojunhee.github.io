@@ -426,6 +426,61 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2017/09/27/2017-09-27-[express] passort/">
+                            express-passport
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2017-09-27T00:00:00+09:00">
+	
+		    Sep 27, 2017
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/node/">node</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h3 id="session-등록"><a href="#session-등록" class="headerlink" title="session 등록"></a>session 등록</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(session(&#123;secret:&apos;MySecret&apos;, resave: false, saveUninitialized:true&#125;));</span><br></pre></td></tr></table></figure>
+<h3 id="passport가-등록한-session-사용하도록-등록"><a href="#passport가-등록한-session-사용하도록-등록" class="headerlink" title="passport가 등록한 session 사용하도록 등록"></a>passport가 등록한 session 사용하도록 등록</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.use(passport.initialize());</span><br><span class="line">app.use(passport.session());</span><br></pre></td></tr></table></figure>
+<h3 id="userSchema의-method에-authenticate-등록"><a href="#userSchema의-method에-authenticate-등록" class="headerlink" title="userSchema의 method에 authenticate 등록"></a>userSchema의 method에 authenticate 등록</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">userSchema.methods.authenticate = function (password) &#123;</span><br><span class="line">  var user = this;</span><br><span class="line">  return password==user.password ?  true : false;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/login으로 들어오면 passport.authenticate middle ware가 실행이 돼</span><br><span class="line">그럼 middleware의 local-login 에 의해서 </span><br><span class="line">passport에 등록된 Local Strategy 라는 객체의 인자인 콜백함수가 실행이 됨</span><br><span class="line"></span><br><span class="line">router.post(&apos;/login&apos;, passport.authenticate(&apos;local-login&apos;, &#123;</span><br><span class="line">  successRedirect : &apos;/posts&apos;,</span><br><span class="line">  failureRedirect : &apos;/login&apos;,</span><br><span class="line">  failureFlash : true</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<h3 id="id-pwd-확인"><a href="#id-pwd-확인" class="headerlink" title="id, pwd 확인"></a>id, pwd 확인</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">passport.use(&apos;local-login&apos;,</span><br><span class="line">  new LocalStrategy(&#123;</span><br><span class="line">      usernameField : &apos;email&apos;,</span><br><span class="line">      passwordField : &apos;password&apos;,</span><br><span class="line">      passReqToCallback : true</span><br><span class="line">    &#125;,</span><br><span class="line">    function(req, email, password, done) &#123;</span><br><span class="line">      User.findOne(&#123; &apos;email&apos; :  email &#125;, function(err, user) &#123;</span><br><span class="line">        if (err) return done(err);</span><br><span class="line">        if (!user)&#123;</span><br><span class="line">            req.flash(&quot;email&quot;, req.body.email);</span><br><span class="line">            return done(null, false, req.flash(&apos;loginError&apos;, &apos;No user found.&apos;));</span><br><span class="line">        &#125;</span><br><span class="line">        if (!user.authenticate(password))&#123;</span><br><span class="line">            req.flash(&quot;email&quot;, req.body.email);</span><br><span class="line">            return done(null, false, req.flash(&apos;loginError&apos;, &apos;Password does not Match.&apos;));</span><br><span class="line">        &#125;</span><br><span class="line">        return done(null, user);	//login 끝났는데 false가 아니면 login한 사용자에 대한 객체로 사용</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="passport-serializeUser-에서-등록한-call-back-함수-실행"><a href="#passport-serializeUser-에서-등록한-call-back-함수-실행" class="headerlink" title="passport.serializeUser 에서 등록한 call back 함수 실행"></a>passport.serializeUser 에서 등록한 call back 함수 실행</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">passport.serializeUser(function(user, done) &#123;</span><br><span class="line">  done(null, user.id);  //현재 접근하고 있는 사용자의 user.id(db의 고유 아이디)가 session에 저장.</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="다시-사용자가-웹에-방문하면-passport-deserializeUser에-등록된-call-back-함수-실행"><a href="#다시-사용자가-웹에-방문하면-passport-deserializeUser에-등록된-call-back-함수-실행" class="headerlink" title="다시 사용자가 웹에 방문하면 passport.deserializeUser에 등록된 call back 함수 실행"></a>다시 사용자가 웹에 방문하면 passport.deserializeUser에 등록된 call back 함수 실행</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">passport.deserializeUser(function(id, done) &#123;</span><br><span class="line">  User.findById(id, function(err, user) &#123;</span><br><span class="line">    done(err, user);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2017/09/27/2017-09-27-[express] passort/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2017/09/27/2017-09-27-스티커/">
                             9465:스티커
                         </a>
@@ -490,61 +545,6 @@
                     
                         <p>
                             <a href="/2017/09/27/2017-09-27-스티커/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2017/09/27/2017-09-27-[express] passort/">
-                            express-passport
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2017-09-27T00:00:00+09:00">
-	
-		    Sep 27, 2017
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/node/">node</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h3 id="session-등록"><a href="#session-등록" class="headerlink" title="session 등록"></a>session 등록</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(session(&#123;secret:&apos;MySecret&apos;, resave: false, saveUninitialized:true&#125;));</span><br></pre></td></tr></table></figure>
-<h3 id="passport가-등록한-session-사용하도록-등록"><a href="#passport가-등록한-session-사용하도록-등록" class="headerlink" title="passport가 등록한 session 사용하도록 등록"></a>passport가 등록한 session 사용하도록 등록</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.use(passport.initialize());</span><br><span class="line">app.use(passport.session());</span><br></pre></td></tr></table></figure>
-<h3 id="userSchema의-method에-authenticate-등록"><a href="#userSchema의-method에-authenticate-등록" class="headerlink" title="userSchema의 method에 authenticate 등록"></a>userSchema의 method에 authenticate 등록</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">userSchema.methods.authenticate = function (password) &#123;</span><br><span class="line">  var user = this;</span><br><span class="line">  return password==user.password ?  true : false;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/login으로 들어오면 passport.authenticate middle ware가 실행이 돼</span><br><span class="line">그럼 middleware의 local-login 에 의해서 </span><br><span class="line">passport에 등록된 Local Strategy 라는 객체의 인자인 콜백함수가 실행이 됨</span><br><span class="line"></span><br><span class="line">router.post(&apos;/login&apos;, passport.authenticate(&apos;local-login&apos;, &#123;</span><br><span class="line">  successRedirect : &apos;/posts&apos;,</span><br><span class="line">  failureRedirect : &apos;/login&apos;,</span><br><span class="line">  failureFlash : true</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
-<h3 id="id-pwd-확인"><a href="#id-pwd-확인" class="headerlink" title="id, pwd 확인"></a>id, pwd 확인</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">passport.use(&apos;local-login&apos;,</span><br><span class="line">  new LocalStrategy(&#123;</span><br><span class="line">      usernameField : &apos;email&apos;,</span><br><span class="line">      passwordField : &apos;password&apos;,</span><br><span class="line">      passReqToCallback : true</span><br><span class="line">    &#125;,</span><br><span class="line">    function(req, email, password, done) &#123;</span><br><span class="line">      User.findOne(&#123; &apos;email&apos; :  email &#125;, function(err, user) &#123;</span><br><span class="line">        if (err) return done(err);</span><br><span class="line">        if (!user)&#123;</span><br><span class="line">            req.flash(&quot;email&quot;, req.body.email);</span><br><span class="line">            return done(null, false, req.flash(&apos;loginError&apos;, &apos;No user found.&apos;));</span><br><span class="line">        &#125;</span><br><span class="line">        if (!user.authenticate(password))&#123;</span><br><span class="line">            req.flash(&quot;email&quot;, req.body.email);</span><br><span class="line">            return done(null, false, req.flash(&apos;loginError&apos;, &apos;Password does not Match.&apos;));</span><br><span class="line">        &#125;</span><br><span class="line">        return done(null, user);	//login 끝났는데 false가 아니면 login한 사용자에 대한 객체로 사용</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h3 id="passport-serializeUser-에서-등록한-call-back-함수-실행"><a href="#passport-serializeUser-에서-등록한-call-back-함수-실행" class="headerlink" title="passport.serializeUser 에서 등록한 call back 함수 실행"></a>passport.serializeUser 에서 등록한 call back 함수 실행</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">passport.serializeUser(function(user, done) &#123;</span><br><span class="line">  done(null, user.id);  //현재 접근하고 있는 사용자의 user.id(db의 고유 아이디)가 session에 저장.</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="다시-사용자가-웹에-방문하면-passport-deserializeUser에-등록된-call-back-함수-실행"><a href="#다시-사용자가-웹에-방문하면-passport-deserializeUser에-등록된-call-back-함수-실행" class="headerlink" title="다시 사용자가 웹에 방문하면 passport.deserializeUser에 등록된 call back 함수 실행"></a>다시 사용자가 웹에 방문하면 passport.deserializeUser에 등록된 call back 함수 실행</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">passport.deserializeUser(function(id, done) &#123;</span><br><span class="line">  User.findById(id, function(err, user) &#123;</span><br><span class="line">    done(err, user);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2017/09/27/2017-09-27-[express] passort/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

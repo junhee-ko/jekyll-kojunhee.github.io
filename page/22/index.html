@@ -165,6 +165,133 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/02/06/2018-02-06-옵셔널/">
+                            옵셔널
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-02-06T00:00:00+09:00">
+	
+		    Feb 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/ios/">ios</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
+<ul>
+<li><p>You use optionals in situations where a value may be absen</p>
+</li>
+<li><p>An optional represents two possibilities: </p>
+<ul>
+<li>Either there is a value, and you can unwrap the optional to access that value, </li>
+<li>or there isn’t a value at all.</li>
+</ul>
+</li>
+<li><p>The example below uses the initializer to try to convert a String into an Int:</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let possibleNumber = &quot;123&quot;</span><br><span class="line">let convertedNumber = Int(possibleNumber)</span><br><span class="line">// convertedNumber is inferred to be of type &quot;Int?&quot;, or &quot;optional Int&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Because the initializer might fail, it returns an optional Int, rather than an Int. </li>
+<li>An optional Int is written as Int?, not Int. </li>
+<li>The question mark indicates that the value it contains is optional, </li>
+<li>meaning that it might contain some Int value, </li>
+<li>or it might contain no value at all. </li>
+<li>(It can’t contain anything else, such as a Bool value or a String value. It’s either an Int, or it’s nothing at all.)</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/02/06/2018-02-06-옵셔널/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/02/06/2018-02-06-구조체,클래스/">
+                            구조체,클래스
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-02-06T00:00:00+09:00">
+	
+		    Feb 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/ios/">ios</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
+<ul>
+<li>Unlike other programming languages, </li>
+<li>Swift does not require you to create separate interface and implementation files for custom classes and structures. </li>
+<li>In Swift, you define a class or a structure in a single file, </li>
+<li>and the external interface to that class or structure is automatically made available for other code to use.</li>
+<li>example of a structure definition and a class definition:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct Resolution &#123;</span><br><span class="line">    var width = 0</span><br><span class="line">    var height = 0</span><br><span class="line">&#125;</span><br><span class="line">class VideoMode &#123;</span><br><span class="line">    var resolution = Resolution()</span><br><span class="line">    var interlaced = false</span><br><span class="line">    var frameRate = 0.0</span><br><span class="line">    var name: String?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/02/06/2018-02-06-구조체,클래스/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/02/06/2018-02-09-class,struct/">
                             class,struct
                         </a>
@@ -270,133 +397,6 @@
                     
                         <p>
                             <a href="/2018/02/06/2018-02-09-class,struct/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/02/06/2018-02-06-구조체,클래스/">
-                            구조체,클래스
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-02-06T00:00:00+09:00">
-	
-		    Feb 06, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/ios/">ios</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
-<ul>
-<li>Unlike other programming languages, </li>
-<li>Swift does not require you to create separate interface and implementation files for custom classes and structures. </li>
-<li>In Swift, you define a class or a structure in a single file, </li>
-<li>and the external interface to that class or structure is automatically made available for other code to use.</li>
-<li>example of a structure definition and a class definition:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct Resolution &#123;</span><br><span class="line">    var width = 0</span><br><span class="line">    var height = 0</span><br><span class="line">&#125;</span><br><span class="line">class VideoMode &#123;</span><br><span class="line">    var resolution = Resolution()</span><br><span class="line">    var interlaced = false</span><br><span class="line">    var frameRate = 0.0</span><br><span class="line">    var name: String?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/02/06/2018-02-06-구조체,클래스/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/02/06/2018-02-06-옵셔널/">
-                            옵셔널
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-02-06T00:00:00+09:00">
-	
-		    Feb 06, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/ios/">ios</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
-<ul>
-<li><p>You use optionals in situations where a value may be absen</p>
-</li>
-<li><p>An optional represents two possibilities: </p>
-<ul>
-<li>Either there is a value, and you can unwrap the optional to access that value, </li>
-<li>or there isn’t a value at all.</li>
-</ul>
-</li>
-<li><p>The example below uses the initializer to try to convert a String into an Int:</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let possibleNumber = &quot;123&quot;</span><br><span class="line">let convertedNumber = Int(possibleNumber)</span><br><span class="line">// convertedNumber is inferred to be of type &quot;Int?&quot;, or &quot;optional Int&quot;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Because the initializer might fail, it returns an optional Int, rather than an Int. </li>
-<li>An optional Int is written as Int?, not Int. </li>
-<li>The question mark indicates that the value it contains is optional, </li>
-<li>meaning that it might contain some Int value, </li>
-<li>or it might contain no value at all. </li>
-<li>(It can’t contain anything else, such as a Bool value or a String value. It’s either an Int, or it’s nothing at all.)</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/02/06/2018-02-06-옵셔널/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -609,6 +609,73 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/01/30/2018-01-30-연산자/">
+                            연산자
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-01-30T00:00:00+09:00">
+	
+		    Jan 30, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/ios/">ios</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60</a></p>
+<ul>
+<li><p>Unary Minus Operator</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let three = 3</span><br><span class="line">let minusThree = -three       // minusThree equals -3</span><br><span class="line">let plusThree = -minusThree   // plusThree equals 3, or &quot;minus minus three&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Unary Plus Operator</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let minusSix = -6</span><br><span class="line">let alsoMinusSix = +minusSix  // alsoMinusSix equals -6</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Comparison Operators</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(1, &quot;zebra&quot;) &lt; (2, &quot;apple&quot;)   // true because 1 is less than 2; &quot;zebra&quot; and &quot;apple&quot; are not compared</span><br><span class="line">(3, &quot;apple&quot;) &lt; (3, &quot;bird&quot;)    // true because 3 is equal to 3, and &quot;apple&quot; is less than &quot;bird&quot;</span><br><span class="line">(4, &quot;dog&quot;) == (4, &quot;dog&quot;)      // true because 4 is equal to 4, and &quot;dog&quot; is equal to &quot;dog&quot;</span><br><span class="line"></span><br><span class="line">(&quot;blue&quot;, -1) &lt; (&quot;purple&quot;, 1)        // OK, evaluates to true</span><br><span class="line">(&quot;blue&quot;, false) &lt; (&quot;purple&quot;, true)  // Error because &lt; can&apos;t compare Boolean values</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Range Operators</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">for index in 1...5 &#123;</span><br><span class="line">    print(&quot;\(index) times 5 is \(index * 5)&quot;)</span><br><span class="line">&#125;</span><br><span class="line">// 1 times 5 is 5</span><br><span class="line">// 2 times 5 is 10</span><br><span class="line">// 3 times 5 is 15</span><br><span class="line">// 4 times 5 is 20</span><br><span class="line">// 5 times 5 is 25</span><br><span class="line"></span><br><span class="line">let names = [&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;]</span><br><span class="line">let count = names.count</span><br><span class="line">for i in 0..&lt;count &#123;</span><br><span class="line">    print(&quot;Person \(i + 1) is called \(names[i])&quot;)</span><br><span class="line">&#125;</span><br><span class="line">// Person 1 is called Anna</span><br><span class="line">// Person 2 is called Alex</span><br><span class="line">// Person 3 is called Brian</span><br><span class="line">// Person 4 is called Jack</span><br><span class="line"></span><br><span class="line">for name in names[2...] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Brian</span><br><span class="line">// Jack</span><br><span class="line"> </span><br><span class="line">for name in names[...2] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Anna</span><br><span class="line">// Alex</span><br><span class="line">// Brian</span><br><span class="line"></span><br><span class="line">for name in names[..&lt;2] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Anna</span><br><span class="line">// Alex</span><br><span class="line"></span><br><span class="line">let range = ...5</span><br><span class="line">range.contains(7)   // false</span><br><span class="line">range.contains(4)   // true</span><br><span class="line">range.contains(-1)  // true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/01/30/2018-01-30-연산자/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/01/30/2018-01-30-함수/">
                             함수
                         </a>
@@ -670,73 +737,6 @@
                     
                         <p>
                             <a href="/2018/01/30/2018-01-30-함수/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/01/30/2018-01-30-연산자/">
-                            연산자
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-01-30T00:00:00+09:00">
-	
-		    Jan 30, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/ios/">ios</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60</a></p>
-<ul>
-<li><p>Unary Minus Operator</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let three = 3</span><br><span class="line">let minusThree = -three       // minusThree equals -3</span><br><span class="line">let plusThree = -minusThree   // plusThree equals 3, or &quot;minus minus three&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Unary Plus Operator</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let minusSix = -6</span><br><span class="line">let alsoMinusSix = +minusSix  // alsoMinusSix equals -6</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>Comparison Operators</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(1, &quot;zebra&quot;) &lt; (2, &quot;apple&quot;)   // true because 1 is less than 2; &quot;zebra&quot; and &quot;apple&quot; are not compared</span><br><span class="line">(3, &quot;apple&quot;) &lt; (3, &quot;bird&quot;)    // true because 3 is equal to 3, and &quot;apple&quot; is less than &quot;bird&quot;</span><br><span class="line">(4, &quot;dog&quot;) == (4, &quot;dog&quot;)      // true because 4 is equal to 4, and &quot;dog&quot; is equal to &quot;dog&quot;</span><br><span class="line"></span><br><span class="line">(&quot;blue&quot;, -1) &lt; (&quot;purple&quot;, 1)        // OK, evaluates to true</span><br><span class="line">(&quot;blue&quot;, false) &lt; (&quot;purple&quot;, true)  // Error because &lt; can&apos;t compare Boolean values</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>Range Operators</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">for index in 1...5 &#123;</span><br><span class="line">    print(&quot;\(index) times 5 is \(index * 5)&quot;)</span><br><span class="line">&#125;</span><br><span class="line">// 1 times 5 is 5</span><br><span class="line">// 2 times 5 is 10</span><br><span class="line">// 3 times 5 is 15</span><br><span class="line">// 4 times 5 is 20</span><br><span class="line">// 5 times 5 is 25</span><br><span class="line"></span><br><span class="line">let names = [&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;]</span><br><span class="line">let count = names.count</span><br><span class="line">for i in 0..&lt;count &#123;</span><br><span class="line">    print(&quot;Person \(i + 1) is called \(names[i])&quot;)</span><br><span class="line">&#125;</span><br><span class="line">// Person 1 is called Anna</span><br><span class="line">// Person 2 is called Alex</span><br><span class="line">// Person 3 is called Brian</span><br><span class="line">// Person 4 is called Jack</span><br><span class="line"></span><br><span class="line">for name in names[2...] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Brian</span><br><span class="line">// Jack</span><br><span class="line"> </span><br><span class="line">for name in names[...2] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Anna</span><br><span class="line">// Alex</span><br><span class="line">// Brian</span><br><span class="line"></span><br><span class="line">for name in names[..&lt;2] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Anna</span><br><span class="line">// Alex</span><br><span class="line"></span><br><span class="line">let range = ...5</span><br><span class="line">range.contains(7)   // false</span><br><span class="line">range.contains(4)   // true</span><br><span class="line">range.contains(-1)  // true</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/01/30/2018-01-30-연산자/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

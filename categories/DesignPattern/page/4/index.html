@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/13/2018-05-13-Factory Method Pattern01/">
-                            Factory Method Pattern01
+                        <a class="link-unstyled" href="/2018/05/13/2018-05-13-Factory Method Pattern02/">
+                            Factory Method Pattern02
                         </a>
                     
                 </h1>
@@ -189,27 +189,47 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The Factory Method Pattern defines an interface for creating an object, </p>
-<p>but lets subclasses decide which class to instantiate. </p>
-<p>Factory Method lets a class defer instantiation to subclasses. </p>
-<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/factoryMethod01.png" alt="img"></p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p> <img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/factoryMethod02.png" alt="img"></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm13.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm04.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm13.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm05.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm06.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm07.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm08.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm09.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm10.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm11.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm12.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm14.png" alt="img"></p>
-<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fm15.png" alt="img"></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
+                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>객체를 생성하는 코드를 별도의 클래스/메소드로 분리함으로써 객체 생성 방식의 변화에 대비하는데 유용하다.</p>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/factorymethodpa01.png" alt="img"></p>
+<ul>
+<li>Product <ul>
+<li>펙토리 메서드로 생설될 객체의 공통 인터페이스</li>
+</ul>
+</li>
+<li>ConcreteProduct<ul>
+<li>구체적으로 객체가 생성되는 클래스</li>
+</ul>
+</li>
+<li>Creator<ul>
+<li>팩토리 메서드를 갖는 클래스</li>
+</ul>
+</li>
+<li>ConcreteCreator<ul>
+<li>팩토리 매서드를 구현하는 클래스</li>
+<li>ConcreteProduct 객체를 생성 </li>
+</ul>
+</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/factorymethodpa02.png" alt="img"></p>
+<ul>
+<li>ElevatorScheduler interface<ul>
+<li>Prudct</li>
+</ul>
+</li>
+<li>ResponseTimeScheduler, ThroughputScheduler<ul>
+<li>ConcretePrudct</li>
+</ul>
+</li>
+<li>ElevatorManger<ul>
+<li>Creator</li>
+</ul>
+</li>
+<li>ElevatorMangerWithThroughputScheduling, ElevatorMangerWithDynamicScheduling, ElevatorManagerWithResponseTimeScheduling<ul>
+<li>ConcreteCreator</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Java 객체 지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;</p>
 
                     
                         
@@ -217,7 +237,7 @@
                     
                     
                         <p>
-                            <a href="/2018/05/13/2018-05-13-Factory Method Pattern01/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/13/2018-05-13-Factory Method Pattern02/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -637,76 +657,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/04/23/2018-04-23-Adapter Pattern03/">
-                            Adapter Pattern03
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-04-23T00:00:00+09:00">
-	
-		    Apr 23, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <ul>
-<li>설명<ul>
-<li>Enumerator 인터페이스를 사용하는 구형 코드를 사용해야 하는 경우가 종종 있지만,</li>
-<li>새로 만드는 코드에서는 Iterator만 사용할 계획</li>
-</ul>
-</li>
-<li>Class Diagram</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/adpp01.png" alt="img"></p>
-<ul>
-<li><p>Code</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/adpp02.png" alt="img"></p>
-</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/adpp03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/adpp04.png" alt="img"></p>
-<ul>
-<li>Reference<ul>
-<li>Head First Deisgn Patterns</li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/04/23/2018-04-23-Adapter Pattern03/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
                         <a class="link-unstyled" href="/2018/04/23/2018-04-23-OCP02/">
                             OCP02
                         </a>
@@ -763,6 +713,76 @@
                     
                         <p>
                             <a href="/2018/04/23/2018-04-23-OCP02/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/04/23/2018-04-23-Adapter Pattern03/">
+                            Adapter Pattern03
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-04-23T00:00:00+09:00">
+	
+		    Apr 23, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <ul>
+<li>설명<ul>
+<li>Enumerator 인터페이스를 사용하는 구형 코드를 사용해야 하는 경우가 종종 있지만,</li>
+<li>새로 만드는 코드에서는 Iterator만 사용할 계획</li>
+</ul>
+</li>
+<li>Class Diagram</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/adpp01.png" alt="img"></p>
+<ul>
+<li><p>Code</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/adpp02.png" alt="img"></p>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/adpp03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/adpp04.png" alt="img"></p>
+<ul>
+<li>Reference<ul>
+<li>Head First Deisgn Patterns</li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/04/23/2018-04-23-Adapter Pattern03/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

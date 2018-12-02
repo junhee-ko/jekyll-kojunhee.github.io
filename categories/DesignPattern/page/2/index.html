@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Command Pattern03/">
-                            Command Pattern03
+                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Decorator Pattern02/">
+                            Decorator Pattern02
                         </a>
                     
                 </h1>
@@ -189,43 +189,47 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/com01.png" alt="img"> </p>
+                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>기본 기능에 추가할 수 있는 많은 종류의 부가 기능에서 파생되는 다양한 조합을 동적으로 구현할 수 있는 패턴이다.</p>
+<h2 id="Class-diagram"><a href="#Class-diagram" class="headerlink" title="Class diagram"></a>Class diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dec01.png" alt="img"> </p>
 <ul>
-<li>Command<ul>
-<li>싱핼됭 기능에 대한 인터페이스. 실행될 기능을 execute method로 선언</li>
+<li>Componet<ul>
+<li>기본 기능을 뜻하는 ConcreteComponent 와 추가 기능을 뜻하는 Decorator의 공통 기능을 정의</li>
+<li>즉, 클라이언트는 Component를 통해 실제 객체를 사용</li>
 </ul>
 </li>
-<li>ConcreteCommand<ul>
-<li>실제로 실행되는 기능을 구현.</li>
-<li>즉, Command라는 인터페이스를 구현</li>
+<li>ConcreteComponent<ul>
+<li>기본 기능을 구현하는 클래스</li>
 </ul>
 </li>
-<li>Invoker <ul>
-<li>기능의 실행을 요청하는 호출자 클래스</li>
+<li>Decorator<ul>
+<li>많은 수가 존재하는 구체적인 Decorator의 공통 기능을 제공</li>
 </ul>
 </li>
-<li>Receiver<ul>
-<li>ConcreteCommand 에서 execute method를 구현할 때 필요한 클래스</li>
-<li>즉, Concrete Command 의 기능을 실행하기 위해 사용하는 수신자 클래스</li>
+<li>ConcreteDecoratorA, ConcreteDecoratorB<ul>
+<li>Decorator의 하위 클래스로 기본 기능에 추가되는 개별적이 기능</li>
 </ul>
 </li>
 </ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/com02.png" alt="img"> </p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dec02.png" alt="img"></p>
 <ul>
-<li>Button<ul>
-<li>Invoker</li>
+<li>Display<ul>
+<li>Component</li>
 </ul>
 </li>
-<li>LampOnCommand, LampOffCommand<ul>
-<li>ConcreteCommand</li>
+<li>RoadDisplay<ul>
+<li>ConcreteComponent</li>
 </ul>
 </li>
-<li>Lamp<ul>
-<li>Receiver</li>
+<li>DisplayDecorator<ul>
+<li>Decorator</li>
+</ul>
+</li>
+<li>LaneDecorator, TrafficDecorator, CrossingDecorator<ul>
+<li>ConcreteDecorator</li>
 </ul>
 </li>
 </ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Java 객체지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Java 객체 지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;</p>
 
                     
                         
@@ -233,153 +237,7 @@
                     
                     
                         <p>
-                            <a href="/2018/06/06/2018-06-11-Command Pattern03/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Command Pattern02/">
-                            Command Pattern02
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-06-06T00:00:00+09:00">
-	
-		    Jun 06, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command01.png" alt="img"> </p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><ul>
-<li>Create a command interface.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command02.png" alt="img"> </p>
-<ul>
-<li>Create a request class.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command03.png" alt="img"> </p>
-<ul>
-<li>Create concrete classes implementing the <em>Order</em> interface.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command04.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command05.png" alt="img"> </p>
-<ul>
-<li>Create command invoker class.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command06.png" alt="img"> </p>
-<ul>
-<li>Use the Broker class to take and execute commands.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command07.png" alt="img"> </p>
-<ul>
-<li>Result</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command08.png" alt="img"> </p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.tutorialspoint.com/design_pattern/command_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/command_pattern.htm</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/06/06/2018-06-11-Command Pattern02/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Command Pattern01/">
-                            Command Pattern01
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-06-06T00:00:00+09:00">
-	
-		    Jun 06, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The Command Pattern encapsulates a request as an object, </p>
-<p>thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.</p>
-<h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><ul>
-<li>Let’s step through this. We know that a command object encapsulates a request by binding together a set of actions on a specific receiver. To achieve this, it packages the actions and the receiver up into an object that exposes just one method, execute(). When called, execute() causes the actions to be invoked on the receiver. From the outside, no other objects really know what actions get performed on what receiver; they just know that if they call the execute() method, their request will be serviced. </li>
-<li><p>We’ve also seen a couple examples of parameterizing an object with a command. Back at the diner, the Waitress was parameterized with multiple orders throughout the day. In the simple remote control, we first loaded the button slot with a “light on” command and then later replaced it with a “garage door open” command. Like the Waitress, your remote slot didn’t care what command object it had, as long as it implemented the Command interface. </p>
-</li>
-<li><p>What we haven’t encountered yet is using commands to implement queues and logs and support undo operations. Don’t worry, those are pretty straightforward extensions of the basic Command Pattern and we will get to them soon. We can also easily support what’s known as the Meta Command Pattern once we have the basics in place. The Meta Command Pattern allows you to create macros of commands so that you can execute multiple commands at once.  </p>
-</li>
-</ul>
-<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern01.png" alt="img"> </p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern02.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern03.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern04.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern05.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern06.png" alt="img"> </p>
-<h2 id="Undo"><a href="#Undo" class="headerlink" title="Undo"></a>Undo</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern07.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern08.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern09.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern10.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern11.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern12.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern13.png" alt="img"> </p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/06/06/2018-06-11-Command Pattern01/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/06/06/2018-06-11-Decorator Pattern02/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -464,6 +322,67 @@
                     
                         <p>
                             <a href="/2018/06/06/2018-06-06-Strategy Pattern03/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Decorator Pattern01/">
+                            Decorator Pattern01
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-06-06T00:00:00+09:00">
+	
+		    Jun 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The Decorator Pattern attaches additional responsibilities to an object dynamically. </p>
+<p>Decorators provide a flexible alternative to subclassing for extending functionality. </p>
+<h2 id="Class-diagram"><a href="#Class-diagram" class="headerlink" title="Class diagram"></a>Class diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco01.png" alt="img"> </p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco09.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco02.png" alt="img"> </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco04.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco06.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco07.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco08.png" alt="img"></p>
+<h2 id="Real-World-Decorators-Java-I-O"><a href="#Real-World-Decorators-Java-I-O" class="headerlink" title="Real World Decorators: Java I/O"></a>Real World Decorators: Java I/O</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco10.png" alt="img"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/06/06/2018-06-11-Decorator Pattern01/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -602,6 +521,81 @@
                     
                         <p>
                             <a href="/2018/06/06/2018-06-06-Strategy Pattern01/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Command Pattern02/">
+                            Command Pattern02
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-06-06T00:00:00+09:00">
+	
+		    Jun 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command01.png" alt="img"> </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><ul>
+<li>Create a command interface.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command02.png" alt="img"> </p>
+<ul>
+<li>Create a request class.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command03.png" alt="img"> </p>
+<ul>
+<li>Create concrete classes implementing the <em>Order</em> interface.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command04.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command05.png" alt="img"> </p>
+<ul>
+<li>Create command invoker class.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command06.png" alt="img"> </p>
+<ul>
+<li>Use the Broker class to take and execute commands.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command07.png" alt="img"> </p>
+<ul>
+<li>Result</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/command08.png" alt="img"> </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.tutorialspoint.com/design_pattern/command_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/command_pattern.htm</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/06/06/2018-06-11-Command Pattern02/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

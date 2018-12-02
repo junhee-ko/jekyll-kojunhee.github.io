@@ -327,8 +327,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-Bridge Pattern/">
-                            Bridge Pattern
+                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-Composite Pattern/">
+                            Composite Pattern
                         </a>
                     
                 </h1>
@@ -353,36 +353,49 @@
                     <ul>
 <li><p>Intent</p>
 <ul>
-<li>decouple an abstraction from its implementation so that the two can vary independently.</li>
-<li>추상을 구현으로부터 분리하여, </li>
-<li>독립적으로 변하게 함</li>
-<li>여기에서 구현의 의미<ul>
-<li>추상을 구현한 concrete class X</li>
-<li>궂은 일을 하는 로직 / 코드</li>
+<li>Compose objects into tree structures to represent part-whole hierarchies.</li>
+<li>Lets clients treat individual objects and compositions of objects uniformly.</li>
+<li>Part-whole Hierarchy를 표현하기 위하여 객체들을 트리 구조로 구성</li>
+<li>Client가 개개의 객체와 그룹 객체를 동일하게 취급할 수 있게 만든다<ul>
+<li>Clinet는 모든 객체들을 컴포넌트 객체로 간주하여 이용</li>
 </ul>
 </li>
-<li>구현 뿐만 아니라 추상화된 부분까지 변경시켜야 하는 경우에는 bridge pattern을 사용</li>
 </ul>
+</li>
+<li><p>자식 관리 오퍼레이션</p>
+<ul>
+<li><p>add(), remove(), getChild()</p>
+<ul>
+<li><p>component와 composite 에 선언 : client가 편하다. 개체과 그룹에 관계없이 부를 수 있다</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compo01.png" alt="img"></p>
+</li>
+<li><p>composite 에 선언 : client가 불편하다. 개체인지 그룹인지 구별을 해야한다</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compo02.png" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><p>remove()</p>
+<ul>
+<li>자식을 삭제하는 책임은 composite 객체에 주는것이 가장 좋다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Implementation</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compositeUML.png" alt="img"></p>
 </li>
 </ul>
 <ul>
-<li><p>Class Diagram</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridge.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridgee.png" alt="img"></p>
-</li>
+<li>EX )</li>
 </ul>
-<ul>
-<li>Code</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b04.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b05.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b06.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/device.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/computer.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/client.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/body.png" alt="img"></p>
 <ul>
 <li>Reference<ul>
-<li><a href="https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm</a></li>
+<li><a href="http://www.oodesign.com/composite-pattern.html" target="_blank" rel="noopener">http://www.oodesign.com/composite-pattern.html</a></li>
+<li>Java 객체지향 디자인 패턴 (정인상, 채홍석 지음)</li>
 </ul>
 </li>
 </ul>
@@ -393,7 +406,7 @@
                     
                     
                         <p>
-                            <a href="/2018/04/09/2018-04-09-Bridge Pattern/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/04/09/2018-04-09-Composite Pattern/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -664,6 +677,90 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-Bridge Pattern/">
+                            Bridge Pattern
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-04-09T00:00:00+09:00">
+	
+		    Apr 09, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <ul>
+<li><p>Intent</p>
+<ul>
+<li>decouple an abstraction from its implementation so that the two can vary independently.</li>
+<li>추상을 구현으로부터 분리하여, </li>
+<li>독립적으로 변하게 함</li>
+<li>여기에서 구현의 의미<ul>
+<li>추상을 구현한 concrete class X</li>
+<li>궂은 일을 하는 로직 / 코드</li>
+</ul>
+</li>
+<li>구현 뿐만 아니라 추상화된 부분까지 변경시켜야 하는 경우에는 bridge pattern을 사용</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Class Diagram</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridge.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridgee.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li>Code</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b06.png" alt="img"></p>
+<ul>
+<li>Reference<ul>
+<li><a href="https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm</a></li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/04/09/2018-04-09-Bridge Pattern/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/04/09/2018-04-09-ISP/">
                             ISP
                         </a>
@@ -845,103 +942,6 @@
                     
                         <p>
                             <a href="/2018/04/09/2018-04-09-DIP/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-Composite Pattern/">
-                            Composite Pattern
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-04-09T00:00:00+09:00">
-	
-		    Apr 09, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <ul>
-<li><p>Intent</p>
-<ul>
-<li>Compose objects into tree structures to represent part-whole hierarchies.</li>
-<li>Lets clients treat individual objects and compositions of objects uniformly.</li>
-<li>Part-whole Hierarchy를 표현하기 위하여 객체들을 트리 구조로 구성</li>
-<li>Client가 개개의 객체와 그룹 객체를 동일하게 취급할 수 있게 만든다<ul>
-<li>Clinet는 모든 객체들을 컴포넌트 객체로 간주하여 이용</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>자식 관리 오퍼레이션</p>
-<ul>
-<li><p>add(), remove(), getChild()</p>
-<ul>
-<li><p>component와 composite 에 선언 : client가 편하다. 개체과 그룹에 관계없이 부를 수 있다</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compo01.png" alt="img"></p>
-</li>
-<li><p>composite 에 선언 : client가 불편하다. 개체인지 그룹인지 구별을 해야한다</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compo02.png" alt="img"></p>
-</li>
-</ul>
-</li>
-<li><p>remove()</p>
-<ul>
-<li>자식을 삭제하는 책임은 composite 객체에 주는것이 가장 좋다</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Implementation</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compositeUML.png" alt="img"></p>
-</li>
-</ul>
-<ul>
-<li>EX )</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/device.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/computer.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/client.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/body.png" alt="img"></p>
-<ul>
-<li>Reference<ul>
-<li><a href="http://www.oodesign.com/composite-pattern.html" target="_blank" rel="noopener">http://www.oodesign.com/composite-pattern.html</a></li>
-<li>Java 객체지향 디자인 패턴 (정인상, 채홍석 지음)</li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/04/09/2018-04-09-Composite Pattern/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

@@ -771,8 +771,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/08/2018-05-08-Database/">
-                            Database
+                        <a class="link-unstyled" href="/2018/05/08/2018-05-08-JDBC/">
+                            JDBC
                         </a>
                     
                 </h1>
@@ -795,61 +795,52 @@
             
                 <div class="postShorten-content">
                     <ul>
-<li><p>데이터베이스와 데이터베이스 관리 시스템</p>
+<li><p>JDBC</p>
 <ul>
-<li>어린이가 가지고 있는 책(정보)들을 데이터베이스라고 한다면, </li>
-<li>그 책을 관리해주는 엄마는 데이터베이스 관리 시스템이라고 말할 수 있습니다.</li>
+<li>자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약</li>
+<li>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API</li>
+<li>SQL과 프로그래밍 언어의 통합 접근 중 한 형태</li>
+<li>JAVA는 표준 인터페이스인 JDBC API를 제공</li>
+<li>데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.</li>
 </ul>
 </li>
-<li><p>데이터베이스</p>
+<li><p>JDBC를 이용한 프로그래밍 방법</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/jdbc.png" alt="img"></p>
 <ul>
-<li><p>데이터의 집합 (a Set of Data)</p>
+<li><p>import java.sql.*;</p>
 </li>
-<li><p>여러 응용 시스템(프로그램)들의 통합된 정보들을 저장하여 운영할 수 있는 공용(share) 데이터의 집합</p>
-</li>
-<li><p>효율적으로 저장, 검색, 갱신할 수 있도록 데이터 집합들끼리 연관시키고 조직화되어야 한다.</p>
-</li>
-<li><p>특성</p>
+<li><p>드라이버를 로드 한다.</p>
 <ul>
-<li><p>실시간 접근성(Real-time Accessability)</p>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName( <span class="string">"com.mysql.jdbc.Driver"</span> );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Connection 객체를 생성한다.</p>
 <ul>
-<li>사용자의 요구를 즉시 처리할 수 있다.</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String dburl  = <span class="string">"jdbc:mysql://localhost/dbName"</span>;</span><br><span class="line"></span><br><span class="line">Connection con =  DriverManager.getConnection ( dburl, ID, PWD );</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li><p>계속적인 변화(Continuous Evolution)</p>
+<li><p>Statement 객체를 생성 및 질의 수행</p>
 <ul>
-<li>정확한 값을 유지하려고 삽입·삭제·수정 작업 등을 이용해 데이터를 지속적으로 갱신할 수 있다.</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Statement stmt = con.createStatement(); </span><br><span class="line">ResultSet rs = stmt.executeQuery(<span class="string">"select no from user"</span> );</span><br><span class="line"></span><br><span class="line">stmt.execute(“query”);             <span class="comment">//any SQL</span></span><br><span class="line">stmt.executeQuery(“query”);     <span class="comment">//SELECT</span></span><br><span class="line">stmt.executeUpdate(“query”);   <span class="comment">//INSERT, UPDATE, DELETE</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li><p>동시 공유성(Concurrent Sharing)</p>
+<li><p>SQL문에 결과물이 있다면 ResultSet 객체를 생성한다.</p>
 <ul>
-<li>사용자마다 서로 다른 목적으로 사용하므로 동시에 여러 사람이 동일한 데이터에 접근하고 이용할 수 있다.</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ResultSet rs =  stmt.executeQuery( <span class="string">"select no from user"</span> );</span><br><span class="line"><span class="keyword">while</span> ( rs.next() )</span><br><span class="line">      System.out.println( rs.getInt( <span class="string">"no"</span>) );</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li><p>내용 참조(Content Reference)</p>
+<li><p>모든 객체를 닫는다.</p>
 <ul>
-<li>저장한 데이터 레코드의 위치나 주소가 아닌 사용자가 요구하는 데이터의 내용, 즉 데이터 값에 따라 참조할 수 있어야 한다.</li>
-</ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rs.close();</span><br><span class="line">stmt.close();</span><br><span class="line">con.close();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>데이터베이스 관리 시스템 (Database Management System = DBMS)</p>
-<ul>
-<li>데이터베이스를 관리하는 소프트웨어</li>
-<li>여러 응용 소프트웨어(프로그램) 또는 시스템이 동시에 데이터베이스에 접근하여 사용할 수 있게 한다</li>
-<li>필수 3기능<ul>
-<li>정의기능 :  데이터 베이스의 논리적, 물리적 구조를 정의</li>
-<li>조작기능 : 데이터를 검색, 삭제, 갱신, 삽입, 삭제하는 기능</li>
-<li>제어기능 :  데이터베이스의 내용 정확성과 안전성을 유지하도록 제어하는 기능</li>
-</ul>
-</li>
-<li>Oracle, SQL Server, MySQL, DB2 등의 상용 또는 공개 DBMS가 있다.</li>
-</ul>
-</li>
-</ul>
-<ul>
 <li><p>Reference</p>
 <ul>
 <li>NAVER edwith boostcourse Full-Stack Web Developer </li>
@@ -863,7 +854,7 @@
                     
                     
                         <p>
-                            <a href="/2018/05/08/2018-05-08-Database/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/08/2018-05-08-JDBC/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

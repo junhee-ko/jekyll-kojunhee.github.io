@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/08/2018-05-08-JDBC/">
-                            JDBC
+                        <a class="link-unstyled" href="/2018/05/08/2018-05-08-Database/">
+                            Database
                         </a>
                     
                 </h1>
@@ -190,52 +190,61 @@
             
                 <div class="postShorten-content">
                     <ul>
-<li><p>JDBC</p>
+<li><p>데이터베이스와 데이터베이스 관리 시스템</p>
 <ul>
-<li>자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약</li>
-<li>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API</li>
-<li>SQL과 프로그래밍 언어의 통합 접근 중 한 형태</li>
-<li>JAVA는 표준 인터페이스인 JDBC API를 제공</li>
-<li>데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.</li>
+<li>어린이가 가지고 있는 책(정보)들을 데이터베이스라고 한다면, </li>
+<li>그 책을 관리해주는 엄마는 데이터베이스 관리 시스템이라고 말할 수 있습니다.</li>
 </ul>
 </li>
-<li><p>JDBC를 이용한 프로그래밍 방법</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/jdbc.png" alt="img"></p>
+<li><p>데이터베이스</p>
 <ul>
-<li><p>import java.sql.*;</p>
+<li><p>데이터의 집합 (a Set of Data)</p>
 </li>
-<li><p>드라이버를 로드 한다.</p>
+<li><p>여러 응용 시스템(프로그램)들의 통합된 정보들을 저장하여 운영할 수 있는 공용(share) 데이터의 집합</p>
+</li>
+<li><p>효율적으로 저장, 검색, 갱신할 수 있도록 데이터 집합들끼리 연관시키고 조직화되어야 한다.</p>
+</li>
+<li><p>특성</p>
 <ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName( <span class="string">"com.mysql.jdbc.Driver"</span> );</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>실시간 접근성(Real-time Accessability)</p>
+<ul>
+<li>사용자의 요구를 즉시 처리할 수 있다.</li>
 </ul>
 </li>
-<li><p>Connection 객체를 생성한다.</p>
+<li><p>계속적인 변화(Continuous Evolution)</p>
 <ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String dburl  = <span class="string">"jdbc:mysql://localhost/dbName"</span>;</span><br><span class="line"></span><br><span class="line">Connection con =  DriverManager.getConnection ( dburl, ID, PWD );</span><br></pre></td></tr></table></figure>
-</li>
+<li>정확한 값을 유지하려고 삽입·삭제·수정 작업 등을 이용해 데이터를 지속적으로 갱신할 수 있다.</li>
 </ul>
 </li>
-<li><p>Statement 객체를 생성 및 질의 수행</p>
+<li><p>동시 공유성(Concurrent Sharing)</p>
 <ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Statement stmt = con.createStatement(); </span><br><span class="line">ResultSet rs = stmt.executeQuery(<span class="string">"select no from user"</span> );</span><br><span class="line"></span><br><span class="line">stmt.execute(“query”);             <span class="comment">//any SQL</span></span><br><span class="line">stmt.executeQuery(“query”);     <span class="comment">//SELECT</span></span><br><span class="line">stmt.executeUpdate(“query”);   <span class="comment">//INSERT, UPDATE, DELETE</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>사용자마다 서로 다른 목적으로 사용하므로 동시에 여러 사람이 동일한 데이터에 접근하고 이용할 수 있다.</li>
 </ul>
 </li>
-<li><p>SQL문에 결과물이 있다면 ResultSet 객체를 생성한다.</p>
+<li><p>내용 참조(Content Reference)</p>
 <ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ResultSet rs =  stmt.executeQuery( <span class="string">"select no from user"</span> );</span><br><span class="line"><span class="keyword">while</span> ( rs.next() )</span><br><span class="line">      System.out.println( rs.getInt( <span class="string">"no"</span>) );</span><br></pre></td></tr></table></figure>
-</li>
+<li>저장한 데이터 레코드의 위치나 주소가 아닌 사용자가 요구하는 데이터의 내용, 즉 데이터 값에 따라 참조할 수 있어야 한다.</li>
 </ul>
-</li>
-<li><p>모든 객체를 닫는다.</p>
-<ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rs.close();</span><br><span class="line">stmt.close();</span><br><span class="line">con.close();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 </li>
+<li><p>데이터베이스 관리 시스템 (Database Management System = DBMS)</p>
+<ul>
+<li>데이터베이스를 관리하는 소프트웨어</li>
+<li>여러 응용 소프트웨어(프로그램) 또는 시스템이 동시에 데이터베이스에 접근하여 사용할 수 있게 한다</li>
+<li>필수 3기능<ul>
+<li>정의기능 :  데이터 베이스의 논리적, 물리적 구조를 정의</li>
+<li>조작기능 : 데이터를 검색, 삭제, 갱신, 삽입, 삭제하는 기능</li>
+<li>제어기능 :  데이터베이스의 내용 정확성과 안전성을 유지하도록 제어하는 기능</li>
+</ul>
+</li>
+<li>Oracle, SQL Server, MySQL, DB2 등의 상용 또는 공개 DBMS가 있다.</li>
+</ul>
+</li>
+</ul>
+<ul>
 <li><p>Reference</p>
 <ul>
 <li>NAVER edwith boostcourse Full-Stack Web Developer </li>
@@ -249,7 +258,7 @@
                     
                     
                         <p>
-                            <a href="/2018/05/08/2018-05-08-JDBC/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/08/2018-05-08-Database/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -431,98 +440,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/">
-                            Spring IoC/DI 컨테이너
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-05-06T00:00:00+09:00">
-	
-		    May 06, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/boostcourse/">boostcourse</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <ul>
-<li><p>컨테이너</p>
-<ul>
-<li>인스턴스의 생명 주기를 관리<ul>
-<li>Servlet을 실행해주는 WAS는 Servlet 컨테이너를 가지고 있다고 말합니다.</li>
-<li>WAS는 웹 브라우저로부터 서블릿 URL에 해당하는 요청을 받으면, 서블릿을 메모리에 올린 후 실행합니다.</li>
-<li>개발자가 서블릿 클래스를 작성했지만, 실제로 메모리에 올리고 실행하는 것은 WAS가 가지고 있는 Servlet컨테이너입니다.</li>
-<li>Servlet컨테이너는 동일한 서블릿에 해당하는 요청을 받으면, 또 메모리에 올리지 않고 기존에 메모리에 올라간 서블릿을 실행하여 그 결과를 웹 브라우저에게 전달합니다.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>IoC (Inversion of Control)</p>
-<ul>
-<li>예를 들어 서블릿 클래스는 개발자가 만들지만, </li>
-<li>그 서블릿의 메소드를 알맞게 호출하는 것은 WAS입니다.</li>
-<li>이렇게 개발자가 만든 어떤 클래스나 메소드를 다른 프로그램이 대신 실행해주는 것을 제어의 역전이라고 합니다.</li>
-</ul>
-</li>
-<li><p>DI(Dependency Injection)</p>
-<ul>
-<li>DI는 클래스 사이의 의존 관계를 빈(Bean) 설정 정보를 바탕으로 컨테이너가 자동으로 연결해주는 것을 말합니다.</li>
-</ul>
-</li>
-<li><p>DI가 적용 안된 예</p>
-<ul>
-<li>개발자가 직접 인스턴스를 생성합니다.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/di01.png" alt="img"></p>
-</li>
-<li><p>Spring 에서 DI가 적용된 예</p>
-<ul>
-<li><p>엔진 type의 v5변수에 아직 인스턴스가 할당되지 않았습니다.</p>
-<p>컨테이너가 v5변수에 인스턴스를 할당해주게 됩니다.</p>
-</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/di02.png" alt="img"></p>
-</li>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
                         <a class="link-unstyled" href="/2018/05/06/2018-05-06-물통/">
                             물통
                         </a>
@@ -603,15 +520,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/05/2018-05-06-HTML/">
-                            HTML Layout
+                        <a class="link-unstyled" href="/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/">
+                            Spring IoC/DI 컨테이너
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2018-05-05T00:00:00+09:00">
+    <time datetime="2018-05-06T00:00:00+09:00">
 	
-		    May 05, 2018
+		    May 06, 2018
     	
     </time>
     
@@ -627,35 +544,46 @@
             
                 <div class="postShorten-content">
                     <ul>
-<li><p>‘레이아웃(Layout)’ 이란 ‘배치’라는 뜻으로, HTML 태그로 감싸진 각 정보 요소를 화면상의 어느 위치에 어떻게 자리잡을지를 결정하는 것을 말합니다.</p>
+<li><p>컨테이너</p>
 <ul>
-<li>기본적으로 상단의 <header></header></li>
-<li>하단의 <footer></footer></li>
-<li>운데의 본문 영역</li>
+<li>인스턴스의 생명 주기를 관리<ul>
+<li>Servlet을 실행해주는 WAS는 Servlet 컨테이너를 가지고 있다고 말합니다.</li>
+<li>WAS는 웹 브라우저로부터 서블릿 URL에 해당하는 요청을 받으면, 서블릿을 메모리에 올린 후 실행합니다.</li>
+<li>개발자가 서블릿 클래스를 작성했지만, 실제로 메모리에 올리고 실행하는 것은 WAS가 가지고 있는 Servlet컨테이너입니다.</li>
+<li>Servlet컨테이너는 동일한 서블릿에 해당하는 요청을 받으면, 또 메모리에 올리지 않고 기존에 메모리에 올라간 서블릿을 실행하여 그 결과를 웹 브라우저에게 전달합니다.</li>
 </ul>
 </li>
-<li><p>레이아웃을 위한 태그</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/layoutT.png" alt="img"></p>
+</ul>
 </li>
-<li><p>id, class</p>
+<li><p>IoC (Inversion of Control)</p>
 <ul>
-<li>id<ul>
-<li>고유한 속성으로 한 HTML 문서에 하나만 사용 가능합니다.</li>
-<li>고유한 ID 값이 있으면 하나하나에 특별한 제어를 할 수 있으며 검색에도 용이합니다.</li>
+<li>예를 들어 서블릿 클래스는 개발자가 만들지만, </li>
+<li>그 서블릿의 메소드를 알맞게 호출하는 것은 WAS입니다.</li>
+<li>이렇게 개발자가 만든 어떤 클래스나 메소드를 다른 프로그램이 대신 실행해주는 것을 제어의 역전이라고 합니다.</li>
 </ul>
 </li>
-<li>class<ul>
-<li>하나의 HTML문서 안에 중복해서 사용 가능합니다.</li>
-<li>하나의 태그에 여러 개의 다른 class 이름을 공백을 기준으로 나열할 수가 있습니다.</li>
-<li>홈페이지 전체적인 스타일을 일관성 있게 지정하기 위해서는 class의 사용이 필수적입니다.</li>
+<li><p>DI(Dependency Injection)</p>
+<ul>
+<li>DI는 클래스 사이의 의존 관계를 빈(Bean) 설정 정보를 바탕으로 컨테이너가 자동으로 연결해주는 것을 말합니다.</li>
 </ul>
 </li>
+<li><p>DI가 적용 안된 예</p>
+<ul>
+<li>개발자가 직접 인스턴스를 생성합니다.</li>
 </ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/di01.png" alt="img"></p>
+</li>
+<li><p>Spring 에서 DI가 적용된 예</p>
+<ul>
+<li><p>엔진 type의 v5변수에 아직 인스턴스가 할당되지 않았습니다.</p>
+<p>컨테이너가 v5변수에 인스턴스를 할당해주게 됩니다.</p>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/di02.png" alt="img"></p>
 </li>
 <li><p>Reference</p>
 <ul>
 <li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-<li><a href="https://gist.github.com/thomd/9220049" target="_blank" rel="noopener">https://gist.github.com/thomd/9220049</a></li>
 </ul>
 </li>
 </ul>
@@ -666,7 +594,7 @@
                     
                     
                         <p>
-                            <a href="/2018/05/05/2018-05-06-HTML/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -790,6 +718,87 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/05/05/2018-05-06-HTML/">
+                            HTML Layout
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-05-05T00:00:00+09:00">
+	
+		    May 05, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/boostcourse/">boostcourse</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <ul>
+<li><p>‘레이아웃(Layout)’ 이란 ‘배치’라는 뜻으로, HTML 태그로 감싸진 각 정보 요소를 화면상의 어느 위치에 어떻게 자리잡을지를 결정하는 것을 말합니다.</p>
+<ul>
+<li>기본적으로 상단의 <header></header></li>
+<li>하단의 <footer></footer></li>
+<li>운데의 본문 영역</li>
+</ul>
+</li>
+<li><p>레이아웃을 위한 태그</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/layoutT.png" alt="img"></p>
+</li>
+<li><p>id, class</p>
+<ul>
+<li>id<ul>
+<li>고유한 속성으로 한 HTML 문서에 하나만 사용 가능합니다.</li>
+<li>고유한 ID 값이 있으면 하나하나에 특별한 제어를 할 수 있으며 검색에도 용이합니다.</li>
+</ul>
+</li>
+<li>class<ul>
+<li>하나의 HTML문서 안에 중복해서 사용 가능합니다.</li>
+<li>하나의 태그에 여러 개의 다른 class 이름을 공백을 기준으로 나열할 수가 있습니다.</li>
+<li>홈페이지 전체적인 스타일을 일관성 있게 지정하기 위해서는 class의 사용이 필수적입니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+<li><a href="https://gist.github.com/thomd/9220049" target="_blank" rel="noopener">https://gist.github.com/thomd/9220049</a></li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/05/05/2018-05-06-HTML/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/05/05/2018-05-05-was/">
                             was
                         </a>
@@ -890,6 +899,83 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/05/05/2018-05-04-프론트엔드, 백엔드/">
+                            프론트엔드, 백엔드
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-05-05T00:00:00+09:00">
+	
+		    May 05, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/boostcourse/">boostcourse</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <ul>
+<li>웹 프론트엔드<ul>
+<li>사용자에게 웹을 통해 다양한 콘텐츠(문서, 동영상, 사진 등)을 제공</li>
+<li>사용자의 요청(요구사항)에 반응해서 동작</li>
+</ul>
+</li>
+<li><p>웹 프론트엔드의 역할</p>
+<ul>
+<li>웹 콘텐츠를 보여주기 위해 구조를 만들어야함 - HTML : 구조를 잡아</li>
+<li>적절한 배치와 일관된 디자인 제공(보기좋게) - CSS : 디자인</li>
+<li>사용장 요청을 잘 반영해야함 (소통하듯이) - JacaScript : 동적 제어. 프로그래밍</li>
+</ul>
+</li>
+<li><p>벡엔드 개발자가 알아야할 것들</p>
+<ul>
+<li>프로그래밍 언어(JAVA, Python, PHP, JavaScript)</li>
+<li>웹의 동작 원리</li>
+<li>알고리즘, 자료구조 등 프로그래밍 기반 지식</li>
+<li>운영체제, 네트워크 등에 대한 이해</li>
+<li>프레임워크에 대한 이해(ex: Spring)</li>
+<li>DBMS에 대한 이해와 사용방법(ex: MySQL, Oracle)  </li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/05/05/2018-05-04-프론트엔드, 백엔드/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/05/05/2018-05-05- 웹 서버/">
                             웹 서버
                         </a>
@@ -958,83 +1044,6 @@
                     
                         <p>
                             <a href="/2018/05/05/2018-05-05- 웹 서버/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/05/05/2018-05-04-프론트엔드, 백엔드/">
-                            프론트엔드, 백엔드
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-05-05T00:00:00+09:00">
-	
-		    May 05, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/boostcourse/">boostcourse</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <ul>
-<li>웹 프론트엔드<ul>
-<li>사용자에게 웹을 통해 다양한 콘텐츠(문서, 동영상, 사진 등)을 제공</li>
-<li>사용자의 요청(요구사항)에 반응해서 동작</li>
-</ul>
-</li>
-<li><p>웹 프론트엔드의 역할</p>
-<ul>
-<li>웹 콘텐츠를 보여주기 위해 구조를 만들어야함 - HTML : 구조를 잡아</li>
-<li>적절한 배치와 일관된 디자인 제공(보기좋게) - CSS : 디자인</li>
-<li>사용장 요청을 잘 반영해야함 (소통하듯이) - JacaScript : 동적 제어. 프로그래밍</li>
-</ul>
-</li>
-<li><p>벡엔드 개발자가 알아야할 것들</p>
-<ul>
-<li>프로그래밍 언어(JAVA, Python, PHP, JavaScript)</li>
-<li>웹의 동작 원리</li>
-<li>알고리즘, 자료구조 등 프로그래밍 기반 지식</li>
-<li>운영체제, 네트워크 등에 대한 이해</li>
-<li>프레임워크에 대한 이해(ex: Spring)</li>
-<li>DBMS에 대한 이해와 사용방법(ex: MySQL, Oracle)  </li>
-</ul>
-</li>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/05/05/2018-05-04-프론트엔드, 백엔드/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

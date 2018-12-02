@@ -366,8 +366,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/08/2018-05-08-Database/">
-                            Database
+                        <a class="link-unstyled" href="/2018/05/08/2018-05-08-JDBC/">
+                            JDBC
                         </a>
                     
                 </h1>
@@ -390,61 +390,52 @@
             
                 <div class="postShorten-content">
                     <ul>
-<li><p>데이터베이스와 데이터베이스 관리 시스템</p>
+<li><p>JDBC</p>
 <ul>
-<li>어린이가 가지고 있는 책(정보)들을 데이터베이스라고 한다면, </li>
-<li>그 책을 관리해주는 엄마는 데이터베이스 관리 시스템이라고 말할 수 있습니다.</li>
+<li>자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약</li>
+<li>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API</li>
+<li>SQL과 프로그래밍 언어의 통합 접근 중 한 형태</li>
+<li>JAVA는 표준 인터페이스인 JDBC API를 제공</li>
+<li>데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.</li>
 </ul>
 </li>
-<li><p>데이터베이스</p>
+<li><p>JDBC를 이용한 프로그래밍 방법</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/jdbc.png" alt="img"></p>
 <ul>
-<li><p>데이터의 집합 (a Set of Data)</p>
+<li><p>import java.sql.*;</p>
 </li>
-<li><p>여러 응용 시스템(프로그램)들의 통합된 정보들을 저장하여 운영할 수 있는 공용(share) 데이터의 집합</p>
-</li>
-<li><p>효율적으로 저장, 검색, 갱신할 수 있도록 데이터 집합들끼리 연관시키고 조직화되어야 한다.</p>
-</li>
-<li><p>특성</p>
+<li><p>드라이버를 로드 한다.</p>
 <ul>
-<li><p>실시간 접근성(Real-time Accessability)</p>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName( <span class="string">"com.mysql.jdbc.Driver"</span> );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Connection 객체를 생성한다.</p>
 <ul>
-<li>사용자의 요구를 즉시 처리할 수 있다.</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String dburl  = <span class="string">"jdbc:mysql://localhost/dbName"</span>;</span><br><span class="line"></span><br><span class="line">Connection con =  DriverManager.getConnection ( dburl, ID, PWD );</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li><p>계속적인 변화(Continuous Evolution)</p>
+<li><p>Statement 객체를 생성 및 질의 수행</p>
 <ul>
-<li>정확한 값을 유지하려고 삽입·삭제·수정 작업 등을 이용해 데이터를 지속적으로 갱신할 수 있다.</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Statement stmt = con.createStatement(); </span><br><span class="line">ResultSet rs = stmt.executeQuery(<span class="string">"select no from user"</span> );</span><br><span class="line"></span><br><span class="line">stmt.execute(“query”);             <span class="comment">//any SQL</span></span><br><span class="line">stmt.executeQuery(“query”);     <span class="comment">//SELECT</span></span><br><span class="line">stmt.executeUpdate(“query”);   <span class="comment">//INSERT, UPDATE, DELETE</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li><p>동시 공유성(Concurrent Sharing)</p>
+<li><p>SQL문에 결과물이 있다면 ResultSet 객체를 생성한다.</p>
 <ul>
-<li>사용자마다 서로 다른 목적으로 사용하므로 동시에 여러 사람이 동일한 데이터에 접근하고 이용할 수 있다.</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ResultSet rs =  stmt.executeQuery( <span class="string">"select no from user"</span> );</span><br><span class="line"><span class="keyword">while</span> ( rs.next() )</span><br><span class="line">      System.out.println( rs.getInt( <span class="string">"no"</span>) );</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li><p>내용 참조(Content Reference)</p>
+<li><p>모든 객체를 닫는다.</p>
 <ul>
-<li>저장한 데이터 레코드의 위치나 주소가 아닌 사용자가 요구하는 데이터의 내용, 즉 데이터 값에 따라 참조할 수 있어야 한다.</li>
-</ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rs.close();</span><br><span class="line">stmt.close();</span><br><span class="line">con.close();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>데이터베이스 관리 시스템 (Database Management System = DBMS)</p>
-<ul>
-<li>데이터베이스를 관리하는 소프트웨어</li>
-<li>여러 응용 소프트웨어(프로그램) 또는 시스템이 동시에 데이터베이스에 접근하여 사용할 수 있게 한다</li>
-<li>필수 3기능<ul>
-<li>정의기능 :  데이터 베이스의 논리적, 물리적 구조를 정의</li>
-<li>조작기능 : 데이터를 검색, 삭제, 갱신, 삽입, 삭제하는 기능</li>
-<li>제어기능 :  데이터베이스의 내용 정확성과 안전성을 유지하도록 제어하는 기능</li>
-</ul>
-</li>
-<li>Oracle, SQL Server, MySQL, DB2 등의 상용 또는 공개 DBMS가 있다.</li>
-</ul>
-</li>
-</ul>
-<ul>
 <li><p>Reference</p>
 <ul>
 <li>NAVER edwith boostcourse Full-Stack Web Developer </li>
@@ -458,7 +449,7 @@
                     
                     
                         <p>
-                            <a href="/2018/05/08/2018-05-08-Database/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/08/2018-05-08-JDBC/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -647,8 +638,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/08/2018-05-08-JDBC/">
-                            JDBC
+                        <a class="link-unstyled" href="/2018/05/08/2018-05-08-Database/">
+                            Database
                         </a>
                     
                 </h1>
@@ -671,52 +662,61 @@
             
                 <div class="postShorten-content">
                     <ul>
-<li><p>JDBC</p>
+<li><p>데이터베이스와 데이터베이스 관리 시스템</p>
 <ul>
-<li>자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약</li>
-<li>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API</li>
-<li>SQL과 프로그래밍 언어의 통합 접근 중 한 형태</li>
-<li>JAVA는 표준 인터페이스인 JDBC API를 제공</li>
-<li>데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.</li>
+<li>어린이가 가지고 있는 책(정보)들을 데이터베이스라고 한다면, </li>
+<li>그 책을 관리해주는 엄마는 데이터베이스 관리 시스템이라고 말할 수 있습니다.</li>
 </ul>
 </li>
-<li><p>JDBC를 이용한 프로그래밍 방법</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/jdbc.png" alt="img"></p>
+<li><p>데이터베이스</p>
 <ul>
-<li><p>import java.sql.*;</p>
+<li><p>데이터의 집합 (a Set of Data)</p>
 </li>
-<li><p>드라이버를 로드 한다.</p>
+<li><p>여러 응용 시스템(프로그램)들의 통합된 정보들을 저장하여 운영할 수 있는 공용(share) 데이터의 집합</p>
+</li>
+<li><p>효율적으로 저장, 검색, 갱신할 수 있도록 데이터 집합들끼리 연관시키고 조직화되어야 한다.</p>
+</li>
+<li><p>특성</p>
 <ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName( <span class="string">"com.mysql.jdbc.Driver"</span> );</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>실시간 접근성(Real-time Accessability)</p>
+<ul>
+<li>사용자의 요구를 즉시 처리할 수 있다.</li>
 </ul>
 </li>
-<li><p>Connection 객체를 생성한다.</p>
+<li><p>계속적인 변화(Continuous Evolution)</p>
 <ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String dburl  = <span class="string">"jdbc:mysql://localhost/dbName"</span>;</span><br><span class="line"></span><br><span class="line">Connection con =  DriverManager.getConnection ( dburl, ID, PWD );</span><br></pre></td></tr></table></figure>
-</li>
+<li>정확한 값을 유지하려고 삽입·삭제·수정 작업 등을 이용해 데이터를 지속적으로 갱신할 수 있다.</li>
 </ul>
 </li>
-<li><p>Statement 객체를 생성 및 질의 수행</p>
+<li><p>동시 공유성(Concurrent Sharing)</p>
 <ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Statement stmt = con.createStatement(); </span><br><span class="line">ResultSet rs = stmt.executeQuery(<span class="string">"select no from user"</span> );</span><br><span class="line"></span><br><span class="line">stmt.execute(“query”);             <span class="comment">//any SQL</span></span><br><span class="line">stmt.executeQuery(“query”);     <span class="comment">//SELECT</span></span><br><span class="line">stmt.executeUpdate(“query”);   <span class="comment">//INSERT, UPDATE, DELETE</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>사용자마다 서로 다른 목적으로 사용하므로 동시에 여러 사람이 동일한 데이터에 접근하고 이용할 수 있다.</li>
 </ul>
 </li>
-<li><p>SQL문에 결과물이 있다면 ResultSet 객체를 생성한다.</p>
+<li><p>내용 참조(Content Reference)</p>
 <ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ResultSet rs =  stmt.executeQuery( <span class="string">"select no from user"</span> );</span><br><span class="line"><span class="keyword">while</span> ( rs.next() )</span><br><span class="line">      System.out.println( rs.getInt( <span class="string">"no"</span>) );</span><br></pre></td></tr></table></figure>
-</li>
+<li>저장한 데이터 레코드의 위치나 주소가 아닌 사용자가 요구하는 데이터의 내용, 즉 데이터 값에 따라 참조할 수 있어야 한다.</li>
 </ul>
-</li>
-<li><p>모든 객체를 닫는다.</p>
-<ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rs.close();</span><br><span class="line">stmt.close();</span><br><span class="line">con.close();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 </li>
+<li><p>데이터베이스 관리 시스템 (Database Management System = DBMS)</p>
+<ul>
+<li>데이터베이스를 관리하는 소프트웨어</li>
+<li>여러 응용 소프트웨어(프로그램) 또는 시스템이 동시에 데이터베이스에 접근하여 사용할 수 있게 한다</li>
+<li>필수 3기능<ul>
+<li>정의기능 :  데이터 베이스의 논리적, 물리적 구조를 정의</li>
+<li>조작기능 : 데이터를 검색, 삭제, 갱신, 삽입, 삭제하는 기능</li>
+<li>제어기능 :  데이터베이스의 내용 정확성과 안전성을 유지하도록 제어하는 기능</li>
+</ul>
+</li>
+<li>Oracle, SQL Server, MySQL, DB2 등의 상용 또는 공개 DBMS가 있다.</li>
+</ul>
+</li>
+</ul>
+<ul>
 <li><p>Reference</p>
 <ul>
 <li>NAVER edwith boostcourse Full-Stack Web Developer </li>
@@ -730,7 +730,7 @@
                     
                     
                         <p>
-                            <a href="/2018/05/08/2018-05-08-JDBC/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/08/2018-05-08-Database/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -912,6 +912,86 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/05/06/2018-05-06-물통/">
+                            물통
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-05-06T00:00:00+09:00">
+	
+		    May 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/2251" target="_blank" rel="noopener">https://www.acmicpc.net/problem/2251</a></p>
+<ul>
+<li><p>경우의 수</p>
+<ul>
+<li>A -&gt; B</li>
+<li>A -&gt; C</li>
+<li>B -&gt; A</li>
+<li>B -&gt; C</li>
+<li>C -&gt; A</li>
+<li>C -&gt; B</li>
+</ul>
+</li>
+<li><p>가능한 모든 경우를 Queue에 넣어가면서 체크</p>
+</li>
+<li><p>EX</p>
+<ul>
+<li><p>(0 0 10)</p>
+</li>
+<li><p>(8 0 2), (0 9 1)</p>
+<ul>
+<li>(0 8 2), (0, 0, 10) : 이미 체크했으므로 큐에 넣지 않음, (8, 2, 0)</li>
+<li>(8 1 1), (0 0 10) : 이미 체크했으므로 큐에 넣지 않음, (1 9 0)</li>
+</ul>
+<p>….</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/water01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/water02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/water03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/water04.png" alt="img"></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/05/06/2018-05-06-물통/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/">
                             Spring IoC/DI 컨테이너
                         </a>
@@ -1004,88 +1084,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/06/2018-05-06-물통/">
-                            물통
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-05-06T00:00:00+09:00">
-	
-		    May 06, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/algorithm/">algorithm</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/2251" target="_blank" rel="noopener">https://www.acmicpc.net/problem/2251</a></p>
-<ul>
-<li><p>경우의 수</p>
-<ul>
-<li>A -&gt; B</li>
-<li>A -&gt; C</li>
-<li>B -&gt; A</li>
-<li>B -&gt; C</li>
-<li>C -&gt; A</li>
-<li>C -&gt; B</li>
-</ul>
-</li>
-<li><p>가능한 모든 경우를 Queue에 넣어가면서 체크</p>
-</li>
-<li><p>EX</p>
-<ul>
-<li><p>(0 0 10)</p>
-</li>
-<li><p>(8 0 2), (0 9 1)</p>
-<ul>
-<li>(0 8 2), (0, 0, 10) : 이미 체크했으므로 큐에 넣지 않음, (8, 2, 0)</li>
-<li>(8 1 1), (0 0 10) : 이미 체크했으므로 큐에 넣지 않음, (1 9 0)</li>
-</ul>
-<p>….</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/water01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/water02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/water03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/water04.png" alt="img"></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/05/06/2018-05-06-물통/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/05/05/2018-05-06-HTML/">
-                            HTML Layout
+                        <a class="link-unstyled" href="/2018/05/05/2018-05-06-CSS/">
+                            CSS
                         </a>
                     
                 </h1>
@@ -1108,27 +1108,53 @@
             
                 <div class="postShorten-content">
                     <ul>
-<li><p>‘레이아웃(Layout)’ 이란 ‘배치’라는 뜻으로, HTML 태그로 감싸진 각 정보 요소를 화면상의 어느 위치에 어떻게 자리잡을지를 결정하는 것을 말합니다.</p>
+<li><p>CSS를 HTML안에 선언하는 방식은 크게 3가지</p>
 <ul>
-<li>기본적으로 상단의 <header></header></li>
-<li>하단의 <footer></footer></li>
-<li>운데의 본문 영역</li>
+<li>inline은 별도의 우선순위를 갖지만, internal 과 external은 우선순위가 동등합니다. 따라서 겹치는 선언이 있을 경우 나중에 선언된 속성이 반영됩니다.</li>
+</ul>
+<p><strong>1. inline</strong></p>
+<p>HTML태그 안에다가 적용합니다.</p>
+<p>다른 CSS파일에 적용한 것 보다 가장 먼저 적용합니다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"border:1px solid gray;color:red;font-size:2em;"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>2. internal</strong></p>
+<p>style 태그로 지정합니다.</p>
+<p>구조와 스타일이 섞이게 되므로 유지보수가 어렵습니다.</p>
+<p>별도의 CSS파일을 관리하지 않아도 되며 서버에 CSS파일을 부르기 위해 별도의 브라우저가 요청을 보낼 필요가 없습니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p  &#123;</span><br><span class="line">  font-size : 2em;</span><br><span class="line">  border:1px solid gray;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;...&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>3. external</strong></p>
+<p>외부파일(.css)로 지정하는 방식입니다.</p>
+<p>CSS 코드가 아주 짧지 않다면 가급적 이 방법으로 구현하는 것이 가장 좋습니다.</p>
+<p>현업에서는 여러개의 CSS 파일로 분리하고 이를 합쳐서 서비스에서 사용하기도 합니다.</p>
+<p>internal 코드와 같은 css코드를 구현하고, style.css와 같은 별도 파일로 만듭니다. </p>
+<p>이후에 아래처럼 link태그로 추가하면 됩니다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>상속과 우선순위 결정</p>
+<ul>
+<li>상속<ul>
+<li>상위에서 적용한 스타일은 하위에도 반영됩니다.</li>
+<li>이로 인해 여러 단계로 중첩된 엘리먼트마다 매번 같은 색상과 글자 크기를 부여하지 않아도 됩니다.</li>
+<li>하지만 모든 CSS 속성이 이런 특징을 갖게 되면, 몇 가지 문제가 생깁니다.</li>
+<li>예를 들어 width 속성이 상속되면 하위 엘리먼트가 모든 같은 크기의 넓잇값을 가질 수 있습니다.</li>
+<li>그래서 box-model이라고 불리는 속성들(width, height, margin, padding, border)과 같이 크기와 배치 관련된 속성들은 하위엘리먼트로 상속이 되지 않습니다.</li>
 </ul>
 </li>
-<li><p>레이아웃을 위한 태그</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/layoutT.png" alt="img"></p>
-</li>
-<li><p>id, class</p>
-<ul>
-<li>id<ul>
-<li>고유한 속성으로 한 HTML 문서에 하나만 사용 가능합니다.</li>
-<li>고유한 ID 값이 있으면 하나하나에 특별한 제어를 할 수 있으며 검색에도 용이합니다.</li>
+<li>우선 순위<ul>
+<li>CSS는 여러가지 스타일정보를 기반으로 최종적으로 ‘경쟁’에 의해서 적절한 스타일이 반영된다</li>
+<li>inline &gt; internal = external</li>
+<li>cascading<ul>
+<li>id, class, 엘리먼트 순으로 우선순위를 가짐.</li>
 </ul>
 </li>
-<li>class<ul>
-<li>하나의 HTML문서 안에 중복해서 사용 가능합니다.</li>
-<li>하나의 태그에 여러 개의 다른 class 이름을 공백을 기준으로 나열할 수가 있습니다.</li>
-<li>홈페이지 전체적인 스타일을 일관성 있게 지정하기 위해서는 class의 사용이 필수적입니다.</li>
+<li>선언 방식에 따른 차이<ul>
+<li>같은 선택자(selector)라면 나중에 선언한 것이 반영됩니다.</li>
+<li>선택자의 표현이 구체적인 것이 있다면 먼저 적용됩니다.<ul>
+<li>body &gt; span (O)</li>
+<li>span (X)</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1136,7 +1162,6 @@
 <li><p>Reference</p>
 <ul>
 <li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-<li><a href="https://gist.github.com/thomd/9220049" target="_blank" rel="noopener">https://gist.github.com/thomd/9220049</a></li>
 </ul>
 </li>
 </ul>
@@ -1147,7 +1172,7 @@
                     
                     
                         <p>
-                            <a href="/2018/05/05/2018-05-06-HTML/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/05/2018-05-06-CSS/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
