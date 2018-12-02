@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>ViewPager - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://developer.android.com/training/animation/screen-slide.html\nCreate the Views\n프레그먼트의 내용물로서 사용될 레이아웃\n\n12345678910111213&lt;!-- fragment_screen_slide_page.xml --&gt;&lt;ScrollView xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;    android:id=&quot;@+id/content&quot;    android:layout_width=&quot;match_parent&quot;    android:layout_height=&quot;match_parent&quot; &gt;    &lt;TextView style=&quot;?android:textAppearanceMedium&quot;        android:padding=&quot;16dp&quot;        android:lineSpacingMultiplier=&quot;1.2&quot;        android:layout_width=&quot;match_parent&quot;        android:layout_height=&quot;wrap_content&quot;        android:text=&quot;@string/lorem_ipsum&quot; /&gt;&lt;/ScrollView&gt;\nCreate the Fragment\n부모 엑티비티에서 사용자에게 보여줄 새로운 페이지가 필요할 때마다, 이 프레그먼트의 인스턴스를  생성 할 수 있다. \n\n12345678910111213import android.support.v4.app.Fragment;...public class ScreenSlidePageFragment extends Fragment &#123;    @Override    public View onCreateView(LayoutInflater inflater, ViewGroup container,            Bundle savedInstanceState) &#123;        ViewGroup rootView = (ViewGroup) inflater.inflate(                R.layout.fragment_screen_slide_page, container, false);        return rootView;    &#125;&#125;\nAdd a ViewPager\nViewPager는 새로운 페이지를 보여주기 위해 PagerAdapters를 사용한다. \nPagerAdapter 는 앞서 만든 프레그먼트 클래스를 사용한다.\n\n123456&lt;!-- activity_screen_slide.xml --&gt;&lt;android.support.v4.view.ViewPager    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;    android:id=&quot;@+id/pager&quot;    android:layout_width=&quot;match_parent&quot;    android:layout_height=&quot;match_parent&quot; /&gt;\nCreate an Activity123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263import android.support.v4.app.Fragment;import android.support.v4.app.FragmentManager;...public class ScreenSlidePagerActivity extends FragmentActivity &#123;    /**     * The number of pages (wizard steps) to show in this demo.     */    private static final int NUM_PAGES = 5;    /**     * The pager widget, which handles animation and allows swiping horizontally to access previous     * and next wizard steps.     */    private ViewPager mPager;    /**     * The pager adapter, which provides the pages to the view pager widget.     */    private PagerAdapter mPagerAdapter;    @Override    protected void onCreate(Bundle savedInstanceState) &#123;        super.onCreate(savedInstanceState);        setContentView(R.layout.activity_screen_slide);        // Instantiate a ViewPager and a PagerAdapter.        mPager = (ViewPager) findViewById(R.id.pager);        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());        mPager.setAdapter(mPagerAdapter);    &#125;    @Override    public void onBackPressed() &#123;        if (mPager.getCurrentItem() == 0) &#123;            // If the user is currently looking at the first step, allow the system to handle the            // Back button. This calls finish() on this activity and pops the back stack.            super.onBackPressed();        &#125; else &#123;            // Otherwise, select the previous step.            mPager.setCurrentItem(mPager.getCurrentItem() - 1);        &#125;    &#125;    /**     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in     * sequence.     */    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter &#123;        public ScreenSlidePagerAdapter(FragmentManager fm) &#123;            super(fm);        &#125;        @Override        public Fragment getItem(int position) &#123;            return new ScreenSlidePageFragment();        &#125;        @Override        public int getCount() &#123;            return NUM_PAGES;        &#125;    &#125;&#125;\n","dateCreated":"2018-01-07T00:00:00+09:00","dateModified":"2018-04-16T13:12:59+09:00","datePublished":"2018-01-07T00:00:00+09:00","description":"","headline":"ViewPager","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/01/07/2018-01-07-ViewPager/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/01/07/2018-01-07-ViewPager/"}</script>
+    <meta name="description" content="https://developer.android.com/training/animation/screen-slide.html Create the Views 프레그먼트의 내용물로서 사용될 레이아웃  12345678910111213&amp;lt;!-- fragment_screen_slide_page.xml --&amp;gt;&amp;lt;ScrollView xmlns:android=&amp;q">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ViewPager">
+<meta property="og:url" content="http://junheeko.com/2018/01/07/2018-01-07-ViewPager/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="https://developer.android.com/training/animation/screen-slide.html Create the Views 프레그먼트의 내용물로서 사용될 레이아웃  12345678910111213&amp;lt;!-- fragment_screen_slide_page.xml --&amp;gt;&amp;lt;ScrollView xmlns:android=&amp;q">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-16T04:12:59.038Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ViewPager">
+<meta name="twitter:description" content="https://developer.android.com/training/animation/screen-slide.html Create the Views 프레그먼트의 내용물로서 사용될 레이아웃  12345678910111213&amp;lt;!-- fragment_screen_slide_page.xml --&amp;gt;&amp;lt;ScrollView xmlns:android=&amp;q">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            ViewPager
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-01-07T00:00:00+09:00">
+	
+		    Jan 07, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/android/">android</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p><a href="https://developer.android.com/training/animation/screen-slide.html" target="_blank" rel="noopener">https://developer.android.com/training/animation/screen-slide.html</a></p>
+<h2 id="Create-the-Views"><a href="#Create-the-Views" class="headerlink" title="Create the Views"></a>Create the Views</h2><ul>
+<li>프레그먼트의 내용물로서 사용될 레이아웃</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- fragment_screen_slide_page.xml --&gt;</span><br><span class="line">&lt;ScrollView xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:id=&quot;@+id/content&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot; &gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView style=&quot;?android:textAppearanceMedium&quot;</span><br><span class="line">        android:padding=&quot;16dp&quot;</span><br><span class="line">        android:lineSpacingMultiplier=&quot;1.2&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;@string/lorem_ipsum&quot; /&gt;</span><br><span class="line">&lt;/ScrollView&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Create-the-Fragment"><a href="#Create-the-Fragment" class="headerlink" title="Create the Fragment"></a>Create the Fragment</h2><ul>
+<li>부모 엑티비티에서 사용자에게 보여줄 새로운 페이지가 필요할 때마다, 이 프레그먼트의 인스턴스를  생성 할 수 있다. </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import android.support.v4.app.Fragment;</span><br><span class="line">...</span><br><span class="line">public class ScreenSlidePageFragment extends Fragment &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public View onCreateView(LayoutInflater inflater, ViewGroup container,</span><br><span class="line">            Bundle savedInstanceState) &#123;</span><br><span class="line">        ViewGroup rootView = (ViewGroup) inflater.inflate(</span><br><span class="line">                R.layout.fragment_screen_slide_page, container, false);</span><br><span class="line"></span><br><span class="line">        return rootView;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Add-a-ViewPager"><a href="#Add-a-ViewPager" class="headerlink" title="Add a ViewPager"></a>Add a ViewPager</h2><ul>
+<li>ViewPager는 새로운 페이지를 보여주기 위해 PagerAdapters를 사용한다. </li>
+<li>PagerAdapter 는 앞서 만든 프레그먼트 클래스를 사용한다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- activity_screen_slide.xml --&gt;</span><br><span class="line">&lt;android.support.v4.view.ViewPager</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:id=&quot;@+id/pager&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Create-an-Activity"><a href="#Create-an-Activity" class="headerlink" title="Create an Activity"></a>Create an Activity</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">import android.support.v4.app.Fragment;</span><br><span class="line">import android.support.v4.app.FragmentManager;</span><br><span class="line">...</span><br><span class="line">public class ScreenSlidePagerActivity extends FragmentActivity &#123;</span><br><span class="line">    /**</span><br><span class="line">     * The number of pages (wizard steps) to show in this demo.</span><br><span class="line">     */</span><br><span class="line">    private static final int NUM_PAGES = 5;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * The pager widget, which handles animation and allows swiping horizontally to access previous</span><br><span class="line">     * and next wizard steps.</span><br><span class="line">     */</span><br><span class="line">    private ViewPager mPager;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * The pager adapter, which provides the pages to the view pager widget.</span><br><span class="line">     */</span><br><span class="line">    private PagerAdapter mPagerAdapter;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_screen_slide);</span><br><span class="line"></span><br><span class="line">        // Instantiate a ViewPager and a PagerAdapter.</span><br><span class="line">        mPager = (ViewPager) findViewById(R.id.pager);</span><br><span class="line">        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());</span><br><span class="line">        mPager.setAdapter(mPagerAdapter);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onBackPressed() &#123;</span><br><span class="line">        if (mPager.getCurrentItem() == 0) &#123;</span><br><span class="line">            // If the user is currently looking at the first step, allow the system to handle the</span><br><span class="line">            // Back button. This calls finish() on this activity and pops the back stack.</span><br><span class="line">            super.onBackPressed();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // Otherwise, select the previous step.</span><br><span class="line">            mPager.setCurrentItem(mPager.getCurrentItem() - 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in</span><br><span class="line">     * sequence.</span><br><span class="line">     */</span><br><span class="line">    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter &#123;</span><br><span class="line">        public ScreenSlidePagerAdapter(FragmentManager fm) &#123;</span><br><span class="line">            super(fm);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public Fragment getItem(int position) &#123;</span><br><span class="line">            return new ScreenSlidePageFragment();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public int getCount() &#123;</span><br><span class="line">            return NUM_PAGES;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/07/2018-01-07-activity life cycle/" data-tooltip="activity life cycle" aria-label="PREVIOUS: activity life cycle">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/07/2018-01-07-RecyclerView/" data-tooltip="RecyclerView" aria-label="NEXT: RecyclerView">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/01/07/2018-01-07-ViewPager/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/01/07/2018-01-07-ViewPager/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/01/07/2018-01-07-ViewPager/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/07/2018-01-07-activity life cycle/" data-tooltip="activity life cycle" aria-label="PREVIOUS: activity life cycle">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/07/2018-01-07-RecyclerView/" data-tooltip="RecyclerView" aria-label="NEXT: RecyclerView">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/01/07/2018-01-07-ViewPager/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/01/07/2018-01-07-ViewPager/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/01/07/2018-01-07-ViewPager/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/01/07/2018-01-07-ViewPager/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/01/07/2018-01-07-ViewPager/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/01/07/2018-01-07-ViewPager/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
