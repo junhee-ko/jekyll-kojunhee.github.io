@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nInterface Segregation Principle ( 인터페이스 분리 법칙 )\n\n\nIntent\n\nClients should not be forced to depend upon interfaces that they don’t use.\n인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙\n\n\nSRP와 ISP\n\nSRP를 만족하더라도 ISP를 반드시 만족한다고 할수 없다\n게시판의 글쓰기, 읽기, 수정, 삭제를 위한 메소드를 제공하는 클래스가 있다.\n클라이언트에 따라서는 게시판의 이러한 기능 중 일부분만 사용할 수 있다.\n일반 사용자는 게시판의 삭제 기능이 없지만, 관리자는 삭제를 할 수 있다.\n게시판 클래스는 게시판에 관련된 책임을 수행하므로 SRP 만족,\n이 클래스의 모든 메서드가 들어 있는 인퍼테이스가 클라이언트에 상관없이 사용된다면, ISP에 위배.\n\n\n\n\nBad Example\n\nnow some robots came in the company they work as well , but they don’t eat so they don’t need a launch break. \nOne on side the new Robot class need to implement the IWorker interface because robots works. \nOn the other side, they don’t have to implement it because they don’t eat.\nnow we have to change Manager class in order to introduce the new SuperWorker\n\n\n\n\n\n\n​\n\nGood Example\n\nnew Robot class is no longer forced to implement the eat method.\nif we need another functionality for the robot like recharging, \nwe create another interface IRechargeble with a method recharge.\n\n\n\n\n\n\n\n\n\n\n\nReference\nhttp://www.oodesign.com/dependency-inversion-principle.html\nJava 객체지향 디자인 패턴 (정인상, 채흥석 지음)\n\n\n\n","dateCreated":"2018-04-09T00:00:00+09:00","dateModified":"2018-10-25T14:48:03+09:00","datePublished":"2018-04-09T00:00:00+09:00","description":"","headline":"ISP","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/04/09/2018-04-09-ISP/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/04/09/2018-04-09-ISP/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nInterface Segregation Principle ( 인터페이스 분리 법칙 )\n\n\nIntent\n\nClients should not be forced to depend upon interfaces that they don’t use.\n인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙\n\n\nSRP와 ISP\n\nSRP를 만족하더라도 ISP를 반드시 만족한다고 할수 없다\n게시판의 글쓰기, 읽기, 수정, 삭제를 위한 메소드를 제공하는 클래스가 있다.\n클라이언트에 따라서는 게시판의 이러한 기능 중 일부분만 사용할 수 있다.\n일반 사용자는 게시판의 삭제 기능이 없지만, 관리자는 삭제를 할 수 있다.\n게시판 클래스는 게시판에 관련된 책임을 수행하므로 SRP 만족,\n이 클래스의 모든 메서드가 들어 있는 인퍼테이스가 클라이언트에 상관없이 사용된다면, ISP에 위배.\n\n\n\n\nBad Example\n\nnow some robots came in the company they work as well , but they don’t eat so they don’t need a launch break. \nOne on side the new Robot class need to implement the IWorker interface because robots works. \nOn the other side, they don’t have to implement it because they don’t eat.\nnow we have to change Manager class in order to introduce the new SuperWorker\n\n\n\n\n\n\n​\n\nGood Example\n\nnew Robot class is no longer forced to implement the eat method.\nif we need another functionality for the robot like recharging, \nwe create another interface IRechargeble with a method recharge.\n\n\n\n\n\n\n\n\n\n\n\nReference\nhttp://www.oodesign.com/dependency-inversion-principle.html\nJava 객체지향 디자인 패턴 (정인상, 채흥석 지음)\n\n\n\n","dateCreated":"2018-04-09T00:00:00+09:00","dateModified":"2018-10-25T14:48:03+09:00","datePublished":"2018-04-09T00:00:00+09:00","description":"","headline":"ISP","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/"}</script>
     <meta name="description" content="Interface Segregation Principle ( 인터페이스 분리 법칙 )   Intent  Clients should not be forced to depend upon interfaces that they don’t use. 인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙   SRP와 ISP  SRP를 만족하더라도 ISP를 반드시">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="ISP">
-<meta property="og:url" content="http://junheeko.com/2018/04/09/2018-04-09-ISP/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="Interface Segregation Principle ( 인터페이스 분리 법칙 )   Intent  Clients should not be forced to depend upon interfaces that they don’t use. 인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙   SRP와 ISP  SRP를 만족하더라도 ISP를 반드시">
 <meta property="og:locale" content="en">
@@ -301,7 +301,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -309,7 +309,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -317,7 +317,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -387,7 +387,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -395,7 +395,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -403,7 +403,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -430,7 +430,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/09/2018-04-09-ISP/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -438,7 +438,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/09/2018-04-09-ISP/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -446,7 +446,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/09/2018-04-09-ISP/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/04/09/2018-04-09-ISP/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

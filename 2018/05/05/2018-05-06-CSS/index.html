@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nCSS를 HTML안에 선언하는 방식은 크게 3가지\n\ninline은 별도의 우선순위를 갖지만, internal 과 external은 우선순위가 동등합니다. 따라서 겹치는 선언이 있을 경우 나중에 선언된 속성이 반영됩니다.\n\n1. inline\nHTML태그 안에다가 적용합니다.\n다른 CSS파일에 적용한 것 보다 가장 먼저 적용합니다.\n1&lt;p style=\"border:1px solid gray;color:red;font-size:2em;\"&gt;\n2. internal\nstyle 태그로 지정합니다.\n구조와 스타일이 섞이게 되므로 유지보수가 어렵습니다.\n별도의 CSS파일을 관리하지 않아도 되며 서버에 CSS파일을 부르기 위해 별도의 브라우저가 요청을 보낼 필요가 없습니다.\n12345678910111213&lt;head&gt;&lt;style&gt;p  &#123;  font-size : 2em;  border:1px solid gray;  color: red;&#125;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div&gt;...&lt;/div&gt;&lt;/body&gt;\n3. external\n외부파일(.css)로 지정하는 방식입니다.\nCSS 코드가 아주 짧지 않다면 가급적 이 방법으로 구현하는 것이 가장 좋습니다.\n현업에서는 여러개의 CSS 파일로 분리하고 이를 합쳐서 서비스에서 사용하기도 합니다.\ninternal 코드와 같은 css코드를 구현하고, style.css와 같은 별도 파일로 만듭니다. \n이후에 아래처럼 link태그로 추가하면 됩니다.\n1234567891011121314151617&lt;html&gt;\t&lt;head&gt;\t\t&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\t&lt;/head&gt;\t&lt;body&gt;\t\t&lt;div&gt;\t\t\t&lt;p&gt;\t\t\t\t&lt;ul&gt;\t\t\t\t\t&lt;li&gt;&lt;/li&gt;\t\t\t\t\t&lt;li&gt;&lt;/li&gt;\t\t\t\t\t&lt;li&gt;&lt;/li&gt;\t\t\t\t\t&lt;li&gt;&lt;/li&gt;\t\t\t\t&lt;/ul&gt;\t\t\t&lt;/p&gt;\t\t&lt;/div&gt;\t&lt;/body&gt;&lt;/html&gt;\n\n상속과 우선순위 결정\n\n상속\n상위에서 적용한 스타일은 하위에도 반영됩니다.\n이로 인해 여러 단계로 중첩된 엘리먼트마다 매번 같은 색상과 글자 크기를 부여하지 않아도 됩니다.\n하지만 모든 CSS 속성이 이런 특징을 갖게 되면, 몇 가지 문제가 생깁니다.\n예를 들어 width 속성이 상속되면 하위 엘리먼트가 모든 같은 크기의 넓잇값을 가질 수 있습니다.\n그래서 box-model이라고 불리는 속성들(width, height, margin, padding, border)과 같이 크기와 배치 관련된 속성들은 하위엘리먼트로 상속이 되지 않습니다.\n\n\n우선 순위\nCSS는 여러가지 스타일정보를 기반으로 최종적으로 ‘경쟁’에 의해서 적절한 스타일이 반영된다\ninline &gt; internal = external\ncascading\nid, class, 엘리먼트 순으로 우선순위를 가짐.\n\n\n선언 방식에 따른 차이\n같은 선택자(selector)라면 나중에 선언한 것이 반영됩니다.\n선택자의 표현이 구체적인 것이 있다면 먼저 적용됩니다.\nbody &gt; span (O)\nspan (X)\n\n\n\n\n\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-05T00:00:00+09:00","dateModified":"2018-05-06T21:55:21+09:00","datePublished":"2018-05-05T00:00:00+09:00","description":"","headline":"CSS","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/05/2018-05-06-CSS/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/05/2018-05-06-CSS/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nCSS를 HTML안에 선언하는 방식은 크게 3가지\n\ninline은 별도의 우선순위를 갖지만, internal 과 external은 우선순위가 동등합니다. 따라서 겹치는 선언이 있을 경우 나중에 선언된 속성이 반영됩니다.\n\n1. inline\nHTML태그 안에다가 적용합니다.\n다른 CSS파일에 적용한 것 보다 가장 먼저 적용합니다.\n1&lt;p style=\"border:1px solid gray;color:red;font-size:2em;\"&gt;\n2. internal\nstyle 태그로 지정합니다.\n구조와 스타일이 섞이게 되므로 유지보수가 어렵습니다.\n별도의 CSS파일을 관리하지 않아도 되며 서버에 CSS파일을 부르기 위해 별도의 브라우저가 요청을 보낼 필요가 없습니다.\n12345678910111213&lt;head&gt;&lt;style&gt;p  &#123;  font-size : 2em;  border:1px solid gray;  color: red;&#125;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div&gt;...&lt;/div&gt;&lt;/body&gt;\n3. external\n외부파일(.css)로 지정하는 방식입니다.\nCSS 코드가 아주 짧지 않다면 가급적 이 방법으로 구현하는 것이 가장 좋습니다.\n현업에서는 여러개의 CSS 파일로 분리하고 이를 합쳐서 서비스에서 사용하기도 합니다.\ninternal 코드와 같은 css코드를 구현하고, style.css와 같은 별도 파일로 만듭니다. \n이후에 아래처럼 link태그로 추가하면 됩니다.\n1234567891011121314151617&lt;html&gt;\t&lt;head&gt;\t\t&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\t&lt;/head&gt;\t&lt;body&gt;\t\t&lt;div&gt;\t\t\t&lt;p&gt;\t\t\t\t&lt;ul&gt;\t\t\t\t\t&lt;li&gt;&lt;/li&gt;\t\t\t\t\t&lt;li&gt;&lt;/li&gt;\t\t\t\t\t&lt;li&gt;&lt;/li&gt;\t\t\t\t\t&lt;li&gt;&lt;/li&gt;\t\t\t\t&lt;/ul&gt;\t\t\t&lt;/p&gt;\t\t&lt;/div&gt;\t&lt;/body&gt;&lt;/html&gt;\n\n상속과 우선순위 결정\n\n상속\n상위에서 적용한 스타일은 하위에도 반영됩니다.\n이로 인해 여러 단계로 중첩된 엘리먼트마다 매번 같은 색상과 글자 크기를 부여하지 않아도 됩니다.\n하지만 모든 CSS 속성이 이런 특징을 갖게 되면, 몇 가지 문제가 생깁니다.\n예를 들어 width 속성이 상속되면 하위 엘리먼트가 모든 같은 크기의 넓잇값을 가질 수 있습니다.\n그래서 box-model이라고 불리는 속성들(width, height, margin, padding, border)과 같이 크기와 배치 관련된 속성들은 하위엘리먼트로 상속이 되지 않습니다.\n\n\n우선 순위\nCSS는 여러가지 스타일정보를 기반으로 최종적으로 ‘경쟁’에 의해서 적절한 스타일이 반영된다\ninline &gt; internal = external\ncascading\nid, class, 엘리먼트 순으로 우선순위를 가짐.\n\n\n선언 방식에 따른 차이\n같은 선택자(selector)라면 나중에 선언한 것이 반영됩니다.\n선택자의 표현이 구체적인 것이 있다면 먼저 적용됩니다.\nbody &gt; span (O)\nspan (X)\n\n\n\n\n\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-05T00:00:00+09:00","dateModified":"2018-05-06T21:55:21+09:00","datePublished":"2018-05-05T00:00:00+09:00","description":"","headline":"CSS","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/"}</script>
     <meta name="description" content="CSS를 HTML안에 선언하는 방식은 크게 3가지  inline은 별도의 우선순위를 갖지만, internal 과 external은 우선순위가 동등합니다. 따라서 겹치는 선언이 있을 경우 나중에 선언된 속성이 반영됩니다.  1. inline HTML태그 안에다가 적용합니다. 다른 CSS파일에 적용한 것 보다 가장 먼저 적용합니다. 1&amp;lt;p style=&quot;">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="CSS">
-<meta property="og:url" content="http://junheeko.com/2018/05/05/2018-05-06-CSS/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="CSS를 HTML안에 선언하는 방식은 크게 3가지  inline은 별도의 우선순위를 갖지만, internal 과 external은 우선순위가 동등합니다. 따라서 겹치는 선언이 있을 경우 나중에 선언된 속성이 반영됩니다.  1. inline HTML태그 안에다가 적용합니다. 다른 CSS파일에 적용한 것 보다 가장 먼저 적용합니다. 1&amp;lt;p style=&quot;">
 <meta property="og:locale" content="en">
@@ -288,7 +288,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/05/2018-05-06-CSS/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -296,7 +296,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/05/2018-05-06-CSS/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -304,7 +304,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/05/2018-05-06-CSS/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -374,7 +374,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/05/2018-05-06-CSS/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -382,7 +382,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/05/2018-05-06-CSS/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -390,7 +390,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/05/2018-05-06-CSS/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -417,7 +417,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/05/2018-05-06-CSS/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -425,7 +425,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/05/2018-05-06-CSS/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -433,7 +433,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/05/2018-05-06-CSS/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/05/2018-05-06-CSS/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

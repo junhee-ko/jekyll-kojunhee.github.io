@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nIntent\n\n여러 객체들 간의 상호 작용 자체를 캡슐화\n객체들 끼리 직접 참조하는 것을 피함으로 객체들 간의 연결 강도를 줄임( loose coupling)\nclient는 객체들의 상호작용을 독립적으로 변경할 수 있음 \n각 부품 객체들간의 상호작용을 도맡아 처리하는 객체를 둔다\n각 객체들은 Mediator 객체를 제외한 다른 객체는 알지 못한다\nM:N 의 관계를 M:1로 만든다\n객체 간의 상호작용은 Mediator 가 처리\n\n\n문제\n\nColleague 객체들 간의 상호작용을 Mediaotr 객체 하나가 모두 담당하기 때문에\nMediaotr 객체가 복잡해져 유지 및 보수가 어려울 수 있음\n\n\nObserver Pattern 적용\n\n중재자에게 특정 이벤트가 발생하였음을 알려주기 위한 별도의 인터페이스를 정의\nMediator : Subject \nColleague : Observer\n\n\n\n\nClass Diagram\n\n\n\n\n\nCode\n\nMediator class\nCreate user class\nUse the User object to show communications between them.\n\nReference\nhttp://www.oodesign.com/singleton-pattern.html\nhttps://www.tutorialspoint.com/design_pattern/singleton_pattern.html\n\n\n\n","dateCreated":"2018-04-15T00:00:00+09:00","dateModified":"2018-10-25T14:41:39+09:00","datePublished":"2018-04-15T00:00:00+09:00","description":"","headline":"Mediator Pattern","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nIntent\n\n여러 객체들 간의 상호 작용 자체를 캡슐화\n객체들 끼리 직접 참조하는 것을 피함으로 객체들 간의 연결 강도를 줄임( loose coupling)\nclient는 객체들의 상호작용을 독립적으로 변경할 수 있음 \n각 부품 객체들간의 상호작용을 도맡아 처리하는 객체를 둔다\n각 객체들은 Mediator 객체를 제외한 다른 객체는 알지 못한다\nM:N 의 관계를 M:1로 만든다\n객체 간의 상호작용은 Mediator 가 처리\n\n\n문제\n\nColleague 객체들 간의 상호작용을 Mediaotr 객체 하나가 모두 담당하기 때문에\nMediaotr 객체가 복잡해져 유지 및 보수가 어려울 수 있음\n\n\nObserver Pattern 적용\n\n중재자에게 특정 이벤트가 발생하였음을 알려주기 위한 별도의 인터페이스를 정의\nMediator : Subject \nColleague : Observer\n\n\n\n\nClass Diagram\n\n\n\n\n\nCode\n\nMediator class\nCreate user class\nUse the User object to show communications between them.\n\nReference\nhttp://www.oodesign.com/singleton-pattern.html\nhttps://www.tutorialspoint.com/design_pattern/singleton_pattern.html\n\n\n\n","dateCreated":"2018-04-15T00:00:00+09:00","dateModified":"2018-10-25T14:41:39+09:00","datePublished":"2018-04-15T00:00:00+09:00","description":"","headline":"Mediator Pattern","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/"}</script>
     <meta name="description" content="Intent  여러 객체들 간의 상호 작용 자체를 캡슐화 객체들 끼리 직접 참조하는 것을 피함으로 객체들 간의 연결 강도를 줄임( loose coupling) client는 객체들의 상호작용을 독립적으로 변경할 수 있음  각 부품 객체들간의 상호작용을 도맡아 처리하는 객체를 둔다 각 객체들은 Mediator 객체를 제외한 다른 객체는 알지 못한다 M:N">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Mediator Pattern">
-<meta property="og:url" content="http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="Intent  여러 객체들 간의 상호 작용 자체를 캡슐화 객체들 끼리 직접 참조하는 것을 피함으로 객체들 간의 연결 강도를 줄임( loose coupling) client는 객체들의 상호작용을 독립적으로 변경할 수 있음  각 부품 객체들간의 상호작용을 도맡아 처리하는 객체를 둔다 각 객체들은 Mediator 객체를 제외한 다른 객체는 알지 못한다 M:N">
 <meta property="og:locale" content="en">
@@ -281,7 +281,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -289,7 +289,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -297,7 +297,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -367,7 +367,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -375,7 +375,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -383,7 +383,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -410,7 +410,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -418,7 +418,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -426,7 +426,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/15/2018-04-15-Mediator Pattern/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/04/15/2018-04-15-Mediator Pattern/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

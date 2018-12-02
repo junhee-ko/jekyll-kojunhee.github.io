@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nJDBC\n\n자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약\n자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API\nSQL과 프로그래밍 언어의 통합 접근 중 한 형태\nJAVA는 표준 인터페이스인 JDBC API를 제공\n데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.\n\n\nJDBC를 이용한 프로그래밍 방법\n\n\nimport java.sql.*;\n\n드라이버를 로드 한다.\n\n1Class.forName( \"com.mysql.jdbc.Driver\" );\n\n\n\nConnection 객체를 생성한다.\n\n123String dburl  = \"jdbc:mysql://localhost/dbName\";Connection con =  DriverManager.getConnection ( dburl, ID, PWD );\n\n\n\nStatement 객체를 생성 및 질의 수행\n\n123456Statement stmt = con.createStatement(); ResultSet rs = stmt.executeQuery(\"select no from user\" );stmt.execute(“query”);             //any SQLstmt.executeQuery(“query”);     //SELECTstmt.executeUpdate(“query”);   //INSERT, UPDATE, DELETE\n\n\n\nSQL문에 결과물이 있다면 ResultSet 객체를 생성한다.\n\n123ResultSet rs =  stmt.executeQuery( \"select no from user\" );while ( rs.next() )      System.out.println( rs.getInt( \"no\") );\n\n\n\n모든 객체를 닫는다.\n\n123rs.close();stmt.close();con.close();\n\n\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-08T00:00:00+09:00","dateModified":"2018-05-08T10:07:37+09:00","datePublished":"2018-05-08T00:00:00+09:00","description":"","headline":"JDBC","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/08/2018-05-08-JDBC/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/08/2018-05-08-JDBC/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nJDBC\n\n자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약\n자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API\nSQL과 프로그래밍 언어의 통합 접근 중 한 형태\nJAVA는 표준 인터페이스인 JDBC API를 제공\n데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.\n\n\nJDBC를 이용한 프로그래밍 방법\n\n\nimport java.sql.*;\n\n드라이버를 로드 한다.\n\n1Class.forName( \"com.mysql.jdbc.Driver\" );\n\n\n\nConnection 객체를 생성한다.\n\n123String dburl  = \"jdbc:mysql://localhost/dbName\";Connection con =  DriverManager.getConnection ( dburl, ID, PWD );\n\n\n\nStatement 객체를 생성 및 질의 수행\n\n123456Statement stmt = con.createStatement(); ResultSet rs = stmt.executeQuery(\"select no from user\" );stmt.execute(“query”);             //any SQLstmt.executeQuery(“query”);     //SELECTstmt.executeUpdate(“query”);   //INSERT, UPDATE, DELETE\n\n\n\nSQL문에 결과물이 있다면 ResultSet 객체를 생성한다.\n\n123ResultSet rs =  stmt.executeQuery( \"select no from user\" );while ( rs.next() )      System.out.println( rs.getInt( \"no\") );\n\n\n\n모든 객체를 닫는다.\n\n123rs.close();stmt.close();con.close();\n\n\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-08T00:00:00+09:00","dateModified":"2018-05-08T10:07:37+09:00","datePublished":"2018-05-08T00:00:00+09:00","description":"","headline":"JDBC","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/"}</script>
     <meta name="description" content="JDBC  자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약 자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API SQL과 프로그래밍 언어의 통합 접근 중 한 형태 JAVA는 표준 인터페이스인 JDBC API를 제공 데이터베이스 벤더, 또는 기타 써드파티에서는 JDB">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="JDBC">
-<meta property="og:url" content="http://junheeko.com/2018/05/08/2018-05-08-JDBC/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="JDBC  자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약 자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API SQL과 프로그래밍 언어의 통합 접근 중 한 형태 JAVA는 표준 인터페이스인 JDBC API를 제공 데이터베이스 벤더, 또는 기타 써드파티에서는 JDB">
 <meta property="og:locale" content="en">
@@ -285,7 +285,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/08/2018-05-08-JDBC/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -293,7 +293,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/08/2018-05-08-JDBC/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -301,7 +301,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/08/2018-05-08-JDBC/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -371,7 +371,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/08/2018-05-08-JDBC/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -379,7 +379,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/08/2018-05-08-JDBC/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -387,7 +387,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/08/2018-05-08-JDBC/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -414,7 +414,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/08/2018-05-08-JDBC/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -422,7 +422,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/08/2018-05-08-JDBC/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -430,7 +430,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/08/2018-05-08-JDBC/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/2018-05-08-JDBC/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

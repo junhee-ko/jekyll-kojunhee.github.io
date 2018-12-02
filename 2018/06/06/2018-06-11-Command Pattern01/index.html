@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"DefinitionThe Command Pattern encapsulates a request as an object, \nthereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.\nExplanation\nLet’s step through this. We know that a command object encapsulates a request by binding together a set of actions on a specific receiver. To achieve this, it packages the actions and the receiver up into an object that exposes just one method, execute(). When called, execute() causes the actions to be invoked on the receiver. From the outside, no other objects really know what actions get performed on what receiver; they just know that if they call the execute() method, their request will be serviced. \nWe’ve also seen a couple examples of parameterizing an object with a command. Back at the diner, the Waitress was parameterized with multiple orders throughout the day. In the simple remote control, we first loaded the button slot with a “light on” command and then later replaced it with a “garage door open” command. Like the Waitress, your remote slot didn’t care what command object it had, as long as it implemented the Command interface. \n\nWhat we haven’t encountered yet is using commands to implement queues and logs and support undo operations. Don’t worry, those are pretty straightforward extensions of the basic Command Pattern and we will get to them soon. We can also easily support what’s known as the Meta Command Pattern once we have the basics in place. The Meta Command Pattern allows you to create macros of commands so that you can execute multiple commands at once.  \n\n\nClass Diagram \nCode \n \n \n \n \nUndo \n \n \n \n \n \n \nReferenceHead First Design Pattern\n","dateCreated":"2018-06-06T00:00:00+09:00","dateModified":"2018-10-25T14:38:18+09:00","datePublished":"2018-06-06T00:00:00+09:00","description":"","headline":"Command Pattern01","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"DefinitionThe Command Pattern encapsulates a request as an object, \nthereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.\nExplanation\nLet’s step through this. We know that a command object encapsulates a request by binding together a set of actions on a specific receiver. To achieve this, it packages the actions and the receiver up into an object that exposes just one method, execute(). When called, execute() causes the actions to be invoked on the receiver. From the outside, no other objects really know what actions get performed on what receiver; they just know that if they call the execute() method, their request will be serviced. \nWe’ve also seen a couple examples of parameterizing an object with a command. Back at the diner, the Waitress was parameterized with multiple orders throughout the day. In the simple remote control, we first loaded the button slot with a “light on” command and then later replaced it with a “garage door open” command. Like the Waitress, your remote slot didn’t care what command object it had, as long as it implemented the Command interface. \n\nWhat we haven’t encountered yet is using commands to implement queues and logs and support undo operations. Don’t worry, those are pretty straightforward extensions of the basic Command Pattern and we will get to them soon. We can also easily support what’s known as the Meta Command Pattern once we have the basics in place. The Meta Command Pattern allows you to create macros of commands so that you can execute multiple commands at once.  \n\n\nClass Diagram \nCode \n \n \n \n \nUndo \n \n \n \n \n \n \nReferenceHead First Design Pattern\n","dateCreated":"2018-06-06T00:00:00+09:00","dateModified":"2018-10-25T14:38:18+09:00","datePublished":"2018-06-06T00:00:00+09:00","description":"","headline":"Command Pattern01","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/"}</script>
     <meta name="description" content="DefinitionThe Command Pattern encapsulates a request as an object,  thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations. Expl">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Command Pattern01">
-<meta property="og:url" content="http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="DefinitionThe Command Pattern encapsulates a request as an object,  thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations. Expl">
 <meta property="og:locale" content="en">
@@ -267,7 +267,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -275,7 +275,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -283,7 +283,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -353,7 +353,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -361,7 +361,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -369,7 +369,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -396,7 +396,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -404,7 +404,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -412,7 +412,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/06/06/2018-06-11-Command Pattern01/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

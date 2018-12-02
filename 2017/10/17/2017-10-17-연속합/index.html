@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://www.acmicpc.net/problem/1912\n풀이\nd[n]a[n]을 마지막으로 하는 연속하는 수들의 합 중 가장 큰 수 \n\n예를들어,10 -4 3 1 5 6 -35 12 21 -1 \n\nd[4]\n\n5\n5    + 1\n5 + 1 + 3\n5 + 1 + 3 -1\n5 + 1 + 3 -1 -4\n5 + 1 + 3 -1 -4 + 10\n중 가장 큰 값\n\n\n여기서 dp 문제라고 파악해야함\n\n왜냐하면,\n\nd[3] 은\n\n1\n1 + 3\n1 + 3 - 4\n1 + 3 - 4 + 10 \n이기 때문이다. \nd[3]이 d[4] 구할때 쓰임\n\n\n따라서d[4] = max ( a[4] , a[4]+d[3] )\n\n즉,d[n] = max ( a[n], a[n]+d[n-1] )\n\n\n\n","dateCreated":"2017-10-17T00:00:00+09:00","dateModified":"2018-04-16T13:04:35+09:00","datePublished":"2017-10-17T00:00:00+09:00","description":"","headline":"1912:연속합","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2017/10/17/2017-10-17-연속합/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2017/10/17/2017-10-17-연속합/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://www.acmicpc.net/problem/1912\n풀이\nd[n]a[n]을 마지막으로 하는 연속하는 수들의 합 중 가장 큰 수 \n\n예를들어,10 -4 3 1 5 6 -35 12 21 -1 \n\nd[4]\n\n5\n5    + 1\n5 + 1 + 3\n5 + 1 + 3 -1\n5 + 1 + 3 -1 -4\n5 + 1 + 3 -1 -4 + 10\n중 가장 큰 값\n\n\n여기서 dp 문제라고 파악해야함\n\n왜냐하면,\n\nd[3] 은\n\n1\n1 + 3\n1 + 3 - 4\n1 + 3 - 4 + 10 \n이기 때문이다. \nd[3]이 d[4] 구할때 쓰임\n\n\n따라서d[4] = max ( a[4] , a[4]+d[3] )\n\n즉,d[n] = max ( a[n], a[n]+d[n-1] )\n\n\n\n","dateCreated":"2017-10-17T00:00:00+09:00","dateModified":"2018-04-16T13:04:35+09:00","datePublished":"2017-10-17T00:00:00+09:00","description":"","headline":"1912:연속합","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/"}</script>
     <meta name="description" content="https://www.acmicpc.net/problem/1912 풀이 d[n]a[n]을 마지막으로 하는 연속하는 수들의 합 중 가장 큰 수   예를들어,10 -4 3 1 5 6 -35 12 21 -1   d[4]  5 5    + 1 5 + 1 + 3 5 + 1 + 3 -1 5 + 1 + 3 -1 -4 5 + 1 + 3 -1 -4 + 10 중 가장 큰 값">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="1912:연속합">
-<meta property="og:url" content="http://junheeko.com/2017/10/17/2017-10-17-연속합/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="https://www.acmicpc.net/problem/1912 풀이 d[n]a[n]을 마지막으로 하는 연속하는 수들의 합 중 가장 큰 수   예를들어,10 -4 3 1 5 6 -35 12 21 -1   d[4]  5 5    + 1 5 + 1 + 3 5 + 1 + 3 -1 5 + 1 + 3 -1 -4 5 + 1 + 3 -1 -4 + 10 중 가장 큰 값">
 <meta property="og:locale" content="en">
@@ -269,7 +269,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2017/10/17/2017-10-17-연속합/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -277,7 +277,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2017/10/17/2017-10-17-연속합/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -285,7 +285,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2017/10/17/2017-10-17-연속합/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -355,7 +355,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2017/10/17/2017-10-17-연속합/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -363,7 +363,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2017/10/17/2017-10-17-연속합/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -371,7 +371,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2017/10/17/2017-10-17-연속합/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -398,7 +398,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2017/10/17/2017-10-17-연속합/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -406,7 +406,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2017/10/17/2017-10-17-연속합/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -414,7 +414,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2017/10/17/2017-10-17-연속합/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2017/10/17/2017-10-17-연속합/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

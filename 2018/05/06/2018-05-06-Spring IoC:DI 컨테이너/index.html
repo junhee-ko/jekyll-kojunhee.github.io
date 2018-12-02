@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\n컨테이너\n\n인스턴스의 생명 주기를 관리\nServlet을 실행해주는 WAS는 Servlet 컨테이너를 가지고 있다고 말합니다.\nWAS는 웹 브라우저로부터 서블릿 URL에 해당하는 요청을 받으면, 서블릿을 메모리에 올린 후 실행합니다.\n개발자가 서블릿 클래스를 작성했지만, 실제로 메모리에 올리고 실행하는 것은 WAS가 가지고 있는 Servlet컨테이너입니다.\nServlet컨테이너는 동일한 서블릿에 해당하는 요청을 받으면, 또 메모리에 올리지 않고 기존에 메모리에 올라간 서블릿을 실행하여 그 결과를 웹 브라우저에게 전달합니다.\n\n\n\n\nIoC (Inversion of Control)\n\n예를 들어 서블릿 클래스는 개발자가 만들지만, \n그 서블릿의 메소드를 알맞게 호출하는 것은 WAS입니다.\n이렇게 개발자가 만든 어떤 클래스나 메소드를 다른 프로그램이 대신 실행해주는 것을 제어의 역전이라고 합니다.\n\n\nDI(Dependency Injection)\n\nDI는 클래스 사이의 의존 관계를 빈(Bean) 설정 정보를 바탕으로 컨테이너가 자동으로 연결해주는 것을 말합니다.\n\n\nDI가 적용 안된 예\n\n개발자가 직접 인스턴스를 생성합니다.\n\n\n\nSpring 에서 DI가 적용된 예\n\n엔진 type의 v5변수에 아직 인스턴스가 할당되지 않았습니다.\n컨테이너가 v5변수에 인스턴스를 할당해주게 됩니다.\n\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-06T00:00:00+09:00","dateModified":"2018-05-06T22:42:44+09:00","datePublished":"2018-05-06T00:00:00+09:00","description":"","headline":"Spring IoC/DI 컨테이너","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\n컨테이너\n\n인스턴스의 생명 주기를 관리\nServlet을 실행해주는 WAS는 Servlet 컨테이너를 가지고 있다고 말합니다.\nWAS는 웹 브라우저로부터 서블릿 URL에 해당하는 요청을 받으면, 서블릿을 메모리에 올린 후 실행합니다.\n개발자가 서블릿 클래스를 작성했지만, 실제로 메모리에 올리고 실행하는 것은 WAS가 가지고 있는 Servlet컨테이너입니다.\nServlet컨테이너는 동일한 서블릿에 해당하는 요청을 받으면, 또 메모리에 올리지 않고 기존에 메모리에 올라간 서블릿을 실행하여 그 결과를 웹 브라우저에게 전달합니다.\n\n\n\n\nIoC (Inversion of Control)\n\n예를 들어 서블릿 클래스는 개발자가 만들지만, \n그 서블릿의 메소드를 알맞게 호출하는 것은 WAS입니다.\n이렇게 개발자가 만든 어떤 클래스나 메소드를 다른 프로그램이 대신 실행해주는 것을 제어의 역전이라고 합니다.\n\n\nDI(Dependency Injection)\n\nDI는 클래스 사이의 의존 관계를 빈(Bean) 설정 정보를 바탕으로 컨테이너가 자동으로 연결해주는 것을 말합니다.\n\n\nDI가 적용 안된 예\n\n개발자가 직접 인스턴스를 생성합니다.\n\n\n\nSpring 에서 DI가 적용된 예\n\n엔진 type의 v5변수에 아직 인스턴스가 할당되지 않았습니다.\n컨테이너가 v5변수에 인스턴스를 할당해주게 됩니다.\n\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-06T00:00:00+09:00","dateModified":"2018-05-06T22:42:44+09:00","datePublished":"2018-05-06T00:00:00+09:00","description":"","headline":"Spring IoC/DI 컨테이너","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/"}</script>
     <meta name="description" content="컨테이너  인스턴스의 생명 주기를 관리 Servlet을 실행해주는 WAS는 Servlet 컨테이너를 가지고 있다고 말합니다. WAS는 웹 브라우저로부터 서블릿 URL에 해당하는 요청을 받으면, 서블릿을 메모리에 올린 후 실행합니다. 개발자가 서블릿 클래스를 작성했지만, 실제로 메모리에 올리고 실행하는 것은 WAS가 가지고 있는 Servlet컨테이너입니다.">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Spring IoC&#x2F;DI 컨테이너">
-<meta property="og:url" content="http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="컨테이너  인스턴스의 생명 주기를 관리 Servlet을 실행해주는 WAS는 Servlet 컨테이너를 가지고 있다고 말합니다. WAS는 웹 브라우저로부터 서블릿 URL에 해당하는 요청을 받으면, 서블릿을 메모리에 올린 후 실행합니다. 개발자가 서블릿 클래스를 작성했지만, 실제로 메모리에 올리고 실행하는 것은 WAS가 가지고 있는 Servlet컨테이너입니다.">
 <meta property="og:locale" content="en">
@@ -277,7 +277,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -285,7 +285,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -293,7 +293,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -363,7 +363,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -371,7 +371,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -379,7 +379,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -406,7 +406,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -414,7 +414,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -422,7 +422,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/06/2018-05-06-Spring IoC:DI 컨테이너/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

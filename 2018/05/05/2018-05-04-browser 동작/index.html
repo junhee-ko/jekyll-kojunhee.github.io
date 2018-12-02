@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nRroweser comonents\n\n\nUI\nBrowser engine : 소스코드 실행해서 화면에 보여주는. 브롸우저 소프트웨어를 동작시켜주는 핵심 엔진\nRendering engine : 화면에 위치를 잡고 색칠을 해줌\nData Persistence : 브라우저도 일부 데이터를 케쉬하고 저장을 해\nNetworking : 서버와 HTTP로 정보를 주고 받을 수 있는 네트워크 모듈\nJavaScript Intetpreter : 자바스크림트 코드 처리\nUI Backend : UI 영역 처리\n\n\nRendering Engines\n\n브라우져별로 다르게 가지고 있어\n\nmain flow\n\n\nParsing HTML to construct the DOM tree\nHTML을 먼저 파싱. 문자 단위로 해석을해서 의미 파악.   \nDOM : Document Objedt Model\nHTML을 해석해서 일종의 트리구조로 데이터들을 가지고 있어\n\n\n\n\nRender tree construction\nLayout of the render tree : 스타일 정보와 구조를 합쳐서 화면에 어떠게 배치할지\nPaining the render tree : 화면에 직접 그림 \ndiplay\n\n\n\n\n사파리 브라우저에서 처리되는 webkit렌더링엔진의 처리과정\n\n\nHTML을 해석해서 DOM Tree를 만들고 \nCSS를 해석해서 CSS Tree(CSS Object Model)을 만든다\n이 두 과정에서 Parsing 과정이 필요\n토큰 단위로 해석되는 방식은 일반적인 소스코드의 컴파일 과정이라고 보면 된다\n\n\nDOM Tree와 CSS Tree, 이 두 개는 연관되어 있으므로 Render Tree로 다시 조합\n이렇게 조합된 결과는 화면에 어떻게 배치할지 크기와 위치 정보를 담고 있습니다.\n이후에 이렇게 구성된 Render Tree정보를 통해서 화면에 어떤 부분에 어떻게 색칠을 할지 Painting과정을 거치게 된다\n\n\nReference\n\nhttps://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Introduction\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-05T00:00:00+09:00","dateModified":"2018-05-06T00:03:28+09:00","datePublished":"2018-05-05T00:00:00+09:00","description":"","headline":"browser 동작","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/05/2018-05-04-browser 동작/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/05/2018-05-04-browser 동작/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nRroweser comonents\n\n\nUI\nBrowser engine : 소스코드 실행해서 화면에 보여주는. 브롸우저 소프트웨어를 동작시켜주는 핵심 엔진\nRendering engine : 화면에 위치를 잡고 색칠을 해줌\nData Persistence : 브라우저도 일부 데이터를 케쉬하고 저장을 해\nNetworking : 서버와 HTTP로 정보를 주고 받을 수 있는 네트워크 모듈\nJavaScript Intetpreter : 자바스크림트 코드 처리\nUI Backend : UI 영역 처리\n\n\nRendering Engines\n\n브라우져별로 다르게 가지고 있어\n\nmain flow\n\n\nParsing HTML to construct the DOM tree\nHTML을 먼저 파싱. 문자 단위로 해석을해서 의미 파악.   \nDOM : Document Objedt Model\nHTML을 해석해서 일종의 트리구조로 데이터들을 가지고 있어\n\n\n\n\nRender tree construction\nLayout of the render tree : 스타일 정보와 구조를 합쳐서 화면에 어떠게 배치할지\nPaining the render tree : 화면에 직접 그림 \ndiplay\n\n\n\n\n사파리 브라우저에서 처리되는 webkit렌더링엔진의 처리과정\n\n\nHTML을 해석해서 DOM Tree를 만들고 \nCSS를 해석해서 CSS Tree(CSS Object Model)을 만든다\n이 두 과정에서 Parsing 과정이 필요\n토큰 단위로 해석되는 방식은 일반적인 소스코드의 컴파일 과정이라고 보면 된다\n\n\nDOM Tree와 CSS Tree, 이 두 개는 연관되어 있으므로 Render Tree로 다시 조합\n이렇게 조합된 결과는 화면에 어떻게 배치할지 크기와 위치 정보를 담고 있습니다.\n이후에 이렇게 구성된 Render Tree정보를 통해서 화면에 어떤 부분에 어떻게 색칠을 할지 Painting과정을 거치게 된다\n\n\nReference\n\nhttps://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Introduction\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-05T00:00:00+09:00","dateModified":"2018-05-06T00:03:28+09:00","datePublished":"2018-05-05T00:00:00+09:00","description":"","headline":"browser 동작","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/"}</script>
     <meta name="description" content="Rroweser comonents   UI Browser engine : 소스코드 실행해서 화면에 보여주는. 브롸우저 소프트웨어를 동작시켜주는 핵심 엔진 Rendering engine : 화면에 위치를 잡고 색칠을 해줌 Data Persistence : 브라우저도 일부 데이터를 케쉬하고 저장을 해 Networking : 서버와 HTTP로 정보를 주고 받을">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="browser 동작">
-<meta property="og:url" content="http://junheeko.com/2018/05/05/2018-05-04-browser 동작/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="Rroweser comonents   UI Browser engine : 소스코드 실행해서 화면에 보여주는. 브롸우저 소프트웨어를 동작시켜주는 핵심 엔진 Rendering engine : 화면에 위치를 잡고 색칠을 해줌 Data Persistence : 브라우저도 일부 데이터를 케쉬하고 저장을 해 Networking : 서버와 HTTP로 정보를 주고 받을">
 <meta property="og:locale" content="en">
@@ -291,7 +291,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/05/2018-05-04-browser 동작/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -299,7 +299,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/05/2018-05-04-browser 동작/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -307,7 +307,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/05/2018-05-04-browser 동작/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -377,7 +377,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/05/2018-05-04-browser 동작/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -385,7 +385,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/05/2018-05-04-browser 동작/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -393,7 +393,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/05/2018-05-04-browser 동작/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -420,7 +420,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/05/2018-05-04-browser 동작/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -428,7 +428,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/05/2018-05-04-browser 동작/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -436,7 +436,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/05/2018-05-04-browser 동작/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/05/2018-05-04-browser 동작/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

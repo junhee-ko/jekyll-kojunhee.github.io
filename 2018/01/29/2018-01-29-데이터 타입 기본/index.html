@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309\nIntegers\nsigned (positive, zero, or negative)\nunsigned (positive or zero)\n\n8-bit unsigned integer : UInt8\n32-bit signed integer : Int32\n\n\nInt\n\nOn a 32-bit platform, Int is the same size as Int32.\nOn a 64-bit platform, Int is the same size as Int64.\n\nalways use Int for integer values in your code\n\n\n\nUInt\n\nOn a 32-bit platform, UInt is the same size as UInt32.\nOn a 64-bit platform, UInt is the same size as UInt64.\n\nInt is preferred, even when the values to be stored are known to be nonnegative\n\n\n\n\nBooleans12345678910let orangesAreOrange = truelet turnipsAreDelicious = falseif turnipsAreDelicious &#123;    print(&quot;Mmm, tasty turnips!&quot;)&#125; else &#123;    print(&quot;Eww, turnips are horrible.&quot;)&#125;// Prints &quot;Eww, turnips are horrible.&quot;\n\nSwift’s type safety prevents non-Boolean values from being substituted for Bool\n  1234let i = 1if i &#123;    // this example will not compile, and will report an error&#125;\n\nThe result of the i == 1 comparison is of type Bool,\n\nand so this second example passes the type-check. \n  1234let i = 1if i == 1 &#123;    // this example will compile successfully&#125;\n\n\nFloating-Point Numbers\nDouble represents a 64-bit floating-point number.\nFloat represents a 32-bit floating-point number.\n\nIn situations where either type would be appropriate, Double is preferred.\n\n\n\nStrings and Characters\nString Literals\n\nA literal value is a value that appears directly in your source code\nSwift infers a type of String for the someString constant \nbecause it’s initialized with a string literal value.\n  1234\t\tlet someString = &quot;Some string literal value&quot;\t\t```\t- Initializing an Empty String\nvar emptyString = “”               // empty string literalvar anotherEmptyString = String()  // initializer syntax// these two strings are both empty, and are equivalent to each other\n12\t- String Mutability\nvar variableString = “Horse”variableString += “ and carriage”// variableString is now “Horse and carriage”\nlet constantString = “Highlander”constantString += “ and another Highlander”// this reports a compile-time error - a constant string cannot be modified`\n\n\n\n\n","dateCreated":"2018-01-29T00:00:00+09:00","dateModified":"2018-04-16T13:14:29+09:00","datePublished":"2018-01-29T00:00:00+09:00","description":"","headline":"데이터 타입 기본","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309\nIntegers\nsigned (positive, zero, or negative)\nunsigned (positive or zero)\n\n8-bit unsigned integer : UInt8\n32-bit signed integer : Int32\n\n\nInt\n\nOn a 32-bit platform, Int is the same size as Int32.\nOn a 64-bit platform, Int is the same size as Int64.\n\nalways use Int for integer values in your code\n\n\n\nUInt\n\nOn a 32-bit platform, UInt is the same size as UInt32.\nOn a 64-bit platform, UInt is the same size as UInt64.\n\nInt is preferred, even when the values to be stored are known to be nonnegative\n\n\n\n\nBooleans12345678910let orangesAreOrange = truelet turnipsAreDelicious = falseif turnipsAreDelicious &#123;    print(&quot;Mmm, tasty turnips!&quot;)&#125; else &#123;    print(&quot;Eww, turnips are horrible.&quot;)&#125;// Prints &quot;Eww, turnips are horrible.&quot;\n\nSwift’s type safety prevents non-Boolean values from being substituted for Bool\n  1234let i = 1if i &#123;    // this example will not compile, and will report an error&#125;\n\nThe result of the i == 1 comparison is of type Bool,\n\nand so this second example passes the type-check. \n  1234let i = 1if i == 1 &#123;    // this example will compile successfully&#125;\n\n\nFloating-Point Numbers\nDouble represents a 64-bit floating-point number.\nFloat represents a 32-bit floating-point number.\n\nIn situations where either type would be appropriate, Double is preferred.\n\n\n\nStrings and Characters\nString Literals\n\nA literal value is a value that appears directly in your source code\nSwift infers a type of String for the someString constant \nbecause it’s initialized with a string literal value.\n  1234\t\tlet someString = &quot;Some string literal value&quot;\t\t```\t- Initializing an Empty String\nvar emptyString = “”               // empty string literalvar anotherEmptyString = String()  // initializer syntax// these two strings are both empty, and are equivalent to each other\n12\t- String Mutability\nvar variableString = “Horse”variableString += “ and carriage”// variableString is now “Horse and carriage”\nlet constantString = “Highlander”constantString += “ and another Highlander”// this reports a compile-time error - a constant string cannot be modified`\n\n\n\n\n","dateCreated":"2018-01-29T00:00:00+09:00","dateModified":"2018-04-16T13:14:29+09:00","datePublished":"2018-01-29T00:00:00+09:00","description":"","headline":"데이터 타입 기본","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/"}</script>
     <meta name="description" content="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309 Integers signed (positive, zero, or negati">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="데이터 타입 기본">
-<meta property="og:url" content="http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309 Integers signed (positive, zero, or negati">
 <meta property="og:locale" content="en">
@@ -292,7 +292,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -300,7 +300,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -308,7 +308,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -378,7 +378,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -386,7 +386,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -394,7 +394,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -421,7 +421,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -429,7 +429,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -437,7 +437,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/01/29/2018-01-29-데이터 타입 기본/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/01/29/2018-01-29-데이터 타입 기본/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

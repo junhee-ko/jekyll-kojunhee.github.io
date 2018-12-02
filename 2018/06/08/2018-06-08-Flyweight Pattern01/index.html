@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"MotivationSome programs require a large number of objects that have some shared state among them. \nConsider for example a game of war, were there is a large number of soldier objects; \na soldier object maintain the graphical representation of a soldier, soldier behavior such as motion, and firing weapons, in addition soldier’s health and location on the war terrain. \nCreating a large number of soldier objects is a necessity however it would incur a huge memory cost. \nNote that although the representation and behavior of a soldier is the same their health and location can vary greatly.\nIntentTo use sharing to support a large number of objects that have part of their internal state in common where the other part of state can vary.\nClass Diagram \n\nFlyweight\nDeclares an interface through which flyweights can receive and act on extrinsic state.\n\n\nConcreteFlyweight\nImplements the Flyweight interface and stores intrinsic state. A ConcreteFlyweight object must be sharable. The Concrete flyweight object must maintain state that it is intrinsic to it, and must be able to manipulate state that is extrinsic. In the war game example graphical representation is an intrinsic state, where location and health states are extrinsic. Soldier moves, the motion behavior manipulates the external state (location) to create a new location.\n\n\nFlyweightFactory  \nThe factory creates and manages flyweight objects. In addition the factory ensures sharing of the flyweight objects. The factory maintains a pool of different flyweight objects and returns an object from the pool if it is already created, adds one to the pool and returns it in case it is new.In the war example a Soldier Flyweight factory can create two types of flyweights : a Soldier flyweight, as well as a Colonel Flyweight. When the Client asks the Factory for a soldier, the factory checks to see if there is a soldier in the pool, if there is, it is returned to the client, if there is no soldier in pool, a soldier is created, added to pool, and returned to the client, the next time a client asks for a soldier, the soldier created previously is returned, no new soldier is created.\n\n\nClient\n\nA client maintains references to flyweights in addition to computing and maintaining extrinsic state\n\n\nA client needs a flyweight object; it calls the factory to get the flyweight object. The factory checks a pool of flyweights to determine if a flyweight object of the requested type is in the pool, if there is, the reference to that object is returned. If there is no object of the required type, the factory creates a flyweight of the requested type, adds it to the pool, and returns a reference to the flyweight. The flyweight maintains intrinsic state (state that is shared among the large number of objects that we have created the flyweight for) and provides methods to manipulate external state (State that vary from object to object and is not common among the objects we have created the flyweight for).\n\n\nReferencehttps://www.oodesign.com/flyweight-pattern.html\n","dateCreated":"2018-06-08T00:00:00+09:00","dateModified":"2018-10-25T14:37:59+09:00","datePublished":"2018-06-08T00:00:00+09:00","description":"","headline":"Flyweight Pattern01","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"MotivationSome programs require a large number of objects that have some shared state among them. \nConsider for example a game of war, were there is a large number of soldier objects; \na soldier object maintain the graphical representation of a soldier, soldier behavior such as motion, and firing weapons, in addition soldier’s health and location on the war terrain. \nCreating a large number of soldier objects is a necessity however it would incur a huge memory cost. \nNote that although the representation and behavior of a soldier is the same their health and location can vary greatly.\nIntentTo use sharing to support a large number of objects that have part of their internal state in common where the other part of state can vary.\nClass Diagram \n\nFlyweight\nDeclares an interface through which flyweights can receive and act on extrinsic state.\n\n\nConcreteFlyweight\nImplements the Flyweight interface and stores intrinsic state. A ConcreteFlyweight object must be sharable. The Concrete flyweight object must maintain state that it is intrinsic to it, and must be able to manipulate state that is extrinsic. In the war game example graphical representation is an intrinsic state, where location and health states are extrinsic. Soldier moves, the motion behavior manipulates the external state (location) to create a new location.\n\n\nFlyweightFactory  \nThe factory creates and manages flyweight objects. In addition the factory ensures sharing of the flyweight objects. The factory maintains a pool of different flyweight objects and returns an object from the pool if it is already created, adds one to the pool and returns it in case it is new.In the war example a Soldier Flyweight factory can create two types of flyweights : a Soldier flyweight, as well as a Colonel Flyweight. When the Client asks the Factory for a soldier, the factory checks to see if there is a soldier in the pool, if there is, it is returned to the client, if there is no soldier in pool, a soldier is created, added to pool, and returned to the client, the next time a client asks for a soldier, the soldier created previously is returned, no new soldier is created.\n\n\nClient\n\nA client maintains references to flyweights in addition to computing and maintaining extrinsic state\n\n\nA client needs a flyweight object; it calls the factory to get the flyweight object. The factory checks a pool of flyweights to determine if a flyweight object of the requested type is in the pool, if there is, the reference to that object is returned. If there is no object of the required type, the factory creates a flyweight of the requested type, adds it to the pool, and returns a reference to the flyweight. The flyweight maintains intrinsic state (state that is shared among the large number of objects that we have created the flyweight for) and provides methods to manipulate external state (State that vary from object to object and is not common among the objects we have created the flyweight for).\n\n\nReferencehttps://www.oodesign.com/flyweight-pattern.html\n","dateCreated":"2018-06-08T00:00:00+09:00","dateModified":"2018-10-25T14:37:59+09:00","datePublished":"2018-06-08T00:00:00+09:00","description":"","headline":"Flyweight Pattern01","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/"}</script>
     <meta name="description" content="MotivationSome programs require a large number of objects that have some shared state among them.  Consider for example a game of war, were there is a large number of soldier objects;  a soldier objec">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Flyweight Pattern01">
-<meta property="og:url" content="http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="MotivationSome programs require a large number of objects that have some shared state among them.  Consider for example a game of war, were there is a large number of soldier objects;  a soldier objec">
 <meta property="og:locale" content="en">
@@ -261,7 +261,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -269,7 +269,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -277,7 +277,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -347,7 +347,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -355,7 +355,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -363,7 +363,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -390,7 +390,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -398,7 +398,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -406,7 +406,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/06/08/2018-06-08-Flyweight Pattern01/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/06/08/2018-06-08-Flyweight Pattern01/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"Blurring\nIn blurring, we simple blur an image. \nAn image looks more sharp or more detailed if we are able to perceive all the objects and their shapes correctly in it. \nFor example. An image with a face, looks clear when we are able to identify eyes, ears, nose, lips, forehead e.t.c very clear. \nThis shape of an object is due to its edges. \nSo in blurring, we simple reduce the edge content and makes the transition form one color to the other very smooth.\n\nBlurring vs zooming\nYou might have seen a blurred image when you zoom an image. \nWhen you zoom an image using pixel replication, and zooming factor is increased, you saw a blurred image. This image also has less details, but it is not true blurring.\n\n\nIn zooming, you add new pixels to an image, that increase the overall number of pixels in an image, \nIn blurring, the number of pixels of a normal image and a blurred image remains the same.\n\nCommon example of a blurred image \nTypes of filters\nBlurring can be achieved by many ways. \nThe common type of filters that are used to perform blurring are.\nMean filter\nWeighted average filter\nGaussian filter\n\n\n\nMean filter\nMean filter is also known as Box filter and average filter. \nA mean filter has the following properties.\nIt must be odd ordered\nThe sum of all the elements should be 1\nAll the elements should be same\n\n\nIf we follow this rule, then for a mask of 3x3. We get the following result.\n\n \n\nThe blurring can be increased by increasing the size of the mask. \nThe more is the size of the mask, the more is the blurring. \nBecause with greater mask, greater number of pixels are catered and one smooth transition is defined.\n\n \nWeighted average filter\nIn weighted average filter, \n\nwe gave more weight to the center value. \n\nDue to which the contribution of center becomes more then the rest of the values. Due to weighted average filtering, we can actually control the blurring.\n\nProperties of the weighted average filter are.\n\nIt must be odd ordered\nThe sum of all the elements should be 1\nThe weight of center element should be more then all of the other elements\n\n\nFilter01\n \n\nThe two properties are satisfied which are (1 and 3). But the property 2 is not satisfied. So in order to satisfy that we will simple divide the whole filter by 10, or multiply it with 1/10.\n\n\nFilter02\n \n\nDividing factor = 18.\n\n\n\n","dateCreated":"2018-05-22T00:00:00+09:00","dateModified":"2018-05-22T15:42:29+09:00","datePublished":"2018-05-22T00:00:00+09:00","description":"","headline":"Blurring","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/22/2018-05-22-Blurring/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/22/2018-05-22-Blurring/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"Blurring\nIn blurring, we simple blur an image. \nAn image looks more sharp or more detailed if we are able to perceive all the objects and their shapes correctly in it. \nFor example. An image with a face, looks clear when we are able to identify eyes, ears, nose, lips, forehead e.t.c very clear. \nThis shape of an object is due to its edges. \nSo in blurring, we simple reduce the edge content and makes the transition form one color to the other very smooth.\n\nBlurring vs zooming\nYou might have seen a blurred image when you zoom an image. \nWhen you zoom an image using pixel replication, and zooming factor is increased, you saw a blurred image. This image also has less details, but it is not true blurring.\n\n\nIn zooming, you add new pixels to an image, that increase the overall number of pixels in an image, \nIn blurring, the number of pixels of a normal image and a blurred image remains the same.\n\nCommon example of a blurred image \nTypes of filters\nBlurring can be achieved by many ways. \nThe common type of filters that are used to perform blurring are.\nMean filter\nWeighted average filter\nGaussian filter\n\n\n\nMean filter\nMean filter is also known as Box filter and average filter. \nA mean filter has the following properties.\nIt must be odd ordered\nThe sum of all the elements should be 1\nAll the elements should be same\n\n\nIf we follow this rule, then for a mask of 3x3. We get the following result.\n\n \n\nThe blurring can be increased by increasing the size of the mask. \nThe more is the size of the mask, the more is the blurring. \nBecause with greater mask, greater number of pixels are catered and one smooth transition is defined.\n\n \nWeighted average filter\nIn weighted average filter, \n\nwe gave more weight to the center value. \n\nDue to which the contribution of center becomes more then the rest of the values. Due to weighted average filtering, we can actually control the blurring.\n\nProperties of the weighted average filter are.\n\nIt must be odd ordered\nThe sum of all the elements should be 1\nThe weight of center element should be more then all of the other elements\n\n\nFilter01\n \n\nThe two properties are satisfied which are (1 and 3). But the property 2 is not satisfied. So in order to satisfy that we will simple divide the whole filter by 10, or multiply it with 1/10.\n\n\nFilter02\n \n\nDividing factor = 18.\n\n\n\n","dateCreated":"2018-05-22T00:00:00+09:00","dateModified":"2018-05-22T15:42:29+09:00","datePublished":"2018-05-22T00:00:00+09:00","description":"","headline":"Blurring","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/"}</script>
     <meta name="description" content="Blurring In blurring, we simple blur an image.  An image looks more sharp or more detailed if we are able to perceive all the objects and their shapes correctly in it.  For example. An image with a fa">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Blurring">
-<meta property="og:url" content="http://junheeko.com/2018/05/22/2018-05-22-Blurring/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="Blurring In blurring, we simple blur an image.  An image looks more sharp or more detailed if we are able to perceive all the objects and their shapes correctly in it.  For example. An image with a fa">
 <meta property="og:locale" content="en">
@@ -305,7 +305,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/22/2018-05-22-Blurring/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -313,7 +313,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/22/2018-05-22-Blurring/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -321,7 +321,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/22/2018-05-22-Blurring/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -391,7 +391,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/22/2018-05-22-Blurring/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -399,7 +399,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/22/2018-05-22-Blurring/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -407,7 +407,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/22/2018-05-22-Blurring/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -434,7 +434,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/22/2018-05-22-Blurring/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -442,7 +442,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/22/2018-05-22-Blurring/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -450,7 +450,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/22/2018-05-22-Blurring/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/22/2018-05-22-Blurring/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

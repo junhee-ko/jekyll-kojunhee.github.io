@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://junheeko.com/"/>
+  <link href="https://kojunhee.github.io/"/>
   <updated>2018-11-22T11:43:32.927Z</updated>
-  <id>http://junheeko.com/</id>
+  <id>https://kojunhee.github.io/</id>
   
   <author>
     <name>junhee.ko</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Components</title>
-    <link href="http://junheeko.com/2018/11/22/2018-11-22-Components/"/>
-    <id>http://junheeko.com/2018/11/22/2018-11-22-Components/</id>
+    <link href="https://kojunhee.github.io/2018/11/22/2018-11-22-Components/"/>
+    <id>https://kojunhee.github.io/2018/11/22/2018-11-22-Components/</id>
     <published>2018-11-21T15:00:00.000Z</published>
     <updated>2018-11-22T11:43:32.927Z</updated>
     
@@ -34,15 +34,15 @@
     
     </summary>
     
-      <category term="android" scheme="http://junheeko.com/categories/android/"/>
+      <category term="android" scheme="https://kojunhee.github.io/categories/android/"/>
     
     
   </entry>
   
   <entry>
     <title>flow control</title>
-    <link href="http://junheeko.com/2018/11/21/2018-11-21-flow%20control/"/>
-    <id>http://junheeko.com/2018/11/21/2018-11-21-flow control/</id>
+    <link href="https://kojunhee.github.io/2018/11/21/2018-11-21-flow%20control/"/>
+    <id>https://kojunhee.github.io/2018/11/21/2018-11-21-flow control/</id>
     <published>2018-11-20T15:00:00.000Z</published>
     <updated>2018-11-21T10:59:02.336Z</updated>
     
@@ -58,15 +58,15 @@
     
     </summary>
     
-      <category term="network" scheme="http://junheeko.com/categories/network/"/>
+      <category term="network" scheme="https://kojunhee.github.io/categories/network/"/>
     
     
   </entry>
   
   <entry>
     <title>길찾기</title>
-    <link href="http://junheeko.com/2018/11/21/2018-11-21-%E1%84%80%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%E1%86%BD%E1%84%80%E1%85%B5/"/>
-    <id>http://junheeko.com/2018/11/21/2018-11-21-길찾기/</id>
+    <link href="https://kojunhee.github.io/2018/11/21/2018-11-21-%E1%84%80%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%E1%86%BD%E1%84%80%E1%85%B5/"/>
+    <id>https://kojunhee.github.io/2018/11/21/2018-11-21-길찾기/</id>
     <published>2018-11-20T15:00:00.000Z</published>
     <updated>2018-11-21T07:45:58.304Z</updated>
     
@@ -81,15 +81,15 @@
     
     </summary>
     
-      <category term="algorithm" scheme="http://junheeko.com/categories/algorithm/"/>
+      <category term="algorithm" scheme="https://kojunhee.github.io/categories/algorithm/"/>
     
     
   </entry>
   
   <entry>
     <title>flow, congestion control</title>
-    <link href="http://junheeko.com/2018/11/21/2018-11-21-flow,%20congestion%20control/"/>
-    <id>http://junheeko.com/2018/11/21/2018-11-21-flow, congestion control/</id>
+    <link href="https://kojunhee.github.io/2018/11/21/2018-11-21-flow,%20congestion%20control/"/>
+    <id>https://kojunhee.github.io/2018/11/21/2018-11-21-flow, congestion control/</id>
     <published>2018-11-20T15:00:00.000Z</published>
     <updated>2018-11-21T09:52:10.820Z</updated>
     
@@ -105,15 +105,15 @@
     
     </summary>
     
-      <category term="network" scheme="http://junheeko.com/categories/network/"/>
+      <category term="network" scheme="https://kojunhee.github.io/categories/network/"/>
     
     
   </entry>
   
   <entry>
     <title>View Life Cycle</title>
-    <link href="http://junheeko.com/2018/11/13/2018-11-13-View%20Life%20Cycle/"/>
-    <id>http://junheeko.com/2018/11/13/2018-11-13-View Life Cycle/</id>
+    <link href="https://kojunhee.github.io/2018/11/13/2018-11-13-View%20Life%20Cycle/"/>
+    <id>https://kojunhee.github.io/2018/11/13/2018-11-13-View Life Cycle/</id>
     <published>2018-11-12T15:00:00.000Z</published>
     <updated>2018-11-13T03:19:23.900Z</updated>
     
@@ -128,15 +128,15 @@
     
     </summary>
     
-      <category term="ios" scheme="http://junheeko.com/categories/ios/"/>
+      <category term="ios" scheme="https://kojunhee.github.io/categories/ios/"/>
     
     
   </entry>
   
   <entry>
     <title>SOLID</title>
-    <link href="http://junheeko.com/2018/11/13/2018-11-13-SOLID/"/>
-    <id>http://junheeko.com/2018/11/13/2018-11-13-SOLID/</id>
+    <link href="https://kojunhee.github.io/2018/11/13/2018-11-13-SOLID/"/>
+    <id>https://kojunhee.github.io/2018/11/13/2018-11-13-SOLID/</id>
     <published>2018-11-12T15:00:00.000Z</published>
     <updated>2018-11-13T04:59:04.161Z</updated>
     
@@ -153,15 +153,15 @@
     
     </summary>
     
-      <category term="DesignPattern" scheme="http://junheeko.com/categories/DesignPattern/"/>
+      <category term="DesignPattern" scheme="https://kojunhee.github.io/categories/DesignPattern/"/>
     
     
   </entry>
   
   <entry>
     <title>Hash Table</title>
-    <link href="http://junheeko.com/2018/11/13/2018-11-13-Hash%20Table/"/>
-    <id>http://junheeko.com/2018/11/13/2018-11-13-Hash Table/</id>
+    <link href="https://kojunhee.github.io/2018/11/13/2018-11-13-Hash%20Table/"/>
+    <id>https://kojunhee.github.io/2018/11/13/2018-11-13-Hash Table/</id>
     <published>2018-11-12T15:00:00.000Z</published>
     <updated>2018-11-12T23:33:11.768Z</updated>
     
@@ -177,15 +177,15 @@
     
     </summary>
     
-      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+      <category term="dataStructure" scheme="https://kojunhee.github.io/categories/dataStructure/"/>
     
     
   </entry>
   
   <entry>
     <title>워터폴,에자일</title>
-    <link href="http://junheeko.com/2018/11/12/2018-11-12-%E1%84%8B%E1%85%AF%E1%84%90%E1%85%A5%E1%84%91%E1%85%A9%E1%86%AF,%E1%84%8B%E1%85%A6%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/"/>
-    <id>http://junheeko.com/2018/11/12/2018-11-12-워터폴,에자일/</id>
+    <link href="https://kojunhee.github.io/2018/11/12/2018-11-12-%E1%84%8B%E1%85%AF%E1%84%90%E1%85%A5%E1%84%91%E1%85%A9%E1%86%AF,%E1%84%8B%E1%85%A6%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/"/>
+    <id>https://kojunhee.github.io/2018/11/12/2018-11-12-워터폴,에자일/</id>
     <published>2018-11-11T15:00:00.000Z</published>
     <updated>2018-11-12T13:45:52.823Z</updated>
     
@@ -200,15 +200,15 @@
     
     </summary>
     
-      <category term="softwareEngineering" scheme="http://junheeko.com/categories/softwareEngineering/"/>
+      <category term="softwareEngineering" scheme="https://kojunhee.github.io/categories/softwareEngineering/"/>
     
     
   </entry>
   
   <entry>
     <title>REST</title>
-    <link href="http://junheeko.com/2018/11/12/2018-11-12-REST/"/>
-    <id>http://junheeko.com/2018/11/12/2018-11-12-REST/</id>
+    <link href="https://kojunhee.github.io/2018/11/12/2018-11-12-REST/"/>
+    <id>https://kojunhee.github.io/2018/11/12/2018-11-12-REST/</id>
     <published>2018-11-11T15:00:00.000Z</published>
     <updated>2018-11-12T10:12:52.883Z</updated>
     
@@ -224,15 +224,15 @@
     
     </summary>
     
-      <category term="android" scheme="http://junheeko.com/categories/android/"/>
+      <category term="android" scheme="https://kojunhee.github.io/categories/android/"/>
     
     
   </entry>
   
   <entry>
     <title>Transaction</title>
-    <link href="http://junheeko.com/2018/11/12/2018-11-12-Transaction/"/>
-    <id>http://junheeko.com/2018/11/12/2018-11-12-Transaction/</id>
+    <link href="https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/"/>
+    <id>https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/</id>
     <published>2018-11-11T15:00:00.000Z</published>
     <updated>2018-11-12T14:10:49.351Z</updated>
     
@@ -248,15 +248,15 @@
     
     </summary>
     
-      <category term="database" scheme="http://junheeko.com/categories/database/"/>
+      <category term="database" scheme="https://kojunhee.github.io/categories/database/"/>
     
     
   </entry>
   
   <entry>
     <title>Array, Linked List</title>
-    <link href="http://junheeko.com/2018/11/12/2018-11-12-Linked%20List,%20Array/"/>
-    <id>http://junheeko.com/2018/11/12/2018-11-12-Linked List, Array/</id>
+    <link href="https://kojunhee.github.io/2018/11/12/2018-11-12-Linked%20List,%20Array/"/>
+    <id>https://kojunhee.github.io/2018/11/12/2018-11-12-Linked List, Array/</id>
     <published>2018-11-11T15:00:00.000Z</published>
     <updated>2018-11-12T14:27:43.900Z</updated>
     
@@ -271,15 +271,15 @@
     
     </summary>
     
-      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+      <category term="dataStructure" scheme="https://kojunhee.github.io/categories/dataStructure/"/>
     
     
   </entry>
   
   <entry>
     <title>퀵정렬</title>
-    <link href="http://junheeko.com/2018/11/12/2018-11-12-%E1%84%8F%E1%85%B1%E1%86%A8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
-    <id>http://junheeko.com/2018/11/12/2018-11-12-퀵정렬/</id>
+    <link href="https://kojunhee.github.io/2018/11/12/2018-11-12-%E1%84%8F%E1%85%B1%E1%86%A8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
+    <id>https://kojunhee.github.io/2018/11/12/2018-11-12-퀵정렬/</id>
     <published>2018-11-11T15:00:00.000Z</published>
     <updated>2018-11-12T13:22:16.919Z</updated>
     
@@ -295,15 +295,15 @@
     
     </summary>
     
-      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+      <category term="dataStructure" scheme="https://kojunhee.github.io/categories/dataStructure/"/>
     
     
   </entry>
   
   <entry>
     <title>버블정렬</title>
-    <link href="http://junheeko.com/2018/11/11/2018-11-11-%E1%84%87%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
-    <id>http://junheeko.com/2018/11/11/2018-11-11-버블정렬/</id>
+    <link href="https://kojunhee.github.io/2018/11/11/2018-11-11-%E1%84%87%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
+    <id>https://kojunhee.github.io/2018/11/11/2018-11-11-버블정렬/</id>
     <published>2018-11-10T15:00:00.000Z</published>
     <updated>2018-11-12T13:21:51.676Z</updated>
     
@@ -318,15 +318,15 @@
     
     </summary>
     
-      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+      <category term="dataStructure" scheme="https://kojunhee.github.io/categories/dataStructure/"/>
     
     
   </entry>
   
   <entry>
     <title>선택정렬</title>
-    <link href="http://junheeko.com/2018/11/11/2018-11-11-%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
-    <id>http://junheeko.com/2018/11/11/2018-11-11-선택정렬/</id>
+    <link href="https://kojunhee.github.io/2018/11/11/2018-11-11-%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
+    <id>https://kojunhee.github.io/2018/11/11/2018-11-11-선택정렬/</id>
     <published>2018-11-10T15:00:00.000Z</published>
     <updated>2018-11-12T13:21:47.867Z</updated>
     
@@ -341,15 +341,15 @@
     
     </summary>
     
-      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+      <category term="dataStructure" scheme="https://kojunhee.github.io/categories/dataStructure/"/>
     
     
   </entry>
   
   <entry>
     <title>삽입정렬</title>
-    <link href="http://junheeko.com/2018/11/11/2018-11-11-%E1%84%89%E1%85%A1%E1%86%B8%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
-    <id>http://junheeko.com/2018/11/11/2018-11-11-삽입정렬/</id>
+    <link href="https://kojunhee.github.io/2018/11/11/2018-11-11-%E1%84%89%E1%85%A1%E1%86%B8%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
+    <id>https://kojunhee.github.io/2018/11/11/2018-11-11-삽입정렬/</id>
     <published>2018-11-10T15:00:00.000Z</published>
     <updated>2018-11-12T13:22:02.504Z</updated>
     
@@ -364,15 +364,15 @@
     
     </summary>
     
-      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+      <category term="dataStructure" scheme="https://kojunhee.github.io/categories/dataStructure/"/>
     
     
   </entry>
   
   <entry>
     <title>MongoDB</title>
-    <link href="http://junheeko.com/2018/11/11/2018-11-11-MongoDB/"/>
-    <id>http://junheeko.com/2018/11/11/2018-11-11-MongoDB/</id>
+    <link href="https://kojunhee.github.io/2018/11/11/2018-11-11-MongoDB/"/>
+    <id>https://kojunhee.github.io/2018/11/11/2018-11-11-MongoDB/</id>
     <published>2018-11-10T15:00:00.000Z</published>
     <updated>2018-11-11T00:57:51.403Z</updated>
     
@@ -388,15 +388,15 @@
     
     </summary>
     
-      <category term="database" scheme="http://junheeko.com/categories/database/"/>
+      <category term="database" scheme="https://kojunhee.github.io/categories/database/"/>
     
     
   </entry>
   
   <entry>
     <title>점근 표기법</title>
-    <link href="http://junheeko.com/2018/11/11/2018-11-11-%E1%84%8C%E1%85%A5%E1%86%B7%E1%84%80%E1%85%B3%E1%86%AB%20%E1%84%91%E1%85%AD%E1%84%80%E1%85%B5%E1%84%87%E1%85%A5%E1%86%B8/"/>
-    <id>http://junheeko.com/2018/11/11/2018-11-11-점근 표기법/</id>
+    <link href="https://kojunhee.github.io/2018/11/11/2018-11-11-%E1%84%8C%E1%85%A5%E1%86%B7%E1%84%80%E1%85%B3%E1%86%AB%20%E1%84%91%E1%85%AD%E1%84%80%E1%85%B5%E1%84%87%E1%85%A5%E1%86%B8/"/>
+    <id>https://kojunhee.github.io/2018/11/11/2018-11-11-점근 표기법/</id>
     <published>2018-11-10T15:00:00.000Z</published>
     <updated>2018-11-12T13:22:08.800Z</updated>
     
@@ -412,15 +412,15 @@
     
     </summary>
     
-      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+      <category term="dataStructure" scheme="https://kojunhee.github.io/categories/dataStructure/"/>
     
     
   </entry>
   
   <entry>
     <title>Heap</title>
-    <link href="http://junheeko.com/2018/11/11/2018-11-11-Heap/"/>
-    <id>http://junheeko.com/2018/11/11/2018-11-11-Heap/</id>
+    <link href="https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/"/>
+    <id>https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/</id>
     <published>2018-11-10T15:00:00.000Z</published>
     <updated>2018-11-12T13:21:55.456Z</updated>
     
@@ -436,15 +436,15 @@
     
     </summary>
     
-      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+      <category term="dataStructure" scheme="https://kojunhee.github.io/categories/dataStructure/"/>
     
     
   </entry>
   
   <entry>
     <title>숫자 고르기</title>
-    <link href="http://junheeko.com/2018/11/08/2018-11-08-%E1%84%89%E1%85%AE%E1%86%BA%E1%84%8C%E1%85%A1%20%E1%84%80%E1%85%A9%E1%84%85%E1%85%B3%E1%84%80%E1%85%B5/"/>
-    <id>http://junheeko.com/2018/11/08/2018-11-08-숫자 고르기/</id>
+    <link href="https://kojunhee.github.io/2018/11/08/2018-11-08-%E1%84%89%E1%85%AE%E1%86%BA%E1%84%8C%E1%85%A1%20%E1%84%80%E1%85%A9%E1%84%85%E1%85%B3%E1%84%80%E1%85%B5/"/>
+    <id>https://kojunhee.github.io/2018/11/08/2018-11-08-숫자 고르기/</id>
     <published>2018-11-07T15:00:00.000Z</published>
     <updated>2018-11-08T04:16:16.230Z</updated>
     
@@ -460,15 +460,15 @@
     
     </summary>
     
-      <category term="algorithm" scheme="http://junheeko.com/categories/algorithm/"/>
+      <category term="algorithm" scheme="https://kojunhee.github.io/categories/algorithm/"/>
     
     
   </entry>
   
   <entry>
     <title>TCP/IP</title>
-    <link href="http://junheeko.com/2018/11/08/2018-11-08-TCP:IP/"/>
-    <id>http://junheeko.com/2018/11/08/2018-11-08-TCP:IP/</id>
+    <link href="https://kojunhee.github.io/2018/11/08/2018-11-08-TCP:IP/"/>
+    <id>https://kojunhee.github.io/2018/11/08/2018-11-08-TCP:IP/</id>
     <published>2018-11-07T15:00:00.000Z</published>
     <updated>2018-11-11T00:50:21.451Z</updated>
     
@@ -483,7 +483,7 @@
     
     </summary>
     
-      <category term="network" scheme="http://junheeko.com/categories/network/"/>
+      <category term="network" scheme="https://kojunhee.github.io/categories/network/"/>
     
     
   </entry>

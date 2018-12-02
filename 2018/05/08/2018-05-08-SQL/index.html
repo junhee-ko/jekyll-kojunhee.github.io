@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nSQL(Structured Query Language)\n\nSQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다.\n관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다.\nDML (Data Manipulation Language)\n데이터를 조작하기 위해 사용합니다.\nINSERT, UPDATE, DELETE, SELECT 등이 여기에 해당합니다.\n\n\nDDL (Data Definition Language)\n데이터베이스의 스키마를 정의하거나 조작하기 위해 사용합니다.\nCREATE, DROP, ALTER 등이 여기에 해당합니다.\n\n\nDCL (Data Control Language) \n데이터를 제어하는 언어입니다. 권한을 관리하고, 테이터의 보안, 무결성 등을 정의합니다.\nGRANT, REVOKE 등이 여기에 해당합니다.\n\n\n\n\nDatabase 생성하기\n1mysql –uroot  -p\n\nMySQL 관리자 계정인 root로 데이터베이스 관리 시스템에 접속하겠다는 것입니다.\nMySQL DBMS에 접속하면 “mysql&gt;” 프롬프트가 보입니다.\n\n1mysql&gt; create database connectdb;\n\n다음과 같은 명령을 실행하여 DB이름을 “connectdb＂로 생성하도록 하겠습니다.\n\n\nDatabase 사용자 생성과 권한 주기\n123grant all privileges on db이름.* to 계정이름@&apos;%&apos; identified by ＇암호’;grant all privileges on db이름.* to 계정이름@&apos;localhost&apos; identified by ＇암호’;flush privileges;\n\nDatabase를 생성했다면, 해당 데이터베이스를 사용하는 계정을 생성해야 합니다.\n또한, 해당 계정이 데이터베이스를 이용할 수 있는 권한을 줘야 합니다.\ndb이름 뒤의 * 는 모든 권한을 의미한다.\n@’%’는 어떤 클라이언트에서든 접근 가능하다는 의미이고, @’localhost’는 해당 컴퓨터에서만 접근 가능하다는 의미입니다.\nflush privileges는 DBMS에게 적용을 하라는 의미입니다.\n해당 명령을 반드시 실행해줘야 합니다.\n\n12345grant all privileges on connectdb.* to connectuser@&apos;%&apos; identified by &apos;connect123!@#&apos;;grant all privileges on connectdb.* to connectuser@&apos;localhost&apos; identified by &apos;connect123!@#&apos;;flush privileges;\n\n생성한 Database에 접속하기\n1mysql&gt; –h호스트명 –uDB계정명 –p 데이터베이스이름\n\ndb이름이 connectdb, db계정이 connectuser, 암호가 connect123!@# 일 경우 콘솔창에서 다음과 같이 입력합니다.\n\n1mysql –h127.0.0.1 –uconnectuser –p connectdb [enter]\n\nDBMS에 존재하는 데이터베이스 확인하기\n1mysql&gt; show databases;\n\n사용중인 데이터베이스 전환하기\n1mysql&gt; use mydb;\n\n데이터베이스를 전환하려면, \n이미 데이터베이스가 존재해야 하며 \n현재 접속 중인 계정이 해당 데이터베이스를 사용할 수 있는 권한이 있어야 합니다.\n\n\n데이터를 저장하는 공간 테이블(Table)\n\n\n마이크로소프트의 엑셀(Excel)을 실행하면 표가 나옵니다. 이러한 표에 각종 값을 저장할 수 있습니다.\n데이터베이스도 엑셀의 표와 유사한 테이블을 가질 수 있습니다.\n엑셀과 다른 점은 데이터베이스를 생성해도 테이블은 존재하지 않는다는 것입니다.\n테이블을 사용하려면 테이블을 생성하는 SQL을 사용해야 합니다.\n그리고, 테이블에 값을 저장하려면 저장하기 위한 SQL을 사용해야 합니다.\n\n\n현재 데이터베이스에 존재하는 테이블 목록 확인하기\n1mysql&gt; show tables;\n\n테이블 구조를 확인하기 위한 DESCRIBE 명령\n1mysql&gt; desc EMPLOYEE;\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-08T00:00:00+09:00","dateModified":"2018-05-08T17:14:36+09:00","datePublished":"2018-05-08T00:00:00+09:00","description":"","headline":"SQL","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/08/2018-05-08-SQL/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/08/2018-05-08-SQL/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nSQL(Structured Query Language)\n\nSQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다.\n관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다.\nDML (Data Manipulation Language)\n데이터를 조작하기 위해 사용합니다.\nINSERT, UPDATE, DELETE, SELECT 등이 여기에 해당합니다.\n\n\nDDL (Data Definition Language)\n데이터베이스의 스키마를 정의하거나 조작하기 위해 사용합니다.\nCREATE, DROP, ALTER 등이 여기에 해당합니다.\n\n\nDCL (Data Control Language) \n데이터를 제어하는 언어입니다. 권한을 관리하고, 테이터의 보안, 무결성 등을 정의합니다.\nGRANT, REVOKE 등이 여기에 해당합니다.\n\n\n\n\nDatabase 생성하기\n1mysql –uroot  -p\n\nMySQL 관리자 계정인 root로 데이터베이스 관리 시스템에 접속하겠다는 것입니다.\nMySQL DBMS에 접속하면 “mysql&gt;” 프롬프트가 보입니다.\n\n1mysql&gt; create database connectdb;\n\n다음과 같은 명령을 실행하여 DB이름을 “connectdb＂로 생성하도록 하겠습니다.\n\n\nDatabase 사용자 생성과 권한 주기\n123grant all privileges on db이름.* to 계정이름@&apos;%&apos; identified by ＇암호’;grant all privileges on db이름.* to 계정이름@&apos;localhost&apos; identified by ＇암호’;flush privileges;\n\nDatabase를 생성했다면, 해당 데이터베이스를 사용하는 계정을 생성해야 합니다.\n또한, 해당 계정이 데이터베이스를 이용할 수 있는 권한을 줘야 합니다.\ndb이름 뒤의 * 는 모든 권한을 의미한다.\n@’%’는 어떤 클라이언트에서든 접근 가능하다는 의미이고, @’localhost’는 해당 컴퓨터에서만 접근 가능하다는 의미입니다.\nflush privileges는 DBMS에게 적용을 하라는 의미입니다.\n해당 명령을 반드시 실행해줘야 합니다.\n\n12345grant all privileges on connectdb.* to connectuser@&apos;%&apos; identified by &apos;connect123!@#&apos;;grant all privileges on connectdb.* to connectuser@&apos;localhost&apos; identified by &apos;connect123!@#&apos;;flush privileges;\n\n생성한 Database에 접속하기\n1mysql&gt; –h호스트명 –uDB계정명 –p 데이터베이스이름\n\ndb이름이 connectdb, db계정이 connectuser, 암호가 connect123!@# 일 경우 콘솔창에서 다음과 같이 입력합니다.\n\n1mysql –h127.0.0.1 –uconnectuser –p connectdb [enter]\n\nDBMS에 존재하는 데이터베이스 확인하기\n1mysql&gt; show databases;\n\n사용중인 데이터베이스 전환하기\n1mysql&gt; use mydb;\n\n데이터베이스를 전환하려면, \n이미 데이터베이스가 존재해야 하며 \n현재 접속 중인 계정이 해당 데이터베이스를 사용할 수 있는 권한이 있어야 합니다.\n\n\n데이터를 저장하는 공간 테이블(Table)\n\n\n마이크로소프트의 엑셀(Excel)을 실행하면 표가 나옵니다. 이러한 표에 각종 값을 저장할 수 있습니다.\n데이터베이스도 엑셀의 표와 유사한 테이블을 가질 수 있습니다.\n엑셀과 다른 점은 데이터베이스를 생성해도 테이블은 존재하지 않는다는 것입니다.\n테이블을 사용하려면 테이블을 생성하는 SQL을 사용해야 합니다.\n그리고, 테이블에 값을 저장하려면 저장하기 위한 SQL을 사용해야 합니다.\n\n\n현재 데이터베이스에 존재하는 테이블 목록 확인하기\n1mysql&gt; show tables;\n\n테이블 구조를 확인하기 위한 DESCRIBE 명령\n1mysql&gt; desc EMPLOYEE;\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-08T00:00:00+09:00","dateModified":"2018-05-08T17:14:36+09:00","datePublished":"2018-05-08T00:00:00+09:00","description":"","headline":"SQL","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/"}</script>
     <meta name="description" content="SQL(Structured Query Language)  SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다. 관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다. DML (Data Manipulation Language) 데이터를 조작하기 위해 사용합니다. INSERT, UPDATE">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="SQL">
-<meta property="og:url" content="http://junheeko.com/2018/05/08/2018-05-08-SQL/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="SQL(Structured Query Language)  SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다. 관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다. DML (Data Manipulation Language) 데이터를 조작하기 위해 사용합니다. INSERT, UPDATE">
 <meta property="og:locale" content="en">
@@ -319,7 +319,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -327,7 +327,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -335,7 +335,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -405,7 +405,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -413,7 +413,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -421,7 +421,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -448,7 +448,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/08/2018-05-08-SQL/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -456,7 +456,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/08/2018-05-08-SQL/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -464,7 +464,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/08/2018-05-08-SQL/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/2018-05-08-SQL/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

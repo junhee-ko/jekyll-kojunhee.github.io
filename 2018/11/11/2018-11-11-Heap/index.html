@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"Heap 이란우선순위 큐를 위한 완전이진트리\n우선순위 큐데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적.\nHeap의 종류\n\n최대힙부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리\n최소힙부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리\n\nHeap의 구현\n배열로 구현한다.부모 노드와 자식 노드의 관계는 다음과 같다.\n\n왼쪽 자식의 인덱스 = (부모의 인덱스) * 2\n오른쪽 자식의 인덱스 = (부모의 인덱스) * 2 + 1\n부모의 인덱스 = (자식의 인덱스) / 2\n\nHeap의 삽입\n힙에 새로운 요소가 들어오면, 일단 새로운 노드를 힙의 마지막 노드에 이어서 삽입한다.\n새로운 노드를 부모 노드들과 교환해서 힙의 성질을 만족시킨다.\n\nHeap의 삭제\n최대 힙에서 최댓값은 루트 노드이므로 루트 노드가 삭제된다.최대 힙(max heap)에서 삭제 연산은 최댓값을 가진 요소를 삭제하는 것이다.최소 힙(min heap)에서 삭제 연산은 최솟값을 가진 요소를 삭제하는 것이다.\n삭제된 루트 노드에는 힙의 마지막 노드를 가져온다.\n힙을 재구성한다.\n\nHeap 정렬최대 힙 트리나 최소 힙 트리를 구성해 정렬을 하는 방법\nHeap 정렬의 시간 복잡도힙 트리의 전체 높이가 거의 log₂n(완전 이진 트리이므로)이므로 하나의 요소를 힙에 삽입하거나 삭제할 때 힙을 재정비하는 시간이 log₂n만큼 소요된다.\n요소의 개수가 n개 이므로 전체적으로 O(nlog₂n)의 시간이 걸린다.\nT(n) = O(nlog₂n)\nReferencehttps://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html\n","dateCreated":"2018-11-11T00:00:00+09:00","dateModified":"2018-11-12T22:21:55+09:00","datePublished":"2018-11-11T00:00:00+09:00","description":"","headline":"Heap","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/11/11/2018-11-11-Heap/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/11/11/2018-11-11-Heap/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"Heap 이란우선순위 큐를 위한 완전이진트리\n우선순위 큐데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적.\nHeap의 종류\n\n최대힙부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리\n최소힙부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리\n\nHeap의 구현\n배열로 구현한다.부모 노드와 자식 노드의 관계는 다음과 같다.\n\n왼쪽 자식의 인덱스 = (부모의 인덱스) * 2\n오른쪽 자식의 인덱스 = (부모의 인덱스) * 2 + 1\n부모의 인덱스 = (자식의 인덱스) / 2\n\nHeap의 삽입\n힙에 새로운 요소가 들어오면, 일단 새로운 노드를 힙의 마지막 노드에 이어서 삽입한다.\n새로운 노드를 부모 노드들과 교환해서 힙의 성질을 만족시킨다.\n\nHeap의 삭제\n최대 힙에서 최댓값은 루트 노드이므로 루트 노드가 삭제된다.최대 힙(max heap)에서 삭제 연산은 최댓값을 가진 요소를 삭제하는 것이다.최소 힙(min heap)에서 삭제 연산은 최솟값을 가진 요소를 삭제하는 것이다.\n삭제된 루트 노드에는 힙의 마지막 노드를 가져온다.\n힙을 재구성한다.\n\nHeap 정렬최대 힙 트리나 최소 힙 트리를 구성해 정렬을 하는 방법\nHeap 정렬의 시간 복잡도힙 트리의 전체 높이가 거의 log₂n(완전 이진 트리이므로)이므로 하나의 요소를 힙에 삽입하거나 삭제할 때 힙을 재정비하는 시간이 log₂n만큼 소요된다.\n요소의 개수가 n개 이므로 전체적으로 O(nlog₂n)의 시간이 걸린다.\nT(n) = O(nlog₂n)\nReferencehttps://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html\n","dateCreated":"2018-11-11T00:00:00+09:00","dateModified":"2018-11-12T22:21:55+09:00","datePublished":"2018-11-11T00:00:00+09:00","description":"","headline":"Heap","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/"}</script>
     <meta name="description" content="Heap 이란우선순위 큐를 위한 완전이진트리 우선순위 큐데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적. Heap의 종류  최대힙부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리 최소">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Heap">
-<meta property="og:url" content="http://junheeko.com/2018/11/11/2018-11-11-Heap/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="Heap 이란우선순위 큐를 위한 완전이진트리 우선순위 큐데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적. Heap의 종류  최대힙부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리 최소">
 <meta property="og:locale" content="en">
@@ -261,7 +261,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/11/11/2018-11-11-Heap/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -269,7 +269,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/11/11/2018-11-11-Heap/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -277,7 +277,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/11/11/2018-11-11-Heap/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -347,7 +347,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/11/11/2018-11-11-Heap/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -355,7 +355,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/11/11/2018-11-11-Heap/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -363,7 +363,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/11/11/2018-11-11-Heap/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -390,7 +390,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/11/11/2018-11-11-Heap/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -398,7 +398,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/11/11/2018-11-11-Heap/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -406,7 +406,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/11/11/2018-11-11-Heap/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/11/11/2018-11-11-Heap/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

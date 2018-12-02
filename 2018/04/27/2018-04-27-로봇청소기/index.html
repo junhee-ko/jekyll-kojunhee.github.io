@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://www.acmicpc.net/problem/4991\n다시 푼 문제이다. 어떻게 풀어야하는지 전혀 감이 잡히지 않았다. 해설을 보고 이해를 하였다.\n풀이\nmap 입력을 받으며, 더러운 칸이면 칸의 위치를 백터에 저장한다.\n시작 위치에서 더러운 칸을 이동하는 최소값을 next_permutation()을 이용하여 구한다.\n\n예시\n다음과 같이 더러운 칸이 세 곳 이라고 하자.\nStart Point\nDirty Point 01\nDirty Point 02\nDirty Point 03\n\n\n방문하는 순서는 다음과 같은 경우들이 있다. 이 때, next_permutation() 을 이용한다.\nS -&gt; 01 -&gt; 02 -&gt; 03\nS -&gt; 01 -&gt; 03 -&gt; 02 \nS -&gt; 02 -&gt; 01 -&gt; 03\nS -&gt; 02 -&gt; 03 -&gt; 01 \nS -&gt; 03 -&gt; 01 -&gt; 02\nS -&gt; 03 -&gt; 02 -&gt; 01 \n\n\n그렇다면 이동 경로 거리는 어떻게 구할까? 위 예시 중, 가장 위의 경우를 보자.\nS -&gt; 01 최단 거리 :  S를 시작점으로 하는 BFS 에서 구할 수 있다.\n01 -&gt; 02 최단 거리 :  01을 시작점으로 하는 BFS 에서 구할 수 있다. \n02 -&gt; 03 최단 거리 :  02를 시작점으로 하는 BFS 에서 구할 수 있다. \n\n\n\n코드\n\n\n\n\n","dateCreated":"2018-04-27T00:00:00+09:00","dateModified":"2018-08-30T18:31:10+09:00","datePublished":"2018-04-27T00:00:00+09:00","description":"","headline":"로봇청소기","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://www.acmicpc.net/problem/4991\n다시 푼 문제이다. 어떻게 풀어야하는지 전혀 감이 잡히지 않았다. 해설을 보고 이해를 하였다.\n풀이\nmap 입력을 받으며, 더러운 칸이면 칸의 위치를 백터에 저장한다.\n시작 위치에서 더러운 칸을 이동하는 최소값을 next_permutation()을 이용하여 구한다.\n\n예시\n다음과 같이 더러운 칸이 세 곳 이라고 하자.\nStart Point\nDirty Point 01\nDirty Point 02\nDirty Point 03\n\n\n방문하는 순서는 다음과 같은 경우들이 있다. 이 때, next_permutation() 을 이용한다.\nS -&gt; 01 -&gt; 02 -&gt; 03\nS -&gt; 01 -&gt; 03 -&gt; 02 \nS -&gt; 02 -&gt; 01 -&gt; 03\nS -&gt; 02 -&gt; 03 -&gt; 01 \nS -&gt; 03 -&gt; 01 -&gt; 02\nS -&gt; 03 -&gt; 02 -&gt; 01 \n\n\n그렇다면 이동 경로 거리는 어떻게 구할까? 위 예시 중, 가장 위의 경우를 보자.\nS -&gt; 01 최단 거리 :  S를 시작점으로 하는 BFS 에서 구할 수 있다.\n01 -&gt; 02 최단 거리 :  01을 시작점으로 하는 BFS 에서 구할 수 있다. \n02 -&gt; 03 최단 거리 :  02를 시작점으로 하는 BFS 에서 구할 수 있다. \n\n\n\n코드\n\n\n\n\n","dateCreated":"2018-04-27T00:00:00+09:00","dateModified":"2018-08-30T18:31:10+09:00","datePublished":"2018-04-27T00:00:00+09:00","description":"","headline":"로봇청소기","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/"}</script>
     <meta name="description" content="https://www.acmicpc.net/problem/4991 다시 푼 문제이다. 어떻게 풀어야하는지 전혀 감이 잡히지 않았다. 해설을 보고 이해를 하였다. 풀이 map 입력을 받으며, 더러운 칸이면 칸의 위치를 백터에 저장한다. 시작 위치에서 더러운 칸을 이동하는 최소값을 next_permutation()을 이용하여 구한다.  예시 다음과 같이 더러운">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="로봇청소기">
-<meta property="og:url" content="http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="https://www.acmicpc.net/problem/4991 다시 푼 문제이다. 어떻게 풀어야하는지 전혀 감이 잡히지 않았다. 해설을 보고 이해를 하였다. 풀이 map 입력을 받으며, 더러운 칸이면 칸의 위치를 백터에 저장한다. 시작 위치에서 더러운 칸을 이동하는 최소값을 next_permutation()을 이용하여 구한다.  예시 다음과 같이 더러운">
 <meta property="og:locale" content="en">
@@ -271,7 +271,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -279,7 +279,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -287,7 +287,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -357,7 +357,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -365,7 +365,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -373,7 +373,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -400,7 +400,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -408,7 +408,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -416,7 +416,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/27/2018-04-27-로봇청소기/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/04/27/2018-04-27-로봇청소기/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

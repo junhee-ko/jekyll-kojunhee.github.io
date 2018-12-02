@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"Definition상태에 따라 동일한 작업이 다른 방식으로 실행될 때 해당 상태가 작업을 수행하도록 위임하는 디자인 패턴이다. \nClass Diagram \n\nState\n시스템의 모든 상태에 공통의 인터페이스를 제공\n이 인터페이스를 실체화한 어떤 상태 클래스도 기존 상태 클래스를 대신해 고체해서 사용할 수 있다.\n\n\nState1, State2, State3\nContext 객체가 요청한 작업을 자신의 방식으로 실제 실행\n대부분의 경우 다음 상태를 결정해 상태 변경을 Context 객체에 요청하는 역할도 수행 \n\n\nContext\nState를 이용하는 역할 수행\n현재 시스템의 상태를 나타내는 상태 변수(state) , 실제 시스템의 상태를 구현하는 여러가지 변수가 있다\n각 상태 클래스에서 상태 변경을 요청해 상태를 바꿀수 있도록 하는 method (setState) 가 제공된다.\nContext 요소를 구현한 클래스의 request method는 실제 행위를 실행하는 대신 해당 상태 객체에 행위 실행을 위임\n\n\n\nExample \n\nLight \nContext\n\n\nState inteface\nState\n\n\nON, OFF\nState1, State2\n\n\n\nReferenceJava 객체지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;\n","dateCreated":"2018-05-31T00:00:00+09:00","dateModified":"2018-10-25T14:36:44+09:00","datePublished":"2018-05-31T00:00:00+09:00","description":"","headline":"State Pattern02","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"Definition상태에 따라 동일한 작업이 다른 방식으로 실행될 때 해당 상태가 작업을 수행하도록 위임하는 디자인 패턴이다. \nClass Diagram \n\nState\n시스템의 모든 상태에 공통의 인터페이스를 제공\n이 인터페이스를 실체화한 어떤 상태 클래스도 기존 상태 클래스를 대신해 고체해서 사용할 수 있다.\n\n\nState1, State2, State3\nContext 객체가 요청한 작업을 자신의 방식으로 실제 실행\n대부분의 경우 다음 상태를 결정해 상태 변경을 Context 객체에 요청하는 역할도 수행 \n\n\nContext\nState를 이용하는 역할 수행\n현재 시스템의 상태를 나타내는 상태 변수(state) , 실제 시스템의 상태를 구현하는 여러가지 변수가 있다\n각 상태 클래스에서 상태 변경을 요청해 상태를 바꿀수 있도록 하는 method (setState) 가 제공된다.\nContext 요소를 구현한 클래스의 request method는 실제 행위를 실행하는 대신 해당 상태 객체에 행위 실행을 위임\n\n\n\nExample \n\nLight \nContext\n\n\nState inteface\nState\n\n\nON, OFF\nState1, State2\n\n\n\nReferenceJava 객체지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;\n","dateCreated":"2018-05-31T00:00:00+09:00","dateModified":"2018-10-25T14:36:44+09:00","datePublished":"2018-05-31T00:00:00+09:00","description":"","headline":"State Pattern02","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/"}</script>
     <meta name="description" content="Definition상태에 따라 동일한 작업이 다른 방식으로 실행될 때 해당 상태가 작업을 수행하도록 위임하는 디자인 패턴이다.  Class Diagram   State 시스템의 모든 상태에 공통의 인터페이스를 제공 이 인터페이스를 실체화한 어떤 상태 클래스도 기존 상태 클래스를 대신해 고체해서 사용할 수 있다.   State1, State2, State3">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="State Pattern02">
-<meta property="og:url" content="http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="Definition상태에 따라 동일한 작업이 다른 방식으로 실행될 때 해당 상태가 작업을 수행하도록 위임하는 디자인 패턴이다.  Class Diagram   State 시스템의 모든 상태에 공통의 인터페이스를 제공 이 인터페이스를 실체화한 어떤 상태 클래스도 기존 상태 클래스를 대신해 고체해서 사용할 수 있다.   State1, State2, State3">
 <meta property="og:locale" content="en">
@@ -270,7 +270,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -278,7 +278,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -286,7 +286,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -356,7 +356,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -364,7 +364,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -372,7 +372,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -399,7 +399,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -407,7 +407,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -415,7 +415,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/31/2018-05-31-State Pattern02/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/31/2018-05-31-State Pattern02/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

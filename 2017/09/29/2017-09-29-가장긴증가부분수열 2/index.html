@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://www.acmicpc.net/problem/11053\n틀린 풀이\nd[n]\n첫번째 ~ n번째 값 중, \n가장 큰 수 \n\n\n10 20 10 30 20 50\n\nd[0] = 0\nd[1] = 10 \nd[2] = 20\nd[3] = 20\nd[4] = 30\nd[5] = 30\nd[6] = 50\n\n\nd 배열의 값이 바뀔 때를 count \n\ncount 값이 답.\n\n\n맞는 풀이LIS 문제. 유명한 문제.\n\nd[i]\n\na[1] … a[i] 가 있을 때,\na[i]를 마지막으로 하는\n가장 긴 증가하는 부분 수열의 길이.\nd[i]는 a[i] 가 반드시 포함\n\n\n~ a[j] … a[i]\n\n~ a[j]길이 : d[j] —-&gt; d[j]  + 1\n\n\nd[i]\n\nmax( d[j] ) + 1\n\n\na[j] 와 a[i]의 관계\n\na[j] &lt; a[i]\n\n\n\n123456789  i\t\t\t1     2     3     4     5     6 a[i]\t\t10    20    10    30    20    50 d[i]     \t 1     2     1     3     2     4         d[4]를 예를들어,d[4]는 처음에 1. 왜냐하면 자기 자신하나만 있으면 길이기 1이기 때문에.a[3]을 봤더니, a[4]보다 작아. 증가하는 수열이기때문에 올 수 있어. 그럼, d[3] +1 = 2. 1보다 크기 때문에. d[4]=2a[2]을 봤더니, a[4]보다 작아. 증가하는 수열이기때문에 올 수 있어. 그럼, d[2] +1 = 3. 2보다 크기 때문에 d[4] =3 a[1]을 봤더니, a[4]보다 작아. 증가하는 수열이기때문에 올 수 있어. 그럼, d[1] +1 = 1. 3보다 작기 때문에 그대로\n","dateCreated":"2017-09-29T00:00:00+09:00","dateModified":"2018-04-16T13:03:26+09:00","datePublished":"2017-09-29T00:00:00+09:00","description":"","headline":"11053:가장 긴 증가하는 부분 수열","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://www.acmicpc.net/problem/11053\n틀린 풀이\nd[n]\n첫번째 ~ n번째 값 중, \n가장 큰 수 \n\n\n10 20 10 30 20 50\n\nd[0] = 0\nd[1] = 10 \nd[2] = 20\nd[3] = 20\nd[4] = 30\nd[5] = 30\nd[6] = 50\n\n\nd 배열의 값이 바뀔 때를 count \n\ncount 값이 답.\n\n\n맞는 풀이LIS 문제. 유명한 문제.\n\nd[i]\n\na[1] … a[i] 가 있을 때,\na[i]를 마지막으로 하는\n가장 긴 증가하는 부분 수열의 길이.\nd[i]는 a[i] 가 반드시 포함\n\n\n~ a[j] … a[i]\n\n~ a[j]길이 : d[j] —-&gt; d[j]  + 1\n\n\nd[i]\n\nmax( d[j] ) + 1\n\n\na[j] 와 a[i]의 관계\n\na[j] &lt; a[i]\n\n\n\n123456789  i\t\t\t1     2     3     4     5     6 a[i]\t\t10    20    10    30    20    50 d[i]     \t 1     2     1     3     2     4         d[4]를 예를들어,d[4]는 처음에 1. 왜냐하면 자기 자신하나만 있으면 길이기 1이기 때문에.a[3]을 봤더니, a[4]보다 작아. 증가하는 수열이기때문에 올 수 있어. 그럼, d[3] +1 = 2. 1보다 크기 때문에. d[4]=2a[2]을 봤더니, a[4]보다 작아. 증가하는 수열이기때문에 올 수 있어. 그럼, d[2] +1 = 3. 2보다 크기 때문에 d[4] =3 a[1]을 봤더니, a[4]보다 작아. 증가하는 수열이기때문에 올 수 있어. 그럼, d[1] +1 = 1. 3보다 작기 때문에 그대로\n","dateCreated":"2017-09-29T00:00:00+09:00","dateModified":"2018-04-16T13:03:26+09:00","datePublished":"2017-09-29T00:00:00+09:00","description":"","headline":"11053:가장 긴 증가하는 부분 수열","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/"}</script>
     <meta name="description" content="https://www.acmicpc.net/problem/11053 틀린 풀이 d[n] 첫번째 ~ n번째 값 중,  가장 큰 수    10 20 10 30 20 50  d[0] = 0 d[1] = 10  d[2] = 20 d[3] = 20 d[4] = 30 d[5] = 30 d[6] = 50   d 배열의 값이 바뀔 때를 count   count 값이 답.">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="11053:가장 긴 증가하는 부분 수열">
-<meta property="og:url" content="http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="https://www.acmicpc.net/problem/11053 틀린 풀이 d[n] 첫번째 ~ n번째 값 중,  가장 큰 수    10 20 10 30 20 50  d[0] = 0 d[1] = 10  d[2] = 20 d[3] = 20 d[4] = 30 d[5] = 30 d[6] = 50   d 배열의 값이 바뀔 때를 count   count 값이 답.">
 <meta property="og:locale" content="en">
@@ -280,7 +280,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -288,7 +288,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -296,7 +296,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -366,7 +366,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -374,7 +374,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -382,7 +382,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -409,7 +409,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -417,7 +417,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -425,7 +425,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2017/09/29/2017-09-29-가장긴증가부분수열 2/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2017/09/29/2017-09-29-가장긴증가부분수열 2/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"There are two methods of enhancing contrast. \n\nThe first one is called Histogram stretching that increase contrast. \nThe second one is called Histogram equalization that enhance contrast.\n\nContrast\nContrast is the difference between maximum and minimum pixel intensity.\n\n\nContrast = 225.\n\nNow we will increase the contrast of the image.\n\nIncreasing the contrast of the image\nThe formula for stretching the histogram of the image to increase the contrast is\n\n\nThe formula requires finding the minimum and maximum pixel intensity multiply by levels of gray. \n\nIn our case the image is 8bpp, so levels of gray are 256.\n\nThe minimum value is 0 and the maximum value is 225. So the formula in our case is\n\n\nwhere f(x,y) denotes the value of each pixel intensity. For each f(x,y) in an image , we will calculate this formula.\n\nNote the shape and symmetry of histogram. The histogram is now stretched or in other means expand. Have a look at it.\n\n\nIn this case the contrast of the image can be calculated as Contrast = 240\n\nHence we can say that the contrast of the image is increased.\n\n\nFailing of histogram stretching\nthe algorithm fails on some cases. \n\nThose cases include images with when there is pixel intensity 0 and 255 are present in the image\n\nOriginal Formula\n\n\nPutting fail case values in the formula\n\n\nSimplify that expression gives\n\n\nThat means the output image is equal to the processed image. \n\nThat means there is no effect of histogram stretching has been done at this image.\n\n\n","dateCreated":"2018-05-21T00:00:00+09:00","dateModified":"2018-05-21T22:10:53+09:00","datePublished":"2018-05-21T00:00:00+09:00","description":"","headline":"Histogram Stretching","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"There are two methods of enhancing contrast. \n\nThe first one is called Histogram stretching that increase contrast. \nThe second one is called Histogram equalization that enhance contrast.\n\nContrast\nContrast is the difference between maximum and minimum pixel intensity.\n\n\nContrast = 225.\n\nNow we will increase the contrast of the image.\n\nIncreasing the contrast of the image\nThe formula for stretching the histogram of the image to increase the contrast is\n\n\nThe formula requires finding the minimum and maximum pixel intensity multiply by levels of gray. \n\nIn our case the image is 8bpp, so levels of gray are 256.\n\nThe minimum value is 0 and the maximum value is 225. So the formula in our case is\n\n\nwhere f(x,y) denotes the value of each pixel intensity. For each f(x,y) in an image , we will calculate this formula.\n\nNote the shape and symmetry of histogram. The histogram is now stretched or in other means expand. Have a look at it.\n\n\nIn this case the contrast of the image can be calculated as Contrast = 240\n\nHence we can say that the contrast of the image is increased.\n\n\nFailing of histogram stretching\nthe algorithm fails on some cases. \n\nThose cases include images with when there is pixel intensity 0 and 255 are present in the image\n\nOriginal Formula\n\n\nPutting fail case values in the formula\n\n\nSimplify that expression gives\n\n\nThat means the output image is equal to the processed image. \n\nThat means there is no effect of histogram stretching has been done at this image.\n\n\n","dateCreated":"2018-05-21T00:00:00+09:00","dateModified":"2018-05-21T22:10:53+09:00","datePublished":"2018-05-21T00:00:00+09:00","description":"","headline":"Histogram Stretching","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/"}</script>
     <meta name="description" content="There are two methods of enhancing contrast.   The first one is called Histogram stretching that increase contrast.  The second one is called Histogram equalization that enhance contrast.  Contrast Co">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Histogram Stretching">
-<meta property="og:url" content="http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="There are two methods of enhancing contrast.   The first one is called Histogram stretching that increase contrast.  The second one is called Histogram equalization that enhance contrast.  Contrast Co">
 <meta property="og:locale" content="en">
@@ -291,7 +291,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -299,7 +299,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -307,7 +307,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -377,7 +377,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -385,7 +385,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -393,7 +393,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -420,7 +420,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -428,7 +428,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -436,7 +436,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/21/2018-05-21-Histogram Stretching/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/21/2018-05-21-Histogram Stretching/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

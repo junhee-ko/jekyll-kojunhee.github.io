@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://www.acmicpc.net/problem/4991\n삼성 알고리즘 시험 보러 가서 못 푼 문제이다. \n\n다시 푸는데 오랜 걸렸다. ( 2018.08.01 ) : 조합 + BFS\n다시 푸는데 30분도 안걸렸다. ( 2018.10.01 ) : DFS\n\n첫 번째 풀이\n치킨집 K개 중에 M개를 고르는 경우의 수를 구한다. (조합)\n선택되지 않은 치킨집은 빈 칸으로 만든다.\n각 집을 출발점으로 가장 가까운 치킨집까지의 거리를 구한다 (BFS)\n\n첫 번째 풀이 예시\n다음과 같이 치킨집이 3개가 있다고 하자. \n0번 치킨집\n1번 치킨집\n2번 치킨집\n\n\n최대 2개의 치킨집을 선택하는 경우의 수는 다음과 같다.\n0번, 1번 — A\n0번, 2번 — B\n1번, 2번 — C \n\n\nA를 생각해보자. \n2번이 선택되지 않았기 때문에, 2번 치킨집을 폐업 시킨다.\n각 집의 위치에서 BFS를 실행한다. 이는 각 집에서 가장 가까운 치킨 집과의 거리를 구하기 위함이다.\n\n\nB, C도 위와 같은 작업을 반복한다.\n\n첫 번째 풀이 코드\n\n\n\n\n\n두 번째 풀이\n치킨을 선택하여 List에 저장한다. (DFS)\n각 집에서 선택된 치킨집 까지의 거리를 계산한다.\n\n치킨집이 A, B, C, D 네 개 있고, 최대 3개 선택을 한다고 했을 때, DFS는 다음과 같이 진행된다.\n\n\n두 번째 풀이 코드\n\n\n","dateCreated":"2018-08-01T00:00:00+09:00","dateModified":"2018-10-01T17:26:14+09:00","datePublished":"2018-08-01T00:00:00+09:00","description":"","headline":"치킨 배달","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/08/01/2018-08-01-치킨배달/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/08/01/2018-08-01-치킨배달/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://www.acmicpc.net/problem/4991\n삼성 알고리즘 시험 보러 가서 못 푼 문제이다. \n\n다시 푸는데 오랜 걸렸다. ( 2018.08.01 ) : 조합 + BFS\n다시 푸는데 30분도 안걸렸다. ( 2018.10.01 ) : DFS\n\n첫 번째 풀이\n치킨집 K개 중에 M개를 고르는 경우의 수를 구한다. (조합)\n선택되지 않은 치킨집은 빈 칸으로 만든다.\n각 집을 출발점으로 가장 가까운 치킨집까지의 거리를 구한다 (BFS)\n\n첫 번째 풀이 예시\n다음과 같이 치킨집이 3개가 있다고 하자. \n0번 치킨집\n1번 치킨집\n2번 치킨집\n\n\n최대 2개의 치킨집을 선택하는 경우의 수는 다음과 같다.\n0번, 1번 — A\n0번, 2번 — B\n1번, 2번 — C \n\n\nA를 생각해보자. \n2번이 선택되지 않았기 때문에, 2번 치킨집을 폐업 시킨다.\n각 집의 위치에서 BFS를 실행한다. 이는 각 집에서 가장 가까운 치킨 집과의 거리를 구하기 위함이다.\n\n\nB, C도 위와 같은 작업을 반복한다.\n\n첫 번째 풀이 코드\n\n\n\n\n\n두 번째 풀이\n치킨을 선택하여 List에 저장한다. (DFS)\n각 집에서 선택된 치킨집 까지의 거리를 계산한다.\n\n치킨집이 A, B, C, D 네 개 있고, 최대 3개 선택을 한다고 했을 때, DFS는 다음과 같이 진행된다.\n\n\n두 번째 풀이 코드\n\n\n","dateCreated":"2018-08-01T00:00:00+09:00","dateModified":"2018-10-01T17:26:14+09:00","datePublished":"2018-08-01T00:00:00+09:00","description":"","headline":"치킨 배달","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/"}</script>
     <meta name="description" content="https://www.acmicpc.net/problem/4991 삼성 알고리즘 시험 보러 가서 못 푼 문제이다.   다시 푸는데 오랜 걸렸다. ( 2018.08.01 ) : 조합 + BFS 다시 푸는데 30분도 안걸렸다. ( 2018.10.01 ) : DFS  첫 번째 풀이 치킨집 K개 중에 M개를 고르는 경우의 수를 구한다. (조합) 선택되지 않은 치킨">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="치킨 배달">
-<meta property="og:url" content="http://junheeko.com/2018/08/01/2018-08-01-치킨배달/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="https://www.acmicpc.net/problem/4991 삼성 알고리즘 시험 보러 가서 못 푼 문제이다.   다시 푸는데 오랜 걸렸다. ( 2018.08.01 ) : 조합 + BFS 다시 푸는데 30분도 안걸렸다. ( 2018.10.01 ) : DFS  첫 번째 풀이 치킨집 K개 중에 M개를 고르는 경우의 수를 구한다. (조합) 선택되지 않은 치킨">
 <meta property="og:locale" content="en">
@@ -289,7 +289,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/08/01/2018-08-01-치킨배달/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -297,7 +297,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/08/01/2018-08-01-치킨배달/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -305,7 +305,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/08/01/2018-08-01-치킨배달/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -375,7 +375,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/08/01/2018-08-01-치킨배달/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -383,7 +383,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/08/01/2018-08-01-치킨배달/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -391,7 +391,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/08/01/2018-08-01-치킨배달/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -418,7 +418,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/08/01/2018-08-01-치킨배달/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -426,7 +426,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/08/01/2018-08-01-치킨배달/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -434,7 +434,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/08/01/2018-08-01-치킨배달/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/08/01/2018-08-01-치킨배달/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>

@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"정의\n어떤 것을 결정해야 하는 순간, 가장 좋다고 생각하는 것을 선택하면서 답 찾는 알고리즘\n\nDynamic Programming과 비교\nDP : 어떤 상황에서 할수 있는 상황 모두 살펴보고 거기서 가장 좋은것 선택\n\nGreedy : 할수 있는 선택 중에 제일 좋다고 생각되는 것 하나 선택해서 정답 찾아감\n\n\n단점\n그 때 그 때는 최적일 수 있지만, 최종적으로는 최적이 아니 수도\n\n1234567891011ex)  12원을 1, 4, 5원으로 거슬러 줄 때, 5원 2개, 1원 2개 --&gt; 총 4개가 필요but, 정답은 4원 3개!!!DP로 풀어야해.D[n] = n원을 거슬러 주는 동전의 최소 개수min(D[n-1], D[n-4], D[n-5]) + 1\n그럼 언제 쓰나\n지금 이 순간 가장 좋은 경우 선택하는 것이 최적일 때.\n\n왜 그게 최적인지 증명해야함 \n\n그래서 가장 어려워\n\n그래서 시험이나 대회에 나오면 가장 나중에 풀어\n\n\n예제https://www.acmicpc.net/problem/11399\n\n줄 서 있는 사람 N, 각 사람의 인출 시간 Pi. 각 사람이 인출하는데 필요한 시간의 합의 최소값은?\n\n12345678910111213ex) P1=3, P2=1, P3=4, P4=3, P5=21번  : 3분 소요2번 : 3 +1 = 4분 소요 3번 : 3 + 1 + 4 = 8분 소요 4번 : 3 + 1 + 4 + 3 = 11분  소요 5번 : 3 + 1 + 4 + 3 + 2 = 13 분 소요      따라서, 3 + 4 + 8 + 11 + 13 = 39분 소요\n\n기다리는 시간 짧은 사람부터 인출하는 것이 좋음 … 이걸 증명해야함.\n\np1 &lt;= p2&lt;= ……&lt;=pn 이라고 가정\n\nS = p1 + (p1+p2) + (p1+p2+p3) +  …. + (p1+p2+p3+…+pn) = np1 + (n-1)p2 + … + pn\n\n중간에 i&lt;j 인 pi&lt;pj 순서를 바꾸면 S는 더 커지거나 같아져야함. 즉, S &lt;= S----&gt;  S-S &lt;=0\n\n계산결과, S-S`&lt;=0 을 성립함.  따라서 오름차순이 정답\n\n\n","dateCreated":"2017-09-17T00:00:00+09:00","dateModified":"2018-04-16T13:02:32+09:00","datePublished":"2017-09-17T00:00:00+09:00","description":"","headline":"Greedy Algorithm","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"정의\n어떤 것을 결정해야 하는 순간, 가장 좋다고 생각하는 것을 선택하면서 답 찾는 알고리즘\n\nDynamic Programming과 비교\nDP : 어떤 상황에서 할수 있는 상황 모두 살펴보고 거기서 가장 좋은것 선택\n\nGreedy : 할수 있는 선택 중에 제일 좋다고 생각되는 것 하나 선택해서 정답 찾아감\n\n\n단점\n그 때 그 때는 최적일 수 있지만, 최종적으로는 최적이 아니 수도\n\n1234567891011ex)  12원을 1, 4, 5원으로 거슬러 줄 때, 5원 2개, 1원 2개 --&gt; 총 4개가 필요but, 정답은 4원 3개!!!DP로 풀어야해.D[n] = n원을 거슬러 주는 동전의 최소 개수min(D[n-1], D[n-4], D[n-5]) + 1\n그럼 언제 쓰나\n지금 이 순간 가장 좋은 경우 선택하는 것이 최적일 때.\n\n왜 그게 최적인지 증명해야함 \n\n그래서 가장 어려워\n\n그래서 시험이나 대회에 나오면 가장 나중에 풀어\n\n\n예제https://www.acmicpc.net/problem/11399\n\n줄 서 있는 사람 N, 각 사람의 인출 시간 Pi. 각 사람이 인출하는데 필요한 시간의 합의 최소값은?\n\n12345678910111213ex) P1=3, P2=1, P3=4, P4=3, P5=21번  : 3분 소요2번 : 3 +1 = 4분 소요 3번 : 3 + 1 + 4 = 8분 소요 4번 : 3 + 1 + 4 + 3 = 11분  소요 5번 : 3 + 1 + 4 + 3 + 2 = 13 분 소요      따라서, 3 + 4 + 8 + 11 + 13 = 39분 소요\n\n기다리는 시간 짧은 사람부터 인출하는 것이 좋음 … 이걸 증명해야함.\n\np1 &lt;= p2&lt;= ……&lt;=pn 이라고 가정\n\nS = p1 + (p1+p2) + (p1+p2+p3) +  …. + (p1+p2+p3+…+pn) = np1 + (n-1)p2 + … + pn\n\n중간에 i&lt;j 인 pi&lt;pj 순서를 바꾸면 S는 더 커지거나 같아져야함. 즉, S &lt;= S----&gt;  S-S &lt;=0\n\n계산결과, S-S`&lt;=0 을 성립함.  따라서 오름차순이 정답\n\n\n","dateCreated":"2017-09-17T00:00:00+09:00","dateModified":"2018-04-16T13:02:32+09:00","datePublished":"2017-09-17T00:00:00+09:00","description":"","headline":"Greedy Algorithm","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/"}</script>
     <meta name="description" content="정의 어떤 것을 결정해야 하는 순간, 가장 좋다고 생각하는 것을 선택하면서 답 찾는 알고리즘  Dynamic Programming과 비교 DP : 어떤 상황에서 할수 있는 상황 모두 살펴보고 거기서 가장 좋은것 선택  Greedy : 할수 있는 선택 중에 제일 좋다고 생각되는 것 하나 선택해서 정답 찾아감   단점 그 때 그 때는 최적일 수 있지만, 최종적">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Greedy Algorithm">
-<meta property="og:url" content="http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/index.html">
 <meta property="og:site_name" content="junhee.ko">
 <meta property="og:description" content="정의 어떤 것을 결정해야 하는 순간, 가장 좋다고 생각하는 것을 선택하면서 답 찾는 알고리즘  Dynamic Programming과 비교 DP : 어떤 상황에서 할수 있는 상황 모두 살펴보고 거기서 가장 좋은것 선택  Greedy : 할수 있는 선택 중에 제일 좋다고 생각되는 것 하나 선택해서 정답 찾아감   단점 그 때 그 때는 최적일 수 있지만, 최종적">
 <meta property="og:locale" content="en">
@@ -270,7 +270,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -278,7 +278,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -286,7 +286,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -356,7 +356,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -364,7 +364,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -372,7 +372,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/" title="Share on Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -399,7 +399,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/">
                     <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -407,7 +407,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/">
                     <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -415,7 +415,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2017/09/17/2017-09-17-Greedy Algorithm/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2017/09/17/2017-09-17-Greedy Algorithm/">
                     <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>
