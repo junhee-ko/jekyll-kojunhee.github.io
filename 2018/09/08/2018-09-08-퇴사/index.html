@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>퇴사 - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://www.acmicpc.net/problem/14501\n삼성 코딩 테스트 기출 문제이다.\nBFS로 풀었다. 계속 틀렸다고 나온다. \n그래서 DFS로 다시 풀었다. \nDP 로도 풀 수 있다고 한다.\n예시다음의 예시로 설명하겠다.\n\nBFS 오답 풀이\n위의 그림과 같이, 시작 날짜를 다르게 하여 BFS를 모두 실행한다.\n더 이상 자식 노드가 없을 때가 마지막이므로, 이 때 이익 합을 계산한다.\nBFS 오답 코드\n\n\nDFS 정답 코드\n","dateCreated":"2018-09-08T00:00:00+09:00","dateModified":"2018-09-08T14:44:27+09:00","datePublished":"2018-09-08T00:00:00+09:00","description":"","headline":"퇴사","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/"}</script>
+    <meta name="description" content="https://www.acmicpc.net/problem/14501 삼성 코딩 테스트 기출 문제이다. BFS로 풀었다. 계속 틀렸다고 나온다.  그래서 DFS로 다시 풀었다.  DP 로도 풀 수 있다고 한다. 예시다음의 예시로 설명하겠다.  BFS 오답 풀이 위의 그림과 같이, 시작 날짜를 다르게 하여 BFS를 모두 실행한다. 더 이상 자식 노드가 없을 때">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="퇴사">
+<meta property="og:url" content="https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="https://www.acmicpc.net/problem/14501 삼성 코딩 테스트 기출 문제이다. BFS로 풀었다. 계속 틀렸다고 나온다.  그래서 DFS로 다시 풀었다.  DP 로도 풀 수 있다고 한다. 예시다음의 예시로 설명하겠다.  BFS 오답 풀이 위의 그림과 같이, 시작 날짜를 다르게 하여 BFS를 모두 실행한다. 더 이상 자식 노드가 없을 때">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired02.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired03.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired04.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired05.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired06.png">
+<meta property="og:updated_time" content="2018-09-08T05:44:27.748Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="퇴사">
+<meta name="twitter:description" content="https://www.acmicpc.net/problem/14501 삼성 코딩 테스트 기출 문제이다. BFS로 풀었다. 계속 틀렸다고 나온다.  그래서 DFS로 다시 풀었다.  DP 로도 풀 수 있다고 한다. 예시다음의 예시로 설명하겠다.  BFS 오답 풀이 위의 그림과 같이, 시작 날짜를 다르게 하여 BFS를 모두 실행한다. 더 이상 자식 노드가 없을 때">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired01.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            퇴사
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-09-08T00:00:00+09:00">
+	
+		    Sep 08, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p><a href="https://www.acmicpc.net/problem/14501" target="_blank" rel="noopener">https://www.acmicpc.net/problem/14501</a></p>
+<p>삼성 코딩 테스트 기출 문제이다.</p>
+<p>BFS로 풀었다. 계속 틀렸다고 나온다. </p>
+<p>그래서 DFS로 다시 풀었다. </p>
+<p>DP 로도 풀 수 있다고 한다.</p>
+<h2 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h2><p>다음의 예시로 설명하겠다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired01.png" alt="img"></p>
+<h2 id="BFS-오답-풀이"><a href="#BFS-오답-풀이" class="headerlink" title="BFS 오답 풀이"></a>BFS 오답 풀이</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired02.png" alt="img"></p>
+<p>위의 그림과 같이, 시작 날짜를 다르게 하여 BFS를 모두 실행한다.</p>
+<p>더 이상 자식 노드가 없을 때가 마지막이므로, 이 때 이익 합을 계산한다.</p>
+<h2 id="BFS-오답-코드"><a href="#BFS-오답-코드" class="headerlink" title="BFS 오답 코드"></a>BFS 오답 코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired05.png" alt="img"></p>
+<h2 id="DFS-정답-코드"><a href="#DFS-정답-코드" class="headerlink" title="DFS 정답 코드"></a>DFS 정답 코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fired06.png" alt="img"></p>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/09/09/2018-09-09-View/" data-tooltip="View" aria-label="PREVIOUS: View">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/09/05/2018-09-05-연산자 끼워넣기/" data-tooltip="연산자 끼워넣기" aria-label="NEXT: 연산자 끼워넣기">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/09/09/2018-09-09-View/" data-tooltip="View" aria-label="PREVIOUS: View">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/09/05/2018-09-05-연산자 끼워넣기/" data-tooltip="연산자 끼워넣기" aria-label="NEXT: 연산자 끼워넣기">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/09/08/2018-09-08-퇴사/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

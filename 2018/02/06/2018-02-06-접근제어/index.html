@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>접근제어 - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://developer.apple.com/swift/\n\nAccess control restricts access to parts of your code from code in other source files and modules.\nThis feature enables you to hide the implementation details of your code, and to specify a preferred interface through which that code can be accessed and used.\n\nYou can assign specific access levels to individual types (classes, structures, and enumerations), \n\nas well as to properties, methods, initializers, and subscripts belonging to those types. \nProtocols can be restricted to a certain context, as can global constants, variables, and functions.\n\nIn addition to offering various levels of access control, Swift reduces the need to specify explicit access control levels by providing default access levels for typical scenarios. \n\nIndeed, if you are writing a single-target app, you may not need to specify explicit access control levels at all.\n\n123456789public class SomePublicClass &#123;&#125;internal class SomeInternalClass &#123;&#125;fileprivate class SomeFilePrivateClass &#123;&#125;private class SomePrivateClass &#123;&#125; public var somePublicVariable = 0internal let someInternalConstant = 0fileprivate func someFilePrivateFunction() &#123;&#125;private func somePrivateFunction() &#123;&#125;\n\nUnless otherwise specified, the default access level is internal, \nThis means that \nSomeInternalClass and someInternalConstant can be written without an explicit access-level modifier,\nand will still have an access level of internal:\n\n12class SomeInternalClass &#123;&#125;              // implicitly internallet someInternalConstant = 0            // implicitly internal\n","dateCreated":"2018-02-06T00:00:00+09:00","dateModified":"2018-04-16T13:01:08+09:00","datePublished":"2018-02-06T00:00:00+09:00","description":"","headline":"접근제어","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/"}</script>
+    <meta name="description" content="https://developer.apple.com/swift/  Access control restricts access to parts of your code from code in other source files and modules. This feature enables you to hide the implementation details of yo">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="접근제어">
+<meta property="og:url" content="https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="https://developer.apple.com/swift/  Access control restricts access to parts of your code from code in other source files and modules. This feature enables you to hide the implementation details of yo">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-16T04:01:08.453Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="접근제어">
+<meta name="twitter:description" content="https://developer.apple.com/swift/  Access control restricts access to parts of your code from code in other source files and modules. This feature enables you to hide the implementation details of yo">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            접근제어
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-02-06T00:00:00+09:00">
+	
+		    Feb 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/ios/">ios</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
+<ul>
+<li>Access control restricts access to parts of your code from code in other source files and modules.</li>
+<li><p>This feature enables you to hide the implementation details of your code, and to specify a preferred interface through which that code can be accessed and used.</p>
+</li>
+<li><p>You can assign specific access levels to individual types (classes, structures, and enumerations), </p>
+</li>
+<li>as well as to properties, methods, initializers, and subscripts belonging to those types. </li>
+<li><p>Protocols can be restricted to a certain context, as can global constants, variables, and functions.</p>
+</li>
+<li><p>In addition to offering various levels of access control, Swift reduces the need to specify explicit access control levels by providing default access levels for typical scenarios. </p>
+</li>
+<li>Indeed, if you are writing a single-target app, you may not need to specify explicit access control levels at all.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class SomePublicClass &#123;&#125;</span><br><span class="line">internal class SomeInternalClass &#123;&#125;</span><br><span class="line">fileprivate class SomeFilePrivateClass &#123;&#125;</span><br><span class="line">private class SomePrivateClass &#123;&#125;</span><br><span class="line"> </span><br><span class="line">public var somePublicVariable = 0</span><br><span class="line">internal let someInternalConstant = 0</span><br><span class="line">fileprivate func someFilePrivateFunction() &#123;&#125;</span><br><span class="line">private func somePrivateFunction() &#123;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Unless otherwise specified, the default access level is internal, </li>
+<li>This means that </li>
+<li>SomeInternalClass and someInternalConstant can be written without an explicit access-level modifier,</li>
+<li>and will still have an access level of internal:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class SomeInternalClass &#123;&#125;              // implicitly internal</span><br><span class="line">let someInternalConstant = 0            // implicitly internal</span><br></pre></td></tr></table></figure>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/02/06/2018-02-06-인스턴스 생성 및 소멸/" data-tooltip="인스턴스 생성 및 소멸" aria-label="PREVIOUS: 인스턴스 생성 및 소멸">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/02/06/2018-02-06-구조체,클래스/" data-tooltip="구조체,클래스" aria-label="NEXT: 구조체,클래스">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/02/06/2018-02-06-인스턴스 생성 및 소멸/" data-tooltip="인스턴스 생성 및 소멸" aria-label="PREVIOUS: 인스턴스 생성 및 소멸">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/02/06/2018-02-06-구조체,클래스/" data-tooltip="구조체,클래스" aria-label="NEXT: 구조체,클래스">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/02/06/2018-02-06-접근제어/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

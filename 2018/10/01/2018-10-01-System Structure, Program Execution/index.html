@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>System Structure, Program Execution - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323)\n컴퓨터 시스템 구조\n\nmode bit\n사용자 프로그램의 잘못된 수행으로 다른 프로그램 및 운영체제에 피해가 가지 않도록 하기 위한 보호 장치 필요\n0\n운영체제가 CPU를 가지고 있음\n모든 인스트럭션 수행 가능\n\n\n1\n사용자 프로그램이 CPU를 가지고 있음\n한정된 인스턱션만 수행 가능\n\n\n\n\ntimer\n특정 프로그램이 CPU 독점 막기위해 이게 필요\n정해진 시간 흐른 뒤 운영체제에게 제어권 넘어가도록 interrupt 발생시킴\n매 클럭마다 1씨 감소\n타이머 값이 0 이 되면 언터럽트 발생\ntime sharing 구현 위해 널리 이용\n\n\ndevice controller\nIO 장치 전담하는 작은 CPU\n제어 정보를 위해 control register, status register를 가짐\nlocal buffer를 가짐 (일종의 data register)\nIO는 실제 deivce 와 local buffer 사이에서 일어남\nIO가 끝나면 인터럽트로 CPU에 그 사실을 알림\ndevice driver : OS 코드 중 각 장치별 처리 루틴 (소프트웨어)\ndivce controller : 각 장치를 통제하는 작은 CPU (하드웨어)\n\n\nDMA controller\n직접 메모리에 접근할 수 있는 컨트롤러\nIO 장치가 인터럽트 너무 많이 거니까 CPU가 너무 많이 방해 받아서 DMA controller가 필요\nCPU의 중재 없이 device의 buffer storage의 내용을 메모리에 block 단위로 직접 전송\n\n\n\nI/O\n운영체제를 통해서 함\n사용자 프로그램은 I/O를 어덯게?\nsystem call을 함 (운영체제의 함수를 호출)\n인터럽트를 직접 걸어서(trap) mode bit이 0으로 바껴\n\n\n\n동기식 입출력과 비동기식 입출력\n\n두 경우 모두 io 완료는 인터럽트로알려줌\nsyncronous I/O\nI/O 요청 후 입출력 작업이 완료 된 후에야 제어가 사용자 프로그램에게 넘어감\n구현 방법 1\nio가 긑날떄 까지 cpu낭비\n매시점 하나의 io만 일어남\n\n\n구현 방법2\nio가 완료될때까지 해당 프로그램에게서 cpu를 빼앗음\nio 처리를 기다리는 줄에 그 프로그램을 줄 세움\n다른 프로그램에게 cpu를 줌\n\n\n\n\nasyncronous I/O\nI/O가 시작된후 입출력 작업이 끝나기를 기다리지 않고 제어가 사용자 프로그램에게 즉시 넘어감\n\n\n\nInterrupt\n인터럽트 당한 시점의 레티스터와 program counter를 save한 후 CPU의 제어를 인터럽트 처리 루틴에 넘김\n인터럽트 : 하드웨어가 발생 시킨 인터럽트\ntrap : 소프트웨어 인터럽트\nEception : 프로그램이 오류를 범함\nSystem call : 프로그램이 커널 함수를 호출하는 경우\n\n\n인터럽트 백터\n해당 인터럽트의 처리 루틴 주소를 가지고 있음\n\n\n인터럽트 처리 루틴 (인터럽트 핸들러)\n해당 인터럽트를 처리하는 커널 함수\n\n\n\nSystem call\n사용자 프로글매이 운영체제의 서비스를 받기 위해 커널 함수를 호출 하는 것\n사용자 프로그램이 의도적으로 인터럽트 라인 세팅하면, CPU는 하던일을 멈추고 CPU의 제어권이 사용자 프로그램에서 운영체제에게 넘어감\n\n프로그램의 실행\n\nvitual memory\n프로그램 실행 시키면 각 프로그램의 주소 공간이 만들어짐\n\n\npysical memory\n커널은 항상 상주\n당장 필요한 것만 올려둠\n\n\nswap area\n메모리의 연장 공간으로 사용\n\n\naddress tranlation\nvirtial memory의 주소가 물리주소로 바뀜\n\n\n\n커널 주소 공간의 내용\n\ncode\ndata\n하드웨어를 관리하기 위한 자료구조를 가지고 잇음\n각 프로그램들을 관리하기 위한 자료구조를 가지고 잇음 \n\n\nstack\n함수를 호출하거나 할때 스택을 사용\n\n\n\n사용자 프로그램이 사용하는 함수\n함수\n사용자 정의 함수\n자신의 프로그램에서 정의한 함수\n\n\n라이브러리 함수\n자신의 프로그램에서 정의하지 않고 갖다 쓴 함수\n자신의 프로그램 실행 파일에 포함되어 있음\n\n\n커널 함수\n운영체제 프로그램의 함수\n커널 함수의 호출 == 시스템 콜\n\n\n\n\n\n프로그램의 실행\n시스템 콜을 하면 커널 모드가 되고, 시스템 콜 끝나면 다시 A가 cpu 제어권을 가짐\n","dateCreated":"2018-10-01T00:00:00+09:00","dateModified":"2018-10-01T21:36:24+09:00","datePublished":"2018-10-01T00:00:00+09:00","description":"","headline":"System Structure, Program Execution","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/"}</script>
+    <meta name="description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) 컴퓨터 시스템 구조  mode bit 사용자 프로그램의 잘못된 수행으로 다른 프로그램 및 운영체제에 피해가 가지 않도록 하기 위한 보호 장치 필요 0 운영체제가 CPU를 가지고 있음 모든 인스트럭션 수행 가능   1 사용자">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="System Structure, Program Execution">
+<meta property="og:url" content="https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) 컴퓨터 시스템 구조  mode bit 사용자 프로그램의 잘못된 수행으로 다른 프로그램 및 운영체제에 피해가 가지 않도록 하기 위한 보호 장치 필요 0 운영체제가 CPU를 가지고 있음 모든 인스트럭션 수행 가능   1 사용자">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os101.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss0111.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os103.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os104.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss0112.png">
+<meta property="og:updated_time" content="2018-10-01T12:36:24.083Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="System Structure, Program Execution">
+<meta name="twitter:description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) 컴퓨터 시스템 구조  mode bit 사용자 프로그램의 잘못된 수행으로 다른 프로그램 및 운영체제에 피해가 가지 않도록 하기 위한 보호 장치 필요 0 운영체제가 CPU를 가지고 있음 모든 인스트럭션 수행 가능   1 사용자">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os101.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            System Structure, Program Execution
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-10-01T00:00:00+09:00">
+	
+		    Oct 01, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/OS/">OS</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
+<h2 id="컴퓨터-시스템-구조"><a href="#컴퓨터-시스템-구조" class="headerlink" title="컴퓨터 시스템 구조"></a>컴퓨터 시스템 구조</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os101.png" alt="img"></p>
+<ul>
+<li>mode bit<ul>
+<li>사용자 프로그램의 잘못된 수행으로 다른 프로그램 및 운영체제에 피해가 가지 않도록 하기 위한 보호 장치 필요</li>
+<li>0<ul>
+<li>운영체제가 CPU를 가지고 있음</li>
+<li>모든 인스트럭션 수행 가능</li>
+</ul>
+</li>
+<li>1<ul>
+<li>사용자 프로그램이 CPU를 가지고 있음</li>
+<li>한정된 인스턱션만 수행 가능</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>timer<ul>
+<li>특정 프로그램이 CPU 독점 막기위해 이게 필요</li>
+<li>정해진 시간 흐른 뒤 운영체제에게 제어권 넘어가도록 interrupt 발생시킴</li>
+<li>매 클럭마다 1씨 감소</li>
+<li>타이머 값이 0 이 되면 언터럽트 발생</li>
+<li>time sharing 구현 위해 널리 이용</li>
+</ul>
+</li>
+<li>device controller<ul>
+<li>IO 장치 전담하는 작은 CPU</li>
+<li>제어 정보를 위해 control register, status register를 가짐</li>
+<li>local buffer를 가짐 (일종의 data register)</li>
+<li>IO는 실제 deivce 와 local buffer 사이에서 일어남</li>
+<li>IO가 끝나면 인터럽트로 CPU에 그 사실을 알림</li>
+<li>device driver : OS 코드 중 각 장치별 처리 루틴 (소프트웨어)</li>
+<li>divce controller : 각 장치를 통제하는 작은 CPU (하드웨어)</li>
+</ul>
+</li>
+<li>DMA controller<ul>
+<li>직접 메모리에 접근할 수 있는 컨트롤러</li>
+<li>IO 장치가 인터럽트 너무 많이 거니까 CPU가 너무 많이 방해 받아서 DMA controller가 필요</li>
+<li>CPU의 중재 없이 device의 buffer storage의 내용을 메모리에 block 단위로 직접 전송</li>
+</ul>
+</li>
+</ul>
+<h2 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h2><ul>
+<li>운영체제를 통해서 함</li>
+<li>사용자 프로그램은 I/O를 어덯게?<ul>
+<li>system call을 함 (운영체제의 함수를 호출)</li>
+<li>인터럽트를 직접 걸어서(trap) mode bit이 0으로 바껴</li>
+</ul>
+</li>
+</ul>
+<h2 id="동기식-입출력과-비동기식-입출력"><a href="#동기식-입출력과-비동기식-입출력" class="headerlink" title="동기식 입출력과 비동기식 입출력"></a>동기식 입출력과 비동기식 입출력</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss0111.png" alt="img"></p>
+<ul>
+<li>두 경우 모두 io 완료는 인터럽트로알려줌</li>
+<li>syncronous I/O<ul>
+<li>I/O 요청 후 입출력 작업이 완료 된 후에야 제어가 사용자 프로그램에게 넘어감</li>
+<li>구현 방법 1<ul>
+<li>io가 긑날떄 까지 cpu낭비</li>
+<li>매시점 하나의 io만 일어남</li>
+</ul>
+</li>
+<li>구현 방법2<ul>
+<li>io가 완료될때까지 해당 프로그램에게서 cpu를 빼앗음</li>
+<li>io 처리를 기다리는 줄에 그 프로그램을 줄 세움</li>
+<li>다른 프로그램에게 cpu를 줌</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>asyncronous I/O<ul>
+<li>I/O가 시작된후 입출력 작업이 끝나기를 기다리지 않고 제어가 사용자 프로그램에게 즉시 넘어감</li>
+</ul>
+</li>
+</ul>
+<h2 id="Interrupt"><a href="#Interrupt" class="headerlink" title="Interrupt"></a>Interrupt</h2><ul>
+<li>인터럽트 당한 시점의 레티스터와 program counter를 save한 후 CPU의 제어를 인터럽트 처리 루틴에 넘김</li>
+<li>인터럽트 : 하드웨어가 발생 시킨 인터럽트</li>
+<li>trap : 소프트웨어 인터럽트<ul>
+<li>Eception : 프로그램이 오류를 범함</li>
+<li>System call : 프로그램이 커널 함수를 호출하는 경우</li>
+</ul>
+</li>
+<li>인터럽트 백터<ul>
+<li>해당 인터럽트의 처리 루틴 주소를 가지고 있음</li>
+</ul>
+</li>
+<li>인터럽트 처리 루틴 (인터럽트 핸들러)<ul>
+<li>해당 인터럽트를 처리하는 커널 함수</li>
+</ul>
+</li>
+</ul>
+<h2 id="System-call"><a href="#System-call" class="headerlink" title="System call"></a>System call</h2><ul>
+<li>사용자 프로글매이 운영체제의 서비스를 받기 위해 커널 함수를 호출 하는 것</li>
+<li>사용자 프로그램이 의도적으로 인터럽트 라인 세팅하면, CPU는 하던일을 멈추고 CPU의 제어권이 사용자 프로그램에서 운영체제에게 넘어감</li>
+</ul>
+<h2 id="프로그램의-실행"><a href="#프로그램의-실행" class="headerlink" title="프로그램의 실행"></a>프로그램의 실행</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os103.png" alt="img"></p>
+<ul>
+<li>vitual memory<ul>
+<li>프로그램 실행 시키면 각 프로그램의 주소 공간이 만들어짐</li>
+</ul>
+</li>
+<li>pysical memory<ul>
+<li>커널은 항상 상주</li>
+<li>당장 필요한 것만 올려둠</li>
+</ul>
+</li>
+<li>swap area<ul>
+<li>메모리의 연장 공간으로 사용</li>
+</ul>
+</li>
+<li>address tranlation<ul>
+<li>virtial memory의 주소가 물리주소로 바뀜</li>
+</ul>
+</li>
+</ul>
+<h2 id="커널-주소-공간의-내용"><a href="#커널-주소-공간의-내용" class="headerlink" title="커널 주소 공간의 내용"></a>커널 주소 공간의 내용</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os104.png" alt="img"></p>
+<ul>
+<li>code</li>
+<li>data<ul>
+<li>하드웨어를 관리하기 위한 자료구조를 가지고 잇음</li>
+<li>각 프로그램들을 관리하기 위한 자료구조를 가지고 잇음 </li>
+</ul>
+</li>
+<li>stack<ul>
+<li>함수를 호출하거나 할때 스택을 사용</li>
+</ul>
+</li>
+</ul>
+<h2 id="사용자-프로그램이-사용하는-함수"><a href="#사용자-프로그램이-사용하는-함수" class="headerlink" title="사용자 프로그램이 사용하는 함수"></a>사용자 프로그램이 사용하는 함수</h2><ul>
+<li>함수<ul>
+<li>사용자 정의 함수<ul>
+<li>자신의 프로그램에서 정의한 함수</li>
+</ul>
+</li>
+<li>라이브러리 함수<ul>
+<li>자신의 프로그램에서 정의하지 않고 갖다 쓴 함수</li>
+<li>자신의 프로그램 실행 파일에 포함되어 있음</li>
+</ul>
+</li>
+<li>커널 함수<ul>
+<li>운영체제 프로그램의 함수</li>
+<li>커널 함수의 호출 == 시스템 콜</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="프로그램의-실행-1"><a href="#프로그램의-실행-1" class="headerlink" title="프로그램의 실행"></a>프로그램의 실행</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss0112.png" alt="img"></p>
+<p>시스템 콜을 하면 커널 모드가 되고, 시스템 콜 끝나면 다시 A가 cpu 제어권을 가짐</p>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/01/2018-10-01-Introduction/" data-tooltip="Introduction" aria-label="PREVIOUS: Introduction">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/09/30/2018-09-30-오픈채팅방/" data-tooltip="오픈채팅방" aria-label="NEXT: 오픈채팅방">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/01/2018-10-01-Introduction/" data-tooltip="Introduction" aria-label="PREVIOUS: Introduction">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/09/30/2018-09-30-오픈채팅방/" data-tooltip="오픈채팅방" aria-label="NEXT: 오픈채팅방">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/10/01/2018-10-01-System Structure, Program Execution/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

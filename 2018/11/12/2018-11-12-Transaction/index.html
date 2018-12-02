@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>Transaction - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"트랜잭션이란하나의 논리적인 작업 단위를 구성하는 연산들의 집합\nACID\nAtomicity\n만약 트랜잭션 중간에 어떠한 문제가 발생한다면 트랜잭션에 해당하는 어떠한 작업 내용도 수행되어서는 안되며, 아무런 문제가 발생되지 않았을 경우에만 모든 작업이 수행되어야 한다.\n\nConsistency\n트랜잭션이 완료된 다음의 상태에서도 트랜잭션이 일어나기 전의 상황과 동일하게 데이터의 일관성을 보장해야 한다. \n예를 들어 계좌이체를 성공적으로 실행했다면, A계좌의 잔액과 B계좌의 잔액의 합이 트랜잭션 실행 전의 합과 동일해야한다.\n\nIsolation\n각각의 트랜잭션은 서로 간섭없이 독립적으로 수행되어야 한다.\n\nDurability\n트랜잭션이 정상적으로 종료된 다음에는 영구적으로 데이터베이스에 작업의 결과가 저장되어야 한다.\n\n\nCommit, Rollback\nCommit\n모든 작업을 정상적으로 처리하겠다고 확정하는 명령어이다. 트랜젝션의 처리 과정을 데이터베이스에 반영하기 위해서, 변경된 내용을 모두 영구 저장한다.\n\nRollback\n작업 중 문제가 발생했을 때, 트랜젝션의 처리 과정에서 발생한 변경 사항을 취소하고, 트랜젝션 과정을 종료시킨는 명령어이다. 트랜젝션으로 인한 하나의 묶음 처리가 시작되기 이전의 상태로 되돌린다.\n\n\nReferencehttps://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction\nhttps://wikidocs.net/4096\n","dateCreated":"2018-11-12T00:00:00+09:00","dateModified":"2018-11-12T23:10:49+09:00","datePublished":"2018-11-12T00:00:00+09:00","description":"","headline":"Transaction","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/"}</script>
+    <meta name="description" content="트랜잭션이란하나의 논리적인 작업 단위를 구성하는 연산들의 집합 ACID Atomicity 만약 트랜잭션 중간에 어떠한 문제가 발생한다면 트랜잭션에 해당하는 어떠한 작업 내용도 수행되어서는 안되며, 아무런 문제가 발생되지 않았을 경우에만 모든 작업이 수행되어야 한다.  Consistency 트랜잭션이 완료된 다음의 상태에서도 트랜잭션이 일어나기 전의 상황과">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Transaction">
+<meta property="og:url" content="https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="트랜잭션이란하나의 논리적인 작업 단위를 구성하는 연산들의 집합 ACID Atomicity 만약 트랜잭션 중간에 어떠한 문제가 발생한다면 트랜잭션에 해당하는 어떠한 작업 내용도 수행되어서는 안되며, 아무런 문제가 발생되지 않았을 경우에만 모든 작업이 수행되어야 한다.  Consistency 트랜잭션이 완료된 다음의 상태에서도 트랜잭션이 일어나기 전의 상황과">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-11-12T14:10:49.351Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Transaction">
+<meta name="twitter:description" content="트랜잭션이란하나의 논리적인 작업 단위를 구성하는 연산들의 집합 ACID Atomicity 만약 트랜잭션 중간에 어떠한 문제가 발생한다면 트랜잭션에 해당하는 어떠한 작업 내용도 수행되어서는 안되며, 아무런 문제가 발생되지 않았을 경우에만 모든 작업이 수행되어야 한다.  Consistency 트랜잭션이 완료된 다음의 상태에서도 트랜잭션이 일어나기 전의 상황과">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Transaction
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-11-12T00:00:00+09:00">
+	
+		    Nov 12, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/database/">database</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h2 id="트랜잭션이란"><a href="#트랜잭션이란" class="headerlink" title="트랜잭션이란"></a>트랜잭션이란</h2><p>하나의 논리적인 작업 단위를 구성하는 연산들의 집합</p>
+<h2 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h2><ol>
+<li><p>Atomicity</p>
+<p>만약 트랜잭션 중간에 어떠한 문제가 발생한다면 트랜잭션에 해당하는 어떠한 작업 내용도 수행되어서는 안되<br>며, 아무런 문제가 발생되지 않았을 경우에만 모든 작업이 수행되어야 한다.</p>
+</li>
+<li><p>Consistency</p>
+<p>트랜잭션이 완료된 다음의 상태에서도 트랜잭션이 일어나기 전의 상황과 동일하게 데이터의 일관성을 보장해<br>야 한다. </p>
+<p>예를 들어 계좌이체를 성공적으로 실행했다면, A계좌의 잔액과 B계좌의 잔액의 합이 트랜잭션 실행 전의 합<br>과 동일해야한다.</p>
+</li>
+<li><p>Isolation</p>
+<p>각각의 트랜잭션은 서로 간섭없이 독립적으로 수행되어야 한다.</p>
+</li>
+<li><p>Durability</p>
+<p>트랜잭션이 정상적으로 종료된 다음에는 영구적으로 데이터베이스에 작업의 결과가 저장되어야 한다.</p>
+</li>
+</ol>
+<h2 id="Commit-Rollback"><a href="#Commit-Rollback" class="headerlink" title="Commit, Rollback"></a>Commit, Rollback</h2><ol>
+<li><p>Commit</p>
+<p>모든 작업을 정상적으로 처리하겠다고 확정하는 명령어이다. 트랜젝션의 처리 과정을 데이터베이스에 반영하<br>기 위해서, 변경된 내용을 모두 영구 저장한다.</p>
+</li>
+<li><p>Rollback</p>
+<p>작업 중 문제가 발생했을 때, 트랜젝션의 처리 과정에서 발생한 변경 사항을 취소하고, 트랜젝션 과정을 종료<br>시킨는 명령어이다. 트랜젝션으로 인한 하나의 묶음 처리가 시작되기 이전의 상태로 되돌린다.</p>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction</a></p>
+<p><a href="https://wikidocs.net/4096" target="_blank" rel="noopener">https://wikidocs.net/4096</a></p>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/11/12/2018-11-12-REST/" data-tooltip="REST" aria-label="PREVIOUS: REST">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/11/12/2018-11-12-Linked List, Array/" data-tooltip="Array, Linked List" aria-label="NEXT: Array, Linked List">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/11/12/2018-11-12-REST/" data-tooltip="REST" aria-label="PREVIOUS: REST">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/11/12/2018-11-12-Linked List, Array/" data-tooltip="Array, Linked List" aria-label="NEXT: Array, Linked List">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/11/12/2018-11-12-Transaction/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

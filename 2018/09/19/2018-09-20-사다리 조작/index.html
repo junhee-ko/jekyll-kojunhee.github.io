@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>사다리 조작 - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://www.acmicpc.net/problem/14499\n삼성 기출문제이다. DFS 문제이다.\n어려웠다. 해설을 보고 이해를 했지만, 직집 해결해보기 위해 며칠 동안 붙잡고 있던 문제이다.\n풀이\n사다리를 어떻게 코드로 표현해야 하는지 파악한다.\n사디리는 어디에 둘 수 있는지 파악한다.\n탐색을 어떻게 진행할지 생각한다.\n\n사다리를 코드로 표현하는 방법은 다음 그림과 같이 이차원 배열을 이용한다. 사다리를 1과 2로 표현한다.\n\n\n사다리를 둘 수 있는 곳의 조건은 다음과 같다.\n\ni행의 j번째의 값과 j+1번째의 값이 0 : 연속되지 않고, 사다리를 둘 수 있는 빈 칸 이라는 의미\nj+1&lt;=n : 동일한 행에 사다리를 둘 수 있다는 의미\n\n탐색은 DFS로 진행한다. 사다리는 최대 3개 까지 둘 수 있다.\n사다리를 최대 0개 둘 수 있는 경우, 최대 1개 둘수 있는 경우, 최대 2개 둘수 있는 경우, 최대 3개 둘수 있는 경우로 나눈다.\n각 경우에서 DFS를 시작한다. 설명을 위해 빈 칸을 A, B, C.. 로 표현하였다.\n\n\n코드\n\n\n","dateCreated":"2018-09-19T00:00:00+09:00","dateModified":"2018-09-30T22:52:09+09:00","datePublished":"2018-09-19T00:00:00+09:00","description":"","headline":"사다리 조작","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/"}</script>
+    <meta name="description" content="https://www.acmicpc.net/problem/14499 삼성 기출문제이다. DFS 문제이다. 어려웠다. 해설을 보고 이해를 했지만, 직집 해결해보기 위해 며칠 동안 붙잡고 있던 문제이다. 풀이 사다리를 어떻게 코드로 표현해야 하는지 파악한다. 사디리는 어디에 둘 수 있는지 파악한다. 탐색을 어떻게 진행할지 생각한다.  사다리를 코드로 표현하는">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="사다리 조작">
+<meta property="og:url" content="https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="https://www.acmicpc.net/problem/14499 삼성 기출문제이다. DFS 문제이다. 어려웠다. 해설을 보고 이해를 했지만, 직집 해결해보기 위해 며칠 동안 붙잡고 있던 문제이다. 풀이 사다리를 어떻게 코드로 표현해야 하는지 파악한다. 사디리는 어디에 둘 수 있는지 파악한다. 탐색을 어떻게 진행할지 생각한다.  사다리를 코드로 표현하는">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr02.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/speLadder01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/speLadder02.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr03.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr04.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr05.png">
+<meta property="og:updated_time" content="2018-09-30T13:52:09.438Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="사다리 조작">
+<meta name="twitter:description" content="https://www.acmicpc.net/problem/14499 삼성 기출문제이다. DFS 문제이다. 어려웠다. 해설을 보고 이해를 했지만, 직집 해결해보기 위해 며칠 동안 붙잡고 있던 문제이다. 풀이 사다리를 어떻게 코드로 표현해야 하는지 파악한다. 사디리는 어디에 둘 수 있는지 파악한다. 탐색을 어떻게 진행할지 생각한다.  사다리를 코드로 표현하는">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr01.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            사다리 조작
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-09-19T00:00:00+09:00">
+	
+		    Sep 19, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p><a href="https://www.acmicpc.net/problem/14499" target="_blank" rel="noopener">https://www.acmicpc.net/problem/14499</a></p>
+<p>삼성 기출문제이다. DFS 문제이다.</p>
+<p>어려웠다. 해설을 보고 이해를 했지만, 직집 해결해보기 위해 며칠 동안 붙잡고 있던 문제이다.</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li>사다리를 어떻게 코드로 표현해야 하는지 파악한다.</li>
+<li>사디리는 어디에 둘 수 있는지 파악한다.</li>
+<li>탐색을 어떻게 진행할지 생각한다.</li>
+</ol>
+<p>사다리를 코드로 표현하는 방법은 다음 그림과 같이 이차원 배열을 이용한다. 사다리를 1과 2로 표현한다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr02.png" alt="img"></p>
+<p>사다리를 둘 수 있는 곳의 조건은 다음과 같다.</p>
+<ol>
+<li>i행의 j번째의 값과 j+1번째의 값이 0 : 연속되지 않고, 사다리를 둘 수 있는 빈 칸 이라는 의미</li>
+<li>j+1&lt;=n : 동일한 행에 사다리를 둘 수 있다는 의미</li>
+</ol>
+<p>탐색은 DFS로 진행한다. 사다리는 최대 3개 까지 둘 수 있다.</p>
+<p>사다리를 최대 0개 둘 수 있는 경우, 최대 1개 둘수 있는 경우, 최대 2개 둘수 있는 경우, 최대 3개 둘수 있는 경우로 나눈다.</p>
+<p>각 경우에서 DFS를 시작한다. 설명을 위해 빈 칸을 A, B, C.. 로 표현하였다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/speLadder01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/speLadder02.png" alt="img"></p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr05.png" alt="img"></p>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/09/24/2018-09-24-2048/" data-tooltip="2048" aria-label="PREVIOUS: 2048">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/09/19/2018-09-19-주사위 굴리기/" data-tooltip="주사위 굴리기" aria-label="NEXT: 주사위 굴리기">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/09/24/2018-09-24-2048/" data-tooltip="2048" aria-label="PREVIOUS: 2048">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/09/19/2018-09-19-주사위 굴리기/" data-tooltip="주사위 굴리기" aria-label="NEXT: 주사위 굴리기">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/09/19/2018-09-20-사다리 조작/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
