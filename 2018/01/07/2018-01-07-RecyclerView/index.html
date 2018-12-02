@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>RecyclerView - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://developer.android.com/training/material/lists-cards.html\nRecyclerView\nListView의 더욱 향상되고 유연해진 버전\n한정된 수의 뷰를 유지함으로써 매우 효율적으로 스크롤할 수 있는 큰 데이터 집합을 표시하기 위한 컨테이너\n\n    \nLayoutManager\n항목 뷰를 RecyclerView 내에 배치\n사용자에게 더 이상 보이지 않는 항목 뷰를 언제 재사용할지 결정\n뷰를 재사용 (또는 재활용)하기 위해, Adapter에게 뷰의 콘텐츠를 데이터 집합의 다른 요소로 교체하도록 요청\n이런 방식으로 뷰를 재활용하면 불필요한 뷰 생성이나 리소스를 많이 소모하는 findViewById()를 수행하지 않아도 되므로 성능이 개선\n\nLinearLayoutManager : 항목을 가로 또는 세로 스크롤 목록으로 표시\nGridLayoutManager : 그리드 형식으로 항목을 표시\nStaggeredGridLayoutManager : 지그재그형의 그리드 형식으로 항목을 표시\n\n\n\n사용방법\nRecyclerView 위젯을 레이아웃에 추가\n\n123456&lt;!-- A RecyclerView with some commonly used attributes --&gt;&lt;android.support.v7.widget.RecyclerView    android:id=&quot;@+id/my_recycler_view&quot;    android:scrollbars=&quot;vertical&quot;    android:layout_width=&quot;match_parent&quot;    android:layout_height=&quot;match_parent&quot;/&gt;\n\n객체 핸들을 얻어 LayoutManager에 연결\n표시할 데이터의 어댑터를 첨부\n\n123456789101112131415161718192021222324252627public class MyActivity extends Activity &#123;    private RecyclerView mRecyclerView;    private RecyclerView.Adapter mAdapter;    private RecyclerView.LayoutManager mLayoutManager;    @Override    protected void onCreate(Bundle savedInstanceState) &#123;        super.onCreate(savedInstanceState);        setContentView(R.layout.my_activity);        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);        // use this setting to improve performance if you know that changes        // in content do not change the layout size of the RecyclerView        mRecyclerView.setHasFixedSize(true);        // use a linear layout manager        //객체 핸들을 얻어 LayoutManager에 연결        mLayoutManager = new LinearLayoutManager(this);        mRecyclerView.setLayoutManager(mLayoutManager);        // specify an adapter (see also next example)        // 표시할 데이터의 어댑터를 첨부        mAdapter = new MyAdapter(myDataset);        mRecyclerView.setAdapter(mAdapter);    &#125;    ...&#125;\nAdapter\n데이터 집합의 항목에 액세스할 수 있게 해주고,\n항목 뷰를 생성하고, \n원래의 항목이 더 이상 보이지 않을 경우 일부 뷰의 콘텐츠를 새 데이터 항목으로 교체\n\n123456789101112131415161718192021222324252627282930313233343536373839404142434445464748public class MyAdapter extends RecyclerView.Adapter&lt;MyAdapter.ViewHolder&gt; &#123;    private String[] mDataset;    // Provide a reference to the views for each data item    // Complex data items may need more than one view per item, and    // you provide access to all the views for a data item in a view holder    public static class ViewHolder extends RecyclerView.ViewHolder &#123;        // each data item is just a string in this case        public TextView mTextView;        public ViewHolder(TextView v) &#123;            super(v);            mTextView = v;        &#125;    &#125;    // Provide a suitable constructor (depends on the kind of dataset)    public MyAdapter(String[] myDataset) &#123;        mDataset = myDataset;    &#125;    // Create new views (invoked by the layout manager)    @Override    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,                                                   int viewType) &#123;        // create a new view        View v = LayoutInflater.from(parent.getContext())                               .inflate(R.layout.my_text_view, parent, false);        // set the view&apos;s size, margins, paddings and layout parameters        ...        ViewHolder vh = new ViewHolder(v);        return vh;    &#125;    // Replace the contents of a view (invoked by the layout manager)    @Override    public void onBindViewHolder(ViewHolder holder, int position) &#123;        // - get element from your dataset at this position        // - replace the contents of the view with that element        holder.mTextView.setText(mDataset[position]);    &#125;    // Return the size of your dataset (invoked by the layout manager)    @Override    public int getItemCount() &#123;        return mDataset.length;    &#125;&#125;\n","dateCreated":"2018-01-07T00:00:00+09:00","dateModified":"2018-04-16T13:12:49+09:00","datePublished":"2018-01-07T00:00:00+09:00","description":"","headline":"RecyclerView","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/"}</script>
+    <meta name="description" content="https://developer.android.com/training/material/lists-cards.html RecyclerView ListView의 더욱 향상되고 유연해진 버전 한정된 수의 뷰를 유지함으로써 매우 효율적으로 스크롤할 수 있는 큰 데이터 집합을 표시하기 위한 컨테이너       LayoutManager 항목 뷰를 RecyclerVie">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="RecyclerView">
+<meta property="og:url" content="http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="https://developer.android.com/training/material/lists-cards.html RecyclerView ListView의 더욱 향상되고 유연해진 버전 한정된 수의 뷰를 유지함으로써 매우 효율적으로 스크롤할 수 있는 큰 데이터 집합을 표시하기 위한 컨테이너       LayoutManager 항목 뷰를 RecyclerVie">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rc.png">
+<meta property="og:updated_time" content="2018-04-16T04:12:49.764Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RecyclerView">
+<meta name="twitter:description" content="https://developer.android.com/training/material/lists-cards.html RecyclerView ListView의 더욱 향상되고 유연해진 버전 한정된 수의 뷰를 유지함으로써 매우 효율적으로 스크롤할 수 있는 큰 데이터 집합을 표시하기 위한 컨테이너       LayoutManager 항목 뷰를 RecyclerVie">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rc.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            RecyclerView
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-01-07T00:00:00+09:00">
+	
+		    Jan 07, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/android/">android</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p><a href="https://developer.android.com/training/material/lists-cards.html" target="_blank" rel="noopener">https://developer.android.com/training/material/lists-cards.html</a></p>
+<h2 id="RecyclerView"><a href="#RecyclerView" class="headerlink" title="RecyclerView"></a>RecyclerView</h2><ul>
+<li>ListView의 더욱 향상되고 유연해진 버전</li>
+<li>한정된 수의 뷰를 유지함으로써 매우 효율적으로 스크롤할 수 있는 큰 데이터 집합을 표시하기 위한 컨테이너</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rc.png" alt="img">    </p>
+<h2 id="LayoutManager"><a href="#LayoutManager" class="headerlink" title="LayoutManager"></a>LayoutManager</h2><ul>
+<li>항목 뷰를 RecyclerView 내에 배치</li>
+<li>사용자에게 더 이상 보이지 않는 항목 뷰를 언제 재사용할지 결정</li>
+<li>뷰를 재사용 (또는 재활용)하기 위해, Adapter에게 뷰의 콘텐츠를 데이터 집합의 다른 요소로 교체하도록 요청</li>
+<li><p>이런 방식으로 뷰를 재활용하면 불필요한 뷰 생성이나 리소스를 많이 소모하는 findViewById()를 수행하지 않아도 되므로 성능이 개선</p>
+<ul>
+<li>LinearLayoutManager : 항목을 가로 또는 세로 스크롤 목록으로 표시</li>
+<li>GridLayoutManager : 그리드 형식으로 항목을 표시</li>
+<li>StaggeredGridLayoutManager : 지그재그형의 그리드 형식으로 항목을 표시</li>
+</ul>
+</li>
+</ul>
+<h2 id="사용방법"><a href="#사용방법" class="headerlink" title="사용방법"></a>사용방법</h2><ul>
+<li>RecyclerView 위젯을 레이아웃에 추가</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- A RecyclerView with some commonly used attributes --&gt;</span><br><span class="line">&lt;android.support.v7.widget.RecyclerView</span><br><span class="line">    android:id=&quot;@+id/my_recycler_view&quot;</span><br><span class="line">    android:scrollbars=&quot;vertical&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>객체 핸들을 얻어 LayoutManager에 연결</li>
+<li>표시할 데이터의 어댑터를 첨부</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class MyActivity extends Activity &#123;</span><br><span class="line">    private RecyclerView mRecyclerView;</span><br><span class="line">    private RecyclerView.Adapter mAdapter;</span><br><span class="line">    private RecyclerView.LayoutManager mLayoutManager;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.my_activity);</span><br><span class="line">        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);</span><br><span class="line"></span><br><span class="line">        // use this setting to improve performance if you know that changes</span><br><span class="line">        // in content do not change the layout size of the RecyclerView</span><br><span class="line">        mRecyclerView.setHasFixedSize(true);</span><br><span class="line"></span><br><span class="line">        // use a linear layout manager</span><br><span class="line">        //객체 핸들을 얻어 LayoutManager에 연결</span><br><span class="line">        mLayoutManager = new LinearLayoutManager(this);</span><br><span class="line">        mRecyclerView.setLayoutManager(mLayoutManager);</span><br><span class="line"></span><br><span class="line">        // specify an adapter (see also next example)</span><br><span class="line">        // 표시할 데이터의 어댑터를 첨부</span><br><span class="line">        mAdapter = new MyAdapter(myDataset);</span><br><span class="line">        mRecyclerView.setAdapter(mAdapter);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h2><ul>
+<li>데이터 집합의 항목에 액세스할 수 있게 해주고,</li>
+<li>항목 뷰를 생성하고, </li>
+<li>원래의 항목이 더 이상 보이지 않을 경우 일부 뷰의 콘텐츠를 새 데이터 항목으로 교체</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">public class MyAdapter extends RecyclerView.Adapter&lt;MyAdapter.ViewHolder&gt; &#123;</span><br><span class="line">    private String[] mDataset;</span><br><span class="line"></span><br><span class="line">    // Provide a reference to the views for each data item</span><br><span class="line">    // Complex data items may need more than one view per item, and</span><br><span class="line">    // you provide access to all the views for a data item in a view holder</span><br><span class="line">    public static class ViewHolder extends RecyclerView.ViewHolder &#123;</span><br><span class="line">        // each data item is just a string in this case</span><br><span class="line">        public TextView mTextView;</span><br><span class="line">        public ViewHolder(TextView v) &#123;</span><br><span class="line">            super(v);</span><br><span class="line">            mTextView = v;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Provide a suitable constructor (depends on the kind of dataset)</span><br><span class="line">    public MyAdapter(String[] myDataset) &#123;</span><br><span class="line">        mDataset = myDataset;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Create new views (invoked by the layout manager)</span><br><span class="line">    @Override</span><br><span class="line">    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,</span><br><span class="line">                                                   int viewType) &#123;</span><br><span class="line">        // create a new view</span><br><span class="line">        View v = LayoutInflater.from(parent.getContext())</span><br><span class="line">                               .inflate(R.layout.my_text_view, parent, false);</span><br><span class="line">        // set the view&apos;s size, margins, paddings and layout parameters</span><br><span class="line">        ...</span><br><span class="line">        ViewHolder vh = new ViewHolder(v);</span><br><span class="line">        return vh;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Replace the contents of a view (invoked by the layout manager)</span><br><span class="line">    @Override</span><br><span class="line">    public void onBindViewHolder(ViewHolder holder, int position) &#123;</span><br><span class="line">        // - get element from your dataset at this position</span><br><span class="line">        // - replace the contents of the view with that element</span><br><span class="line">        holder.mTextView.setText(mDataset[position]);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Return the size of your dataset (invoked by the layout manager)</span><br><span class="line">    @Override</span><br><span class="line">    public int getItemCount() &#123;</span><br><span class="line">        return mDataset.length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/07/2018-01-07-retrofit/" data-tooltip="retrofit" aria-label="PREVIOUS: retrofit">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/06/2018-01-06-개근상/" data-tooltip="개근상" aria-label="NEXT: 개근상">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/07/2018-01-07-retrofit/" data-tooltip="retrofit" aria-label="PREVIOUS: retrofit">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/06/2018-01-06-개근상/" data-tooltip="개근상" aria-label="NEXT: 개근상">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/01/07/2018-01-07-RecyclerView/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

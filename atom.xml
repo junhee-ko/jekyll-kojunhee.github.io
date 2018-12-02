@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>junhee.ko</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://junheeko.com/"/>
+  <updated>2018-11-22T11:43:32.927Z</updated>
+  <id>http://junheeko.com/</id>
+  
+  <author>
+    <name>junhee.ko</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Components</title>
+    <link href="http://junheeko.com/2018/11/22/2018-11-22-Components/"/>
+    <id>http://junheeko.com/2018/11/22/2018-11-22-Components/</id>
+    <published>2018-11-21T15:00:00.000Z</published>
+    <updated>2018-11-22T11:43:32.927Z</updated>
+    
+    <content type="html"><![CDATA[<p>안드로이드 애플리케이션은 컴포넌트(component)로 구성되어있습니다. 안드로이드의 4대 컴포넌트는 액티비티(activity), 서비스(service), 콘텐트 제공자(content provider), 방송수신자(broadcast receiver) 입니다.<br>각 컴포넌트들은 하나의 독립된 형태로 존재하며, 정해진 역할을 수행합니다. 이때, 인텐트를 통하여 다른 애플리케이션의 컴포넌트를 활성화시킬 수 있습니다. 인텐트는 서로 독립적으로 동작하는 4가지 컴포넌트들 간의 상호 통신을 위한 장치입니다. 즉, 컴포넌트 간의 통신수단입니다. 인텐트를 통하여 다른 애플리케이션의 컴포넌트를 활성화시킬 수 있습니다.</p><h2 id="액티비티-activity"><a href="#액티비티-activity" class="headerlink" title="액티비티(activity)"></a>액티비티(activity)</h2><p>사용자 인터페이스 화면을 가지며 특정한 작업을 담당하는 컴포넌트입니다. </p><p>일반적으로 UI를 갖는 하나의 스크린을 나타냅니다. 안드로이드 애플리케이션은 반드시 하나의 activity를 가지고 있어야합니다. 각 액티비티는 manifest 파일에 등록되어 있어야 합니다. 엑티비티는 하나 이상의 View를 가질 수 있습니다.</p><p>예를 들어 이메일 앱이라면 새 이메일 목록을 표시하는 액티비티가 하나 있고, 이메일을 작성하는 액티비티가 또 하나, 그리고 이메일을 읽는 데 쓰는 액티비티가 또 하나 있을 수 있습니다. 여러 액티비티가 함께 작동하여 해당 이메일 앱에서 짜임새 있는 사용자 환경을 형성하는 것은 사실이지만, 각자 서로와는 독립적인 형태입니다</p><h2 id="서비스-service"><a href="#서비스-service" class="headerlink" title="서비스(service)"></a>서비스(service)</h2><p>백그라운드에서 실행되는 컴포넌트로 오랫동안 실행되는 작업이나 원격 프로세스를 위한 작업을 할 때 사용됩니다.</p><p>UI가 없습니다. 한번 시작된 Service는 애플리케이션이 종료되고 다른 애플리케이션으로 이동해도 계속 백그라운드에서 실행됩니다. 모든 서비스는 Service 클래스를 상속받아서 작성됩니다. </p><p>예를 들어 서비스는 사용자가 다른 앱에 있는 동안에 백그라운드에서 음악을 재생할 수도 있고, 아니면 사용자와 액티비티 사이의 상호작용을 차단하지 않고 네트워크를 가로질러 데이터를 가져올 수도 있습니다. 또 다른 구성 요소(예: 액티비티)가 서비스를 시작한 다음 실행되도록 두거나 자신에게 바인드하여 상호작용하도록 할 수도 있습니다.</p><h2 id="콘텐트-제공자-content-provider"><a href="#콘텐트-제공자-content-provider" class="headerlink" title="콘텐트 제공자(content provider)"></a>콘텐트 제공자(content provider)</h2><p>데이터를 관리하고 다른 애플리케이션 데이터를 제공하는 컴포넌트입니다.</p><p>데이터는 파일 시스템이나 SQLite 데이터베이스, 웹상에 저장될 수 있습니다. 콘텐트 제공자를 통해서 다른 애플리케이션의 데이터를 쿼리하거나 변경 가능합니다.</p><p>예를 들어, Android 시스템은 사용자의 연락처 정보를 관리하는 콘텐츠 제공자를 제공합니다. 따라서, 적절한 권한을 가진 앱이라면 어떤 것이든 해당 콘텐츠 제공자의 일부를 쿼리하여(예를 들어 ContactsContract.Data 등) 특정한 사람에 대한 정보를 읽고 쓸 수 있습니다.</p><h2 id="방송수신자-broadcast-receiver"><a href="#방송수신자-broadcast-receiver" class="headerlink" title="방송수신자(broadcast receiver)"></a>방송수신자(broadcast receiver)</h2><p>안드로이드 단말기에서 발생하는 다양한 이벤트/정보를 받고 반응하는 컴포넌트입니다.</p><p>예를들면 시스템부팅, 배터리 부족, 전화/문자 수신, 네트워크 끊김을 알려주는 것이 방송입니다. 단말기에서 발생하는 일 중에서 어플리케이션이 알아야 하는 상황이 발생하면 방송을 해줍니다. 수신기(BroadcastReceiver)를 통해 상황을 감지하고 적절한 작업을 수행합니다. 일반적으로 UI가 없습니다.</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://developer.android.com/guide/components/fundamentals?hl=ko" target="_blank" rel="noopener">https://developer.android.com/guide/components/fundamentals?hl=ko</a></p><p><a href="http://ggodol.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-4%EB%8C%80-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8" target="_blank" rel="noopener">http://ggodol.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-4%EB%8C%80-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;안드로이드 애플리케이션은 컴포넌트(component)로 구성되어있습니다. 안드로이드의 4대 컴포넌트는 액티비티(activity), 서비스(service), 콘텐트 제공자(content provider), 방송수신자(broadcast receive
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://junheeko.com/categories/android/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>길찾기</title>
+    <link href="http://junheeko.com/2018/11/21/2018-11-21-%E1%84%80%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%E1%86%BD%E1%84%80%E1%85%B5/"/>
+    <id>http://junheeko.com/2018/11/21/2018-11-21-길찾기/</id>
+    <published>2018-11-20T15:00:00.000Z</published>
+    <updated>2018-11-21T07:45:58.304Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV14geLqABQCFAYD&amp;categoryId=AV14geLqABQCFAYD&amp;categoryType=CODE" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV14geLqABQCFAYD&amp;categoryId=AV14geLqABQCFAYD&amp;categoryType=CODE</a></p><p>오랜만에 푸는 관계로, 쉬운 문제를 선택하였습니다. 탐색 기본 문제입니다.</p><h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://github.com/KoJunHee/algorithm/blob/master/src/swa_1219/Solution.java" target="_blank" rel="noopener">https://github.com/KoJunHee/algorithm/blob/master/src/swa_1219/Solution.java</a></p><ol><li><p>그래프 그리기</p><p>주어진 그래프를 두 개의 배열로 표현합니다. 한 지점에서 최대 두 개의 길이 있기 때문입니다.</p><p>예를 들어, 1번 지점에서  3번과 4번의 길로 갈 수 있다면 다음과 같이 배열에 저장합니다.</p><p>arr01[1] =3 , arr02[1] =4</p><p>마찬가지로 3번 지점에서 7번 길로만 갈 수 있다면 다음과 같이 배열에 저장합니다.</p><p>arr01[3] = 7, arr02[3] = 0</p></li><li><p>경로 유무 찾기</p><p>DFS를 사용합니다. 최대한 깊게 들어가다가 99번 위치에 도착하면 탐색을 종료합니다.</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV14geLqABQCFAYD&amp;amp;categoryId=AV14geLqABQCFAY
+      
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://junheeko.com/categories/algorithm/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>flow control</title>
+    <link href="http://junheeko.com/2018/11/21/2018-11-21-flow%20control/"/>
+    <id>http://junheeko.com/2018/11/21/2018-11-21-flow control/</id>
+    <published>2018-11-20T15:00:00.000Z</published>
+    <updated>2018-11-21T10:59:02.336Z</updated>
+    
+    <content type="html"><![CDATA[<p>flow control은 송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 방법입니다. stop and wait 와 sliding window 방식이 있습니다.</p><h2 id="stop-and-wait"><a href="#stop-and-wait" class="headerlink" title="stop and wait"></a>stop and wait</h2><p>매번 전송한 패킷에 대해 확인응답을 받아야만 그 다음 패킷을 전송하는 방법입니다. 다음 그림과 같이 동작합니다.</p><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/flowcontrol01.png" alt="img"></p><h2 id="sliding-window"><a href="#sliding-window" class="headerlink" title="sliding window"></a>sliding window</h2><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://jwprogramming.tistory.com/36" target="_blank" rel="noopener">http://jwprogramming.tistory.com/36</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;flow control은 송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 방법입니다. stop and wait 와 sliding window 방식이 있습니다.&lt;/p&gt;
+&lt;h2 id=&quot;stop-and-wait&quot;&gt;&lt;a href=&quot;#stop-a
+      
+    
+    </summary>
+    
+      <category term="network" scheme="http://junheeko.com/categories/network/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>flow, congestion control</title>
+    <link href="http://junheeko.com/2018/11/21/2018-11-21-flow,%20congestion%20control/"/>
+    <id>http://junheeko.com/2018/11/21/2018-11-21-flow, congestion control/</id>
+    <published>2018-11-20T15:00:00.000Z</published>
+    <updated>2018-11-21T09:52:10.820Z</updated>
+    
+    <content type="html"><![CDATA[<p>flow control은 host와 host 간에 데이터 처리를 효율적으로 하기 위한 방법입니다.<br>congestion control은 host와 network 간의 데이터 처리를 효율적으로 하기 위한 방법입니다.</p><h2 id="flow-control-이란"><a href="#flow-control-이란" class="headerlink" title="flow control 이란?"></a>flow control 이란?</h2><p>송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 방법입니다. </p><p>수신측의 데이터 처리 속도가 송신측의 데이터 처리 속도보다 빠르면 문제가 되지 않습니다. 하지만, 송신측의 데<br>이터 처리 속도가 더 빠르면 문제가 됩니다. 수신측에서 제한된 저장용량을 초과한 이후에 도착하는 데이터는, 손<br>실 될 수 있으며 만약 손실 된다면 불필요하게 응답과 데이터 전송이 송/수신 측 간에 빈번이 발생합니다. 이러한 위험을 줄이기 위해 송신 측의 데이터 전송량을 수신측에 따라 조절하는 flow control 이 필요합니다. </p><p>stop and wait, sliding window 방식이 있습니다.</p><h2 id="congestion-control-이란"><a href="#congestion-control-이란" class="headerlink" title="congestion control 이란?"></a>congestion control 이란?</h2><p>송신측과 네트워크의 데이터 처리 속도 차이를 해결하기 위한 방법입니다.</p><p>송신측의 데이터는 지역망이나 인터넷으로 연결된 대형 네트워크를 통해 전달됩니다. 만약 한 라우터에 데이터가<br>몰릴 경우, 자신에게 온 데이터를 모두 처리 할 수 없게 됩니다. 이런 경우 호스트들은 또 다시 재전송을 하게되고<br>결국 혼잡만 가중시켜 오버플로우나 데이터 손실을 발생시키게 됩니다. 이러한 네트워크의 혼잡을 피하기 위해 송신측에서 보내는 데이터의 전송 속도를  강제로 줄이는 congestion control 이 필요합니다.</p><p>AIMD, Slow Start, Fast Transmit, Fast Recovery 방식이 있습니다.</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://jwprogramming.tistory.com/36" target="_blank" rel="noopener">http://jwprogramming.tistory.com/36</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;flow control은 host와 host 간에 데이터 처리를 효율적으로 하기 위한 방법입니다.&lt;br&gt;congestion control은 host와 network 간의 데이터 처리를 효율적으로 하기 위한 방법입니다.&lt;/p&gt;
+&lt;h2 id=&quot;flo
+      
+    
+    </summary>
+    
+      <category term="network" scheme="http://junheeko.com/categories/network/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>View Life Cycle</title>
+    <link href="http://junheeko.com/2018/11/13/2018-11-13-View%20Life%20Cycle/"/>
+    <id>http://junheeko.com/2018/11/13/2018-11-13-View Life Cycle/</id>
+    <published>2018-11-12T15:00:00.000Z</published>
+    <updated>2018-11-13T03:19:23.900Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Life-Cycle"><a href="#Life-Cycle" class="headerlink" title="Life Cycle"></a>Life Cycle</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iosViewLifeCycle.png" alt="img"></p><ol><li><p>ViewDidLoad</p><p>뷰 컨트롤러 클래스가 생성될 때, 가장 먼저 실행됩니다. 특별한 경우가 아니라면 <strong>딱 한 번</strong> 실행되기 때문<br>에 초기화 할 때 사용 할 수 있습니다.</p></li><li><p>ViewWillAppear</p><p>뷰가 생성되기 직전에 <strong>항상</strong> 실행이 되기 때문에 뷰가 나타나기 전에 실행해야 하는 작업들을 여기서 할<br>수 있습니다.</p></li><li><p>ViewDidAppear</p><p>뷰가 생성되고 난 뒤에 실행 됩니다. 데이터를 받아서 화면에 뿌려주거나 애니메이션 등의 작업을 하는 로직을<br>위치시킬 수 있습니다. ViewWillAppear 에서 로직을 넣었다가 뷰에 반영이 안되는 경우가 있기 때문입니다.</p></li><li><p>ViewWillDisappear</p><p>뷰가 사라지기 직전에 실행 됩니다.</p></li><li><p>ViewDidDisappear</p><p>뷰가 사라지고 난 뒤에 실행 됩니다.</p></li></ol><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://developer.apple.com/documentation/uikit/uiviewcontroller" target="_blank" rel="noopener">https://developer.apple.com/documentation/uikit/uiviewcontroller</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Life-Cycle&quot;&gt;&lt;a href=&quot;#Life-Cycle&quot; class=&quot;headerlink&quot; title=&quot;Life Cycle&quot;&gt;&lt;/a&gt;Life Cycle&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://github.com/KoJunHee/
+      
+    
+    </summary>
+    
+      <category term="ios" scheme="http://junheeko.com/categories/ios/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hash Table</title>
+    <link href="http://junheeko.com/2018/11/13/2018-11-13-Hash%20Table/"/>
+    <id>http://junheeko.com/2018/11/13/2018-11-13-Hash Table/</id>
+    <published>2018-11-12T15:00:00.000Z</published>
+    <updated>2018-11-12T23:33:11.768Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hash-Table이란"><a href="#Hash-Table이란" class="headerlink" title="Hash Table이란"></a>Hash Table이란</h2><p>Key에 Value를 저장하는 데이타 구조</p><h2 id="Hash-Function"><a href="#Hash-Function" class="headerlink" title="Hash Function"></a>Hash Function</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hashtable01.png" alt="img"></p><p>key에 대한 데이터를 찾을때, hash_function을 한번만 수행하면 array내에 저장된 index 위치를 찾아낼 수 있</p><p>기 때문에, 데이타의 저장과 삭제가 빠르다.</p><p>하지만 어설픈 hash functio을 통해서 key 값들을 결정한다면 동일한 값이 도출될 수가 있다. </p><p>이렇게 되면 동일한 key 값에 복수 개의 데이터가 하나의 테이블에 존재할 수 있게 되는 것인데  </p><p>이를 Collision 이라고 한다.</p><p>Collision을 해결하는 방법으로, <strong>Separate chaining</strong>과 <strong>Open addressing</strong> 이 있다.</p><h2 id="Separate-Chaining"><a href="#Separate-Chaining" class="headerlink" title="Separate Chaining"></a>Separate Chaining</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hashtable02.png" alt="img"></p><p>Linked List를 이용하는 방식이다.</p><p>각 index에 데이터를 저장하는 Linked list 에 대한 포인터를 가지는 방식이다.</p><p>동일 index로 인해서 충돌이 발생하면 그 index가 가리키고 있는 Linked list에 노드를 추가하여 값을 추가한다.</p><h2 id="Open-Addressing"><a href="#Open-Addressing" class="headerlink" title="Open Addressing"></a>Open Addressing</h2><p>Open addressing  방식은 index에 대한 충돌 처리에 대해서 </p><p>Linked List와 같은 추가적인 메모리 공간을 사용하지 않고, hash table array의 빈공간을 사용하는 방법이다. </p><p>여러 가지 구현 방식이 있다. Linear Probing 방식은 index에 대해서 충돌 이 발생했을 때, </p><p>index 뒤에 있는 버킷중에 빈 버킷을 찾아서 데이터를 넣는 방식이다. </p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist</a></p><p><a href="http://bcho.tistory.com/1072" target="_blank" rel="noopener">http://bcho.tistory.com/1072</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Hash-Table이란&quot;&gt;&lt;a href=&quot;#Hash-Table이란&quot; class=&quot;headerlink&quot; title=&quot;Hash Table이란&quot;&gt;&lt;/a&gt;Hash Table이란&lt;/h2&gt;&lt;p&gt;Key에 Value를 저장하는 데이타 구조&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SOLID</title>
+    <link href="http://junheeko.com/2018/11/13/2018-11-13-SOLID/"/>
+    <id>http://junheeko.com/2018/11/13/2018-11-13-SOLID/</id>
+    <published>2018-11-12T15:00:00.000Z</published>
+    <updated>2018-11-13T04:59:04.161Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="SOLID란"><a href="#SOLID란" class="headerlink" title="SOLID란"></a>SOLID란</h2><p>객체지향 개발 5대 원리</p><ol><li><p>S : SRP - Single Responsibility Principle (단일 책임 원칙)</p><p>객체는 단 하나의 책임(변경 이유)만 가져야 한다.</p></li><li><p>O : OCP - Open-Closed Principle (개방-폐쇄 원칙)</p><p>open for extension, closed for modifications.</p></li><li><p>L : LSP - Liskov Subsititution Principle ( 리스코프 치환 법칙 )</p><p>자식 클래스는 최소한 부모 클래스에서 가능한 행위는 수행할 수 있어야 한다</p></li><li><p>I : ISP - Interface Segregation Principle ( 인터페이스 분리 법칙 )</p><p>인터페이스를 클라이언트에 특화되도록 분리시키는 설계 원칙</p></li><li><p>D : DIP - Dependency Inversion Principle ( 의존 역전 법칙 )</p><p>어떤 클래스가 도움을 받을 때, 구체적인 클래스보다는 인터페이스나 추상 클래스와 의존 관계를 맺도록.</p></li></ol><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://www.oodesign.com/single-responsibility-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/single-responsibility-principle.html</a></p><p>JAVA 객체지향 디자인 패턴 (정인상, 채흥석 지음)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;SOLID란&quot;&gt;&lt;a href=&quot;#SOLID란&quot; class=&quot;headerlink&quot; title=&quot;SOLID란&quot;&gt;&lt;/a&gt;SOLID란&lt;/h2&gt;&lt;p&gt;객체지향 개발 5대 원리&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;S : SRP - Single Respons
+      
+    
+    </summary>
+    
+      <category term="DesignPattern" scheme="http://junheeko.com/categories/DesignPattern/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>워터폴,에자일</title>
+    <link href="http://junheeko.com/2018/11/12/2018-11-12-%E1%84%8B%E1%85%AF%E1%84%90%E1%85%A5%E1%84%91%E1%85%A9%E1%86%AF,%E1%84%8B%E1%85%A6%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF/"/>
+    <id>http://junheeko.com/2018/11/12/2018-11-12-워터폴,에자일/</id>
+    <published>2018-11-11T15:00:00.000Z</published>
+    <updated>2018-11-12T13:45:52.823Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Waterfall-Model"><a href="#Waterfall-Model" class="headerlink" title="Waterfall Model"></a>Waterfall Model</h2><p>순차적인 소프트웨어 개발 프로세스이다.</p><p>개발의 흐름이 마치 폭포수처럼 지속적으로 아래로 향하는 것처럼 보이는 데서 이름이 붙여졌다. </p><p>이 폭포수 모델의 흐름은 다음과 같다.</p><ol><li>요구사항 분석</li><li>설계</li><li>구현</li><li>유지보수</li></ol><h2 id="Agile-Model"><a href="#Agile-Model" class="headerlink" title="Agile Model"></a>Agile Model</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/agile01.png" alt="img"></p><p>개발과 즉시 피드백을 받아 유동적으로 개발하는 방법론이다.</p><p>애자일 모델은 전체적인 플랜을 짜고 문서를 통해 주도해 나가던 과거의 방식(워터폴 모델)과 달리 </p><p>앞을 예측하며 개발하지 않고, 일정한 주기를 가지고 끊임없이 프로토 타입을 만들어 내며 필요할 때마다 요구사항을 더하고 수정</p><p>하여 커다란 소프트웨어를 개발해 나가는 방식이다.</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ko.wikipedia.org/wiki/%ED%8F%AD%ED%8F%AC%EC%88%98_%EB%AA%A8%EB%8D%B8" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/%ED%8F%AD%ED%8F%AC%EC%88%98_%EB%AA%A8%EB%8D%B8</a></p><p><a href="http://blog.rightbrain.co.kr/?p=5810" target="_blank" rel="noopener">http://blog.rightbrain.co.kr/?p=5810</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Waterfall-Model&quot;&gt;&lt;a href=&quot;#Waterfall-Model&quot; class=&quot;headerlink&quot; title=&quot;Waterfall Model&quot;&gt;&lt;/a&gt;Waterfall Model&lt;/h2&gt;&lt;p&gt;순차적인 소프트웨어 개발 프로세스
+      
+    
+    </summary>
+    
+      <category term="softwareEngineering" scheme="http://junheeko.com/categories/softwareEngineering/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Transaction</title>
+    <link href="http://junheeko.com/2018/11/12/2018-11-12-Transaction/"/>
+    <id>http://junheeko.com/2018/11/12/2018-11-12-Transaction/</id>
+    <published>2018-11-11T15:00:00.000Z</published>
+    <updated>2018-11-12T14:10:49.351Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="트랜잭션이란"><a href="#트랜잭션이란" class="headerlink" title="트랜잭션이란"></a>트랜잭션이란</h2><p>하나의 논리적인 작업 단위를 구성하는 연산들의 집합</p><h2 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h2><ol><li><p>Atomicity</p><p>만약 트랜잭션 중간에 어떠한 문제가 발생한다면 트랜잭션에 해당하는 어떠한 작업 내용도 수행되어서는 안되<br>며, 아무런 문제가 발생되지 않았을 경우에만 모든 작업이 수행되어야 한다.</p></li><li><p>Consistency</p><p>트랜잭션이 완료된 다음의 상태에서도 트랜잭션이 일어나기 전의 상황과 동일하게 데이터의 일관성을 보장해<br>야 한다. </p><p>예를 들어 계좌이체를 성공적으로 실행했다면, A계좌의 잔액과 B계좌의 잔액의 합이 트랜잭션 실행 전의 합<br>과 동일해야한다.</p></li><li><p>Isolation</p><p>각각의 트랜잭션은 서로 간섭없이 독립적으로 수행되어야 한다.</p></li><li><p>Durability</p><p>트랜잭션이 정상적으로 종료된 다음에는 영구적으로 데이터베이스에 작업의 결과가 저장되어야 한다.</p></li></ol><h2 id="Commit-Rollback"><a href="#Commit-Rollback" class="headerlink" title="Commit, Rollback"></a>Commit, Rollback</h2><ol><li><p>Commit</p><p>모든 작업을 정상적으로 처리하겠다고 확정하는 명령어이다. 트랜젝션의 처리 과정을 데이터베이스에 반영하<br>기 위해서, 변경된 내용을 모두 영구 저장한다.</p></li><li><p>Rollback</p><p>작업 중 문제가 발생했을 때, 트랜젝션의 처리 과정에서 발생한 변경 사항을 취소하고, 트랜젝션 과정을 종료<br>시킨는 명령어이다. 트랜젝션으로 인한 하나의 묶음 처리가 시작되기 이전의 상태로 되돌린다.</p></li></ol><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction</a></p><p><a href="https://wikidocs.net/4096" target="_blank" rel="noopener">https://wikidocs.net/4096</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;트랜잭션이란&quot;&gt;&lt;a href=&quot;#트랜잭션이란&quot; class=&quot;headerlink&quot; title=&quot;트랜잭션이란&quot;&gt;&lt;/a&gt;트랜잭션이란&lt;/h2&gt;&lt;p&gt;하나의 논리적인 작업 단위를 구성하는 연산들의 집합&lt;/p&gt;
+&lt;h2 id=&quot;ACID&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="database" scheme="http://junheeko.com/categories/database/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>REST</title>
+    <link href="http://junheeko.com/2018/11/12/2018-11-12-REST/"/>
+    <id>http://junheeko.com/2018/11/12/2018-11-12-REST/</id>
+    <published>2018-11-11T15:00:00.000Z</published>
+    <updated>2018-11-12T10:12:52.883Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="REST란"><a href="#REST란" class="headerlink" title="REST란"></a>REST란</h2><p>소프트웨어 아키텍처의 한 형식이다.</p><h2 id="구성-요소"><a href="#구성-요소" class="headerlink" title="구성 요소"></a>구성 요소</h2><ol><li><p>URI</p><p>자원의 주소이다.</p></li><li><p>HTTP Method</p><p>어떤 자원에 행할 수 있는 행위이다. CRDU로 나타낸다.</p><ul><li>POST : 해당 URI를 요청하면 리소스를 생성한다.</li><li>GET : 해당 리소스를 조회하고 해당 도큐먼트에 대한 자세한 정보를 가져온다.</li><li>PUT : 해당 리소스를 수정한다.</li><li>DELETE : 리소스를 삭제한다.</li></ul></li><li><p>Representation</p><p>자원의 URI에 특정 행위를 요청하면 그 결과로 Representation 을 응답 받는다. html, xml, text, json,<br>rss 등 다양한 형태로 표현될 수 있다.</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;REST란&quot;&gt;&lt;a href=&quot;#REST란&quot; class=&quot;headerlink&quot; title=&quot;REST란&quot;&gt;&lt;/a&gt;REST란&lt;/h2&gt;&lt;p&gt;소프트웨어 아키텍처의 한 형식이다.&lt;/p&gt;
+&lt;h2 id=&quot;구성-요소&quot;&gt;&lt;a href=&quot;#구성-요소&quot; cl
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://junheeko.com/categories/android/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Array, Linked List</title>
+    <link href="http://junheeko.com/2018/11/12/2018-11-12-Linked%20List,%20Array/"/>
+    <id>http://junheeko.com/2018/11/12/2018-11-12-Linked List, Array/</id>
+    <published>2018-11-11T15:00:00.000Z</published>
+    <updated>2018-11-12T14:27:43.900Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>배열은 연관된 데이터를 모아서 관리하기 위해 사용되는 자료구조이다. 논리적 저장 순서와 물리적 저장 순서가 일치한다. 따라서 인덱스(index)로 해당 원소(element)에 접근할 수 있다. 그렇기 때문에 찾고자 하는 원소의 인덱스 값을 알고 있으면  Big-O(1) 에 해당 원소로 접근할 수 있다. 즉 random access가 가능하다.</p><p>하지만 삭제 또는 삽입의 과정에서는 해당 원소에 접근하여 작업을 완료한 뒤(O(1)), 또 한 가지의 작업을 추가적으로 해줘야 하기 때문에, 시간이 더 걸린다. 만약 배열의 원소 중 어느 원소를 삭제했다고 했을 때, 배열의 연속적인 특징이 깨지게 된다. 즉 빈 공간이 생기는 것이다. 따라서 삭제한 원소보다 큰 인덱스를 갖는 원소들을 shift해줘야 하는 비용(cost)이 발생하고 이 경우의 시간 복잡도는 O(n)가 된다. 그렇기 때문에 Array 자료구조에서 삭제 기능에 대한 time complexity 의 worst case 는 O(n)이 된다.</p><p>삽입의 경우도 마찬가지이다. 만약 첫번째 자리에 새로운 원소를 추가하고자 한다면 모든 원소들의 인덱스를 1 씩 shift 해줘야 하므로 이 경우도 O(n)의 시간을 요구하게 된다.</p><h2 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h2><p>Element 간의 연결을 이용해서 리스트를 구현한 것이다. 원하는 위치에 삽입을 하고자 하면 원하는 위치를 Search 과정에 있어서 첫번째 원소부터 다 확인해봐야 한다는 것이다. Array 와는 달리 논리적 저장 순서와 물리적 저장 순서가 일치하지 않기 때문이다. 이것은 일단 삽입하고 정렬하는 것과 마찬가지이다. 이 과정 때문에, 어떠한 원소를 삭제 또는 삽입하고자 했을 때, 그 원소를 찾기 위해서 O(n)의 시간이 추가적으로 발생하게 된다.</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist</a></p><p><a href="https://opentutorials.org/course/62/5133" target="_blank" rel="noopener">https://opentutorials.org/course/62/5133</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Array&quot;&gt;&lt;a href=&quot;#Array&quot; class=&quot;headerlink&quot; title=&quot;Array&quot;&gt;&lt;/a&gt;Array&lt;/h2&gt;&lt;p&gt;배열은 연관된 데이터를 모아서 관리하기 위해 사용되는 자료구조이다. 논리적 저장 순서와 물리적 저장 순서
+      
+    
+    </summary>
+    
+      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>퀵정렬</title>
+    <link href="http://junheeko.com/2018/11/12/2018-11-12-%E1%84%8F%E1%85%B1%E1%86%A8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
+    <id>http://junheeko.com/2018/11/12/2018-11-12-퀵정렬/</id>
+    <published>2018-11-11T15:00:00.000Z</published>
+    <updated>2018-11-12T13:22:16.919Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="퀵정렬이란"><a href="#퀵정렬이란" class="headerlink" title="퀵정렬이란"></a>퀵정렬이란</h2><p>분할 정복 알고리즘의 하나이다. </p><h2 id="왜-분할-정복"><a href="#왜-분할-정복" class="headerlink" title="왜 분할 정복?"></a>왜 분할 정복?</h2><p>퀵 정렬은 다음의 단계를 거친다.</p><ol><li><p>분할</p><p>입력 배열을 피벗을 기준으로 비균등하게 2개의 부분 배열(피벗을 중심으로 왼쪽: 피벗보다 작은 요소들, 오른<br>쪽: 피벗보다 큰 요소들)로 분할한다.</p></li><li><p>정복</p><p>부분 배열을 정렬한다. 부분 배열의 크기가 충분히 작지 않으면 순환 호출 을 이용하여 다시 분할 정복 방법을<br>적용한다.</p></li><li><p>결합</p><p>정렬된 부분 배열들을 하나의 배열에 합병한다.</p><p>순환 호출이 한번 진행될 때마다 최소한 하나의 원소(피벗)는 최종적으로 위치가 정해지므로, 이 알고리즘은<br>반드시 끝난다는 것을 보장할 수 있다.</p></li></ol><h2 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/quickSort01.png" alt="img"></p><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/quickSort02.png" alt="img"></p><p>[5, 3, 8, 4, 9, 1] 배열을 오름차순 정렬해보자.</p><ul><li><p>피벗 값을 입력 리스트의 첫 번째 데이터로 하자. (다른 임의의 값이어도 상관없다.)</p></li><li><p>1회전: 피벗이 5인 경우,</p><p>low는 왼쪽에서 오른쪽으로 탐색해가다가 피벗보다 큰 데이터(8)을 찾으면 멈춘다.</p><p>high는 오른쪽에서 왼쪽으로 탐색해가다가 피벗보다 작은 데이터(4)를 찾으면 멈춘다.</p><p>low와 high가 가리키는 두 데이터(8과 4)를 서로 교환한다.</p><p>low와 high가 엇갈리면, pivot의 값과 high 의 값을 교환한다.</p><p>5는 정렬이 끝났다.</p></li><li><p>2회전: 피벗 (1회전의 왼쪽 부분리스트의 첫 번째 데이터)이 4인 경우, 위와 동일한 방법으로 반복한다.</p></li><li><p>3회전: 피벗(1회전의 오른쪽 부분리스트의 첫 번째 데이터)이 8인 경우, 위와 동일한 방법으로 반복한다.</p></li></ul><h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/quickSort03.png" alt="img"></p><p>T(n) = 순환 호출의 깊이 * 각 순환 호출 단계의 비교 연산 = nlog₂n</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;퀵정렬이란&quot;&gt;&lt;a href=&quot;#퀵정렬이란&quot; class=&quot;headerlink&quot; title=&quot;퀵정렬이란&quot;&gt;&lt;/a&gt;퀵정렬이란&lt;/h2&gt;&lt;p&gt;분할 정복 알고리즘의 하나이다. &lt;/p&gt;
+&lt;h2 id=&quot;왜-분할-정복&quot;&gt;&lt;a href=&quot;#왜-분할-정복&quot;
+      
+    
+    </summary>
+    
+      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB</title>
+    <link href="http://junheeko.com/2018/11/11/2018-11-11-MongoDB/"/>
+    <id>http://junheeko.com/2018/11/11/2018-11-11-MongoDB/</id>
+    <published>2018-11-10T15:00:00.000Z</published>
+    <updated>2018-11-11T00:57:51.403Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MonogoDB란"><a href="#MonogoDB란" class="headerlink" title="MonogoDB란"></a>MonogoDB란</h2><p>Document Database</p><h2 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h2><ul><li><p>db &gt; collection &gt; document &gt; key:value</p><p>( RDBMS : db &gt; table &gt; row &gt; column)</p></li><li><p>Schemaless</p><p>스키마란, 데이터베이스를 구성하는 개체(Entity), 속성(Attribute), 관계(Relationship) 및 데이터 조작 시<br>데이터 값들이 갖는 제약조건 등에 관해 전반적으로 정의하는 것.</p><p>MongoDB 는 이러한 스키마가 사전에 정의되지 않아도 된다. Document는 다른 필드를 가질 수 있다.</p></li><li><p>Document Oriented ( BSON format )</p><p>하나의 row에 하나의 Document를 저장한다.</p></li><li><p>Deep query ability</p><p>문서지향적 Query Language 를 사용. javascript expressions 으로 이해하기 쉽다.</p><p>(key-value queries / range queries / search queries / map reduce queries ..)</p></li><li><p>indexing</p><p>RDBMS인 MySQL에서 지원하는 대부분의 인덱스를 지원한다.</p><p>index는 메모리에 저장되기 때문에 메모리 크기에 영향을 많이 받는다.</p></li><li><p>auto-sharding</p><p>처음부터 자동으로 데이터를 분산하여 저장하며, 하나의 컬렉션처럼 사용할 수 있게 해준다. 수평적 확장 가능</p></li><li><p>replicication</p><p>간단한 설정만으로도 데이터 복제를 지원. 가용성 향상.</p></li><li><p>Read/Write 성능이 빠름</p><p>Write시에, Memory에 먼저 Write후에, 1분 단위로 Flushing하는 Write Back 방식을 쓴다.<br>즉 메모리에만 쓰면 되니까는 Write가 무지 빠르다. </p><p>단 Flushing전에 Fail이 되면 데이타 유실에 의해서 Consistency 가 깨지는 문제가 발생</p><p>Read시에, 파일의 Index를 메모리에 로딩해놓고 찾는다 (memory mapped file).</p></li><li><p>RDBMS와는 달리 데이터 간의 관계를 정의하지 않는다.</p><p>관계형 데이터베이스인 RDBMS는 데이터의 관계를 Foreign Key 등으로 정의하고, 이를 이용해서 Join 등<br>관계형 연산을 한다. </p><p>NoSQL은 데이터 간의 관계를 정의하지 않는다. 데이터 테이블은 그냥 하나의 테이블이며 각 테이블 간의 관<br>를 정의하지도 않고 일반적으로 테이블 간의 Join도 불가능하다.</p></li></ul><h2 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h2><ul><li><p>Flexibility </p><p>Schema-less라서 어떤 형태의 데이터라도 저장할 수 있다.</p></li><li><p>Performance </p><p>Read &amp; Write 성능이 뛰어나다. 캐싱이나 많은 트래픽을 감당할 때 써도 좋다.</p></li><li><p>Scalability </p><p>애초부터 스케일아웃 구조를 채택해서 쉽게 운용가능하다. Auto sharding 지원</p></li><li><p>Deep Query ability</p><p>문서지향적 Query Language 를 사용하여 SQL 만큼 강력한 Query 성능을 제공한다.</p></li><li><p>Conversion / Mapping</p><p>JSON형태로 저장이 가능해서 직관적이고 개발이 편리하다.</p></li></ul><h2 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h2><ul><li><p>정합성이 떨어지므로 트랜잭션이 필요한 경우에는 부적합하다. (ex. 금융, 결제, 회원정보 등)</p></li><li><p>JOIN이 없다. join이 필요없도록 데이터 구조화 필요</p></li><li><p>memory mapped file으로 파일 엔진 DB이다. 메모리 관리를 OS에게 위임한다. 메모리 크기가 성능을 좌우</p></li><li><p>SQL을 완전히 이전할 수는 없다.</p></li><li><p>B트리 인덱스를 사용하여 인덱스를 생성하는데, B트리는 크기가 커질수록 새로운 데이터를 입력하거나 삭제할<br>때 성능이 저하된다. 이런 B트리의 특성 때문에 데이터를 넣어두면 변하지않고 정보를 조회하는 데에 적합하다.</p></li></ul><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://nicewoong.github.io/development/2018/02/10/mongodb-feature/" target="_blank" rel="noopener">https://nicewoong.github.io/development/2018/02/10/mongodb-feature/</a></p><p><a href="http://bcho.tistory.com/624?category=431296" target="_blank" rel="noopener">http://bcho.tistory.com/624?category=431296</a></p><p><a href="http://sjh836.tistory.com/98" target="_blank" rel="noopener">http://sjh836.tistory.com/98</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;MonogoDB란&quot;&gt;&lt;a href=&quot;#MonogoDB란&quot; class=&quot;headerlink&quot; title=&quot;MonogoDB란&quot;&gt;&lt;/a&gt;MonogoDB란&lt;/h2&gt;&lt;p&gt;Document Database&lt;/p&gt;
+&lt;h2 id=&quot;특징&quot;&gt;&lt;a href=
+      
+    
+    </summary>
+    
+      <category term="database" scheme="http://junheeko.com/categories/database/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>점근 표기법</title>
+    <link href="http://junheeko.com/2018/11/11/2018-11-11-%E1%84%8C%E1%85%A5%E1%86%B7%E1%84%80%E1%85%B3%E1%86%AB%20%E1%84%91%E1%85%AD%E1%84%80%E1%85%B5%E1%84%87%E1%85%A5%E1%86%B8/"/>
+    <id>http://junheeko.com/2018/11/11/2018-11-11-점근 표기법/</id>
+    <published>2018-11-10T15:00:00.000Z</published>
+    <updated>2018-11-12T13:22:08.800Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="시간-복잡도와-공간-복잡도"><a href="#시간-복잡도와-공간-복잡도" class="headerlink" title="시간 복잡도와 공간 복잡도"></a>시간 복잡도와 공간 복잡도</h2><ol><li>시간 복잡도 : 알고리즘의 수행시간 분석결과</li><li>공간 복잡도 : 알고리즘의 메모리 사용량에 대한 분석결과</li></ol><p>알고리즘 성능평가는 시간 복잡도와 공간 복잡도를 계산하고 점근적 표기법으로 나타내면 된다.</p><h2 id="점근적-분석이란"><a href="#점근적-분석이란" class="headerlink" title="점근적 분석이란"></a>점근적 분석이란</h2><p>알고리즘의 수행 시간을 분석하기 위해, 항상 입력의 크기가 충분히 클 때에 대해서 분석하는 방법 </p><h2 id="점근적-표기법이란"><a href="#점근적-표기법이란" class="headerlink" title="점근적 표기법이란"></a>점근적 표기법이란</h2><p>점근적 증가율은 입력의 크기에 따라 함수가 증가하는 비율이다. 그 표기법을 점근적 표기법이라 한다.<br>세 가지가 있다.</p><ul><li>빅오 표기법</li><li>오메가 표기법</li><li>세타 표기법</li></ul><h2 id="빅오-표기법"><a href="#빅오-표기법" class="headerlink" title="빅오 표기법"></a>빅오 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic01.png" alt="img"></p><p>f(n)을 O(g(n))이라고 표시한다. </p><p>이 때 g(n)를 f(n)의 점근 상한이라고 한다.</p><p>알고리즘 f(n)이 O(g(n))에 속한다면, f(n)의 계산복잡도는 최악의 경우라도 g(n)과 같거나 혹은 작다는 뜻이다.</p><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic011.png" alt="img"></p><h2 id="오메가-표기법"><a href="#오메가-표기법" class="headerlink" title="오메가 표기법"></a>오메가 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic02.png" alt="img"></p><p>f(n)를 Ω(g(n))이라고 표시한다. </p><p>이 때 g(n)는 f(n)의 점근 하한이라고 한다. </p><p>알고리즘 f(n)의 계산복잡도가 Ω(g(n))에 속한다면, f(n)의 계산복잡도는 최선의 경우를 상정하더라도 g(n)과 같거나 혹은 크다는 뜻이다.</p><h2 id="세타-표기법"><a href="#세타-표기법" class="headerlink" title="세타 표기법"></a>세타 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic03.png" alt="img"></p><p>f(n)을 Θ(g(n))이라고 표시한다. </p><p>g(n)은 f(n)의 점근적 상한과 하한의 교집합이라고 한다. </p><p>알고리즘 f(n)이 아무리 나쁘거나 좋더라도 그 계산복잡도는 g(n)의 범위 내에 있다는 뜻이다.</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ratsgo.github.io/data%20structure&amp;algorithm/2017/09/13/asymptotic/" target="_blank" rel="noopener">https://ratsgo.github.io/data%20structure&amp;algorithm/2017/09/13/asymptotic/</a></p><p><a href="http://ledgku.tistory.com/33" target="_blank" rel="noopener">http://ledgku.tistory.com/33</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;시간-복잡도와-공간-복잡도&quot;&gt;&lt;a href=&quot;#시간-복잡도와-공간-복잡도&quot; class=&quot;headerlink&quot; title=&quot;시간 복잡도와 공간 복잡도&quot;&gt;&lt;/a&gt;시간 복잡도와 공간 복잡도&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;시간 복잡도 : 알고리즘의 수
+      
+    
+    </summary>
+    
+      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>삽입정렬</title>
+    <link href="http://junheeko.com/2018/11/11/2018-11-11-%E1%84%89%E1%85%A1%E1%86%B8%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
+    <id>http://junheeko.com/2018/11/11/2018-11-11-삽입정렬/</id>
+    <published>2018-11-10T15:00:00.000Z</published>
+    <updated>2018-11-12T13:22:02.504Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="삽입정렬이란"><a href="#삽입정렬이란" class="headerlink" title="삽입정렬이란"></a>삽입정렬이란</h2><p>배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘이다.</p><p>두 번째 자료는 첫 번째 자료, 세 번째 자료는 두 번째와 첫 번째 자료, 네 번째 자료는 세 번째, 두 번째, 첫 번째 자료와 비교한 후 자료가 삽입될 위치를 찾는다. 자료가 삽입될 위치를 찾았다면 그 위치에 자료를 삽입하기 위해 자료를 한 칸씩 뒤로 이동시킨다.</p><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/insertionSort01.png" alt="img"></p><h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ol><li>for 루프는 n-1번 반복 되고</li><li>최악의 경우 데이터 삽입을 위한 비교는 i-1번 비교</li></ol><p>따라서 최악의 경우 T(n) = (n-1) + (n-2) + … + 2 + 1 = n(n-1)/2 = O(n^2)</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ko.wikipedia.org/wiki/삽입_정렬" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/삽입_정렬</a><br><a href="https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/" target="_blank" rel="noopener">https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;삽입정렬이란&quot;&gt;&lt;a href=&quot;#삽입정렬이란&quot; class=&quot;headerlink&quot; title=&quot;삽입정렬이란&quot;&gt;&lt;/a&gt;삽입정렬이란&lt;/h2&gt;&lt;p&gt;배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽
+      
+    
+    </summary>
+    
+      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>선택정렬</title>
+    <link href="http://junheeko.com/2018/11/11/2018-11-11-%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
+    <id>http://junheeko.com/2018/11/11/2018-11-11-선택정렬/</id>
+    <published>2018-11-10T15:00:00.000Z</published>
+    <updated>2018-11-12T13:21:47.867Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="선택정렬이란"><a href="#선택정렬이란" class="headerlink" title="선택정렬이란"></a>선택정렬이란</h2><p>해당 순서에 원소를 넣을 위치는 이미 정해져 있고, 어떤 원소를 넣을지 선택하는 정렬이다.</p><p>첫 번째 자료를 두 번째 자료부터 마지막 자료까지 차례대로 비교하여 가장 작은 값을 찾아 첫 번째에 놓고, 두 번째 자료를 세 번째 자료부터 마지막 자료까지와 차례대로 비교하여 그 중 가장 작은 값을 찾아 두 번째 위치에 놓는 과정을 반복하며 정렬을 수행한다.</p><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/selectionSort01.png" alt="img"></p><h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ol><li>for 루프는 n-1번 반복 되고</li><li>최소값을 찾기 위한 비교 횟수는 n-1, n-2, … , 2, 1</li><li>교환은 상수 시간 작업이므로</li></ol><p>T(n) = (n-1) + (n-2) + … + 2 + 1 = n(n-1)/2 = O(n^2)</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/" target="_blank" rel="noopener">https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/</a><br><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;선택정렬이란&quot;&gt;&lt;a href=&quot;#선택정렬이란&quot; class=&quot;headerlink&quot; title=&quot;선택정렬이란&quot;&gt;&lt;/a&gt;선택정렬이란&lt;/h2&gt;&lt;p&gt;해당 순서에 원소를 넣을 위치는 이미 정해져 있고, 어떤 원소를 넣을지 선택하는 정렬이다.&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>버블정렬</title>
+    <link href="http://junheeko.com/2018/11/11/2018-11-11-%E1%84%87%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/"/>
+    <id>http://junheeko.com/2018/11/11/2018-11-11-버블정렬/</id>
+    <published>2018-11-10T15:00:00.000Z</published>
+    <updated>2018-11-12T13:21:51.676Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="버블정렬이란"><a href="#버블정렬이란" class="headerlink" title="버블정렬이란"></a>버블정렬이란</h2><p>서로 인접한 두 원소를 검사하여 정렬하는 알고리즘이다.<br>첫 번째 자료와 두 번째 자료를, 두 번째 자료와 세 번째 자료를, 세 번째와 네 번째를, … 이런 식으로 (마지막-1)번째 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬한다.<br><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bubbleSort01.png" alt="img"></p><h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ul><li>비교 횟수<br>최상, 평균, 최악 모두 일정하다.  n-1, n-2, … , 2, 1 번 = n(n-1)/2</li><li>교환 횟수<br>입력 자료가 역순으로 정렬되어 있는 최악의 경우, 한 번 교환하기 위하여 3번의 이동(SWAP 함수의 작업)이 필<br>요하므로 (비교 횟수 * 3) 번 = 3n(n-1)/2</li><li>T(n) = O(n^2)</li></ul><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;버블정렬이란&quot;&gt;&lt;a href=&quot;#버블정렬이란&quot; class=&quot;headerlink&quot; title=&quot;버블정렬이란&quot;&gt;&lt;/a&gt;버블정렬이란&lt;/h2&gt;&lt;p&gt;서로 인접한 두 원소를 검사하여 정렬하는 알고리즘이다.&lt;br&gt;첫 번째 자료와 두 번째 자료를, 두
+      
+    
+    </summary>
+    
+      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Heap</title>
+    <link href="http://junheeko.com/2018/11/11/2018-11-11-Heap/"/>
+    <id>http://junheeko.com/2018/11/11/2018-11-11-Heap/</id>
+    <published>2018-11-10T15:00:00.000Z</published>
+    <updated>2018-11-12T13:21:55.456Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Heap-이란"><a href="#Heap-이란" class="headerlink" title="Heap 이란"></a>Heap 이란</h2><p>우선순위 큐를 위한 완전이진트리</p><h2 id="우선순위-큐"><a href="#우선순위-큐" class="headerlink" title="우선순위 큐"></a>우선순위 큐</h2><p>데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.<br>우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적.</p><h2 id="Heap의-종류"><a href="#Heap의-종류" class="headerlink" title="Heap의 종류"></a>Heap의 종류</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap01.png" alt="img"></p><ol><li>최대힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리</li><li>최소힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리</li></ol><h2 id="Heap의-구현"><a href="#Heap의-구현" class="headerlink" title="Heap의 구현"></a>Heap의 구현</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap02.png" alt="img"></p><p>배열로 구현한다.<br>부모 노드와 자식 노드의 관계는 다음과 같다.</p><ul><li>왼쪽 자식의 인덱스 = (부모의 인덱스) * 2</li><li>오른쪽 자식의 인덱스 = (부모의 인덱스) * 2 + 1</li><li>부모의 인덱스 = (자식의 인덱스) / 2</li></ul><h2 id="Heap의-삽입"><a href="#Heap의-삽입" class="headerlink" title="Heap의 삽입"></a>Heap의 삽입</h2><ol><li>힙에 새로운 요소가 들어오면, 일단 새로운 노드를 힙의 마지막 노드에 이어서 삽입한다.</li><li>새로운 노드를 부모 노드들과 교환해서 힙의 성질을 만족시킨다.</li></ol><h2 id="Heap의-삭제"><a href="#Heap의-삭제" class="headerlink" title="Heap의 삭제"></a>Heap의 삭제</h2><ol><li>최대 힙에서 최댓값은 루트 노드이므로 루트 노드가 삭제된다.<br>최대 힙(max heap)에서 삭제 연산은 최댓값을 가진 요소를 삭제하는 것이다.<br>최소 힙(min heap)에서 삭제 연산은 최솟값을 가진 요소를 삭제하는 것이다.</li><li>삭제된 루트 노드에는 힙의 마지막 노드를 가져온다.</li><li>힙을 재구성한다.</li></ol><h2 id="Heap-정렬"><a href="#Heap-정렬" class="headerlink" title="Heap 정렬"></a>Heap 정렬</h2><p>최대 힙 트리나 최소 힙 트리를 구성해 정렬을 하는 방법</p><h2 id="Heap-정렬의-시간-복잡도"><a href="#Heap-정렬의-시간-복잡도" class="headerlink" title="Heap 정렬의 시간 복잡도"></a>Heap 정렬의 시간 복잡도</h2><p>힙 트리의 전체 높이가 거의 log₂n(완전 이진 트리이므로)이므로 하나의 요소를 힙에 삽입하거나 삭제할 때 힙을 재정비하는 시간이 log₂n만큼 소요된다.</p><p>요소의 개수가 n개 이므로 전체적으로 O(nlog₂n)의 시간이 걸린다.</p><p>T(n) = O(nlog₂n)</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Heap-이란&quot;&gt;&lt;a href=&quot;#Heap-이란&quot; class=&quot;headerlink&quot; title=&quot;Heap 이란&quot;&gt;&lt;/a&gt;Heap 이란&lt;/h2&gt;&lt;p&gt;우선순위 큐를 위한 완전이진트리&lt;/p&gt;
+&lt;h2 id=&quot;우선순위-큐&quot;&gt;&lt;a href=&quot;#우선
+      
+    
+    </summary>
+    
+      <category term="dataStructure" scheme="http://junheeko.com/categories/dataStructure/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>숫자 고르기</title>
+    <link href="http://junheeko.com/2018/11/08/2018-11-08-%E1%84%89%E1%85%AE%E1%86%BA%E1%84%8C%E1%85%A1%20%E1%84%80%E1%85%A9%E1%84%85%E1%85%B3%E1%84%80%E1%85%B5/"/>
+    <id>http://junheeko.com/2018/11/08/2018-11-08-숫자 고르기/</id>
+    <published>2018-11-07T15:00:00.000Z</published>
+    <updated>2018-11-08T04:16:16.230Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.acmicpc.net/problem/2668" target="_blank" rel="noopener">https://www.acmicpc.net/problem/2668</a></p><h2 id="오답-풀이"><a href="#오답-풀이" class="headerlink" title="오답 풀이"></a>오답 풀이</h2><p><a href="https://github.com/KoJunHee/algorithm/blob/master/src/bj_2668/Main.java" target="_blank" rel="noopener">https://github.com/KoJunHee/algorithm/blob/master/src/bj_2668/Main.java</a></p><p>완전 탐색으로 풀었다. 가능한 모든 경우를 조사하였다. 깊이 들어갈 때 마다, 두 집합이 일치하는지, 깊이는 몇인지 체크한다. 시간 초과가 났다. 모든 경우를 완전 탐색으로 찾으며 푸는것이 아니란 것이다.</p><h2 id="정답-풀이"><a href="#정답-풀이" class="headerlink" title="정답 풀이"></a>정답 풀이</h2><p><a href="https://github.com/KoJunHee/algorithm/blob/master/src/bj_2668_02/Main.java" target="_blank" rel="noopener">https://github.com/KoJunHee/algorithm/blob/master/src/bj_2668_02/Main.java</a></p><p>사이클 여부를 조사한다. 다음 이동할 지점이 시작점이면 사이클을 이룬 것이다. 문제에서 주어진 예시를 그림으로 그려보자.</p><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dfscycle.png" alt="img"></p><p>1을 시작으로 dfs를 시작하자. 1 방문 체크를 한다. 다음 위치는 3이다. 3 방문 체크를 한다. 다음 위치는 1이다. 이미 방문한 곳이다. 시작점으로 돌아왔으니 싸이클을 이루었다. 시작점인 1을 리스트에 저장한다. 이번 dfs는 끝났다.</p><p>2를 시작으로 dfs를 시작하자. 2 방문 체크를 한다. 다음 위치는 1이다. 1 방문 체크를 한다. 다음 위치는 3이다. 3 방문 체크를 한다. 다음 위치는 1이다. 이미 방문한 곳이다. 이미 방문 한곳이 시작점이 아니기 때문에 사이클을 이루지 않는다. 이번 dfs는 끝났다.</p><p>이런 식으로 7을 시작으로 하는 dfs 까지 진행하고 리스트에 저장된 값을 출력한다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2668&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.acmicpc.net/problem/2668&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;오답-풀이&quot;
+      
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://junheeko.com/categories/algorithm/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>TCP/IP</title>
+    <link href="http://junheeko.com/2018/11/08/2018-11-08-TCP:IP/"/>
+    <id>http://junheeko.com/2018/11/08/2018-11-08-TCP:IP/</id>
+    <published>2018-11-07T15:00:00.000Z</published>
+    <updated>2018-11-11T00:50:21.451Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="TCP-IP란"><a href="#TCP-IP란" class="headerlink" title="TCP/IP란"></a>TCP/IP란</h2><p>TCP/IP는, Transfer Control Protocol/Internet Protocol 의 줄임말이다. 컴퓨터와 컴퓨터가 통신하기 위한 통신 규약(Protocol)이다. TCP는 서버와 클라이언트간에 데이타를 신뢰성있게 전달하기 위해 만들어진 프로토콜이다. 데이터는 전송되는 과정에서 데이터가 유실, 손실되거나 순서가 뒤바뀌어 전달될 수 있다. TCP는 이를 검색하고 교정하여 순서를 재조합할 수 있도록 보장한다. IP는 전송할 데이터를 packet 단위로 나누어서 어디로 보낼 것인지 결정한다. 즉, TCP는 데이터의 정확성 확인을, IP는 패킷을 목적지까지 전송을 담당한다.</p><h2 id="OSI-7-계층"><a href="#OSI-7-계층" class="headerlink" title="OSI 7 계층"></a>OSI 7 계층</h2><p>OSI는 Open System Interconnection Reference Model의 줄임말이다. IOS에서 제안한 모델로, 시스템에 상관없이 서로의 시스템이 연결될 수 있도록 하는 모델이다. 다음과 같이, 7계층으로 구성되어 있다.</p><ol><li>Application Layer</li><li>Presentation Layer</li><li>Session Layer</li><li>Transport Layer</li><li>Network Layer</li><li>Data Link Layer</li><li>Pysical Layer</li></ol><p>컴퓨터와 컴퓨터 사이에 데이터 전송을 위해 위의 7 계층을 거쳐서 전송이 된다. </p><p>그런데 왜, 이렇게 계층화를 한 것일까 ? 각 계층을 캡슐화할 수 있기 때문이다. 캡슐화를 함으로써, 계층별로 담당하는 역할을 나눌 수 있다. 계층에 존재하는 각 프로토콜은 자신의 기능만 충실히 하여 독립성을 보장한다. 1-&gt;7로 이동하며 헤더가 붙고, 7-&gt;1로 이동하며 헤더를 풀어낸다.</p><h2 id="TCP-IP-4-계층"><a href="#TCP-IP-4-계층" class="headerlink" title="TCP/IP 4 계층"></a>TCP/IP 4 계층</h2><p>TCP/IP는 OSI 7계층을 단순화하여 4 계층으로 만들어서 사용한다.</p><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tcpip01.png" alt="img"></p><ol><li><p>Application Layer</p><p>OSI 7 계층의 Application Layer, Presentation Layer, Session Layer를 포함한다. 응용 프로그램들 간의 데이터 통신이 이루어지는 계층이다. SMTP, FTP, HTTP 등이 사용된다.</p></li><li><p>Transport Layer</p><p>인터넷 계층에서 결정한 목적지까지 실제 데이터를 신뢰성 있게 전송하는 역할을 한다. TCP와 UDP 등이 사용된다.</p></li><li><p>Internet Layer</p><p>데이터의 경로를 배정하는일(라우팅)을 담당한다. 데이터를 정확히 라우팅하기 위해 IP 등이 사용된다.</p></li><li><p>Pysical Layer</p><p>이더넷 카드와 같은 하드웨어이다. 인터넷 계층에서 형성된 패킷을 전기신호 또는 광신호로 바꾸어 전달한다.</p></li></ol><h2 id="TCP-연결-및-해제"><a href="#TCP-연결-및-해제" class="headerlink" title="TCP 연결 및 해제"></a>TCP 연결 및 해제</h2><p>TCP/IP 프로토콜은 OS 안에 라리브러로 내장되어 있다. 따라서 연결을 위한 3 way handshake 와 연결 해제를 위한 4 way handshake 는 OS가 처리한다. 프로그래머는 커널 내부를 몰라도 Socket 을 통해 TCP/IP를 사용할 수 있다. 즉, Socket은 Application Layer 에서 TCP/IP를 사용할 수 있도록 하는 인터페이스 역할을 한다.</p><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tcpip02.png" alt="img"></p><h2 id="3-way-handshake"><a href="#3-way-handshake" class="headerlink" title="3 way handshake"></a>3 way handshake</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tcpip03.png" alt="img"></p><p>클라이언트와 서버의 연결 3 way handshake를 통해 이루어진다. </p><ol><li>연결을 하기 전 클라이언트는 Closed 상태이고, 서버는 요청을 기다리고 있는 LISTEN 상태이다.</li><li>클라이언트는 서버에 연결을 요청하는 SYN (M) 패킷을 보낸다.</li><li>서버는 클라이언트의 요청인 SYN (m)을 받고 클라이언트에게 요청을 수락한다는 ACK (M+1) 과  클라이언트 쪽에서도 포트를 열어 달라는 SYN (N) 패킷을 보낸다. 서버는 클라이언트의 응답을 기다리는 상대방의 응답을 기다리는 SYN_RCV로 상태가 된다.</li><li>클라이언트는 서버의 수락 응답은 ACK (M+1) 과 SYN (N) 패킷을 받고 포트를 열고 ACK (N+1) 을 서버로 보내면서 ESTABLISHED 상태가 된다.</li><li>ACK 데이터를 받은 서버 역시 ESTBALISHED 상태로 변경되면서, 클라이언트와 서버는 연결이 된다.</li></ol><h2 id="4-way-handshake"><a href="#4-way-handshake" class="headerlink" title="4 way handshake"></a>4 way handshake</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tcpip04.png" alt="img"></p><p>연결 해제는 4 way handshake를 한다.</p><ol><li>초기에, 서버와 클라이언트는 ESTABLISHED 상태이다.</li><li>클라이언트는 연결을 종료하겠다는 FIN 플래그를 보낸다. ACK를 기다리고 있다는 의미로 FIN_WAIT_1 상태가 된다.</li><li>서버는 알겠다는 의미로 클라이언트에 ACK를 보내고, 애플리케이션의 소켓을 닫는다. 이 때, 남아있는 데이터를 모두 보낸다. 자원을 정리하는데 시간이 소요 되므로, 소켓을 닫는데 기다리고 있는 상태라는 의미에서 CLOSE_WAIT 상태가 된다. 연결 종료를 요청한 클라이언트는 서버로부터 응답이 올 때까지 기다리고 있다는 FIN_WAIT_2 상태가 된다.</li><li>데이터를 모두 보내고 통신이 끝났으면 연결이 종료 되었다고 클라이언트에게 FIN 플래그를 보낸다. 그리고 자신은 클라이언트로부터 마지막 ACK를 기다리고 있는 LAST_ACK 상태가 된다.</li><li>클라이언트는 FIN 데이터를 받으면 TIME_WAIT 상태로 바꾸면서 서버에 ACK 데이터를 보낸다. 클라이언트는 TIME_WATE 상태에서 일정 시간이 되면 CLOSED 상태가 된다. 아직 서버로부터 받지 못한 데이터가 있을 것을 대비해 일정 시간 세션을 남겨놓고 잉여 패킷을 기다리는 것이다.</li><li>ACK 데이터를 받은 서버는 소켓 연결을 close하고 CLOSED 상태가 된다.</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;TCP-IP란&quot;&gt;&lt;a href=&quot;#TCP-IP란&quot; class=&quot;headerlink&quot; title=&quot;TCP/IP란&quot;&gt;&lt;/a&gt;TCP/IP란&lt;/h2&gt;&lt;p&gt;TCP/IP는, Transfer Control Protocol/Internet Protoc
+      
+    
+    </summary>
+    
+      <category term="network" scheme="http://junheeko.com/categories/network/"/>
+    
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>Prewitt Operator - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"Prewitt operator is used for edge detection in an image. It detects two types of edges\n\nHorizontal edges\nVertical Edges\n\nEdges are calculated by using difference between corresponding pixel intensities of an image. \nAll the masks that are used for edge detection are also known as derivative masks. \nBecause image is also a signal so changes in a signal can only be calculated using differentiation. \nSo that’s why these operators are also called as derivative operators or derivative masks.\nAll the derivative masks should have the following properties:\n\nOpposite sign should be present in the mask.\nSum of mask should be equal to zero.\nMore weight means more edge detection.\n\nPrewitt operator provides us two masks one for detecting edges in horizontal direction and another for detecting edges in an vertical direction.\nVertical direction  \nAbove mask will find the edges in vertical direction and it is because the zeros column in the vertical direction. When you will convolve this mask on an image, it will give you the vertical edges in an image.\nHow it worksWhen we apply this mask on the image it prominent vertical edges. \nIt simply works like as first order derivate and calculates the difference of pixel intensities in a edge region. As the center column is of zero so it does not include the original values of an image but rather it calculates the difference of right and left pixel values around that edge. \nThis increase the edge intensity and it become enhanced comparatively to the original image.\nHorizontal Direction\nAbove mask will find edges in horizontal direction and it is because that zeros column is in horizontal direction. When you will convolve this mask onto an image it would prominent horizontal edges in the image.\nHow it worksThis mask will prominent the horizontal edges in an image. \nIt also works on the principle of above mask and calculates difference among the pixel intensities of a particular edge. \nAs the center row of mask is consist of zeros so it does not include the original values of edge in the image but rather it calculate the difference of above and below pixel intensities of the particular edge. \nThus increasing the sudden change of intensities and making the edge more visible. \nBoth the above masks follow the principle of derivate mask. \nBoth masks have opposite sign in them and both masks sum equals to zero. \nThe third condition will not be applicable in this operator as both the above masks are standardize and we can’t change the value in them.\nExample\nAs you can see that in the first picture on which we apply vertical mask, all the vertical edges are more visible than the original image. \nSimilarly in the second picture we have applied the horizontal mask and in result all the horizontal edges are visible. \nSo in this way you can see that we can detect both horizontal and vertical edges from an image.\n","dateCreated":"2018-05-22T00:00:00+09:00","dateModified":"2018-05-22T16:24:22+09:00","datePublished":"2018-05-22T00:00:00+09:00","description":"","headline":"Prewitt Operator","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/"}</script>
+    <meta name="description" content="Prewitt operator is used for edge detection in an image. It detects two types of edges  Horizontal edges Vertical Edges  Edges are calculated by using difference between corresponding pixel intensitie">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Prewitt Operator">
+<meta property="og:url" content="http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="Prewitt operator is used for edge detection in an image. It detects two types of edges  Horizontal edges Vertical Edges  Edges are calculated by using difference between corresponding pixel intensitie">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/prewitt01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/prewitt02.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/prewitt03.png">
+<meta property="og:updated_time" content="2018-05-22T07:24:22.376Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Prewitt Operator">
+<meta name="twitter:description" content="Prewitt operator is used for edge detection in an image. It detects two types of edges  Horizontal edges Vertical Edges  Edges are calculated by using difference between corresponding pixel intensitie">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/prewitt01.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Prewitt Operator
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-05-22T00:00:00+09:00">
+	
+		    May 22, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DIP/">DIP</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p>Prewitt operator is used for edge detection in an image. It detects two types of edges</p>
+<ul>
+<li>Horizontal edges</li>
+<li>Vertical Edges</li>
+</ul>
+<p>Edges are calculated by using difference between corresponding pixel intensities of an image. </p>
+<p>All the masks that are used for edge detection are also known as derivative masks. </p>
+<p>Because image is also a signal so changes in a signal can only be calculated using differentiation. </p>
+<p>So that’s why these operators are also called as derivative operators or derivative masks.</p>
+<p>All the derivative masks should have the following properties:</p>
+<ul>
+<li>Opposite sign should be present in the mask.</li>
+<li>Sum of mask should be equal to zero.</li>
+<li>More weight means more edge detection.</li>
+</ul>
+<p>Prewitt operator provides us two masks one for detecting edges in horizontal direction and another for detecting edges in an vertical direction.</p>
+<h2 id="Vertical-direction"><a href="#Vertical-direction" class="headerlink" title="Vertical direction"></a>Vertical direction</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/prewitt01.png" alt="img">  </p>
+<p>Above mask will find the edges in vertical direction and it is because the zeros column in the vertical direction. When you will convolve this mask on an image, it will give you the vertical edges in an image.</p>
+<h2 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works</h2><p>When we apply this mask on the image it prominent vertical edges. </p>
+<p>It simply works like as first order derivate and calculates the difference of pixel intensities in a edge region. As the center column is of zero so it does not include the original values of an image but rather it calculates the difference of right and left pixel values around that edge. </p>
+<p>This increase the edge intensity and it become enhanced comparatively to the original image.</p>
+<h2 id="Horizontal-Direction"><a href="#Horizontal-Direction" class="headerlink" title="Horizontal Direction"></a>Horizontal Direction</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/prewitt02.png" alt="img"></p>
+<p>Above mask will find edges in horizontal direction and it is because that zeros column is in horizontal direction. When you will convolve this mask onto an image it would prominent horizontal edges in the image.</p>
+<h2 id="How-it-works-1"><a href="#How-it-works-1" class="headerlink" title="How it works"></a>How it works</h2><p>This mask will prominent the horizontal edges in an image. </p>
+<p>It also works on the principle of above mask and calculates difference among the pixel intensities of a particular edge. </p>
+<p>As the center row of mask is consist of zeros so it does not include the original values of edge in the image but rather it calculate the difference of above and below pixel intensities of the particular edge. </p>
+<p>Thus increasing the sudden change of intensities and making the edge more visible. </p>
+<p>Both the above masks follow the principle of derivate mask. </p>
+<p>Both masks have opposite sign in them and both masks sum equals to zero. </p>
+<p>The third condition will not be applicable in this operator as both the above masks are standardize and we can’t change the value in them.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/prewitt03.png" alt="img"></p>
+<p>As you can see that in the first picture on which we apply vertical mask, all the vertical edges are more visible than the original image. </p>
+<p>Similarly in the second picture we have applied the horizontal mask and in result all the horizontal edges are visible. </p>
+<p>So in this way you can see that we can detect both horizontal and vertical edges from an image.</p>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/22/2018-05-22-Robinson Compass Mask/" data-tooltip="Robinson Compass Mask" aria-label="PREVIOUS: Robinson Compass Mask">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/22/2018-05-22-Laplacian Operator/" data-tooltip="Laplacian Operator" aria-label="NEXT: Laplacian Operator">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/22/2018-05-22-Robinson Compass Mask/" data-tooltip="Robinson Compass Mask" aria-label="PREVIOUS: Robinson Compass Mask">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/22/2018-05-22-Laplacian Operator/" data-tooltip="Laplacian Operator" aria-label="NEXT: Laplacian Operator">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/22/2018-05-22-Prewitt Operator/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
