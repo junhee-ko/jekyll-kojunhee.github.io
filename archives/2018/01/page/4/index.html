@@ -166,75 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/01/04/2018-01-04-pm2/">
-                            PM2
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-01-04T00:00:00+09:00">
-	
-		    Jan 04, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/node/">node</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="PM2"><a href="#PM2" class="headerlink" title="PM2"></a>PM2</h2><ul>
-<li><p>Node.js 프로세스 관리 도구</p>
-</li>
-<li><p>PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks. ((<a href="https://github.com/Unitech/pm2)" target="_blank" rel="noopener">https://github.com/Unitech/pm2)</a>)</p>
-</li>
-</ul>
-<h2 id="start"><a href="#start" class="headerlink" title="start"></a>start</h2><pre><code>pm2 start app.js
-</code></pre><h2 id="Listing-all-running-processes"><a href="#Listing-all-running-processes" class="headerlink" title="Listing all running processes"></a>Listing all running processes</h2><pre><code>pm2 list
-</code></pre><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/processmanagemnet.png" alt="img"></p>
-<h2 id="Managing-processes"><a href="#Managing-processes" class="headerlink" title="Managing processes"></a>Managing processes</h2><pre><code>$ pm2 stop     &lt;app_name|id|&apos;all&apos;|json_conf&gt;
-$ pm2 restart  &lt;app_name|id|&apos;all&apos;|json_conf&gt;
-$ pm2 delete   &lt;app_name|id|&apos;all&apos;|json_conf&gt;
-</code></pre><h2 id="Logs"><a href="#Logs" class="headerlink" title="Logs"></a>Logs</h2><pre><code>$ pm2 logs [&apos;all&apos;|app_name|app_id] [--json] [--format] [--raw]
-
-$ pm2 logs APP-NAME       # Display APP-NAME logs
-$ pm2 logs --json         # JSON output
-$ pm2 logs --format       # Formated output
-$ pm2 flush               # Flush all logs
-$ pm2 reloadLogs          # Reload all logs        
-</code></pre>
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/01/04/2018-01-04-pm2/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/01/04/2018-01-04- 수들의합/">
-                            수들의 합
+                        <a class="link-unstyled" href="/2018/01/04/2018-01-04-if else VS switch/">
+                            if else VS switch
                         </a>
                     
                 </h1>
@@ -256,24 +189,29 @@ $ pm2 reloadLogs          # Reload all logs
             </div>
             
                 <div class="postShorten-content">
-                    <p><a href="https://www.acmicpc.net/problem/1789" target="_blank" rel="noopener">https://www.acmicpc.net/problem/1789</a></p>
-<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ul>
-<li>런타임 에러가 계속 났음</li>
-<li>원인 <ul>
-<li>자료형. </li>
-<li>문제의 입력으로 자연수 S(1≤S≤4,294,967,295)가 주어진다.</li>
-<li>int의 범위를 넘기 때문에 런타임 에러가 계속 났음</li>
-</ul>
-</li>
-<li><p>해결 </p>
+                    <h2 id="compare"><a href="#compare" class="headerlink" title="compare"></a>compare</h2><ul>
+<li><p>5개 이하 비교</p>
 <ul>
-<li>long형으로 입력 받음</li>
+<li>차이 무</li>
 </ul>
 </li>
-<li><p>쉬운 문제라도, 문제의 조건을 잘 확인해야함</p>
+<li><p>5개 이상 비교</p>
+<ul>
+<li><p>switch</p>
+<ul>
+<li>해쉬 테이블 룩업 테이블을 구현해서 아이템에 접근</li>
+<li>어떤 아이템이든지 접손 시간 같음 =&gt; O(1)</li>
+</ul>
+</li>
+<li><p>if else</p>
+<ul>
+<li>조건에 맞을 때까지 비교</li>
+<li>최대 아이템 갯수만큼의 비교 시간이 걸릴 수 있음 =&gt; O(N)</li>
+</ul>
 </li>
 </ul>
-<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/수들의합.png" alt="img"></p>
+</li>
+</ul>
 
                     
                         
@@ -281,7 +219,7 @@ $ pm2 reloadLogs          # Reload all logs
                     
                     
                         <p>
-                            <a href="/2018/01/04/2018-01-04- 수들의합/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/01/04/2018-01-04-if else VS switch/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -351,6 +289,72 @@ $ pm2 reloadLogs          # Reload all logs
                     
                         <p>
                             <a href="/2018/01/04/2018-01-04-exports/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/01/04/2018-01-04- 수들의합/">
+                            수들의 합
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-01-04T00:00:00+09:00">
+	
+		    Jan 04, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p><a href="https://www.acmicpc.net/problem/1789" target="_blank" rel="noopener">https://www.acmicpc.net/problem/1789</a></p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ul>
+<li>런타임 에러가 계속 났음</li>
+<li>원인 <ul>
+<li>자료형. </li>
+<li>문제의 입력으로 자연수 S(1≤S≤4,294,967,295)가 주어진다.</li>
+<li>int의 범위를 넘기 때문에 런타임 에러가 계속 났음</li>
+</ul>
+</li>
+<li><p>해결 </p>
+<ul>
+<li>long형으로 입력 받음</li>
+</ul>
+</li>
+<li><p>쉬운 문제라도, 문제의 조건을 잘 확인해야함</p>
+</li>
+</ul>
+<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/수들의합.png" alt="img"></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/01/04/2018-01-04- 수들의합/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

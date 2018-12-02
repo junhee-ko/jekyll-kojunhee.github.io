@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/04/13/2018-04-13-Singleton Pattern/">
-                            Singleton Pattern
+                        <a class="link-unstyled" href="/2018/04/13/2018-04-13-양치기 꿍/">
+                            양치기 꿍
                         </a>
                     
                 </h1>
@@ -180,7 +180,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
 
 
     
@@ -189,30 +189,22 @@
             </div>
             
                 <div class="postShorten-content">
-                    <ul>
-<li><p>Intent</p>
+                    <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/3187" target="_blank" rel="noopener">https://www.acmicpc.net/problem/3187</a></p>
+<ol>
+<li>이차원 배열의 각 index에 순차적으로 접근</li>
+<li>양, 늑대 count</li>
+<li><p>현재 위치를 기준으로 상하좌우 조사</p>
 <ul>
-<li>Ensure that only one instance of a class is created.</li>
-<li>Provide a global point of access to the object.</li>
+<li>울타리가 X &amp;&amp; 방문 X</li>
+<li>이동</li>
 </ul>
 </li>
-<li><p>Implementation</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/si.png" alt="img"></p>
-</li>
-</ul>
-<ul>
-<li>EX</li>
-</ul>
-<h4 id="01-Early-instantiation-using-implementation-with-static-field"><a href="#01-Early-instantiation-using-implementation-with-static-field" class="headerlink" title="01 : Early instantiation using implementation with static field"></a>01 : Early instantiation using implementation with static field</h4><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/SingleObject.png" alt="img"></p>
-<h4 id="02-Lazy-instantiation-using-double-locking-mechanism"><a href="#02-Lazy-instantiation-using-double-locking-mechanism" class="headerlink" title="02 : Lazy instantiation using double locking mechanism"></a>02 : Lazy instantiation using double locking mechanism</h4><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sgg.png" alt="img"></p>
-<h4 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h4><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/SingletonPatternDemo.png" alt="img"></p>
-<ul>
-<li>Reference<ul>
-<li><a href="http://www.oodesign.com/singleton-pattern.html" target="_blank" rel="noopener">http://www.oodesign.com/singleton-pattern.html</a></li>
-<li><a href="https://www.tutorialspoint.com/design_pattern/singleton_pattern.html" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/singleton_pattern.html</a></li>
-</ul>
-</li>
-</ul>
+</ol>
+<ol start="3">
+<li>2번 다시 수행</li>
+</ol>
+<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/shape01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/shape02.png" alt="img"></p>
 
                     
                         
@@ -220,7 +212,7 @@
                     
                     
                         <p>
-                            <a href="/2018/04/13/2018-04-13-Singleton Pattern/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/04/13/2018-04-13-양치기 꿍/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -383,93 +375,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-OCP/">
-                            OCP
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-04-09T00:00:00+09:00">
-	
-		    Apr 09, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <ul>
-<li>Open-Closed Principle (개방-폐쇄 원칙)</li>
-<li>Intent<ul>
-<li>Software entities like classes, modules and functions should be <strong>open for extension</strong> but <strong>closed for modifications</strong>.</li>
-<li>기존의 코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계되어야 한다.</li>
-</ul>
-</li>
-<li>단위 테스트<ul>
-<li>테스트 대상 기능이 사용하는 실제 외부의 서비스를 흉내내는 가짜 객체를 만들어 테스트의 효율성을 높임</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Bad Example</p>
-<ul>
-<li>GraphicEditor class has to be modified for every new shape class that has to be added</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ocp01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op011.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op022.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op033.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op044.png" alt="img"></p>
-</li>
-<li><p>Good Example</p>
-<ul>
-<li>GraphicEditor is not changed when a new shape class is added</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ocp03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op055.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op066.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op077.png" alt="img"></p>
-</li>
-</ul>
-<ul>
-<li>Reference<ul>
-<li><a href="http://www.oodesign.com/open-close-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/open-close-principle.html</a></li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/04/09/2018-04-09-OCP/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
                         <a class="link-unstyled" href="/2018/04/09/2018-04-09-LSP/">
                             LSP
                         </a>
@@ -535,187 +440,6 @@
                     
                         <p>
                             <a href="/2018/04/09/2018-04-09-LSP/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-SRP/">
-                            SRP
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-04-09T00:00:00+09:00">
-	
-		    Apr 09, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="SRP란"><a href="#SRP란" class="headerlink" title="SRP란"></a>SRP란</h2><p>Single Responsibility Principle (단일 책임 원칙)</p>
-<ul>
-<li><p>Intent</p>
-<ul>
-<li>A class should have only one reason to change.</li>
-<li>객체는 단 하나의 책임(변경 이유)만 가져야 한다.</li>
-</ul>
-</li>
-<li>산탄총 수술<ul>
-<li>수의사가 산탄총을 맞은 동물을 치료하는 상황처럼,</li>
-<li>어떤 변경이 있을 때 하나가 아닌 여러 클래스를 변경해야한다</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Bad Example</p>
-<ul>
-<li>each change for a responsibility might affect the other one:<ul>
-<li>Adding a new protocol will create the need to add code for parsing and serializing the content for each type of field.</li>
-<li>Adding a new content type (like html) make us to add code for each protocol implemented.</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp02.png" alt="img"></p>
-</li>
-<li><p>Good Example</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp04.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp05.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="http://www.oodesign.com/single-responsibility-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/single-responsibility-principle.html</a></li>
-<li>JAVA 객체지향 디자인 패턴 (정인상, 채흥석 지음)</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/04/09/2018-04-09-SRP/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-Composite Pattern/">
-                            Composite Pattern
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-04-09T00:00:00+09:00">
-	
-		    Apr 09, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <ul>
-<li><p>Intent</p>
-<ul>
-<li>Compose objects into tree structures to represent part-whole hierarchies.</li>
-<li>Lets clients treat individual objects and compositions of objects uniformly.</li>
-<li>Part-whole Hierarchy를 표현하기 위하여 객체들을 트리 구조로 구성</li>
-<li>Client가 개개의 객체와 그룹 객체를 동일하게 취급할 수 있게 만든다<ul>
-<li>Clinet는 모든 객체들을 컴포넌트 객체로 간주하여 이용</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>자식 관리 오퍼레이션</p>
-<ul>
-<li><p>add(), remove(), getChild()</p>
-<ul>
-<li><p>component와 composite 에 선언 : client가 편하다. 개체과 그룹에 관계없이 부를 수 있다</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compo01.png" alt="img"></p>
-</li>
-<li><p>composite 에 선언 : client가 불편하다. 개체인지 그룹인지 구별을 해야한다</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compo02.png" alt="img"></p>
-</li>
-</ul>
-</li>
-<li><p>remove()</p>
-<ul>
-<li>자식을 삭제하는 책임은 composite 객체에 주는것이 가장 좋다</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Implementation</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compositeUML.png" alt="img"></p>
-</li>
-</ul>
-<ul>
-<li>EX )</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/device.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/computer.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/client.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/body.png" alt="img"></p>
-<ul>
-<li>Reference<ul>
-<li><a href="http://www.oodesign.com/composite-pattern.html" target="_blank" rel="noopener">http://www.oodesign.com/composite-pattern.html</a></li>
-<li>Java 객체지향 디자인 패턴 (정인상, 채홍석 지음)</li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/04/09/2018-04-09-Composite Pattern/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -808,6 +532,90 @@
                     
                         <p>
                             <a href="/2018/04/09/2018-04-09-DIP/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-SRP/">
+                            SRP
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-04-09T00:00:00+09:00">
+	
+		    Apr 09, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="SRP란"><a href="#SRP란" class="headerlink" title="SRP란"></a>SRP란</h2><p>Single Responsibility Principle (단일 책임 원칙)</p>
+<ul>
+<li><p>Intent</p>
+<ul>
+<li>A class should have only one reason to change.</li>
+<li>객체는 단 하나의 책임(변경 이유)만 가져야 한다.</li>
+</ul>
+</li>
+<li>산탄총 수술<ul>
+<li>수의사가 산탄총을 맞은 동물을 치료하는 상황처럼,</li>
+<li>어떤 변경이 있을 때 하나가 아닌 여러 클래스를 변경해야한다</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Bad Example</p>
+<ul>
+<li>each change for a responsibility might affect the other one:<ul>
+<li>Adding a new protocol will create the need to add code for parsing and serializing the content for each type of field.</li>
+<li>Adding a new content type (like html) make us to add code for each protocol implemented.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp02.png" alt="img"></p>
+</li>
+<li><p>Good Example</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp05.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://www.oodesign.com/single-responsibility-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/single-responsibility-principle.html</a></li>
+<li>JAVA 객체지향 디자인 패턴 (정인상, 채흥석 지음)</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/04/09/2018-04-09-SRP/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -998,6 +806,190 @@
                     
                         <p>
                             <a href="/2018/04/09/2018-04-09-ISP/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-OCP/">
+                            OCP
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-04-09T00:00:00+09:00">
+	
+		    Apr 09, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <ul>
+<li>Open-Closed Principle (개방-폐쇄 원칙)</li>
+<li>Intent<ul>
+<li>Software entities like classes, modules and functions should be <strong>open for extension</strong> but <strong>closed for modifications</strong>.</li>
+<li>기존의 코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계되어야 한다.</li>
+</ul>
+</li>
+<li>단위 테스트<ul>
+<li>테스트 대상 기능이 사용하는 실제 외부의 서비스를 흉내내는 가짜 객체를 만들어 테스트의 효율성을 높임</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Bad Example</p>
+<ul>
+<li>GraphicEditor class has to be modified for every new shape class that has to be added</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ocp01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op011.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op022.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op033.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op044.png" alt="img"></p>
+</li>
+<li><p>Good Example</p>
+<ul>
+<li>GraphicEditor is not changed when a new shape class is added</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ocp03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op055.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op066.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op077.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li>Reference<ul>
+<li><a href="http://www.oodesign.com/open-close-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/open-close-principle.html</a></li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/04/09/2018-04-09-OCP/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-Composite Pattern/">
+                            Composite Pattern
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-04-09T00:00:00+09:00">
+	
+		    Apr 09, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <ul>
+<li><p>Intent</p>
+<ul>
+<li>Compose objects into tree structures to represent part-whole hierarchies.</li>
+<li>Lets clients treat individual objects and compositions of objects uniformly.</li>
+<li>Part-whole Hierarchy를 표현하기 위하여 객체들을 트리 구조로 구성</li>
+<li>Client가 개개의 객체와 그룹 객체를 동일하게 취급할 수 있게 만든다<ul>
+<li>Clinet는 모든 객체들을 컴포넌트 객체로 간주하여 이용</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>자식 관리 오퍼레이션</p>
+<ul>
+<li><p>add(), remove(), getChild()</p>
+<ul>
+<li><p>component와 composite 에 선언 : client가 편하다. 개체과 그룹에 관계없이 부를 수 있다</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compo01.png" alt="img"></p>
+</li>
+<li><p>composite 에 선언 : client가 불편하다. 개체인지 그룹인지 구별을 해야한다</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compo02.png" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><p>remove()</p>
+<ul>
+<li>자식을 삭제하는 책임은 composite 객체에 주는것이 가장 좋다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Implementation</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compositeUML.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li>EX )</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/device.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/computer.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/client.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/body.png" alt="img"></p>
+<ul>
+<li>Reference<ul>
+<li><a href="http://www.oodesign.com/composite-pattern.html" target="_blank" rel="noopener">http://www.oodesign.com/composite-pattern.html</a></li>
+<li>Java 객체지향 디자인 패턴 (정인상, 채홍석 지음)</li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/04/09/2018-04-09-Composite Pattern/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

@@ -166,84 +166,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/01/30/2018-01-30-함수/">
-                            함수
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-01-30T00:00:00+09:00">
-	
-		    Jan 30, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/ios/">ios</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158</a></p>
-<ul>
-<li>Defining and Calling Functions</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func greet(person: String) -&gt; String &#123;</span><br><span class="line">    let greeting = &quot;Hello, &quot; + person + &quot;!&quot;</span><br><span class="line">    return greeting</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(greet(person: &quot;Anna&quot;))</span><br><span class="line">// Prints &quot;Hello, Anna!&quot;</span><br><span class="line">print(greet(person: &quot;Brian&quot;))</span><br><span class="line">// Prints &quot;Hello, Brian!&quot;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Functions with Multiple Return Values</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">func minMax(array: [Int]) -&gt; (min: Int, max: Int) &#123;</span><br><span class="line">    var currentMin = array[0]</span><br><span class="line">    var currentMax = array[0]</span><br><span class="line">    for value in array[1..&lt;array.count] &#123;</span><br><span class="line">        if value &lt; currentMin &#123;</span><br><span class="line">            currentMin = value</span><br><span class="line">        &#125; else if value &gt; currentMax &#123;</span><br><span class="line">            currentMax = value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return (currentMin, currentMax)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Function Argument Labels and Parameter Names</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func greet(person: String, from hometown: String) -&gt; String &#123;</span><br><span class="line">    return &quot;Hello \(person)!  Glad you could visit from \(hometown).&quot;</span><br><span class="line">&#125;</span><br><span class="line">print(greet(person: &quot;Bill&quot;, from: &quot;Cupertino&quot;))</span><br><span class="line">// Prints &quot;Hello Bill!  Glad you could visit from Cupertino.&quot;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>Variadic Parameters</p>
-<ul>
-<li>A variadic parameter accepts zero or more values of a specified type</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func arithmeticMean(_ numbers: Double...) -&gt; Double &#123;</span><br><span class="line">    var total: Double = 0</span><br><span class="line">    for number in numbers &#123;</span><br><span class="line">        total += number</span><br><span class="line">    &#125;</span><br><span class="line">    return total / Double(numbers.count)</span><br><span class="line">&#125;</span><br><span class="line">arithmeticMean(1, 2, 3, 4, 5)</span><br><span class="line">// returns 3.0, which is the arithmetic mean of these five numbers</span><br><span class="line">arithmeticMean(3, 8.25, 18.75)</span><br><span class="line">// returns 10.0, which is the arithmetic mean of these three numbers</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>In-Out Parameters</p>
-<ul>
-<li>If you want a function to modify a parameter’s value, and you want those changes to persist after the function call has ended, define that parameter as an in-out parameter instead.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func swapTwoInts(_ a: inout Int, _ b: inout Int) &#123;</span><br><span class="line">    let temporaryA = a</span><br><span class="line">    a = b</span><br><span class="line">    b = temporaryA</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var someInt = 3</span><br><span class="line">var anotherInt = 107</span><br><span class="line">swapTwoInts(&amp;someInt, &amp;anotherInt)</span><br><span class="line">print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;)</span><br><span class="line">// Prints &quot;someInt is now 107, and anotherInt is now 3&quot;</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/01/30/2018-01-30-함수/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
                         <a class="link-unstyled" href="/2018/01/30/2018-01-30-연산자/">
                             연산자
                         </a>
@@ -390,21 +312,21 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/01/29/2018-01-29-Centralized Workflow /">
-                            Centralized Workflow
+                        <a class="link-unstyled" href="/2018/01/30/2018-01-30-함수/">
+                            함수
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2018-01-29T00:00:00+09:00">
+    <time datetime="2018-01-30T00:00:00+09:00">
 	
-		    Jan 29, 2018
+		    Jan 30, 2018
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/git/">git</a>
+    <a class="category-link" href="/categories/ios/">ios</a>
 
 
     
@@ -413,76 +335,44 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h2><ul>
-<li><p>Clone the central repository</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone ssh://user@host/path/to/repo.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Make changes and commit</p>
-</li>
-</ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status # View the state of the repo</span><br><span class="line">git add &lt;some-file&gt; # Stage a file</span><br><span class="line">git commit # Commit a file&lt;/some-file&gt;</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>Push new commits to central repository</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+                    <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158</a></p>
 <ul>
-<li>Managing conflicts</li>
+<li>Defining and Calling Functions</li>
 </ul>
-<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><ul>
-<li><p>John works on his feature</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func greet(person: String) -&gt; String &#123;</span><br><span class="line">    let greeting = &quot;Hello, &quot; + person + &quot;!&quot;</span><br><span class="line">    return greeting</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(greet(person: &quot;Anna&quot;))</span><br><span class="line">// Prints &quot;Hello, Anna!&quot;</span><br><span class="line">print(greet(person: &quot;Brian&quot;))</span><br><span class="line">// Prints &quot;Hello, Brian!&quot;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>edit, stage, and commit.</li>
+<li>Functions with Multiple Return Values</li>
 </ul>
-</li>
-<li><p>Mary works on her feature</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">func minMax(array: [Int]) -&gt; (min: Int, max: Int) &#123;</span><br><span class="line">    var currentMin = array[0]</span><br><span class="line">    var currentMax = array[0]</span><br><span class="line">    for value in array[1..&lt;array.count] &#123;</span><br><span class="line">        if value &lt; currentMin &#123;</span><br><span class="line">            currentMin = value</span><br><span class="line">        &#125; else if value &gt; currentMax &#123;</span><br><span class="line">            currentMax = value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return (currentMin, currentMax)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>edit, stage, and commit.</li>
+<li>Function Argument Labels and Parameter Names</li>
 </ul>
-</li>
-<li><p>John publishes his feature</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func greet(person: String, from hometown: String) -&gt; String &#123;</span><br><span class="line">    return &quot;Hello \(person)!  Glad you could visit from \(hometown).&quot;</span><br><span class="line">&#125;</span><br><span class="line">print(greet(person: &quot;Bill&quot;, from: &quot;Cupertino&quot;))</span><br><span class="line">// Prints &quot;Hello Bill!  Glad you could visit from Cupertino.&quot;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>Mary tries to publish her feature</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<pre><code>- error
-- Mary needs to pull John’s updates into her repository
-</code></pre><ul>
-<li>Mary rebases on top of John’s commit(s)</li>
-</ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>Mary resolves a merge conflict</p>
+<li><p>Variadic Parameters</p>
 <ul>
-<li><p>충돌이 발생하면 다음과 같은 에러</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFLICT (content): Merge conflict in &lt;some-file&gt;</span><br></pre></td></tr></table></figure>
-</li>
+<li>A variadic parameter accepts zero or more values of a specified type</li>
 </ul>
 </li>
 </ul>
-<pre><code>- Unmerged paths section에서 conflict file이 무엇인지 확인 가능
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func arithmeticMean(_ numbers: Double...) -&gt; Double &#123;</span><br><span class="line">    var total: Double = 0</span><br><span class="line">    for number in numbers &#123;</span><br><span class="line">        total += number</span><br><span class="line">    &#125;</span><br><span class="line">    return total / Double(numbers.count)</span><br><span class="line">&#125;</span><br><span class="line">arithmeticMean(1, 2, 3, 4, 5)</span><br><span class="line">// returns 3.0, which is the arithmetic mean of these five numbers</span><br><span class="line">arithmeticMean(3, 8.25, 18.75)</span><br><span class="line">// returns 10.0, which is the arithmetic mean of these three numbers</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>In-Out Parameters</p>
+<ul>
+<li>If you want a function to modify a parameter’s value, and you want those changes to persist after the function call has ended, define that parameter as an in-out parameter instead.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func swapTwoInts(_ a: inout Int, _ b: inout Int) &#123;</span><br><span class="line">    let temporaryA = a</span><br><span class="line">    a = b</span><br><span class="line">    b = temporaryA</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var someInt = 3</span><br><span class="line">var anotherInt = 107</span><br><span class="line">swapTwoInts(&amp;someInt, &amp;anotherInt)</span><br><span class="line">print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;)</span><br><span class="line">// Prints &quot;someInt is now 107, and anotherInt is now 3&quot;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Unmerged paths:</span><br><span class="line"># (use &quot;git reset HEAD &lt;some-file&gt;...&quot; to unstage)</span><br><span class="line"># (use &quot;git add/rm &lt;some-file&gt;...&quot; as appropriate to mark resolution)</span><br><span class="line">#</span><br><span class="line"># both modified: &lt;some-file&gt;</span><br></pre></td></tr></table></figure>
-
-
-- 파일 수정 후
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;some-file&gt;</span><br><span class="line">git rebase --continue</span><br><span class="line">git rebase --abort</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-</code></pre>
                     
                         
 
                     
                     
                         <p>
-                            <a href="/2018/01/29/2018-01-29-Centralized Workflow /#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/01/30/2018-01-30-함수/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -730,6 +620,116 @@
                     
                         <p>
                             <a href="/2018/01/29/2018-01-29-swift/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/01/29/2018-01-29-Centralized Workflow /">
+                            Centralized Workflow
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-01-29T00:00:00+09:00">
+	
+		    Jan 29, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/git/">git</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h2><ul>
+<li><p>Clone the central repository</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone ssh://user@host/path/to/repo.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Make changes and commit</p>
+</li>
+</ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status # View the state of the repo</span><br><span class="line">git add &lt;some-file&gt; # Stage a file</span><br><span class="line">git commit # Commit a file&lt;/some-file&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>Push new commits to central repository</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>Managing conflicts</li>
+</ul>
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><ul>
+<li><p>John works on his feature</p>
+<ul>
+<li>edit, stage, and commit.</li>
+</ul>
+</li>
+<li><p>Mary works on her feature</p>
+<ul>
+<li>edit, stage, and commit.</li>
+</ul>
+</li>
+<li><p>John publishes his feature</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Mary tries to publish her feature</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<pre><code>- error
+- Mary needs to pull John’s updates into her repository
+</code></pre><ul>
+<li>Mary rebases on top of John’s commit(s)</li>
+</ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>Mary resolves a merge conflict</p>
+<ul>
+<li><p>충돌이 발생하면 다음과 같은 에러</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFLICT (content): Merge conflict in &lt;some-file&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- Unmerged paths section에서 conflict file이 무엇인지 확인 가능
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Unmerged paths:</span><br><span class="line"># (use &quot;git reset HEAD &lt;some-file&gt;...&quot; to unstage)</span><br><span class="line"># (use &quot;git add/rm &lt;some-file&gt;...&quot; as appropriate to mark resolution)</span><br><span class="line">#</span><br><span class="line"># both modified: &lt;some-file&gt;</span><br></pre></td></tr></table></figure>
+
+
+- 파일 수정 후
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;some-file&gt;</span><br><span class="line">git rebase --continue</span><br><span class="line">git rebase --abort</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</code></pre>
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/01/29/2018-01-29-Centralized Workflow /#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

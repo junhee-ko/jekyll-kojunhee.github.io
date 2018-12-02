@@ -165,69 +165,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2017/09/05/2017-09-05-boj-pole/">
-                            쇠막대기
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2017-09-05T00:00:00+09:00">
-	
-		    Sep 05, 2017
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/algorithm/">algorithm</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p><a href="https://www.acmicpc.net/problem/10799" target="_blank" rel="noopener">https://www.acmicpc.net/problem/10799</a></p>
-<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ul>
-<li>‘(‘ 이면 stack에 push </li>
-<li>‘)’ 이면 바로 전 문자 확인. 전 문자가<ul>
-<li>‘(‘ 이면 stack에서 pop 하고 stack size 만큼 더해<ul>
-<li>레이저이기 때문에, stack size만큼 짤림</li>
-</ul>
-</li>
-<li>‘)’ 이면 1 더하고 stack pop                         <ul>
-<li>막대기의 끝이기 때문, 한 개만큼 짤림</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2017/09/05/2017-09-05-boj-pole/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
                         <a class="link-unstyled" href="/2017/09/05/2017-09-05-boj-parentheses/">
                             9012:괄호
                         </a>
@@ -268,6 +205,73 @@
                     
                         <p>
                             <a href="/2017/09/05/2017-09-05-boj-parentheses/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2017/09/05/2017-09-05-boj-editor/">
+                            1406:에디터
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2017-09-05T00:00:00+09:00">
+	
+		    Sep 05, 2017
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p><a href="https://www.acmicpc.net/problem/1406" target="_blank" rel="noopener">https://www.acmicpc.net/problem/1406</a></p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li><p>스택 두개 생성. lStack, rStack</p>
+</li>
+<li><p>초기 입력 문자열 lStack에 모두 push </p>
+</li>
+<li><p>명령어 대로</p>
+<ul>
+<li>L : lStack의 top 문자를 rStack에 push </li>
+<li>D : rStack의 top 문자를 lStack에 push</li>
+<li>B : lStack pop</li>
+<li>P $ : lStack에 $ push</li>
+</ul>
+</li>
+<li><p>왼쪽 스택 문자 하나하나 pop해서 rStack에 push</p>
+</li>
+<li><p>rStack 하나하나 pop 해서 출력</p>
+</li>
+</ol>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2017/09/05/2017-09-05-boj-editor/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

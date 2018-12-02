@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/01/29/2018-01-29-swift/">
-                            swift
+                        <a class="link-unstyled" href="/2018/01/29/2018-01-29-Centralized Workflow /">
+                            Centralized Workflow
                         </a>
                     
                 </h1>
@@ -180,7 +180,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/ios/">ios</a>
+    <a class="category-link" href="/categories/git/">git</a>
 
 
     
@@ -189,56 +189,76 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="features"><a href="#features" class="headerlink" title="features"></a>features</h2><p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
-<ul>
-<li><p>Playgrounds and REPL in Xcode</p>
-<ul>
-<li>Type a line of code and the result appears immediately.</li>
-<li>The result view can display graphics, lists of results, or graphs of a value over time</li>
-</ul>
+                    <h2 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h2><ul>
+<li><p>Clone the central repository</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone ssh://user@host/path/to/repo.git</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Read-Eval-Print-Loop (REPL)</p>
-<ul>
-<li>Read – 유저의 값을 입력 받아 메모리에 저장</li>
-<li>Eval – 데이터를 처리(Evaluate)</li>
-<li>Print – 결과값을 출력</li>
-<li><p>Loop – Read, Eval, Print 를 유저가 Ctrl+C를 두번 눌러 종료할때까지 반복</p>
-</li>
-<li><p>Available from within the Xcode console or in Terminal.</p>
+<li><p>Make changes and commit</p>
 </li>
 </ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status # View the state of the repo</span><br><span class="line">git add &lt;some-file&gt; # Stage a file</span><br><span class="line">git commit # Commit a file&lt;/some-file&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>Push new commits to central repository</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Package Manager</p>
+</ul>
 <ul>
-<li>A cross-platform tool for building Swift libraries and executables, making it easy to create and manage dependencies.</li>
+<li>Managing conflicts</li>
 </ul>
-</li>
-<li><p>Fast and Powerful</p>
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><ul>
+<li><p>John works on his feature</p>
 <ul>
-<li>low-level primitives such as types, flow control, and operators</li>
-<li>object-oriented features</li>
+<li>edit, stage, and commit.</li>
 </ul>
 </li>
-<li><p>Designed for Safety</p>
+<li><p>Mary works on her feature</p>
 <ul>
-<li>Variables are always initialized before use, </li>
-<li>arrays and integers are checked for overflow, </li>
-<li>and memory is managed automatically.</li>
-<li>Swift objects can never be nil</li>
-<li>optionals : there are cases where nil is valid and appropriate</li>
+<li>edit, stage, and commit.</li>
 </ul>
 </li>
-<li><p>Objective-C Interoperability</p>
+<li><p>John publishes his feature</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<ul>
+<li><p>Mary tries to publish her feature</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<pre><code>- error
+- Mary needs to pull John’s updates into her repository
+</code></pre><ul>
+<li>Mary rebases on top of John’s commit(s)</li>
+</ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>Mary resolves a merge conflict</p>
+<ul>
+<li><p>충돌이 발생하면 다음과 같은 에러</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFLICT (content): Merge conflict in &lt;some-file&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- Unmerged paths section에서 conflict file이 무엇인지 확인 가능
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Unmerged paths:</span><br><span class="line"># (use &quot;git reset HEAD &lt;some-file&gt;...&quot; to unstage)</span><br><span class="line"># (use &quot;git add/rm &lt;some-file&gt;...&quot; as appropriate to mark resolution)</span><br><span class="line">#</span><br><span class="line"># both modified: &lt;some-file&gt;</span><br></pre></td></tr></table></figure>
+
+
+- 파일 수정 후
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;some-file&gt;</span><br><span class="line">git rebase --continue</span><br><span class="line">git rebase --abort</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</code></pre>
                     
                         
 
                     
                     
                         <p>
-                            <a href="/2018/01/29/2018-01-29-swift/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/01/29/2018-01-29-Centralized Workflow /#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

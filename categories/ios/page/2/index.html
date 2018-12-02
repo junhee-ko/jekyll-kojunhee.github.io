@@ -166,6 +166,96 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/01/29/2018-01-29-swift/">
+                            swift
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-01-29T00:00:00+09:00">
+	
+		    Jan 29, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/ios/">ios</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="features"><a href="#features" class="headerlink" title="features"></a>features</h2><p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
+<ul>
+<li><p>Playgrounds and REPL in Xcode</p>
+<ul>
+<li>Type a line of code and the result appears immediately.</li>
+<li>The result view can display graphics, lists of results, or graphs of a value over time</li>
+</ul>
+</li>
+<li><p>Read-Eval-Print-Loop (REPL)</p>
+<ul>
+<li>Read – 유저의 값을 입력 받아 메모리에 저장</li>
+<li>Eval – 데이터를 처리(Evaluate)</li>
+<li>Print – 결과값을 출력</li>
+<li><p>Loop – Read, Eval, Print 를 유저가 Ctrl+C를 두번 눌러 종료할때까지 반복</p>
+</li>
+<li><p>Available from within the Xcode console or in Terminal.</p>
+</li>
+</ul>
+</li>
+<li><p>Package Manager</p>
+<ul>
+<li>A cross-platform tool for building Swift libraries and executables, making it easy to create and manage dependencies.</li>
+</ul>
+</li>
+<li><p>Fast and Powerful</p>
+<ul>
+<li>low-level primitives such as types, flow control, and operators</li>
+<li>object-oriented features</li>
+</ul>
+</li>
+<li><p>Designed for Safety</p>
+<ul>
+<li>Variables are always initialized before use, </li>
+<li>arrays and integers are checked for overflow, </li>
+<li>and memory is managed automatically.</li>
+<li>Swift objects can never be nil</li>
+<li>optionals : there are cases where nil is valid and appropriate</li>
+</ul>
+</li>
+<li><p>Objective-C Interoperability</p>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/01/29/2018-01-29-swift/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/01/29/2018-01-29-swift 처음 시작하기/">
                             swift 처음 시작하기
                         </a>
@@ -247,116 +337,6 @@
                     
                         <p>
                             <a href="/2018/01/29/2018-01-29-swift 처음 시작하기/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/01/29/2018-01-29-데이터 타입 기본/">
-                            데이터 타입 기본
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-01-29T00:00:00+09:00">
-	
-		    Jan 29, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/ios/">ios</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309</a></p>
-<h2 id="Integers"><a href="#Integers" class="headerlink" title="Integers"></a>Integers</h2><ul>
-<li>signed (positive, zero, or negative)</li>
-<li><p>unsigned (positive or zero)</p>
-<ul>
-<li>8-bit unsigned integer : UInt8</li>
-<li>32-bit signed integer : Int32</li>
-</ul>
-</li>
-<li><p>Int</p>
-<ul>
-<li>On a 32-bit platform, Int is the same size as Int32.</li>
-<li><p>On a 64-bit platform, Int is the same size as Int64.</p>
-</li>
-<li><p>always use Int for integer values in your code</p>
-</li>
-</ul>
-</li>
-<li><p>UInt</p>
-<ul>
-<li>On a 32-bit platform, UInt is the same size as UInt32.</li>
-<li><p>On a 64-bit platform, UInt is the same size as UInt64.</p>
-</li>
-<li><p>Int is preferred, even when the values to be stored are known to be nonnegative</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Booleans"><a href="#Booleans" class="headerlink" title="Booleans"></a>Booleans</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let orangesAreOrange = true</span><br><span class="line">let turnipsAreDelicious = false</span><br><span class="line"></span><br><span class="line">if turnipsAreDelicious &#123;</span><br><span class="line">    print(&quot;Mmm, tasty turnips!&quot;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    print(&quot;Eww, turnips are horrible.&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Prints &quot;Eww, turnips are horrible.&quot;</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>Swift’s type safety prevents non-Boolean values from being substituted for Bool</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let i = 1</span><br><span class="line">if i &#123;</span><br><span class="line">    // this example will not compile, and will report an error</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>The result of the i == 1 comparison is of type Bool,</p>
-</li>
-<li><p>and so this second example passes the type-check. </p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let i = 1</span><br><span class="line">if i == 1 &#123;</span><br><span class="line">    // this example will compile successfully</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Floating-Point-Numbers"><a href="#Floating-Point-Numbers" class="headerlink" title="Floating-Point Numbers"></a>Floating-Point Numbers</h2><ul>
-<li>Double represents a 64-bit floating-point number.</li>
-<li><p>Float represents a 32-bit floating-point number.</p>
-<ul>
-<li>In situations where either type would be appropriate, Double is preferred.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Strings-and-Characters"><a href="#Strings-and-Characters" class="headerlink" title="Strings and Characters"></a>Strings and Characters</h2><ul>
-<li><p>String Literals</p>
-<ul>
-<li>A literal value is a value that appears directly in your source code</li>
-<li>Swift infers a type of String for the someString constant </li>
-<li><p>because it’s initialized with a string literal value.</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">		let someString = &quot;Some string literal value&quot;</span><br><span class="line">		```	</span><br><span class="line"></span><br><span class="line">- Initializing an Empty String</span><br></pre></td></tr></table></figure>
-<p>var emptyString = “”               // empty string literal<br>var anotherEmptyString = String()  // initializer syntax<br>// these two strings are both empty, and are equivalent to each other</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">- String Mutability</span><br></pre></td></tr></table></figure>
-<p>var variableString = “Horse”<br>variableString += “ and carriage”<br>// variableString is now “Horse and carriage”</p>
-<p>let constantString = “Highlander”<br>constantString += “ and another Highlander”<br>// this reports a compile-time error - a constant string cannot be modified<br><code>`</code></p>
-</li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/01/29/2018-01-29-데이터 타입 기본/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

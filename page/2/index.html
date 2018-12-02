@@ -165,80 +165,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/11/12/2018-11-12-Transaction/">
-                            Transaction
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-11-12T00:00:00+09:00">
-	
-		    Nov 12, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/database/">database</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="트랜잭션이란"><a href="#트랜잭션이란" class="headerlink" title="트랜잭션이란"></a>트랜잭션이란</h2><p>하나의 논리적인 작업 단위를 구성하는 연산들의 집합</p>
-<h2 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h2><ol>
-<li><p>Atomicity</p>
-<p>만약 트랜잭션 중간에 어떠한 문제가 발생한다면 트랜잭션에 해당하는 어떠한 작업 내용도 수행되어서는 안되<br>며, 아무런 문제가 발생되지 않았을 경우에만 모든 작업이 수행되어야 한다.</p>
-</li>
-<li><p>Consistency</p>
-<p>트랜잭션이 완료된 다음의 상태에서도 트랜잭션이 일어나기 전의 상황과 동일하게 데이터의 일관성을 보장해<br>야 한다. </p>
-<p>예를 들어 계좌이체를 성공적으로 실행했다면, A계좌의 잔액과 B계좌의 잔액의 합이 트랜잭션 실행 전의 합<br>과 동일해야한다.</p>
-</li>
-<li><p>Isolation</p>
-<p>각각의 트랜잭션은 서로 간섭없이 독립적으로 수행되어야 한다.</p>
-</li>
-<li><p>Durability</p>
-<p>트랜잭션이 정상적으로 종료된 다음에는 영구적으로 데이터베이스에 작업의 결과가 저장되어야 한다.</p>
-</li>
-</ol>
-<h2 id="Commit-Rollback"><a href="#Commit-Rollback" class="headerlink" title="Commit, Rollback"></a>Commit, Rollback</h2><ol>
-<li><p>Commit</p>
-<p>모든 작업을 정상적으로 처리하겠다고 확정하는 명령어이다. 트랜젝션의 처리 과정을 데이터베이스에 반영하<br>기 위해서, 변경된 내용을 모두 영구 저장한다.</p>
-</li>
-<li><p>Rollback</p>
-<p>작업 중 문제가 발생했을 때, 트랜젝션의 처리 과정에서 발생한 변경 사항을 취소하고, 트랜젝션 과정을 종료<br>시킨는 명령어이다. 트랜젝션으로 인한 하나의 묶음 처리가 시작되기 이전의 상태로 되돌린다.</p>
-</li>
-</ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction</a></p>
-<p><a href="https://wikidocs.net/4096" target="_blank" rel="noopener">https://wikidocs.net/4096</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/11/12/2018-11-12-Transaction/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
                         <a class="link-unstyled" href="/2018/11/12/2018-11-12-Linked List, Array/">
                             Array, Linked List
                         </a>
@@ -293,15 +219,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-삽입정렬/">
-                            삽입정렬
+                        <a class="link-unstyled" href="/2018/11/12/2018-11-12-퀵정렬/">
+                            퀵정렬
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2018-11-11T00:00:00+09:00">
+    <time datetime="2018-11-12T00:00:00+09:00">
 	
-		    Nov 11, 2018
+		    Nov 12, 2018
     	
     </time>
     
@@ -316,224 +242,41 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="삽입정렬이란"><a href="#삽입정렬이란" class="headerlink" title="삽입정렬이란"></a>삽입정렬이란</h2><p>배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘이다.</p>
-<p>두 번째 자료는 첫 번째 자료, 세 번째 자료는 두 번째와 첫 번째 자료, 네 번째 자료는 세 번째, 두 번째, 첫 번째 자료와 비교한 후 자료가 삽입될 위치를 찾는다. 자료가 삽입될 위치를 찾았다면 그 위치에 자료를 삽입하기 위해 자료를 한 칸씩 뒤로 이동시킨다.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/insertionSort01.png" alt="img"></p>
-<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ol>
-<li>for 루프는 n-1번 반복 되고</li>
-<li>최악의 경우 데이터 삽입을 위한 비교는 i-1번 비교</li>
-</ol>
-<p>따라서 최악의 경우 T(n) = (n-1) + (n-2) + … + 2 + 1 = n(n-1)/2 = O(n^2)</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ko.wikipedia.org/wiki/삽입_정렬" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/삽입_정렬</a><br><a href="https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/" target="_blank" rel="noopener">https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/11/11/2018-11-11-삽입정렬/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-선택정렬/">
-                            선택정렬
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-11-11T00:00:00+09:00">
-	
-		    Nov 11, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/dataStructure/">dataStructure</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="선택정렬이란"><a href="#선택정렬이란" class="headerlink" title="선택정렬이란"></a>선택정렬이란</h2><p>해당 순서에 원소를 넣을 위치는 이미 정해져 있고, 어떤 원소를 넣을지 선택하는 정렬이다.</p>
-<p>첫 번째 자료를 두 번째 자료부터 마지막 자료까지 차례대로 비교하여 가장 작은 값을 찾아 첫 번째에 놓고, 두 번째 자료를 세 번째 자료부터 마지막 자료까지와 차례대로 비교하여 그 중 가장 작은 값을 찾아 두 번째 위치에 놓는 과정을 반복하며 정렬을 수행한다.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/selectionSort01.png" alt="img"></p>
-<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ol>
-<li>for 루프는 n-1번 반복 되고</li>
-<li>최소값을 찾기 위한 비교 횟수는 n-1, n-2, … , 2, 1</li>
-<li>교환은 상수 시간 작업이므로</li>
-</ol>
-<p>T(n) = (n-1) + (n-2) + … + 2 + 1 = n(n-1)/2 = O(n^2)</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/" target="_blank" rel="noopener">https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/</a><br><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/11/11/2018-11-11-선택정렬/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-점근 표기법/">
-                            점근 표기법
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-11-11T00:00:00+09:00">
-	
-		    Nov 11, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/dataStructure/">dataStructure</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="시간-복잡도와-공간-복잡도"><a href="#시간-복잡도와-공간-복잡도" class="headerlink" title="시간 복잡도와 공간 복잡도"></a>시간 복잡도와 공간 복잡도</h2><ol>
-<li>시간 복잡도 : 알고리즘의 수행시간 분석결과</li>
-<li>공간 복잡도 : 알고리즘의 메모리 사용량에 대한 분석결과</li>
-</ol>
-<p>알고리즘 성능평가는 시간 복잡도와 공간 복잡도를 계산하고 점근적 표기법으로 나타내면 된다.</p>
-<h2 id="점근적-분석이란"><a href="#점근적-분석이란" class="headerlink" title="점근적 분석이란"></a>점근적 분석이란</h2><p>알고리즘의 수행 시간을 분석하기 위해, 항상 입력의 크기가 충분히 클 때에 대해서 분석하는 방법 </p>
-<h2 id="점근적-표기법이란"><a href="#점근적-표기법이란" class="headerlink" title="점근적 표기법이란"></a>점근적 표기법이란</h2><p>점근적 증가율은 입력의 크기에 따라 함수가 증가하는 비율이다. 그 표기법을 점근적 표기법이라 한다.<br>세 가지가 있다.</p>
-<ul>
-<li>빅오 표기법</li>
-<li>오메가 표기법</li>
-<li>세타 표기법</li>
-</ul>
-<h2 id="빅오-표기법"><a href="#빅오-표기법" class="headerlink" title="빅오 표기법"></a>빅오 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic01.png" alt="img"></p>
-<p>f(n)을 O(g(n))이라고 표시한다. </p>
-<p>이 때 g(n)를 f(n)의 점근 상한이라고 한다.</p>
-<p>알고리즘 f(n)이 O(g(n))에 속한다면, f(n)의 계산복잡도는 최악의 경우라도 g(n)과 같거나 혹은 작다는 뜻이다.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic011.png" alt="img"></p>
-<h2 id="오메가-표기법"><a href="#오메가-표기법" class="headerlink" title="오메가 표기법"></a>오메가 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic02.png" alt="img"></p>
-<p>f(n)를 Ω(g(n))이라고 표시한다. </p>
-<p>이 때 g(n)는 f(n)의 점근 하한이라고 한다. </p>
-<p>알고리즘 f(n)의 계산복잡도가 Ω(g(n))에 속한다면, f(n)의 계산복잡도는 최선의 경우를 상정하더라도 g(n)과 같거나 혹은 크다는 뜻이다.</p>
-<h2 id="세타-표기법"><a href="#세타-표기법" class="headerlink" title="세타 표기법"></a>세타 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic03.png" alt="img"></p>
-<p>f(n)을 Θ(g(n))이라고 표시한다. </p>
-<p>g(n)은 f(n)의 점근적 상한과 하한의 교집합이라고 한다. </p>
-<p>알고리즘 f(n)이 아무리 나쁘거나 좋더라도 그 계산복잡도는 g(n)의 범위 내에 있다는 뜻이다.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ratsgo.github.io/data%20structure&amp;algorithm/2017/09/13/asymptotic/" target="_blank" rel="noopener">https://ratsgo.github.io/data%20structure&amp;algorithm/2017/09/13/asymptotic/</a></p>
-<p><a href="http://ledgku.tistory.com/33" target="_blank" rel="noopener">http://ledgku.tistory.com/33</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/11/11/2018-11-11-점근 표기법/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-Heap/">
-                            Heap
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-11-11T00:00:00+09:00">
-	
-		    Nov 11, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/dataStructure/">dataStructure</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="Heap-이란"><a href="#Heap-이란" class="headerlink" title="Heap 이란"></a>Heap 이란</h2><p>우선순위 큐를 위한 완전이진트리</p>
-<h2 id="우선순위-큐"><a href="#우선순위-큐" class="headerlink" title="우선순위 큐"></a>우선순위 큐</h2><p>데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.<br>우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적.</p>
-<h2 id="Heap의-종류"><a href="#Heap의-종류" class="headerlink" title="Heap의 종류"></a>Heap의 종류</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap01.png" alt="img"></p>
+                    <h2 id="퀵정렬이란"><a href="#퀵정렬이란" class="headerlink" title="퀵정렬이란"></a>퀵정렬이란</h2><p>분할 정복 알고리즘의 하나이다. </p>
+<h2 id="왜-분할-정복"><a href="#왜-분할-정복" class="headerlink" title="왜 분할 정복?"></a>왜 분할 정복?</h2><p>퀵 정렬은 다음의 단계를 거친다.</p>
 <ol>
-<li>최대힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리</li>
-<li>최소힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리</li>
+<li><p>분할</p>
+<p>입력 배열을 피벗을 기준으로 비균등하게 2개의 부분 배열(피벗을 중심으로 왼쪽: 피벗보다 작은 요소들, 오른<br>쪽: 피벗보다 큰 요소들)로 분할한다.</p>
+</li>
+<li><p>정복</p>
+<p>부분 배열을 정렬한다. 부분 배열의 크기가 충분히 작지 않으면 순환 호출 을 이용하여 다시 분할 정복 방법을<br>적용한다.</p>
+</li>
+<li><p>결합</p>
+<p>정렬된 부분 배열들을 하나의 배열에 합병한다.</p>
+<p>순환 호출이 한번 진행될 때마다 최소한 하나의 원소(피벗)는 최종적으로 위치가 정해지므로, 이 알고리즘은<br>반드시 끝난다는 것을 보장할 수 있다.</p>
+</li>
 </ol>
-<h2 id="Heap의-구현"><a href="#Heap의-구현" class="headerlink" title="Heap의 구현"></a>Heap의 구현</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap02.png" alt="img"></p>
-<p>배열로 구현한다.<br>부모 노드와 자식 노드의 관계는 다음과 같다.</p>
+<h2 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/quickSort01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/quickSort02.png" alt="img"></p>
+<p>[5, 3, 8, 4, 9, 1] 배열을 오름차순 정렬해보자.</p>
 <ul>
-<li>왼쪽 자식의 인덱스 = (부모의 인덱스) * 2</li>
-<li>오른쪽 자식의 인덱스 = (부모의 인덱스) * 2 + 1</li>
-<li>부모의 인덱스 = (자식의 인덱스) / 2</li>
+<li><p>피벗 값을 입력 리스트의 첫 번째 데이터로 하자. (다른 임의의 값이어도 상관없다.)</p>
+</li>
+<li><p>1회전: 피벗이 5인 경우,</p>
+<p>low는 왼쪽에서 오른쪽으로 탐색해가다가 피벗보다 큰 데이터(8)을 찾으면 멈춘다.</p>
+<p>high는 오른쪽에서 왼쪽으로 탐색해가다가 피벗보다 작은 데이터(4)를 찾으면 멈춘다.</p>
+<p>low와 high가 가리키는 두 데이터(8과 4)를 서로 교환한다.</p>
+<p>low와 high가 엇갈리면, pivot의 값과 high 의 값을 교환한다.</p>
+<p>5는 정렬이 끝났다.</p>
+</li>
+<li><p>2회전: 피벗 (1회전의 왼쪽 부분리스트의 첫 번째 데이터)이 4인 경우, 위와 동일한 방법으로 반복한다.</p>
+</li>
+<li><p>3회전: 피벗(1회전의 오른쪽 부분리스트의 첫 번째 데이터)이 8인 경우, 위와 동일한 방법으로 반복한다.</p>
+</li>
 </ul>
-<h2 id="Heap의-삽입"><a href="#Heap의-삽입" class="headerlink" title="Heap의 삽입"></a>Heap의 삽입</h2><ol>
-<li>힙에 새로운 요소가 들어오면, 일단 새로운 노드를 힙의 마지막 노드에 이어서 삽입한다.</li>
-<li>새로운 노드를 부모 노드들과 교환해서 힙의 성질을 만족시킨다.</li>
-</ol>
-<h2 id="Heap의-삭제"><a href="#Heap의-삭제" class="headerlink" title="Heap의 삭제"></a>Heap의 삭제</h2><ol>
-<li>최대 힙에서 최댓값은 루트 노드이므로 루트 노드가 삭제된다.<br>최대 힙(max heap)에서 삭제 연산은 최댓값을 가진 요소를 삭제하는 것이다.<br>최소 힙(min heap)에서 삭제 연산은 최솟값을 가진 요소를 삭제하는 것이다.</li>
-<li>삭제된 루트 노드에는 힙의 마지막 노드를 가져온다.</li>
-<li>힙을 재구성한다.</li>
-</ol>
-<h2 id="Heap-정렬"><a href="#Heap-정렬" class="headerlink" title="Heap 정렬"></a>Heap 정렬</h2><p>최대 힙 트리나 최소 힙 트리를 구성해 정렬을 하는 방법</p>
-<h2 id="Heap-정렬의-시간-복잡도"><a href="#Heap-정렬의-시간-복잡도" class="headerlink" title="Heap 정렬의 시간 복잡도"></a>Heap 정렬의 시간 복잡도</h2><p>힙 트리의 전체 높이가 거의 log₂n(완전 이진 트리이므로)이므로 하나의 요소를 힙에 삽입하거나 삭제할 때 힙을 재정비하는 시간이 log₂n만큼 소요된다.</p>
-<p>요소의 개수가 n개 이므로 전체적으로 O(nlog₂n)의 시간이 걸린다.</p>
-<p>T(n) = O(nlog₂n)</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html</a></p>
+<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/quickSort03.png" alt="img"></p>
+<p>T(n) = 순환 호출의 깊이 * 각 순환 호출 단계의 비교 연산 = nlog₂n</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html</a></p>
 
                     
                         
@@ -541,7 +284,7 @@
                     
                     
                         <p>
-                            <a href="/2018/11/11/2018-11-11-Heap/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/11/12/2018-11-12-퀵정렬/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -675,6 +418,196 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-점근 표기법/">
+                            점근 표기법
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-11-11T00:00:00+09:00">
+	
+		    Nov 11, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/dataStructure/">dataStructure</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="시간-복잡도와-공간-복잡도"><a href="#시간-복잡도와-공간-복잡도" class="headerlink" title="시간 복잡도와 공간 복잡도"></a>시간 복잡도와 공간 복잡도</h2><ol>
+<li>시간 복잡도 : 알고리즘의 수행시간 분석결과</li>
+<li>공간 복잡도 : 알고리즘의 메모리 사용량에 대한 분석결과</li>
+</ol>
+<p>알고리즘 성능평가는 시간 복잡도와 공간 복잡도를 계산하고 점근적 표기법으로 나타내면 된다.</p>
+<h2 id="점근적-분석이란"><a href="#점근적-분석이란" class="headerlink" title="점근적 분석이란"></a>점근적 분석이란</h2><p>알고리즘의 수행 시간을 분석하기 위해, 항상 입력의 크기가 충분히 클 때에 대해서 분석하는 방법 </p>
+<h2 id="점근적-표기법이란"><a href="#점근적-표기법이란" class="headerlink" title="점근적 표기법이란"></a>점근적 표기법이란</h2><p>점근적 증가율은 입력의 크기에 따라 함수가 증가하는 비율이다. 그 표기법을 점근적 표기법이라 한다.<br>세 가지가 있다.</p>
+<ul>
+<li>빅오 표기법</li>
+<li>오메가 표기법</li>
+<li>세타 표기법</li>
+</ul>
+<h2 id="빅오-표기법"><a href="#빅오-표기법" class="headerlink" title="빅오 표기법"></a>빅오 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic01.png" alt="img"></p>
+<p>f(n)을 O(g(n))이라고 표시한다. </p>
+<p>이 때 g(n)를 f(n)의 점근 상한이라고 한다.</p>
+<p>알고리즘 f(n)이 O(g(n))에 속한다면, f(n)의 계산복잡도는 최악의 경우라도 g(n)과 같거나 혹은 작다는 뜻이다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic011.png" alt="img"></p>
+<h2 id="오메가-표기법"><a href="#오메가-표기법" class="headerlink" title="오메가 표기법"></a>오메가 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic02.png" alt="img"></p>
+<p>f(n)를 Ω(g(n))이라고 표시한다. </p>
+<p>이 때 g(n)는 f(n)의 점근 하한이라고 한다. </p>
+<p>알고리즘 f(n)의 계산복잡도가 Ω(g(n))에 속한다면, f(n)의 계산복잡도는 최선의 경우를 상정하더라도 g(n)과 같거나 혹은 크다는 뜻이다.</p>
+<h2 id="세타-표기법"><a href="#세타-표기법" class="headerlink" title="세타 표기법"></a>세타 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic03.png" alt="img"></p>
+<p>f(n)을 Θ(g(n))이라고 표시한다. </p>
+<p>g(n)은 f(n)의 점근적 상한과 하한의 교집합이라고 한다. </p>
+<p>알고리즘 f(n)이 아무리 나쁘거나 좋더라도 그 계산복잡도는 g(n)의 범위 내에 있다는 뜻이다.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ratsgo.github.io/data%20structure&amp;algorithm/2017/09/13/asymptotic/" target="_blank" rel="noopener">https://ratsgo.github.io/data%20structure&amp;algorithm/2017/09/13/asymptotic/</a></p>
+<p><a href="http://ledgku.tistory.com/33" target="_blank" rel="noopener">http://ledgku.tistory.com/33</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/11/11/2018-11-11-점근 표기법/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-삽입정렬/">
+                            삽입정렬
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-11-11T00:00:00+09:00">
+	
+		    Nov 11, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/dataStructure/">dataStructure</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="삽입정렬이란"><a href="#삽입정렬이란" class="headerlink" title="삽입정렬이란"></a>삽입정렬이란</h2><p>배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘이다.</p>
+<p>두 번째 자료는 첫 번째 자료, 세 번째 자료는 두 번째와 첫 번째 자료, 네 번째 자료는 세 번째, 두 번째, 첫 번째 자료와 비교한 후 자료가 삽입될 위치를 찾는다. 자료가 삽입될 위치를 찾았다면 그 위치에 자료를 삽입하기 위해 자료를 한 칸씩 뒤로 이동시킨다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/insertionSort01.png" alt="img"></p>
+<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ol>
+<li>for 루프는 n-1번 반복 되고</li>
+<li>최악의 경우 데이터 삽입을 위한 비교는 i-1번 비교</li>
+</ol>
+<p>따라서 최악의 경우 T(n) = (n-1) + (n-2) + … + 2 + 1 = n(n-1)/2 = O(n^2)</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ko.wikipedia.org/wiki/삽입_정렬" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/삽입_정렬</a><br><a href="https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/" target="_blank" rel="noopener">https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/11/11/2018-11-11-삽입정렬/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-선택정렬/">
+                            선택정렬
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-11-11T00:00:00+09:00">
+	
+		    Nov 11, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/dataStructure/">dataStructure</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="선택정렬이란"><a href="#선택정렬이란" class="headerlink" title="선택정렬이란"></a>선택정렬이란</h2><p>해당 순서에 원소를 넣을 위치는 이미 정해져 있고, 어떤 원소를 넣을지 선택하는 정렬이다.</p>
+<p>첫 번째 자료를 두 번째 자료부터 마지막 자료까지 차례대로 비교하여 가장 작은 값을 찾아 첫 번째에 놓고, 두 번째 자료를 세 번째 자료부터 마지막 자료까지와 차례대로 비교하여 그 중 가장 작은 값을 찾아 두 번째 위치에 놓는 과정을 반복하며 정렬을 수행한다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/selectionSort01.png" alt="img"></p>
+<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ol>
+<li>for 루프는 n-1번 반복 되고</li>
+<li>최소값을 찾기 위한 비교 횟수는 n-1, n-2, … , 2, 1</li>
+<li>교환은 상수 시간 작업이므로</li>
+</ol>
+<p>T(n) = (n-1) + (n-2) + … + 2 + 1 = n(n-1)/2 = O(n^2)</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/" target="_blank" rel="noopener">https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/</a><br><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/11/11/2018-11-11-선택정렬/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/11/11/2018-11-11-버블정렬/">
                             버블정렬
                         </a>
@@ -713,6 +646,82 @@
                     
                         <p>
                             <a href="/2018/11/11/2018-11-11-버블정렬/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-Heap/">
+                            Heap
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-11-11T00:00:00+09:00">
+	
+		    Nov 11, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/dataStructure/">dataStructure</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="Heap-이란"><a href="#Heap-이란" class="headerlink" title="Heap 이란"></a>Heap 이란</h2><p>우선순위 큐를 위한 완전이진트리</p>
+<h2 id="우선순위-큐"><a href="#우선순위-큐" class="headerlink" title="우선순위 큐"></a>우선순위 큐</h2><p>데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.<br>우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적.</p>
+<h2 id="Heap의-종류"><a href="#Heap의-종류" class="headerlink" title="Heap의 종류"></a>Heap의 종류</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap01.png" alt="img"></p>
+<ol>
+<li>최대힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리</li>
+<li>최소힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리</li>
+</ol>
+<h2 id="Heap의-구현"><a href="#Heap의-구현" class="headerlink" title="Heap의 구현"></a>Heap의 구현</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap02.png" alt="img"></p>
+<p>배열로 구현한다.<br>부모 노드와 자식 노드의 관계는 다음과 같다.</p>
+<ul>
+<li>왼쪽 자식의 인덱스 = (부모의 인덱스) * 2</li>
+<li>오른쪽 자식의 인덱스 = (부모의 인덱스) * 2 + 1</li>
+<li>부모의 인덱스 = (자식의 인덱스) / 2</li>
+</ul>
+<h2 id="Heap의-삽입"><a href="#Heap의-삽입" class="headerlink" title="Heap의 삽입"></a>Heap의 삽입</h2><ol>
+<li>힙에 새로운 요소가 들어오면, 일단 새로운 노드를 힙의 마지막 노드에 이어서 삽입한다.</li>
+<li>새로운 노드를 부모 노드들과 교환해서 힙의 성질을 만족시킨다.</li>
+</ol>
+<h2 id="Heap의-삭제"><a href="#Heap의-삭제" class="headerlink" title="Heap의 삭제"></a>Heap의 삭제</h2><ol>
+<li>최대 힙에서 최댓값은 루트 노드이므로 루트 노드가 삭제된다.<br>최대 힙(max heap)에서 삭제 연산은 최댓값을 가진 요소를 삭제하는 것이다.<br>최소 힙(min heap)에서 삭제 연산은 최솟값을 가진 요소를 삭제하는 것이다.</li>
+<li>삭제된 루트 노드에는 힙의 마지막 노드를 가져온다.</li>
+<li>힙을 재구성한다.</li>
+</ol>
+<h2 id="Heap-정렬"><a href="#Heap-정렬" class="headerlink" title="Heap 정렬"></a>Heap 정렬</h2><p>최대 힙 트리나 최소 힙 트리를 구성해 정렬을 하는 방법</p>
+<h2 id="Heap-정렬의-시간-복잡도"><a href="#Heap-정렬의-시간-복잡도" class="headerlink" title="Heap 정렬의 시간 복잡도"></a>Heap 정렬의 시간 복잡도</h2><p>힙 트리의 전체 높이가 거의 log₂n(완전 이진 트리이므로)이므로 하나의 요소를 힙에 삽입하거나 삭제할 때 힙을 재정비하는 시간이 log₂n만큼 소요된다.</p>
+<p>요소의 개수가 n개 이므로 전체적으로 O(nlog₂n)의 시간이 걸린다.</p>
+<p>T(n) = O(nlog₂n)</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/11/11/2018-11-11-Heap/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

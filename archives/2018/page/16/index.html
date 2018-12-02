@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/05/2018-05-06-HTML/">
-                            HTML Layout
+                        <a class="link-unstyled" href="/2018/05/05/2018-05-05-was/">
+                            was
                         </a>
                     
                 </h1>
@@ -190,35 +190,54 @@
             
                 <div class="postShorten-content">
                     <ul>
-<li><p>‘레이아웃(Layout)’ 이란 ‘배치’라는 뜻으로, HTML 태그로 감싸진 각 정보 요소를 화면상의 어느 위치에 어떻게 자리잡을지를 결정하는 것을 말합니다.</p>
+<li><p>MiddleWare  </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/middleW.png" alt="img"></p>
 <ul>
-<li>기본적으로 상단의 <header></header></li>
-<li>하단의 <footer></footer></li>
-<li>운데의 본문 영역</li>
+<li>클라이언트 쪽에 비즈니스 로직이 많을 경우, </li>
+<li>클라이언트 관리(배포 등)로 인해 비용이 많이 발생하는 문제가 있습니다.</li>
+<li>비즈니스 로직을 클라이언트와 DBMS사이의 미들웨어 서버에서 동작하도록 함으로써 </li>
+<li>클라이언트는 입력과 출력만 담당하도록 합니다.</li>
 </ul>
 </li>
-<li><p>레이아웃을 위한 태그</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/layoutT.png" alt="img"></p>
-</li>
-<li><p>id, class</p>
+<li><p>WAS</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/wasimge.png" alt="img"></p>
 <ul>
-<li>id<ul>
-<li>고유한 속성으로 한 HTML 문서에 하나만 사용 가능합니다.</li>
-<li>고유한 ID 값이 있으면 하나하나에 특별한 제어를 할 수 있으며 검색에도 용이합니다.</li>
+<li><p>일종의 미들웨어로 웹 클라이언트(보통 웹 브라우저)의 요청 중 웹 애플리케이션이 동작하도록 지원하는 목적</p>
+</li>
+<li><p>프로그램 실행환경과 데이터베이스 접속 기능 제공</p>
+</li>
+<li>여러개의 트렌젝션(논리적인 작업 단위)을 관리</li>
+<li>업무를 처리하는 비지니스 로직 처리</li>
 </ul>
 </li>
-<li>class<ul>
-<li>하나의 HTML문서 안에 중복해서 사용 가능합니다.</li>
-<li>하나의 태그에 여러 개의 다른 class 이름을 공백을 기준으로 나열할 수가 있습니다.</li>
-<li>홈페이지 전체적인 스타일을 일관성 있게 지정하기 위해서는 class의 사용이 필수적입니다.</li>
+<li><p>웹서버 vs WAS </p>
+<ul>
+<li>웹서버 : 정적인 컨텐츠를 웹 브라우저에게 전달</li>
+<li>WAS : 동적 결과를 웹 브라우저에게 전달</li>
+<li>WAS도 보통 자체적으로 웹 서버 기능을 내장하고 있습니다.</li>
+<li>현재는 WAS가 가지고 있는 웹 서버도 정적인 콘텐츠를 처리하는 데 있어서 성능상 큰 차이가 없습니다.</li>
+<li>규모가 커질수록 웹 서버와 WAS를 분리합니다.</li>
+<li>자원 이용의 효율성 및 장애 극복, 배포 및 유지보수의 편의성을 위해 웹서버와 WAS를 대체로 분리합니다.</li>
+</ul>
+</li>
+<li>웹 서버가 왜 WAS 앞단에서 동작?<ul>
+<li>웹 서버는 WAS보다 단단</li>
+<li>대용량 어플리케이션은 서버의 수가 여러대일 수 있어</li>
+<li>와스에서 동작하도록 만든 프로그램이 오작동이 발생해서 </li>
+<li>와스 자체에 문제가 발생할수 있어</li>
+<li>이 경우에,</li>
+<li>와스를 재시작 해야할 수 있어</li>
+<li>이런 경우 웹서버가 먼저, 해당 와스를 이용하지 못하도록 해</li>
+<li>그리고 와스를 재시작한다면</li>
+<li>사용자는 와스의 문제가 발생한지 모를 수 있어</li>
+<li>이러한 처리를 ‘장애 극복 기능’ 이라고 함</li>
 </ul>
 </li>
 </ul>
-</li>
+<ul>
 <li><p>Reference</p>
 <ul>
 <li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-<li><a href="https://gist.github.com/thomd/9220049" target="_blank" rel="noopener">https://gist.github.com/thomd/9220049</a></li>
 </ul>
 </li>
 </ul>
@@ -229,7 +248,7 @@
                     
                     
                         <p>
-                            <a href="/2018/05/05/2018-05-06-HTML/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/05/2018-05-05-was/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -430,97 +449,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/05/2018-05-05- browser에서의 웹 개발/">
-                             browser에서의 웹 개발
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-05-05T00:00:00+09:00">
-	
-		    May 05, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/boostcourse/">boostcourse</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <ul>
-<li><p>HTML 문서구조</p>
-<ul>
-<li>크롬 개발자 도구 열기 (Option + Command + i)</li>
-<li>Network tab 에서 새로고침을 하면</li>
-</ul>
-</li>
-<li><p>알게된 몇 가지 특징</p>
-<ul>
-<li><p>html 문서는 html이라는 태그로 시작해서 html 태그로 끝남</p>
-</li>
-<li><p>head</p>
-<ul>
-<li>자세한 문서에 대한 정보를 포함</li>
-</ul>
-</li>
-<li>body<ul>
-<li>화면에 포함될 div 같은것들</li>
-</ul>
-</li>
-<li>html은 계청적</li>
-<li>html은 tag를 사용해서 표현</li>
-<li>JavaScript와 CSS가 html 안에 여기 저기 존재</li>
-</ul>
-</li>
-<li><p>CSS / JavaScript 코드 위치</p>
-<ul>
-<li>JavaScript 코드<ul>
-<li>body 태그 닫히기 전에 위치하는 것이 렌더링을 방해하지 않아도 좋고, </li>
-</ul>
-</li>
-<li>CSS<ul>
-<li>head 안에 위치해서 렌더링 처리 시에 브라우저가 더 빨리 참고할 수 있게 하는 것이 좋습니다.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/05/05/2018-05-05- browser에서의 웹 개발/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
                         <a class="link-unstyled" href="/2018/05/05/2018-05-04-web 동작/">
                             web 동작
                         </a>
@@ -668,8 +596,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/05/2018-05-05-was/">
-                            was
+                        <a class="link-unstyled" href="/2018/05/05/2018-05-05- 웹 서버/">
+                            웹 서버
                         </a>
                     
                 </h1>
@@ -692,51 +620,36 @@
             
                 <div class="postShorten-content">
                     <ul>
-<li><p>MiddleWare  </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/middleW.png" alt="img"></p>
-<ul>
-<li>클라이언트 쪽에 비즈니스 로직이 많을 경우, </li>
-<li>클라이언트 관리(배포 등)로 인해 비용이 많이 발생하는 문제가 있습니다.</li>
-<li>비즈니스 로직을 클라이언트와 DBMS사이의 미들웨어 서버에서 동작하도록 함으로써 </li>
-<li>클라이언트는 입력과 출력만 담당하도록 합니다.</li>
-</ul>
-</li>
-<li><p>WAS</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/wasimge.png" alt="img"></p>
-<ul>
-<li><p>일종의 미들웨어로 웹 클라이언트(보통 웹 브라우저)의 요청 중 웹 애플리케이션이 동작하도록 지원하는 목적</p>
-</li>
-<li><p>프로그램 실행환경과 데이터베이스 접속 기능 제공</p>
-</li>
-<li>여러개의 트렌젝션(논리적인 작업 단위)을 관리</li>
-<li>업무를 처리하는 비지니스 로직 처리</li>
-</ul>
-</li>
-<li><p>웹서버 vs WAS </p>
-<ul>
-<li>웹서버 : 정적인 컨텐츠를 웹 브라우저에게 전달</li>
-<li>WAS : 동적 결과를 웹 브라우저에게 전달</li>
-<li>WAS도 보통 자체적으로 웹 서버 기능을 내장하고 있습니다.</li>
-<li>현재는 WAS가 가지고 있는 웹 서버도 정적인 콘텐츠를 처리하는 데 있어서 성능상 큰 차이가 없습니다.</li>
-<li>규모가 커질수록 웹 서버와 WAS를 분리합니다.</li>
-<li>자원 이용의 효율성 및 장애 극복, 배포 및 유지보수의 편의성을 위해 웹서버와 WAS를 대체로 분리합니다.</li>
-</ul>
-</li>
-<li>웹 서버가 왜 WAS 앞단에서 동작?<ul>
-<li>웹 서버는 WAS보다 단단</li>
-<li>대용량 어플리케이션은 서버의 수가 여러대일 수 있어</li>
-<li>와스에서 동작하도록 만든 프로그램이 오작동이 발생해서 </li>
-<li>와스 자체에 문제가 발생할수 있어</li>
-<li>이 경우에,</li>
-<li>와스를 재시작 해야할 수 있어</li>
-<li>이런 경우 웹서버가 먼저, 해당 와스를 이용하지 못하도록 해</li>
-<li>그리고 와스를 재시작한다면</li>
-<li>사용자는 와스의 문제가 발생한지 모를 수 있어</li>
-<li>이러한 처리를 ‘장애 극복 기능’ 이라고 함</li>
+<li>웹 서버란<ul>
+<li>웹 서버는 소프트웨어(Software)를 보통 말하지만, 웹 서버 소프트웨어가 동작하는 컴퓨터를 말합니다.</li>
+<li>웹 서버의 가장 중요한 기능은 클라이언트(Client)가 요청하는 HTML 문서나 각종 리소스(Resource)를 전달하는 것입니다.<ul>
+<li>클라이언트 : 웹 브라우저, 웹 크롤러(네이버나 구글같은 검색 사이트가 다른 웹 사이트 정보를 읽어갈때 사용하는 소프트웨어)<ul>
+<li>HTTP에 맞게 서버에게 리소스 요쳥</li>
 </ul>
 </li>
 </ul>
-<ul>
+</li>
+<li>웹 브라우저나 웹 크롤러가 요청하는 리소스는 컴퓨터에 저장된 정적(static)인 데이터이거나 동적인 결과가 될 수 있습니다.<ul>
+<li>정적 데이터 : 이미지 , HTML, CSS, JavaScript (컴퓨터에 저장된 파일들)</li>
+<li>동적 데이터 : 웹 서버에 의해 실행되는, 프로그래밍을 통해 만들어진 결과</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>웹 서버 소프트웨어 종류<ul>
+<li>Apache, Nginx, Microsoft, Google 웹 서버<ul>
+<li>Apache웹 서버<ul>
+<li>Apache Software Foundation에서 개발한 웹서버로 오픈소스 소프트웨어(Open-source Software)이며, 거의 대부분 운영체제에서 설치 및 사용을 할 수 있습니다.</li>
+</ul>
+</li>
+<li>Nginx <ul>
+<li>차세대 웹서버로 불리며 더 적은 자원으로 더 빠르게 데이터를 서비스하는 것을 목적으로 만들어진 서버이며 Apache웹 서버와 마찬가지로 오픈소스 소프트웨어입니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>Reference</p>
 <ul>
 <li>NAVER edwith boostcourse Full-Stack Web Developer </li>
@@ -750,7 +663,98 @@
                     
                     
                         <p>
-                            <a href="/2018/05/05/2018-05-05-was/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/05/2018-05-05- 웹 서버/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/05/05/2018-05-05- browser에서의 웹 개발/">
+                             browser에서의 웹 개발
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-05-05T00:00:00+09:00">
+	
+		    May 05, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/boostcourse/">boostcourse</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <ul>
+<li><p>HTML 문서구조</p>
+<ul>
+<li>크롬 개발자 도구 열기 (Option + Command + i)</li>
+<li>Network tab 에서 새로고침을 하면</li>
+</ul>
+</li>
+<li><p>알게된 몇 가지 특징</p>
+<ul>
+<li><p>html 문서는 html이라는 태그로 시작해서 html 태그로 끝남</p>
+</li>
+<li><p>head</p>
+<ul>
+<li>자세한 문서에 대한 정보를 포함</li>
+</ul>
+</li>
+<li>body<ul>
+<li>화면에 포함될 div 같은것들</li>
+</ul>
+</li>
+<li>html은 계청적</li>
+<li>html은 tag를 사용해서 표현</li>
+<li>JavaScript와 CSS가 html 안에 여기 저기 존재</li>
+</ul>
+</li>
+<li><p>CSS / JavaScript 코드 위치</p>
+<ul>
+<li>JavaScript 코드<ul>
+<li>body 태그 닫히기 전에 위치하는 것이 렌더링을 방해하지 않아도 좋고, </li>
+</ul>
+</li>
+<li>CSS<ul>
+<li>head 안에 위치해서 렌더링 처리 시에 브라우저가 더 빨리 참고할 수 있게 하는 것이 좋습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/05/05/2018-05-05- browser에서의 웹 개발/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -965,6 +969,73 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/05/03/2018-05-03-Proxy Pattern02/">
+                            Proxy Pattern02
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-05-03T00:00:00+09:00">
+	
+		    May 03, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><ul>
+<li>The Proxy Pattern provides a surrogate or placeholder for another object to control access to it. </li>
+<li>Use the Proxy Pattern to create a representative object that controls access to another object, which may be remote, expensive to create or in need of securing. </li>
+</ul>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/proxyUML02.png" alt="img"></p>
+<h2 id="RMI-Remote-Method-Invocation"><a href="#RMI-Remote-Method-Invocation" class="headerlink" title="RMI (Remote Method Invocation)"></a>RMI (Remote Method Invocation)</h2><p>RMI gives us a way to find objects in a remote JVM and allows us to invoke their methods. </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmi01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmi02.png" alt="img"></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmiexample01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmiexample02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmiexample03.png" alt="img"></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode06.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode07.png" alt="img"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/05/03/2018-05-03-Proxy Pattern02/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/05/03/2018-05-03-Proxy Pattern01/">
                             Proxy Pattern01
                         </a>
@@ -1029,73 +1100,6 @@
                     
                         <p>
                             <a href="/2018/05/03/2018-05-03-Proxy Pattern01/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/05/03/2018-05-03-Proxy Pattern02/">
-                            Proxy Pattern02
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-05-03T00:00:00+09:00">
-	
-		    May 03, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><ul>
-<li>The Proxy Pattern provides a surrogate or placeholder for another object to control access to it. </li>
-<li>Use the Proxy Pattern to create a representative object that controls access to another object, which may be remote, expensive to create or in need of securing. </li>
-</ul>
-<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/proxyUML02.png" alt="img"></p>
-<h2 id="RMI-Remote-Method-Invocation"><a href="#RMI-Remote-Method-Invocation" class="headerlink" title="RMI (Remote Method Invocation)"></a>RMI (Remote Method Invocation)</h2><p>RMI gives us a way to find objects in a remote JVM and allows us to invoke their methods. </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmi01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmi02.png" alt="img"></p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmiexample01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmiexample02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmiexample03.png" alt="img"></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode04.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode05.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode06.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rmicode07.png" alt="img"></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/05/03/2018-05-03-Proxy Pattern02/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

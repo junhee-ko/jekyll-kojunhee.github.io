@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/10/12/2018-10-12-무선 충전/">
-                            무선 충전
+                        <a class="link-unstyled" href="/2018/10/12/2018-10-12-File System/">
+                            File System
                         </a>
                     
                 </h1>
@@ -180,7 +180,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+    <a class="category-link" href="/categories/OS/">OS</a>
 
 
     
@@ -189,23 +189,337 @@
             </div>
             
                 <div class="postShorten-content">
-                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRDL1aeugDFAUo" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRDL1aeugDFAUo</a></p>
-<p>오래 걸렸다. 다른 풀이 방법은 없을까?</p>
-<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
-<li><p>지도에 BC 정보들을 표시</p>
-<p>① bc index를 표시함</p>
-<p>② 중복되는 지점은 + 로 연결해서 표시 ( 지도의 type : String )</p>
+                    <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
+<h2 id="File-and-File-System"><a href="#File-and-File-System" class="headerlink" title="File and File System"></a>File and File System</h2><ul>
+<li><p>File </p>
+<ul>
+<li>이름을 통해 접근 (cf. 메모리는 주소를 통해 접근)</li>
+<li>A named collection of related information</li>
+<li>일반적으로 비화발성의 보조기억장치에 저장</li>
+<li>운영체제는 다양한 저장 장치를 file이라는 동일한 논리적 단위로 볼 수 있게 해줌</li>
+<li>연산<ul>
+<li>create / read / write / reposition (lseek) / delete / open / close</li>
+</ul>
 </li>
-<li><p>A, B 움직이며 충전</p>
-<p>① 이동한 위치를 + 를 기준하여 자름 ( 1+3 : 1번 bc , 3번 bc 겹치는 지점 )</p>
-<p>② BC 선택권이 겹치지 않는 경우, A 선택권 중 가장 power 센것과 B 선택권 중 가장 power 센것 더함</p>
-<p>③ BC 선택권이 겹치는 경우, 모든 경우 비교 ( A : 1 2 3 , B : 2 3 =&gt; 3*2 번의 비교 )</p>
+</ul>
+</li>
+<li><p>File attritbute ( or 파일의 metadata)</p>
+<ul>
+<li>파일 자체의 내용이 아니라 파일을 관리하기 위한 각종 정보들<ul>
+<li>파일 이름, 유형, 저장된 위치, 파일 사이즈</li>
+<li>접근 권한 (읽기, 쓰기, 실행), 시간 (생성, 변경, 사용), 소유자 등</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>File System<ul>
+<li>운영체제에서 파일을 관리하는 부분</li>
+<li>파일 및 파일의 메타데이터, 디렉토리 정보 등을 관리 </li>
+<li>파일의 저장 방법 결정</li>
+<li>파일 보호 등 </li>
+</ul>
+</li>
+</ul>
+<h2 id="Directory-and-Logical-Disk"><a href="#Directory-and-Logical-Disk" class="headerlink" title="Directory and Logical Disk"></a>Directory and Logical Disk</h2><ul>
+<li>Directory<ul>
+<li>파일의 메타데이터 중 일부를 보관하고 있는 일종의 특별한 파일 </li>
+<li>그 디렉토리에 속한 파일 이름 및 파일 attribute 들</li>
+<li>연산<ul>
+<li>search for a file, create a file, delete a file</li>
+<li>list a direcotry, rename a file, traverse the file system</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Partition (==Logical Disk)<ul>
+<li>하나의 물리적 디스크 안에 여러 파티션을 두는게 일바적</li>
+<li>물리적 디스크를 파티션으로 구성한 뒤 각각의 파티션에 file system을 깔거나 swapping 등 다른 용도로 사용 가능</li>
+</ul>
+</li>
+</ul>
+<h2 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem02.png" alt="img"></p>
+<ol>
+<li><p>open시스템 콜을 하면 운영체제에게 CPU 제어권이 넘어가</p>
+</li>
+<li><p>운영체제는 root를 먼저 open하여 root의 content를 찾아</p>
+</li>
+<li><p>a라는 파일의 메타데이터를 찾아서 이걸 메모리에 올려</p>
+</li>
+<li><p>a의 메타데이터로부터 a의 내용을 찾아</p>
+</li>
+<li><p>a안의 b의 metadata를 메모리에 올려</p>
 </li>
 </ol>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bcharge01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bcharge02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bcharge03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bcharge04.png" alt="img"></p>
+<p>각 프로세스마다 그 프로세스가 오픈한 파일들에 대한 메타데이터 포인터를 가지고 있는 일종의 배열이 있어</p>
+<p>b의 metadata를 가리키고 있는 index 가 file discriptor (fd) 를 사용자 프로세스에게 리턴</p>
+<p>read(fd..)</p>
+<p>fd를 가진 파일에서 읽어와</p>
+<p>A의 PCB에 가서 해당 fd에 대응하는 파일의 metadata로부터 b의 내용에 접근</p>
+<p>b 내용을 읽어서 운영체제가 자신의 메모리 공간 일부에 읽어놓음.</p>
+<p>copy해서 사용자 프로그램에게 전달</p>
+<p>다른 프로그램이나 이 프로그램이 동일한 파일의 동일한 위치를 read 요청하면</p>
+<p>디스크까지 가는것이 아니라 운영체제가 읽어놓은거 바로 전달 </p>
+<p>이게 바로 Buffer caching</p>
+<h2 id="File-Protection"><a href="#File-Protection" class="headerlink" title="File Protection"></a>File Protection</h2><p>각 파일에 대해 누구에게 어떤 유형의 접근(read/write/execution) 을 허락할 것인가?</p>
+<p>Access Control 방법</p>
+<ul>
+<li><p>Access Control Matrix</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem03.png" alt="img"></p>
+<ul>
+<li>공간 낭비 발생해서</li>
+<li>Access Control List : 파일별로 누구에게 어떤 접근 권한이 있는지 ( Linked list )</li>
+<li>Capability : 사용자 별로 자신이 접근 권한을 가진 파일 및 해당 권한 (Linked List)</li>
+</ul>
+</li>
+<li><p>Grouping</p>
+<ul>
+<li>전체 user를 owner / group / public 의 세 그룹으로 구분</li>
+<li>각 파일에 대해서 세 그룹의 접근 권한(rwx)을 3 비트씩으로 표시</li>
+<li><p>9개의 비트만으로 표현 가능</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem04.png" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><p>password</p>
+<ul>
+<li>파일 마다 패스워드 두는 방법 ( 디렉토리 파일에 두는 방법도 가능)</li>
+<li>모든 접근 권한에 대해 하나의 패스워드 : all or nothing</li>
+<li>접근 권한별 패스워드 : 암기문제, 관리문제</li>
+</ul>
+</li>
+</ul>
+<h2 id="File-System의-Mounting"><a href="#File-System의-Mounting" class="headerlink" title="File System의 Mounting"></a>File System의 Mounting</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem05.png" alt="img"></p>
+<p>루트 파일 시스템의 특정 디렉토리 이름에 또 다른 파티션에 있는 파일 시스템을 마운팅 하면,</p>
+<p>마운트 된 디렉토리에 접근하면 또 다른 파일 시스템의 루트 디렉토리에 접근하게 됨</p>
+<h2 id="Access-Methods"><a href="#Access-Methods" class="headerlink" title="Access Methods"></a>Access Methods</h2><p>시스템이 제공하는 파일 정보의 접근 방식</p>
+<ul>
+<li>순차 접근<ul>
+<li>카세트 테이프를 사용하는 방식처럼 접근</li>
+<li>읽거나 쓰면 offset은 자동적으로 접근</li>
+<li>a b c 순서대로 저장되어 있는데 b 보고 싶으면 a를 먼저 접근해야함 </li>
+</ul>
+</li>
+<li>직접 접근<ul>
+<li>파일을 구성하는 레코드를 임의의 순서로 접근할 수 있음</li>
+<li>a b c 순서대로 저장되어 있는데 b 보고 싶으면 바로 볼 수 있음</li>
+</ul>
+</li>
+</ul>
+<h2 id="Allocation-of-File-Data-in-Disk"><a href="#Allocation-of-File-Data-in-Disk" class="headerlink" title="Allocation of File Data in Disk"></a>Allocation of File Data in Disk</h2><ol>
+<li>contiguous allocation</li>
+<li>Linked Allocation</li>
+<li>Indexed Allocation</li>
+</ol>
+<h2 id="Contiguous-Allocation"><a href="#Contiguous-Allocation" class="headerlink" title="Contiguous Allocation"></a>Contiguous Allocation</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem06.png" alt="img"></p>
+<p>블럭의 크기가 2면, 0 1 이렇게 들어감.</p>
+<p>direcotory 에 5개의 파일 메타데이터를 가지고 있음</p>
+<p>0번 위치부터 길이 2면, 0 1 이렇게 저장됨</p>
+<ul>
+<li>단점<ul>
+<li>외부 조각이 생길 수 있어</li>
+<li>파일 크키가 커질 수 있다는 거에 제약 (=file grow가 어려움)</li>
+<li>파일 커질 것을 대비해서 미리 어느 정도 공간 할당하면 내부조각 발생 (공간의 낭비)</li>
+</ul>
+</li>
+<li>장점<ul>
+<li>Fast I/O</li>
+<li>한번의 seek/rotation 으로 많은 bite transfer</li>
+<li>Direct access(=random access) 가능</li>
+<li>mail의 경우, 앞에서부터 5번째 보고 싶다. 그럼 19에다가 5 더하면 돼</li>
+</ul>
+</li>
+</ul>
+<h2 id="Linked-Allocation"><a href="#Linked-Allocation" class="headerlink" title="Linked Allocation"></a>Linked Allocation</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem07.png" alt="img"></p>
+<p>jeep이란 파일의 시작은 9번이고, 두번째 블럭은 9번에 적혀 있어.</p>
+<p>시작위치만 directory가 가지고 있어.</p>
+<ul>
+<li>장점<ul>
+<li>외부조각 발생하지 않아</li>
+</ul>
+</li>
+<li>단점<ul>
+<li>직접 접근이 안돼</li>
+<li>4번째 위치 보려면 1, 2, 3 번째 봐야해</li>
+<li>한 sector가 고장나 pointer가 유실되면 많은 부분을 잃음</li>
+<li>pointer를 위한 공간이 block의 일부가 되어 공간 효율성이 떨어짐</li>
+</ul>
+</li>
+<li>변형<ul>
+<li>File allocation table (FAT) 파일 시스템</li>
+</ul>
+</li>
+</ul>
+<h2 id="Indexed-Allocation"><a href="#Indexed-Allocation" class="headerlink" title="Indexed Allocation"></a>Indexed Allocation</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem08.png" alt="img"></p>
+<ul>
+<li>장점<ul>
+<li>외부 조각 발생하지 않아</li>
+<li>direct access 가능</li>
+</ul>
+</li>
+<li>단점 <ul>
+<li>small file의 경우 공간 낭비</li>
+<li>too large file의 경우 하나의 block으로 index저장하기에 부족<ul>
+<li>해결<ul>
+<li>linked scheme</li>
+<li>multil-level index</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="UNIX-파일-시스템의-구조"><a href="#UNIX-파일-시스템의-구조" class="headerlink" title="UNIX 파일 시스템의 구조"></a>UNIX 파일 시스템의 구조</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem09.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem10.png" alt="img"></p>
+<ul>
+<li>Boot block<ul>
+<li>어떤 파일 시스템이든 가장 먼저 나와</li>
+<li>부팅에 필요한 정보</li>
+</ul>
+</li>
+<li>Super block<ul>
+<li>파일 시스템에 관한 총체적인 정보 담고 있음</li>
+<li>어디가 빈 블럭이고 어디가 사용되고 있는지</li>
+<li>어디부터 Inode list이고 data block 이고 ..</li>
+</ul>
+</li>
+<li>Inode list<ul>
+<li>파일 하나당 Inode 하나 할당</li>
+<li>Inode는 그 파일의 메타데이터를 가지고 있어</li>
+<li>파일의 이름은 디렉토리가 직접 가지고 있어</li>
+<li>indirect : 따라가면 index를 거쳐서 파일의 위치 정보 찾아</li>
+</ul>
+</li>
+<li>Data block<ul>
+<li>파일의 실제 내용 보관</li>
+</ul>
+</li>
+</ul>
+<h2 id="FAT-file-system"><a href="#FAT-file-system" class="headerlink" title="FAT file system"></a>FAT file system</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem11.png" alt="img"></p>
+<ul>
+<li>FAT<ul>
+<li>위치 정보만 FAT가 가지고 있어</li>
+<li>FAT의 217 번지에 217번지의 다음 블럭 번지가 저장되어 있어</li>
+<li>직접 접근 가능(메모리에 올라와 있는 FAT만 참고하여 바로 위치 알아낼 수 있어)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Free-Space-Management"><a href="#Free-Space-Management" class="headerlink" title="Free-Space Management"></a>Free-Space Management</h2><p>중간 중간 비어 있는 블럭은 어떻게 관리?</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem12.png" alt="img"></p>
+<ul>
+<li>bit<ul>
+<li>부가적인 공간을 필요</li>
+<li>연속적인 n개의 free block을 찾는데 효과적</li>
+<li>연속적으로 0인 공간을 찾는데 쉬워</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem13.png" alt="img"></p>
+<ul>
+<li><p>Linked Free-Space List on Disk</p>
+<ul>
+<li>모든 free block들을 링크로 연결 (free list)</li>
+<li>연속적인 가용 공간을 찾는 것은 쉽지 않다</li>
+<li>공간의 낭비가 없다</li>
+</ul>
+</li>
+<li><p>Grouping</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem20.png" alt="img"></p>
+<ul>
+<li>비어 있는 위치가 index 역할</li>
+<li><p>linked list 방법의 변형</p>
+</li>
+<li><p>첫번째 free block 이 n개의 포인터를 가짐</p>
+</li>
+</ul>
+</li>
+<li><p>Counting</p>
+<ul>
+<li>(first free block, # of contiguous free blocks) 을 유지 </li>
+</ul>
+</li>
+</ul>
+<h2 id="Directory-Implementation"><a href="#Directory-Implementation" class="headerlink" title="Directory Implementation"></a>Directory Implementation</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem14.png" alt="img"></p>
+<ul>
+<li>Linear list<ul>
+<li>&lt;file name, file의 metadata)의 list</li>
+<li>구현이 간단</li>
+<li>디렉토리 내에 파일이 있는지 찾기위해서는 linear search 필요</li>
+</ul>
+</li>
+<li><p>Hash table</p>
+<ul>
+<li>linear list + hashing</li>
+<li>file name을 이 파일의 linear list의 위치로 바꿔줌</li>
+<li>search time을 없앰</li>
+<li>collision 발생 가능</li>
+</ul>
+</li>
+<li><p>file 의 metadata 보관 위치</p>
+<ul>
+<li>디렉토리 내에 직접 보관</li>
+<li>디렉토리에는 포인터를 두고 다른 곳에 보관<ul>
+<li>inode, FAT 등</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Long file name의 지원</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem15.png" alt="img"></p>
+<ul>
+<li><file name,="" file의="" 메타데이터=""> 의 리스트에서 각 entry는 일반적으로 고정 크기</file></li>
+<li>file name이 고정 크기의 entry길이보다 길어지는 경우 entry의 마지막 부분에 이름의 뒷 부분이 위치한 곳의 포인터를 두는 방법</li>
+<li>이름의 나머지 부분은 동일한 directory file의 일부에 존재</li>
+</ul>
+</li>
+</ul>
+<h2 id="VFS-and-NFS"><a href="#VFS-and-NFS" class="headerlink" title="VFS and NFS"></a>VFS and NFS</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem16.png" alt="img"></p>
+<ul>
+<li>Virtual File System (VFS)<ul>
+<li>서로 다른 다양한 file system에 대해 동일한 시스템콜 인터페이스를 통해 접근할 수 있게 해주는 OS의 layer</li>
+</ul>
+</li>
+<li>Network File System<ul>
+<li>분산 시스템에서는 네트워크를 통해 파일이 공유될 수 있음</li>
+<li>분산 환경에서의 대표적인 파일 공유 방법</li>
+</ul>
+</li>
+</ul>
+<h2 id="Page-cache-and-Buffer-cache"><a href="#Page-cache-and-Buffer-cache" class="headerlink" title="Page cache and Buffer cache"></a>Page cache and Buffer cache</h2><p>OS는 사용자 프로그램의 요청을 받아서 디스크에서 읽어온 내용을 그냥 전달하고 끝내는 것이 아니라, 자신의 버퍼 케쉬 영역에 읽어 놓고, 그 내용을 카피해서 사용자 프로그램에게 넘겨줘</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem17.png" alt="img"></p>
+<ul>
+<li>Page cache<ul>
+<li>Virtual memory의 pagin system에서 사용하는 pafe frame을 caching의 관점에서 설명하는 용어</li>
+<li>Memory-Mapped I/O를 쓰는 경우 file의 I/O에서도 page cache 사용</li>
+</ul>
+</li>
+<li>Memory-Mapped I/O<ul>
+<li>file의 일부를 virtual memory에 mapping</li>
+<li>매핑 시킨 영역에 대한 메모리 접근 연산은 파일의 입출력을 수행하게 함</li>
+</ul>
+</li>
+<li>Buffer cache<ul>
+<li>파일 시스템을 통한 I/O 연산은 메모리의 특정 영역인 buffer cache사용</li>
+<li>file 사용의 locality 활용</li>
+<li>한번 읽어온 block에 대한 후속 요청시 buffer cache에서 즉시 전달</li>
+<li>모든 프로세스가 공용으로 사용</li>
+<li>Replacement algiritm 필요(LRU, LFU 등)</li>
+</ul>
+</li>
+<li>Unified Buffer Cache<ul>
+<li>최근의 OS에서는 기존의 buffer cahce가 page cache에 통합</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/osfilesystem18.png" alt="img"></p>
+<ul>
+<li>왼쪽<ul>
+<li>read/write system call 하면 항상 OS에게 요청해서 받아옴</li>
+<li>memory mapped IO를 쓰면, 일단 페이지 케쉬에 올라온 내용을 사용자 프로세스가 직접 메모리 접근해서 IO (이미 메모리에 올라온 내용은 커널의 도움을 받지 않음)</li>
+</ul>
+</li>
+</ul>
 
                     
                         
@@ -213,7 +527,7 @@
                     
                     
                         <p>
-                            <a href="/2018/10/12/2018-10-12-무선 충전/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/10/12/2018-10-12-File System/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -700,75 +1014,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/10/09/2018-10-09-활주로 건설/">
-                            활주로 건설
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-10-09T00:00:00+09:00">
-	
-		    Oct 09, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/algorithm/">algorithm</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeW7FakkUDFAVH" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeW7FakkUDFAVH</a></p>
-<p>경우의 수를 나눈 후 조건에 맞게 짜려고 하였다. 해설을 보고 DFS로 풀면 쉽게 풀 수 있다는 것을 알았다.</p>
-<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
-<li><p>모든 행과 열을 차례대로 체크한다.</p>
-</li>
-<li><p>현재 위치와 다음 위치를 비교한다.</p>
-<ul>
-<li><p>같은 높이인 경우 : 다음 위치 부터 체크</p>
-</li>
-<li><p>오르막인 경우 : 현재 위치 기준해서 왼쪽으로 경사로 둘 수 있는지 체크</p>
-</li>
-<li><p>내리막인 경우 : 현재 위치 기준해서 오른쪽으로 경사로 둘 수 있는지 체크</p>
-</li>
-<li>그 이외의 경우 : 이번 행이나 열은 실패</li>
-</ul>
-</li>
-</ol>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy04.png" alt="img"></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/10/09/2018-10-09-활주로 건설/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
                         <a class="link-unstyled" href="/2018/10/09/2018-10-09-탐주범 검거/">
                             탈주범 검거
                         </a>
@@ -815,217 +1060,6 @@
                     
                         <p>
                             <a href="/2018/10/09/2018-10-09-탐주범 검거/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/10/09/2018-10-09-Deadlock/">
-                            Deadlock
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-10-09T00:00:00+09:00">
-	
-		    Oct 09, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/OS/">OS</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
-<h2 id="Deadlock"><a href="#Deadlock" class="headerlink" title="Deadlock"></a>Deadlock</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock01.png" alt="img"></p>
-<p>일련의 프로세스들이 서로가 가진 자원을 기다리며 block된 상태</p>
-<ul>
-<li>자원<ul>
-<li>하드웨어, 소프트웨어 등을 포함하느 개념</li>
-<li>ex) I/O device, CPU cycle, memory space, semaphore 등</li>
-</ul>
-</li>
-<li>예시<ul>
-<li>시스템 2개의 tape drive가 있다</li>
-<li>프로세스 P1과 P2 각각이 하나의 tape drive 를 보유한 채 다른 하나를 기다리고 있음</li>
-</ul>
-</li>
-</ul>
-<h2 id="Deadlock-발생의-4가지-조건"><a href="#Deadlock-발생의-4가지-조건" class="headerlink" title="Deadlock 발생의 4가지 조건"></a>Deadlock 발생의 4가지 조건</h2><ul>
-<li>Mutual Exlusioin<ul>
-<li>매 순간 하나의 프로세스만이 자원을 사용할 수 있음</li>
-</ul>
-</li>
-<li>No Preemption <ul>
-<li>프로세스는 자원을 스스로 내어놓을 뿐 강제로 뺏기지 않음 </li>
-</ul>
-</li>
-<li>Hold and wiat <ul>
-<li>자원을 가진 프로세스가 다른 자원을 기달리때 보유 자원을 놓지 않고 계속 가지고 있음</li>
-</ul>
-</li>
-<li>Circular wait<ul>
-<li>자워을 기다리는 프로세스 간에 사이클이 형성되어야 함 </li>
-<li>P0은 P1이 가진 자원을 기다림</li>
-<li>P1은 P2가 가진 자원을 기다림 ..</li>
-</ul>
-</li>
-</ul>
-<h2 id="자원-할당-그래프"><a href="#자원-할당-그래프" class="headerlink" title="자원 할당 그래프"></a>자원 할당 그래프</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock02.png" alt="img"></p>
-<ul>
-<li><p>자원에서 프로세스쪽으로 나가는 화살표 </p>
-</li>
-<li><p>이 프로세스가 이 자원을 가지고 있다.</p>
-</li>
-<li><p>프로세스에서 자원쪽으로 나가는 화살표</p>
-<ul>
-<li>이 프로세스가 이 자원을 요청</li>
-</ul>
-</li>
-<li><p>자원 안에 동그라미</p>
-<ul>
-<li>자원 개수</li>
-</ul>
-</li>
-<li><p>그래프 안에 cycle이 없으면 deadlock이 아니다</p>
-</li>
-<li><p>cycle이 있으면</p>
-<ul>
-<li>자원당 인스턴스가 하나밖에 없으면, 데드락</li>
-<li>자원의 인스턴스가 여러개면, 데드락수도 있고 아닐수도 있고</li>
-</ul>
-</li>
-<li><p>왼쪽은 데드락, 오른쪽은 데드락이 아님</p>
-</li>
-</ul>
-<h2 id="Deadlock-Prevention"><a href="#Deadlock-Prevention" class="headerlink" title="Deadlock Prevention"></a>Deadlock Prevention</h2><p>자원 할당시 Deadlock의 4가지 필요 조건 중 어느 하나가 만족되지 않도록 하는 것 </p>
-<ul>
-<li>Mutual Exclusion<ul>
-<li>공유해서는 안되는 자원의 경우 반드시 성립해야함 </li>
-</ul>
-</li>
-<li>Hold and wait<ul>
-<li>프로세스 시작 시 모든 필요한 자원을 할당받게 하는 방법</li>
-<li>자원이 필요할 경우 보유 자원을 모두 놓고 다시 요청</li>
-</ul>
-</li>
-<li>No preemption <ul>
-<li>빼앗아 올수 있게 하면 됨 </li>
-<li>모든 필요한 자원을 얻을 수 있을 때 그 프로세스는 다시 시작된다. </li>
-</ul>
-</li>
-<li>Circular Wait<ul>
-<li>모든 자원 유형에 할당 순서를 정하여 정해진 순서대로 자원 할당</li>
-</ul>
-</li>
-</ul>
-<h2 id="Deadlock-Avoidance"><a href="#Deadlock-Avoidance" class="headerlink" title="Deadlock Avoidance"></a>Deadlock Avoidance</h2><p>자원 요청에 대한 부가적인 정보를 이용해서 데드락의 가능성이 없는 경우에만 자원 할당.</p>
-<p>데드락으로부터 항상 safe한 상태를 유지.</p>
-<p>자원 요청에 대한 부가정보를 이용해서 자원 할당이 데드락으로부터 safe한지를 동적으로 조사해서 안전한 경우에만 할당.</p>
-<p>프로세스들이 필요로 하는 각 자원별 최대 사용량을 미리 선언</p>
-<ul>
-<li>Single instance per resouce types <ul>
-<li>Resource Allocation Graph algorithm</li>
-</ul>
-</li>
-<li>Multiple instance per resouce types  <ul>
-<li>Banker’s Algorithm</li>
-</ul>
-</li>
-</ul>
-<h2 id="Resource-Allocation-Graph-algorithm"><a href="#Resource-Allocation-Graph-algorithm" class="headerlink" title="Resource Allocation Graph algorithm"></a>Resource Allocation Graph algorithm</h2><p>자원 당 인스턴스 하나</p>
-<p>데드락의 위험성이 있으면 애초부터 자원을 내주지 않음.</p>
-<p>점선 화살표 : 이 프로세스가 평생 적어도 한번 이 자원을 사용할 것이다.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock03.png" alt="img"></p>
-<h2 id="Banker’s-Algorithm"><a href="#Banker’s-Algorithm" class="headerlink" title="Banker’s Algorithm"></a>Banker’s Algorithm</h2><p>자원 당 인스턴스 여러개</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock04.png" alt="img"></p>
-<p>5개의 프로세스 : P0 P1 P2 P3 P4</p>
-<p>A자원 인스턴스 10개</p>
-<p>B자원 인스턴스 5개</p>
-<p>C자원 인스턴스 7개</p>
-<ul>
-<li><p>Allocation</p>
-<ul>
-<li>0번 프로세스는 현재 A 0개 / B 1개 / C 0개 할당되어 있음 </li>
-</ul>
-</li>
-<li><p>Available</p>
-<ul>
-<li>현재 가용 자원</li>
-<li>아무도 사용하지 않고 남아 있는 자원</li>
-</ul>
-</li>
-<li>Max<ul>
-<li>이 프로세스가 시작될 때, 이 프로세스가 평생 최대로 사용할 자원 개수를 선언했음</li>
-</ul>
-</li>
-<li>Need<ul>
-<li>추가로 요청 할 수  있는 양 </li>
-</ul>
-</li>
-</ul>
-<p>이 알고리즘은 프로세스가 자원을 요청했을 때, 이 요청을 받아들일것인지 결정하는 것임 </p>
-<p>프로세스가 최대(Need)로 요청할 것을 가정한다. 그리고 이게 가용 자원으로 가능한지 체크. 가용자원으로 가능하지 않으면 요청을 거절.</p>
-<p>P0는 7 4 3 으로 요청할것이다. 이게 3 3 2 로 커버 가능? NO. 요청 거절.</p>
-<h2 id="Deadlock-Detection-and-recovery"><a href="#Deadlock-Detection-and-recovery" class="headerlink" title="Deadlock Detection and recovery"></a>Deadlock Detection and recovery</h2><p>Deadlock 발생은 허용하되 그에 대한 detection 루틴을 두어 deadlock 발생시 recover</p>
-<ul>
-<li>Single instance per resouce types <ul>
-<li>Resource Allocation Graph algorithm</li>
-<li>cycle이 곧 데드락</li>
-</ul>
-</li>
-<li><p>Multiple instance per resouce types  </p>
-<ul>
-<li>Banker’s Algorithm과 유사한 방법 활용</li>
-</ul>
-</li>
-<li><p>Recovery</p>
-<ul>
-<li><p>Process Termination</p>
-<ul>
-<li>abort all deadlocked processes(한꺼번에)</li>
-<li>데드락에 연루된 프로세스드을 하나씩 죽여봄. 여전히 데드락이면 또 하나의 다른 프로세스 죽여봄.</li>
-</ul>
-</li>
-<li><p>Resource Preemption</p>
-<ul>
-<li>데드락에 연루된 프로세스로부터 자원을 뺏음</li>
-<li>safe state로 roolback하여 prcess를 restart</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Deadlock-Ignorance"><a href="#Deadlock-Ignorance" class="headerlink" title="Deadlock Ignorance"></a>Deadlock Ignorance</h2><p>Deadlock을 시스템이 책임지지 않음</p>
-<p>UNIX를 포함한 대부분의 OS가 채택</p>
-<p>데드락이 일어나지 않는다고 생각하고 아무런 조치 취하지 않음</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/10/09/2018-10-09-Deadlock/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -1496,15 +1530,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/10/07/2018-10-07-특이한 자석/">
-                            특이한 자석
+                        <a class="link-unstyled" href="/2018/10/09/2018-10-09-활주로 건설/">
+                            활주로 건설
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2018-10-07T00:00:00+09:00">
+    <time datetime="2018-10-09T00:00:00+09:00">
 	
-		    Oct 07, 2018
+		    Oct 09, 2018
     	
     </time>
     
@@ -1519,16 +1553,27 @@
             </div>
             
                 <div class="postShorten-content">
-                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeV9sKkcoDFAVH" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeV9sKkcoDFAVH</a>    </p>
+                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeW7FakkUDFAVH" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeW7FakkUDFAVH</a></p>
+<p>경우의 수를 나눈 후 조건에 맞게 짜려고 하였다. 해설을 보고 DFS로 풀면 쉽게 풀 수 있다는 것을 알았다.</p>
 <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
-<li>현재 톱니 바퀴 기준으로 왼쪽과 오른쪽 확인 </li>
-<li>각 톱니바퀴 회전</li>
-<li>결과 값 계산</li>
-<li>1번부터 다시</li>
+<li><p>모든 행과 열을 차례대로 체크한다.</p>
+</li>
+<li><p>현재 위치와 다음 위치를 비교한다.</p>
+<ul>
+<li><p>같은 높이인 경우 : 다음 위치 부터 체크</p>
+</li>
+<li><p>오르막인 경우 : 현재 위치 기준해서 왼쪽으로 경사로 둘 수 있는지 체크</p>
+</li>
+<li><p>내리막인 경우 : 현재 위치 기준해서 오른쪽으로 경사로 둘 수 있는지 체크</p>
+</li>
+<li>그 이외의 경우 : 이번 행이나 열은 실패</li>
+</ul>
+</li>
 </ol>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/magne01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/magne02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/magne03.png" alt="img"></p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy04.png" alt="img"></p>
 
                     
                         
@@ -1536,7 +1581,218 @@
                     
                     
                         <p>
-                            <a href="/2018/10/07/2018-10-07-특이한 자석/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/10/09/2018-10-09-활주로 건설/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/10/09/2018-10-09-Deadlock/">
+                            Deadlock
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-10-09T00:00:00+09:00">
+	
+		    Oct 09, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/OS/">OS</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
+<h2 id="Deadlock"><a href="#Deadlock" class="headerlink" title="Deadlock"></a>Deadlock</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock01.png" alt="img"></p>
+<p>일련의 프로세스들이 서로가 가진 자원을 기다리며 block된 상태</p>
+<ul>
+<li>자원<ul>
+<li>하드웨어, 소프트웨어 등을 포함하느 개념</li>
+<li>ex) I/O device, CPU cycle, memory space, semaphore 등</li>
+</ul>
+</li>
+<li>예시<ul>
+<li>시스템 2개의 tape drive가 있다</li>
+<li>프로세스 P1과 P2 각각이 하나의 tape drive 를 보유한 채 다른 하나를 기다리고 있음</li>
+</ul>
+</li>
+</ul>
+<h2 id="Deadlock-발생의-4가지-조건"><a href="#Deadlock-발생의-4가지-조건" class="headerlink" title="Deadlock 발생의 4가지 조건"></a>Deadlock 발생의 4가지 조건</h2><ul>
+<li>Mutual Exlusioin<ul>
+<li>매 순간 하나의 프로세스만이 자원을 사용할 수 있음</li>
+</ul>
+</li>
+<li>No Preemption <ul>
+<li>프로세스는 자원을 스스로 내어놓을 뿐 강제로 뺏기지 않음 </li>
+</ul>
+</li>
+<li>Hold and wiat <ul>
+<li>자원을 가진 프로세스가 다른 자원을 기달리때 보유 자원을 놓지 않고 계속 가지고 있음</li>
+</ul>
+</li>
+<li>Circular wait<ul>
+<li>자워을 기다리는 프로세스 간에 사이클이 형성되어야 함 </li>
+<li>P0은 P1이 가진 자원을 기다림</li>
+<li>P1은 P2가 가진 자원을 기다림 ..</li>
+</ul>
+</li>
+</ul>
+<h2 id="자원-할당-그래프"><a href="#자원-할당-그래프" class="headerlink" title="자원 할당 그래프"></a>자원 할당 그래프</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock02.png" alt="img"></p>
+<ul>
+<li><p>자원에서 프로세스쪽으로 나가는 화살표 </p>
+</li>
+<li><p>이 프로세스가 이 자원을 가지고 있다.</p>
+</li>
+<li><p>프로세스에서 자원쪽으로 나가는 화살표</p>
+<ul>
+<li>이 프로세스가 이 자원을 요청</li>
+</ul>
+</li>
+<li><p>자원 안에 동그라미</p>
+<ul>
+<li>자원 개수</li>
+</ul>
+</li>
+<li><p>그래프 안에 cycle이 없으면 deadlock이 아니다</p>
+</li>
+<li><p>cycle이 있으면</p>
+<ul>
+<li>자원당 인스턴스가 하나밖에 없으면, 데드락</li>
+<li>자원의 인스턴스가 여러개면, 데드락수도 있고 아닐수도 있고</li>
+</ul>
+</li>
+<li><p>왼쪽은 데드락, 오른쪽은 데드락이 아님</p>
+</li>
+</ul>
+<h2 id="Deadlock-Prevention"><a href="#Deadlock-Prevention" class="headerlink" title="Deadlock Prevention"></a>Deadlock Prevention</h2><p>자원 할당시 Deadlock의 4가지 필요 조건 중 어느 하나가 만족되지 않도록 하는 것 </p>
+<ul>
+<li>Mutual Exclusion<ul>
+<li>공유해서는 안되는 자원의 경우 반드시 성립해야함 </li>
+</ul>
+</li>
+<li>Hold and wait<ul>
+<li>프로세스 시작 시 모든 필요한 자원을 할당받게 하는 방법</li>
+<li>자원이 필요할 경우 보유 자원을 모두 놓고 다시 요청</li>
+</ul>
+</li>
+<li>No preemption <ul>
+<li>빼앗아 올수 있게 하면 됨 </li>
+<li>모든 필요한 자원을 얻을 수 있을 때 그 프로세스는 다시 시작된다. </li>
+</ul>
+</li>
+<li>Circular Wait<ul>
+<li>모든 자원 유형에 할당 순서를 정하여 정해진 순서대로 자원 할당</li>
+</ul>
+</li>
+</ul>
+<h2 id="Deadlock-Avoidance"><a href="#Deadlock-Avoidance" class="headerlink" title="Deadlock Avoidance"></a>Deadlock Avoidance</h2><p>자원 요청에 대한 부가적인 정보를 이용해서 데드락의 가능성이 없는 경우에만 자원 할당.</p>
+<p>데드락으로부터 항상 safe한 상태를 유지.</p>
+<p>자원 요청에 대한 부가정보를 이용해서 자원 할당이 데드락으로부터 safe한지를 동적으로 조사해서 안전한 경우에만 할당.</p>
+<p>프로세스들이 필요로 하는 각 자원별 최대 사용량을 미리 선언</p>
+<ul>
+<li>Single instance per resouce types <ul>
+<li>Resource Allocation Graph algorithm</li>
+</ul>
+</li>
+<li>Multiple instance per resouce types  <ul>
+<li>Banker’s Algorithm</li>
+</ul>
+</li>
+</ul>
+<h2 id="Resource-Allocation-Graph-algorithm"><a href="#Resource-Allocation-Graph-algorithm" class="headerlink" title="Resource Allocation Graph algorithm"></a>Resource Allocation Graph algorithm</h2><p>자원 당 인스턴스 하나</p>
+<p>데드락의 위험성이 있으면 애초부터 자원을 내주지 않음.</p>
+<p>점선 화살표 : 이 프로세스가 평생 적어도 한번 이 자원을 사용할 것이다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock03.png" alt="img"></p>
+<h2 id="Banker’s-Algorithm"><a href="#Banker’s-Algorithm" class="headerlink" title="Banker’s Algorithm"></a>Banker’s Algorithm</h2><p>자원 당 인스턴스 여러개</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock04.png" alt="img"></p>
+<p>5개의 프로세스 : P0 P1 P2 P3 P4</p>
+<p>A자원 인스턴스 10개</p>
+<p>B자원 인스턴스 5개</p>
+<p>C자원 인스턴스 7개</p>
+<ul>
+<li><p>Allocation</p>
+<ul>
+<li>0번 프로세스는 현재 A 0개 / B 1개 / C 0개 할당되어 있음 </li>
+</ul>
+</li>
+<li><p>Available</p>
+<ul>
+<li>현재 가용 자원</li>
+<li>아무도 사용하지 않고 남아 있는 자원</li>
+</ul>
+</li>
+<li>Max<ul>
+<li>이 프로세스가 시작될 때, 이 프로세스가 평생 최대로 사용할 자원 개수를 선언했음</li>
+</ul>
+</li>
+<li>Need<ul>
+<li>추가로 요청 할 수  있는 양 </li>
+</ul>
+</li>
+</ul>
+<p>이 알고리즘은 프로세스가 자원을 요청했을 때, 이 요청을 받아들일것인지 결정하는 것임 </p>
+<p>프로세스가 최대(Need)로 요청할 것을 가정한다. 그리고 이게 가용 자원으로 가능한지 체크. 가용자원으로 가능하지 않으면 요청을 거절.</p>
+<p>P0는 7 4 3 으로 요청할것이다. 이게 3 3 2 로 커버 가능? NO. 요청 거절.</p>
+<h2 id="Deadlock-Detection-and-recovery"><a href="#Deadlock-Detection-and-recovery" class="headerlink" title="Deadlock Detection and recovery"></a>Deadlock Detection and recovery</h2><p>Deadlock 발생은 허용하되 그에 대한 detection 루틴을 두어 deadlock 발생시 recover</p>
+<ul>
+<li>Single instance per resouce types <ul>
+<li>Resource Allocation Graph algorithm</li>
+<li>cycle이 곧 데드락</li>
+</ul>
+</li>
+<li><p>Multiple instance per resouce types  </p>
+<ul>
+<li>Banker’s Algorithm과 유사한 방법 활용</li>
+</ul>
+</li>
+<li><p>Recovery</p>
+<ul>
+<li><p>Process Termination</p>
+<ul>
+<li>abort all deadlocked processes(한꺼번에)</li>
+<li>데드락에 연루된 프로세스드을 하나씩 죽여봄. 여전히 데드락이면 또 하나의 다른 프로세스 죽여봄.</li>
+</ul>
+</li>
+<li><p>Resource Preemption</p>
+<ul>
+<li>데드락에 연루된 프로세스로부터 자원을 뺏음</li>
+<li>safe state로 roolback하여 prcess를 restart</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Deadlock-Ignorance"><a href="#Deadlock-Ignorance" class="headerlink" title="Deadlock Ignorance"></a>Deadlock Ignorance</h2><p>Deadlock을 시스템이 책임지지 않음</p>
+<p>UNIX를 포함한 대부분의 OS가 채택</p>
+<p>데드락이 일어나지 않는다고 생각하고 아무런 조치 취하지 않음</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/10/09/2018-10-09-Deadlock/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -1622,8 +1878,66 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/10/06/2018-10-06-CPU Scheduling/">
-                            CPU Scheduling
+                        <a class="link-unstyled" href="/2018/10/07/2018-10-07-특이한 자석/">
+                            특이한 자석
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-10-07T00:00:00+09:00">
+	
+		    Oct 07, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeV9sKkcoDFAVH" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeV9sKkcoDFAVH</a>    </p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li>현재 톱니 바퀴 기준으로 왼쪽과 오른쪽 확인 </li>
+<li>각 톱니바퀴 회전</li>
+<li>결과 값 계산</li>
+<li>1번부터 다시</li>
+</ol>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/magne01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/magne02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/magne03.png" alt="img"></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/10/07/2018-10-07-특이한 자석/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/10/06/2018-10-06-Process Synchronization/">
+                            Process Sysncronization
                         </a>
                     
                 </h1>
@@ -1646,257 +1960,238 @@
             
                 <div class="postShorten-content">
                     <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
-<h2 id="CPU-and-I-O-Bursts-in-program-execution"><a href="#CPU-and-I-O-Bursts-in-program-execution" class="headerlink" title="CPU and I/O Bursts in program execution"></a>CPU and I/O Bursts in program execution</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100601.png" alt="img"></p>
-<h2 id="CPU-burst-time-의-분포"><a href="#CPU-burst-time-의-분포" class="headerlink" title="CPU-burst time 의 분포"></a>CPU-burst time 의 분포</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100602.png" alt="img"></p>
-<p>여러 종료의 job(process)이 섞여 있기 때문에 CPU 스케쥴링이 필요하다.</p>
+<h2 id="데이터의-접근"><a href="#데이터의-접근" class="headerlink" title="데이터의 접근"></a>데이터의 접근</h2><p>데이터를 읽어와서 연산하고 다시 저장</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100601.png" alt="img"></p>
+<h2 id="Race-Condition"><a href="#Race-Condition" class="headerlink" title="Race Condition"></a>Race Condition</h2><p>S-box를 공유하는 E-box가 여럿 있는 경우 Race Condition의 가능성이 있음</p>
+<p>ex) 커널 모드 수행 중 인터럽트로 커널모드 다른 루틴 수행시</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100602.png" alt="img"></p>
+<h2 id="race-condition-1-3"><a href="#race-condition-1-3" class="headerlink" title="race condition (1/3)"></a>race condition (1/3)</h2><ul>
+<li>kernel 수행 중 인터럽트 발생</li>
+<li>커널모드 running 중 inetrrupt 발생하여 인터럽트 처리 루틴이 수행</li>
+<li>양쪽 다 커널 코드이므로 kernel address space 공유</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100603.png" alt="img"></p>
+<h2 id="race-condition-2-3"><a href="#race-condition-2-3" class="headerlink" title="race condition (2/3)"></a>race condition (2/3)</h2><p>해결책 : 커널 모드에서 수행 중일 때는 CPU를 preempt 하지 않음. 커널 모드에서 사용자 모드로 돌아 갈때 preempt.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100604.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100605.png" alt="img"></p>
+<h2 id="race-condition-3-3"><a href="#race-condition-3-3" class="headerlink" title="race condition (3/3)"></a>race condition (3/3)</h2><ul>
+<li><p>CPU가 여러개인 경우</p>
+</li>
+<li><p>해결</p>
 <ul>
-<li>interative job 에게 적절한 response 제공 요망</li>
-<li>CPU와 I/O 장치 등 시스템 자원을 고류 효율적으로 사용</li>
-</ul>
-<h2 id="프로세의-특성-분류"><a href="#프로세의-특성-분류" class="headerlink" title="프로세의 특성 분류"></a>프로세의 특성 분류</h2><ul>
-<li>I/O-bound process<ul>
-<li>CPU를 잡고 계산하는 시간보다 I/O에 많은 시간이 필요한 job</li>
-</ul>
-</li>
-<li>CPU-bound process<ul>
-<li>계산 위주의 job</li>
+<li>커널 내부에 있는 각 공유 데이터에 접근할 때마다 그 데이터에 lock / unlock을 하는 방법</li>
+<li>한번에 하나의 CPU만이 커널에 들어갈 수 있게 하는 방법</li>
 </ul>
 </li>
 </ul>
-<h2 id="CPU-Scheduler-amp-Dispatcher"><a href="#CPU-Scheduler-amp-Dispatcher" class="headerlink" title="CPU Scheduler &amp; Dispatcher"></a>CPU Scheduler &amp; Dispatcher</h2><ul>
-<li><p>CPU Scheduler </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100606.png" alt="img">​    </p>
+<h2 id="Process-Syncronization-문제"><a href="#Process-Syncronization-문제" class="headerlink" title="Process Syncronization 문제"></a>Process Syncronization 문제</h2><ul>
+<li>공유 데이터의 동시 접근은 데이터의 불일치 문제 발생시킬 수 있음</li>
+<li>일관성 유지를 위해서 협력 프로세스간의 실행순서를 정해주는 매커니즘 필요</li>
+<li>Race condition<ul>
+<li>여러 프로세스들이 동시에 공유 데이터를 접근하는 상황</li>
+<li>데이터의 최정 연산 결과는 마지막에 그 데이터를 다룬 프로세스에 따라다라짐</li>
+<li>이를 막기 위해 concurrent processsms 동기화 되어야한다.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100607.png" alt="img">    </p>
+<h2 id="The-Critical-Section-Problem"><a href="#The-Critical-Section-Problem" class="headerlink" title="The Critical-Section Problem"></a>The Critical-Section Problem</h2><p>공유 데이터를 접근하는 코드</p>
 <ul>
-<li>운영체제 안에서 CPU 스케쥴링 하는 코드</li>
-<li>Ready 상태의 프로세스 중에서 이번에 CPU를 줄 프로세스를 고른다.</li>
+<li>n개의 프로세스가 공유 데이터를 동시에 사용하기를 원하는 경우</li>
+<li>각 프로세스의 code segment에는 공유 데이터를 접근하는 코드인 ciritical sectoin이 존재</li>
+<li>하나의 프로세스가 ciritical section에 있을 때 다른 모든 프로세스는 ciritical section에 들어갈 수 없어야한다.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100608.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100701.png" alt="img"></p>
+<h2 id="프로그램적-해결법의-충족-조건"><a href="#프로그램적-해결법의-충족-조건" class="headerlink" title="프로그램적 해결법의 충족 조건"></a>프로그램적 해결법의 충족 조건</h2><ul>
+<li>Mutual Exclution<ul>
+<li>프로세스가 pi가 critical section 부분을 수행중이면 다른 모든 프로세스들은 그들의 critical section에 들어가면 안된다.</li>
 </ul>
 </li>
-<li><p>Dispatcher</p>
+<li>Progress<ul>
+<li>아무도 critical section에 있지 않은 상태에서 critical section에 들어가고자 하는 프로세스가 있으면 critical section에 들어가게 해주어야 한다.</li>
+</ul>
+</li>
+<li>Bounded Wating<ul>
+<li>프로세스가 critical section에 들어가려고 요청한 후부터 그 요청이 허용될 때까지 다른 프로세스들이 critical section에 들어가는 횟수에 한계가 있어야 한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="알고리즘-1"><a href="#알고리즘-1" class="headerlink" title="알고리즘 1"></a>알고리즘 1</h2><p>P0</p>
+<p>int turn ;</p>
+<p>initially turn=0; (turn이 0 : 0번 프로세스 차례)</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100702.png" alt="img"></p>
+<p>P0이 빈번히 들어가고 싶으면?</p>
+<h2 id="알고리즘-2"><a href="#알고리즘-2" class="headerlink" title="알고리즘 2"></a>알고리즘 2</h2><p>boolean flag[2];</p>
+<p>initially flag[모두] =false; // no one is in CS</p>
+<p>Pi ready to enter its critical section if flag[i] == true</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100703.png" alt="img"></p>
+<p>들어가기전에 둘다 깃발을 들으면 아무도 못들어가.</p>
+<h2 id="알고리즘3-Peterson’s-Algorithm"><a href="#알고리즘3-Peterson’s-Algorithm" class="headerlink" title="알고리즘3 (Peterson’s Algorithm)"></a>알고리즘3 (Peterson’s Algorithm)</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100704.png" alt="img"></p>
+<p>Busy Wating (spin lock)</p>
+<p>내가 CPU를 잡고 while문에 있는데, 그때 다른 애가 CPU를 잡으면 ? </p>
+<h2 id="Sysnchnization-Hardware"><a href="#Sysnchnization-Hardware" class="headerlink" title="Sysnchnization Hardware"></a>Sysnchnization Hardware</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100705.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100706.png" alt="img"></p>
 <ul>
-<li>CPU의 제어권을 CPU scheduler 에해 선택된 프로세스에게 넘긴다.</li>
-<li>이 과정을 context switch 라고 한다.</li>
+<li>하드웨어적으로 Test &amp; modify를 atuomic하게 수행할 수 있도록 지원하는 경우 앞의 문제는 간단히 해결</li>
+<li>값을 읽어내고 바꾸는 과정을 한번에</li>
 </ul>
-</li>
-<li><p>CPU 스케쥴링이 필요한 경우</p>
-<ol>
-<li><p>running -&gt; blocked (I/O 요청하는 systemcall)</p>
-</li>
-<li><p>running -&gt; ready (할당 시간 만료로 time interrupt)</p>
-</li>
-<li><p>blocked -&gt; ready (I/O 완료 후 interrupt)</p>
-</li>
-<li><p>terminate</p>
+<h2 id="Semaphores"><a href="#Semaphores" class="headerlink" title="Semaphores"></a>Semaphores</h2><p>앞의 방식들을 추상화시킴</p>
 <ul>
-<li>1,4 : nonpreemtive (강제로 빼앗지 않고 자진 반납)</li>
-<li>preemptive (강제로 빼앗음)</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="Scheduling-Criteria"><a href="#Scheduling-Criteria" class="headerlink" title="Scheduling Criteria"></a>Scheduling Criteria</h2><p>성능 척도</p>
+<li><p>Semaphore S</p>
 <ul>
-<li>system 입장<ul>
-<li>CPU utilization<ul>
-<li>keep the CPU as busy as possible</li>
-</ul>
+<li><p>integer variable</p>
 </li>
-<li>Throughput<ul>
-<li>number of processes that complete their execution per time unit</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>program 입장<ul>
-<li>Turnaround time<ul>
-<li>amount of time to execute a particular process</li>
-</ul>
-</li>
-<li>Waiting time<ul>
-<li>amount of time a process has been waiting in the ready</li>
-</ul>
-</li>
-<li>Response time<ul>
-<li>amount of time it takes from when a request was submitted unitl the first response is produced, not output (for time-sharing environment)</li>
-<li>최초의 CPU 얻기까지 기다린 시간</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="FCFS-First-Come-First-Served"><a href="#FCFS-First-Come-First-Served" class="headerlink" title="FCFS (First-Come First-Served)"></a>FCFS (First-Come First-Served)</h2><p>비선점형.</p>
+<li><p>P(S) : 공유자원 획득</p>
 <ul>
-<li><p>도착 순서</p>
+<li>If positive, decrement &amp; enter. Ohterwise, wait until positive(busy wait)</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100707.png" alt="img"></p>
+</li>
+<li><p>V(S) : 공유자원 반납</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100708.png" alt="img"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Critical-Section-of-n-Processes"><a href="#Critical-Section-of-n-Processes" class="headerlink" title="Critical Section of n Processes"></a>Critical Section of n Processes</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100709.png" alt="img"></p>
+<h2 id="Block-Wakeup-Impemetation"><a href="#Block-Wakeup-Impemetation" class="headerlink" title="Block / Wakeup Impemetation"></a>Block / Wakeup Impemetation</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100710.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100711.png" alt="img"></p>
 <ul>
-<li>p1, p2, p3</li>
+<li>block<ul>
+<li>커널은 block을 호출한 프로세스를 suspend 시킴</li>
+<li>이 프로세스의 PCB를 semaphore에 대한 wait queue에 넣음</li>
 </ul>
 </li>
-<li><p>burst time </p>
+<li>wakeup(P)<ul>
+<li>block 된 프로세스 P를 wakeup 시킴</li>
+<li>이 프로세스의 PCB를 ready queue로 옮김</li>
+</ul>
+</li>
+</ul>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100712.png" alt="img"></p>
+<h2 id="Which-is-better"><a href="#Which-is-better" class="headerlink" title="Which is better"></a>Which is better</h2><p>busy-wati vs block/wakeup</p>
+<p>CS 길이가 긴 경우 Block/Wakeup이 적당</p>
+<p>CS 길이가 매우 짧은 경우 Block/Wakeup 오버헤드가 busy-wait 오버헤드보다 더 커질 수 있음</p>
+<p>일반적으로  block/wakeup 방식이 더 좋음</p>
+<h2 id="Deadlock-and-Starvation"><a href="#Deadlock-and-Starvation" class="headerlink" title="Deadlock and Starvation"></a>Deadlock and Starvation</h2><ul>
+<li><p>Deadlock</p>
+<p>둘 이상의 프로세스가 서로 상대방에 의해 충족될 수 있는 event를 무한히 기다리는 현상</p>
+<p>P0와 P1은 S와 Q 모두가 필요하다.</p>
+<p>P0가 S를 차지했을 때, P1이 CPU를 가져가버리면, Deadlock 발생</p>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100713.png" alt="img"></p>
 <ul>
-<li>24 / 3 / 3 </li>
-</ul>
+<li><p>Starvation</p>
+<p>indefinite blocking. 프로세스가 suspend된 이유에 해당하는 세마포어 큐에서 빠져나갈수 없는 현상</p>
 </li>
-<li><p>wating time </p>
+</ul>
+<h2 id="Bounded-Buffer-Problem"><a href="#Bounded-Buffer-Problem" class="headerlink" title="Bounded-Buffer Problem"></a>Bounded-Buffer Problem</h2><p>Producer-Consumer Problem</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100714.png" alt="img"></p>
+<p>주황색은 Producer가 생성한다.</p>
+<p>생산자 둘이 한 위치에 생성하면?</p>
+<p>하나를 소비자 둘이 동시에 소비 하려고 하면?</p>
+<p>비버있는 버퍼가 없는데 또 생산자가 만들려고 하면?</p>
 <ul>
-<li>0 / 24/ 27</li>
-</ul>
-</li>
-<li><p>Convoy effet</p>
+<li><p>Syncrhonization variables</p>
 <ul>
-<li>short process behind long process</li>
+<li>mutual exclution<ul>
+<li>need binary semaphore (shared data의 mutual exlusion을 위해)</li>
+<li>lock 걸고 풀고</li>
+</ul>
+</li>
+<li>resource count <ul>
+<li>need integer semaphore (남은 full/empty buffer의 수 표시)</li>
+<li>자원 개수</li>
 </ul>
 </li>
 </ul>
-<h2 id="SJF-Shorted-Job-First"><a href="#SJF-Shorted-Job-First" class="headerlink" title="SJF (Shorted-Job-First)"></a>SJF (Shorted-Job-First)</h2><p>CPU burst time이 가장 짧은 프로세스를 제일 먼저 스케쥴. </p>
+<p>semaphore full =0, empty =n, mutex =1;</p>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100715.png" alt="img"></p>
 <ul>
-<li>Nonpreemptive<ul>
-<li>일단 CPU를 잡으면 이번 CPU burst가 완료될 때까지 CPU를 선점 당하지 않음</li>
-</ul>
-</li>
-<li>Preemptive<ul>
-<li>현재 수행중인 프로세스의 남은 burst time 보다 더 짧은 CPU burst time 을 가지는 새로운 프로세스가 도착하면 CPU를 빼앗김</li>
-<li>이 방법을 SRTF (Shorted-Remaing-Time-First) 라고도 부른다</li>
-<li>minimum average waiting time을 보장</li>
-</ul>
-</li>
-</ul>
-<p>문제점</p>
+<li><p>Produer</p>
 <ul>
-<li>starvation <ul>
-<li>long process</li>
+<li>빈 버퍼가 있으면 버퍼 획득하고, 버퍼에 락 걸고, 버퍼에 데이터 넣고, 버퍼에 락 풀고, full++</li>
 </ul>
 </li>
-<li>다음 CPU burst time을 어떻게 알 수 있는가?<ul>
-<li>과거의 CPU burst time을 이용해서 추정 (exponential averaging)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Proirity-Scheduling"><a href="#Proirity-Scheduling" class="headerlink" title="Proirity Scheduling"></a>Proirity Scheduling</h2><p>우선순위가 제일 높은 process에게 CPU를 줌</p>
+<li><p>Consumer</p>
 <ul>
-<li>Nonpreemptive</li>
-<li>Preemptive</li>
+<li>내용이 들어잇는 버퍼 있으면, 버퍼에 락 걸고, 버퍼에서 데이터 빼고, 버퍼 락 풀고, empty ++</li>
 </ul>
-<p>각 프로세스마다 priority number가 주어짐</p>
+</li>
+</ul>
+<h2 id="Readers-Writes-Problem"><a href="#Readers-Writes-Problem" class="headerlink" title="Readers-Writes Problem"></a>Readers-Writes Problem</h2><p>한 process가 DB에 write 중일 때 다른 process가 접근하면 안됨 / read는 동시에 여럿이 해도 됨</p>
 <ul>
-<li>SJF도 일종의 prority scheduling</li>
-<li>문제점<ul>
-<li>Starvation <ul>
-<li>low priority processes may never execute</li>
-<li>이를 해결위해, Aging 을 사용<ul>
-<li>as time progresses increase the priority of the process</li>
+<li>Shared data<ul>
+<li>DB 자체</li>
+<li>int readcount=0; //현재 DB에 접근 중인 Reader의 수</li>
+</ul>
+</li>
+<li>Sysncronization variablees<ul>
+<li>semaphore mutex =1 ( 공유변수 readcount를 접근하는 코드의 mutual exlution 보장), db=1;</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Round-Robin"><a href="#Round-Robin" class="headerlink" title="Round Robin"></a>Round Robin</h2><ul>
-<li>각 프로세스는 동일한 크기의 할당 시간 (time quantum) 을 가짐</li>
-<li>할당 시간이 지나면 프로세스는 preempted 당하고 ready queue의 제일 뒤에 가서 다시 줄을 선다.</li>
-<li>Response time이 빠름</li>
-<li>time quantum large =&gt; FCFS</li>
-<li>time quantum small =&gt; context switch overhead가 커짐</li>
-</ul>
-<h2 id="Multilevel-Queue"><a href="#Multilevel-Queue" class="headerlink" title="Multilevel Queue"></a>Multilevel Queue</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100603.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100716.png" alt="img"></p>
+<h2 id="Dining-Philosophers-Problem"><a href="#Dining-Philosophers-Problem" class="headerlink" title="Dining-Philosophers Problem"></a>Dining-Philosophers Problem</h2><p>배가 고파지면 자기의 왼쪽과 오른쪽에 놓아져 있는 젓가락을 잡음</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100717.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100718.png" alt="img"></p>
 <ul>
-<li>Ready queue를 여러 개로 분할<ul>
-<li>foreground (interactive)</li>
-<li>background (batch - no human interaction)</li>
-</ul>
-</li>
-<li>각 큐는 독립적인 스케쥴링 알고리즘을 가짐<ul>
-<li>foreground - RB</li>
-<li>background - FCFS</li>
-</ul>
-</li>
-<li>어느 큐에 CPU를 줄지 결정하고, 그 큐 안에서 누구에게 CPU를 줄지 결정해야해</li>
-<li>큐에 대한 스케쥴링이 필요<ul>
-<li>fixed priority scheduling    <ul>
-<li>serve all from foreground then from background</li>
-<li>Possibility of starvation</li>
-</ul>
-</li>
-<li>time slice<ul>
-<li>각 큐에 CPU time을 적절한 비율로 할당</li>
-<li>ex) 80 % to foreground in RB , 20% to background in FCFS</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Multilevel-Feedback-Queue"><a href="#Multilevel-Feedback-Queue" class="headerlink" title="Multilevel Feedback Queue"></a>Multilevel Feedback Queue</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100604.png" alt="img"></p>
+<li><p>문제</p>
 <ul>
-<li>프로세스가 다른 큐로 이동 가능</li>
-<li>againg을 이와 같은 방식으로 구현 가능</li>
-<li>Multilevel Feedback Queue Scheduler를 정의하는 파라미터들<ul>
-<li>Queue의 수</li>
-<li>각 큐의 스케쥴링 알고리즘</li>
-<li>Process를 상위 큐로 보내는 기준</li>
-<li>Process를 하 큐로 내쫓는 기준</li>
-<li>프로세스가 CPU 서비스를 받으려 할 때 들어갈 큐를 결정하는 기준</li>
+<li>모두다 왼쪽 젓가락을 잡아버리면? </li>
+<li>Deadlock</li>
 </ul>
 </li>
-<li>할당 시간 끝나면 아래로 강등됨. CPU 사용 시간이 짧은 프로세스에게 우선 순위를 많이 줌</li>
-</ul>
-<h2 id="Multiple-Processor-Scheduling"><a href="#Multiple-Processor-Scheduling" class="headerlink" title="Multiple-Processor Scheduling"></a>Multiple-Processor Scheduling</h2><p>CPU가 여러개인 경우</p>
+<li><p>해결</p>
 <ul>
-<li>Homogeneous process인 경우<ul>
-<li>Queue에 한 줄로 세워서 각 프로세서가 알아서 꺼내가게 할 수 있음</li>
-<li>반드시 특정 프로세서에서 수행되어야 하는 프로세스가 있는 경우에는 문제가 더 복잡해짐</li>
-</ul>
-</li>
-<li>Load sharing<ul>
-<li>일부 프로세서에 job이 몰리지 않도록 부하를 적절히 공유하는 메커니즘 필요</li>
-<li>별개의 큐를 두는 방법 vs 공동 큐를 사용하는 방법</li>
-</ul>
-</li>
-<li>Sysmmetric Multiprocessing (SMP)<ul>
-<li>각 프로세서가 각자 알아서 스케쥴링 결정</li>
-</ul>
-</li>
-<li>Asysmmetric Multiprocessing<ul>
-<li>하나의 프로세서가 시스템 데이터의 접근과 공유를 책임지고 나머지 프로세서는 거기에 따름</li>
+<li>4명의 철학자만이 테이블에 동시에 앉을 수 있도록</li>
+<li>젓가락을 두개 모두 집을 수 있을 때에만 젓가락을 잡을 수 있도록 (아래의 경우)</li>
+<li>비대칭. 짝수 철학자는 왼쪽 젓가락부터 집도록</li>
 </ul>
 </li>
 </ul>
-<h2 id="Real-Time-Scheduling"><a href="#Real-Time-Scheduling" class="headerlink" title="Real-Time Scheduling"></a>Real-Time Scheduling</h2><ul>
-<li>Hard real-time systems<ul>
-<li>정해진 시간 안에 반드시 끝내도록 스케쥴링해야 함</li>
-</ul>
-</li>
-<li>Soft real-time systems<ul>
-<li>일반 프로세스에 비해 높은 priority를 갖도록 해야 함</li>
-</ul>
-</li>
-</ul>
-<h2 id="Thread-Scheduling"><a href="#Thread-Scheduling" class="headerlink" title="Thread Scheduling"></a>Thread Scheduling</h2><ul>
-<li>Local Scheduling<ul>
-<li>User level thread의 경우 사용자 수준의 thread library에 의해 어떤 thread를 스케쥴할지 결정</li>
-</ul>
-</li>
-<li>Global Scheduling<ul>
-<li>Kenel level thread의 경우 일반 프로세스와 마찬 가지로 커널의 단기 스케쥴러가 어떤 thread를 스케쥴할지 결정</li>
+<p>enum {thinking, hungry, eating} state[5];</p>
+<p>semaphore self[5]=0;    // 동시에 젓가락 두개 모두 잡을 수 있는 권한</p>
+<p>semaphore mutex=1;</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100719.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100720.png" alt="img"></p>
+<h2 id="Monitor"><a href="#Monitor" class="headerlink" title="Monitor"></a>Monitor</h2><ul>
+<li>Semaphore의 문제점<ul>
+<li>코딩이 힘들다</li>
+<li>정확성의 입증이 어려움</li>
+<li>자발적 협력이 필요</li>
+<li>한번의 실수가 모든 시스템에 영향</li>
 </ul>
 </li>
 </ul>
-<h2 id="Algorithm-Evaluation"><a href="#Algorithm-Evaluation" class="headerlink" title="Algorithm Evaluation"></a>Algorithm Evaluation</h2><ul>
-<li><p>Queueing models</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100721.png" alt="img"></p>
 <ul>
-<li>server가 CPU, 확률 분포로 주어지는 arrivate rate와 service rate 등을 통해 각종 performance index 값을 계산</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100605.png" alt="img"></p>
-</li>
-<li><p>Implemetatation(구현) &amp; Measurement(성능 측정)</p>
-<ul>
-<li>실제 시스템에 알고리즘을 구현하여 실제 작업에 대해서 성능을 측정 비교</li>
-</ul>
-</li>
-<li><p>Simulation (모의 실험)</p>
-<ul>
-<li>알고리즘을 모의 프로그램으로 작성후 trace(input data) 를 입력으로 하여 결과 비교</li>
+<li>동시 수행중인 프로세스 사이에서 abstract data type의 안전한 공유를 보장하기위한 high-level syncronization  construct <ul>
+<li>모니터 내에서는 한번에 하나의 하나의 프로세스만이 활동 가능</li>
+<li>프로그래머가 동기화 제약 조건을 명시적으로 코딩할 필요 없음</li>
+<li>프로세스가 모니터 안에서 기다릴수 있도록 하기 위해 condition variable 사용. condition x, y</li>
+<li>condition variable 은 wait와 signal 연산에 의해서만 접근 가능<ul>
+<li>x.wait();<ul>
+<li>x.wait()을 invoke한 프로세스는 다른 프로세스가 x.signal()을 invoke 하기 전까지 suspend</li>
 </ul>
 </li>
+<li>x.siganl();<ul>
+<li>x.signal()은 정확하게 하나의 suspend된 프로세스를 resume한다. Suspend된 프로세스가 없으면 아무 일도 일어나지 않는다. </li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100722.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100723.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100724.png" alt="img"></p>
 
                     
                         
@@ -1904,7 +2199,7 @@
                     
                     
                         <p>
-                            <a href="/2018/10/06/2018-10-06-CPU Scheduling/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/10/06/2018-10-06-Process Synchronization/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
