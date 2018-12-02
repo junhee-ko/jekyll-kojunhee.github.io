@@ -1,0 +1,62 @@
+<!--SCRIPTS-->
+<%- js('assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js') %>
+<!--SCRIPTS END-->
+<% if (post.comments) { %>
+    <% if (theme.disqus_shortname) { %>
+        <script>
+             var disqus_config = function () {
+                 this.page.url = '<%= post.permalink %>';
+                 <% if (post.disqusIdentifier) { %>
+                    this.page.identifier = '<%= post.disqusIdentifier %>';
+                 <% } else { %>
+                    this.page.identifier = '<%= post.path %>';
+                 <% } %>
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = '<%= theme.disqus_shortname %>';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    <% } else if (theme.gitment.enable) { %>
+        <script type="text/javascript">
+            (function() {
+                function render() {
+                    new Gitment({
+                        id: '<%= post.permalink %>',
+                        owner: '<%- theme.gitment.github_id %>',
+                        repo: '<%- theme.gitment.repo %>',
+                        oauth: {
+                            client_id: '<%- theme.gitment.client_id %>',
+                            client_secret: '<%- theme.gitment.client_secret %>',
+                        }
+                    }).render('gitment');
+                }
+                var gc = document.createElement('script');
+                gc.type = 'text/javascript';
+                gc.src = '//imsun.github.io/gitment/dist/gitment.browser.js';
+                gc.charset = 'UTF-8';
+                gc.onload = render;
+                gc.async = true;
+                document.querySelector('body').appendChild(gc);
+                var gcs = document.createElement('link');
+                gcs.href = '//imsun.github.io/gitment/style/default.css';
+                gcs.type = 'text/css';
+                gcs.rel = 'stylesheet';
+                gcs.media = 'screen,print';
+                document.querySelector('head').appendChild(gcs);
+            })();
+	    </script>
+    <% } %>
+<% } %>
+<% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script>
+        var algoliaClient = algoliasearch('<%= config.algolia.appId %>', '<%= config.algolia.apiKey %>');
+        var algoliaIndex = algoliaClient.initIndex('<%= config.algolia.indexName %>');
+    </script>
+<% } %>
