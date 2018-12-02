@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>CPU Scheduling - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323)\nCPU and I/O Bursts in program execution\nCPU-burst time 의 분포\n여러 종료의 job(process)이 섞여 있기 때문에 CPU 스케쥴링이 필요하다.\n\ninterative job 에게 적절한 response 제공 요망\nCPU와 I/O 장치 등 시스템 자원을 고류 효율적으로 사용\n\n프로세의 특성 분류\nI/O-bound process\nCPU를 잡고 계산하는 시간보다 I/O에 많은 시간이 필요한 job\n\n\nCPU-bound process\n계산 위주의 job\n\n\n\nCPU Scheduler &amp; Dispatcher\nCPU Scheduler \n\n운영체제 안에서 CPU 스케쥴링 하는 코드\nReady 상태의 프로세스 중에서 이번에 CPU를 줄 프로세스를 고른다.\n\n\nDispatcher\n\nCPU의 제어권을 CPU scheduler 에해 선택된 프로세스에게 넘긴다.\n이 과정을 context switch 라고 한다.\n\n\nCPU 스케쥴링이 필요한 경우\n\nrunning -&gt; blocked (I/O 요청하는 systemcall)\n\nrunning -&gt; ready (할당 시간 만료로 time interrupt)\n\nblocked -&gt; ready (I/O 완료 후 interrupt)\n\nterminate\n\n1,4 : nonpreemtive (강제로 빼앗지 않고 자진 반납)\npreemptive (강제로 빼앗음)\n\n\n\n\n\nScheduling Criteria성능 척도\n\nsystem 입장\nCPU utilization\nkeep the CPU as busy as possible\n\n\nThroughput\nnumber of processes that complete their execution per time unit\n\n\n\n\nprogram 입장\nTurnaround time\namount of time to execute a particular process\n\n\nWaiting time\namount of time a process has been waiting in the ready\n\n\nResponse time\namount of time it takes from when a request was submitted unitl the first response is produced, not output (for time-sharing environment)\n최초의 CPU 얻기까지 기다린 시간\n\n\n\n\n\nFCFS (First-Come First-Served)비선점형.\n\n도착 순서\n\np1, p2, p3\n\n\nburst time \n\n24 / 3 / 3 \n\n\nwating time \n\n0 / 24/ 27\n\n\nConvoy effet\n\nshort process behind long process\n\n\n\nSJF (Shorted-Job-First)CPU burst time이 가장 짧은 프로세스를 제일 먼저 스케쥴. \n\nNonpreemptive\n일단 CPU를 잡으면 이번 CPU burst가 완료될 때까지 CPU를 선점 당하지 않음\n\n\nPreemptive\n현재 수행중인 프로세스의 남은 burst time 보다 더 짧은 CPU burst time 을 가지는 새로운 프로세스가 도착하면 CPU를 빼앗김\n이 방법을 SRTF (Shorted-Remaing-Time-First) 라고도 부른다\nminimum average waiting time을 보장\n\n\n\n문제점\n\nstarvation \nlong process\n\n\n다음 CPU burst time을 어떻게 알 수 있는가?\n과거의 CPU burst time을 이용해서 추정 (exponential averaging)\n\n\n\nProirity Scheduling우선순위가 제일 높은 process에게 CPU를 줌\n\nNonpreemptive\nPreemptive\n\n각 프로세스마다 priority number가 주어짐\n\nSJF도 일종의 prority scheduling\n문제점\nStarvation \nlow priority processes may never execute\n이를 해결위해, Aging 을 사용\nas time progresses increase the priority of the process\n\n\n\n\n\n\n\nRound Robin\n각 프로세스는 동일한 크기의 할당 시간 (time quantum) 을 가짐\n할당 시간이 지나면 프로세스는 preempted 당하고 ready queue의 제일 뒤에 가서 다시 줄을 선다.\nResponse time이 빠름\ntime quantum large =&gt; FCFS\ntime quantum small =&gt; context switch overhead가 커짐\n\nMultilevel Queue\n\nReady queue를 여러 개로 분할\nforeground (interactive)\nbackground (batch - no human interaction)\n\n\n각 큐는 독립적인 스케쥴링 알고리즘을 가짐\nforeground - RB\nbackground - FCFS\n\n\n어느 큐에 CPU를 줄지 결정하고, 그 큐 안에서 누구에게 CPU를 줄지 결정해야해\n큐에 대한 스케쥴링이 필요\nfixed priority scheduling    \nserve all from foreground then from background\nPossibility of starvation\n\n\ntime slice\n각 큐에 CPU time을 적절한 비율로 할당\nex) 80 % to foreground in RB , 20% to background in FCFS\n\n\n\n\n\nMultilevel Feedback Queue\n\n프로세스가 다른 큐로 이동 가능\nagaing을 이와 같은 방식으로 구현 가능\nMultilevel Feedback Queue Scheduler를 정의하는 파라미터들\nQueue의 수\n각 큐의 스케쥴링 알고리즘\nProcess를 상위 큐로 보내는 기준\nProcess를 하 큐로 내쫓는 기준\n프로세스가 CPU 서비스를 받으려 할 때 들어갈 큐를 결정하는 기준\n\n\n할당 시간 끝나면 아래로 강등됨. CPU 사용 시간이 짧은 프로세스에게 우선 순위를 많이 줌\n\nMultiple-Processor SchedulingCPU가 여러개인 경우\n\nHomogeneous process인 경우\nQueue에 한 줄로 세워서 각 프로세서가 알아서 꺼내가게 할 수 있음\n반드시 특정 프로세서에서 수행되어야 하는 프로세스가 있는 경우에는 문제가 더 복잡해짐\n\n\nLoad sharing\n일부 프로세서에 job이 몰리지 않도록 부하를 적절히 공유하는 메커니즘 필요\n별개의 큐를 두는 방법 vs 공동 큐를 사용하는 방법\n\n\nSysmmetric Multiprocessing (SMP)\n각 프로세서가 각자 알아서 스케쥴링 결정\n\n\nAsysmmetric Multiprocessing\n하나의 프로세서가 시스템 데이터의 접근과 공유를 책임지고 나머지 프로세서는 거기에 따름\n\n\n\nReal-Time Scheduling\nHard real-time systems\n정해진 시간 안에 반드시 끝내도록 스케쥴링해야 함\n\n\nSoft real-time systems\n일반 프로세스에 비해 높은 priority를 갖도록 해야 함\n\n\n\nThread Scheduling\nLocal Scheduling\nUser level thread의 경우 사용자 수준의 thread library에 의해 어떤 thread를 스케쥴할지 결정\n\n\nGlobal Scheduling\nKenel level thread의 경우 일반 프로세스와 마찬 가지로 커널의 단기 스케쥴러가 어떤 thread를 스케쥴할지 결정\n\n\n\nAlgorithm Evaluation\nQueueing models\n\nserver가 CPU, 확률 분포로 주어지는 arrivate rate와 service rate 등을 통해 각종 performance index 값을 계산\n\n\n\nImplemetatation(구현) &amp; Measurement(성능 측정)\n\n실제 시스템에 알고리즘을 구현하여 실제 작업에 대해서 성능을 측정 비교\n\n\nSimulation (모의 실험)\n\n알고리즘을 모의 프로그램으로 작성후 trace(input data) 를 입력으로 하여 결과 비교\n\n\n\n","dateCreated":"2018-10-06T00:00:00+09:00","dateModified":"2018-10-06T23:52:08+09:00","datePublished":"2018-10-06T00:00:00+09:00","description":"","headline":"CPU Scheduling","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/"}</script>
+    <meta name="description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) CPU and I/O Bursts in program execution CPU-burst time 의 분포 여러 종료의 job(process)이 섞여 있기 때문에 CPU 스케쥴링이 필요하다.  interative job 에">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="CPU Scheduling">
+<meta property="og:url" content="http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) CPU and I/O Bursts in program execution CPU-burst time 의 분포 여러 종료의 job(process)이 섞여 있기 때문에 CPU 스케쥴링이 필요하다.  interative job 에">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100601.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100602.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100603.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100604.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100605.png">
+<meta property="og:updated_time" content="2018-10-06T14:52:08.733Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CPU Scheduling">
+<meta name="twitter:description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) CPU and I/O Bursts in program execution CPU-burst time 의 분포 여러 종료의 job(process)이 섞여 있기 때문에 CPU 스케쥴링이 필요하다.  interative job 에">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100601.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            CPU Scheduling
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-10-06T00:00:00+09:00">
+	
+		    Oct 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/OS/">OS</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
+<h2 id="CPU-and-I-O-Bursts-in-program-execution"><a href="#CPU-and-I-O-Bursts-in-program-execution" class="headerlink" title="CPU and I/O Bursts in program execution"></a>CPU and I/O Bursts in program execution</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100601.png" alt="img"></p>
+<h2 id="CPU-burst-time-의-분포"><a href="#CPU-burst-time-의-분포" class="headerlink" title="CPU-burst time 의 분포"></a>CPU-burst time 의 분포</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100602.png" alt="img"></p>
+<p>여러 종료의 job(process)이 섞여 있기 때문에 CPU 스케쥴링이 필요하다.</p>
+<ul>
+<li>interative job 에게 적절한 response 제공 요망</li>
+<li>CPU와 I/O 장치 등 시스템 자원을 고류 효율적으로 사용</li>
+</ul>
+<h2 id="프로세의-특성-분류"><a href="#프로세의-특성-분류" class="headerlink" title="프로세의 특성 분류"></a>프로세의 특성 분류</h2><ul>
+<li>I/O-bound process<ul>
+<li>CPU를 잡고 계산하는 시간보다 I/O에 많은 시간이 필요한 job</li>
+</ul>
+</li>
+<li>CPU-bound process<ul>
+<li>계산 위주의 job</li>
+</ul>
+</li>
+</ul>
+<h2 id="CPU-Scheduler-amp-Dispatcher"><a href="#CPU-Scheduler-amp-Dispatcher" class="headerlink" title="CPU Scheduler &amp; Dispatcher"></a>CPU Scheduler &amp; Dispatcher</h2><ul>
+<li><p>CPU Scheduler </p>
+<ul>
+<li>운영체제 안에서 CPU 스케쥴링 하는 코드</li>
+<li>Ready 상태의 프로세스 중에서 이번에 CPU를 줄 프로세스를 고른다.</li>
+</ul>
+</li>
+<li><p>Dispatcher</p>
+<ul>
+<li>CPU의 제어권을 CPU scheduler 에해 선택된 프로세스에게 넘긴다.</li>
+<li>이 과정을 context switch 라고 한다.</li>
+</ul>
+</li>
+<li><p>CPU 스케쥴링이 필요한 경우</p>
+<ol>
+<li><p>running -&gt; blocked (I/O 요청하는 systemcall)</p>
+</li>
+<li><p>running -&gt; ready (할당 시간 만료로 time interrupt)</p>
+</li>
+<li><p>blocked -&gt; ready (I/O 완료 후 interrupt)</p>
+</li>
+<li><p>terminate</p>
+<ul>
+<li>1,4 : nonpreemtive (강제로 빼앗지 않고 자진 반납)</li>
+<li>preemptive (강제로 빼앗음)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="Scheduling-Criteria"><a href="#Scheduling-Criteria" class="headerlink" title="Scheduling Criteria"></a>Scheduling Criteria</h2><p>성능 척도</p>
+<ul>
+<li>system 입장<ul>
+<li>CPU utilization<ul>
+<li>keep the CPU as busy as possible</li>
+</ul>
+</li>
+<li>Throughput<ul>
+<li>number of processes that complete their execution per time unit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>program 입장<ul>
+<li>Turnaround time<ul>
+<li>amount of time to execute a particular process</li>
+</ul>
+</li>
+<li>Waiting time<ul>
+<li>amount of time a process has been waiting in the ready</li>
+</ul>
+</li>
+<li>Response time<ul>
+<li>amount of time it takes from when a request was submitted unitl the first response is produced, not output (for time-sharing environment)</li>
+<li>최초의 CPU 얻기까지 기다린 시간</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="FCFS-First-Come-First-Served"><a href="#FCFS-First-Come-First-Served" class="headerlink" title="FCFS (First-Come First-Served)"></a>FCFS (First-Come First-Served)</h2><p>비선점형.</p>
+<ul>
+<li><p>도착 순서</p>
+<ul>
+<li>p1, p2, p3</li>
+</ul>
+</li>
+<li><p>burst time </p>
+<ul>
+<li>24 / 3 / 3 </li>
+</ul>
+</li>
+<li><p>wating time </p>
+<ul>
+<li>0 / 24/ 27</li>
+</ul>
+</li>
+<li><p>Convoy effet</p>
+<ul>
+<li>short process behind long process</li>
+</ul>
+</li>
+</ul>
+<h2 id="SJF-Shorted-Job-First"><a href="#SJF-Shorted-Job-First" class="headerlink" title="SJF (Shorted-Job-First)"></a>SJF (Shorted-Job-First)</h2><p>CPU burst time이 가장 짧은 프로세스를 제일 먼저 스케쥴. </p>
+<ul>
+<li>Nonpreemptive<ul>
+<li>일단 CPU를 잡으면 이번 CPU burst가 완료될 때까지 CPU를 선점 당하지 않음</li>
+</ul>
+</li>
+<li>Preemptive<ul>
+<li>현재 수행중인 프로세스의 남은 burst time 보다 더 짧은 CPU burst time 을 가지는 새로운 프로세스가 도착하면 CPU를 빼앗김</li>
+<li>이 방법을 SRTF (Shorted-Remaing-Time-First) 라고도 부른다</li>
+<li>minimum average waiting time을 보장</li>
+</ul>
+</li>
+</ul>
+<p>문제점</p>
+<ul>
+<li>starvation <ul>
+<li>long process</li>
+</ul>
+</li>
+<li>다음 CPU burst time을 어떻게 알 수 있는가?<ul>
+<li>과거의 CPU burst time을 이용해서 추정 (exponential averaging)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Proirity-Scheduling"><a href="#Proirity-Scheduling" class="headerlink" title="Proirity Scheduling"></a>Proirity Scheduling</h2><p>우선순위가 제일 높은 process에게 CPU를 줌</p>
+<ul>
+<li>Nonpreemptive</li>
+<li>Preemptive</li>
+</ul>
+<p>각 프로세스마다 priority number가 주어짐</p>
+<ul>
+<li>SJF도 일종의 prority scheduling</li>
+<li>문제점<ul>
+<li>Starvation <ul>
+<li>low priority processes may never execute</li>
+<li>이를 해결위해, Aging 을 사용<ul>
+<li>as time progresses increase the priority of the process</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Round-Robin"><a href="#Round-Robin" class="headerlink" title="Round Robin"></a>Round Robin</h2><ul>
+<li>각 프로세스는 동일한 크기의 할당 시간 (time quantum) 을 가짐</li>
+<li>할당 시간이 지나면 프로세스는 preempted 당하고 ready queue의 제일 뒤에 가서 다시 줄을 선다.</li>
+<li>Response time이 빠름</li>
+<li>time quantum large =&gt; FCFS</li>
+<li>time quantum small =&gt; context switch overhead가 커짐</li>
+</ul>
+<h2 id="Multilevel-Queue"><a href="#Multilevel-Queue" class="headerlink" title="Multilevel Queue"></a>Multilevel Queue</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100603.png" alt="img"></p>
+<ul>
+<li>Ready queue를 여러 개로 분할<ul>
+<li>foreground (interactive)</li>
+<li>background (batch - no human interaction)</li>
+</ul>
+</li>
+<li>각 큐는 독립적인 스케쥴링 알고리즘을 가짐<ul>
+<li>foreground - RB</li>
+<li>background - FCFS</li>
+</ul>
+</li>
+<li>어느 큐에 CPU를 줄지 결정하고, 그 큐 안에서 누구에게 CPU를 줄지 결정해야해</li>
+<li>큐에 대한 스케쥴링이 필요<ul>
+<li>fixed priority scheduling    <ul>
+<li>serve all from foreground then from background</li>
+<li>Possibility of starvation</li>
+</ul>
+</li>
+<li>time slice<ul>
+<li>각 큐에 CPU time을 적절한 비율로 할당</li>
+<li>ex) 80 % to foreground in RB , 20% to background in FCFS</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Multilevel-Feedback-Queue"><a href="#Multilevel-Feedback-Queue" class="headerlink" title="Multilevel Feedback Queue"></a>Multilevel Feedback Queue</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100604.png" alt="img"></p>
+<ul>
+<li>프로세스가 다른 큐로 이동 가능</li>
+<li>againg을 이와 같은 방식으로 구현 가능</li>
+<li>Multilevel Feedback Queue Scheduler를 정의하는 파라미터들<ul>
+<li>Queue의 수</li>
+<li>각 큐의 스케쥴링 알고리즘</li>
+<li>Process를 상위 큐로 보내는 기준</li>
+<li>Process를 하 큐로 내쫓는 기준</li>
+<li>프로세스가 CPU 서비스를 받으려 할 때 들어갈 큐를 결정하는 기준</li>
+</ul>
+</li>
+<li>할당 시간 끝나면 아래로 강등됨. CPU 사용 시간이 짧은 프로세스에게 우선 순위를 많이 줌</li>
+</ul>
+<h2 id="Multiple-Processor-Scheduling"><a href="#Multiple-Processor-Scheduling" class="headerlink" title="Multiple-Processor Scheduling"></a>Multiple-Processor Scheduling</h2><p>CPU가 여러개인 경우</p>
+<ul>
+<li>Homogeneous process인 경우<ul>
+<li>Queue에 한 줄로 세워서 각 프로세서가 알아서 꺼내가게 할 수 있음</li>
+<li>반드시 특정 프로세서에서 수행되어야 하는 프로세스가 있는 경우에는 문제가 더 복잡해짐</li>
+</ul>
+</li>
+<li>Load sharing<ul>
+<li>일부 프로세서에 job이 몰리지 않도록 부하를 적절히 공유하는 메커니즘 필요</li>
+<li>별개의 큐를 두는 방법 vs 공동 큐를 사용하는 방법</li>
+</ul>
+</li>
+<li>Sysmmetric Multiprocessing (SMP)<ul>
+<li>각 프로세서가 각자 알아서 스케쥴링 결정</li>
+</ul>
+</li>
+<li>Asysmmetric Multiprocessing<ul>
+<li>하나의 프로세서가 시스템 데이터의 접근과 공유를 책임지고 나머지 프로세서는 거기에 따름</li>
+</ul>
+</li>
+</ul>
+<h2 id="Real-Time-Scheduling"><a href="#Real-Time-Scheduling" class="headerlink" title="Real-Time Scheduling"></a>Real-Time Scheduling</h2><ul>
+<li>Hard real-time systems<ul>
+<li>정해진 시간 안에 반드시 끝내도록 스케쥴링해야 함</li>
+</ul>
+</li>
+<li>Soft real-time systems<ul>
+<li>일반 프로세스에 비해 높은 priority를 갖도록 해야 함</li>
+</ul>
+</li>
+</ul>
+<h2 id="Thread-Scheduling"><a href="#Thread-Scheduling" class="headerlink" title="Thread Scheduling"></a>Thread Scheduling</h2><ul>
+<li>Local Scheduling<ul>
+<li>User level thread의 경우 사용자 수준의 thread library에 의해 어떤 thread를 스케쥴할지 결정</li>
+</ul>
+</li>
+<li>Global Scheduling<ul>
+<li>Kenel level thread의 경우 일반 프로세스와 마찬 가지로 커널의 단기 스케쥴러가 어떤 thread를 스케쥴할지 결정</li>
+</ul>
+</li>
+</ul>
+<h2 id="Algorithm-Evaluation"><a href="#Algorithm-Evaluation" class="headerlink" title="Algorithm Evaluation"></a>Algorithm Evaluation</h2><ul>
+<li><p>Queueing models</p>
+<ul>
+<li>server가 CPU, 확률 분포로 주어지는 arrivate rate와 service rate 등을 통해 각종 performance index 값을 계산</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100605.png" alt="img"></p>
+</li>
+<li><p>Implemetatation(구현) &amp; Measurement(성능 측정)</p>
+<ul>
+<li>실제 시스템에 알고리즘을 구현하여 실제 작업에 대해서 성능을 측정 비교</li>
+</ul>
+</li>
+<li><p>Simulation (모의 실험)</p>
+<ul>
+<li>알고리즘을 모의 프로그램으로 작성후 trace(input data) 를 입력으로 하여 결과 비교</li>
+</ul>
+</li>
+</ul>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/06/2018-10-06-Process Synchronization/" data-tooltip="Process Sysncronization" aria-label="PREVIOUS: Process Sysncronization">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/04/2018-10-04-보물상자 비밀번호/" data-tooltip="보물상자 비밀번호" aria-label="NEXT: 보물상자 비밀번호">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/06/2018-10-06-Process Synchronization/" data-tooltip="Process Sysncronization" aria-label="PREVIOUS: Process Sysncronization">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/04/2018-10-04-보물상자 비밀번호/" data-tooltip="보물상자 비밀번호" aria-label="NEXT: 보물상자 비밀번호">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/10/06/2018-10-06-CPU Scheduling/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
