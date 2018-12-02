@@ -1,0 +1,62 @@
+{
+  "name": "hexo-theme-tranquilpeak",
+  "version": "3.0.1",
+  "description": "A gorgeous responsive theme for Hexo blog framework",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "start": "npm run grunt -- default",
+    "build": "npm run prod",
+    "prod": "npm run grunt -- buildProd",
+    "grunt": "./node_modules/grunt-cli/bin/grunt",
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git"
+  },
+  "keywords": [
+    "hexo",
+    "blog",
+    "tranquilpeak",
+    "tranquil",
+    "peak"
+  ],
+  "author": "Louis Barranqueiro",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/issues"
+  },
+  "homepage": "https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak",
+  "devDependencies": {
+    "eslint": "4.18.2",
+    "eslint-config-google": "0.9.1",
+    "grunt": "1.0.2",
+    "grunt-cli": "1.2.0",
+    "grunt-contrib-clean": "1.1.0",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "2.2.1",
+    "grunt-contrib-uglify": "3.3.0",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-sails-linker": "1.0.4",
+    "grunt-sass": "2.1.0",
+    "grunt-sync": "0.8.0",
+    "grunt-text-replace": "0.4.0",
+    "hexo-renderer-marked": "0.3.2",
+    "include-all": "4.0.3",
+    "load-grunt-tasks": "3.5.2",
+    "rand-token": "0.4.0"
+  },
+  "dependencies": {
+    "@fancyapps/fancybox": "3.2.5",
+    "@fortawesome/fontawesome-free": "5.1.0",
+    "hexo-util": "0.6.3",
+    "jquery": "3.3.1",
+    "jsdom": "11.6.2",
+    "strip-indent": "2.0.0"
+  },
+  "engines": {
+    "node": ">=6.13.1"
+  }
+}
