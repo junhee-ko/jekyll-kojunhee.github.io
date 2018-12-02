@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>ISP - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nInterface Segregation Principle ( 인터페이스 분리 법칙 )\n\n\nIntent\n\nClients should not be forced to depend upon interfaces that they don’t use.\n인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙\n\n\nSRP와 ISP\n\nSRP를 만족하더라도 ISP를 반드시 만족한다고 할수 없다\n게시판의 글쓰기, 읽기, 수정, 삭제를 위한 메소드를 제공하는 클래스가 있다.\n클라이언트에 따라서는 게시판의 이러한 기능 중 일부분만 사용할 수 있다.\n일반 사용자는 게시판의 삭제 기능이 없지만, 관리자는 삭제를 할 수 있다.\n게시판 클래스는 게시판에 관련된 책임을 수행하므로 SRP 만족,\n이 클래스의 모든 메서드가 들어 있는 인퍼테이스가 클라이언트에 상관없이 사용된다면, ISP에 위배.\n\n\n\n\nBad Example\n\nnow some robots came in the company they work as well , but they don’t eat so they don’t need a launch break. \nOne on side the new Robot class need to implement the IWorker interface because robots works. \nOn the other side, they don’t have to implement it because they don’t eat.\nnow we have to change Manager class in order to introduce the new SuperWorker\n\n\n\n\n\n\n​\n\nGood Example\n\nnew Robot class is no longer forced to implement the eat method.\nif we need another functionality for the robot like recharging, \nwe create another interface IRechargeble with a method recharge.\n\n\n\n\n\n\n\n\n\n\n\nReference\nhttp://www.oodesign.com/dependency-inversion-principle.html\nJava 객체지향 디자인 패턴 (정인상, 채흥석 지음)\n\n\n\n","dateCreated":"2018-04-09T00:00:00+09:00","dateModified":"2018-10-25T14:48:03+09:00","datePublished":"2018-04-09T00:00:00+09:00","description":"","headline":"ISP","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/04/09/2018-04-09-ISP/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/04/09/2018-04-09-ISP/"}</script>
+    <meta name="description" content="Interface Segregation Principle ( 인터페이스 분리 법칙 )   Intent  Clients should not be forced to depend upon interfaces that they don’t use. 인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙   SRP와 ISP  SRP를 만족하더라도 ISP를 반드시">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ISP">
+<meta property="og:url" content="http://junheeko.com/2018/04/09/2018-04-09-ISP/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="Interface Segregation Principle ( 인터페이스 분리 법칙 )   Intent  Clients should not be forced to depend upon interfaces that they don’t use. 인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙   SRP와 ISP  SRP를 만족하더라도 ISP를 반드시">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp077.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp088.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp099.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp01010.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp01111.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp011.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp022.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp033.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp044.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp055.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp066.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp077.png">
+<meta property="og:updated_time" content="2018-10-25T05:48:03.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ISP">
+<meta name="twitter:description" content="Interface Segregation Principle ( 인터페이스 분리 법칙 )   Intent  Clients should not be forced to depend upon interfaces that they don’t use. 인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙   SRP와 ISP  SRP를 만족하더라도 ISP를 반드시">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp077.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            ISP
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-04-09T00:00:00+09:00">
+	
+		    Apr 09, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <ul>
+<li>Interface Segregation Principle ( 인터페이스 분리 법칙 )</li>
+</ul>
+<ul>
+<li><p>Intent</p>
+<ul>
+<li>Clients should not be forced to depend upon interfaces that they don’t use.</li>
+<li>인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙</li>
+</ul>
+</li>
+<li><p>SRP와 ISP</p>
+<ul>
+<li>SRP를 만족하더라도 ISP를 반드시 만족한다고 할수 없다<ul>
+<li>게시판의 글쓰기, 읽기, 수정, 삭제를 위한 메소드를 제공하는 클래스가 있다.</li>
+<li>클라이언트에 따라서는 게시판의 이러한 기능 중 일부분만 사용할 수 있다.</li>
+<li>일반 사용자는 게시판의 삭제 기능이 없지만, 관리자는 삭제를 할 수 있다.</li>
+<li>게시판 클래스는 게시판에 관련된 책임을 수행하므로 SRP 만족,</li>
+<li>이 클래스의 모든 메서드가 들어 있는 인퍼테이스가 클라이언트에 상관없이 사용된다면, ISP에 위배.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Bad Example</p>
+<ul>
+<li>now some robots came in the company they work as well , but they don’t eat so they don’t need a launch break. </li>
+<li>One on side the new Robot class need to implement the IWorker interface because robots works. </li>
+<li>On the other side, they don’t have to implement it because they don’t eat.</li>
+<li>now we have to change Manager class in order to introduce the new SuperWorker</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp077.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp088.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp099.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp01010.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp01111.png" alt="img"></p>
+<p>​</p>
+</li>
+<li><p>Good Example</p>
+<ul>
+<li>new Robot class is no longer forced to implement the eat method.</li>
+<li>if we need another functionality for the robot like recharging, </li>
+<li>we create another interface IRechargeble with a method recharge.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp011.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp022.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp033.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp044.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp055.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp066.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp077.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li>Reference<ul>
+<li><a href="http://www.oodesign.com/dependency-inversion-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/dependency-inversion-principle.html</a></li>
+<li>Java 객체지향 디자인 패턴 (정인상, 채흥석 지음)</li>
+</ul>
+</li>
+</ul>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/04/09/2018-04-09-OCP/" data-tooltip="OCP" aria-label="PREVIOUS: OCP">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/04/08/2018-04-08-로또/" data-tooltip="로또" aria-label="NEXT: 로또">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/04/09/2018-04-09-OCP/" data-tooltip="OCP" aria-label="PREVIOUS: OCP">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/04/08/2018-04-08-로또/" data-tooltip="로또" aria-label="NEXT: 로또">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/09/2018-04-09-ISP/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/04/09/2018-04-09-ISP/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/04/09/2018-04-09-ISP/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/04/09/2018-04-09-ISP/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

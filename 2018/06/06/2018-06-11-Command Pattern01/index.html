@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>Command Pattern01 - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"DefinitionThe Command Pattern encapsulates a request as an object, \nthereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.\nExplanation\nLet’s step through this. We know that a command object encapsulates a request by binding together a set of actions on a specific receiver. To achieve this, it packages the actions and the receiver up into an object that exposes just one method, execute(). When called, execute() causes the actions to be invoked on the receiver. From the outside, no other objects really know what actions get performed on what receiver; they just know that if they call the execute() method, their request will be serviced. \nWe’ve also seen a couple examples of parameterizing an object with a command. Back at the diner, the Waitress was parameterized with multiple orders throughout the day. In the simple remote control, we first loaded the button slot with a “light on” command and then later replaced it with a “garage door open” command. Like the Waitress, your remote slot didn’t care what command object it had, as long as it implemented the Command interface. \n\nWhat we haven’t encountered yet is using commands to implement queues and logs and support undo operations. Don’t worry, those are pretty straightforward extensions of the basic Command Pattern and we will get to them soon. We can also easily support what’s known as the Meta Command Pattern once we have the basics in place. The Meta Command Pattern allows you to create macros of commands so that you can execute multiple commands at once.  \n\n\nClass Diagram \nCode \n \n \n \n \nUndo \n \n \n \n \n \n \nReferenceHead First Design Pattern\n","dateCreated":"2018-06-06T00:00:00+09:00","dateModified":"2018-10-25T14:38:18+09:00","datePublished":"2018-06-06T00:00:00+09:00","description":"","headline":"Command Pattern01","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/"}</script>
+    <meta name="description" content="DefinitionThe Command Pattern encapsulates a request as an object,  thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations. Expl">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Command Pattern01">
+<meta property="og:url" content="http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="DefinitionThe Command Pattern encapsulates a request as an object,  thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations. Expl">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern02.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern03.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern04.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern05.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern06.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern07.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern08.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern09.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern10.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern11.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern12.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern13.png">
+<meta property="og:updated_time" content="2018-10-25T05:38:18.129Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Command Pattern01">
+<meta name="twitter:description" content="DefinitionThe Command Pattern encapsulates a request as an object,  thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations. Expl">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern01.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Command Pattern01
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-06-06T00:00:00+09:00">
+	
+		    Jun 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The Command Pattern encapsulates a request as an object, </p>
+<p>thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.</p>
+<h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><ul>
+<li>Let’s step through this. We know that a command object encapsulates a request by binding together a set of actions on a specific receiver. To achieve this, it packages the actions and the receiver up into an object that exposes just one method, execute(). When called, execute() causes the actions to be invoked on the receiver. From the outside, no other objects really know what actions get performed on what receiver; they just know that if they call the execute() method, their request will be serviced. </li>
+<li><p>We’ve also seen a couple examples of parameterizing an object with a command. Back at the diner, the Waitress was parameterized with multiple orders throughout the day. In the simple remote control, we first loaded the button slot with a “light on” command and then later replaced it with a “garage door open” command. Like the Waitress, your remote slot didn’t care what command object it had, as long as it implemented the Command interface. </p>
+</li>
+<li><p>What we haven’t encountered yet is using commands to implement queues and logs and support undo operations. Don’t worry, those are pretty straightforward extensions of the basic Command Pattern and we will get to them soon. We can also easily support what’s known as the Meta Command Pattern once we have the basics in place. The Meta Command Pattern allows you to create macros of commands so that you can execute multiple commands at once.  </p>
+</li>
+</ul>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern01.png" alt="img"> </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern02.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern03.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern04.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern05.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern06.png" alt="img"> </p>
+<h2 id="Undo"><a href="#Undo" class="headerlink" title="Undo"></a>Undo</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern07.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern08.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern09.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern10.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern11.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern12.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/commandPattern13.png" alt="img"> </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/08/2018-06-08-Flyweight Pattern03/" data-tooltip="Flyweight Pattern03" aria-label="PREVIOUS: Flyweight Pattern03">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/06/2018-06-11-Command Pattern02/" data-tooltip="Command Pattern02" aria-label="NEXT: Command Pattern02">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/08/2018-06-08-Flyweight Pattern03/" data-tooltip="Flyweight Pattern03" aria-label="PREVIOUS: Flyweight Pattern03">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/06/2018-06-11-Command Pattern02/" data-tooltip="Command Pattern02" aria-label="NEXT: Command Pattern02">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/06/06/2018-06-11-Command Pattern01/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

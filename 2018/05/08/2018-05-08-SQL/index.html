@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>SQL - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nSQL(Structured Query Language)\n\nSQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다.\n관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다.\nDML (Data Manipulation Language)\n데이터를 조작하기 위해 사용합니다.\nINSERT, UPDATE, DELETE, SELECT 등이 여기에 해당합니다.\n\n\nDDL (Data Definition Language)\n데이터베이스의 스키마를 정의하거나 조작하기 위해 사용합니다.\nCREATE, DROP, ALTER 등이 여기에 해당합니다.\n\n\nDCL (Data Control Language) \n데이터를 제어하는 언어입니다. 권한을 관리하고, 테이터의 보안, 무결성 등을 정의합니다.\nGRANT, REVOKE 등이 여기에 해당합니다.\n\n\n\n\nDatabase 생성하기\n1mysql –uroot  -p\n\nMySQL 관리자 계정인 root로 데이터베이스 관리 시스템에 접속하겠다는 것입니다.\nMySQL DBMS에 접속하면 “mysql&gt;” 프롬프트가 보입니다.\n\n1mysql&gt; create database connectdb;\n\n다음과 같은 명령을 실행하여 DB이름을 “connectdb＂로 생성하도록 하겠습니다.\n\n\nDatabase 사용자 생성과 권한 주기\n123grant all privileges on db이름.* to 계정이름@&apos;%&apos; identified by ＇암호’;grant all privileges on db이름.* to 계정이름@&apos;localhost&apos; identified by ＇암호’;flush privileges;\n\nDatabase를 생성했다면, 해당 데이터베이스를 사용하는 계정을 생성해야 합니다.\n또한, 해당 계정이 데이터베이스를 이용할 수 있는 권한을 줘야 합니다.\ndb이름 뒤의 * 는 모든 권한을 의미한다.\n@’%’는 어떤 클라이언트에서든 접근 가능하다는 의미이고, @’localhost’는 해당 컴퓨터에서만 접근 가능하다는 의미입니다.\nflush privileges는 DBMS에게 적용을 하라는 의미입니다.\n해당 명령을 반드시 실행해줘야 합니다.\n\n12345grant all privileges on connectdb.* to connectuser@&apos;%&apos; identified by &apos;connect123!@#&apos;;grant all privileges on connectdb.* to connectuser@&apos;localhost&apos; identified by &apos;connect123!@#&apos;;flush privileges;\n\n생성한 Database에 접속하기\n1mysql&gt; –h호스트명 –uDB계정명 –p 데이터베이스이름\n\ndb이름이 connectdb, db계정이 connectuser, 암호가 connect123!@# 일 경우 콘솔창에서 다음과 같이 입력합니다.\n\n1mysql –h127.0.0.1 –uconnectuser –p connectdb [enter]\n\nDBMS에 존재하는 데이터베이스 확인하기\n1mysql&gt; show databases;\n\n사용중인 데이터베이스 전환하기\n1mysql&gt; use mydb;\n\n데이터베이스를 전환하려면, \n이미 데이터베이스가 존재해야 하며 \n현재 접속 중인 계정이 해당 데이터베이스를 사용할 수 있는 권한이 있어야 합니다.\n\n\n데이터를 저장하는 공간 테이블(Table)\n\n\n마이크로소프트의 엑셀(Excel)을 실행하면 표가 나옵니다. 이러한 표에 각종 값을 저장할 수 있습니다.\n데이터베이스도 엑셀의 표와 유사한 테이블을 가질 수 있습니다.\n엑셀과 다른 점은 데이터베이스를 생성해도 테이블은 존재하지 않는다는 것입니다.\n테이블을 사용하려면 테이블을 생성하는 SQL을 사용해야 합니다.\n그리고, 테이블에 값을 저장하려면 저장하기 위한 SQL을 사용해야 합니다.\n\n\n현재 데이터베이스에 존재하는 테이블 목록 확인하기\n1mysql&gt; show tables;\n\n테이블 구조를 확인하기 위한 DESCRIBE 명령\n1mysql&gt; desc EMPLOYEE;\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-08T00:00:00+09:00","dateModified":"2018-05-08T17:14:36+09:00","datePublished":"2018-05-08T00:00:00+09:00","description":"","headline":"SQL","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/08/2018-05-08-SQL/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/08/2018-05-08-SQL/"}</script>
+    <meta name="description" content="SQL(Structured Query Language)  SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다. 관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다. DML (Data Manipulation Language) 데이터를 조작하기 위해 사용합니다. INSERT, UPDATE">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="SQL">
+<meta property="og:url" content="http://junheeko.com/2018/05/08/2018-05-08-SQL/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="SQL(Structured Query Language)  SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다. 관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다. DML (Data Manipulation Language) 데이터를 조작하기 위해 사용합니다. INSERT, UPDATE">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/table.png">
+<meta property="og:updated_time" content="2018-05-08T08:14:36.564Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL">
+<meta name="twitter:description" content="SQL(Structured Query Language)  SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다. 관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다. DML (Data Manipulation Language) 데이터를 조작하기 위해 사용합니다. INSERT, UPDATE">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/table.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            SQL
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-05-08T00:00:00+09:00">
+	
+		    May 08, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/boostcourse/">boostcourse</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <ul>
+<li><p>SQL(Structured Query Language)</p>
+<ul>
+<li>SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다.</li>
+<li>관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다.</li>
+<li>DML (Data Manipulation Language)<ul>
+<li>데이터를 조작하기 위해 사용합니다.</li>
+<li>INSERT, UPDATE, DELETE, SELECT 등이 여기에 해당합니다.</li>
+</ul>
+</li>
+<li>DDL (Data Definition Language)<ul>
+<li>데이터베이스의 스키마를 정의하거나 조작하기 위해 사용합니다.</li>
+<li>CREATE, DROP, ALTER 등이 여기에 해당합니다.</li>
+</ul>
+</li>
+<li>DCL (Data Control Language) <ul>
+<li>데이터를 제어하는 언어입니다. 권한을 관리하고, 테이터의 보안, 무결성 등을 정의합니다.</li>
+<li>GRANT, REVOKE 등이 여기에 해당합니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Database 생성하기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql –uroot  -p</span><br></pre></td></tr></table></figure>
+<ul>
+<li>MySQL 관리자 계정인 root로 데이터베이스 관리 시스템에 접속하겠다는 것입니다.</li>
+<li>MySQL DBMS에 접속하면 “mysql&gt;” 프롬프트가 보입니다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create database connectdb;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>다음과 같은 명령을 실행하여 DB이름을 “connectdb＂로 생성하도록 하겠습니다.</li>
+</ul>
+</li>
+<li><p>Database 사용자 생성과 권한 주기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on db이름.* to 계정이름@&apos;%&apos; identified by ＇암호’;</span><br><span class="line">grant all privileges on db이름.* to 계정이름@&apos;localhost&apos; identified by ＇암호’;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Database를 생성했다면, 해당 데이터베이스를 사용하는 계정을 생성해야 합니다.</li>
+<li>또한, 해당 계정이 데이터베이스를 이용할 수 있는 권한을 줘야 합니다.</li>
+<li>db이름 뒤의 * 는 모든 권한을 의미한다.</li>
+<li>@’%’는 어떤 클라이언트에서든 접근 가능하다는 의미이고, @’localhost’는 해당 컴퓨터에서만 접근 가능하다는 의미입니다.</li>
+<li>flush privileges는 DBMS에게 적용을 하라는 의미입니다.</li>
+<li>해당 명령을 반드시 실행해줘야 합니다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on connectdb.* to connectuser@&apos;%&apos; identified by &apos;connect123!@#&apos;;</span><br><span class="line"></span><br><span class="line">grant all privileges on connectdb.* to connectuser@&apos;localhost&apos; identified by &apos;connect123!@#&apos;;</span><br><span class="line"></span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>생성한 Database에 접속하기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; –h호스트명 –uDB계정명 –p 데이터베이스이름</span><br></pre></td></tr></table></figure>
+<ul>
+<li>db이름이 connectdb, db계정이 connectuser, 암호가 connect123!@# 일 경우 콘솔창에서 다음과 같이 입력합니다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql –h127.0.0.1 –uconnectuser –p connectdb [enter]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DBMS에 존재하는 데이터베이스 확인하기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show databases;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>사용중인 데이터베이스 전환하기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use mydb;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>데이터베이스를 전환하려면, </li>
+<li>이미 데이터베이스가 존재해야 하며 </li>
+<li>현재 접속 중인 계정이 해당 데이터베이스를 사용할 수 있는 권한이 있어야 합니다.</li>
+</ul>
+</li>
+<li><p>데이터를 저장하는 공간 테이블(Table)</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/table.png" alt="img"></p>
+<ul>
+<li>마이크로소프트의 엑셀(Excel)을 실행하면 표가 나옵니다. 이러한 표에 각종 값을 저장할 수 있습니다.</li>
+<li>데이터베이스도 엑셀의 표와 유사한 테이블을 가질 수 있습니다.</li>
+<li>엑셀과 다른 점은 데이터베이스를 생성해도 테이블은 존재하지 않는다는 것입니다.</li>
+<li>테이블을 사용하려면 테이블을 생성하는 SQL을 사용해야 합니다.</li>
+<li>그리고, 테이블에 값을 저장하려면 저장하기 위한 SQL을 사용해야 합니다.</li>
+</ul>
+</li>
+<li><p>현재 데이터베이스에 존재하는 테이블 목록 확인하기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show tables;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>테이블 구조를 확인하기 위한 DESCRIBE 명령</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; desc EMPLOYEE;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/08/2018-05-08-Spring MVC/" data-tooltip="Spring MVC" aria-label="PREVIOUS: Spring MVC">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/08/2018-05-08-돌다리/" data-tooltip="돌다리" aria-label="NEXT: 돌다리">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/08/2018-05-08-Spring MVC/" data-tooltip="Spring MVC" aria-label="PREVIOUS: Spring MVC">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/08/2018-05-08-돌다리/" data-tooltip="돌다리" aria-label="NEXT: 돌다리">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/08/2018-05-08-SQL/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/08/2018-05-08-SQL/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/08/2018-05-08-SQL/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/08/2018-05-08-SQL/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
