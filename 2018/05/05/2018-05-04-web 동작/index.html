@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>web 동작 - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\n물리적인 하나의 컴퓨터에 여러개의 서버가 동작 가능\n각각 서버는 포트를 가지고 잇음\n인터넷은 네트워크들의 네트워크. 네트워크들의 결합체\nTCP/IP로 연결되어 있다\n통신을 하기 위해 HTTP를 사용함\nHTTP v0.9가 최초\nHTTP : 서바와 클라이언트가 인터넷상에서 데이터 주고 받기 위한 프로토콜\n어떤 종류의 데이터도 전송 가능\n이미지, 동영상, 텍스트 등 …\n\n\nHTTP/2 까지 등장\nHTTP/1.1 을 다룰거임\n\n\nHTTP 작동방식\n네트워크 통신방식에는 유상태와 무상태 두개가 있다\n유상태  방식 :  stateful\n접속이 계속 유지\n클라이언트와 서버 간에 지속적으로 데이터 주고 받을 수 있어\n채탱, 온라인 게임에 적합\n서버가 동시에 접속 유지 할수 있는 수 정해짐\n그래서 클라이언트 수가 많아지면 서버의 수도 많아져야해\n\n\n\n\n무상태 : stateless  &lt;– HTTP는 이걸 써\n계속 연결을 맺지 않아\n필요한 경우에만 연결을 맺어\n클라이언트가 계속 연결을 맺고 있지 않아\n하나의 서버가 굉장히 많은 요청/ 응답 처리 가능\n서버/ 클라이언트 모델을 따름\n불특정 다수를 대상으로 하는 서비스에는 적합\n클라이언트와 서버가 계속 연결된 형태가 아니기 때문에 클라이언트와 서버 간의 최대 연결 수보다 훨씬 많은 요청과 응답을 처리할 수 있다.\n연결을 끊어버리기 때문에, 클라이언트의 이전 상황을 알 수가 없다. \n이러한 특징을 무상태(Stateless)라고 말한다. \n이러한 특징 때문에 정보를 유지하기 위해서 Cookie와 같은 기술이 등장하게 되었다.\n\n\n\n\nURL\n인터넷 상의 자원의 위치\n문서/이미지/동영상등의 위치\n크게 세부분으로 나뉨\n프로토콜의 종류 / 서버의 IP주소(도메인주소) / 자원의 위치\nIP : 집의 집 주소\n하나의 컴퓨터에는 하나의 IP 존재\n집에는 방들이 여러개 ㅇ있어\n각각의 하나의 방을 포트\n한방에 여러명이 생활하기도해. 서버는 이렇게 불가능\n서버는 각 하나의 방을 하나씩 차지\n하나의 방에 여러개의 서버가 존재할수 없다\n포트 번호가 각각 달라야됨\n하나의 물리적 컴퓨터에는 여러개의 서버가 동작 가능\n서버는 포트값이 다르게 동작\n포트값은 0보다 큰 숫자값이다\nHTTP 서버는 기본 포트값이 80 이다\n\n\n웹 동작 원리\n클라이언트가 서버에 접속을 함\n다시 클라이언트가 요청을 함\n요청되는 데이터들은 정해진 규칙이 있어. 요청데이터포맷 이라고 함\n요청 데이터 포맷\n헤더\n요청 메서드 + 요청URI(요청하는 자원의 위치 명시) + HTTP 프로토콜의 버젼\n요청 메서드 : GET 말고도 많아\n\n\n\n\n요청 바디\nGET방식은 요청바디가 없어\nPOST나 PUT을 사용하면 바디에 들어가\n\n\n\n\n응답 데이터 포맷\n헤더\n바디\n\n\n\n\n요청에 따른 응답결과를 클라이언트게 응답\n응답이 끝나고 나면 서버와 클라이어트의 연결이 끊겨\n\n\nReference\n\nhttps://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Introduction\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-05T00:00:00+09:00","dateModified":"2018-05-06T00:03:38+09:00","datePublished":"2018-05-05T00:00:00+09:00","description":"","headline":"web 동작","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://junheeko.com/2018/05/05/2018-05-04-web 동작/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"http://junheeko.com/2018/05/05/2018-05-04-web 동작/"}</script>
+    <meta name="description" content="물리적인 하나의 컴퓨터에 여러개의 서버가 동작 가능 각각 서버는 포트를 가지고 잇음 인터넷은 네트워크들의 네트워크. 네트워크들의 결합체 TCP/IP로 연결되어 있다 통신을 하기 위해 HTTP를 사용함 HTTP v0.9가 최초 HTTP : 서바와 클라이언트가 인터넷상에서 데이터 주고 받기 위한 프로토콜 어떤 종류의 데이터도 전송 가능 이미지, 동영상, 텍스">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="web 동작">
+<meta property="og:url" content="http://junheeko.com/2018/05/05/2018-05-04-web 동작/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="물리적인 하나의 컴퓨터에 여러개의 서버가 동작 가능 각각 서버는 포트를 가지고 잇음 인터넷은 네트워크들의 네트워크. 네트워크들의 결합체 TCP/IP로 연결되어 있다 통신을 하기 위해 HTTP를 사용함 HTTP v0.9가 최초 HTTP : 서바와 클라이언트가 인터넷상에서 데이터 주고 받기 위한 프로토콜 어떤 종류의 데이터도 전송 가능 이미지, 동영상, 텍스">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-05T15:03:38.006Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web 동작">
+<meta name="twitter:description" content="물리적인 하나의 컴퓨터에 여러개의 서버가 동작 가능 각각 서버는 포트를 가지고 잇음 인터넷은 네트워크들의 네트워크. 네트워크들의 결합체 TCP/IP로 연결되어 있다 통신을 하기 위해 HTTP를 사용함 HTTP v0.9가 최초 HTTP : 서바와 클라이언트가 인터넷상에서 데이터 주고 받기 위한 프로토콜 어떤 종류의 데이터도 전송 가능 이미지, 동영상, 텍스">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            web 동작
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-05-05T00:00:00+09:00">
+	
+		    May 05, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/boostcourse/">boostcourse</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <ul>
+<li>물리적인 하나의 컴퓨터에 여러개의 서버가 동작 가능</li>
+<li>각각 서버는 포트를 가지고 잇음</li>
+<li>인터넷은 네트워크들의 네트워크. 네트워크들의 결합체</li>
+<li>TCP/IP로 연결되어 있다</li>
+<li>통신을 하기 위해 HTTP를 사용함<ul>
+<li>HTTP v0.9가 최초</li>
+<li>HTTP : 서바와 클라이언트가 인터넷상에서 데이터 주고 받기 위한 프로토콜</li>
+<li>어떤 종류의 데이터도 전송 가능<ul>
+<li>이미지, 동영상, 텍스트 등 …</li>
+</ul>
+</li>
+<li>HTTP/2 까지 등장</li>
+<li>HTTP/1.1 을 다룰거임</li>
+</ul>
+</li>
+<li>HTTP 작동방식</li>
+<li>네트워크 통신방식에는 유상태와 무상태 두개가 있다<ul>
+<li>유상태  방식 :  stateful<ul>
+<li>접속이 계속 유지</li>
+<li>클라이언트와 서버 간에 지속적으로 데이터 주고 받을 수 있어</li>
+<li>채탱, 온라인 게임에 적합</li>
+<li>서버가 동시에 접속 유지 할수 있는 수 정해짐<ul>
+<li>그래서 클라이언트 수가 많아지면 서버의 수도 많아져야해</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>무상태 : stateless  &lt;– HTTP는 이걸 써<ul>
+<li>계속 연결을 맺지 않아</li>
+<li>필요한 경우에만 연결을 맺어</li>
+<li>클라이언트가 계속 연결을 맺고 있지 않아</li>
+<li>하나의 서버가 굉장히 많은 요청/ 응답 처리 가능</li>
+<li>서버/ 클라이언트 모델을 따름</li>
+<li>불특정 다수를 대상으로 하는 서비스에는 적합</li>
+<li>클라이언트와 서버가 계속 연결된 형태가 아니기 때문에 클라이언트와 서버 간의 최대 연결 수보다 훨씬 많은 요청과 응답을 처리할 수 있다.</li>
+<li>연결을 끊어버리기 때문에, 클라이언트의 이전 상황을 알 수가 없다. </li>
+<li>이러한 특징을 무상태(Stateless)라고 말한다. </li>
+<li>이러한 특징 때문에 정보를 유지하기 위해서 Cookie와 같은 기술이 등장하게 되었다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>URL<ul>
+<li>인터넷 상의 자원의 위치</li>
+<li>문서/이미지/동영상등의 위치</li>
+<li>크게 세부분으로 나뉨</li>
+<li>프로토콜의 종류 / 서버의 IP주소(도메인주소) / 자원의 위치</li>
+<li>IP : 집의 집 주소</li>
+<li>하나의 컴퓨터에는 하나의 IP 존재</li>
+<li>집에는 방들이 여러개 ㅇ있어</li>
+<li>각각의 하나의 방을 포트</li>
+<li>한방에 여러명이 생활하기도해. 서버는 이렇게 불가능</li>
+<li>서버는 각 하나의 방을 하나씩 차지</li>
+<li>하나의 방에 여러개의 서버가 존재할수 없다</li>
+<li>포트 번호가 각각 달라야됨</li>
+<li>하나의 물리적 컴퓨터에는 여러개의 서버가 동작 가능</li>
+<li>서버는 포트값이 다르게 동작</li>
+<li>포트값은 0보다 큰 숫자값이다</li>
+<li>HTTP 서버는 기본 포트값이 80 이다</li>
+</ul>
+</li>
+<li>웹 동작 원리<ul>
+<li>클라이언트가 서버에 접속을 함</li>
+<li>다시 클라이언트가 요청을 함<ul>
+<li>요청되는 데이터들은 정해진 규칙이 있어. 요청데이터포맷 이라고 함</li>
+<li>요청 데이터 포맷<ul>
+<li>헤더<ul>
+<li>요청 메서드 + 요청URI(요청하는 자원의 위치 명시) + HTTP 프로토콜의 버젼<ul>
+<li>요청 메서드 : GET 말고도 많아</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>요청 바디<ul>
+<li>GET방식은 요청바디가 없어</li>
+<li>POST나 PUT을 사용하면 바디에 들어가</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>응답 데이터 포맷<ul>
+<li>헤더</li>
+<li>바디</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>요청에 따른 응답결과를 클라이언트게 응답</li>
+<li>응답이 끝나고 나면 서버와 클라이어트의 연결이 끊겨</li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li><a href="https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Introduction" target="_blank" rel="noopener">https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Introduction</a></li>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/05/2018-05-05- browser에서의 웹 개발/" data-tooltip=" browser에서의 웹 개발" aria-label="PREVIOUS:  browser에서의 웹 개발">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/05/2018-05-05-was/" data-tooltip="was" aria-label="NEXT: was">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/05/2018-05-04-web 동작/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/05/2018-05-04-web 동작/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/05/2018-05-04-web 동작/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/05/2018-05-05- browser에서의 웹 개발/" data-tooltip=" browser에서의 웹 개발" aria-label="PREVIOUS:  browser에서의 웹 개발">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/05/2018-05-05-was/" data-tooltip="was" aria-label="NEXT: was">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/05/2018-05-04-web 동작/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/05/2018-05-04-web 동작/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/05/2018-05-04-web 동작/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://junheeko.com/2018/05/05/2018-05-04-web 동작/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://junheeko.com/2018/05/05/2018-05-04-web 동작/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://junheeko.com/2018/05/05/2018-05-04-web 동작/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
