@@ -399,8 +399,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/11/13/2018-11-13-View Life Cycle/">
-                            View Life Cycle
+                        <a class="link-unstyled" href="/2018/11/13/2018-11-13-SOLID/">
+                            SOLID
                         </a>
                     
                 </h1>
@@ -413,7 +413,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/ios/">ios</a>
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
 
 
     
@@ -422,25 +422,26 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="Life-Cycle"><a href="#Life-Cycle" class="headerlink" title="Life Cycle"></a>Life Cycle</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iosViewLifeCycle.png" alt="img"></p>
+                    <h2 id="SOLID란"><a href="#SOLID란" class="headerlink" title="SOLID란"></a>SOLID란</h2><p>객체지향 개발 5대 원리</p>
 <ol>
-<li><p>ViewDidLoad</p>
-<p>뷰 컨트롤러 클래스가 생성될 때, 가장 먼저 실행됩니다. 특별한 경우가 아니라면 <strong>딱 한 번</strong> 실행되기 때문<br>에 초기화 할 때 사용 할 수 있습니다.</p>
+<li><p>S : SRP - Single Responsibility Principle (단일 책임 원칙)</p>
+<p>객체는 단 하나의 책임(변경 이유)만 가져야 한다.</p>
 </li>
-<li><p>ViewWillAppear</p>
-<p>뷰가 생성되기 직전에 <strong>항상</strong> 실행이 되기 때문에 뷰가 나타나기 전에 실행해야 하는 작업들을 여기서 할<br>수 있습니다.</p>
+<li><p>O : OCP - Open-Closed Principle (개방-폐쇄 원칙)</p>
+<p>open for extension, closed for modifications.</p>
 </li>
-<li><p>ViewDidAppear</p>
-<p>뷰가 생성되고 난 뒤에 실행 됩니다. 데이터를 받아서 화면에 뿌려주거나 애니메이션 등의 작업을 하는 로직을<br>위치시킬 수 있습니다. ViewWillAppear 에서 로직을 넣었다가 뷰에 반영이 안되는 경우가 있기 때문입니다.</p>
+<li><p>L : LSP - Liskov Subsititution Principle ( 리스코프 치환 법칙 )</p>
+<p>자식 클래스는 최소한 부모 클래스에서 가능한 행위는 수행할 수 있어야 한다</p>
 </li>
-<li><p>ViewWillDisappear</p>
-<p>뷰가 사라지기 직전에 실행 됩니다.</p>
+<li><p>I : ISP - Interface Segregation Principle ( 인터페이스 분리 법칙 )</p>
+<p>인터페이스를 클라이언트에 특화되도록 분리시키는 설계 원칙</p>
 </li>
-<li><p>ViewDidDisappear</p>
-<p>뷰가 사라지고 난 뒤에 실행 됩니다.</p>
+<li><p>D : DIP - Dependency Inversion Principle ( 의존 역전 법칙 )</p>
+<p>어떤 클래스가 도움을 받을 때, 구체적인 클래스보다는 인터페이스나 추상 클래스와 의존 관계를 맺도록.</p>
 </li>
 </ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://developer.apple.com/documentation/uikit/uiviewcontroller" target="_blank" rel="noopener">https://developer.apple.com/documentation/uikit/uiviewcontroller</a></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://www.oodesign.com/single-responsibility-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/single-responsibility-principle.html</a></p>
+<p>JAVA 객체지향 디자인 패턴 (정인상, 채흥석 지음)</p>
 
                     
                         
@@ -448,7 +449,7 @@
                     
                     
                         <p>
-                            <a href="/2018/11/13/2018-11-13-View Life Cycle/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/11/13/2018-11-13-SOLID/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -532,8 +533,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/11/13/2018-11-13-SOLID/">
-                            SOLID
+                        <a class="link-unstyled" href="/2018/11/13/2018-11-13-View Life Cycle/">
+                            View Life Cycle
                         </a>
                     
                 </h1>
@@ -546,7 +547,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+    <a class="category-link" href="/categories/ios/">ios</a>
 
 
     
@@ -555,26 +556,25 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="SOLID란"><a href="#SOLID란" class="headerlink" title="SOLID란"></a>SOLID란</h2><p>객체지향 개발 5대 원리</p>
+                    <h2 id="Life-Cycle"><a href="#Life-Cycle" class="headerlink" title="Life Cycle"></a>Life Cycle</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iosViewLifeCycle.png" alt="img"></p>
 <ol>
-<li><p>S : SRP - Single Responsibility Principle (단일 책임 원칙)</p>
-<p>객체는 단 하나의 책임(변경 이유)만 가져야 한다.</p>
+<li><p>ViewDidLoad</p>
+<p>뷰 컨트롤러 클래스가 생성될 때, 가장 먼저 실행됩니다. 특별한 경우가 아니라면 <strong>딱 한 번</strong> 실행되기 때문<br>에 초기화 할 때 사용 할 수 있습니다.</p>
 </li>
-<li><p>O : OCP - Open-Closed Principle (개방-폐쇄 원칙)</p>
-<p>open for extension, closed for modifications.</p>
+<li><p>ViewWillAppear</p>
+<p>뷰가 생성되기 직전에 <strong>항상</strong> 실행이 되기 때문에 뷰가 나타나기 전에 실행해야 하는 작업들을 여기서 할<br>수 있습니다.</p>
 </li>
-<li><p>L : LSP - Liskov Subsititution Principle ( 리스코프 치환 법칙 )</p>
-<p>자식 클래스는 최소한 부모 클래스에서 가능한 행위는 수행할 수 있어야 한다</p>
+<li><p>ViewDidAppear</p>
+<p>뷰가 생성되고 난 뒤에 실행 됩니다. 데이터를 받아서 화면에 뿌려주거나 애니메이션 등의 작업을 하는 로직을<br>위치시킬 수 있습니다. ViewWillAppear 에서 로직을 넣었다가 뷰에 반영이 안되는 경우가 있기 때문입니다.</p>
 </li>
-<li><p>I : ISP - Interface Segregation Principle ( 인터페이스 분리 법칙 )</p>
-<p>인터페이스를 클라이언트에 특화되도록 분리시키는 설계 원칙</p>
+<li><p>ViewWillDisappear</p>
+<p>뷰가 사라지기 직전에 실행 됩니다.</p>
 </li>
-<li><p>D : DIP - Dependency Inversion Principle ( 의존 역전 법칙 )</p>
-<p>어떤 클래스가 도움을 받을 때, 구체적인 클래스보다는 인터페이스나 추상 클래스와 의존 관계를 맺도록.</p>
+<li><p>ViewDidDisappear</p>
+<p>뷰가 사라지고 난 뒤에 실행 됩니다.</p>
 </li>
 </ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://www.oodesign.com/single-responsibility-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/single-responsibility-principle.html</a></p>
-<p>JAVA 객체지향 디자인 패턴 (정인상, 채흥석 지음)</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://developer.apple.com/documentation/uikit/uiviewcontroller" target="_blank" rel="noopener">https://developer.apple.com/documentation/uikit/uiviewcontroller</a></p>
 
                     
                         
@@ -582,7 +582,7 @@
                     
                     
                         <p>
-                            <a href="/2018/11/13/2018-11-13-SOLID/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/11/13/2018-11-13-View Life Cycle/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

@@ -165,8 +165,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/06/08/2018-06-08-Builder Pattern01/">
-                            Builder Pattern01
+                        <a class="link-unstyled" href="/2018/06/08/2018-06-08-Builder Pattern03/">
+                            Builder Pattern03
                         </a>
                     
                 </h1>
@@ -188,103 +188,28 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
-<li>Builder pattern builds a complex object using simple objects and using a step by step approach. </li>
-<li>This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.</li>
-<li>A Builder class builds the final object step by step. This builder is independent of other objects.</li>
-</ul>
-<h2 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h2><ul>
-<li>Defines an instance for creating an object but letting subclasses decide which class to instantiate</li>
-<li>Refers to the newly created object through a common interface</li>
-</ul>
-<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/builderPattern01.png" alt="img"> </p>
-<ul>
-<li><strong>Builder</strong> <ul>
-<li>specifies an abstract interface for creating parts of a Product object.</li>
-</ul>
-</li>
-<li><strong>ConcreteBuilder</strong> <ul>
-<li>constructs and puts together parts of the product by implementing the Builder interface. It defines and keeps track of the representation it creates and provides an interface for saving the product.</li>
-</ul>
-</li>
-<li><strong>Director</strong>  <ul>
-<li>constructs the complex object using the Builder interface.</li>
-</ul>
-</li>
-<li><strong>Product</strong> <ul>
-<li>represents the complex object that is being built.</li>
-</ul>
-</li>
-</ul>
-<p>The client, that may be either another object or the actual client that calls the main() method of the application, initiates the Builder and Director class. </p>
-<p>The Builder represents the complex object that needs to be built in terms of simpler objects and types. </p>
-<p>The constructor in the Director class receives a Builder object as a parameter from the Client and is responsible for calling the appropriate methods of the Builder class. </p>
-<p>In order to provide the Client with an interface for all concrete Builders, the Builder class should be an abstract one. </p>
-<p>This way you can add new types of complex objects by only defining the structure and reusing the logic for the actual construction process. </p>
-<p>The Client is the only one that needs to know about the new types, the Director needing to know which methods of the Builder to call.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.oodesign.com/builder-pattern.html" target="_blank" rel="noopener">https://www.oodesign.com/builder-pattern.html</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/06/08/2018-06-08-Builder Pattern01/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/06/08/2018-06-08-Flyweight Pattern03/">
-                            Flyweight Pattern03
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-06-08T00:00:00+09:00">
-	
-		    Jun 08, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>Use the Flyweight Pattern when one instance of a class can be used to provide many “virtual instances.” </p>
-<h2 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h2><p>You want to add trees as objects in your hot new landscape design application. </p>
-<p>In your application, trees don’t really do very much; </p>
-<p>they have an X-Y location, and they can draw themselves dynamically, depending on how old they are. </p>
-<p>The thing is, a user might want to have lots and lots of trees in one of their home landscape designs. </p>
-<p>It might look something like this: </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fly031.png" alt="img"></p>
-<h2 id="dilemma"><a href="#dilemma" class="headerlink" title="dilemma"></a>dilemma</h2><p>When they create large groves of trees, the app starts getting sluggish… </p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>What if, instead of having thousands of Tree objects, </p>
-<p>you could redesign your system so that you’ve got only one instance of Tree, and a client object that maintains the state of ALL your trees? </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fly032.png" alt="img"></p>
+                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>Use the Builder Pattern to encapsulate the construction of a product and allow it to be constructed in steps. </p>
+<p>##Scenario</p>
+<p>You’ve just been asked to build a vacation planner for a new theme  park. </p>
+<p>Park guests can choose a hotel and various types of admission tickets, make restaurant reservations, and even book special events. </p>
+<p>To create a vacation planner, you need to be able to create structures like this: </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/newBuilder01.png" alt="img"> </p>
+<h2 id="You-need-a-flexible-design"><a href="#You-need-a-flexible-design" class="headerlink" title="You need a flexible design"></a>You need a flexible design</h2><p>Each guest’s planner can vary in the number of days and types of activities it includes. </p>
+<p>For instance, a local resident might not need a hotel, but wants to make dinner and special event reservations. Another guest needs a hotel, dinner reservations, and admission tickets. </p>
+<p>So, you need a flexible data structure that can represent guest planners and all their variations; </p>
+<p>you also need to follow a sequence of potentially complex steps to create the planner. </p>
+<p>How can you provide a way to create the complex structure without mixing it with the steps for creating it? </p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Remember Iterator? </p>
+<p>We encapsulated the iteration into a separate object and hid the internal representation of the collection from the client. </p>
+<p>It’s the same idea here: </p>
+<p>we encapsulate the creation of the trip planner in an object (let’s call it a builder), </p>
+<p>and have our client ask the builder to construct the trip planner structure for it. </p>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/newBuilder02.png" alt="img"> </p>
 <h2 id="Benefits"><a href="#Benefits" class="headerlink" title="Benefits"></a>Benefits</h2><ul>
-<li>Reduces the number of object instances at runtime, saving memory. </li>
-<li>Centralizes state for many “virtual” objects into a single location. </li>
+<li>Encapsulates the way a complex object is constructed. </li>
+<li>Allows objects to be constructed in a multistep and varying process (as opposed to one step factories). </li>
+<li>Hides the internal representation of the product from the client. </li>
+<li>Product implementations can be swapped in and out because the client only sees an abstract interface. </li>
 </ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
 
@@ -294,7 +219,7 @@
                     
                     
                         <p>
-                            <a href="/2018/06/08/2018-06-08-Flyweight Pattern03/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/06/08/2018-06-08-Builder Pattern03/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -433,6 +358,70 @@
                     
                         <p>
                             <a href="/2018/06/08/2018-06-08-Flyweight Pattern02/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/06/08/2018-06-08-Flyweight Pattern03/">
+                            Flyweight Pattern03
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-06-08T00:00:00+09:00">
+	
+		    Jun 08, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>Use the Flyweight Pattern when one instance of a class can be used to provide many “virtual instances.” </p>
+<h2 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h2><p>You want to add trees as objects in your hot new landscape design application. </p>
+<p>In your application, trees don’t really do very much; </p>
+<p>they have an X-Y location, and they can draw themselves dynamically, depending on how old they are. </p>
+<p>The thing is, a user might want to have lots and lots of trees in one of their home landscape designs. </p>
+<p>It might look something like this: </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fly031.png" alt="img"></p>
+<h2 id="dilemma"><a href="#dilemma" class="headerlink" title="dilemma"></a>dilemma</h2><p>When they create large groves of trees, the app starts getting sluggish… </p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>What if, instead of having thousands of Tree objects, </p>
+<p>you could redesign your system so that you’ve got only one instance of Tree, and a client object that maintains the state of ALL your trees? </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/fly032.png" alt="img"></p>
+<h2 id="Benefits"><a href="#Benefits" class="headerlink" title="Benefits"></a>Benefits</h2><ul>
+<li>Reduces the number of object instances at runtime, saving memory. </li>
+<li>Centralizes state for many “virtual” objects into a single location. </li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/06/08/2018-06-08-Flyweight Pattern03/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -657,6 +646,95 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Decorator Pattern02/">
+                            Decorator Pattern02
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-06-06T00:00:00+09:00">
+	
+		    Jun 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>기본 기능에 추가할 수 있는 많은 종류의 부가 기능에서 파생되는 다양한 조합을 동적으로 구현할 수 있는 패턴이다.</p>
+<h2 id="Class-diagram"><a href="#Class-diagram" class="headerlink" title="Class diagram"></a>Class diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dec01.png" alt="img"> </p>
+<ul>
+<li>Componet<ul>
+<li>기본 기능을 뜻하는 ConcreteComponent 와 추가 기능을 뜻하는 Decorator의 공통 기능을 정의</li>
+<li>즉, 클라이언트는 Component를 통해 실제 객체를 사용</li>
+</ul>
+</li>
+<li>ConcreteComponent<ul>
+<li>기본 기능을 구현하는 클래스</li>
+</ul>
+</li>
+<li>Decorator<ul>
+<li>많은 수가 존재하는 구체적인 Decorator의 공통 기능을 제공</li>
+</ul>
+</li>
+<li>ConcreteDecoratorA, ConcreteDecoratorB<ul>
+<li>Decorator의 하위 클래스로 기본 기능에 추가되는 개별적이 기능</li>
+</ul>
+</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dec02.png" alt="img"></p>
+<ul>
+<li>Display<ul>
+<li>Component</li>
+</ul>
+</li>
+<li>RoadDisplay<ul>
+<li>ConcreteComponent</li>
+</ul>
+</li>
+<li>DisplayDecorator<ul>
+<li>Decorator</li>
+</ul>
+</li>
+<li>LaneDecorator, TrafficDecorator, CrossingDecorator<ul>
+<li>ConcreteDecorator</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Java 객체 지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/06/06/2018-06-11-Decorator Pattern02/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/06/06/2018-06-06-Strategy Pattern03/">
                             Strategy Pattern03
                         </a>
@@ -741,8 +819,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Command Pattern03/">
-                            Command Pattern03
+                        <a class="link-unstyled" href="/2018/06/06/2018-06-06-Strategy Pattern02/">
+                            Strategy Pattern02
                         </a>
                     
                 </h1>
@@ -764,43 +842,17 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/com01.png" alt="img"> </p>
-<ul>
-<li>Command<ul>
-<li>싱핼됭 기능에 대한 인터페이스. 실행될 기능을 execute method로 선언</li>
-</ul>
-</li>
-<li>ConcreteCommand<ul>
-<li>실제로 실행되는 기능을 구현.</li>
-<li>즉, Command라는 인터페이스를 구현</li>
-</ul>
-</li>
-<li>Invoker <ul>
-<li>기능의 실행을 요청하는 호출자 클래스</li>
-</ul>
-</li>
-<li>Receiver<ul>
-<li>ConcreteCommand 에서 execute method를 구현할 때 필요한 클래스</li>
-<li>즉, Concrete Command 의 기능을 실행하기 위해 사용하는 수신자 클래스</li>
-</ul>
-</li>
-</ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/com02.png" alt="img"> </p>
-<ul>
-<li>Button<ul>
-<li>Invoker</li>
-</ul>
-</li>
-<li>LampOnCommand, LampOffCommand<ul>
-<li>ConcreteCommand</li>
-</ul>
-</li>
-<li>Lamp<ul>
-<li>Receiver</li>
-</ul>
-</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Java 객체지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;</p>
+                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. </p>
+<p>Strategy lets the algorithm vary independently from clients that use it. </p>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa.png" alt="img"> </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa06.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa07.png" alt="img"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
 
                     
                         
@@ -808,96 +860,7 @@
                     
                     
                         <p>
-                            <a href="/2018/06/06/2018-06-11-Command Pattern03/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Decorator Pattern02/">
-                            Decorator Pattern02
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-06-06T00:00:00+09:00">
-	
-		    Jun 06, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>기본 기능에 추가할 수 있는 많은 종류의 부가 기능에서 파생되는 다양한 조합을 동적으로 구현할 수 있는 패턴이다.</p>
-<h2 id="Class-diagram"><a href="#Class-diagram" class="headerlink" title="Class diagram"></a>Class diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dec01.png" alt="img"> </p>
-<ul>
-<li>Componet<ul>
-<li>기본 기능을 뜻하는 ConcreteComponent 와 추가 기능을 뜻하는 Decorator의 공통 기능을 정의</li>
-<li>즉, 클라이언트는 Component를 통해 실제 객체를 사용</li>
-</ul>
-</li>
-<li>ConcreteComponent<ul>
-<li>기본 기능을 구현하는 클래스</li>
-</ul>
-</li>
-<li>Decorator<ul>
-<li>많은 수가 존재하는 구체적인 Decorator의 공통 기능을 제공</li>
-</ul>
-</li>
-<li>ConcreteDecoratorA, ConcreteDecoratorB<ul>
-<li>Decorator의 하위 클래스로 기본 기능에 추가되는 개별적이 기능</li>
-</ul>
-</li>
-</ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dec02.png" alt="img"></p>
-<ul>
-<li>Display<ul>
-<li>Component</li>
-</ul>
-</li>
-<li>RoadDisplay<ul>
-<li>ConcreteComponent</li>
-</ul>
-</li>
-<li>DisplayDecorator<ul>
-<li>Decorator</li>
-</ul>
-</li>
-<li>LaneDecorator, TrafficDecorator, CrossingDecorator<ul>
-<li>ConcreteDecorator</li>
-</ul>
-</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Java 객체 지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/06/06/2018-06-11-Decorator Pattern02/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/06/06/2018-06-06-Strategy Pattern02/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

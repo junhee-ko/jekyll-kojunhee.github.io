@@ -445,8 +445,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-선택정렬/">
-                            선택정렬
+                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-버블정렬/">
+                            버블정렬
                         </a>
                     
                 </h1>
@@ -468,16 +468,13 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="선택정렬이란"><a href="#선택정렬이란" class="headerlink" title="선택정렬이란"></a>선택정렬이란</h2><p>해당 순서에 원소를 넣을 위치는 이미 정해져 있고, 어떤 원소를 넣을지 선택하는 정렬이다.</p>
-<p>첫 번째 자료를 두 번째 자료부터 마지막 자료까지 차례대로 비교하여 가장 작은 값을 찾아 첫 번째에 놓고, 두 번째 자료를 세 번째 자료부터 마지막 자료까지와 차례대로 비교하여 그 중 가장 작은 값을 찾아 두 번째 위치에 놓는 과정을 반복하며 정렬을 수행한다.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/selectionSort01.png" alt="img"></p>
-<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ol>
-<li>for 루프는 n-1번 반복 되고</li>
-<li>최소값을 찾기 위한 비교 횟수는 n-1, n-2, … , 2, 1</li>
-<li>교환은 상수 시간 작업이므로</li>
-</ol>
-<p>T(n) = (n-1) + (n-2) + … + 2 + 1 = n(n-1)/2 = O(n^2)</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/" target="_blank" rel="noopener">https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/</a><br><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html</a></p>
+                    <h2 id="버블정렬이란"><a href="#버블정렬이란" class="headerlink" title="버블정렬이란"></a>버블정렬이란</h2><p>서로 인접한 두 원소를 검사하여 정렬하는 알고리즘이다.<br>첫 번째 자료와 두 번째 자료를, 두 번째 자료와 세 번째 자료를, 세 번째와 네 번째를, … 이런 식으로 (마지막-1)번째 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬한다.<br><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bubbleSort01.png" alt="img"></p>
+<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ul>
+<li>비교 횟수<br>최상, 평균, 최악 모두 일정하다.  n-1, n-2, … , 2, 1 번 = n(n-1)/2</li>
+<li>교환 횟수<br>입력 자료가 역순으로 정렬되어 있는 최악의 경우, 한 번 교환하기 위하여 3번의 이동(SWAP 함수의 작업)이 필<br>요하므로 (비교 횟수 * 3) 번 = 3n(n-1)/2</li>
+<li>T(n) = O(n^2)</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html</a></p>
 
                     
                         
@@ -485,7 +482,7 @@
                     
                     
                         <p>
-                            <a href="/2018/11/11/2018-11-11-선택정렬/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/11/11/2018-11-11-버블정렬/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -543,6 +540,64 @@
                     
                         <p>
                             <a href="/2018/11/11/2018-11-11-삽입정렬/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-선택정렬/">
+                            선택정렬
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-11-11T00:00:00+09:00">
+	
+		    Nov 11, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/dataStructure/">dataStructure</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="선택정렬이란"><a href="#선택정렬이란" class="headerlink" title="선택정렬이란"></a>선택정렬이란</h2><p>해당 순서에 원소를 넣을 위치는 이미 정해져 있고, 어떤 원소를 넣을지 선택하는 정렬이다.</p>
+<p>첫 번째 자료를 두 번째 자료부터 마지막 자료까지 차례대로 비교하여 가장 작은 값을 찾아 첫 번째에 놓고, 두 번째 자료를 세 번째 자료부터 마지막 자료까지와 차례대로 비교하여 그 중 가장 작은 값을 찾아 두 번째 위치에 놓는 과정을 반복하며 정렬을 수행한다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/selectionSort01.png" alt="img"></p>
+<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ol>
+<li>for 루프는 n-1번 반복 되고</li>
+<li>최소값을 찾기 위한 비교 횟수는 n-1, n-2, … , 2, 1</li>
+<li>교환은 상수 시간 작업이므로</li>
+</ol>
+<p>T(n) = (n-1) + (n-2) + … + 2 + 1 = n(n-1)/2 = O(n^2)</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/" target="_blank" rel="noopener">https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/</a><br><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/11/11/2018-11-11-선택정렬/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -618,61 +673,6 @@
                     
                         <p>
                             <a href="/2018/11/11/2018-11-11-점근 표기법/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/11/11/2018-11-11-버블정렬/">
-                            버블정렬
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-11-11T00:00:00+09:00">
-	
-		    Nov 11, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/dataStructure/">dataStructure</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="버블정렬이란"><a href="#버블정렬이란" class="headerlink" title="버블정렬이란"></a>버블정렬이란</h2><p>서로 인접한 두 원소를 검사하여 정렬하는 알고리즘이다.<br>첫 번째 자료와 두 번째 자료를, 두 번째 자료와 세 번째 자료를, 세 번째와 네 번째를, … 이런 식으로 (마지막-1)번째 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬한다.<br><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bubbleSort01.png" alt="img"></p>
-<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ul>
-<li>비교 횟수<br>최상, 평균, 최악 모두 일정하다.  n-1, n-2, … , 2, 1 번 = n(n-1)/2</li>
-<li>교환 횟수<br>입력 자료가 역순으로 정렬되어 있는 최악의 경우, 한 번 교환하기 위하여 3번의 이동(SWAP 함수의 작업)이 필<br>요하므로 (비교 횟수 * 3) 번 = 3n(n-1)/2</li>
-<li>T(n) = O(n^2)</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/11/11/2018-11-11-버블정렬/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

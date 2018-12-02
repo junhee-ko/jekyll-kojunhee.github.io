@@ -166,6 +166,98 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/05/21/2018-05-21-PMF, CDF/">
+                            PMF, CDF
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-05-21T00:00:00+09:00">
+	
+		    May 21, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DIP/">DIP</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>In the histogram equalization, the first and the second step are PMF and CDF. </p>
+<h2 id="What-is-PMF"><a href="#What-is-PMF" class="headerlink" title="What is PMF?"></a>What is PMF?</h2><ul>
+<li>probability mass function</li>
+<li>it gives the probability of each number in the data set or </li>
+<li>you can say that it basically gives the count or frequency of each element.</li>
+</ul>
+<h2 id="How-PMF-is-calculated"><a href="#How-PMF-is-calculated" class="headerlink" title="How PMF is calculated"></a>How PMF is calculated</h2><ul>
+<li><p>Consider this matrix.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf01.png" alt="img"></p>
+</li>
+<li><p>Now if we were to calculate the PMF of this matrix, </p>
+</li>
+<li><p>here how we are going to do it.</p>
+</li>
+<li><p>At first, we will take the first value in the matrix , and then we will count, how much time this value appears in the whole matrix. </p>
+</li>
+<li><p>After count they can either be represented in a histogram, or in a table like this below.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf02.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="Calculating-PMF-from-histogram"><a href="#Calculating-PMF-from-histogram" class="headerlink" title="Calculating PMF from histogram"></a>Calculating PMF from histogram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf03.png" alt="img"> </p>
+<ul>
+<li>The above histogram shows frequency of gray level values for an 8 bits per pixel image.</li>
+<li>Now if we have to calculate its PMF, </li>
+<li>we will simple look at the count of each bar from vertical axis and then divide it by total count.</li>
+<li>So the PMF of the above histogram is this.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf04.png" alt="img"> </p>
+<h2 id="What-is-CDF"><a href="#What-is-CDF" class="headerlink" title="What is CDF?"></a>What is CDF?</h2><ul>
+<li>cumulative distributive function</li>
+<li>it is a function that calculates the cumulative sum of all the values that are calculated by PMF. </li>
+<li>It basically sums the previous one.</li>
+</ul>
+<h2 id="How-CDF-is-calculated"><a href="#How-CDF-is-calculated" class="headerlink" title="How CDF is calculated"></a>How CDF is calculated</h2><ul>
+<li><p>Since this histogram is not increasing monotonically, so will make it grow monotonically.</p>
+</li>
+<li><p>the first value of PMF remain as it is. </p>
+</li>
+<li><p>The second value of PMF is added in the first value and placed over 128. </p>
+</li>
+<li><p>The third value of PMF is added in the second value of CDF , that gives 110/110 which is equal to 1.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf05.png" alt="img"> </p>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/05/21/2018-05-21-PMF, CDF/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/05/21/2018-05-21-Types of Images/">
                             Types of Images
                         </a>
@@ -320,104 +412,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/21/2018-05-21-Mask/">
-                            Mask
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-05-21T00:00:00+09:00">
-	
-		    May 21, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DIP/">DIP</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="What-is-a-mask"><a href="#What-is-a-mask" class="headerlink" title="What is a mask"></a>What is a mask</h2><ul>
-<li>A mask is a filter.</li>
-<li>Concept of masking is also known as spatial filtering. </li>
-<li>Masking is also known as filtering. </li>
-<li>In this concept we just deal with the filtering operation that is performed directly on the image.</li>
-</ul>
-<h2 id="What-is-filtering"><a href="#What-is-filtering" class="headerlink" title="What is filtering?"></a>What is filtering?</h2><ul>
-<li>The process of filtering is also known as convolving a mask with an image. </li>
-<li>As this process is same of convolution so filter masks are also known as convolution masks.</li>
-</ul>
-<h2 id="How-it-is-done"><a href="#How-it-is-done" class="headerlink" title="How it is done"></a>How it is done</h2><ul>
-<li>The general process of filtering and applying masks is consists of moving the filter mask from point to point in an image. </li>
-<li>At each point (x,y) of the original image, the response of a filter is calculated by a pre defined relationship. </li>
-<li>All the filters values are pre defined and are a standard.</li>
-</ul>
-<h2 id="Types-of-filters"><a href="#Types-of-filters" class="headerlink" title="Types of filters"></a>Types of filters</h2><ul>
-<li>Generally there are two types of filters. <ul>
-<li>linear filters or smoothing filters </li>
-<li>frequency domain filters.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Why-filters-are-used"><a href="#Why-filters-are-used" class="headerlink" title="Why filters are used?"></a>Why filters are used?</h2><ul>
-<li><p>for Blurring and noise reduction</p>
-</li>
-<li><p>edge detection and sharpness</p>
-</li>
-</ul>
-<h2 id="Blurring-and-noise-reduction"><a href="#Blurring-and-noise-reduction" class="headerlink" title="Blurring and noise reduction"></a>Blurring and noise reduction</h2><ul>
-<li>Blurring is used in pre processing steps, such as removal of small details from an image prior to large object extraction.</li>
-</ul>
-<h2 id="Masks-for-blurring"><a href="#Masks-for-blurring" class="headerlink" title="Masks for blurring"></a>Masks for blurring</h2><ul>
-<li>The common masks for blurring are.<ul>
-<li>Box filter</li>
-<li>Weighted average filter</li>
-</ul>
-</li>
-<li>In the process of blurring we reduce the edge content in an image and try to make the transitions between different pixel intensities as smooth as possible.</li>
-<li>Noise reduction is also possible with the help of blurring.</li>
-</ul>
-<h2 id="Edge-Detection-and-sharpness"><a href="#Edge-Detection-and-sharpness" class="headerlink" title="Edge Detection and sharpness"></a>Edge Detection and sharpness</h2><ul>
-<li>Masks or filters can also be used for edge detection in an image and to increase sharpness of an image.</li>
-</ul>
-<h2 id="What-are-edges"><a href="#What-are-edges" class="headerlink" title="What are edges"></a>What are edges</h2><ul>
-<li><p>We can also say that sudden changes of discontinuities in an image are called as edges. </p>
-</li>
-<li><p>Significant transitions in an image are called as edges.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/mask.png" alt="img"></p>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/05/21/2018-05-21-Mask/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
                         <a class="link-unstyled" href="/2018/05/21/2018-05-21-Brightness and Contrast/">
                             Brightness and Contrast
                         </a>
@@ -480,6 +474,122 @@
                     
                         <p>
                             <a href="/2018/05/21/2018-05-21-Brightness and Contrast/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/05/21/2018-05-21-Convolution/">
+                            Convolution
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-05-21T00:00:00+09:00">
+	
+		    May 21, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DIP/">DIP</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="What-is-image-processing"><a href="#What-is-image-processing" class="headerlink" title="What is image processing"></a>What is image processing</h2><ul>
+<li>In image processing , we are developing a system </li>
+<li>whose input is an image and output would be an image</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution04.png" alt="img"></p>
+<ul>
+<li>It can be mathematically represented as two ways : h(x,y) is the mask or filter.<ul>
+<li><strong>g(x,y) = h(x,y) * f(x,y)</strong><ul>
+<li>“mask convolved with an image”.</li>
+</ul>
+</li>
+<li><strong>g(x,y) = f(x,y) * h(x,y)</strong><ul>
+<li>“image convolved with mask”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="What-is-mask"><a href="#What-is-mask" class="headerlink" title="What is mask?"></a>What is mask?</h2><ul>
+<li>Mask is also a signal. </li>
+<li>It can be represented by a two dimensional matrix. </li>
+<li>The mask is usually of the order of 1x1, 3x3, 5x5, 7x7 . </li>
+<li>A mask should always be in odd number, </li>
+<li>because other wise you cannot find the mid of the mask. </li>
+</ul>
+<h2 id="How-to-perform-convolution"><a href="#How-to-perform-convolution" class="headerlink" title="How to perform convolution?"></a>How to perform convolution?</h2><ul>
+<li>Flip the mask (horizontally and vertically) only once</li>
+<li>Slide the mask onto the image.</li>
+<li>Multiply the corresponding elements and then add them</li>
+<li>Repeat this procedure until all values of the image has been calculated.</li>
+</ul>
+<h2 id="Example-of-convolution"><a href="#Example-of-convolution" class="headerlink" title="Example of convolution"></a>Example of convolution</h2><ul>
+<li><p>Mask</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution05.png" alt="img"></p>
+</li>
+<li><p>Flipping the mask horizontally</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution06.png" alt="img"></p>
+</li>
+<li><p>Flipping the mask vertically</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution07.png" alt="img"></p>
+</li>
+<li><p>Image</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution08.png" alt="img"></p>
+</li>
+<li><p>Convolution</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution09.png" alt="img"></p>
+</li>
+<li><p>The box in red color is the mask, </p>
+</li>
+<li><p>and the values in the orange are the values of the mask. </p>
+</li>
+<li><p>The black color box and values belong to the image.</p>
+</li>
+<li><p>Now for the first pixel of the image, the value will be calculated as</p>
+<p>First pixel = (5<em>2) + (4</em>4) + (2<em>8) + (1</em>10)</p>
+<p>= 10 + 16 + 16 + 10</p>
+<p>= 52</p>
+</li>
+<li><p>Place 52 in the original image at the first index and repeat this procedure for each pixel of the image.</p>
+</li>
+</ul>
+<h2 id="Why-Convolution"><a href="#Why-Convolution" class="headerlink" title="Why Convolution"></a>Why Convolution</h2><ul>
+<li>Convolution can achieve something, that the previous two methods of manipulating images can’t achieve. </li>
+<li>Those include the blurring, sharpening, edge detection, noise reduction e.t.c.</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/05/21/2018-05-21-Convolution/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -829,122 +939,6 @@
                     
                         <p>
                             <a href="/2018/05/21/2018-05-21-Histograms Introduction/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/05/21/2018-05-21-Convolution/">
-                            Convolution
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-05-21T00:00:00+09:00">
-	
-		    May 21, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DIP/">DIP</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="What-is-image-processing"><a href="#What-is-image-processing" class="headerlink" title="What is image processing"></a>What is image processing</h2><ul>
-<li>In image processing , we are developing a system </li>
-<li>whose input is an image and output would be an image</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution04.png" alt="img"></p>
-<ul>
-<li>It can be mathematically represented as two ways : h(x,y) is the mask or filter.<ul>
-<li><strong>g(x,y) = h(x,y) * f(x,y)</strong><ul>
-<li>“mask convolved with an image”.</li>
-</ul>
-</li>
-<li><strong>g(x,y) = f(x,y) * h(x,y)</strong><ul>
-<li>“image convolved with mask”</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="What-is-mask"><a href="#What-is-mask" class="headerlink" title="What is mask?"></a>What is mask?</h2><ul>
-<li>Mask is also a signal. </li>
-<li>It can be represented by a two dimensional matrix. </li>
-<li>The mask is usually of the order of 1x1, 3x3, 5x5, 7x7 . </li>
-<li>A mask should always be in odd number, </li>
-<li>because other wise you cannot find the mid of the mask. </li>
-</ul>
-<h2 id="How-to-perform-convolution"><a href="#How-to-perform-convolution" class="headerlink" title="How to perform convolution?"></a>How to perform convolution?</h2><ul>
-<li>Flip the mask (horizontally and vertically) only once</li>
-<li>Slide the mask onto the image.</li>
-<li>Multiply the corresponding elements and then add them</li>
-<li>Repeat this procedure until all values of the image has been calculated.</li>
-</ul>
-<h2 id="Example-of-convolution"><a href="#Example-of-convolution" class="headerlink" title="Example of convolution"></a>Example of convolution</h2><ul>
-<li><p>Mask</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution05.png" alt="img"></p>
-</li>
-<li><p>Flipping the mask horizontally</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution06.png" alt="img"></p>
-</li>
-<li><p>Flipping the mask vertically</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution07.png" alt="img"></p>
-</li>
-<li><p>Image</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution08.png" alt="img"></p>
-</li>
-<li><p>Convolution</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution09.png" alt="img"></p>
-</li>
-<li><p>The box in red color is the mask, </p>
-</li>
-<li><p>and the values in the orange are the values of the mask. </p>
-</li>
-<li><p>The black color box and values belong to the image.</p>
-</li>
-<li><p>Now for the first pixel of the image, the value will be calculated as</p>
-<p>First pixel = (5<em>2) + (4</em>4) + (2<em>8) + (1</em>10)</p>
-<p>= 10 + 16 + 16 + 10</p>
-<p>= 52</p>
-</li>
-<li><p>Place 52 in the original image at the first index and repeat this procedure for each pixel of the image.</p>
-</li>
-</ul>
-<h2 id="Why-Convolution"><a href="#Why-Convolution" class="headerlink" title="Why Convolution"></a>Why Convolution</h2><ul>
-<li>Convolution can achieve something, that the previous two methods of manipulating images can’t achieve. </li>
-<li>Those include the blurring, sharpening, edge detection, noise reduction e.t.c.</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/05/21/2018-05-21-Convolution/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

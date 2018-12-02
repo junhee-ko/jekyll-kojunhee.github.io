@@ -808,8 +808,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Command Pattern03/">
-                            Command Pattern03
+                        <a class="link-unstyled" href="/2018/06/06/2018-06-11-Decorator Pattern01/">
+                            Decorator Pattern01
                         </a>
                     
                 </h1>
@@ -831,43 +831,19 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/com01.png" alt="img"> </p>
-<ul>
-<li>Command<ul>
-<li>싱핼됭 기능에 대한 인터페이스. 실행될 기능을 execute method로 선언</li>
-</ul>
-</li>
-<li>ConcreteCommand<ul>
-<li>실제로 실행되는 기능을 구현.</li>
-<li>즉, Command라는 인터페이스를 구현</li>
-</ul>
-</li>
-<li>Invoker <ul>
-<li>기능의 실행을 요청하는 호출자 클래스</li>
-</ul>
-</li>
-<li>Receiver<ul>
-<li>ConcreteCommand 에서 execute method를 구현할 때 필요한 클래스</li>
-<li>즉, Concrete Command 의 기능을 실행하기 위해 사용하는 수신자 클래스</li>
-</ul>
-</li>
-</ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/com02.png" alt="img"> </p>
-<ul>
-<li>Button<ul>
-<li>Invoker</li>
-</ul>
-</li>
-<li>LampOnCommand, LampOffCommand<ul>
-<li>ConcreteCommand</li>
-</ul>
-</li>
-<li>Lamp<ul>
-<li>Receiver</li>
-</ul>
-</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Java 객체지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;</p>
+                    <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The Decorator Pattern attaches additional responsibilities to an object dynamically. </p>
+<p>Decorators provide a flexible alternative to subclassing for extending functionality. </p>
+<h2 id="Class-diagram"><a href="#Class-diagram" class="headerlink" title="Class diagram"></a>Class diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco01.png" alt="img"> </p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco09.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco02.png" alt="img"> </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco04.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco06.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco07.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco08.png" alt="img"></p>
+<h2 id="Real-World-Decorators-Java-I-O"><a href="#Real-World-Decorators-Java-I-O" class="headerlink" title="Real World Decorators: Java I/O"></a>Real World Decorators: Java I/O</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/deco10.png" alt="img"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
 
                     
                         
@@ -875,7 +851,7 @@
                     
                     
                         <p>
-                            <a href="/2018/06/06/2018-06-11-Command Pattern03/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/06/06/2018-06-11-Decorator Pattern01/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

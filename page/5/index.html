@@ -165,8 +165,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/10/09/2018-10-09-Deadlock/">
-                            Deadlock
+                        <a class="link-unstyled" href="/2018/10/09/2018-10-09-활주로 건설/">
+                            활주로 건설
                         </a>
                     
                 </h1>
@@ -174,217 +174,6 @@
     <time datetime="2018-10-09T00:00:00+09:00">
 	
 		    Oct 09, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/OS/">OS</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
-<h2 id="Deadlock"><a href="#Deadlock" class="headerlink" title="Deadlock"></a>Deadlock</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock01.png" alt="img"></p>
-<p>일련의 프로세스들이 서로가 가진 자원을 기다리며 block된 상태</p>
-<ul>
-<li>자원<ul>
-<li>하드웨어, 소프트웨어 등을 포함하느 개념</li>
-<li>ex) I/O device, CPU cycle, memory space, semaphore 등</li>
-</ul>
-</li>
-<li>예시<ul>
-<li>시스템 2개의 tape drive가 있다</li>
-<li>프로세스 P1과 P2 각각이 하나의 tape drive 를 보유한 채 다른 하나를 기다리고 있음</li>
-</ul>
-</li>
-</ul>
-<h2 id="Deadlock-발생의-4가지-조건"><a href="#Deadlock-발생의-4가지-조건" class="headerlink" title="Deadlock 발생의 4가지 조건"></a>Deadlock 발생의 4가지 조건</h2><ul>
-<li>Mutual Exlusioin<ul>
-<li>매 순간 하나의 프로세스만이 자원을 사용할 수 있음</li>
-</ul>
-</li>
-<li>No Preemption <ul>
-<li>프로세스는 자원을 스스로 내어놓을 뿐 강제로 뺏기지 않음 </li>
-</ul>
-</li>
-<li>Hold and wiat <ul>
-<li>자원을 가진 프로세스가 다른 자원을 기달리때 보유 자원을 놓지 않고 계속 가지고 있음</li>
-</ul>
-</li>
-<li>Circular wait<ul>
-<li>자워을 기다리는 프로세스 간에 사이클이 형성되어야 함 </li>
-<li>P0은 P1이 가진 자원을 기다림</li>
-<li>P1은 P2가 가진 자원을 기다림 ..</li>
-</ul>
-</li>
-</ul>
-<h2 id="자원-할당-그래프"><a href="#자원-할당-그래프" class="headerlink" title="자원 할당 그래프"></a>자원 할당 그래프</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock02.png" alt="img"></p>
-<ul>
-<li><p>자원에서 프로세스쪽으로 나가는 화살표 </p>
-</li>
-<li><p>이 프로세스가 이 자원을 가지고 있다.</p>
-</li>
-<li><p>프로세스에서 자원쪽으로 나가는 화살표</p>
-<ul>
-<li>이 프로세스가 이 자원을 요청</li>
-</ul>
-</li>
-<li><p>자원 안에 동그라미</p>
-<ul>
-<li>자원 개수</li>
-</ul>
-</li>
-<li><p>그래프 안에 cycle이 없으면 deadlock이 아니다</p>
-</li>
-<li><p>cycle이 있으면</p>
-<ul>
-<li>자원당 인스턴스가 하나밖에 없으면, 데드락</li>
-<li>자원의 인스턴스가 여러개면, 데드락수도 있고 아닐수도 있고</li>
-</ul>
-</li>
-<li><p>왼쪽은 데드락, 오른쪽은 데드락이 아님</p>
-</li>
-</ul>
-<h2 id="Deadlock-Prevention"><a href="#Deadlock-Prevention" class="headerlink" title="Deadlock Prevention"></a>Deadlock Prevention</h2><p>자원 할당시 Deadlock의 4가지 필요 조건 중 어느 하나가 만족되지 않도록 하는 것 </p>
-<ul>
-<li>Mutual Exclusion<ul>
-<li>공유해서는 안되는 자원의 경우 반드시 성립해야함 </li>
-</ul>
-</li>
-<li>Hold and wait<ul>
-<li>프로세스 시작 시 모든 필요한 자원을 할당받게 하는 방법</li>
-<li>자원이 필요할 경우 보유 자원을 모두 놓고 다시 요청</li>
-</ul>
-</li>
-<li>No preemption <ul>
-<li>빼앗아 올수 있게 하면 됨 </li>
-<li>모든 필요한 자원을 얻을 수 있을 때 그 프로세스는 다시 시작된다. </li>
-</ul>
-</li>
-<li>Circular Wait<ul>
-<li>모든 자원 유형에 할당 순서를 정하여 정해진 순서대로 자원 할당</li>
-</ul>
-</li>
-</ul>
-<h2 id="Deadlock-Avoidance"><a href="#Deadlock-Avoidance" class="headerlink" title="Deadlock Avoidance"></a>Deadlock Avoidance</h2><p>자원 요청에 대한 부가적인 정보를 이용해서 데드락의 가능성이 없는 경우에만 자원 할당.</p>
-<p>데드락으로부터 항상 safe한 상태를 유지.</p>
-<p>자원 요청에 대한 부가정보를 이용해서 자원 할당이 데드락으로부터 safe한지를 동적으로 조사해서 안전한 경우에만 할당.</p>
-<p>프로세스들이 필요로 하는 각 자원별 최대 사용량을 미리 선언</p>
-<ul>
-<li>Single instance per resouce types <ul>
-<li>Resource Allocation Graph algorithm</li>
-</ul>
-</li>
-<li>Multiple instance per resouce types  <ul>
-<li>Banker’s Algorithm</li>
-</ul>
-</li>
-</ul>
-<h2 id="Resource-Allocation-Graph-algorithm"><a href="#Resource-Allocation-Graph-algorithm" class="headerlink" title="Resource Allocation Graph algorithm"></a>Resource Allocation Graph algorithm</h2><p>자원 당 인스턴스 하나</p>
-<p>데드락의 위험성이 있으면 애초부터 자원을 내주지 않음.</p>
-<p>점선 화살표 : 이 프로세스가 평생 적어도 한번 이 자원을 사용할 것이다.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock03.png" alt="img"></p>
-<h2 id="Banker’s-Algorithm"><a href="#Banker’s-Algorithm" class="headerlink" title="Banker’s Algorithm"></a>Banker’s Algorithm</h2><p>자원 당 인스턴스 여러개</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dealock04.png" alt="img"></p>
-<p>5개의 프로세스 : P0 P1 P2 P3 P4</p>
-<p>A자원 인스턴스 10개</p>
-<p>B자원 인스턴스 5개</p>
-<p>C자원 인스턴스 7개</p>
-<ul>
-<li><p>Allocation</p>
-<ul>
-<li>0번 프로세스는 현재 A 0개 / B 1개 / C 0개 할당되어 있음 </li>
-</ul>
-</li>
-<li><p>Available</p>
-<ul>
-<li>현재 가용 자원</li>
-<li>아무도 사용하지 않고 남아 있는 자원</li>
-</ul>
-</li>
-<li>Max<ul>
-<li>이 프로세스가 시작될 때, 이 프로세스가 평생 최대로 사용할 자원 개수를 선언했음</li>
-</ul>
-</li>
-<li>Need<ul>
-<li>추가로 요청 할 수  있는 양 </li>
-</ul>
-</li>
-</ul>
-<p>이 알고리즘은 프로세스가 자원을 요청했을 때, 이 요청을 받아들일것인지 결정하는 것임 </p>
-<p>프로세스가 최대(Need)로 요청할 것을 가정한다. 그리고 이게 가용 자원으로 가능한지 체크. 가용자원으로 가능하지 않으면 요청을 거절.</p>
-<p>P0는 7 4 3 으로 요청할것이다. 이게 3 3 2 로 커버 가능? NO. 요청 거절.</p>
-<h2 id="Deadlock-Detection-and-recovery"><a href="#Deadlock-Detection-and-recovery" class="headerlink" title="Deadlock Detection and recovery"></a>Deadlock Detection and recovery</h2><p>Deadlock 발생은 허용하되 그에 대한 detection 루틴을 두어 deadlock 발생시 recover</p>
-<ul>
-<li>Single instance per resouce types <ul>
-<li>Resource Allocation Graph algorithm</li>
-<li>cycle이 곧 데드락</li>
-</ul>
-</li>
-<li><p>Multiple instance per resouce types  </p>
-<ul>
-<li>Banker’s Algorithm과 유사한 방법 활용</li>
-</ul>
-</li>
-<li><p>Recovery</p>
-<ul>
-<li><p>Process Termination</p>
-<ul>
-<li>abort all deadlocked processes(한꺼번에)</li>
-<li>데드락에 연루된 프로세스드을 하나씩 죽여봄. 여전히 데드락이면 또 하나의 다른 프로세스 죽여봄.</li>
-</ul>
-</li>
-<li><p>Resource Preemption</p>
-<ul>
-<li>데드락에 연루된 프로세스로부터 자원을 뺏음</li>
-<li>safe state로 roolback하여 prcess를 restart</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Deadlock-Ignorance"><a href="#Deadlock-Ignorance" class="headerlink" title="Deadlock Ignorance"></a>Deadlock Ignorance</h2><p>Deadlock을 시스템이 책임지지 않음</p>
-<p>UNIX를 포함한 대부분의 OS가 채택</p>
-<p>데드락이 일어나지 않는다고 생각하고 아무런 조치 취하지 않음</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/10/09/2018-10-09-Deadlock/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/10/07/2018-10-07-줄기세포배양/">
-                            줄기세포배양
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-10-07T00:00:00+09:00">
-	
-		    Oct 07, 2018
     	
     </time>
     
@@ -399,26 +188,27 @@
             </div>
             
                 <div class="postShorten-content">
-                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo&amp;categoryId=AWXRJ8EKe48DFAUo&amp;categoryType=CODE" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo&amp;categoryId=AWXRJ8EKe48DFAUo&amp;categoryType=CODE</a>    </p>
+                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeW7FakkUDFAVH" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeW7FakkUDFAVH</a></p>
+<p>경우의 수를 나눈 후 조건에 맞게 짜려고 하였다. 해설을 보고 DFS로 풀면 쉽게 풀 수 있다는 것을 알았다.</p>
 <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
-<li><p>전체 map size를 450 * 450 으로 하고 초기 위치를 i+175, j+175로 하였다. ( 왜?? )</p>
+<li><p>모든 행과 열을 차례대로 체크한다.</p>
 </li>
-<li><p>생명력을 저장하고, 활성 상태를 체크하기 위해 map(450)(450)(0) 에는 생명력을, map(450)(450)(1) 에는 생명력*2를 저장한다. map(450)(450)(1) &lt; map(450)(450)(0) 이 되면 활성상태가 되므로, 확장시킨다.  </p>
+<li><p>현재 위치와 다음 위치를 비교한다.</p>
+<ul>
+<li><p>같은 높이인 경우 : 다음 위치 부터 체크</p>
 </li>
-<li><p>생명력 수치가 높은 줄기 세포를 먼저 확장 시키기 위해, 생명력에 따른 Queue를 저장하는 배열을 생성한다.</p>
-<p>arr[1] : 생명력이 1인 줄기 세포의 좌표를 저장하는 Queue</p>
-<p>arr[2] : 생명력이 2인 줄기 세포의 좌표를 저장하는 Queue</p>
-<p>…</p>
-<p>arr[10] : 생명력이 10인 줄기 세포의 좌표를 저장하는 Queue </p>
+<li><p>오르막인 경우 : 현재 위치 기준해서 왼쪽으로 경사로 둘 수 있는지 체크</p>
 </li>
-<li><p>생명력이 10인 큐 ~ 생명력이 1인 큐를 순차적으로 확인한다.</p>
+<li><p>내리막인 경우 : 현재 위치 기준해서 오른쪽으로 경사로 둘 수 있는지 체크</p>
 </li>
-<li><p>큐에 저장되어 있는 줄기세포를 하나씩 remove하여 활성화되어있는지 체크하여 확장한다.</p>
+<li>그 이외의 경우 : 이번 행이나 열은 실패</li>
+</ul>
 </li>
 </ol>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cellExte01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cellExte02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cellExte03.png" alt="img"></p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayyy04.png" alt="img"></p>
 
                     
                         
@@ -426,7 +216,7 @@
                     
                     
                         <p>
-                            <a href="/2018/10/07/2018-10-07-줄기세포배양/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/10/09/2018-10-09-활주로 건설/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -502,21 +292,21 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/10/06/2018-10-06-Process Synchronization/">
-                            Process Sysncronization
+                        <a class="link-unstyled" href="/2018/10/07/2018-10-07-줄기세포배양/">
+                            줄기세포배양
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2018-10-06T00:00:00+09:00">
+    <time datetime="2018-10-07T00:00:00+09:00">
 	
-		    Oct 06, 2018
+		    Oct 07, 2018
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/OS/">OS</a>
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
 
 
     
@@ -525,239 +315,26 @@
             </div>
             
                 <div class="postShorten-content">
-                    <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
-<h2 id="데이터의-접근"><a href="#데이터의-접근" class="headerlink" title="데이터의 접근"></a>데이터의 접근</h2><p>데이터를 읽어와서 연산하고 다시 저장</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100601.png" alt="img"></p>
-<h2 id="Race-Condition"><a href="#Race-Condition" class="headerlink" title="Race Condition"></a>Race Condition</h2><p>S-box를 공유하는 E-box가 여럿 있는 경우 Race Condition의 가능성이 있음</p>
-<p>ex) 커널 모드 수행 중 인터럽트로 커널모드 다른 루틴 수행시</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100602.png" alt="img"></p>
-<h2 id="race-condition-1-3"><a href="#race-condition-1-3" class="headerlink" title="race condition (1/3)"></a>race condition (1/3)</h2><ul>
-<li>kernel 수행 중 인터럽트 발생</li>
-<li>커널모드 running 중 inetrrupt 발생하여 인터럽트 처리 루틴이 수행</li>
-<li>양쪽 다 커널 코드이므로 kernel address space 공유</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100603.png" alt="img"></p>
-<h2 id="race-condition-2-3"><a href="#race-condition-2-3" class="headerlink" title="race condition (2/3)"></a>race condition (2/3)</h2><p>해결책 : 커널 모드에서 수행 중일 때는 CPU를 preempt 하지 않음. 커널 모드에서 사용자 모드로 돌아 갈때 preempt.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100604.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100605.png" alt="img"></p>
-<h2 id="race-condition-3-3"><a href="#race-condition-3-3" class="headerlink" title="race condition (3/3)"></a>race condition (3/3)</h2><ul>
-<li><p>CPU가 여러개인 경우</p>
+                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo&amp;categoryId=AWXRJ8EKe48DFAUo&amp;categoryType=CODE" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo&amp;categoryId=AWXRJ8EKe48DFAUo&amp;categoryType=CODE</a>    </p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li><p>전체 map size를 450 * 450 으로 하고 초기 위치를 i+175, j+175로 하였다. ( 왜?? )</p>
 </li>
-<li><p>해결</p>
-<ul>
-<li>커널 내부에 있는 각 공유 데이터에 접근할 때마다 그 데이터에 lock / unlock을 하는 방법</li>
-<li>한번에 하나의 CPU만이 커널에 들어갈 수 있게 하는 방법</li>
-</ul>
+<li><p>생명력을 저장하고, 활성 상태를 체크하기 위해 map(450)(450)(0) 에는 생명력을, map(450)(450)(1) 에는 생명력*2를 저장한다. map(450)(450)(1) &lt; map(450)(450)(0) 이 되면 활성상태가 되므로, 확장시킨다.  </p>
 </li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100606.png" alt="img">​    </p>
-<h2 id="Process-Syncronization-문제"><a href="#Process-Syncronization-문제" class="headerlink" title="Process Syncronization 문제"></a>Process Syncronization 문제</h2><ul>
-<li>공유 데이터의 동시 접근은 데이터의 불일치 문제 발생시킬 수 있음</li>
-<li>일관성 유지를 위해서 협력 프로세스간의 실행순서를 정해주는 매커니즘 필요</li>
-<li>Race condition<ul>
-<li>여러 프로세스들이 동시에 공유 데이터를 접근하는 상황</li>
-<li>데이터의 최정 연산 결과는 마지막에 그 데이터를 다룬 프로세스에 따라다라짐</li>
-<li>이를 막기 위해 concurrent processsms 동기화 되어야한다.</li>
-</ul>
+<li><p>생명력 수치가 높은 줄기 세포를 먼저 확장 시키기 위해, 생명력에 따른 Queue를 저장하는 배열을 생성한다.</p>
+<p>arr[1] : 생명력이 1인 줄기 세포의 좌표를 저장하는 Queue</p>
+<p>arr[2] : 생명력이 2인 줄기 세포의 좌표를 저장하는 Queue</p>
+<p>…</p>
+<p>arr[10] : 생명력이 10인 줄기 세포의 좌표를 저장하는 Queue </p>
 </li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100607.png" alt="img">    </p>
-<h2 id="The-Critical-Section-Problem"><a href="#The-Critical-Section-Problem" class="headerlink" title="The Critical-Section Problem"></a>The Critical-Section Problem</h2><p>공유 데이터를 접근하는 코드</p>
-<ul>
-<li>n개의 프로세스가 공유 데이터를 동시에 사용하기를 원하는 경우</li>
-<li>각 프로세스의 code segment에는 공유 데이터를 접근하는 코드인 ciritical sectoin이 존재</li>
-<li>하나의 프로세스가 ciritical section에 있을 때 다른 모든 프로세스는 ciritical section에 들어갈 수 없어야한다.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100608.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100701.png" alt="img"></p>
-<h2 id="프로그램적-해결법의-충족-조건"><a href="#프로그램적-해결법의-충족-조건" class="headerlink" title="프로그램적 해결법의 충족 조건"></a>프로그램적 해결법의 충족 조건</h2><ul>
-<li>Mutual Exclution<ul>
-<li>프로세스가 pi가 critical section 부분을 수행중이면 다른 모든 프로세스들은 그들의 critical section에 들어가면 안된다.</li>
-</ul>
+<li><p>생명력이 10인 큐 ~ 생명력이 1인 큐를 순차적으로 확인한다.</p>
 </li>
-<li>Progress<ul>
-<li>아무도 critical section에 있지 않은 상태에서 critical section에 들어가고자 하는 프로세스가 있으면 critical section에 들어가게 해주어야 한다.</li>
-</ul>
+<li><p>큐에 저장되어 있는 줄기세포를 하나씩 remove하여 활성화되어있는지 체크하여 확장한다.</p>
 </li>
-<li>Bounded Wating<ul>
-<li>프로세스가 critical section에 들어가려고 요청한 후부터 그 요청이 허용될 때까지 다른 프로세스들이 critical section에 들어가는 횟수에 한계가 있어야 한다.</li>
-</ul>
-</li>
-</ul>
-<h2 id="알고리즘-1"><a href="#알고리즘-1" class="headerlink" title="알고리즘 1"></a>알고리즘 1</h2><p>P0</p>
-<p>int turn ;</p>
-<p>initially turn=0; (turn이 0 : 0번 프로세스 차례)</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100702.png" alt="img"></p>
-<p>P0이 빈번히 들어가고 싶으면?</p>
-<h2 id="알고리즘-2"><a href="#알고리즘-2" class="headerlink" title="알고리즘 2"></a>알고리즘 2</h2><p>boolean flag[2];</p>
-<p>initially flag[모두] =false; // no one is in CS</p>
-<p>Pi ready to enter its critical section if flag[i] == true</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100703.png" alt="img"></p>
-<p>들어가기전에 둘다 깃발을 들으면 아무도 못들어가.</p>
-<h2 id="알고리즘3-Peterson’s-Algorithm"><a href="#알고리즘3-Peterson’s-Algorithm" class="headerlink" title="알고리즘3 (Peterson’s Algorithm)"></a>알고리즘3 (Peterson’s Algorithm)</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100704.png" alt="img"></p>
-<p>Busy Wating (spin lock)</p>
-<p>내가 CPU를 잡고 while문에 있는데, 그때 다른 애가 CPU를 잡으면 ? </p>
-<h2 id="Sysnchnization-Hardware"><a href="#Sysnchnization-Hardware" class="headerlink" title="Sysnchnization Hardware"></a>Sysnchnization Hardware</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100705.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100706.png" alt="img"></p>
-<ul>
-<li>하드웨어적으로 Test &amp; modify를 atuomic하게 수행할 수 있도록 지원하는 경우 앞의 문제는 간단히 해결</li>
-<li>값을 읽어내고 바꾸는 과정을 한번에</li>
-</ul>
-<h2 id="Semaphores"><a href="#Semaphores" class="headerlink" title="Semaphores"></a>Semaphores</h2><p>앞의 방식들을 추상화시킴</p>
-<ul>
-<li><p>Semaphore S</p>
-<ul>
-<li><p>integer variable</p>
-</li>
-<li><p>P(S) : 공유자원 획득</p>
-<ul>
-<li>If positive, decrement &amp; enter. Ohterwise, wait until positive(busy wait)</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100707.png" alt="img"></p>
-</li>
-<li><p>V(S) : 공유자원 반납</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100708.png" alt="img"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Critical-Section-of-n-Processes"><a href="#Critical-Section-of-n-Processes" class="headerlink" title="Critical Section of n Processes"></a>Critical Section of n Processes</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100709.png" alt="img"></p>
-<h2 id="Block-Wakeup-Impemetation"><a href="#Block-Wakeup-Impemetation" class="headerlink" title="Block / Wakeup Impemetation"></a>Block / Wakeup Impemetation</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100710.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100711.png" alt="img"></p>
-<ul>
-<li>block<ul>
-<li>커널은 block을 호출한 프로세스를 suspend 시킴</li>
-<li>이 프로세스의 PCB를 semaphore에 대한 wait queue에 넣음</li>
-</ul>
-</li>
-<li>wakeup(P)<ul>
-<li>block 된 프로세스 P를 wakeup 시킴</li>
-<li>이 프로세스의 PCB를 ready queue로 옮김</li>
-</ul>
-</li>
-</ul>
-<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100712.png" alt="img"></p>
-<h2 id="Which-is-better"><a href="#Which-is-better" class="headerlink" title="Which is better"></a>Which is better</h2><p>busy-wati vs block/wakeup</p>
-<p>CS 길이가 긴 경우 Block/Wakeup이 적당</p>
-<p>CS 길이가 매우 짧은 경우 Block/Wakeup 오버헤드가 busy-wait 오버헤드보다 더 커질 수 있음</p>
-<p>일반적으로  block/wakeup 방식이 더 좋음</p>
-<h2 id="Deadlock-and-Starvation"><a href="#Deadlock-and-Starvation" class="headerlink" title="Deadlock and Starvation"></a>Deadlock and Starvation</h2><ul>
-<li><p>Deadlock</p>
-<p>둘 이상의 프로세스가 서로 상대방에 의해 충족될 수 있는 event를 무한히 기다리는 현상</p>
-<p>P0와 P1은 S와 Q 모두가 필요하다.</p>
-<p>P0가 S를 차지했을 때, P1이 CPU를 가져가버리면, Deadlock 발생</p>
-</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100713.png" alt="img"></p>
-<ul>
-<li><p>Starvation</p>
-<p>indefinite blocking. 프로세스가 suspend된 이유에 해당하는 세마포어 큐에서 빠져나갈수 없는 현상</p>
-</li>
-</ul>
-<h2 id="Bounded-Buffer-Problem"><a href="#Bounded-Buffer-Problem" class="headerlink" title="Bounded-Buffer Problem"></a>Bounded-Buffer Problem</h2><p>Producer-Consumer Problem</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100714.png" alt="img"></p>
-<p>주황색은 Producer가 생성한다.</p>
-<p>생산자 둘이 한 위치에 생성하면?</p>
-<p>하나를 소비자 둘이 동시에 소비 하려고 하면?</p>
-<p>비버있는 버퍼가 없는데 또 생산자가 만들려고 하면?</p>
-<ul>
-<li><p>Syncrhonization variables</p>
-<ul>
-<li>mutual exclution<ul>
-<li>need binary semaphore (shared data의 mutual exlusion을 위해)</li>
-<li>lock 걸고 풀고</li>
-</ul>
-</li>
-<li>resource count <ul>
-<li>need integer semaphore (남은 full/empty buffer의 수 표시)</li>
-<li>자원 개수</li>
-</ul>
-</li>
-</ul>
-<p>semaphore full =0, empty =n, mutex =1;</p>
-</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100715.png" alt="img"></p>
-<ul>
-<li><p>Produer</p>
-<ul>
-<li>빈 버퍼가 있으면 버퍼 획득하고, 버퍼에 락 걸고, 버퍼에 데이터 넣고, 버퍼에 락 풀고, full++</li>
-</ul>
-</li>
-<li><p>Consumer</p>
-<ul>
-<li>내용이 들어잇는 버퍼 있으면, 버퍼에 락 걸고, 버퍼에서 데이터 빼고, 버퍼 락 풀고, empty ++</li>
-</ul>
-</li>
-</ul>
-<h2 id="Readers-Writes-Problem"><a href="#Readers-Writes-Problem" class="headerlink" title="Readers-Writes Problem"></a>Readers-Writes Problem</h2><p>한 process가 DB에 write 중일 때 다른 process가 접근하면 안됨 / read는 동시에 여럿이 해도 됨</p>
-<ul>
-<li>Shared data<ul>
-<li>DB 자체</li>
-<li>int readcount=0; //현재 DB에 접근 중인 Reader의 수</li>
-</ul>
-</li>
-<li>Sysncronization variablees<ul>
-<li>semaphore mutex =1 ( 공유변수 readcount를 접근하는 코드의 mutual exlution 보장), db=1;</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100716.png" alt="img"></p>
-<h2 id="Dining-Philosophers-Problem"><a href="#Dining-Philosophers-Problem" class="headerlink" title="Dining-Philosophers Problem"></a>Dining-Philosophers Problem</h2><p>배가 고파지면 자기의 왼쪽과 오른쪽에 놓아져 있는 젓가락을 잡음</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100717.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100718.png" alt="img"></p>
-<ul>
-<li><p>문제</p>
-<ul>
-<li>모두다 왼쪽 젓가락을 잡아버리면? </li>
-<li>Deadlock</li>
-</ul>
-</li>
-<li><p>해결</p>
-<ul>
-<li>4명의 철학자만이 테이블에 동시에 앉을 수 있도록</li>
-<li>젓가락을 두개 모두 집을 수 있을 때에만 젓가락을 잡을 수 있도록 (아래의 경우)</li>
-<li>비대칭. 짝수 철학자는 왼쪽 젓가락부터 집도록</li>
-</ul>
-</li>
-</ul>
-<p>enum {thinking, hungry, eating} state[5];</p>
-<p>semaphore self[5]=0;    // 동시에 젓가락 두개 모두 잡을 수 있는 권한</p>
-<p>semaphore mutex=1;</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100719.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100720.png" alt="img"></p>
-<h2 id="Monitor"><a href="#Monitor" class="headerlink" title="Monitor"></a>Monitor</h2><ul>
-<li>Semaphore의 문제점<ul>
-<li>코딩이 힘들다</li>
-<li>정확성의 입증이 어려움</li>
-<li>자발적 협력이 필요</li>
-<li>한번의 실수가 모든 시스템에 영향</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100721.png" alt="img"></p>
-<ul>
-<li>동시 수행중인 프로세스 사이에서 abstract data type의 안전한 공유를 보장하기위한 high-level syncronization  construct <ul>
-<li>모니터 내에서는 한번에 하나의 하나의 프로세스만이 활동 가능</li>
-<li>프로그래머가 동기화 제약 조건을 명시적으로 코딩할 필요 없음</li>
-<li>프로세스가 모니터 안에서 기다릴수 있도록 하기 위해 condition variable 사용. condition x, y</li>
-<li>condition variable 은 wait와 signal 연산에 의해서만 접근 가능<ul>
-<li>x.wait();<ul>
-<li>x.wait()을 invoke한 프로세스는 다른 프로세스가 x.signal()을 invoke 하기 전까지 suspend</li>
-</ul>
-</li>
-<li>x.siganl();<ul>
-<li>x.signal()은 정확하게 하나의 suspend된 프로세스를 resume한다. Suspend된 프로세스가 없으면 아무 일도 일어나지 않는다. </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100722.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100723.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100724.png" alt="img"></p>
+</ol>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cellExte01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cellExte02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cellExte03.png" alt="img"></p>
 
                     
                         
@@ -765,7 +342,7 @@
                     
                     
                         <p>
-                            <a href="/2018/10/06/2018-10-06-Process Synchronization/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/10/07/2018-10-07-줄기세포배양/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -1083,21 +660,21 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/10/04/2018-10-04-보물상자 비밀번호/">
-                            보물상자 비밀번호
+                        <a class="link-unstyled" href="/2018/10/06/2018-10-06-Process Synchronization/">
+                            Process Sysncronization
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2018-10-04T00:00:00+09:00">
+    <time datetime="2018-10-06T00:00:00+09:00">
 	
-		    Oct 04, 2018
+		    Oct 06, 2018
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+    <a class="category-link" href="/categories/OS/">OS</a>
 
 
     
@@ -1106,23 +683,239 @@
             </div>
             
                 <div class="postShorten-content">
-                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&amp;categoryId=AWXRUN9KfZ8DFAUo&amp;categoryType=CODE" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&amp;categoryId=AWXRUN9KfZ8DFAUo&amp;categoryType=CODE</a></p>
-<p>쉬운 문제이다. 이 문제에서는 정렬과 진법 변환을 배울 수 있다.</p>
-<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
-<li>회전 시키고</li>
-<li>각 변 확인하며 리스트에 저장</li>
-</ol>
-<h2 id="개념"><a href="#개념" class="headerlink" title="개념"></a>개념</h2><ol>
-<li><p>정렬</p>
-<p>오름차순 정렬 : Collections.sort(list)</p>
-<p>내림차순 정렬 : Collections.sort(list) –&gt;  Collections.reverse(list)</p>
+                    <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
+<h2 id="데이터의-접근"><a href="#데이터의-접근" class="headerlink" title="데이터의 접근"></a>데이터의 접근</h2><p>데이터를 읽어와서 연산하고 다시 저장</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100601.png" alt="img"></p>
+<h2 id="Race-Condition"><a href="#Race-Condition" class="headerlink" title="Race Condition"></a>Race Condition</h2><p>S-box를 공유하는 E-box가 여럿 있는 경우 Race Condition의 가능성이 있음</p>
+<p>ex) 커널 모드 수행 중 인터럽트로 커널모드 다른 루틴 수행시</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100602.png" alt="img"></p>
+<h2 id="race-condition-1-3"><a href="#race-condition-1-3" class="headerlink" title="race condition (1/3)"></a>race condition (1/3)</h2><ul>
+<li>kernel 수행 중 인터럽트 발생</li>
+<li>커널모드 running 중 inetrrupt 발생하여 인터럽트 처리 루틴이 수행</li>
+<li>양쪽 다 커널 코드이므로 kernel address space 공유</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100603.png" alt="img"></p>
+<h2 id="race-condition-2-3"><a href="#race-condition-2-3" class="headerlink" title="race condition (2/3)"></a>race condition (2/3)</h2><p>해결책 : 커널 모드에서 수행 중일 때는 CPU를 preempt 하지 않음. 커널 모드에서 사용자 모드로 돌아 갈때 preempt.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100604.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100605.png" alt="img"></p>
+<h2 id="race-condition-3-3"><a href="#race-condition-3-3" class="headerlink" title="race condition (3/3)"></a>race condition (3/3)</h2><ul>
+<li><p>CPU가 여러개인 경우</p>
 </li>
-<li><p>진법 변환</p>
-<p>string 을 radix 진법으로 변환 : Integer.parseInt(String s, int radix) </p>
+<li><p>해결</p>
+<ul>
+<li>커널 내부에 있는 각 공유 데이터에 접근할 때마다 그 데이터에 lock / unlock을 하는 방법</li>
+<li>한번에 하나의 CPU만이 커널에 들어갈 수 있게 하는 방법</li>
+</ul>
 </li>
-</ol>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/treasurepwd01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/treasurepwd02.png" alt="img"></p>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100606.png" alt="img">​    </p>
+<h2 id="Process-Syncronization-문제"><a href="#Process-Syncronization-문제" class="headerlink" title="Process Syncronization 문제"></a>Process Syncronization 문제</h2><ul>
+<li>공유 데이터의 동시 접근은 데이터의 불일치 문제 발생시킬 수 있음</li>
+<li>일관성 유지를 위해서 협력 프로세스간의 실행순서를 정해주는 매커니즘 필요</li>
+<li>Race condition<ul>
+<li>여러 프로세스들이 동시에 공유 데이터를 접근하는 상황</li>
+<li>데이터의 최정 연산 결과는 마지막에 그 데이터를 다룬 프로세스에 따라다라짐</li>
+<li>이를 막기 위해 concurrent processsms 동기화 되어야한다.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100607.png" alt="img">    </p>
+<h2 id="The-Critical-Section-Problem"><a href="#The-Critical-Section-Problem" class="headerlink" title="The Critical-Section Problem"></a>The Critical-Section Problem</h2><p>공유 데이터를 접근하는 코드</p>
+<ul>
+<li>n개의 프로세스가 공유 데이터를 동시에 사용하기를 원하는 경우</li>
+<li>각 프로세스의 code segment에는 공유 데이터를 접근하는 코드인 ciritical sectoin이 존재</li>
+<li>하나의 프로세스가 ciritical section에 있을 때 다른 모든 프로세스는 ciritical section에 들어갈 수 없어야한다.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100608.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100701.png" alt="img"></p>
+<h2 id="프로그램적-해결법의-충족-조건"><a href="#프로그램적-해결법의-충족-조건" class="headerlink" title="프로그램적 해결법의 충족 조건"></a>프로그램적 해결법의 충족 조건</h2><ul>
+<li>Mutual Exclution<ul>
+<li>프로세스가 pi가 critical section 부분을 수행중이면 다른 모든 프로세스들은 그들의 critical section에 들어가면 안된다.</li>
+</ul>
+</li>
+<li>Progress<ul>
+<li>아무도 critical section에 있지 않은 상태에서 critical section에 들어가고자 하는 프로세스가 있으면 critical section에 들어가게 해주어야 한다.</li>
+</ul>
+</li>
+<li>Bounded Wating<ul>
+<li>프로세스가 critical section에 들어가려고 요청한 후부터 그 요청이 허용될 때까지 다른 프로세스들이 critical section에 들어가는 횟수에 한계가 있어야 한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="알고리즘-1"><a href="#알고리즘-1" class="headerlink" title="알고리즘 1"></a>알고리즘 1</h2><p>P0</p>
+<p>int turn ;</p>
+<p>initially turn=0; (turn이 0 : 0번 프로세스 차례)</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100702.png" alt="img"></p>
+<p>P0이 빈번히 들어가고 싶으면?</p>
+<h2 id="알고리즘-2"><a href="#알고리즘-2" class="headerlink" title="알고리즘 2"></a>알고리즘 2</h2><p>boolean flag[2];</p>
+<p>initially flag[모두] =false; // no one is in CS</p>
+<p>Pi ready to enter its critical section if flag[i] == true</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100703.png" alt="img"></p>
+<p>들어가기전에 둘다 깃발을 들으면 아무도 못들어가.</p>
+<h2 id="알고리즘3-Peterson’s-Algorithm"><a href="#알고리즘3-Peterson’s-Algorithm" class="headerlink" title="알고리즘3 (Peterson’s Algorithm)"></a>알고리즘3 (Peterson’s Algorithm)</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100704.png" alt="img"></p>
+<p>Busy Wating (spin lock)</p>
+<p>내가 CPU를 잡고 while문에 있는데, 그때 다른 애가 CPU를 잡으면 ? </p>
+<h2 id="Sysnchnization-Hardware"><a href="#Sysnchnization-Hardware" class="headerlink" title="Sysnchnization Hardware"></a>Sysnchnization Hardware</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100705.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100706.png" alt="img"></p>
+<ul>
+<li>하드웨어적으로 Test &amp; modify를 atuomic하게 수행할 수 있도록 지원하는 경우 앞의 문제는 간단히 해결</li>
+<li>값을 읽어내고 바꾸는 과정을 한번에</li>
+</ul>
+<h2 id="Semaphores"><a href="#Semaphores" class="headerlink" title="Semaphores"></a>Semaphores</h2><p>앞의 방식들을 추상화시킴</p>
+<ul>
+<li><p>Semaphore S</p>
+<ul>
+<li><p>integer variable</p>
+</li>
+<li><p>P(S) : 공유자원 획득</p>
+<ul>
+<li>If positive, decrement &amp; enter. Ohterwise, wait until positive(busy wait)</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100707.png" alt="img"></p>
+</li>
+<li><p>V(S) : 공유자원 반납</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100708.png" alt="img"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Critical-Section-of-n-Processes"><a href="#Critical-Section-of-n-Processes" class="headerlink" title="Critical Section of n Processes"></a>Critical Section of n Processes</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100709.png" alt="img"></p>
+<h2 id="Block-Wakeup-Impemetation"><a href="#Block-Wakeup-Impemetation" class="headerlink" title="Block / Wakeup Impemetation"></a>Block / Wakeup Impemetation</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100710.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100711.png" alt="img"></p>
+<ul>
+<li>block<ul>
+<li>커널은 block을 호출한 프로세스를 suspend 시킴</li>
+<li>이 프로세스의 PCB를 semaphore에 대한 wait queue에 넣음</li>
+</ul>
+</li>
+<li>wakeup(P)<ul>
+<li>block 된 프로세스 P를 wakeup 시킴</li>
+<li>이 프로세스의 PCB를 ready queue로 옮김</li>
+</ul>
+</li>
+</ul>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100712.png" alt="img"></p>
+<h2 id="Which-is-better"><a href="#Which-is-better" class="headerlink" title="Which is better"></a>Which is better</h2><p>busy-wati vs block/wakeup</p>
+<p>CS 길이가 긴 경우 Block/Wakeup이 적당</p>
+<p>CS 길이가 매우 짧은 경우 Block/Wakeup 오버헤드가 busy-wait 오버헤드보다 더 커질 수 있음</p>
+<p>일반적으로  block/wakeup 방식이 더 좋음</p>
+<h2 id="Deadlock-and-Starvation"><a href="#Deadlock-and-Starvation" class="headerlink" title="Deadlock and Starvation"></a>Deadlock and Starvation</h2><ul>
+<li><p>Deadlock</p>
+<p>둘 이상의 프로세스가 서로 상대방에 의해 충족될 수 있는 event를 무한히 기다리는 현상</p>
+<p>P0와 P1은 S와 Q 모두가 필요하다.</p>
+<p>P0가 S를 차지했을 때, P1이 CPU를 가져가버리면, Deadlock 발생</p>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100713.png" alt="img"></p>
+<ul>
+<li><p>Starvation</p>
+<p>indefinite blocking. 프로세스가 suspend된 이유에 해당하는 세마포어 큐에서 빠져나갈수 없는 현상</p>
+</li>
+</ul>
+<h2 id="Bounded-Buffer-Problem"><a href="#Bounded-Buffer-Problem" class="headerlink" title="Bounded-Buffer Problem"></a>Bounded-Buffer Problem</h2><p>Producer-Consumer Problem</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100714.png" alt="img"></p>
+<p>주황색은 Producer가 생성한다.</p>
+<p>생산자 둘이 한 위치에 생성하면?</p>
+<p>하나를 소비자 둘이 동시에 소비 하려고 하면?</p>
+<p>비버있는 버퍼가 없는데 또 생산자가 만들려고 하면?</p>
+<ul>
+<li><p>Syncrhonization variables</p>
+<ul>
+<li>mutual exclution<ul>
+<li>need binary semaphore (shared data의 mutual exlusion을 위해)</li>
+<li>lock 걸고 풀고</li>
+</ul>
+</li>
+<li>resource count <ul>
+<li>need integer semaphore (남은 full/empty buffer의 수 표시)</li>
+<li>자원 개수</li>
+</ul>
+</li>
+</ul>
+<p>semaphore full =0, empty =n, mutex =1;</p>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100715.png" alt="img"></p>
+<ul>
+<li><p>Produer</p>
+<ul>
+<li>빈 버퍼가 있으면 버퍼 획득하고, 버퍼에 락 걸고, 버퍼에 데이터 넣고, 버퍼에 락 풀고, full++</li>
+</ul>
+</li>
+<li><p>Consumer</p>
+<ul>
+<li>내용이 들어잇는 버퍼 있으면, 버퍼에 락 걸고, 버퍼에서 데이터 빼고, 버퍼 락 풀고, empty ++</li>
+</ul>
+</li>
+</ul>
+<h2 id="Readers-Writes-Problem"><a href="#Readers-Writes-Problem" class="headerlink" title="Readers-Writes Problem"></a>Readers-Writes Problem</h2><p>한 process가 DB에 write 중일 때 다른 process가 접근하면 안됨 / read는 동시에 여럿이 해도 됨</p>
+<ul>
+<li>Shared data<ul>
+<li>DB 자체</li>
+<li>int readcount=0; //현재 DB에 접근 중인 Reader의 수</li>
+</ul>
+</li>
+<li>Sysncronization variablees<ul>
+<li>semaphore mutex =1 ( 공유변수 readcount를 접근하는 코드의 mutual exlution 보장), db=1;</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100716.png" alt="img"></p>
+<h2 id="Dining-Philosophers-Problem"><a href="#Dining-Philosophers-Problem" class="headerlink" title="Dining-Philosophers Problem"></a>Dining-Philosophers Problem</h2><p>배가 고파지면 자기의 왼쪽과 오른쪽에 놓아져 있는 젓가락을 잡음</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100717.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100718.png" alt="img"></p>
+<ul>
+<li><p>문제</p>
+<ul>
+<li>모두다 왼쪽 젓가락을 잡아버리면? </li>
+<li>Deadlock</li>
+</ul>
+</li>
+<li><p>해결</p>
+<ul>
+<li>4명의 철학자만이 테이블에 동시에 앉을 수 있도록</li>
+<li>젓가락을 두개 모두 집을 수 있을 때에만 젓가락을 잡을 수 있도록 (아래의 경우)</li>
+<li>비대칭. 짝수 철학자는 왼쪽 젓가락부터 집도록</li>
+</ul>
+</li>
+</ul>
+<p>enum {thinking, hungry, eating} state[5];</p>
+<p>semaphore self[5]=0;    // 동시에 젓가락 두개 모두 잡을 수 있는 권한</p>
+<p>semaphore mutex=1;</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100719.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100720.png" alt="img"></p>
+<h2 id="Monitor"><a href="#Monitor" class="headerlink" title="Monitor"></a>Monitor</h2><ul>
+<li>Semaphore의 문제점<ul>
+<li>코딩이 힘들다</li>
+<li>정확성의 입증이 어려움</li>
+<li>자발적 협력이 필요</li>
+<li>한번의 실수가 모든 시스템에 영향</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100721.png" alt="img"></p>
+<ul>
+<li>동시 수행중인 프로세스 사이에서 abstract data type의 안전한 공유를 보장하기위한 high-level syncronization  construct <ul>
+<li>모니터 내에서는 한번에 하나의 하나의 프로세스만이 활동 가능</li>
+<li>프로그래머가 동기화 제약 조건을 명시적으로 코딩할 필요 없음</li>
+<li>프로세스가 모니터 안에서 기다릴수 있도록 하기 위해 condition variable 사용. condition x, y</li>
+<li>condition variable 은 wait와 signal 연산에 의해서만 접근 가능<ul>
+<li>x.wait();<ul>
+<li>x.wait()을 invoke한 프로세스는 다른 프로세스가 x.signal()을 invoke 하기 전까지 suspend</li>
+</ul>
+</li>
+<li>x.siganl();<ul>
+<li>x.signal()은 정확하게 하나의 suspend된 프로세스를 resume한다. Suspend된 프로세스가 없으면 아무 일도 일어나지 않는다. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100722.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100723.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100724.png" alt="img"></p>
 
                     
                         
@@ -1130,7 +923,7 @@
                     
                     
                         <p>
-                            <a href="/2018/10/04/2018-10-04-보물상자 비밀번호/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/10/06/2018-10-06-Process Synchronization/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -1355,6 +1148,71 @@
                     
                         <p>
                             <a href="/2018/10/04/2018-10-04-Process Managemnet/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/10/04/2018-10-04-보물상자 비밀번호/">
+                            보물상자 비밀번호
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-10-04T00:00:00+09:00">
+	
+		    Oct 04, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&amp;categoryId=AWXRUN9KfZ8DFAUo&amp;categoryType=CODE" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&amp;categoryId=AWXRUN9KfZ8DFAUo&amp;categoryType=CODE</a></p>
+<p>쉬운 문제이다. 이 문제에서는 정렬과 진법 변환을 배울 수 있다.</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li>회전 시키고</li>
+<li>각 변 확인하며 리스트에 저장</li>
+</ol>
+<h2 id="개념"><a href="#개념" class="headerlink" title="개념"></a>개념</h2><ol>
+<li><p>정렬</p>
+<p>오름차순 정렬 : Collections.sort(list)</p>
+<p>내림차순 정렬 : Collections.sort(list) –&gt;  Collections.reverse(list)</p>
+</li>
+<li><p>진법 변환</p>
+<p>string 을 radix 진법으로 변환 : Integer.parseInt(String s, int radix) </p>
+</li>
+</ol>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/treasurepwd01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/treasurepwd02.png" alt="img"></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/10/04/2018-10-04-보물상자 비밀번호/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

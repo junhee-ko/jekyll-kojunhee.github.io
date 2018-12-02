@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/04/13/2018-04-13-양치기 꿍/">
-                            양치기 꿍
+                        <a class="link-unstyled" href="/2018/04/13/2018-04-13-Observer Pattern/">
+                            Observer Pattern
                         </a>
                     
                 </h1>
@@ -180,7 +180,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
 
 
     
@@ -189,22 +189,41 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/3187" target="_blank" rel="noopener">https://www.acmicpc.net/problem/3187</a></p>
-<ol>
-<li>이차원 배열의 각 index에 순차적으로 접근</li>
-<li>양, 늑대 count</li>
-<li><p>현재 위치를 기준으로 상하좌우 조사</p>
+                    <ul>
+<li><p>Intent</p>
 <ul>
-<li>울타리가 X &amp;&amp; 방문 X</li>
-<li>이동</li>
+<li>Defines a one-to-many dependency between objects </li>
+<li>so that when one object changes state, </li>
+<li>all its dependents are notified and updated automatically.</li>
+<li>객체 사이에 1:n의 의존 관계이며,</li>
+<li>객체 상태의 변화가 다른 의존 객체에 통지되고 자동으로 업데이트 되게 함</li>
 </ul>
 </li>
-</ol>
-<ol start="3">
-<li>2번 다시 수행</li>
-</ol>
-<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/shape01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/shape02.png" alt="img"></p>
+<li><p>다른 이름 </p>
+<ul>
+<li>Publisher-Subscriber</li>
+</ul>
+</li>
+<li><p>Implementation</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/obp.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li>EX</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/subject.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/observer.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/obs01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/obs02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/obs03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/obs04.png" alt="img"></p>
+<ul>
+<li>Reference<ul>
+<li><a href="http://www.oodesign.com/singleton-pattern.html" target="_blank" rel="noopener">http://www.oodesign.com/singleton-pattern.html</a></li>
+<li><a href="https://www.tutorialspoint.com/design_pattern/singleton_pattern.html" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/singleton_pattern.html</a></li>
+</ul>
+</li>
+</ul>
 
                     
                         
@@ -212,7 +231,7 @@
                     
                     
                         <p>
-                            <a href="/2018/04/13/2018-04-13-양치기 꿍/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/04/13/2018-04-13-Observer Pattern/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -308,8 +327,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-적록색약/">
-                            적록색약
+                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-Bridge Pattern/">
+                            Bridge Pattern
                         </a>
                     
                 </h1>
@@ -322,7 +341,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
 
 
     
@@ -331,25 +350,42 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/10026" target="_blank" rel="noopener">https://www.acmicpc.net/problem/10026</a></p>
-<ol>
-<li><p>이차원 배열의 각 index에 순차적으로 접근</p>
-</li>
-<li><p>현재 위치를 기준으로 상하좌우 조사</p>
+                    <ul>
+<li><p>Intent</p>
 <ul>
-<li>현재 위치와 같은 색깔 &amp;&amp; 아직 방문 하지 않았으면</li>
+<li>decouple an abstraction from its implementation so that the two can vary independently.</li>
+<li>추상을 구현으로부터 분리하여, </li>
+<li>독립적으로 변하게 함</li>
+<li>여기에서 구현의 의미<ul>
+<li>추상을 구현한 concrete class X</li>
+<li>궂은 일을 하는 로직 / 코드</li>
 </ul>
 </li>
-</ol>
-<ul>
-<li>이동</li>
+<li>구현 뿐만 아니라 추상화된 부분까지 변경시켜야 하는 경우에는 bridge pattern을 사용</li>
 </ul>
-<ol start="3">
-<li>2번 다시 수행</li>
-</ol>
-<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/greeRed01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/newgreeRed02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/newgreeRed03.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li><p>Class Diagram</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridge.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridgee.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li>Code</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b06.png" alt="img"></p>
+<ul>
+<li>Reference<ul>
+<li><a href="https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm</a></li>
+</ul>
+</li>
+</ul>
 
                     
                         
@@ -357,7 +393,7 @@
                     
                     
                         <p>
-                            <a href="/2018/04/09/2018-04-09-적록색약/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/04/09/2018-04-09-Bridge Pattern/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -440,6 +476,112 @@
                     
                         <p>
                             <a href="/2018/04/09/2018-04-09-LSP/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-ISP/">
+                            ISP
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-04-09T00:00:00+09:00">
+	
+		    Apr 09, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <ul>
+<li>Interface Segregation Principle ( 인터페이스 분리 법칙 )</li>
+</ul>
+<ul>
+<li><p>Intent</p>
+<ul>
+<li>Clients should not be forced to depend upon interfaces that they don’t use.</li>
+<li>인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙</li>
+</ul>
+</li>
+<li><p>SRP와 ISP</p>
+<ul>
+<li>SRP를 만족하더라도 ISP를 반드시 만족한다고 할수 없다<ul>
+<li>게시판의 글쓰기, 읽기, 수정, 삭제를 위한 메소드를 제공하는 클래스가 있다.</li>
+<li>클라이언트에 따라서는 게시판의 이러한 기능 중 일부분만 사용할 수 있다.</li>
+<li>일반 사용자는 게시판의 삭제 기능이 없지만, 관리자는 삭제를 할 수 있다.</li>
+<li>게시판 클래스는 게시판에 관련된 책임을 수행하므로 SRP 만족,</li>
+<li>이 클래스의 모든 메서드가 들어 있는 인퍼테이스가 클라이언트에 상관없이 사용된다면, ISP에 위배.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Bad Example</p>
+<ul>
+<li>now some robots came in the company they work as well , but they don’t eat so they don’t need a launch break. </li>
+<li>One on side the new Robot class need to implement the IWorker interface because robots works. </li>
+<li>On the other side, they don’t have to implement it because they don’t eat.</li>
+<li>now we have to change Manager class in order to introduce the new SuperWorker</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp077.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp088.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp099.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp01010.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp01111.png" alt="img"></p>
+<p>​</p>
+</li>
+<li><p>Good Example</p>
+<ul>
+<li>new Robot class is no longer forced to implement the eat method.</li>
+<li>if we need another functionality for the robot like recharging, </li>
+<li>we create another interface IRechargeble with a method recharge.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp011.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp022.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp033.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp044.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp055.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp066.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp077.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li>Reference<ul>
+<li><a href="http://www.oodesign.com/dependency-inversion-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/dependency-inversion-principle.html</a></li>
+<li>Java 객체지향 디자인 패턴 (정인상, 채흥석 지음)</li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/04/09/2018-04-09-ISP/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -549,6 +691,73 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-적록색약/">
+                            적록색약
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-04-09T00:00:00+09:00">
+	
+		    Apr 09, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/10026" target="_blank" rel="noopener">https://www.acmicpc.net/problem/10026</a></p>
+<ol>
+<li><p>이차원 배열의 각 index에 순차적으로 접근</p>
+</li>
+<li><p>현재 위치를 기준으로 상하좌우 조사</p>
+<ul>
+<li>현재 위치와 같은 색깔 &amp;&amp; 아직 방문 하지 않았으면</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>이동</li>
+</ul>
+<ol start="3">
+<li>2번 다시 수행</li>
+</ol>
+<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/greeRed01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/newgreeRed02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/newgreeRed03.png" alt="img"></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/04/09/2018-04-09-적록색약/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/04/09/2018-04-09-SRP/">
                             SRP
                         </a>
@@ -616,196 +825,6 @@
                     
                         <p>
                             <a href="/2018/04/09/2018-04-09-SRP/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-Bridge Pattern/">
-                            Bridge Pattern
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-04-09T00:00:00+09:00">
-	
-		    Apr 09, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <ul>
-<li><p>Intent</p>
-<ul>
-<li>decouple an abstraction from its implementation so that the two can vary independently.</li>
-<li>추상을 구현으로부터 분리하여, </li>
-<li>독립적으로 변하게 함</li>
-<li>여기에서 구현의 의미<ul>
-<li>추상을 구현한 concrete class X</li>
-<li>궂은 일을 하는 로직 / 코드</li>
-</ul>
-</li>
-<li>구현 뿐만 아니라 추상화된 부분까지 변경시켜야 하는 경우에는 bridge pattern을 사용</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Class Diagram</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridge.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/myBridgee.png" alt="img"></p>
-</li>
-</ul>
-<ul>
-<li>Code</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b04.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b05.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/b06.png" alt="img"></p>
-<ul>
-<li>Reference<ul>
-<li><a href="https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm</a></li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/04/09/2018-04-09-Bridge Pattern/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/04/09/2018-04-09-ISP/">
-                            ISP
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-04-09T00:00:00+09:00">
-	
-		    Apr 09, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DesignPattern/">DesignPattern</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <ul>
-<li>Interface Segregation Principle ( 인터페이스 분리 법칙 )</li>
-</ul>
-<ul>
-<li><p>Intent</p>
-<ul>
-<li>Clients should not be forced to depend upon interfaces that they don’t use.</li>
-<li>인터페이스를 클라이언트에 특화되돌독 분리시키는 설계 원칙</li>
-</ul>
-</li>
-<li><p>SRP와 ISP</p>
-<ul>
-<li>SRP를 만족하더라도 ISP를 반드시 만족한다고 할수 없다<ul>
-<li>게시판의 글쓰기, 읽기, 수정, 삭제를 위한 메소드를 제공하는 클래스가 있다.</li>
-<li>클라이언트에 따라서는 게시판의 이러한 기능 중 일부분만 사용할 수 있다.</li>
-<li>일반 사용자는 게시판의 삭제 기능이 없지만, 관리자는 삭제를 할 수 있다.</li>
-<li>게시판 클래스는 게시판에 관련된 책임을 수행하므로 SRP 만족,</li>
-<li>이 클래스의 모든 메서드가 들어 있는 인퍼테이스가 클라이언트에 상관없이 사용된다면, ISP에 위배.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Bad Example</p>
-<ul>
-<li>now some robots came in the company they work as well , but they don’t eat so they don’t need a launch break. </li>
-<li>One on side the new Robot class need to implement the IWorker interface because robots works. </li>
-<li>On the other side, they don’t have to implement it because they don’t eat.</li>
-<li>now we have to change Manager class in order to introduce the new SuperWorker</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp077.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp088.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp099.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp01010.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp01111.png" alt="img"></p>
-<p>​</p>
-</li>
-<li><p>Good Example</p>
-<ul>
-<li>new Robot class is no longer forced to implement the eat method.</li>
-<li>if we need another functionality for the robot like recharging, </li>
-<li>we create another interface IRechargeble with a method recharge.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp011.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp022.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp033.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp044.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp055.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp066.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/isp077.png" alt="img"></p>
-</li>
-</ul>
-<ul>
-<li>Reference<ul>
-<li><a href="http://www.oodesign.com/dependency-inversion-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/dependency-inversion-principle.html</a></li>
-<li>Java 객체지향 디자인 패턴 (정인상, 채흥석 지음)</li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/04/09/2018-04-09-ISP/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

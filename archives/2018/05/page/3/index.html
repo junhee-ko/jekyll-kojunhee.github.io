@@ -166,8 +166,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/05/22/2018-05-22-Blurring/">
-                            Blurring
+                        <a class="link-unstyled" href="/2018/05/22/2018-05-22-High Pass, Low Pass Filters/">
+                            High Pass, Low Pass Filters
                         </a>
                     
                 </h1>
@@ -189,75 +189,25 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h2 id="Blurring"><a href="#Blurring" class="headerlink" title="Blurring"></a>Blurring</h2><ul>
-<li>In blurring, we simple blur an image. </li>
-<li>An image looks more sharp or more detailed if we are able to perceive all the objects and their shapes correctly in it. </li>
-<li>For example. An image with a face, looks clear when we are able to identify eyes, ears, nose, lips, forehead e.t.c very clear. </li>
-<li>This shape of an object is due to its edges. </li>
-<li>So in blurring, we simple reduce the edge content and makes the transition form one color to the other very smooth.</li>
-</ul>
-<h2 id="Blurring-vs-zooming"><a href="#Blurring-vs-zooming" class="headerlink" title="Blurring vs zooming"></a>Blurring vs zooming</h2><ul>
-<li>You might have seen a blurred image when you zoom an image. <ul>
-<li>When you zoom an image using pixel replication, and zooming factor is increased, you saw a blurred image. This image also has less details, but it is not true blurring.</li>
-</ul>
-</li>
-<li>In zooming, you add new pixels to an image, that increase the overall number of pixels in an image, </li>
-<li>In blurring, the number of pixels of a normal image and a blurred image remains the same.</li>
-</ul>
-<h2 id="Common-example-of-a-blurred-image"><a href="#Common-example-of-a-blurred-image" class="headerlink" title="Common example of a blurred image"></a>Common example of a blurred image</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/blur01.png" alt="img"> </p>
-<h2 id="Types-of-filters"><a href="#Types-of-filters" class="headerlink" title="Types of filters"></a>Types of filters</h2><ul>
-<li>Blurring can be achieved by many ways. </li>
-<li>The common type of filters that are used to perform blurring are.<ul>
-<li>Mean filter</li>
-<li>Weighted average filter</li>
-<li>Gaussian filter</li>
-</ul>
-</li>
-</ul>
-<h2 id="Mean-filter"><a href="#Mean-filter" class="headerlink" title="Mean filter"></a>Mean filter</h2><ul>
-<li>Mean filter is also known as Box filter and average filter. </li>
-<li>A mean filter has the following properties.<ul>
-<li>It must be odd ordered</li>
-<li>The sum of all the elements should be 1</li>
-<li>All the elements should be same</li>
-</ul>
-</li>
-<li>If we follow this rule, then for a mask of 3x3. We get the following result.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/blur02.png" alt="img"> </p>
+                    <h2 id="Blurring-masks"><a href="#Blurring-masks" class="headerlink" title="Blurring masks"></a>Blurring masks</h2><p>A blurring mask has the following properties.</p>
 <ul>
-<li>The blurring can be increased by increasing the size of the mask. </li>
-<li>The more is the size of the mask, the more is the blurring. </li>
-<li>Because with greater mask, greater number of pixels are catered and one smooth transition is defined.</li>
+<li>All the values in blurring masks are positive</li>
+<li>The sum of all the values is equal to 1</li>
+<li>The edge content is reduced by using a blurring mask</li>
+<li>As the size of the mask grow, more smoothing effect will take place</li>
 </ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/blur03.png" alt="img"> </p>
-<h2 id="Weighted-average-filter"><a href="#Weighted-average-filter" class="headerlink" title="Weighted average filter"></a>Weighted average filter</h2><ul>
-<li><p>In weighted average filter, </p>
-</li>
-<li><p>we gave more weight to the center value. </p>
-</li>
-<li><p>Due to which the contribution of center becomes more then the rest of the values. Due to weighted average filtering, we can actually control the blurring.</p>
-</li>
-<li><p>Properties of the weighted average filter are.</p>
+<h2 id="Derivative-masks"><a href="#Derivative-masks" class="headerlink" title="Derivative masks"></a>Derivative masks</h2><p>A derivative mask has the following properties.</p>
 <ul>
-<li>It must be odd ordered</li>
-<li>The sum of all the elements should be 1</li>
-<li>The weight of center element should be more then all of the other elements</li>
+<li>A derivative mask have positive and as well as negative values</li>
+<li>The sum of all the values in a derivative mask is equal to zero</li>
+<li>The edge content is increased by a derivative mask</li>
+<li>As the size of the mask grows , more edge content is increased</li>
 </ul>
-</li>
-<li><p>Filter01</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/blur04.png" alt="img"> </p>
-<ul>
-<li>The two properties are satisfied which are (1 and 3). But the property 2 is not satisfied. So in order to satisfy that we will simple divide the whole filter by 10, or multiply it with 1/10.</li>
+<h2 id="Relationship-between-blurring-mask-and-derivative-mask-with-high-pass-filters-and-low-pass-filters"><a href="#Relationship-between-blurring-mask-and-derivative-mask-with-high-pass-filters-and-low-pass-filters" class="headerlink" title="Relationship between blurring mask and derivative mask with high pass filters and low pass filters."></a>Relationship between blurring mask and derivative mask with high pass filters and low pass filters.</h2><ul>
+<li>Blurring masks are also called as low pass filter</li>
+<li>Derivative masks are also called as high pass filter</li>
 </ul>
-</li>
-<li><p>Filter02</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/blur05.png" alt="img"> </p>
-<ul>
-<li>Dividing factor = 18.</li>
-</ul>
-</li>
-</ul>
+<h2 id="High-pass-frequency-components-and-Low-pass-frequency-components"><a href="#High-pass-frequency-components-and-Low-pass-frequency-components" class="headerlink" title="High pass frequency components and Low pass frequency components"></a>High pass frequency components and Low pass frequency components</h2><p>The high pass frequency components denotes edges whereas the low pass frequency components denotes smooth regions.</p>
 
                     
                         
@@ -265,7 +215,7 @@
                     
                     
                         <p>
-                            <a href="/2018/05/22/2018-05-22-Blurring/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/05/22/2018-05-22-High Pass, Low Pass Filters/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -434,214 +384,6 @@
                     
                         <p>
                             <a href="/2018/05/21/2018-05-21-Mask/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/05/21/2018-05-21-PMF, CDF/">
-                            PMF, CDF
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-05-21T00:00:00+09:00">
-	
-		    May 21, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DIP/">DIP</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p>In the histogram equalization, the first and the second step are PMF and CDF. </p>
-<h2 id="What-is-PMF"><a href="#What-is-PMF" class="headerlink" title="What is PMF?"></a>What is PMF?</h2><ul>
-<li>probability mass function</li>
-<li>it gives the probability of each number in the data set or </li>
-<li>you can say that it basically gives the count or frequency of each element.</li>
-</ul>
-<h2 id="How-PMF-is-calculated"><a href="#How-PMF-is-calculated" class="headerlink" title="How PMF is calculated"></a>How PMF is calculated</h2><ul>
-<li><p>Consider this matrix.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf01.png" alt="img"></p>
-</li>
-<li><p>Now if we were to calculate the PMF of this matrix, </p>
-</li>
-<li><p>here how we are going to do it.</p>
-</li>
-<li><p>At first, we will take the first value in the matrix , and then we will count, how much time this value appears in the whole matrix. </p>
-</li>
-<li><p>After count they can either be represented in a histogram, or in a table like this below.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf02.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="Calculating-PMF-from-histogram"><a href="#Calculating-PMF-from-histogram" class="headerlink" title="Calculating PMF from histogram"></a>Calculating PMF from histogram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf03.png" alt="img"> </p>
-<ul>
-<li>The above histogram shows frequency of gray level values for an 8 bits per pixel image.</li>
-<li>Now if we have to calculate its PMF, </li>
-<li>we will simple look at the count of each bar from vertical axis and then divide it by total count.</li>
-<li>So the PMF of the above histogram is this.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf04.png" alt="img"> </p>
-<h2 id="What-is-CDF"><a href="#What-is-CDF" class="headerlink" title="What is CDF?"></a>What is CDF?</h2><ul>
-<li>cumulative distributive function</li>
-<li>it is a function that calculates the cumulative sum of all the values that are calculated by PMF. </li>
-<li>It basically sums the previous one.</li>
-</ul>
-<h2 id="How-CDF-is-calculated"><a href="#How-CDF-is-calculated" class="headerlink" title="How CDF is calculated"></a>How CDF is calculated</h2><ul>
-<li><p>Since this histogram is not increasing monotonically, so will make it grow monotonically.</p>
-</li>
-<li><p>the first value of PMF remain as it is. </p>
-</li>
-<li><p>The second value of PMF is added in the first value and placed over 128. </p>
-</li>
-<li><p>The third value of PMF is added in the second value of CDF , that gives 110/110 which is equal to 1.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf05.png" alt="img"> </p>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/05/21/2018-05-21-PMF, CDF/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/05/21/2018-05-21-Convolution/">
-                            Convolution
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-05-21T00:00:00+09:00">
-	
-		    May 21, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/DIP/">DIP</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="What-is-image-processing"><a href="#What-is-image-processing" class="headerlink" title="What is image processing"></a>What is image processing</h2><ul>
-<li>In image processing , we are developing a system </li>
-<li>whose input is an image and output would be an image</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution04.png" alt="img"></p>
-<ul>
-<li>It can be mathematically represented as two ways : h(x,y) is the mask or filter.<ul>
-<li><strong>g(x,y) = h(x,y) * f(x,y)</strong><ul>
-<li>“mask convolved with an image”.</li>
-</ul>
-</li>
-<li><strong>g(x,y) = f(x,y) * h(x,y)</strong><ul>
-<li>“image convolved with mask”</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="What-is-mask"><a href="#What-is-mask" class="headerlink" title="What is mask?"></a>What is mask?</h2><ul>
-<li>Mask is also a signal. </li>
-<li>It can be represented by a two dimensional matrix. </li>
-<li>The mask is usually of the order of 1x1, 3x3, 5x5, 7x7 . </li>
-<li>A mask should always be in odd number, </li>
-<li>because other wise you cannot find the mid of the mask. </li>
-</ul>
-<h2 id="How-to-perform-convolution"><a href="#How-to-perform-convolution" class="headerlink" title="How to perform convolution?"></a>How to perform convolution?</h2><ul>
-<li>Flip the mask (horizontally and vertically) only once</li>
-<li>Slide the mask onto the image.</li>
-<li>Multiply the corresponding elements and then add them</li>
-<li>Repeat this procedure until all values of the image has been calculated.</li>
-</ul>
-<h2 id="Example-of-convolution"><a href="#Example-of-convolution" class="headerlink" title="Example of convolution"></a>Example of convolution</h2><ul>
-<li><p>Mask</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution05.png" alt="img"></p>
-</li>
-<li><p>Flipping the mask horizontally</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution06.png" alt="img"></p>
-</li>
-<li><p>Flipping the mask vertically</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution07.png" alt="img"></p>
-</li>
-<li><p>Image</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution08.png" alt="img"></p>
-</li>
-<li><p>Convolution</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/convolution09.png" alt="img"></p>
-</li>
-<li><p>The box in red color is the mask, </p>
-</li>
-<li><p>and the values in the orange are the values of the mask. </p>
-</li>
-<li><p>The black color box and values belong to the image.</p>
-</li>
-<li><p>Now for the first pixel of the image, the value will be calculated as</p>
-<p>First pixel = (5<em>2) + (4</em>4) + (2<em>8) + (1</em>10)</p>
-<p>= 10 + 16 + 16 + 10</p>
-<p>= 52</p>
-</li>
-<li><p>Place 52 in the original image at the first index and repeat this procedure for each pixel of the image.</p>
-</li>
-</ul>
-<h2 id="Why-Convolution"><a href="#Why-Convolution" class="headerlink" title="Why Convolution"></a>Why Convolution</h2><ul>
-<li>Convolution can achieve something, that the previous two methods of manipulating images can’t achieve. </li>
-<li>Those include the blurring, sharpening, edge detection, noise reduction e.t.c.</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/05/21/2018-05-21-Convolution/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -1008,6 +750,98 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/05/21/2018-05-21-PMF, CDF/">
+                            PMF, CDF
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-05-21T00:00:00+09:00">
+	
+		    May 21, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DIP/">DIP</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>In the histogram equalization, the first and the second step are PMF and CDF. </p>
+<h2 id="What-is-PMF"><a href="#What-is-PMF" class="headerlink" title="What is PMF?"></a>What is PMF?</h2><ul>
+<li>probability mass function</li>
+<li>it gives the probability of each number in the data set or </li>
+<li>you can say that it basically gives the count or frequency of each element.</li>
+</ul>
+<h2 id="How-PMF-is-calculated"><a href="#How-PMF-is-calculated" class="headerlink" title="How PMF is calculated"></a>How PMF is calculated</h2><ul>
+<li><p>Consider this matrix.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf01.png" alt="img"></p>
+</li>
+<li><p>Now if we were to calculate the PMF of this matrix, </p>
+</li>
+<li><p>here how we are going to do it.</p>
+</li>
+<li><p>At first, we will take the first value in the matrix , and then we will count, how much time this value appears in the whole matrix. </p>
+</li>
+<li><p>After count they can either be represented in a histogram, or in a table like this below.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf02.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="Calculating-PMF-from-histogram"><a href="#Calculating-PMF-from-histogram" class="headerlink" title="Calculating PMF from histogram"></a>Calculating PMF from histogram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf03.png" alt="img"> </p>
+<ul>
+<li>The above histogram shows frequency of gray level values for an 8 bits per pixel image.</li>
+<li>Now if we have to calculate its PMF, </li>
+<li>we will simple look at the count of each bar from vertical axis and then divide it by total count.</li>
+<li>So the PMF of the above histogram is this.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf04.png" alt="img"> </p>
+<h2 id="What-is-CDF"><a href="#What-is-CDF" class="headerlink" title="What is CDF?"></a>What is CDF?</h2><ul>
+<li>cumulative distributive function</li>
+<li>it is a function that calculates the cumulative sum of all the values that are calculated by PMF. </li>
+<li>It basically sums the previous one.</li>
+</ul>
+<h2 id="How-CDF-is-calculated"><a href="#How-CDF-is-calculated" class="headerlink" title="How CDF is calculated"></a>How CDF is calculated</h2><ul>
+<li><p>Since this histogram is not increasing monotonically, so will make it grow monotonically.</p>
+</li>
+<li><p>the first value of PMF remain as it is. </p>
+</li>
+<li><p>The second value of PMF is added in the first value and placed over 128. </p>
+</li>
+<li><p>The third value of PMF is added in the second value of CDF , that gives 110/110 which is equal to 1.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pmf05.png" alt="img"> </p>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/05/21/2018-05-21-PMF, CDF/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/05/21/2018-05-21-Brightness and Contrast/">
                             Brightness and Contrast
                         </a>
@@ -1070,6 +904,90 @@
                     
                         <p>
                             <a href="/2018/05/21/2018-05-21-Brightness and Contrast/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/05/21/2018-05-21-Bits Per Pixel/">
+                            Bits Per Pixel
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-05-21T00:00:00+09:00">
+	
+		    May 21, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/DIP/">DIP</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>Bpp or bits per pixel denotes the number of bits per pixel.</p>
+<h4 id="Number-of-different-colors"><a href="#Number-of-different-colors" class="headerlink" title="Number of different colors"></a>Number of different colors</h4><ul>
+<li><p>the number of different colors depend on the number of bits per pixel.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bppTable.png" alt="img"></p>
+</li>
+</ul>
+<h4 id="Shades"><a href="#Shades" class="headerlink" title="Shades"></a>Shades</h4><ul>
+<li>Shades = number of colors = (2)<sup>bpp<sup></sup></sup></li>
+<li>black color<ul>
+<li>0 pixel value always denotes black color. </li>
+</ul>
+</li>
+<li>white color<ul>
+<li>(2)<sup>bpp<sup> -1</sup></sup></li>
+<li>In case of 1 bpp, 0 denotes black, and 1 denotes white.</li>
+<li>In case 8 bpp, 0 denotes black, and 255 denotes white.</li>
+</ul>
+</li>
+<li>gray color<ul>
+<li>Gray color is actually the mid point of black and white.</li>
+<li>In case of 8bpp, the pixel value that denotes gray color is 127 or 128bpp (if you count from 1, not from 0).</li>
+</ul>
+</li>
+</ul>
+<h4 id="Image-Size"><a href="#Image-Size" class="headerlink" title="Image Size"></a>Image Size</h4><ul>
+<li>Size of an image = rows <em> cols </em> bpp</li>
+<li>Assuming it has 1024 rows and it has 1024 columns. </li>
+<li>And since it is a gray scale image, it has 256 different shades of gray or it has bits per pixel</li>
+<li>rows <em> cols </em> bpp = 1024 <em> 1024 </em> 8 = 8388608 bits.</li>
+<li>Converting it into bytes = 8388608 / 8 = 1048576 bytes.</li>
+<li>Converting into kilo bytes = 1048576 / 1024 = 1024kb.</li>
+<li>Converting into Mega bytes = 1024 / 1024 = 1 Mb.</li>
+</ul>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><ul>
+<li><a href="https://www.tutorialspoint.com/dip/concept_of_bits_per_pixel.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/dip/concept_of_bits_per_pixel.htm</a></li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/05/21/2018-05-21-Bits Per Pixel/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

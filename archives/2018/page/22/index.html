@@ -166,8 +166,130 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/02/06/2018-02-06-프로퍼티와 메서드/">
-                            프로퍼티와 메서드
+                        <a class="link-unstyled" href="/2018/02/06/2018-02-09-class,struct/">
+                            class,struct
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-02-06T00:00:00+09:00">
+	
+		    Feb 06, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/cs/">cs</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><ul>
+<li>class <ul>
+<li>reference type</li>
+</ul>
+</li>
+<li>struct <ul>
+<li>value type</li>
+</ul>
+</li>
+</ul>
+<h3 id="allocation"><a href="#allocation" class="headerlink" title="allocation"></a>allocation</h3><ul>
+<li>class <ul>
+<li>are allocated on the heap and garbage-collected</li>
+</ul>
+</li>
+<li>struct<ul>
+<li>are allocated either on the stack or inline in containing types </li>
+<li>and deallocated when the stack unwinds or when their containing type gets deallocated.</li>
+<li>allocations and deallocations are in general cheaper than reference types.</li>
+</ul>
+</li>
+</ul>
+<h3 id="arrays"><a href="#arrays" class="headerlink" title="arrays"></a>arrays</h3><ul>
+<li>class<ul>
+<li>arrays of reference types are allocated out-of-line, </li>
+<li>meaning the array elements are just references to instances of the reference type residing on the heap</li>
+</ul>
+</li>
+<li>struct<ul>
+<li>Value type arrays are allocated inline, meaning that the array elements are the actual instances of the value type.</li>
+<li>allocations and deallocations of value type arrays are much cheaper than reference type arrays. </li>
+</ul>
+</li>
+</ul>
+<h3 id="memory-usage"><a href="#memory-usage" class="headerlink" title="memory usage"></a>memory usage</h3><ul>
+<li>class<ul>
+<li>no boxing occurs as reference types are cast.</li>
+</ul>
+</li>
+<li>struct<ul>
+<li>get boxed when cast to a reference type or one of the interfaces they implement.</li>
+<li>get unboxed when cast back to the value type</li>
+<li>Because boxes are objects that are allocated on the heap and are garbage-collected, </li>
+<li>too much boxing and unboxing can have a negative impact on the heap, the garbage collector, and ultimately the performance of the application</li>
+</ul>
+</li>
+</ul>
+<h3 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h3><ul>
+<li>class<ul>
+<li>reference type assignments copy the reference</li>
+<li>assignments of large reference types are cheaper than assignments of large value types.</li>
+</ul>
+</li>
+<li>struct <ul>
+<li>value type assignments copy the entire value</li>
+</ul>
+</li>
+</ul>
+<h3 id="pass"><a href="#pass" class="headerlink" title="pass"></a>pass</h3><ul>
+<li>class<ul>
+<li>reference types are passed by reference</li>
+<li>Changes to an instance of a reference type affect all references pointing to the instance</li>
+</ul>
+</li>
+<li>struct<ul>
+<li>value types are passed by value</li>
+<li>Value type instances are copied when they are passed by value.</li>
+<li>When an instance of a value type is changed, it of course does not affect any of its copies. </li>
+<li>Because the copies are not created explicitly by the user but are implicitly created when arguments are passed or return values are returned, value types that can be changed can be confusing to many users. </li>
+<li>Therefore, value types should be immutable.</li>
+</ul>
+</li>
+</ul>
+<p>​    </p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/02/06/2018-02-09-class,struct/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/02/06/2018-02-06-구조체,클래스/">
+                            구조체,클래스
                         </a>
                     
                 </h1>
@@ -190,36 +312,14 @@
             
                 <div class="postShorten-content">
                     <p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
-<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><ul>
-<li>Properties associate values with a particular class, structure, or enumeration. <ul>
-<li>Stored properties store constant and variable values as part of an instance. Stored properties are provided only by classes and structures.</li>
-<li>computed properties calculate (rather than store) a value. Computed properties are provided by classes, structures, and enumerations. </li>
-</ul>
-</li>
-</ul>
-<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ul>
-<li>Methods are functions that are associated with a particular type. </li>
-<li><p>Classes, structures, and enumerations can all define instance methods, </p>
 <ul>
-<li>which encapsulate specific tasks and functionality for working with an instance of a given type. - Classes, structures, and enumerations can also define type methods, </li>
-<li>which are associated with the type itself. Type methods are similar to class methods in Objective-C.</li>
+<li>Unlike other programming languages, </li>
+<li>Swift does not require you to create separate interface and implementation files for custom classes and structures. </li>
+<li>In Swift, you define a class or a structure in a single file, </li>
+<li>and the external interface to that class or structure is automatically made available for other code to use.</li>
+<li>example of a structure definition and a class definition:</li>
 </ul>
-</li>
-<li><p>Instance methods are functions </p>
-</li>
-<li>that belong to instances of a particular class, structure, or enumeration. </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Counter &#123;</span><br><span class="line">    var count = 0</span><br><span class="line">    func increment() &#123;</span><br><span class="line">        count += 1</span><br><span class="line">    &#125;</span><br><span class="line">    func increment(by amount: Int) &#123;</span><br><span class="line">        count += amount</span><br><span class="line">    &#125;</span><br><span class="line">    func reset() &#123;</span><br><span class="line">        count = 0</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>The Counter class defines three instance methods:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">increment() increments the counter by 1.</span><br><span class="line">increment(by: Int) increments the counter by a specified integer amount.</span><br><span class="line">reset() resets the counter to zero.</span><br></pre></td></tr></table></figure>
-<ul>
-<li>can also define methods that are called on the type itself. These kinds of methods are called type methods</li>
-<li>You indicate type methods by writing the static keyword before the method’s func keyword. </li>
-<li>Classes may also use the class keyword to allow subclasses to override the superclass’s implementation of that method</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">struct LevelTracker &#123;</span><br><span class="line">    static var highestUnlockedLevel = 1</span><br><span class="line">    var currentLevel = 1</span><br><span class="line">    </span><br><span class="line">    static func unlock(_ level: Int) &#123;</span><br><span class="line">        if level &gt; highestUnlockedLevel &#123; highestUnlockedLevel = level &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    static func isUnlocked(_ level: Int) -&gt; Bool &#123;</span><br><span class="line">        return level &lt;= highestUnlockedLevel</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @discardableResult</span><br><span class="line">    mutating func advance(to level: Int) -&gt; Bool &#123;</span><br><span class="line">        if LevelTracker.isUnlocked(level) &#123;</span><br><span class="line">            currentLevel = level</span><br><span class="line">            return true</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return false</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct Resolution &#123;</span><br><span class="line">    var width = 0</span><br><span class="line">    var height = 0</span><br><span class="line">&#125;</span><br><span class="line">class VideoMode &#123;</span><br><span class="line">    var resolution = Resolution()</span><br><span class="line">    var interlaced = false</span><br><span class="line">    var frameRate = 0.0</span><br><span class="line">    var name: String?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                     
                         
@@ -227,7 +327,7 @@
                     
                     
                         <p>
-                            <a href="/2018/02/06/2018-02-06-프로퍼티와 메서드/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/02/06/2018-02-06-구조체,클래스/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -298,63 +398,6 @@
                     
                         <p>
                             <a href="/2018/02/06/2018-02-06-옵셔널/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/02/06/2018-02-06-구조체,클래스/">
-                            구조체,클래스
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-02-06T00:00:00+09:00">
-	
-		    Feb 06, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/ios/">ios</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
-<ul>
-<li>Unlike other programming languages, </li>
-<li>Swift does not require you to create separate interface and implementation files for custom classes and structures. </li>
-<li>In Swift, you define a class or a structure in a single file, </li>
-<li>and the external interface to that class or structure is automatically made available for other code to use.</li>
-<li>example of a structure definition and a class definition:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct Resolution &#123;</span><br><span class="line">    var width = 0</span><br><span class="line">    var height = 0</span><br><span class="line">&#125;</span><br><span class="line">class VideoMode &#123;</span><br><span class="line">    var resolution = Resolution()</span><br><span class="line">    var interlaced = false</span><br><span class="line">    var frameRate = 0.0</span><br><span class="line">    var name: String?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/02/06/2018-02-06-구조체,클래스/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -471,73 +514,6 @@
                     
                         <p>
                             <a href="/2018/02/02/2018-02-02-책페이지/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/01/30/2018-01-30-연산자/">
-                            연산자
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-01-30T00:00:00+09:00">
-	
-		    Jan 30, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/ios/">ios</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60</a></p>
-<ul>
-<li><p>Unary Minus Operator</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let three = 3</span><br><span class="line">let minusThree = -three       // minusThree equals -3</span><br><span class="line">let plusThree = -minusThree   // plusThree equals 3, or &quot;minus minus three&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Unary Plus Operator</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let minusSix = -6</span><br><span class="line">let alsoMinusSix = +minusSix  // alsoMinusSix equals -6</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>Comparison Operators</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(1, &quot;zebra&quot;) &lt; (2, &quot;apple&quot;)   // true because 1 is less than 2; &quot;zebra&quot; and &quot;apple&quot; are not compared</span><br><span class="line">(3, &quot;apple&quot;) &lt; (3, &quot;bird&quot;)    // true because 3 is equal to 3, and &quot;apple&quot; is less than &quot;bird&quot;</span><br><span class="line">(4, &quot;dog&quot;) == (4, &quot;dog&quot;)      // true because 4 is equal to 4, and &quot;dog&quot; is equal to &quot;dog&quot;</span><br><span class="line"></span><br><span class="line">(&quot;blue&quot;, -1) &lt; (&quot;purple&quot;, 1)        // OK, evaluates to true</span><br><span class="line">(&quot;blue&quot;, false) &lt; (&quot;purple&quot;, true)  // Error because &lt; can&apos;t compare Boolean values</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>Range Operators</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">for index in 1...5 &#123;</span><br><span class="line">    print(&quot;\(index) times 5 is \(index * 5)&quot;)</span><br><span class="line">&#125;</span><br><span class="line">// 1 times 5 is 5</span><br><span class="line">// 2 times 5 is 10</span><br><span class="line">// 3 times 5 is 15</span><br><span class="line">// 4 times 5 is 20</span><br><span class="line">// 5 times 5 is 25</span><br><span class="line"></span><br><span class="line">let names = [&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;]</span><br><span class="line">let count = names.count</span><br><span class="line">for i in 0..&lt;count &#123;</span><br><span class="line">    print(&quot;Person \(i + 1) is called \(names[i])&quot;)</span><br><span class="line">&#125;</span><br><span class="line">// Person 1 is called Anna</span><br><span class="line">// Person 2 is called Alex</span><br><span class="line">// Person 3 is called Brian</span><br><span class="line">// Person 4 is called Jack</span><br><span class="line"></span><br><span class="line">for name in names[2...] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Brian</span><br><span class="line">// Jack</span><br><span class="line"> </span><br><span class="line">for name in names[...2] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Anna</span><br><span class="line">// Alex</span><br><span class="line">// Brian</span><br><span class="line"></span><br><span class="line">for name in names[..&lt;2] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Anna</span><br><span class="line">// Alex</span><br><span class="line"></span><br><span class="line">let range = ...5</span><br><span class="line">range.contains(7)   // false</span><br><span class="line">range.contains(4)   // true</span><br><span class="line">range.contains(-1)  // true</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/01/30/2018-01-30-연산자/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -712,6 +688,183 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/01/30/2018-01-30-연산자/">
+                            연산자
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-01-30T00:00:00+09:00">
+	
+		    Jan 30, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/ios/">ios</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60</a></p>
+<ul>
+<li><p>Unary Minus Operator</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let three = 3</span><br><span class="line">let minusThree = -three       // minusThree equals -3</span><br><span class="line">let plusThree = -minusThree   // plusThree equals 3, or &quot;minus minus three&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Unary Plus Operator</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let minusSix = -6</span><br><span class="line">let alsoMinusSix = +minusSix  // alsoMinusSix equals -6</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Comparison Operators</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(1, &quot;zebra&quot;) &lt; (2, &quot;apple&quot;)   // true because 1 is less than 2; &quot;zebra&quot; and &quot;apple&quot; are not compared</span><br><span class="line">(3, &quot;apple&quot;) &lt; (3, &quot;bird&quot;)    // true because 3 is equal to 3, and &quot;apple&quot; is less than &quot;bird&quot;</span><br><span class="line">(4, &quot;dog&quot;) == (4, &quot;dog&quot;)      // true because 4 is equal to 4, and &quot;dog&quot; is equal to &quot;dog&quot;</span><br><span class="line"></span><br><span class="line">(&quot;blue&quot;, -1) &lt; (&quot;purple&quot;, 1)        // OK, evaluates to true</span><br><span class="line">(&quot;blue&quot;, false) &lt; (&quot;purple&quot;, true)  // Error because &lt; can&apos;t compare Boolean values</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Range Operators</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">for index in 1...5 &#123;</span><br><span class="line">    print(&quot;\(index) times 5 is \(index * 5)&quot;)</span><br><span class="line">&#125;</span><br><span class="line">// 1 times 5 is 5</span><br><span class="line">// 2 times 5 is 10</span><br><span class="line">// 3 times 5 is 15</span><br><span class="line">// 4 times 5 is 20</span><br><span class="line">// 5 times 5 is 25</span><br><span class="line"></span><br><span class="line">let names = [&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;]</span><br><span class="line">let count = names.count</span><br><span class="line">for i in 0..&lt;count &#123;</span><br><span class="line">    print(&quot;Person \(i + 1) is called \(names[i])&quot;)</span><br><span class="line">&#125;</span><br><span class="line">// Person 1 is called Anna</span><br><span class="line">// Person 2 is called Alex</span><br><span class="line">// Person 3 is called Brian</span><br><span class="line">// Person 4 is called Jack</span><br><span class="line"></span><br><span class="line">for name in names[2...] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Brian</span><br><span class="line">// Jack</span><br><span class="line"> </span><br><span class="line">for name in names[...2] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Anna</span><br><span class="line">// Alex</span><br><span class="line">// Brian</span><br><span class="line"></span><br><span class="line">for name in names[..&lt;2] &#123;</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br><span class="line">// Anna</span><br><span class="line">// Alex</span><br><span class="line"></span><br><span class="line">let range = ...5</span><br><span class="line">range.contains(7)   // false</span><br><span class="line">range.contains(4)   // true</span><br><span class="line">range.contains(-1)  // true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/01/30/2018-01-30-연산자/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/01/29/2018-01-29-데이터 타입 기본/">
+                            데이터 타입 기본
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-01-29T00:00:00+09:00">
+	
+		    Jan 29, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/ios/">ios</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309</a></p>
+<h2 id="Integers"><a href="#Integers" class="headerlink" title="Integers"></a>Integers</h2><ul>
+<li>signed (positive, zero, or negative)</li>
+<li><p>unsigned (positive or zero)</p>
+<ul>
+<li>8-bit unsigned integer : UInt8</li>
+<li>32-bit signed integer : Int32</li>
+</ul>
+</li>
+<li><p>Int</p>
+<ul>
+<li>On a 32-bit platform, Int is the same size as Int32.</li>
+<li><p>On a 64-bit platform, Int is the same size as Int64.</p>
+</li>
+<li><p>always use Int for integer values in your code</p>
+</li>
+</ul>
+</li>
+<li><p>UInt</p>
+<ul>
+<li>On a 32-bit platform, UInt is the same size as UInt32.</li>
+<li><p>On a 64-bit platform, UInt is the same size as UInt64.</p>
+</li>
+<li><p>Int is preferred, even when the values to be stored are known to be nonnegative</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Booleans"><a href="#Booleans" class="headerlink" title="Booleans"></a>Booleans</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let orangesAreOrange = true</span><br><span class="line">let turnipsAreDelicious = false</span><br><span class="line"></span><br><span class="line">if turnipsAreDelicious &#123;</span><br><span class="line">    print(&quot;Mmm, tasty turnips!&quot;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    print(&quot;Eww, turnips are horrible.&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Prints &quot;Eww, turnips are horrible.&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>Swift’s type safety prevents non-Boolean values from being substituted for Bool</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let i = 1</span><br><span class="line">if i &#123;</span><br><span class="line">    // this example will not compile, and will report an error</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The result of the i == 1 comparison is of type Bool,</p>
+</li>
+<li><p>and so this second example passes the type-check. </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let i = 1</span><br><span class="line">if i == 1 &#123;</span><br><span class="line">    // this example will compile successfully</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Floating-Point-Numbers"><a href="#Floating-Point-Numbers" class="headerlink" title="Floating-Point Numbers"></a>Floating-Point Numbers</h2><ul>
+<li>Double represents a 64-bit floating-point number.</li>
+<li><p>Float represents a 32-bit floating-point number.</p>
+<ul>
+<li>In situations where either type would be appropriate, Double is preferred.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Strings-and-Characters"><a href="#Strings-and-Characters" class="headerlink" title="Strings and Characters"></a>Strings and Characters</h2><ul>
+<li><p>String Literals</p>
+<ul>
+<li>A literal value is a value that appears directly in your source code</li>
+<li>Swift infers a type of String for the someString constant </li>
+<li><p>because it’s initialized with a string literal value.</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">		let someString = &quot;Some string literal value&quot;</span><br><span class="line">		```	</span><br><span class="line"></span><br><span class="line">- Initializing an Empty String</span><br></pre></td></tr></table></figure>
+<p>var emptyString = “”               // empty string literal<br>var anotherEmptyString = String()  // initializer syntax<br>// these two strings are both empty, and are equivalent to each other</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">- String Mutability</span><br></pre></td></tr></table></figure>
+<p>var variableString = “Horse”<br>variableString += “ and carriage”<br>// variableString is now “Horse and carriage”</p>
+<p>let constantString = “Highlander”<br>constantString += “ and another Highlander”<br>// this reports a compile-time error - a constant string cannot be modified<br><code>`</code></p>
+</li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/01/29/2018-01-29-데이터 타입 기본/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/01/29/2018-01-29-데이터 타입 고급/">
                             데이터 타입 고급
                         </a>
@@ -852,96 +1005,6 @@
                     
                         <p>
                             <a href="/2018/01/29/2018-01-29-데이터 타입 고급/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2018/01/29/2018-01-29-swift/">
-                            swift
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-01-29T00:00:00+09:00">
-	
-		    Jan 29, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/ios/">ios</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="features"><a href="#features" class="headerlink" title="features"></a>features</h2><p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
-<ul>
-<li><p>Playgrounds and REPL in Xcode</p>
-<ul>
-<li>Type a line of code and the result appears immediately.</li>
-<li>The result view can display graphics, lists of results, or graphs of a value over time</li>
-</ul>
-</li>
-<li><p>Read-Eval-Print-Loop (REPL)</p>
-<ul>
-<li>Read – 유저의 값을 입력 받아 메모리에 저장</li>
-<li>Eval – 데이터를 처리(Evaluate)</li>
-<li>Print – 결과값을 출력</li>
-<li><p>Loop – Read, Eval, Print 를 유저가 Ctrl+C를 두번 눌러 종료할때까지 반복</p>
-</li>
-<li><p>Available from within the Xcode console or in Terminal.</p>
-</li>
-</ul>
-</li>
-<li><p>Package Manager</p>
-<ul>
-<li>A cross-platform tool for building Swift libraries and executables, making it easy to create and manage dependencies.</li>
-</ul>
-</li>
-<li><p>Fast and Powerful</p>
-<ul>
-<li>low-level primitives such as types, flow control, and operators</li>
-<li>object-oriented features</li>
-</ul>
-</li>
-<li><p>Designed for Safety</p>
-<ul>
-<li>Variables are always initialized before use, </li>
-<li>arrays and integers are checked for overflow, </li>
-<li>and memory is managed automatically.</li>
-<li>Swift objects can never be nil</li>
-<li>optionals : there are cases where nil is valid and appropriate</li>
-</ul>
-</li>
-<li><p>Objective-C Interoperability</p>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/01/29/2018-01-29-swift/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

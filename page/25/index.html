@@ -165,8 +165,8 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/01/07/2018-01-07-RecyclerView/">
-                            RecyclerView
+                        <a class="link-unstyled" href="/2018/01/07/2018-01-07-retrofit/">
+                            retrofit
                         </a>
                     
                 </h1>
@@ -188,39 +188,35 @@
             </div>
             
                 <div class="postShorten-content">
-                    <p><a href="https://developer.android.com/training/material/lists-cards.html" target="_blank" rel="noopener">https://developer.android.com/training/material/lists-cards.html</a></p>
-<h2 id="RecyclerView"><a href="#RecyclerView" class="headerlink" title="RecyclerView"></a>RecyclerView</h2><ul>
-<li>ListView의 더욱 향상되고 유연해진 버전</li>
-<li>한정된 수의 뷰를 유지함으로써 매우 효율적으로 스크롤할 수 있는 큰 데이터 집합을 표시하기 위한 컨테이너</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rc.png" alt="img">    </p>
-<h2 id="LayoutManager"><a href="#LayoutManager" class="headerlink" title="LayoutManager"></a>LayoutManager</h2><ul>
-<li>항목 뷰를 RecyclerView 내에 배치</li>
-<li>사용자에게 더 이상 보이지 않는 항목 뷰를 언제 재사용할지 결정</li>
-<li>뷰를 재사용 (또는 재활용)하기 위해, Adapter에게 뷰의 콘텐츠를 데이터 집합의 다른 요소로 교체하도록 요청</li>
-<li><p>이런 방식으로 뷰를 재활용하면 불필요한 뷰 생성이나 리소스를 많이 소모하는 findViewById()를 수행하지 않아도 되므로 성능이 개선</p>
+                    <p><a href="http://devflow.github.io/retrofit-kr/" target="_blank" rel="noopener">http://devflow.github.io/retrofit-kr/</a></p>
 <ul>
-<li>LinearLayoutManager : 항목을 가로 또는 세로 스크롤 목록으로 표시</li>
-<li>GridLayoutManager : 그리드 형식으로 항목을 표시</li>
-<li>StaggeredGridLayoutManager : 지그재그형의 그리드 형식으로 항목을 표시</li>
+<li>retrofit<ul>
+<li>안드로이드와 자바를 위한 type-safe HTTP client </li>
 </ul>
 </li>
+<li>REST API를 구현해놓았음 <ul>
+<li>GET, POST, PUT, DELETED 등을 전달하면 </li>
+<li>서버에서 처리 후 </li>
+<li>xml, json, text, rss 등으로 응답을 제공받을 수 있는 형태</li>
 </ul>
-<h2 id="사용방법"><a href="#사용방법" class="headerlink" title="사용방법"></a>사용방법</h2><ul>
-<li>RecyclerView 위젯을 레이아웃에 추가</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- A RecyclerView with some commonly used attributes --&gt;</span><br><span class="line">&lt;android.support.v7.widget.RecyclerView</span><br><span class="line">    android:id=&quot;@+id/my_recycler_view&quot;</span><br><span class="line">    android:scrollbars=&quot;vertical&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>build.gradle에 다음을 추가</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &apos;com.squareup.retrofit2:retrofit:(insert latest version)&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>retrofi 사용방법</p>
 <ul>
-<li>객체 핸들을 얻어 LayoutManager에 연결</li>
-<li>표시할 데이터의 어댑터를 첨부</li>
+<li>interface 정의</li>
+<li>이 interface class를 retrofit에 초기화</li>
+<li>HTTP 통신을 할 준비 완료</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class MyActivity extends Activity &#123;</span><br><span class="line">    private RecyclerView mRecyclerView;</span><br><span class="line">    private RecyclerView.Adapter mAdapter;</span><br><span class="line">    private RecyclerView.LayoutManager mLayoutManager;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.my_activity);</span><br><span class="line">        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);</span><br><span class="line"></span><br><span class="line">        // use this setting to improve performance if you know that changes</span><br><span class="line">        // in content do not change the layout size of the RecyclerView</span><br><span class="line">        mRecyclerView.setHasFixedSize(true);</span><br><span class="line"></span><br><span class="line">        // use a linear layout manager</span><br><span class="line">        //객체 핸들을 얻어 LayoutManager에 연결</span><br><span class="line">        mLayoutManager = new LinearLayoutManager(this);</span><br><span class="line">        mRecyclerView.setLayoutManager(mLayoutManager);</span><br><span class="line"></span><br><span class="line">        // specify an adapter (see also next example)</span><br><span class="line">        // 표시할 데이터의 어댑터를 첨부</span><br><span class="line">        mAdapter = new MyAdapter(myDataset);</span><br><span class="line">        mRecyclerView.setAdapter(mAdapter);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h2><ul>
-<li>데이터 집합의 항목에 액세스할 수 있게 해주고,</li>
-<li>항목 뷰를 생성하고, </li>
-<li>원래의 항목이 더 이상 보이지 않을 경우 일부 뷰의 콘텐츠를 새 데이터 항목으로 교체</li>
+</li>
+<li><p>interface 정의</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface GitHubService &#123;</span><br><span class="line"> 	@GET(&quot;/users/&#123;user&#125;/repos&quot;)</span><br><span class="line"> 	Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path(&quot;user&quot;) String user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>이 interface class를 retrofit에 초기화</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Retrofit retrofit = new Retrofit.Builder()</span><br><span class="line">   .baseUrl(&quot;https://api.github.com&quot;)</span><br><span class="line">   .build();</span><br><span class="line"></span><br><span class="line">GitHubService service = retrofit.create(GitHubService.class);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">public class MyAdapter extends RecyclerView.Adapter&lt;MyAdapter.ViewHolder&gt; &#123;</span><br><span class="line">    private String[] mDataset;</span><br><span class="line"></span><br><span class="line">    // Provide a reference to the views for each data item</span><br><span class="line">    // Complex data items may need more than one view per item, and</span><br><span class="line">    // you provide access to all the views for a data item in a view holder</span><br><span class="line">    public static class ViewHolder extends RecyclerView.ViewHolder &#123;</span><br><span class="line">        // each data item is just a string in this case</span><br><span class="line">        public TextView mTextView;</span><br><span class="line">        public ViewHolder(TextView v) &#123;</span><br><span class="line">            super(v);</span><br><span class="line">            mTextView = v;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Provide a suitable constructor (depends on the kind of dataset)</span><br><span class="line">    public MyAdapter(String[] myDataset) &#123;</span><br><span class="line">        mDataset = myDataset;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Create new views (invoked by the layout manager)</span><br><span class="line">    @Override</span><br><span class="line">    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,</span><br><span class="line">                                                   int viewType) &#123;</span><br><span class="line">        // create a new view</span><br><span class="line">        View v = LayoutInflater.from(parent.getContext())</span><br><span class="line">                               .inflate(R.layout.my_text_view, parent, false);</span><br><span class="line">        // set the view&apos;s size, margins, paddings and layout parameters</span><br><span class="line">        ...</span><br><span class="line">        ViewHolder vh = new ViewHolder(v);</span><br><span class="line">        return vh;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Replace the contents of a view (invoked by the layout manager)</span><br><span class="line">    @Override</span><br><span class="line">    public void onBindViewHolder(ViewHolder holder, int position) &#123;</span><br><span class="line">        // - get element from your dataset at this position</span><br><span class="line">        // - replace the contents of the view with that element</span><br><span class="line">        holder.mTextView.setText(mDataset[position]);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Return the size of your dataset (invoked by the layout manager)</span><br><span class="line">    @Override</span><br><span class="line">    public int getItemCount() &#123;</span><br><span class="line">        return mDataset.length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                     
                         
@@ -228,7 +224,7 @@
                     
                     
                         <p>
-                            <a href="/2018/01/07/2018-01-07-RecyclerView/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/01/07/2018-01-07-retrofit/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -500,73 +496,6 @@ i _ _ _ k k+1 _ _ _ j
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/01/04/2018-01-04-pm2/">
-                            PM2
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2018-01-04T00:00:00+09:00">
-	
-		    Jan 04, 2018
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/node/">node</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content">
-                    <h2 id="PM2"><a href="#PM2" class="headerlink" title="PM2"></a>PM2</h2><ul>
-<li><p>Node.js 프로세스 관리 도구</p>
-</li>
-<li><p>PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks. ((<a href="https://github.com/Unitech/pm2)" target="_blank" rel="noopener">https://github.com/Unitech/pm2)</a>)</p>
-</li>
-</ul>
-<h2 id="start"><a href="#start" class="headerlink" title="start"></a>start</h2><pre><code>pm2 start app.js
-</code></pre><h2 id="Listing-all-running-processes"><a href="#Listing-all-running-processes" class="headerlink" title="Listing all running processes"></a>Listing all running processes</h2><pre><code>pm2 list
-</code></pre><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/processmanagemnet.png" alt="img"></p>
-<h2 id="Managing-processes"><a href="#Managing-processes" class="headerlink" title="Managing processes"></a>Managing processes</h2><pre><code>$ pm2 stop     &lt;app_name|id|&apos;all&apos;|json_conf&gt;
-$ pm2 restart  &lt;app_name|id|&apos;all&apos;|json_conf&gt;
-$ pm2 delete   &lt;app_name|id|&apos;all&apos;|json_conf&gt;
-</code></pre><h2 id="Logs"><a href="#Logs" class="headerlink" title="Logs"></a>Logs</h2><pre><code>$ pm2 logs [&apos;all&apos;|app_name|app_id] [--json] [--format] [--raw]
-
-$ pm2 logs APP-NAME       # Display APP-NAME logs
-$ pm2 logs --json         # JSON output
-$ pm2 logs --format       # Formated output
-$ pm2 flush               # Flush all logs
-$ pm2 reloadLogs          # Reload all logs        
-</code></pre>
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/01/04/2018-01-04-pm2/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
                         <a class="link-unstyled" href="/2018/01/04/2018-01-04-if else VS switch/">
                             if else VS switch
                         </a>
@@ -638,8 +567,8 @@ $ pm2 reloadLogs          # Reload all logs
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/01/04/2018-01-04-exports/">
-                            exports
+                        <a class="link-unstyled" href="/2018/01/04/2018-01-04-pm2/">
+                            PM2
                         </a>
                     
                 </h1>
@@ -661,35 +590,33 @@ $ pm2 reloadLogs          # Reload all logs
             </div>
             
                 <div class="postShorten-content">
-                    <p>reference by <a href="https://opentutorials.org" target="_blank" rel="noopener">https://opentutorials.org</a></p>
-<h2 id="exports"><a href="#exports" class="headerlink" title="exports"></a>exports</h2><ul>
-<li>속성이나 메소드를 여러 개 정의 가능</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// cicle.js</span><br><span class="line">var PI = Math.PI;</span><br><span class="line"> </span><br><span class="line">exports.area = function (r) &#123;</span><br><span class="line">    return PI * r * r;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">exports.circumference = function (r) &#123;</span><br><span class="line">    return 2 * PI * r;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// foo.js</span><br><span class="line">var circle = require(&apos;./circle.js&apos;);</span><br><span class="line">console.log( &apos;The area of a circle of radius 4 is &apos;</span><br><span class="line">    + circle.area(4));</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node foo.js</span><br><span class="line">The area of a circle of radius 4 is 50.26548245743669</span><br></pre></td></tr></table></figure>
-<h2 id="module-exports"><a href="#module-exports" class="headerlink" title="module.exports"></a>module.exports</h2><ul>
-<li>파일 자체를 속성이나 메소드로 사용</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// square.js</span><br><span class="line">module.exports = function(width) &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        area: function() &#123;</span><br><span class="line">            return width * width;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// bar.js</span><br><span class="line">var square = require(&apos;./square.js&apos;);</span><br><span class="line">var mySquare = square(2);</span><br><span class="line">console.log(&apos;The area of my square is &apos; + mySquare.area());</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node bar.js</span><br><span class="line">The area of my square is 4</span><br></pre></td></tr></table></figure>
-<h2 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var module = require(&apos;./mymodule&apos;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>먼저 mymodule.js 파일을 찾음. <ul>
-<li>있다면 =&gt; 그 파일 추출</li>
-<li>없다면 =&gt; mymodule 이라는 폴더를 찾음. 그리고 그 폴더의 index.js 파일을 찾아 추출</li>
-</ul>
+                    <h2 id="PM2"><a href="#PM2" class="headerlink" title="PM2"></a>PM2</h2><ul>
+<li><p>Node.js 프로세스 관리 도구</p>
+</li>
+<li><p>PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks. ((<a href="https://github.com/Unitech/pm2)" target="_blank" rel="noopener">https://github.com/Unitech/pm2)</a>)</p>
 </li>
 </ul>
+<h2 id="start"><a href="#start" class="headerlink" title="start"></a>start</h2><pre><code>pm2 start app.js
+</code></pre><h2 id="Listing-all-running-processes"><a href="#Listing-all-running-processes" class="headerlink" title="Listing all running processes"></a>Listing all running processes</h2><pre><code>pm2 list
+</code></pre><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/processmanagemnet.png" alt="img"></p>
+<h2 id="Managing-processes"><a href="#Managing-processes" class="headerlink" title="Managing processes"></a>Managing processes</h2><pre><code>$ pm2 stop     &lt;app_name|id|&apos;all&apos;|json_conf&gt;
+$ pm2 restart  &lt;app_name|id|&apos;all&apos;|json_conf&gt;
+$ pm2 delete   &lt;app_name|id|&apos;all&apos;|json_conf&gt;
+</code></pre><h2 id="Logs"><a href="#Logs" class="headerlink" title="Logs"></a>Logs</h2><pre><code>$ pm2 logs [&apos;all&apos;|app_name|app_id] [--json] [--format] [--raw]
 
+$ pm2 logs APP-NAME       # Display APP-NAME logs
+$ pm2 logs --json         # JSON output
+$ pm2 logs --format       # Formated output
+$ pm2 flush               # Flush all logs
+$ pm2 reloadLogs          # Reload all logs        
+</code></pre>
                     
                         
 
                     
                     
                         <p>
-                            <a href="/2018/01/04/2018-01-04-exports/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/01/04/2018-01-04-pm2/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -756,6 +683,75 @@ $ pm2 reloadLogs          # Reload all logs
                     
                         <p>
                             <a href="/2018/01/04/2018-01-04- 수들의합/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/01/04/2018-01-04-exports/">
+                            exports
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-01-04T00:00:00+09:00">
+	
+		    Jan 04, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/node/">node</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>reference by <a href="https://opentutorials.org" target="_blank" rel="noopener">https://opentutorials.org</a></p>
+<h2 id="exports"><a href="#exports" class="headerlink" title="exports"></a>exports</h2><ul>
+<li>속성이나 메소드를 여러 개 정의 가능</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// cicle.js</span><br><span class="line">var PI = Math.PI;</span><br><span class="line"> </span><br><span class="line">exports.area = function (r) &#123;</span><br><span class="line">    return PI * r * r;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">exports.circumference = function (r) &#123;</span><br><span class="line">    return 2 * PI * r;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// foo.js</span><br><span class="line">var circle = require(&apos;./circle.js&apos;);</span><br><span class="line">console.log( &apos;The area of a circle of radius 4 is &apos;</span><br><span class="line">    + circle.area(4));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node foo.js</span><br><span class="line">The area of a circle of radius 4 is 50.26548245743669</span><br></pre></td></tr></table></figure>
+<h2 id="module-exports"><a href="#module-exports" class="headerlink" title="module.exports"></a>module.exports</h2><ul>
+<li>파일 자체를 속성이나 메소드로 사용</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// square.js</span><br><span class="line">module.exports = function(width) &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        area: function() &#123;</span><br><span class="line">            return width * width;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// bar.js</span><br><span class="line">var square = require(&apos;./square.js&apos;);</span><br><span class="line">var mySquare = square(2);</span><br><span class="line">console.log(&apos;The area of my square is &apos; + mySquare.area());</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node bar.js</span><br><span class="line">The area of my square is 4</span><br></pre></td></tr></table></figure>
+<h2 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var module = require(&apos;./mymodule&apos;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>먼저 mymodule.js 파일을 찾음. <ul>
+<li>있다면 =&gt; 그 파일 추출</li>
+<li>없다면 =&gt; mymodule 이라는 폴더를 찾음. 그리고 그 폴더의 index.js 파일을 찾아 추출</li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/01/04/2018-01-04-exports/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
