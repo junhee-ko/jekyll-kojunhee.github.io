@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>Java Sort - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"https://github.com/KoJunHee/algorithm/blob/master/src/java_sort/Main.java\n\narray 정렬 : Arrays.sort() \n\nlist 정렬 : Collections.sort()\n\n\narrayArrays.sort(배열)을 통해 string type 배열과 integer type 배열을 오름차순 정렬하는 코드이다. \n\nlistCollections.sort(리스트)를 통해 string type arraylist를 오름차순 정렬하는 코드이다. \n\nobject list이름과 나이를 가지는 사람들 list가 있다고 하자. \n단순히, 위의 코드처럼 Collections.sort(리스트) 를 하면 될까? 안된다. \n사람이 가지고 있는 필드는 이름과 나이인데 어떤 기준으로 정렬할 것인지 정해주지 않았기 때문이다. \n따라서 기준을 정해줘야 정렬이 가능하다. 정렬 기준을 정하는 방법은 두 가지가 있다.\n첫 번째는, 사람 클래스에 Compare implements를 하고 compareTo method를 override하는 방법이 있다.\n두 번째는, Comparator을 구현하는 것이다.\nComparablePerson class에 Compare implements를 하고 compareTo method를 이름 기준으로 오름차순 정렬하도록 override 하였다.\n\n\nComparatorPerson class에 손을 대지 않고, Comparator을 구현하여 sort method에 인자로 넘겨준다. \ncompare method에서 나이를 기준으로 오름차순 정렬하였다.\n\n\n","dateCreated":"2018-10-24T00:00:00+09:00","dateModified":"2018-10-25T16:24:54+09:00","datePublished":"2018-10-24T00:00:00+09:00","description":"","headline":"Java Sort","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/"}</script>
+    <meta name="description" content="https://github.com/KoJunHee/algorithm/blob/master/src/java_sort/Main.java  array 정렬 : Arrays.sort()   list 정렬 : Collections.sort()   arrayArrays.sort(배열)을 통해 string type 배열과 integer type 배열을 오름차순 정렬하는">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Java Sort">
+<meta property="og:url" content="https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="https://github.com/KoJunHee/algorithm/blob/master/src/java_sort/Main.java  array 정렬 : Arrays.sort()   list 정렬 : Collections.sort()   arrayArrays.sort(배열)을 통해 string type 배열과 integer type 배열을 오름차순 정렬하는">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort03.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort04.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort05.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort06.png">
+<meta property="og:updated_time" content="2018-10-25T07:24:54.450Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java Sort">
+<meta name="twitter:description" content="https://github.com/KoJunHee/algorithm/blob/master/src/java_sort/Main.java  array 정렬 : Arrays.sort()   list 정렬 : Collections.sort()   arrayArrays.sort(배열)을 통해 string type 배열과 integer type 배열을 오름차순 정렬하는">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort01.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Java Sort
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-10-24T00:00:00+09:00">
+	
+		    Oct 24, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Java/">Java</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p><a href="https://github.com/KoJunHee/algorithm/blob/master/src/java_sort/Main.java" target="_blank" rel="noopener">https://github.com/KoJunHee/algorithm/blob/master/src/java_sort/Main.java</a></p>
+<ol>
+<li><p>array 정렬 : Arrays.sort() </p>
+</li>
+<li><p>list 정렬 : Collections.sort()</p>
+</li>
+</ol>
+<h2 id="array"><a href="#array" class="headerlink" title="array"></a>array</h2><p>Arrays.sort(배열)을 통해 string type 배열과 integer type 배열을 오름차순 정렬하는 코드이다. </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort01.png" alt="img"></p>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>Collections.sort(리스트)를 통해 string type arraylist를 오름차순 정렬하는 코드이다. </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort01.png" alt="img"></p>
+<h2 id="object-list"><a href="#object-list" class="headerlink" title="object list"></a>object list</h2><p>이름과 나이를 가지는 사람들 list가 있다고 하자. </p>
+<p>단순히, 위의 코드처럼 Collections.sort(리스트) 를 하면 될까? 안된다. </p>
+<p>사람이 가지고 있는 필드는 이름과 나이인데 어떤 기준으로 정렬할 것인지 정해주지 않았기 때문이다. </p>
+<p>따라서 기준을 정해줘야 정렬이 가능하다. 정렬 기준을 정하는 방법은 두 가지가 있다.</p>
+<p>첫 번째는, 사람 클래스에 Compare implements를 하고 compareTo method를 override하는 방법이 있다.</p>
+<p>두 번째는, Comparator을 구현하는 것이다.</p>
+<h2 id="Comparable"><a href="#Comparable" class="headerlink" title="Comparable"></a>Comparable</h2><p>Person class에 Compare implements를 하고 compareTo method를 이름 기준으로 오름차순 정렬하도록 override 하였다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort04.png" alt="img"></p>
+<h2 id="Comparator"><a href="#Comparator" class="headerlink" title="Comparator"></a>Comparator</h2><p>Person class에 손을 대지 않고, Comparator을 구현하여 sort method에 인자로 넘겨준다. </p>
+<p>compare method에서 나이를 기준으로 오름차순 정렬하였다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/javaSort06.png" alt="img"></p>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/24/2018-10-25-Type Casting/" data-tooltip="Type Casting" aria-label="PREVIOUS: Type Casting">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/24/2018-10-24-개복치/" data-tooltip="개복치" aria-label="NEXT: 개복치">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/24/2018-10-25-Type Casting/" data-tooltip="Type Casting" aria-label="PREVIOUS: Type Casting">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/24/2018-10-24-개복치/" data-tooltip="개복치" aria-label="NEXT: 개복치">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/10/24/2018-10-25-Java Sort/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
