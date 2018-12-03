@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>점근 표기법 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="시간 복잡도와 공간 복잡도 시간 복잡도 : 알고리즘의 수행시간 분석결과 공간 복잡도 : 알고리즘의 메모리 사용량에 대한 분석결과  알고리즘 성능평가는 시간 복잡도와 공간 복잡도를 계산하고 점근적 표기법으로 나타내면 된다. 점근적 분석이란알고리즘의 수행 시간을 분석하기 위해, 항상 입력의 크기가 충분히 클 때에 대해서 분석하는 방법  점근적 표기법이란점근적">
+<meta property="og:type" content="article">
+<meta property="og:title" content="점근 표기법">
+<meta property="og:url" content="http://junheeko.com/2018/11/11/점근 표기법/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="시간 복잡도와 공간 복잡도 시간 복잡도 : 알고리즘의 수행시간 분석결과 공간 복잡도 : 알고리즘의 메모리 사용량에 대한 분석결과  알고리즘 성능평가는 시간 복잡도와 공간 복잡도를 계산하고 점근적 표기법으로 나타내면 된다. 점근적 분석이란알고리즘의 수행 시간을 분석하기 위해, 항상 입력의 크기가 충분히 클 때에 대해서 분석하는 방법  점근적 표기법이란점근적">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic011.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic02.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic03.png">
+<meta property="og:updated_time" content="2018-11-12T13:22:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="점근 표기법">
+<meta name="twitter:description" content="시간 복잡도와 공간 복잡도 시간 복잡도 : 알고리즘의 수행시간 분석결과 공간 복잡도 : 알고리즘의 메모리 사용량에 대한 분석결과  알고리즘 성능평가는 시간 복잡도와 공간 복잡도를 계산하고 점근적 표기법으로 나타내면 된다. 점근적 분석이란알고리즘의 수행 시간을 분석하기 위해, 항상 입력의 크기가 충분히 클 때에 대해서 분석하는 방법  점근적 표기법이란점근적">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic01.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-점근 표기법" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/11/점근 표기법/" class="article-date">
+  <time datetime="2018-11-10T15:00:00.000Z" itemprop="datePublished">2018-11-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      점근 표기법
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="시간-복잡도와-공간-복잡도"><a href="#시간-복잡도와-공간-복잡도" class="headerlink" title="시간 복잡도와 공간 복잡도"></a>시간 복잡도와 공간 복잡도</h2><ol>
+<li>시간 복잡도 : 알고리즘의 수행시간 분석결과</li>
+<li>공간 복잡도 : 알고리즘의 메모리 사용량에 대한 분석결과</li>
+</ol>
+<p>알고리즘 성능평가는 시간 복잡도와 공간 복잡도를 계산하고 점근적 표기법으로 나타내면 된다.</p>
+<h2 id="점근적-분석이란"><a href="#점근적-분석이란" class="headerlink" title="점근적 분석이란"></a>점근적 분석이란</h2><p>알고리즘의 수행 시간을 분석하기 위해, 항상 입력의 크기가 충분히 클 때에 대해서 분석하는 방법 </p>
+<h2 id="점근적-표기법이란"><a href="#점근적-표기법이란" class="headerlink" title="점근적 표기법이란"></a>점근적 표기법이란</h2><p>점근적 증가율은 입력의 크기에 따라 함수가 증가하는 비율이다. 그 표기법을 점근적 표기법이라 한다.<br>세 가지가 있다.</p>
+<ul>
+<li>빅오 표기법</li>
+<li>오메가 표기법</li>
+<li>세타 표기법</li>
+</ul>
+<h2 id="빅오-표기법"><a href="#빅오-표기법" class="headerlink" title="빅오 표기법"></a>빅오 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic01.png" alt="img"></p>
+<p>f(n)을 O(g(n))이라고 표시한다. </p>
+<p>이 때 g(n)를 f(n)의 점근 상한이라고 한다.</p>
+<p>알고리즘 f(n)이 O(g(n))에 속한다면, f(n)의 계산복잡도는 최악의 경우라도 g(n)과 같거나 혹은 작다는 뜻이다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic011.png" alt="img"></p>
+<h2 id="오메가-표기법"><a href="#오메가-표기법" class="headerlink" title="오메가 표기법"></a>오메가 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic02.png" alt="img"></p>
+<p>f(n)를 Ω(g(n))이라고 표시한다. </p>
+<p>이 때 g(n)는 f(n)의 점근 하한이라고 한다. </p>
+<p>알고리즘 f(n)의 계산복잡도가 Ω(g(n))에 속한다면, f(n)의 계산복잡도는 최선의 경우를 상정하더라도 g(n)과 같거나 혹은 크다는 뜻이다.</p>
+<h2 id="세타-표기법"><a href="#세타-표기법" class="headerlink" title="세타 표기법"></a>세타 표기법</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/asymptonic03.png" alt="img"></p>
+<p>f(n)을 Θ(g(n))이라고 표시한다. </p>
+<p>g(n)은 f(n)의 점근적 상한과 하한의 교집합이라고 한다. </p>
+<p>알고리즘 f(n)이 아무리 나쁘거나 좋더라도 그 계산복잡도는 g(n)의 범위 내에 있다는 뜻이다.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ratsgo.github.io/data%20structure&amp;algorithm/2017/09/13/asymptotic/" target="_blank" rel="noopener">https://ratsgo.github.io/data%20structure&amp;algorithm/2017/09/13/asymptotic/</a></p>
+<p><a href="http://ledgku.tistory.com/33" target="_blank" rel="noopener">http://ledgku.tistory.com/33</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/11/점근 표기법/" data-id="cjp7vdj9a00j35kx76tsoyao9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/11/버블정렬/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          버블정렬
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/11/선택정렬/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">선택정렬</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIP/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dataStructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareEngineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>그래프 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="그래프  자료구조의 일종 정점(node, vertex) 주로 번호가 써있음   간선(edge) :  정점 사이 연결 그래프 G =(V,E)로 나타냄   그래프를 저장하는 방법  인접 행렬 정점 개수를 v라고 할때, v 제곱 크기의 인차원 배열 이용 a[i][j]=1 i에서 j 로 가는 간선이 있으면    a[i][j]=0 i에서 j 로 가는 간선이 없으면">
+<meta property="og:type" content="article">
+<meta property="og:title" content="그래프">
+<meta property="og:url" content="http://junheeko.com/2018/03/10/그래프/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="그래프  자료구조의 일종 정점(node, vertex) 주로 번호가 써있음   간선(edge) :  정점 사이 연결 그래프 G =(V,E)로 나타냄   그래프를 저장하는 방법  인접 행렬 정점 개수를 v라고 할때, v 제곱 크기의 인차원 배열 이용 a[i][j]=1 i에서 j 로 가는 간선이 있으면    a[i][j]=0 i에서 j 로 가는 간선이 없으면">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-16T04:00:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="그래프">
+<meta name="twitter:description" content="그래프  자료구조의 일종 정점(node, vertex) 주로 번호가 써있음   간선(edge) :  정점 사이 연결 그래프 G =(V,E)로 나타냄   그래프를 저장하는 방법  인접 행렬 정점 개수를 v라고 할때, v 제곱 크기의 인차원 배열 이용 a[i][j]=1 i에서 j 로 가는 간선이 있으면    a[i][j]=0 i에서 j 로 가는 간선이 없으면">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-그래프" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/10/그래프/" class="article-date">
+  <time datetime="2018-03-09T15:00:00.000Z" itemprop="datePublished">2018-03-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      그래프
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>그래프</p>
+<ul>
+<li>자료구조의 일종</li>
+<li>정점(node, vertex)<ul>
+<li>주로 번호가 써있음</li>
+</ul>
+</li>
+<li>간선(edge) :  정점 사이 연결</li>
+<li>그래프 G =(V,E)로 나타냄</li>
+</ul>
+</li>
+<li><p>그래프를 저장하는 방법</p>
+<ul>
+<li>인접 행렬<ul>
+<li>정점 개수를 v라고 할때,</li>
+<li>v 제곱 크기의 인차원 배열 이용</li>
+<li>a[i][j]=1<ul>
+<li>i에서 j 로 가는 간선이 있으면 </li>
+</ul>
+</li>
+<li>a[i][j]=0<ul>
+<li>i에서 j 로 가는 간선이 없으면 </li>
+</ul>
+</li>
+<li>a[i][j] = w<ul>
+<li>i에서 j로의 간선 가중치가 w 이면</li>
+</ul>
+</li>
+<li>없는 간선도 저장하기 때문에 자주 사용하지 않는 방법</li>
+<li>쉬운 문제 풀 때 주로 사용</li>
+</ul>
+</li>
+<li>인접 리스트<ul>
+<li>링크드 리스트를 이용해서 구현</li>
+<li>a[i] = i와 연결된 정점이 링크드리스트 형태로 저장</li>
+<li>a[1] : 2, 5 <ul>
+<li>1과 연결된 정점이 2, 5</li>
+</ul>
+</li>
+<li>링크드 리스트는 구현하는데 시간이 오래걸림<ul>
+<li>그래서, vector / arraylist로 함</li>
+</ul>
+</li>
+<li>가중치가 있으면<ul>
+<li>정점과 가중치를 같이 저장</li>
+<li>a[1] : (2,2), (5,7)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>그래프의 탐색</p>
+<ul>
+<li><p>목적 : 모든 정점을 한 번씩 방문</p>
+</li>
+<li><p>깊이 우선 탐색 (DFS)</p>
+<ul>
+<li>최대한 깊숙히 많이 감</li>
+<li>스택 사용</li>
+<li>스택을 이용해서 갈수 있는 만큼 많이 가고</li>
+<li>갈 수 없으면 이전 정점으로 돌아감 (스택에서 pop해서)</li>
+<li>check라는 배열이 필요함<ul>
+<li>0 : 아직 방문 X</li>
+<li>1 : 방문 O</li>
+</ul>
+</li>
+<li>갈 수 있는 정점이 여러개면<ul>
+<li>번호가 작은 것부터</li>
+</ul>
+</li>
+<li>pop 계속하다가 스택이 비면 탐색 종료</li>
+<li>구현</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void dfs(int x)&#123;</span><br><span class="line"></span><br><span class="line">	//방문 했다고 체크</span><br><span class="line">    check[x] = true;</span><br><span class="line">    </span><br><span class="line">    //a[x] : x와 연결된 정점들이 저장되어 있음</span><br><span class="line">    for(int i=0; i&lt;a[x].size; i++)&#123;</span><br><span class="line">    </span><br><span class="line">    	//x와 연결된 정점</span><br><span class="line">        int y = a[x][i];</span><br><span class="line">        </span><br><span class="line">        //방문하지 않았으면 방문</span><br><span class="line">        if(check[y] == false)&#123;</span><br><span class="line">            dfs(y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>너비 우선 탐색 (BFS)</p>
+<ul>
+<li>최대한 넓게 가는 것</li>
+<li>큐 사용</li>
+<li>모든 가중치가 1이면 최단 거리 찾는 알고리즘</li>
+<li>큐를 이용해서 아직 방문하지 않았고, 지금 위치에서 갈 수 있는 것을 모두 큐에 넣는 방식</li>
+<li>큐에 넣을 때 방문했다고 체크</li>
+<li>check라는 배열이 필요함<ul>
+<li>0 : 아직 방문 X</li>
+<li>1 : 방문 O</li>
+</ul>
+</li>
+<li>구현</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">queue&lt;int&gt; q;</span><br><span class="line">check[1] = true; q.push(1);</span><br><span class="line"></span><br><span class="line">while(!q.empty())&#123;</span><br><span class="line">    int x = q.front(); q.pop();</span><br><span class="line">    printf(&quot;%d &quot; , x);</span><br><span class="line">    for(int i=0; i&lt;a[x].size; i++)&#123;</span><br><span class="line">        int y = a[x][i];</span><br><span class="line">        if(check[y] == false)&#123;</span><br><span class="line">            check[y] = true; q.push(y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/03/10/그래프/" data-id="cjp7vdj5a008s5kx7j8rzfkgk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/12/최대상금/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          최대상금
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/09/최빈수 구하기/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">최빈수</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIP/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dataStructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareEngineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

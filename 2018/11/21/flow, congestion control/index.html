@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>flow, congestion control | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="flow control은 host와 host 간에 데이터 처리를 효율적으로 하기 위한 방법입니다.congestion control은 host와 network 간의 데이터 처리를 효율적으로 하기 위한 방법입니다. flow control 이란?송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 방법입니다.  수신측의 데이터 처리 속도가 송신측의 데이터 처">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flow, congestion control">
+<meta property="og:url" content="http://junheeko.com/2018/11/21/flow, congestion control/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="flow control은 host와 host 간에 데이터 처리를 효율적으로 하기 위한 방법입니다.congestion control은 host와 network 간의 데이터 처리를 효율적으로 하기 위한 방법입니다. flow control 이란?송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 방법입니다.  수신측의 데이터 처리 속도가 송신측의 데이터 처">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-21T09:52:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flow, congestion control">
+<meta name="twitter:description" content="flow control은 host와 host 간에 데이터 처리를 효율적으로 하기 위한 방법입니다.congestion control은 host와 network 간의 데이터 처리를 효율적으로 하기 위한 방법입니다. flow control 이란?송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 방법입니다.  수신측의 데이터 처리 속도가 송신측의 데이터 처">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-flow, congestion control" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/21/flow, congestion control/" class="article-date">
+  <time datetime="2018-11-20T15:00:00.000Z" itemprop="datePublished">2018-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/network/">network</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flow, congestion control
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>flow control은 host와 host 간에 데이터 처리를 효율적으로 하기 위한 방법입니다.<br>congestion control은 host와 network 간의 데이터 처리를 효율적으로 하기 위한 방법입니다.</p>
+<h2 id="flow-control-이란"><a href="#flow-control-이란" class="headerlink" title="flow control 이란?"></a>flow control 이란?</h2><p>송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 방법입니다. </p>
+<p>수신측의 데이터 처리 속도가 송신측의 데이터 처리 속도보다 빠르면 문제가 되지 않습니다. 하지만, 송신측의 데<br>이터 처리 속도가 더 빠르면 문제가 됩니다. 수신측에서 제한된 저장용량을 초과한 이후에 도착하는 데이터는, 손<br>실 될 수 있으며 만약 손실 된다면 불필요하게 응답과 데이터 전송이 송/수신 측 간에 빈번이 발생합니다. 이러한 위험을 줄이기 위해 송신 측의 데이터 전송량을 수신측에 따라 조절하는 flow control 이 필요합니다. </p>
+<p>stop and wait, sliding window 방식이 있습니다.</p>
+<h2 id="congestion-control-이란"><a href="#congestion-control-이란" class="headerlink" title="congestion control 이란?"></a>congestion control 이란?</h2><p>송신측과 네트워크의 데이터 처리 속도 차이를 해결하기 위한 방법입니다.</p>
+<p>송신측의 데이터는 지역망이나 인터넷으로 연결된 대형 네트워크를 통해 전달됩니다. 만약 한 라우터에 데이터가<br>몰릴 경우, 자신에게 온 데이터를 모두 처리 할 수 없게 됩니다. 이런 경우 호스트들은 또 다시 재전송을 하게되고<br>결국 혼잡만 가중시켜 오버플로우나 데이터 손실을 발생시키게 됩니다. 이러한 네트워크의 혼잡을 피하기 위해 송신측에서 보내는 데이터의 전송 속도를  강제로 줄이는 congestion control 이 필요합니다.</p>
+<p>AIMD, Slow Start, Fast Transmit, Fast Recovery 방식이 있습니다.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://jwprogramming.tistory.com/36" target="_blank" rel="noopener">http://jwprogramming.tistory.com/36</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/21/flow, congestion control/" data-id="cjp7vdj9i00js5kx78a7ptk3i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/22/Components/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Components
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/21/flow control/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">flow control</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIP/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dataStructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareEngineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
