@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://junheeko.com/page/15/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/page/15/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,13 +54,342 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JDBC" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/08/JDBC/" class="article-date">
+  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/JDBC/">JDBC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>JDBC</p>
+<ul>
+<li>자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약</li>
+<li>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API</li>
+<li>SQL과 프로그래밍 언어의 통합 접근 중 한 형태</li>
+<li>JAVA는 표준 인터페이스인 JDBC API를 제공</li>
+<li>데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.</li>
+</ul>
+</li>
+<li><p>JDBC를 이용한 프로그래밍 방법</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/jdbc.png" alt="img"></p>
+<ul>
+<li><p>import java.sql.*;</p>
+</li>
+<li><p>드라이버를 로드 한다.</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName( <span class="string">"com.mysql.jdbc.Driver"</span> );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Connection 객체를 생성한다.</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String dburl  = <span class="string">"jdbc:mysql://localhost/dbName"</span>;</span><br><span class="line"></span><br><span class="line">Connection con =  DriverManager.getConnection ( dburl, ID, PWD );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Statement 객체를 생성 및 질의 수행</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Statement stmt = con.createStatement(); </span><br><span class="line">ResultSet rs = stmt.executeQuery(<span class="string">"select no from user"</span> );</span><br><span class="line"></span><br><span class="line">stmt.execute(“query”);             <span class="comment">//any SQL</span></span><br><span class="line">stmt.executeQuery(“query”);     <span class="comment">//SELECT</span></span><br><span class="line">stmt.executeUpdate(“query”);   <span class="comment">//INSERT, UPDATE, DELETE</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>SQL문에 결과물이 있다면 ResultSet 객체를 생성한다.</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ResultSet rs =  stmt.executeQuery( <span class="string">"select no from user"</span> );</span><br><span class="line"><span class="keyword">while</span> ( rs.next() )</span><br><span class="line">      System.out.println( rs.getInt( <span class="string">"no"</span>) );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>모든 객체를 닫는다.</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rs.close();</span><br><span class="line">stmt.close();</span><br><span class="line">con.close();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/08/JDBC/" data-id="cjp7w7qqs00bxcxx72sdhilri" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Database" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/08/Database/" class="article-date">
+  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/Database/">Database</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>데이터베이스와 데이터베이스 관리 시스템</p>
+<ul>
+<li>어린이가 가지고 있는 책(정보)들을 데이터베이스라고 한다면, </li>
+<li>그 책을 관리해주는 엄마는 데이터베이스 관리 시스템이라고 말할 수 있습니다.</li>
+</ul>
+</li>
+<li><p>데이터베이스</p>
+<ul>
+<li><p>데이터의 집합 (a Set of Data)</p>
+</li>
+<li><p>여러 응용 시스템(프로그램)들의 통합된 정보들을 저장하여 운영할 수 있는 공용(share) 데이터의 집합</p>
+</li>
+<li><p>효율적으로 저장, 검색, 갱신할 수 있도록 데이터 집합들끼리 연관시키고 조직화되어야 한다.</p>
+</li>
+<li><p>특성</p>
+<ul>
+<li><p>실시간 접근성(Real-time Accessability)</p>
+<ul>
+<li>사용자의 요구를 즉시 처리할 수 있다.</li>
+</ul>
+</li>
+<li><p>계속적인 변화(Continuous Evolution)</p>
+<ul>
+<li>정확한 값을 유지하려고 삽입·삭제·수정 작업 등을 이용해 데이터를 지속적으로 갱신할 수 있다.</li>
+</ul>
+</li>
+<li><p>동시 공유성(Concurrent Sharing)</p>
+<ul>
+<li>사용자마다 서로 다른 목적으로 사용하므로 동시에 여러 사람이 동일한 데이터에 접근하고 이용할 수 있다.</li>
+</ul>
+</li>
+<li><p>내용 참조(Content Reference)</p>
+<ul>
+<li>저장한 데이터 레코드의 위치나 주소가 아닌 사용자가 요구하는 데이터의 내용, 즉 데이터 값에 따라 참조할 수 있어야 한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>데이터베이스 관리 시스템 (Database Management System = DBMS)</p>
+<ul>
+<li>데이터베이스를 관리하는 소프트웨어</li>
+<li>여러 응용 소프트웨어(프로그램) 또는 시스템이 동시에 데이터베이스에 접근하여 사용할 수 있게 한다</li>
+<li>필수 3기능<ul>
+<li>정의기능 :  데이터 베이스의 논리적, 물리적 구조를 정의</li>
+<li>조작기능 : 데이터를 검색, 삭제, 갱신, 삽입, 삭제하는 기능</li>
+<li>제어기능 :  데이터베이스의 내용 정확성과 안전성을 유지하도록 제어하는 기능</li>
+</ul>
+</li>
+<li>Oracle, SQL Server, MySQL, DB2 등의 상용 또는 공개 DBMS가 있다.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/08/Database/" data-id="cjp7w7qqs00bvcxx7xhen50gd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-DTO, DAO" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/08/DTO, DAO/" class="article-date">
+  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/DTO, DAO/">DTO, DAO</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>DTO (Data Transfer Object)</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dto.png" alt="img"></p>
+<ul>
+<li>계층간 데이터 교환을 위한 자바빈즈입니다.<ul>
+<li>여기서의 계층이란 컨트롤러 뷰, 비지니스 계층, 퍼시스턴스 계층을 의미합니다.</li>
+</ul>
+</li>
+<li>일반적으로 DTO는 로직을 가지고 있지 않고, 순수한 데이터 객체입니다.</li>
+<li>필드와 getter, setter를 가진다. <ul>
+<li>추가적으로 toString(), equals(), hashCode()등의 Object 메소드를 오버라이딩 할 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>DAO ( Data Access Object)</p>
+<ul>
+<li>데이터를 조회하거나 조작하는 기능을 전담하도록 만든 객체입니다.</li>
+<li>보통 데이터베이스를 조작하는 기능을 전담하는 목적으로 만들어집니다.</li>
+</ul>
+</li>
+<li><p>ConnectionPool</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cppp.png" alt="img"></p>
+<ul>
+<li>DB연결은 비용이 많이 듭니다.</li>
+<li>커넥션 풀은 미리 커넥션을 여러 개 맺어 둡니다.</li>
+<li>커넥션이 필요하면 커넥션 풀에게 빌려서 사용한 후 반납합니다.</li>
+<li>커넥션을 반납하지 않으면 컨넥션풀에서 사용가능한 컨넥션이 없어서  프로그램이 늦어지거나 장애 발생</li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/08/DTO, DAO/" data-id="cjp7w7qqr00btcxx7u3tn4fab" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-돌다리" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/08/돌다리/" class="article-date">
+  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/돌다리/">돌다리</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/12761" target="_blank" rel="noopener">https://www.acmicpc.net/problem/12761</a></p>
+<ul>
+<li>트리의 깊이가 얼마인지 구하면 됨<ul>
+<li>현재위치에서 갈 수 있는 곳을 Queue에 넣을 때, </li>
+<li>위치와 트리의 depth를 함께 저장한다.</li>
+<li>위치<ul>
+<li>8가지 경우의 수</li>
+</ul>
+</li>
+<li>트리의 depth<ul>
+<li>현재위치의 깊이+1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stone01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stone02.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/08/돌다리/" data-id="cjp7w7qqv00c5cxx7bxh4emhq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-SQL" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
@@ -179,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/08/SQL/" data-id="cjp7w58ge00bu80x7jw799jl4" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/08/SQL/" data-id="cjp7w7qqt00bzcxx724rat5yc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,10 +518,10 @@
 
 
   
-    <article id="post-JDBC" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-HttpServletRequest, HttpServletResponse " class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/08/JDBC/" class="article-date">
-  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
+    <a href="/2018/05/07/HttpServletRequest, HttpServletResponse /" class="article-date">
+  <time datetime="2018-05-06T15:00:00.000Z" itemprop="datePublished">2018-05-07</time>
 </a>
     
   <div class="article-category">
@@ -207,7 +536,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/08/JDBC/">JDBC</a>
+      <a class="article-title" href="/2018/05/07/HttpServletRequest, HttpServletResponse /">HttpServletRequest, HttpServletResponse</a>
     </h1>
   
 
@@ -216,50 +545,28 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><p>JDBC</p>
+<li><p>요청과 응답</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/http.png" alt="img"></p>
 <ul>
-<li>자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약</li>
-<li>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API</li>
-<li>SQL과 프로그래밍 언어의 통합 접근 중 한 형태</li>
-<li>JAVA는 표준 인터페이스인 JDBC API를 제공</li>
-<li>데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.</li>
+<li>WAS는 웹 브라우저로부터 Servlet요청을 받으면,<ul>
+<li>요청할 때 가지고 있는 정보를 HttpServletRequest객체를 생성하여 저장합니다.</li>
+<li>웹 브라우저에게 응답을 보낼 때 사용하기 위하여 HttpServletResponse객체를 생성합니다.</li>
+<li>생성된 HttpServletRequest, HttpServletResponse 객체를 서블릿에게 전달합니다.</li>
 </ul>
-</li>
-<li><p>JDBC를 이용한 프로그래밍 방법</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/jdbc.png" alt="img"></p>
-<ul>
-<li><p>import java.sql.*;</p>
-</li>
-<li><p>드라이버를 로드 한다.</p>
-<ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName( <span class="string">"com.mysql.jdbc.Driver"</span> );</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>Connection 객체를 생성한다.</p>
+<li><p>HttpServletRequest</p>
 <ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String dburl  = <span class="string">"jdbc:mysql://localhost/dbName"</span>;</span><br><span class="line"></span><br><span class="line">Connection con =  DriverManager.getConnection ( dburl, ID, PWD );</span><br></pre></td></tr></table></figure>
-</li>
+<li>http프로토콜의 request정보를 서블릿에게 전달하기 위한 목적으로 사용합니다.</li>
+<li>헤더정보, 파라미터, 쿠키, URI, URL 등의 정보를 읽어 들이는 메소드를 가지고 있습니다.</li>
+<li>Body의 Stream을 읽어 들이는 메소드를 가지고 있습니다.</li>
 </ul>
 </li>
-<li><p>Statement 객체를 생성 및 질의 수행</p>
+<li><p>HttpServletResponse</p>
 <ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Statement stmt = con.createStatement(); </span><br><span class="line">ResultSet rs = stmt.executeQuery(<span class="string">"select no from user"</span> );</span><br><span class="line"></span><br><span class="line">stmt.execute(“query”);             <span class="comment">//any SQL</span></span><br><span class="line">stmt.executeQuery(“query”);     <span class="comment">//SELECT</span></span><br><span class="line">stmt.executeUpdate(“query”);   <span class="comment">//INSERT, UPDATE, DELETE</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>SQL문에 결과물이 있다면 ResultSet 객체를 생성한다.</p>
-<ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ResultSet rs =  stmt.executeQuery( <span class="string">"select no from user"</span> );</span><br><span class="line"><span class="keyword">while</span> ( rs.next() )</span><br><span class="line">      System.out.println( rs.getInt( <span class="string">"no"</span>) );</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>모든 객체를 닫는다.</p>
-<ul>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rs.close();</span><br><span class="line">stmt.close();</span><br><span class="line">con.close();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
+<li>WAS는 어떤 클라이언트가 요청을 보냈는지 알고 있고, 해당 클라이언트에게 응답을 보내기 위한 HttpServleResponse객체를 생성하여 서블릿에게 전달합니다.</li>
+<li>서블릿은 해당 객체를 이용하여 content type, 응답코드, 응답 메시지등을 전송합니다.</li>
 </ul>
 </li>
 <li><p>Reference</p>
@@ -272,243 +579,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/08/JDBC/" data-id="cjp7w58ge00bs80x7nbzywq64" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DTO, DAO" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/08/DTO, DAO/" class="article-date">
-  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/08/DTO, DAO/">DTO, DAO</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>DTO (Data Transfer Object)</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dto.png" alt="img"></p>
-<ul>
-<li>계층간 데이터 교환을 위한 자바빈즈입니다.<ul>
-<li>여기서의 계층이란 컨트롤러 뷰, 비지니스 계층, 퍼시스턴스 계층을 의미합니다.</li>
-</ul>
-</li>
-<li>일반적으로 DTO는 로직을 가지고 있지 않고, 순수한 데이터 객체입니다.</li>
-<li>필드와 getter, setter를 가진다. <ul>
-<li>추가적으로 toString(), equals(), hashCode()등의 Object 메소드를 오버라이딩 할 수 있습니다.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>DAO ( Data Access Object)</p>
-<ul>
-<li>데이터를 조회하거나 조작하는 기능을 전담하도록 만든 객체입니다.</li>
-<li>보통 데이터베이스를 조작하는 기능을 전담하는 목적으로 만들어집니다.</li>
-</ul>
-</li>
-<li><p>ConnectionPool</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/cppp.png" alt="img"></p>
-<ul>
-<li>DB연결은 비용이 많이 듭니다.</li>
-<li>커넥션 풀은 미리 커넥션을 여러 개 맺어 둡니다.</li>
-<li>커넥션이 필요하면 커넥션 풀에게 빌려서 사용한 후 반납합니다.</li>
-<li>커넥션을 반납하지 않으면 컨넥션풀에서 사용가능한 컨넥션이 없어서  프로그램이 늦어지거나 장애 발생</li>
-</ul>
-</li>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/08/DTO, DAO/" data-id="cjp7w58gd00bq80x71l93yxqo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Database" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/08/Database/" class="article-date">
-  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/08/Database/">Database</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>데이터베이스와 데이터베이스 관리 시스템</p>
-<ul>
-<li>어린이가 가지고 있는 책(정보)들을 데이터베이스라고 한다면, </li>
-<li>그 책을 관리해주는 엄마는 데이터베이스 관리 시스템이라고 말할 수 있습니다.</li>
-</ul>
-</li>
-<li><p>데이터베이스</p>
-<ul>
-<li><p>데이터의 집합 (a Set of Data)</p>
-</li>
-<li><p>여러 응용 시스템(프로그램)들의 통합된 정보들을 저장하여 운영할 수 있는 공용(share) 데이터의 집합</p>
-</li>
-<li><p>효율적으로 저장, 검색, 갱신할 수 있도록 데이터 집합들끼리 연관시키고 조직화되어야 한다.</p>
-</li>
-<li><p>특성</p>
-<ul>
-<li><p>실시간 접근성(Real-time Accessability)</p>
-<ul>
-<li>사용자의 요구를 즉시 처리할 수 있다.</li>
-</ul>
-</li>
-<li><p>계속적인 변화(Continuous Evolution)</p>
-<ul>
-<li>정확한 값을 유지하려고 삽입·삭제·수정 작업 등을 이용해 데이터를 지속적으로 갱신할 수 있다.</li>
-</ul>
-</li>
-<li><p>동시 공유성(Concurrent Sharing)</p>
-<ul>
-<li>사용자마다 서로 다른 목적으로 사용하므로 동시에 여러 사람이 동일한 데이터에 접근하고 이용할 수 있다.</li>
-</ul>
-</li>
-<li><p>내용 참조(Content Reference)</p>
-<ul>
-<li>저장한 데이터 레코드의 위치나 주소가 아닌 사용자가 요구하는 데이터의 내용, 즉 데이터 값에 따라 참조할 수 있어야 한다.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>데이터베이스 관리 시스템 (Database Management System = DBMS)</p>
-<ul>
-<li>데이터베이스를 관리하는 소프트웨어</li>
-<li>여러 응용 소프트웨어(프로그램) 또는 시스템이 동시에 데이터베이스에 접근하여 사용할 수 있게 한다</li>
-<li>필수 3기능<ul>
-<li>정의기능 :  데이터 베이스의 논리적, 물리적 구조를 정의</li>
-<li>조작기능 : 데이터를 검색, 삭제, 갱신, 삽입, 삭제하는 기능</li>
-<li>제어기능 :  데이터베이스의 내용 정확성과 안전성을 유지하도록 제어하는 기능</li>
-</ul>
-</li>
-<li>Oracle, SQL Server, MySQL, DB2 등의 상용 또는 공개 DBMS가 있다.</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/08/Database/" data-id="cjp7w58gd00bo80x7qj8v2lpv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-돌다리" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/08/돌다리/" class="article-date">
-  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/08/돌다리/">돌다리</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/12761" target="_blank" rel="noopener">https://www.acmicpc.net/problem/12761</a></p>
-<ul>
-<li>트리의 깊이가 얼마인지 구하면 됨<ul>
-<li>현재위치에서 갈 수 있는 곳을 Queue에 넣을 때, </li>
-<li>위치와 트리의 depth를 함께 저장한다.</li>
-<li>위치<ul>
-<li>8가지 경우의 수</li>
-</ul>
-</li>
-<li>트리의 depth<ul>
-<li>현재위치의 깊이+1</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stone01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stone02.png" alt="img"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/08/돌다리/" data-id="cjp7w58gg00c080x7psbjaog3" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/07/HttpServletRequest, HttpServletResponse /" data-id="cjp7w7qqp00bpcxx7zbh64yiz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -585,78 +656,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/07/Servlet/" data-id="cjp7w58gb00bk80x78pdcbfxd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HttpServletRequest, HttpServletResponse " class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/07/HttpServletRequest, HttpServletResponse /" class="article-date">
-  <time datetime="2018-05-06T15:00:00.000Z" itemprop="datePublished">2018-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/07/HttpServletRequest, HttpServletResponse /">HttpServletRequest, HttpServletResponse</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>요청과 응답</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/http.png" alt="img"></p>
-<ul>
-<li>WAS는 웹 브라우저로부터 Servlet요청을 받으면,<ul>
-<li>요청할 때 가지고 있는 정보를 HttpServletRequest객체를 생성하여 저장합니다.</li>
-<li>웹 브라우저에게 응답을 보낼 때 사용하기 위하여 HttpServletResponse객체를 생성합니다.</li>
-<li>생성된 HttpServletRequest, HttpServletResponse 객체를 서블릿에게 전달합니다.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>HttpServletRequest</p>
-<ul>
-<li>http프로토콜의 request정보를 서블릿에게 전달하기 위한 목적으로 사용합니다.</li>
-<li>헤더정보, 파라미터, 쿠키, URI, URL 등의 정보를 읽어 들이는 메소드를 가지고 있습니다.</li>
-<li>Body의 Stream을 읽어 들이는 메소드를 가지고 있습니다.</li>
-</ul>
-</li>
-<li><p>HttpServletResponse</p>
-<ul>
-<li>WAS는 어떤 클라이언트가 요청을 보냈는지 알고 있고, 해당 클라이언트에게 응답을 보내기 위한 HttpServleResponse객체를 생성하여 서블릿에게 전달합니다.</li>
-<li>서블릿은 해당 객체를 이용하여 content type, 응답코드, 응답 메시지등을 전송합니다.</li>
-</ul>
-</li>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/07/HttpServletRequest, HttpServletResponse /" data-id="cjp7w58gc00bm80x77cr7uydo" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/07/Servlet/" data-id="cjp7w7qqq00brcxx7fhyir7hx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -740,7 +740,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/06/Spring IoC:DI 컨테이너/" data-id="cjp7w58ga00bg80x7dsvwgn6y" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/06/Spring IoC:DI 컨테이너/" data-id="cjp7w7qqo00blcxx7gynottl7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -812,7 +812,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/06/물통/" data-id="cjp7w58gb00bi80x79pat72gu" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/06/물통/" data-id="cjp7w7qqo00bncxx7kk4yl12h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -885,7 +885,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/05/HTML/" data-id="cjp7w58g800bc80x7lx9jizvw" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/05/HTML/" data-id="cjp7w7qqn00bjcxx7vlvxrvqu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -942,7 +942,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
           </li>
         
           <li>
@@ -950,11 +950,11 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
           </li>
         
           <li>
-            <a href="/2018/11/13/Hash Table/">Hash Table</a>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
           </li>
         
       </ul>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://junheeko.com/page/20/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/page/20/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
       </div>
     </div>
   </div>
@@ -62,9 +62,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-LSP" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Composite Pattern" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/04/09/LSP/" class="article-date">
+    <a href="/2018/04/09/Composite Pattern/" class="article-date">
   <time datetime="2018-04-08T15:00:00.000Z" itemprop="datePublished">2018-04-09</time>
 </a>
     
@@ -80,7 +80,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/09/LSP/">LSP</a>
+      <a class="article-title" href="/2018/04/09/Composite Pattern/">Composite Pattern</a>
     </h1>
   
 
@@ -89,36 +89,51 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>Liskov Subsititution Principle ( 리스코프 치환 법칙 )</li>
-</ul>
-<ul>
 <li><p>Intent</p>
 <ul>
-<li>Derived types must be completely substitutable for their base types.</li>
-<li>상속 관계에서,</li>
-<li>자식 클래스는 최소한 부모 클래스에서 가능한 행위는 수행할 수 있어야 한다</li>
-<li>부모 클래스와 자식 클래스 사이의 행위가 일관성이 있어야 한다</li>
-<li>LSP를 만족하면,</li>
-<li>프로그램에서 부모 클래스의 인스턴스 대신에 자식 클래스의 인스턴스로 대체해도 프로그램의 의미는 변화 X</li>
+<li>Compose objects into tree structures to represent part-whole hierarchies.</li>
+<li>Lets clients treat individual objects and compositions of objects uniformly.</li>
+<li>Part-whole Hierarchy를 표현하기 위하여 객체들을 트리 구조로 구성</li>
+<li>Client가 개개의 객체와 그룹 객체를 동일하게 취급할 수 있게 만든다<ul>
+<li>Clinet는 모든 객체들을 컴포넌트 객체로 간주하여 이용</li>
 </ul>
 </li>
-<li>LSP를 만족시키는 방법<ul>
-<li>재정의 하지 않는다 </li>
 </ul>
+</li>
+<li><p>자식 관리 오퍼레이션</p>
+<ul>
+<li><p>add(), remove(), getChild()</p>
+<ul>
+<li><p>component와 composite 에 선언 : client가 편하다. 개체과 그룹에 관계없이 부를 수 있다</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compo01.png" alt="img"></p>
+</li>
+<li><p>composite 에 선언 : client가 불편하다. 개체인지 그룹인지 구별을 해야한다</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compo02.png" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><p>remove()</p>
+<ul>
+<li>자식을 삭제하는 책임은 composite 객체에 주는것이 가장 좋다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Implementation</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/compositeUML.png" alt="img"></p>
 </li>
 </ul>
 <ul>
-<li><p>Violation</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lsp011.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lsp022.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lsp033.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lsp044.png" alt="img"></p>
-</li>
+<li>EX )</li>
 </ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/device.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/computer.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/client.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/body.png" alt="img"></p>
 <ul>
 <li>Reference<ul>
-<li><a href="http://www.oodesign.com/single-responsibility-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/single-responsibility-principle.html</a></li>
-<li>Java 객체지향 디자인 패턴 (정인상, 채흥석 지음)</li>
+<li><a href="http://www.oodesign.com/composite-pattern.html" target="_blank" rel="noopener">http://www.oodesign.com/composite-pattern.html</a></li>
+<li>Java 객체지향 디자인 패턴 (정인상, 채홍석 지음)</li>
 </ul>
 </li>
 </ul>
@@ -126,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/04/09/LSP/" data-id="cjp7w58fg009780x7yfjcc3wn" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/04/09/Composite Pattern/" data-id="cjp7w7qpw0097cxx7tgcp45oq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -175,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/04/08/로또/" data-id="cjp7w58fb008w80x7ib94zts6" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/04/08/로또/" data-id="cjp7w7qpu0092cxx7kctgpb6s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -246,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/04/06/Adapter Pattern01/" data-id="cjp7w58fb008u80x7ozlh9fa8" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/04/06/Adapter Pattern01/" data-id="cjp7w7qps0090cxx7rnhb9n3e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -300,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/04/03/영역 구하기/" data-id="cjp7w58fa008s80x7dxk9n4tt" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/04/03/영역 구하기/" data-id="cjp7w7qpr008ycxx7q4khl2os" class="article-share-link">Share</a>
       
       
     </footer>
@@ -371,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/04/02/경로찾기/" data-id="cjp7w58f9008q80x7uooeyp46" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/04/02/경로찾기/" data-id="cjp7w7qpq008wcxx7tqk6aqow" class="article-share-link">Share</a>
       
       
     </footer>
@@ -435,7 +450,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/03/12/최대상금/" data-id="cjp7w58f8008o80x7igs8gsw3" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/03/12/최대상금/" data-id="cjp7w7qpp008ucxx7pfvmw57a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -573,7 +588,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/03/10/그래프/" data-id="cjp7w58f7008m80x7g4bar3aj" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/03/10/그래프/" data-id="cjp7w7qpn008scxx7pisc4pat" class="article-share-link">Share</a>
       
       
     </footer>
@@ -622,7 +637,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/03/09/최빈수 구하기/" data-id="cjp7w58f7008k80x7dfwz6vsj" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/03/09/최빈수 구하기/" data-id="cjp7w7qpm008qcxx7lqx74aa0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -668,7 +683,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/03/05/프로세서 연결하기/" data-id="cjp7w58f6008i80x714iftsyo" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/03/05/프로세서 연결하기/" data-id="cjp7w7qpm008ocxx7jfsmqtc3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -713,7 +728,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/02/28/구슬게임/" data-id="cjp7w58fc008z80x7ez6etq96" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/02/28/구슬게임/" data-id="cjp7w7qpk008kcxx7udvvqczc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -770,7 +785,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
           </li>
         
           <li>
@@ -778,11 +793,11 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
           </li>
         
           <li>
-            <a href="/2018/11/13/Hash Table/">Hash Table</a>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
           </li>
         
       </ul>

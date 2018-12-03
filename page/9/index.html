@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://junheeko.com/page/9/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/page/9/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/06/08/Builder Pattern03/" data-id="cjp7w58hk00ew80x77n9fqrg8" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/06/08/Builder Pattern03/" data-id="cjp7w7qs200f3cxx78kk5h9fw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -185,7 +185,60 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/06/08/Flyweight Pattern01/" data-id="cjp7w58hl00ey80x7ppiznnfq" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/06/08/Flyweight Pattern01/" data-id="cjp7w7qs300f5cxx7gcve7ftc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Flyweight Pattern02" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/08/Flyweight Pattern02/" class="article-date">
+  <time datetime="2018-06-07T15:00:00.000Z" itemprop="datePublished">2018-06-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/08/Flyweight Pattern02/">Flyweight Pattern02</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>We are going to create a <em>Shape</em> interface and concrete class <em>Circle</em> implementing the <em>Shape</em> interface.</p>
+<p> A factory class <em>ShapeFactory</em> is defined as a next step.</p>
+<p><em>ShapeFactory</em> has a <em>HashMap</em> of <em>Circle</em> having key as color of the <em>Circle</em> object. </p>
+<p>Whenever a request comes to create a circle of particular color to <em>ShapeFactory</em>, </p>
+<p>it checks the circle object in its <em>HashMap</em>, if object of <em>Circle</em>found, that object is returned otherwise a new object is created, stored in hashmap for future use, and returned to client.</p>
+<p><em>FlyWeightPatternDemo</em>, our demo class, will use <em>ShapeFactory</em> to get a <em>Shape</em>object. </p>
+<p>It will pass information (<em>red / green / blue/ black / white</em>) to <em>ShapeFactory</em> to get the circle of desired color it needs.</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/flyweight011.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/flyweight022.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/flyweight033.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/flyweight044.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/flyweight055.png" alt="img">  </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.tutorialspoint.com/design_pattern/flyweight_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/flyweight_pattern.htm</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/06/08/Flyweight Pattern02/" data-id="cjp7w7qs300f7cxx7m2yx7gpj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,82 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/06/08/Flyweight Pattern03/" data-id="cjp7w58ho00f680x7q591hik4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Builder Pattern01" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/08/Builder Pattern01/" class="article-date">
-  <time datetime="2018-06-07T15:00:00.000Z" itemprop="datePublished">2018-06-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/08/Builder Pattern01/">Builder Pattern01</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
-<li>Builder pattern builds a complex object using simple objects and using a step by step approach. </li>
-<li>This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.</li>
-<li>A Builder class builds the final object step by step. This builder is independent of other objects.</li>
-</ul>
-<h2 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h2><ul>
-<li>Defines an instance for creating an object but letting subclasses decide which class to instantiate</li>
-<li>Refers to the newly created object through a common interface</li>
-</ul>
-<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/builderPattern01.png" alt="img"> </p>
-<ul>
-<li><strong>Builder</strong> <ul>
-<li>specifies an abstract interface for creating parts of a Product object.</li>
-</ul>
-</li>
-<li><strong>ConcreteBuilder</strong> <ul>
-<li>constructs and puts together parts of the product by implementing the Builder interface. It defines and keeps track of the representation it creates and provides an interface for saving the product.</li>
-</ul>
-</li>
-<li><strong>Director</strong>  <ul>
-<li>constructs the complex object using the Builder interface.</li>
-</ul>
-</li>
-<li><strong>Product</strong> <ul>
-<li>represents the complex object that is being built.</li>
-</ul>
-</li>
-</ul>
-<p>The client, that may be either another object or the actual client that calls the main() method of the application, initiates the Builder and Director class. </p>
-<p>The Builder represents the complex object that needs to be built in terms of simpler objects and types. </p>
-<p>The constructor in the Director class receives a Builder object as a parameter from the Client and is responsible for calling the appropriate methods of the Builder class. </p>
-<p>In order to provide the Client with an interface for all concrete Builders, the Builder class should be an abstract one. </p>
-<p>This way you can add new types of complex objects by only defining the structure and reusing the logic for the actual construction process. </p>
-<p>The Client is the only one that needs to know about the new types, the Director needing to know which methods of the Builder to call.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.oodesign.com/builder-pattern.html" target="_blank" rel="noopener">https://www.oodesign.com/builder-pattern.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/06/08/Builder Pattern01/" data-id="cjp7w58hi00eq80x7o7rpe2un" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/06/08/Flyweight Pattern03/" data-id="cjp7w7qs400f9cxx7onhq3olf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +357,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/06/06/Command Pattern01/" data-id="cjp7w58hn00f280x7tcqahbqh" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/06/06/Command Pattern01/" data-id="cjp7w7qs500fbcxx7hodp0mai" class="article-share-link">Share</a>
       
       
     </footer>
@@ -446,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/06/06/Command Pattern02/" data-id="cjp7w58hn00f480x7zeh30zdm" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/06/06/Command Pattern02/" data-id="cjp7w7qs500fdcxx7r9y1up28" class="article-share-link">Share</a>
       
       
     </footer>
@@ -499,83 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/06/06/Decorator Pattern01/" data-id="cjp7w58hp00fa80x7g1tkio11" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Strategy Pattern03" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/06/Strategy Pattern03/" class="article-date">
-  <time datetime="2018-06-05T15:00:00.000Z" itemprop="datePublished">2018-06-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/06/Strategy Pattern03/">Strategy Pattern03</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>스트레지 패턴은 같은 문제를 해결하는 여러 알고리즘(방식)이 클래스별로 캡슐화되어 있고, 이들이 필요할 때 교체할 수 있도록 함으로써 동일한 문제를 다른 알고리즘으로 해결할 수 있게 하는 디자인 패턴이다.</p>
-<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa031.png" alt="img"> </p>
-<ul>
-<li>Strategy <ul>
-<li>인터페이스나 추상 클래스</li>
-<li>외부에서 동일한 방식으로 알고리즘을 호출하는 방법을 명시</li>
-</ul>
-</li>
-<li>ConcreteStrategy1, ConcreteStrategy2, ConcreteStrategy3<ul>
-<li>명시한 알고리즘을 실제로 구현한 클래스</li>
-</ul>
-</li>
-<li>Context<ul>
-<li>strategy 패턴을 이용하는 역할을 수행</li>
-<li>필요에 따라 동적으로 구체적인 전략을 바꿀수 있도록 setter method 제공</li>
-</ul>
-</li>
-</ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa032.png" alt="img"> </p>
-<ul>
-<li><p>Robot, Atom, TeakonV</p>
-<ul>
-<li>Context</li>
-</ul>
-</li>
-<li><p>MovingStrategy, AttackStrategy</p>
-<ul>
-<li>Strategy</li>
-</ul>
-</li>
-<li><p>WalkingStrategy, FlyingStrategy, PunchStrategy, MissileStrategy</p>
-<ul>
-<li>ConcreteStrategy</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/06/06/Strategy Pattern03/" data-id="cjp7w58hj00eu80x790vtpm5t" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/06/06/Decorator Pattern01/" data-id="cjp7w7qs700fhcxx7vg5s6n1d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -656,7 +558,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/06/06/Decorator Pattern02/" data-id="cjp7w58hq00fc80x7n7uhphws" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/06/06/Decorator Pattern02/" data-id="cjp7w7qs700fjcxx7cr9a79dy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -666,9 +568,9 @@
 
 
   
-    <article id="post-Strategy Pattern01" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Strategy Pattern03" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/06/Strategy Pattern01/" class="article-date">
+    <a href="/2018/06/06/Strategy Pattern03/" class="article-date">
   <time datetime="2018-06-05T15:00:00.000Z" itemprop="datePublished">2018-06-06</time>
 </a>
     
@@ -684,7 +586,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/06/Strategy Pattern01/">Strategy Pattern01</a>
+      <a class="article-title" href="/2018/06/06/Strategy Pattern03/">Strategy Pattern03</a>
     </h1>
   
 
@@ -692,42 +594,98 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>There are common situations when classes differ only in their behavior. For this cases is a good idea to isolate the algorithms in separate classes in order to have the ability to select different algorithms at runtime. </p>
-<h2 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h2><p>Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it. </p>
-<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern01.png" alt="img"> </p>
+        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>스트레지 패턴은 같은 문제를 해결하는 여러 알고리즘(방식)이 클래스별로 캡슐화되어 있고, 이들이 필요할 때 교체할 수 있도록 함으로써 동일한 문제를 다른 알고리즘으로 해결할 수 있게 하는 디자인 패턴이다.</p>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa031.png" alt="img"> </p>
 <ul>
-<li>The context object receives requests from the client and delegates them to the strategy object. Usually the ConcreteStartegy is created by the client and passed to the context. From this point the clients interacts only with the context.</li>
 <li>Strategy <ul>
-<li>defines an interface common to all supported algorithms. Context uses this interface to call the algorithm defined by a ConcreteStrategy.</li>
+<li>인터페이스나 추상 클래스</li>
+<li>외부에서 동일한 방식으로 알고리즘을 호출하는 방법을 명시</li>
+</ul>
+</li>
+<li>ConcreteStrategy1, ConcreteStrategy2, ConcreteStrategy3<ul>
+<li>명시한 알고리즘을 실제로 구현한 클래스</li>
 </ul>
 </li>
 <li>Context<ul>
-<li>contains a reference to a strategy object.</li>
-<li>may define an interface that lets strategy accessing its data.</li>
-<li>The Context objects contains a reference to the ConcreteStrategy that should be used. When an operation is required then the algorithm is run from the strategy object. The Context is not aware of the strategy implementation. If necessary, addition objects can be defined to pass data from context object to strategy. </li>
-</ul>
-</li>
-<li>ConcreteStrategy <ul>
-<li>each concrete strategy implements an algorithm.</li>
+<li>strategy 패턴을 이용하는 역할을 수행</li>
+<li>필요에 따라 동적으로 구체적인 전략을 바꿀수 있도록 setter method 제공</li>
 </ul>
 </li>
 </ul>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern03.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern04.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern05.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern06.png" alt="img">  </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern07.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern08.png" alt="img"> </p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="https://www.oodesign.com/strategy-pattern.html" target="_blank" rel="noopener">https://www.oodesign.com/strategy-pattern.html</a></li>
-<li><a href="https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm</a></li>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa032.png" alt="img"> </p>
+<ul>
+<li><p>Robot, Atom, TeakonV</p>
+<ul>
+<li>Context</li>
+</ul>
+</li>
+<li><p>MovingStrategy, AttackStrategy</p>
+<ul>
+<li>Strategy</li>
+</ul>
+</li>
+<li><p>WalkingStrategy, FlyingStrategy, PunchStrategy, MissileStrategy</p>
+<ul>
+<li>ConcreteStrategy</li>
+</ul>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/06/06/Strategy Pattern01/" data-id="cjp7w58hh00eo80x7grqsrc67" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/06/06/Strategy Pattern03/" data-id="cjp7w7qs000excxx72naoz08u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Strategy Pattern02" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/06/Strategy Pattern02/" class="article-date">
+  <time datetime="2018-06-05T15:00:00.000Z" itemprop="datePublished">2018-06-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/06/Strategy Pattern02/">Strategy Pattern02</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. </p>
+<p>Strategy lets the algorithm vary independently from clients that use it. </p>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa.png" alt="img"> </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa06.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/stpa07.png" alt="img"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/06/06/Strategy Pattern02/" data-id="cjp7w7qs000evcxx7tu578as4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -784,7 +742,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
           </li>
         
           <li>
@@ -792,11 +750,11 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
           </li>
         
           <li>
-            <a href="/2018/11/13/Hash Table/">Hash Table</a>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
           </li>
         
       </ul>

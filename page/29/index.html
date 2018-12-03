@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://junheeko.com/page/29/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/page/29/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
       </div>
     </div>
   </div>
@@ -62,55 +62,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-조합0의개수" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-원격저장소 만들기" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/26/조합0의개수/" class="article-date">
-  <time datetime="2017-11-25T15:00:00.000Z" itemprop="datePublished">2017-11-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/26/조합0의개수/">조합 0의 개수</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://www.acmicpc.net/problem/1676" target="_blank" rel="noopener">https://www.acmicpc.net/problem/1676</a></p>
-<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ul>
-<li>팩토링러 문제와 비슷. 쉬운 문제.</li>
-<li>팩토리얼 : 2의 개수가 5의 개수보다 많음 =&gt; 5의 개수만 셈 </li>
-<li>조합 : 2와 5의 개수를 모두 셈</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2017/11/26/조합0의개수/" data-id="cjp7w58c7003t80x7sziqql3v" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-원격저장소와 지역저장소의 동기화 " class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/26/원격저장소와 지역저장소의 동기화 /" class="article-date">
+    <a href="/2017/11/26/원격저장소 만들기/" class="article-date">
   <time datetime="2017-11-25T15:00:00.000Z" itemprop="datePublished">2017-11-26</time>
 </a>
     
@@ -126,7 +80,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/26/원격저장소와 지역저장소의 동기화 /">원격 저장소와 지역 저장소의 동기화 </a>
+      <a class="article-title" href="/2017/11/26/원격저장소 만들기/">원격 저장소 만들기</a>
     </h1>
   
 
@@ -134,12 +88,82 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="하나의-원격-저장소를-두-개의-지역-저장소가-동기화"><a href="#하나의-원격-저장소를-두-개의-지역-저장소가-동기화" class="headerlink" title="하나의 원격 저장소를 두 개의 지역 저장소가 동기화"></a>하나의 원격 저장소를 두 개의 지역 저장소가 동기화</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Git clone 주소 git_home	 	//그럼 git_home이라는 곳이 생김</span><br><span class="line">Git clone 주소 git_office	 	//그럼 git_office이라는 곳이 생김</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- git_home 디렉토리에서</span><br><span class="line">Vim f1.txt	 				//내용   a b c</span><br><span class="line">Git commit -am 3</span><br><span class="line">Git push</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- git_office 디렉토리에서</span><br><span class="line">Git pull </span><br><span class="line">vim f1.txt					//내용 a b c 에 d 추가</span><br><span class="line">Git commit -am ‘4’</span><br><span class="line">Git push</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git_home 디렉토리에서</span><br><span class="line">Git pull</span><br></pre></td></tr></table></figure>
+        <h1 id="작업하고-있던-것을-생성한-원격-저장소로-옮기기"><a href="#작업하고-있던-것을-생성한-원격-저장소로-옮기기" class="headerlink" title="작업하고 있던 것을 생성한 원격 저장소로 옮기기"></a>작업하고 있던 것을 생성한 원격 저장소로 옮기기</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">mkdir gitfth</span><br><span class="line">Git init</span><br><span class="line">Vim f1.txt</span><br><span class="line">Git add f1.txt</span><br><span class="line">Git commit -m ‘1’</span><br><span class="line">git remote add origin https://github.com/KoJunHee/gitfth.git</span><br><span class="line">	// 현재 우리의 로컬 저장소에  원격저장소(remote repository)를 연결 시킨다</span><br><span class="line">	// 그리고 그 원격저장소는 이 주소이다</span><br><span class="line">	// 이 주소는 너무 기니까 origin 이라는 별명을 부여하겠다</span><br><span class="line">	// 여러개의 원격저장소를 연결 시킬수 있음</span><br><span class="line">	// ~add friend ~ 이런식으로도 가능</span><br><span class="line"></span><br><span class="line">Git remote 		//잘 되었는지 확인할수 있음.</span><br><span class="line">Git remote -v 	//상세 보기 가능</span><br><span class="line">Git remote remove friend </span><br><span class="line">Git remote -v	//origin 만 남은걸 볼수 있음</span><br><span class="line">git push -u origin master	</span><br><span class="line">	// 로컬 저장소의 master와 origin 연결</span><br><span class="line">	// 유저네임 입력하고 </span><br><span class="line">	// 비밀번호 입력</span><br><span class="line">Vim f1.txt		//변경</span><br><span class="line">Git commit -am 2</span><br><span class="line">Git push  		// 이미 연결 시켰기 때문에 그 다음부터는 push만 하면 됨</span><br></pre></td></tr></table></figure>
+<h2 id="존재하는-원격-저장소를-내-로컬-저장소로-복제하면-다른-컴퓨터에서도-똑같이-가능"><a href="#존재하는-원격-저장소를-내-로컬-저장소로-복제하면-다른-컴퓨터에서도-똑같이-가능" class="headerlink" title="존재하는 원격 저장소를 내 로컬 저장소로 복제하면 다른 컴퓨터에서도 똑같이 가능"></a>존재하는 원격 저장소를 내 로컬 저장소로 복제하면 다른 컴퓨터에서도 똑같이 가능</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">github에서 clone or download에서 주소를 카피.</span><br><span class="line">새로운 컴퓨터라고 치고 새로운 디렉토리를 만들거임.</span><br><span class="line">cd ..</span><br><span class="line">Mkdir gitfth2</span><br><span class="line">Cd gitgth2</span><br><span class="line">Git clone https://github.com/KoJunHee/gitfth.git .     //.은 현재 디렉토리</span><br><span class="line"></span><br><span class="line">ls -al 			//하면 동기화 확인 가능하고</span><br><span class="line">Git romote -v		//하면 연결되어있다는 것을 확인</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2017/11/26/원격저장소와 지역저장소의 동기화 /" data-id="cjp7w58c7003r80x726q0791f" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2017/11/26/원격저장소 만들기/" data-id="cjp7w7qnr003tcxx7wku3aqlq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-how to merge" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/26/how to merge/" class="article-date">
+  <time datetime="2017-11-25T15:00:00.000Z" itemprop="datePublished">2017-11-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/26/how to merge/">how to merge</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>jay branch에서 작업완료. 커밋 완료</p>
+</li>
+<li><p>git checkout master</p>
+</li>
+<li><p>git pull origin master </p>
+<ul>
+<li>git master에서 local master로  pull</li>
+</ul>
+</li>
+<li><p>conflict 해결</p>
+</li>
+<li><p>git merge jay</p>
+<ul>
+<li>jay에 있는걸 master로  merge</li>
+</ul>
+</li>
+<li><p>conflic 해결</p>
+<ul>
+<li>master와 jay가 합쳐진 상태 </li>
+</ul>
+</li>
+<li><p>git add .</p>
+</li>
+<li><p>git commit -m ‘merge finish’</p>
+</li>
+<li><p>git push origin master</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2017/11/26/how to merge/" data-id="cjp7w7qnr003qcxx7v0eml5tr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -219,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2017/11/26/git 핵심 명령어/" data-id="cjp7w58c6003o80x79zrvx6kw" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2017/11/26/git 핵심 명령어/" data-id="cjp7w7qnq003ocxx7vkdboh6m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,14 +253,14 @@
 
 
   
-    <article id="post-how to merge" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-조합0의개수" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/26/how to merge/" class="article-date">
+    <a href="/2017/11/26/조합0의개수/" class="article-date">
   <time datetime="2017-11-25T15:00:00.000Z" itemprop="datePublished">2017-11-26</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/git/">git</a>
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
   </div>
 
   </div>
@@ -247,7 +271,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/26/how to merge/">how to merge</a>
+      <a class="article-title" href="/2017/11/26/조합0의개수/">조합 0의 개수</a>
     </h1>
   
 
@@ -255,40 +279,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>jay branch에서 작업완료. 커밋 완료</p>
-</li>
-<li><p>git checkout master</p>
-</li>
-<li><p>git pull origin master </p>
-<ul>
-<li>git master에서 local master로  pull</li>
-</ul>
-</li>
-<li><p>conflict 해결</p>
-</li>
-<li><p>git merge jay</p>
-<ul>
-<li>jay에 있는걸 master로  merge</li>
-</ul>
-</li>
-<li><p>conflic 해결</p>
-<ul>
-<li>master와 jay가 합쳐진 상태 </li>
-</ul>
-</li>
-<li><p>git add .</p>
-</li>
-<li><p>git commit -m ‘merge finish’</p>
-</li>
-<li><p>git push origin master</p>
-</li>
+        <p><a href="https://www.acmicpc.net/problem/1676" target="_blank" rel="noopener">https://www.acmicpc.net/problem/1676</a></p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ul>
+<li>팩토링러 문제와 비슷. 쉬운 문제.</li>
+<li>팩토리얼 : 2의 개수가 5의 개수보다 많음 =&gt; 5의 개수만 셈 </li>
+<li>조합 : 2와 5의 개수를 모두 셈</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2017/11/26/how to merge/" data-id="cjp7w58c5003m80x7la4es7d1" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2017/11/26/조합0의개수/" data-id="cjp7w7qnt003xcxx7vlx5y2j5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2017/11/26/swagger object array/" data-id="cjp7w58c9003y80x7jpekarq6" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2017/11/26/swagger object array/" data-id="cjp7w7qnu0040cxx74lixiq91" class="article-share-link">Share</a>
       
       
     </footer>
@@ -375,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2017/11/25/문자열 분석/" data-id="cjp7w58c3003g80x7k06sv5ot" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2017/11/25/문자열 분석/" data-id="cjp7w7qnp003mcxx7jpycnpn8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -423,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2017/11/22/접미사배열/" data-id="cjp7w58c4003i80x7ekkpsct4" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2017/11/22/접미사배열/" data-id="cjp7w7qno003icxx7gl2coqn2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -475,7 +476,52 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2017/11/22/환경변수설정/" data-id="cjp7w58c5003k80x73izccuag" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2017/11/22/환경변수설정/" data-id="cjp7w7qnp003kcxx7s8by5hif" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-swagger parameter 길이문제" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/21/swagger parameter 길이문제/" class="article-date">
+  <time datetime="2017-11-20T15:00:00.000Z" itemprop="datePublished">2017-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/21/swagger parameter 길이문제/">Swagger parameter 길이 문제</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Swagger-parameter-많아-졌을-때"><a href="#Swagger-parameter-많아-졌을-때" class="headerlink" title="Swagger parameter 많아 졌을 때"></a>Swagger parameter 많아 졌을 때</h2><ul>
+<li>옆 부분 짤리는 문제 발생</li>
+<li>다음과 같이 object로 묶어주자</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/39.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2017/11/21/swagger parameter 길이문제/" data-id="cjp7w7qnn003ecxx7tqmjqv6x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -528,52 +574,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2017/11/21/다리만들기/" data-id="cjp7w58c3003e80x7qspstn5x" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-swagger parameter 길이문제" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/21/swagger parameter 길이문제/" class="article-date">
-  <time datetime="2017-11-20T15:00:00.000Z" itemprop="datePublished">2017-11-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/node/">node</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/21/swagger parameter 길이문제/">Swagger parameter 길이 문제</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Swagger-parameter-많아-졌을-때"><a href="#Swagger-parameter-많아-졌을-때" class="headerlink" title="Swagger parameter 많아 졌을 때"></a>Swagger parameter 많아 졌을 때</h2><ul>
-<li>옆 부분 짤리는 문제 발생</li>
-<li>다음과 같이 object로 묶어주자</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/39.png" alt="img"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2017/11/21/swagger parameter 길이문제/" data-id="cjp7w58by003a80x7lgaysscb" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2017/11/21/다리만들기/" data-id="cjp7w7qno003gcxx7ba0dw1x8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -630,7 +631,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
           </li>
         
           <li>
@@ -638,11 +639,11 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
           </li>
         
           <li>
-            <a href="/2018/11/13/Hash Table/">Hash Table</a>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
           </li>
         
       </ul>

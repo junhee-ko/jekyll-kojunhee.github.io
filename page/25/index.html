@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://junheeko.com/page/25/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/page/25/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
       </div>
     </div>
   </div>
@@ -62,9 +62,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-ViewPager" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-retrofit" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/07/ViewPager/" class="article-date">
+    <a href="/2018/01/07/retrofit/" class="article-date">
   <time datetime="2018-01-06T15:00:00.000Z" itemprop="datePublished">2018-01-07</time>
 </a>
     
@@ -80,7 +80,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/07/ViewPager/">ViewPager</a>
+      <a class="article-title" href="/2018/01/07/retrofit/">retrofit</a>
     </h1>
   
 
@@ -88,26 +88,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://developer.android.com/training/animation/screen-slide.html" target="_blank" rel="noopener">https://developer.android.com/training/animation/screen-slide.html</a></p>
-<h2 id="Create-the-Views"><a href="#Create-the-Views" class="headerlink" title="Create the Views"></a>Create the Views</h2><ul>
-<li>프레그먼트의 내용물로서 사용될 레이아웃</li>
+        <p><a href="http://devflow.github.io/retrofit-kr/" target="_blank" rel="noopener">http://devflow.github.io/retrofit-kr/</a></p>
+<ul>
+<li>retrofit<ul>
+<li>안드로이드와 자바를 위한 type-safe HTTP client </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- fragment_screen_slide_page.xml --&gt;</span><br><span class="line">&lt;ScrollView xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:id=&quot;@+id/content&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot; &gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView style=&quot;?android:textAppearanceMedium&quot;</span><br><span class="line">        android:padding=&quot;16dp&quot;</span><br><span class="line">        android:lineSpacingMultiplier=&quot;1.2&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;@string/lorem_ipsum&quot; /&gt;</span><br><span class="line">&lt;/ScrollView&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Create-the-Fragment"><a href="#Create-the-Fragment" class="headerlink" title="Create the Fragment"></a>Create the Fragment</h2><ul>
-<li>부모 엑티비티에서 사용자에게 보여줄 새로운 페이지가 필요할 때마다, 이 프레그먼트의 인스턴스를  생성 할 수 있다. </li>
+</li>
+<li>REST API를 구현해놓았음 <ul>
+<li>GET, POST, PUT, DELETED 등을 전달하면 </li>
+<li>서버에서 처리 후 </li>
+<li>xml, json, text, rss 등으로 응답을 제공받을 수 있는 형태</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import android.support.v4.app.Fragment;</span><br><span class="line">...</span><br><span class="line">public class ScreenSlidePageFragment extends Fragment &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public View onCreateView(LayoutInflater inflater, ViewGroup container,</span><br><span class="line">            Bundle savedInstanceState) &#123;</span><br><span class="line">        ViewGroup rootView = (ViewGroup) inflater.inflate(</span><br><span class="line">                R.layout.fragment_screen_slide_page, container, false);</span><br><span class="line"></span><br><span class="line">        return rootView;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Add-a-ViewPager"><a href="#Add-a-ViewPager" class="headerlink" title="Add a ViewPager"></a>Add a ViewPager</h2><ul>
-<li>ViewPager는 새로운 페이지를 보여주기 위해 PagerAdapters를 사용한다. </li>
-<li>PagerAdapter 는 앞서 만든 프레그먼트 클래스를 사용한다.</li>
+</li>
+<li><p>build.gradle에 다음을 추가</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &apos;com.squareup.retrofit2:retrofit:(insert latest version)&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>retrofi 사용방법</p>
+<ul>
+<li>interface 정의</li>
+<li>이 interface class를 retrofit에 초기화</li>
+<li>HTTP 통신을 할 준비 완료</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- activity_screen_slide.xml --&gt;</span><br><span class="line">&lt;android.support.v4.view.ViewPager</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:id=&quot;@+id/pager&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Create-an-Activity"><a href="#Create-an-Activity" class="headerlink" title="Create an Activity"></a>Create an Activity</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">import android.support.v4.app.Fragment;</span><br><span class="line">import android.support.v4.app.FragmentManager;</span><br><span class="line">...</span><br><span class="line">public class ScreenSlidePagerActivity extends FragmentActivity &#123;</span><br><span class="line">    /**</span><br><span class="line">     * The number of pages (wizard steps) to show in this demo.</span><br><span class="line">     */</span><br><span class="line">    private static final int NUM_PAGES = 5;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * The pager widget, which handles animation and allows swiping horizontally to access previous</span><br><span class="line">     * and next wizard steps.</span><br><span class="line">     */</span><br><span class="line">    private ViewPager mPager;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * The pager adapter, which provides the pages to the view pager widget.</span><br><span class="line">     */</span><br><span class="line">    private PagerAdapter mPagerAdapter;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_screen_slide);</span><br><span class="line"></span><br><span class="line">        // Instantiate a ViewPager and a PagerAdapter.</span><br><span class="line">        mPager = (ViewPager) findViewById(R.id.pager);</span><br><span class="line">        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());</span><br><span class="line">        mPager.setAdapter(mPagerAdapter);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onBackPressed() &#123;</span><br><span class="line">        if (mPager.getCurrentItem() == 0) &#123;</span><br><span class="line">            // If the user is currently looking at the first step, allow the system to handle the</span><br><span class="line">            // Back button. This calls finish() on this activity and pops the back stack.</span><br><span class="line">            super.onBackPressed();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // Otherwise, select the previous step.</span><br><span class="line">            mPager.setCurrentItem(mPager.getCurrentItem() - 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in</span><br><span class="line">     * sequence.</span><br><span class="line">     */</span><br><span class="line">    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter &#123;</span><br><span class="line">        public ScreenSlidePagerAdapter(FragmentManager fm) &#123;</span><br><span class="line">            super(fm);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public Fragment getItem(int position) &#123;</span><br><span class="line">            return new ScreenSlidePageFragment();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public int getCount() &#123;</span><br><span class="line">            return NUM_PAGES;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>interface 정의</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface GitHubService &#123;</span><br><span class="line"> 	@GET(&quot;/users/&#123;user&#125;/repos&quot;)</span><br><span class="line"> 	Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path(&quot;user&quot;) String user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>이 interface class를 retrofit에 초기화</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Retrofit retrofit = new Retrofit.Builder()</span><br><span class="line">   .baseUrl(&quot;https://api.github.com&quot;)</span><br><span class="line">   .build();</span><br><span class="line"></span><br><span class="line">GitHubService service = retrofit.create(GitHubService.class);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/01/07/ViewPager/" data-id="cjp7w58d4006180x7x8x83iym" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/01/07/retrofit/" data-id="cjp7w7qoo006ecxx7oxgf8fno" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/01/06/개근상/" data-id="cjp7w58d3005z80x75hxg7po7" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/01/06/개근상/" data-id="cjp7w7qom0065cxx7c099nl3q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -287,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/01/06/functional programming/" data-id="cjp7w58d2005x80x7kqiac8sn" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/01/06/functional programming/" data-id="cjp7w7qol0063cxx7g02xikyq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -337,66 +351,7 @@ i _ _ _ k k+1 _ _ _ j
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/01/05/파일합치기/" data-id="cjp7w58d1005v80x73kan8djo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-pm2" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/04/pm2/" class="article-date">
-  <time datetime="2018-01-03T15:00:00.000Z" itemprop="datePublished">2018-01-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/node/">node</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/04/pm2/">PM2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="PM2"><a href="#PM2" class="headerlink" title="PM2"></a>PM2</h2><ul>
-<li><p>Node.js 프로세스 관리 도구</p>
-</li>
-<li><p>PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks. ((<a href="https://github.com/Unitech/pm2)" target="_blank" rel="noopener">https://github.com/Unitech/pm2)</a>)</p>
-</li>
-</ul>
-<h2 id="start"><a href="#start" class="headerlink" title="start"></a>start</h2><pre><code>pm2 start app.js
-</code></pre><h2 id="Listing-all-running-processes"><a href="#Listing-all-running-processes" class="headerlink" title="Listing all running processes"></a>Listing all running processes</h2><pre><code>pm2 list
-</code></pre><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/processmanagemnet.png" alt="img"></p>
-<h2 id="Managing-processes"><a href="#Managing-processes" class="headerlink" title="Managing processes"></a>Managing processes</h2><pre><code>$ pm2 stop     &lt;app_name|id|&apos;all&apos;|json_conf&gt;
-$ pm2 restart  &lt;app_name|id|&apos;all&apos;|json_conf&gt;
-$ pm2 delete   &lt;app_name|id|&apos;all&apos;|json_conf&gt;
-</code></pre><h2 id="Logs"><a href="#Logs" class="headerlink" title="Logs"></a>Logs</h2><pre><code>$ pm2 logs [&apos;all&apos;|app_name|app_id] [--json] [--format] [--raw]
-
-$ pm2 logs APP-NAME       # Display APP-NAME logs
-$ pm2 logs --json         # JSON output
-$ pm2 logs --format       # Formated output
-$ pm2 flush               # Flush all logs
-$ pm2 reloadLogs          # Reload all logs        
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/01/04/pm2/" data-id="cjp7w58d0005t80x74dbvn6ru" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/01/05/파일합치기/" data-id="cjp7w7qok0061cxx7rrzdd6q0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -459,7 +414,66 @@ $ pm2 reloadLogs          # Reload all logs
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/01/04/if else VS switch/" data-id="cjp7w58d0005r80x7aargdw27" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/01/04/if else VS switch/" data-id="cjp7w7qoj005xcxx7jrizml2l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pm2" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/04/pm2/" class="article-date">
+  <time datetime="2018-01-03T15:00:00.000Z" itemprop="datePublished">2018-01-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/04/pm2/">PM2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="PM2"><a href="#PM2" class="headerlink" title="PM2"></a>PM2</h2><ul>
+<li><p>Node.js 프로세스 관리 도구</p>
+</li>
+<li><p>PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks. ((<a href="https://github.com/Unitech/pm2)" target="_blank" rel="noopener">https://github.com/Unitech/pm2)</a>)</p>
+</li>
+</ul>
+<h2 id="start"><a href="#start" class="headerlink" title="start"></a>start</h2><pre><code>pm2 start app.js
+</code></pre><h2 id="Listing-all-running-processes"><a href="#Listing-all-running-processes" class="headerlink" title="Listing all running processes"></a>Listing all running processes</h2><pre><code>pm2 list
+</code></pre><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/processmanagemnet.png" alt="img"></p>
+<h2 id="Managing-processes"><a href="#Managing-processes" class="headerlink" title="Managing processes"></a>Managing processes</h2><pre><code>$ pm2 stop     &lt;app_name|id|&apos;all&apos;|json_conf&gt;
+$ pm2 restart  &lt;app_name|id|&apos;all&apos;|json_conf&gt;
+$ pm2 delete   &lt;app_name|id|&apos;all&apos;|json_conf&gt;
+</code></pre><h2 id="Logs"><a href="#Logs" class="headerlink" title="Logs"></a>Logs</h2><pre><code>$ pm2 logs [&apos;all&apos;|app_name|app_id] [--json] [--format] [--raw]
+
+$ pm2 logs APP-NAME       # Display APP-NAME logs
+$ pm2 logs --json         # JSON output
+$ pm2 logs --format       # Formated output
+$ pm2 flush               # Flush all logs
+$ pm2 reloadLogs          # Reload all logs        
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/01/04/pm2/" data-id="cjp7w7qok005zcxx7hut6e32l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -517,7 +531,7 @@ $ pm2 reloadLogs          # Reload all logs
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/01/04/ 수들의합/" data-id="cjp7w58cz005p80x7j5zadt6v" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/01/04/ 수들의합/" data-id="cjp7w7qoh005tcxx7uemrj2cx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -578,7 +592,7 @@ $ pm2 reloadLogs          # Reload all logs
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/01/04/exports/" data-id="cjp7w58eq007p80x73bius5mh" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/01/04/exports/" data-id="cjp7w7qoi005vcxx76q8266d1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -628,7 +642,7 @@ $ pm2 reloadLogs          # Reload all logs
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/01/03/좋은단어/" data-id="cjp7w58cy005n80x70uvmzcs4" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/01/03/좋은단어/" data-id="cjp7w7qog005rcxx7dpu6j8jd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -695,7 +709,7 @@ $ pm2 reloadLogs          # Reload all logs
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/01/01/설탕배달/" data-id="cjp7w58cx005l80x7og8oyxcs" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/01/01/설탕배달/" data-id="cjp7w7qog005pcxx741ox9ei4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -752,7 +766,7 @@ $ pm2 reloadLogs          # Reload all logs
           </li>
         
           <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
           </li>
         
           <li>
@@ -760,11 +774,11 @@ $ pm2 reloadLogs          # Reload all logs
           </li>
         
           <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
           </li>
         
           <li>
-            <a href="/2018/11/13/Hash Table/">Hash Table</a>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
           </li>
         
       </ul>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://junheeko.com/page/16/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/page/16/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
       </div>
     </div>
   </div>
@@ -150,7 +150,328 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/05/CSS/" data-id="cjp7w58g700ba80x7fbpbnxpm" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/05/CSS/" data-id="cjp7w7qqn00bhcxx7lay1u733" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-was" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/05/was/" class="article-date">
+  <time datetime="2018-05-04T15:00:00.000Z" itemprop="datePublished">2018-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/05/was/">was</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>MiddleWare  </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/middleW.png" alt="img"></p>
+<ul>
+<li>클라이언트 쪽에 비즈니스 로직이 많을 경우, </li>
+<li>클라이언트 관리(배포 등)로 인해 비용이 많이 발생하는 문제가 있습니다.</li>
+<li>비즈니스 로직을 클라이언트와 DBMS사이의 미들웨어 서버에서 동작하도록 함으로써 </li>
+<li>클라이언트는 입력과 출력만 담당하도록 합니다.</li>
+</ul>
+</li>
+<li><p>WAS</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/wasimge.png" alt="img"></p>
+<ul>
+<li><p>일종의 미들웨어로 웹 클라이언트(보통 웹 브라우저)의 요청 중 웹 애플리케이션이 동작하도록 지원하는 목적</p>
+</li>
+<li><p>프로그램 실행환경과 데이터베이스 접속 기능 제공</p>
+</li>
+<li>여러개의 트렌젝션(논리적인 작업 단위)을 관리</li>
+<li>업무를 처리하는 비지니스 로직 처리</li>
+</ul>
+</li>
+<li><p>웹서버 vs WAS </p>
+<ul>
+<li>웹서버 : 정적인 컨텐츠를 웹 브라우저에게 전달</li>
+<li>WAS : 동적 결과를 웹 브라우저에게 전달</li>
+<li>WAS도 보통 자체적으로 웹 서버 기능을 내장하고 있습니다.</li>
+<li>현재는 WAS가 가지고 있는 웹 서버도 정적인 콘텐츠를 처리하는 데 있어서 성능상 큰 차이가 없습니다.</li>
+<li>규모가 커질수록 웹 서버와 WAS를 분리합니다.</li>
+<li>자원 이용의 효율성 및 장애 극복, 배포 및 유지보수의 편의성을 위해 웹서버와 WAS를 대체로 분리합니다.</li>
+</ul>
+</li>
+<li>웹 서버가 왜 WAS 앞단에서 동작?<ul>
+<li>웹 서버는 WAS보다 단단</li>
+<li>대용량 어플리케이션은 서버의 수가 여러대일 수 있어</li>
+<li>와스에서 동작하도록 만든 프로그램이 오작동이 발생해서 </li>
+<li>와스 자체에 문제가 발생할수 있어</li>
+<li>이 경우에,</li>
+<li>와스를 재시작 해야할 수 있어</li>
+<li>이런 경우 웹서버가 먼저, 해당 와스를 이용하지 못하도록 해</li>
+<li>그리고 와스를 재시작한다면</li>
+<li>사용자는 와스의 문제가 발생한지 모를 수 있어</li>
+<li>이러한 처리를 ‘장애 극복 기능’ 이라고 함</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/05/was/" data-id="cjp7w7qqm00becxx7vk70bfly" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post- 웹 서버" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/05/ 웹 서버/" class="article-date">
+  <time datetime="2018-05-04T15:00:00.000Z" itemprop="datePublished">2018-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/05/ 웹 서버/">웹 서버</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>웹 서버란<ul>
+<li>웹 서버는 소프트웨어(Software)를 보통 말하지만, 웹 서버 소프트웨어가 동작하는 컴퓨터를 말합니다.</li>
+<li>웹 서버의 가장 중요한 기능은 클라이언트(Client)가 요청하는 HTML 문서나 각종 리소스(Resource)를 전달하는 것입니다.<ul>
+<li>클라이언트 : 웹 브라우저, 웹 크롤러(네이버나 구글같은 검색 사이트가 다른 웹 사이트 정보를 읽어갈때 사용하는 소프트웨어)<ul>
+<li>HTTP에 맞게 서버에게 리소스 요쳥</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>웹 브라우저나 웹 크롤러가 요청하는 리소스는 컴퓨터에 저장된 정적(static)인 데이터이거나 동적인 결과가 될 수 있습니다.<ul>
+<li>정적 데이터 : 이미지 , HTML, CSS, JavaScript (컴퓨터에 저장된 파일들)</li>
+<li>동적 데이터 : 웹 서버에 의해 실행되는, 프로그래밍을 통해 만들어진 결과</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>웹 서버 소프트웨어 종류<ul>
+<li>Apache, Nginx, Microsoft, Google 웹 서버<ul>
+<li>Apache웹 서버<ul>
+<li>Apache Software Foundation에서 개발한 웹서버로 오픈소스 소프트웨어(Open-source Software)이며, 거의 대부분 운영체제에서 설치 및 사용을 할 수 있습니다.</li>
+</ul>
+</li>
+<li>Nginx <ul>
+<li>차세대 웹서버로 불리며 더 적은 자원으로 더 빠르게 데이터를 서비스하는 것을 목적으로 만들어진 서버이며 Apache웹 서버와 마찬가지로 오픈소스 소프트웨어입니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/05/ 웹 서버/" data-id="cjp7w7qql00bccxx76vse8i9h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post- browser에서의 웹 개발" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/05/ browser에서의 웹 개발/" class="article-date">
+  <time datetime="2018-05-04T15:00:00.000Z" itemprop="datePublished">2018-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/05/ browser에서의 웹 개발/"> browser에서의 웹 개발</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>HTML 문서구조</p>
+<ul>
+<li>크롬 개발자 도구 열기 (Option + Command + i)</li>
+<li>Network tab 에서 새로고침을 하면</li>
+</ul>
+</li>
+<li><p>알게된 몇 가지 특징</p>
+<ul>
+<li><p>html 문서는 html이라는 태그로 시작해서 html 태그로 끝남</p>
+</li>
+<li><p>head</p>
+<ul>
+<li>자세한 문서에 대한 정보를 포함</li>
+</ul>
+</li>
+<li>body<ul>
+<li>화면에 포함될 div 같은것들</li>
+</ul>
+</li>
+<li>html은 계청적</li>
+<li>html은 tag를 사용해서 표현</li>
+<li>JavaScript와 CSS가 html 안에 여기 저기 존재</li>
+</ul>
+</li>
+<li><p>CSS / JavaScript 코드 위치</p>
+<ul>
+<li>JavaScript 코드<ul>
+<li>body 태그 닫히기 전에 위치하는 것이 렌더링을 방해하지 않아도 좋고, </li>
+</ul>
+</li>
+<li>CSS<ul>
+<li>head 안에 위치해서 렌더링 처리 시에 브라우저가 더 빨리 참고할 수 있게 하는 것이 좋습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/05/ browser에서의 웹 개발/" data-id="cjp7w7qqk00b9cxx7k7hojaui" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-프론트엔드, 백엔드" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/05/프론트엔드, 백엔드/" class="article-date">
+  <time datetime="2018-05-04T15:00:00.000Z" itemprop="datePublished">2018-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/05/프론트엔드, 백엔드/">프론트엔드, 백엔드</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>웹 프론트엔드<ul>
+<li>사용자에게 웹을 통해 다양한 콘텐츠(문서, 동영상, 사진 등)을 제공</li>
+<li>사용자의 요청(요구사항)에 반응해서 동작</li>
+</ul>
+</li>
+<li><p>웹 프론트엔드의 역할</p>
+<ul>
+<li>웹 콘텐츠를 보여주기 위해 구조를 만들어야함 - HTML : 구조를 잡아</li>
+<li>적절한 배치와 일관된 디자인 제공(보기좋게) - CSS : 디자인</li>
+<li>사용장 요청을 잘 반영해야함 (소통하듯이) - JacaScript : 동적 제어. 프로그래밍</li>
+</ul>
+</li>
+<li><p>벡엔드 개발자가 알아야할 것들</p>
+<ul>
+<li>프로그래밍 언어(JAVA, Python, PHP, JavaScript)</li>
+<li>웹의 동작 원리</li>
+<li>알고리즘, 자료구조 등 프로그래밍 기반 지식</li>
+<li>운영체제, 네트워크 등에 대한 이해</li>
+<li>프레임워크에 대한 이해(ex: Spring)</li>
+<li>DBMS에 대한 이해와 사용방법(ex: MySQL, Oracle)  </li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/05/프론트엔드, 백엔드/" data-id="cjp7w7qqj00b5cxx7oywzdjko" class="article-share-link">Share</a>
       
       
     </footer>
@@ -289,167 +610,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/05/web 동작/" data-id="cjp7w58g200at80x7iqxv60dz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post- 웹 서버" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/05/ 웹 서버/" class="article-date">
-  <time datetime="2018-05-04T15:00:00.000Z" itemprop="datePublished">2018-05-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/05/ 웹 서버/">웹 서버</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>웹 서버란<ul>
-<li>웹 서버는 소프트웨어(Software)를 보통 말하지만, 웹 서버 소프트웨어가 동작하는 컴퓨터를 말합니다.</li>
-<li>웹 서버의 가장 중요한 기능은 클라이언트(Client)가 요청하는 HTML 문서나 각종 리소스(Resource)를 전달하는 것입니다.<ul>
-<li>클라이언트 : 웹 브라우저, 웹 크롤러(네이버나 구글같은 검색 사이트가 다른 웹 사이트 정보를 읽어갈때 사용하는 소프트웨어)<ul>
-<li>HTTP에 맞게 서버에게 리소스 요쳥</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>웹 브라우저나 웹 크롤러가 요청하는 리소스는 컴퓨터에 저장된 정적(static)인 데이터이거나 동적인 결과가 될 수 있습니다.<ul>
-<li>정적 데이터 : 이미지 , HTML, CSS, JavaScript (컴퓨터에 저장된 파일들)</li>
-<li>동적 데이터 : 웹 서버에 의해 실행되는, 프로그래밍을 통해 만들어진 결과</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>웹 서버 소프트웨어 종류<ul>
-<li>Apache, Nginx, Microsoft, Google 웹 서버<ul>
-<li>Apache웹 서버<ul>
-<li>Apache Software Foundation에서 개발한 웹서버로 오픈소스 소프트웨어(Open-source Software)이며, 거의 대부분 운영체제에서 설치 및 사용을 할 수 있습니다.</li>
-</ul>
-</li>
-<li>Nginx <ul>
-<li>차세대 웹서버로 불리며 더 적은 자원으로 더 빠르게 데이터를 서비스하는 것을 목적으로 만들어진 서버이며 Apache웹 서버와 마찬가지로 오픈소스 소프트웨어입니다.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/05/ 웹 서버/" data-id="cjp7w58g500b580x7v3rc27lf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post- browser에서의 웹 개발" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/05/ browser에서의 웹 개발/" class="article-date">
-  <time datetime="2018-05-04T15:00:00.000Z" itemprop="datePublished">2018-05-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/05/ browser에서의 웹 개발/"> browser에서의 웹 개발</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>HTML 문서구조</p>
-<ul>
-<li>크롬 개발자 도구 열기 (Option + Command + i)</li>
-<li>Network tab 에서 새로고침을 하면</li>
-</ul>
-</li>
-<li><p>알게된 몇 가지 특징</p>
-<ul>
-<li><p>html 문서는 html이라는 태그로 시작해서 html 태그로 끝남</p>
-</li>
-<li><p>head</p>
-<ul>
-<li>자세한 문서에 대한 정보를 포함</li>
-</ul>
-</li>
-<li>body<ul>
-<li>화면에 포함될 div 같은것들</li>
-</ul>
-</li>
-<li>html은 계청적</li>
-<li>html은 tag를 사용해서 표현</li>
-<li>JavaScript와 CSS가 html 안에 여기 저기 존재</li>
-</ul>
-</li>
-<li><p>CSS / JavaScript 코드 위치</p>
-<ul>
-<li>JavaScript 코드<ul>
-<li>body 태그 닫히기 전에 위치하는 것이 렌더링을 방해하지 않아도 좋고, </li>
-</ul>
-</li>
-<li>CSS<ul>
-<li>head 안에 위치해서 렌더링 처리 시에 브라우저가 더 빨리 참고할 수 있게 하는 것이 좋습니다.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/05/ browser에서의 웹 개발/" data-id="cjp7w58g400b280x7z6g3obxm" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/05/web 동작/" data-id="cjp7w7qqi00b2cxx7hcv6i27g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -546,168 +707,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/05/browser 동작/" data-id="cjp7w58g200av80x7rswf3jn9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-프론트엔드, 백엔드" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/05/프론트엔드, 백엔드/" class="article-date">
-  <time datetime="2018-05-04T15:00:00.000Z" itemprop="datePublished">2018-05-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/05/프론트엔드, 백엔드/">프론트엔드, 백엔드</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>웹 프론트엔드<ul>
-<li>사용자에게 웹을 통해 다양한 콘텐츠(문서, 동영상, 사진 등)을 제공</li>
-<li>사용자의 요청(요구사항)에 반응해서 동작</li>
-</ul>
-</li>
-<li><p>웹 프론트엔드의 역할</p>
-<ul>
-<li>웹 콘텐츠를 보여주기 위해 구조를 만들어야함 - HTML : 구조를 잡아</li>
-<li>적절한 배치와 일관된 디자인 제공(보기좋게) - CSS : 디자인</li>
-<li>사용장 요청을 잘 반영해야함 (소통하듯이) - JacaScript : 동적 제어. 프로그래밍</li>
-</ul>
-</li>
-<li><p>벡엔드 개발자가 알아야할 것들</p>
-<ul>
-<li>프로그래밍 언어(JAVA, Python, PHP, JavaScript)</li>
-<li>웹의 동작 원리</li>
-<li>알고리즘, 자료구조 등 프로그래밍 기반 지식</li>
-<li>운영체제, 네트워크 등에 대한 이해</li>
-<li>프레임워크에 대한 이해(ex: Spring)</li>
-<li>DBMS에 대한 이해와 사용방법(ex: MySQL, Oracle)  </li>
-</ul>
-</li>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/05/프론트엔드, 백엔드/" data-id="cjp7w58g300ay80x78it2wbrq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-was" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/05/was/" class="article-date">
-  <time datetime="2018-05-04T15:00:00.000Z" itemprop="datePublished">2018-05-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/05/was/">was</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>MiddleWare  </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/middleW.png" alt="img"></p>
-<ul>
-<li>클라이언트 쪽에 비즈니스 로직이 많을 경우, </li>
-<li>클라이언트 관리(배포 등)로 인해 비용이 많이 발생하는 문제가 있습니다.</li>
-<li>비즈니스 로직을 클라이언트와 DBMS사이의 미들웨어 서버에서 동작하도록 함으로써 </li>
-<li>클라이언트는 입력과 출력만 담당하도록 합니다.</li>
-</ul>
-</li>
-<li><p>WAS</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/wasimge.png" alt="img"></p>
-<ul>
-<li><p>일종의 미들웨어로 웹 클라이언트(보통 웹 브라우저)의 요청 중 웹 애플리케이션이 동작하도록 지원하는 목적</p>
-</li>
-<li><p>프로그램 실행환경과 데이터베이스 접속 기능 제공</p>
-</li>
-<li>여러개의 트렌젝션(논리적인 작업 단위)을 관리</li>
-<li>업무를 처리하는 비지니스 로직 처리</li>
-</ul>
-</li>
-<li><p>웹서버 vs WAS </p>
-<ul>
-<li>웹서버 : 정적인 컨텐츠를 웹 브라우저에게 전달</li>
-<li>WAS : 동적 결과를 웹 브라우저에게 전달</li>
-<li>WAS도 보통 자체적으로 웹 서버 기능을 내장하고 있습니다.</li>
-<li>현재는 WAS가 가지고 있는 웹 서버도 정적인 콘텐츠를 처리하는 데 있어서 성능상 큰 차이가 없습니다.</li>
-<li>규모가 커질수록 웹 서버와 WAS를 분리합니다.</li>
-<li>자원 이용의 효율성 및 장애 극복, 배포 및 유지보수의 편의성을 위해 웹서버와 WAS를 대체로 분리합니다.</li>
-</ul>
-</li>
-<li>웹 서버가 왜 WAS 앞단에서 동작?<ul>
-<li>웹 서버는 WAS보다 단단</li>
-<li>대용량 어플리케이션은 서버의 수가 여러대일 수 있어</li>
-<li>와스에서 동작하도록 만든 프로그램이 오작동이 발생해서 </li>
-<li>와스 자체에 문제가 발생할수 있어</li>
-<li>이 경우에,</li>
-<li>와스를 재시작 해야할 수 있어</li>
-<li>이런 경우 웹서버가 먼저, 해당 와스를 이용하지 못하도록 해</li>
-<li>그리고 와스를 재시작한다면</li>
-<li>사용자는 와스의 문제가 발생한지 모를 수 있어</li>
-<li>이러한 처리를 ‘장애 극복 기능’ 이라고 함</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/05/was/" data-id="cjp7w58g600b780x7dchooqyx" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/05/browser 동작/" data-id="cjp7w7qqh00b0cxx7ziwu4mkr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -791,7 +791,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/04/프린터 큐/" data-id="cjp7w58g400b080x7zi8iuoqs" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/04/프린터 큐/" data-id="cjp7w7qqk00b7cxx7dpagrgfs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -850,7 +850,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/03/Proxy Pattern02/" data-id="cjp7w58g900be80x7ozebj3tw" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/03/Proxy Pattern02/" data-id="cjp7w7qqh00aycxx75u0ssq2n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -923,7 +923,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/03/Proxy Pattern01/" data-id="cjp7w58g100ar80x7h6cks39n" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/03/Proxy Pattern01/" data-id="cjp7w7qqg00awcxx7bixpkum4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -980,7 +980,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
           </li>
         
           <li>
@@ -988,11 +988,11 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
           </li>
         
           <li>
-            <a href="/2018/11/13/Hash Table/">Hash Table</a>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
           </li>
         
       </ul>

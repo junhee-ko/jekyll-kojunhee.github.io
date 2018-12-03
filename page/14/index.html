@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://junheeko.com/page/14/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/page/14/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
       </div>
     </div>
   </div>
@@ -133,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/13/Factory Method Pattern02/" data-id="cjp7w58gk00cc80x7vpeb72wo" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/13/Factory Method Pattern02/" data-id="cjp7w7qr000clcxx7dhjadbfn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/13/Factory Method Pattern01/" data-id="cjp7w58gk00ca80x7n6xa0vr6" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/13/Factory Method Pattern01/" data-id="cjp7w7qqz00cjcxx7njyk5n5r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,14 +204,14 @@
 
 
   
-    <article id="post-숨바꼭질" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Abstract Factory Pattern01" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/13/숨바꼭질/" class="article-date">
+    <a href="/2018/05/13/Abstract Factory Pattern01/" class="article-date">
   <time datetime="2018-05-12T15:00:00.000Z" itemprop="datePublished">2018-05-13</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
   </div>
 
   </div>
@@ -222,7 +222,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/13/숨바꼭질/">숨바꼭질</a>
+      <a class="article-title" href="/2018/05/13/Abstract Factory Pattern01/">Abstract Factory Pattern01</a>
     </h1>
   
 
@@ -230,36 +230,52 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/1697" target="_blank" rel="noopener">https://www.acmicpc.net/problem/1697</a></p>
-<ul>
-<li>현재 위치에서 이동 가능한 곳 체크<ul>
-<li>X - 1</li>
-<li>X + 1</li>
-<li>X * 2</li>
-</ul>
-</li>
-<li>체크 조건<ul>
-<li>이동 가능한 곳이 범위 안에 있나?</li>
-<li>아직 방문하지 않은 곳인가?</li>
-</ul>
-</li>
-<li>Queue에서 이동 가능한 곳을 뽑아냄<ul>
-<li>동생의 위치이면 그래프의 Depth를 출력</li>
-</ul>
-</li>
-<li>그래프의 Depth를 표현하기 위해 <ul>
-<li>Class는 위치와 depth로 구성</li>
-</ul>
-</li>
-</ul>
-<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hide01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hide02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hide03.png" alt="img"></p>
+        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The Abstract Factory Pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. </p>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/abstractFactoryPattern.png" alt="img"></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/abstarct001.png" alt="img"></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp06.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp07.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp08.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp09.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp10.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp11.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp12.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp13.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp14.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp15.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp16.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp17.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp18.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp19.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp20.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp21.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp22.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp23.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp24.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp25.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp26.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp27.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp28.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp29.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp30.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp31.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp32.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp33.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp34.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp35.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp36.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/afp37.png" alt="img"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/13/숨바꼭질/" data-id="cjp7w58gm00cg80x7e6z772kv" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/13/Abstract Factory Pattern01/" data-id="cjp7w7qqz00chcxx7x84blmeq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -349,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/13/Abstract Factory Pattern02/" data-id="cjp7w58jd00jr80x7e308qk4n" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/13/Abstract Factory Pattern02/" data-id="cjp7w7qqy00cfcxx7s4lk8asu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -403,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/10/팀배분/" data-id="cjp7w58gi00c680x735gt7vwk" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/10/팀배분/" data-id="cjp7w7qqy00cdcxx7xziyf67t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -452,7 +468,55 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/09/Chain of Responsibility Pattern03/" data-id="cjp7w58gj00c880x7nprj4cer" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/09/Chain of Responsibility Pattern03/" data-id="cjp7w7qqw00cbcxx7nlq7t19l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Chain of Responsibility Pattern02" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/09/Chain of Responsibility Pattern02/" class="article-date">
+  <time datetime="2018-05-08T15:00:00.000Z" itemprop="datePublished">2018-05-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/09/Chain of Responsibility Pattern02/">Chain of Responsibility Pattern02</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp06.png" alt="img"></p>
+<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corResult.png" alt="img"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://www.oodesign.com/proxy-pattern.html" target="_blank" rel="noopener">http://www.oodesign.com/proxy-pattern.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/09/Chain of Responsibility Pattern02/" data-id="cjp7w7qqw00c9cxx7nsmkebg6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -508,128 +572,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/09/Chain of Responsibility Pattern01/" data-id="cjp7w58gi00c480x7b5ycvt89" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Chain of Responsibility Pattern02" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/09/Chain of Responsibility Pattern02/" class="article-date">
-  <time datetime="2018-05-08T15:00:00.000Z" itemprop="datePublished">2018-05-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/09/Chain of Responsibility Pattern02/">Chain of Responsibility Pattern02</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp04.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp05.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corp06.png" alt="img"></p>
-<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/corResult.png" alt="img"></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://www.oodesign.com/proxy-pattern.html" target="_blank" rel="noopener">http://www.oodesign.com/proxy-pattern.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/09/Chain of Responsibility Pattern02/" data-id="cjp7w58gh00c280x7p7wvu1ir" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Spring MVC" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/08/Spring MVC/" class="article-date">
-  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/08/Spring MVC/">Spring MVC</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>MVC란 ?</p>
-<ul>
-<li>MVC는 Model-View-Controller의 약자입니다.</li>
-<li>원래는 제록스 연구소에서 일하던 트뤼그베 린즈커그가 처음으로 소개한 개념으로, 데스트톱 어플리케이션용으로 고안되었습니다.</li>
-<li>Model : 모델은 뷰가 렌더링하는데 필요한 데이터입니다. 예를 들어 사용자가 요청한 상품 목록이나, 주문 내역이 이에 해당합니다.</li>
-<li>View : 웹 애플리케이션에서 뷰(View)는 실제로 보이는 부분이며, 모델을 사용해 렌더링을 합니다. 뷰는 JSP, JSF, PDF, XML등으로 결과를 표현합니다.</li>
-<li>Controller : 컨트롤러는 사용자의 액션에 응답하는 컴포넌트입니다. 컨트롤러는 모델을 업데이트하고, 다른 액션을 수행합니다.</li>
-</ul>
-</li>
-<li><p>MVC Model 1 아키텍처</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sm01.png" alt="img"></p>
-</li>
-<li><p>MVC Model 2 아키텍처</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sm02.png" alt="img"></p>
-</li>
-<li><p>MVC Model2 발전형태<img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sm03.png" alt="img"></p>
-</li>
-<li><p>Spring Web Module </p>
-<ul>
-<li>Model2 MVC 패턴을 지원하는 Spring Module  </li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sm04.png" alt="img"></p>
-</li>
-<li></li>
-</ul>
-<ul>
-<li><p>Reference</p>
-<ul>
-<li>NAVER edwith boostcourse Full-Stack Web Developer</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/08/Spring MVC/" data-id="cjp7w58gg00by80x72k370a3i" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/09/Chain of Responsibility Pattern01/" data-id="cjp7w7qqv00c7cxx7roybme2l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -792,7 +735,80 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/08/Spring MVC 구성요소/" data-id="cjp7w58gf00bw80x71yhdord3" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/08/Spring MVC 구성요소/" data-id="cjp7w7qqt00c1cxx7llufeeg0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Spring MVC" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/08/Spring MVC/" class="article-date">
+  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/Spring MVC/">Spring MVC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>MVC란 ?</p>
+<ul>
+<li>MVC는 Model-View-Controller의 약자입니다.</li>
+<li>원래는 제록스 연구소에서 일하던 트뤼그베 린즈커그가 처음으로 소개한 개념으로, 데스트톱 어플리케이션용으로 고안되었습니다.</li>
+<li>Model : 모델은 뷰가 렌더링하는데 필요한 데이터입니다. 예를 들어 사용자가 요청한 상품 목록이나, 주문 내역이 이에 해당합니다.</li>
+<li>View : 웹 애플리케이션에서 뷰(View)는 실제로 보이는 부분이며, 모델을 사용해 렌더링을 합니다. 뷰는 JSP, JSF, PDF, XML등으로 결과를 표현합니다.</li>
+<li>Controller : 컨트롤러는 사용자의 액션에 응답하는 컴포넌트입니다. 컨트롤러는 모델을 업데이트하고, 다른 액션을 수행합니다.</li>
+</ul>
+</li>
+<li><p>MVC Model 1 아키텍처</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sm01.png" alt="img"></p>
+</li>
+<li><p>MVC Model 2 아키텍처</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sm02.png" alt="img"></p>
+</li>
+<li><p>MVC Model2 발전형태<img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sm03.png" alt="img"></p>
+</li>
+<li><p>Spring Web Module </p>
+<ul>
+<li>Model2 MVC 패턴을 지원하는 Spring Module  </li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sm04.png" alt="img"></p>
+</li>
+<li></li>
+</ul>
+<ul>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/08/Spring MVC/" data-id="cjp7w7qqu00c3cxx7t0hncet6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -849,7 +865,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
           </li>
         
           <li>
@@ -857,11 +873,11 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
           </li>
         
           <li>
-            <a href="/2018/11/13/Hash Table/">Hash Table</a>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
           </li>
         
       </ul>

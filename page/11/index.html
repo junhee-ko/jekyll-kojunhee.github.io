@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://junheeko.com/page/11/index.html">
+<meta property="og:url" content="https://kojunhee.github.io/page/11/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,130 +54,13 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-촌수 계산" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/28/촌수 계산/" class="article-date">
-  <time datetime="2018-05-27T15:00:00.000Z" itemprop="datePublished">2018-05-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/28/촌수 계산/">촌수 계산</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ul>
-<li><p>결국 최단 거리 문제. 따라서 BFS</p>
-</li>
-<li><p>테스트 케이스 대로 그래프를 그리면 다음과 같다</p>
-<ul>
-<li>7에서 3까지의 최단 거리를 구하면 된다. </li>
-<li>이는 곧 7에서 3까지의 depth를 구하는 것이다.</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/family04.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/family01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/family02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/family03.png" alt="img"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/28/촌수 계산/" data-id="cjp7w58ha00e280x7mf0l9pki" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Memento Pattern02" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/28/Memento Pattern02/" class="article-date">
-  <time datetime="2018-05-27T15:00:00.000Z" itemprop="datePublished">2018-05-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/28/Memento Pattern02/">Memento Pattern02</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>Use the Memento Pattern when you need to be able to return an object to one of its previous states; </p>
-<p>for instance, if your user requests an “undo.” </p>
-<h2 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h2><p>Your interactive role playing game is hugely successful, and has created a legion of addicts, all trying to get<br> to the fabled “level 13.” </p>
-<p>As users progress to more challenging game levels, the odds of encountering a game-ending situation increase. </p>
-<p>Fans who have spent days progressing to an advanced level are understandably miffed when their character gets snuffed, and they have to start all over. </p>
-<p>The cry goes out for a “save progress” command, so that players can store their game progress and at least recover most of their efforts when their character is unfairly extinguished. </p>
-<p>The “save progress” function needs to be designed to return a resurrected player to the last level she completed successfully. </p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>The Memento has two goals:</p>
-<ul>
-<li>Saving the important state of a system’s key object. </li>
-<li>Maintaining the key object’s encapsulation. </li>
-</ul>
-<p>Keeping the single responsibility principle in mind, </p>
-<p>it’s also a good idea to keep the state that you’re saving separate from the key object. </p>
-<p>This separate object that holds the state is known as the Memento object. </p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/mementoo01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/mementoo02.png" alt="img"></p>
-<h2 id="Benefits"><a href="#Benefits" class="headerlink" title="Benefits"></a>Benefits</h2><ul>
-<li>Keeping the saved state external from the key object helps to maintain cohesion. </li>
-<li>Keeps the key object’s data encapsulated.</li>
-<li>Provides easy-to-implement recovery capability. </li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/28/Memento Pattern02/" data-id="cjp7w58h900e080x7a5olxht7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-Prototype Pattern01" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
@@ -241,7 +124,70 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/28/Prototype Pattern01/" data-id="cjp7w58h900dy80x7k5xycrf7" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/28/Prototype Pattern01/" data-id="cjp7w7qrq00e7cxx79enesgxe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Memento Pattern02" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/28/Memento Pattern02/" class="article-date">
+  <time datetime="2018-05-27T15:00:00.000Z" itemprop="datePublished">2018-05-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/28/Memento Pattern02/">Memento Pattern02</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>Use the Memento Pattern when you need to be able to return an object to one of its previous states; </p>
+<p>for instance, if your user requests an “undo.” </p>
+<h2 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h2><p>Your interactive role playing game is hugely successful, and has created a legion of addicts, all trying to get<br> to the fabled “level 13.” </p>
+<p>As users progress to more challenging game levels, the odds of encountering a game-ending situation increase. </p>
+<p>Fans who have spent days progressing to an advanced level are understandably miffed when their character gets snuffed, and they have to start all over. </p>
+<p>The cry goes out for a “save progress” command, so that players can store their game progress and at least recover most of their efforts when their character is unfairly extinguished. </p>
+<p>The “save progress” function needs to be designed to return a resurrected player to the last level she completed successfully. </p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>The Memento has two goals:</p>
+<ul>
+<li>Saving the important state of a system’s key object. </li>
+<li>Maintaining the key object’s encapsulation. </li>
+</ul>
+<p>Keeping the single responsibility principle in mind, </p>
+<p>it’s also a good idea to keep the state that you’re saving separate from the key object. </p>
+<p>This separate object that holds the state is known as the Memento object. </p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/mementoo01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/mementoo02.png" alt="img"></p>
+<h2 id="Benefits"><a href="#Benefits" class="headerlink" title="Benefits"></a>Benefits</h2><ul>
+<li>Keeping the saved state external from the key object helps to maintain cohesion. </li>
+<li>Keeps the key object’s data encapsulated.</li>
+<li>Provides easy-to-implement recovery capability. </li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/28/Memento Pattern02/" data-id="cjp7w7qro00e5cxx7b8dq7zjq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -314,7 +260,61 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/28/Memento Pattern01/" data-id="cjp7w58h700du80x7us3krgg8" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/28/Memento Pattern01/" data-id="cjp7w7qrn00e3cxx7bdpeovqn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-촌수 계산" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/28/촌수 계산/" class="article-date">
+  <time datetime="2018-05-27T15:00:00.000Z" itemprop="datePublished">2018-05-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/28/촌수 계산/">촌수 계산</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ul>
+<li><p>결국 최단 거리 문제. 따라서 BFS</p>
+</li>
+<li><p>테스트 케이스 대로 그래프를 그리면 다음과 같다</p>
+<ul>
+<li>7에서 3까지의 최단 거리를 구하면 된다. </li>
+<li>이는 곧 7에서 3까지의 depth를 구하는 것이다.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/family04.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/family01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/family02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/family03.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/28/촌수 계산/" data-id="cjp7w7qrs00ebcxx7fzdrhv95" class="article-share-link">Share</a>
       
       
     </footer>
@@ -371,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/28/Prototype Pattern02/" data-id="cjp7w58hb00e480x7km0ukt55" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/28/Prototype Pattern02/" data-id="cjp7w7qrr00e9cxx7artwj44i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -425,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/27/나이트의 이동/" data-id="cjp7w58h700ds80x7dn7jynn4" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/27/나이트의 이동/" data-id="cjp7w7qrm00e1cxx73zn0kfon" class="article-share-link">Share</a>
       
       
     </footer>
@@ -435,9 +435,9 @@
 
 
   
-    <article id="post-Krisch Compass Mask" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Robinson Compass Mask" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/22/Krisch Compass Mask/" class="article-date">
+    <a href="/2018/05/22/Robinson Compass Mask/" class="article-date">
   <time datetime="2018-05-21T15:00:00.000Z" itemprop="datePublished">2018-05-22</time>
 </a>
     
@@ -453,7 +453,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/22/Krisch Compass Mask/">Krisch Compass Mask</a>
+      <a class="article-title" href="/2018/05/22/Robinson Compass Mask/">Robinson Compass Mask</a>
     </h1>
   
 
@@ -461,10 +461,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Kirsch Compass Mask is also a derivative mask which is used for finding edges. </p>
-<p>This is also like Robinson compass find edges in all the eight directions of a compass. </p>
-<p>The only difference between Robinson and kirsch compass masks is that in Kirsch we have a standard mask but in Kirsch we change the mask according to our own requirements.</p>
-<p>With the help of Kirsch Compass Masks we can find edges in the following eight directions.</p>
+        <p>Robinson compass masks are another type of derrivate mask which is used for edge detection. </p>
+<p>This operator is also known as direction mask. In this operator we take one mask and rotate it in all the 8 compass major directions that are following:</p>
 <ul>
 <li>North</li>
 <li>North West</li>
@@ -475,14 +473,16 @@
 <li>East</li>
 <li>North East</li>
 </ul>
-<p>We take a standard mask which follows all the properties of a derivative mask and then rotate it to find the edges.</p>
+<p>There is no fixed mask. </p>
+<p>You can take any mask and you have to rotate it to find edges in all the above mentioned directions. </p>
+<p>All the masks are rotated on the bases of direction of zero columns.</p>
 <p>For example let’s see the following mask which is in North Direction and then rotate it to make all the direction masks.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/krisch01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/krisch02.png" alt="img"></p>
-<p>As you can see that all the directions are covered and each mask will give you the edges of its own direction. </p>
-<p>Now to help you better understand the concept of these masks we will apply it on a real image. </p>
-<p>Suppose we have a sample picture from which we have to find all the edges. Here is our sample picture:</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/krisch04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/robinson01.png" alt="img"><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/robinson02.png" alt="img"></p>
+<p>As you can see that all the directions are covered on the basis of zeros direction. </p>
+<p>Each mask will give you the edges on its direction. </p>
+<p>Now let’s see the result of the entire above masks. </p>
+<p>Suppose we have a sample picture from which we have to find all the edges. </p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/robinson03.png" alt="img"></p>
 <p>As you can see that by applying all the above masks you will get edges in all the direction. </p>
 <p>Result is also depends on the image. </p>
 <p>Suppose there is an image, which do not have any North East direction edges so then that mask will be ineffective.</p>
@@ -490,7 +490,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/22/Krisch Compass Mask/" data-id="cjp7w58h400dm80x7h1s5vt3z" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/22/Robinson Compass Mask/" data-id="cjp7w7qrk00dxcxx7hkcd0c3j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -564,83 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/22/Prewitt Operator/" data-id="cjp7w58h500do80x79xixoqk8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Sobel Operator" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/22/Sobel Operator/" class="article-date">
-  <time datetime="2018-05-21T15:00:00.000Z" itemprop="datePublished">2018-05-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DIP/">DIP</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/22/Sobel Operator/">Sobel Operator</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The sobel operator is very similar to Prewitt operator. </p>
-<p>It is also a derivate mask and is used for edge detection. Like Prewitt operator sobel operator is also used to detect two kinds of edges in an image:</p>
-<ul>
-<li>Vertical direction</li>
-<li>Horizontal direction</li>
-</ul>
-<h2 id="Difference-with-Prewitt-Operator"><a href="#Difference-with-Prewitt-Operator" class="headerlink" title="Difference with Prewitt Operator"></a>Difference with Prewitt Operator</h2><p>The major difference is that in sobel operator the coefficients of masks are not fixed and they can be adjusted according to our requirement unless they do not violate any property of derivative masks.</p>
-<h2 id="Vertical-Mask-of-Sobel-Operator"><a href="#Vertical-Mask-of-Sobel-Operator" class="headerlink" title="Vertical Mask of Sobel Operator"></a>Vertical Mask of Sobel Operator</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel01.png" alt="img"></p>
-<p>This mask works exactly same as the Prewitt operator vertical mask. </p>
-<p>There is only one difference that is it has “2” and “-2” values in center of first and third column. </p>
-<p>When applied on an image this mask will highlight the vertical edges.</p>
-<h2 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works</h2><p>When we apply this mask on the image it prominent vertical edges. </p>
-<p>It simply works like as first order derivate and calculates the difference of pixel intensities in a edge region.</p>
-<p>As the center column is of zero so it does not include the original values of an image but rather it calculates the difference of right and left pixel values around that edge. </p>
-<p>Also the center values of both the first and third column is 2 and -2 respectively.</p>
-<p>This give more weight age to the pixel values around the edge region. </p>
-<p>This increase the edge intensity and it become enhanced comparatively to the original image.</p>
-<h2 id="Horizontal-Mask-of-Sobel-Operator"><a href="#Horizontal-Mask-of-Sobel-Operator" class="headerlink" title="Horizontal Mask of Sobel Operator"></a>Horizontal Mask of Sobel Operator</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel02.png" alt="img"></p>
-<p>Above mask will find edges in horizontal direction and it is because that zeros column is in horizontal direction. </p>
-<p>When you will convolve this mask onto an image it would prominent horizontal edges in the image. </p>
-<p>The only difference between it is that it have 2 and -2 as a center element of first and third row.</p>
-<h2 id="How-it-works-1"><a href="#How-it-works-1" class="headerlink" title="How it works"></a>How it works</h2><p>This mask will prominent the horizontal edges in an image. </p>
-<p>It also works on the principle of above mask and calculates difference among the pixel intensities of a particular edge. </p>
-<p>As the center row of mask is consist of zeros so it does not include the original values of edge in the image but rather it calculate the difference of above and below pixel intensities of the particular edge. </p>
-<p>Thus increasing the sudden change of intensities and making the edge more visible.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel03.png" alt="img"></p>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p>As you can see that in the first picture on which we apply vertical mask, all the vertical edges are more visible than the original image. </p>
-<p>Similarly in the second picture we have applied the horizontal mask and in result all the horizontal edges are visible.</p>
-<p>So in this way you can see that we can detect both horizontal and vertical edges from an image. </p>
-<p>Also if you compare the result of sobel operator with Prewitt operator, you will find that sobel operator finds more edges or make edges more visible as compared to Prewitt Operator.</p>
-<p>This is because in sobel operator we have allotted more weight to the pixel intensities around the edges.</p>
-<h2 id="Applying-more-weight-to-mask"><a href="#Applying-more-weight-to-mask" class="headerlink" title="Applying more weight to mask"></a>Applying more weight to mask</h2><p>Now we can also see that if we apply more weight to the mask, the more edges it will get for us. </p>
-<p>There is no fixed coefficients in sobel operator, so here is another weighted operator</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel04.png" alt="img"></p>
-<p>If you can compare the result of this mask with of the Prewitt vertical mask, </p>
-<p>it is clear that this mask will give out more edges as compared to Prewitt one just because we have allotted more weight in the mask.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/22/Sobel Operator/" data-id="cjp7w58h800dw80x7khm7st9c" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/22/Prewitt Operator/" data-id="cjp7w7qrj00dvcxx7efo0v4lg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -705,7 +629,72 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://junheeko.com/2018/05/22/Laplacian Operator/" data-id="cjp7w58h400dk80x77d4nwik3" class="article-share-link">Share</a>
+      <a data-url="https://kojunhee.github.io/2018/05/22/Laplacian Operator/" data-id="cjp7w7qri00dtcxx7fn7iuxip" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Krisch Compass Mask" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/22/Krisch Compass Mask/" class="article-date">
+  <time datetime="2018-05-21T15:00:00.000Z" itemprop="datePublished">2018-05-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DIP/">DIP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/22/Krisch Compass Mask/">Krisch Compass Mask</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Kirsch Compass Mask is also a derivative mask which is used for finding edges. </p>
+<p>This is also like Robinson compass find edges in all the eight directions of a compass. </p>
+<p>The only difference between Robinson and kirsch compass masks is that in Kirsch we have a standard mask but in Kirsch we change the mask according to our own requirements.</p>
+<p>With the help of Kirsch Compass Masks we can find edges in the following eight directions.</p>
+<ul>
+<li>North</li>
+<li>North West</li>
+<li>West</li>
+<li>South West</li>
+<li>South</li>
+<li>South East</li>
+<li>East</li>
+<li>North East</li>
+</ul>
+<p>We take a standard mask which follows all the properties of a derivative mask and then rotate it to find the edges.</p>
+<p>For example let’s see the following mask which is in North Direction and then rotate it to make all the direction masks.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/krisch01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/krisch02.png" alt="img"></p>
+<p>As you can see that all the directions are covered and each mask will give you the edges of its own direction. </p>
+<p>Now to help you better understand the concept of these masks we will apply it on a real image. </p>
+<p>Suppose we have a sample picture from which we have to find all the edges. Here is our sample picture:</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/krisch04.png" alt="img"></p>
+<p>As you can see that by applying all the above masks you will get edges in all the direction. </p>
+<p>Result is also depends on the image. </p>
+<p>Suppose there is an image, which do not have any North East direction edges so then that mask will be ineffective.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/22/Krisch Compass Mask/" data-id="cjp7w7qrh00drcxx72mjwssnz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -762,7 +751,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
           </li>
         
           <li>
@@ -770,11 +759,11 @@
           </li>
         
           <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
           </li>
         
           <li>
-            <a href="/2018/11/13/Hash Table/">Hash Table</a>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
           </li>
         
       </ul>
