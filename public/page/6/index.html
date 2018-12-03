@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://junheeko.com/page/6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Introduction" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/01/Introduction/" class="article-date">
+  <time datetime="2018-09-30T15:00:00.000Z" itemprop="datePublished">2018-10-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/OS/">OS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/01/Introduction/">Introduction</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
+<h2 id="운영체제란"><a href="#운영체제란" class="headerlink" title="운영체제란"></a>운영체제란</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss1011.png" alt="img"></p>
+<ul>
+<li>컴퓨터 하드웨어 바로 위에 설치되어 사용자 및 다른 모든 소프트웨어와 하드웨어를 연결하느 소픝웨어 계층<ul>
+<li>협의의 운영체제(커널)<ul>
+<li>운영체제의 핵심 부분, 메모리에 상주하는부분</li>
+</ul>
+</li>
+<li>광의의 운영체제<ul>
+<li>커널 뿐만 아니라 각족 주변 시스템 유틸리티를 포함한 개념</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="운영체제의-목표"><a href="#운영체제의-목표" class="headerlink" title="운영체제의 목표"></a>운영체제의 목표</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss102.png" alt="img"></p>
+<ul>
+<li>컴퓨터 시스템을 편리하게 사용하도록 환경 제공<ul>
+<li>운영체제는 동시 사용자/프로그램들이 각각 독자적으로 컴퓨터에서 수행되는 것 같은 환상 제공</li>
+<li>하드웨어를 직접 다루는 복잡한 부분을 운영체제가 대행</li>
+</ul>
+</li>
+<li>컴퓨터 시슴템의 자원을 효율적으로 관리 (*)<ul>
+<li>프로세서, 기억장치, 입출력 장치 등의 효율적관리<ul>
+<li>사용자간의 형평성 있는 자원 분배</li>
+<li>주언진 자원으로 최대한의 성능을 내도록</li>
+</ul>
+</li>
+<li>사용자 및 운영체제 자신의 보호</li>
+<li>프로세스, 파일, 메시지 등을 관리</li>
+</ul>
+</li>
+</ul>
+<h2 id="운영체제의-분류"><a href="#운영체제의-분류" class="headerlink" title="운영체제의 분류"></a>운영체제의 분류</h2><ul>
+<li>동시작업 가능 여부<ul>
+<li>단일 작업(single tasking)<ul>
+<li>MS-DON 프롬프르 상에서는 한 명령의 수행을 끝내기 전에 다른 명령을 수행시킬 수 없음</li>
+</ul>
+</li>
+<li>다중 작업(multi tasking)<ul>
+<li>동시에 두개 이상의 작업 처리</li>
+<li>UNIX/MS Windows 등에서는 한 명령의 수행이 끝나기 전에 다른 명령이나 프로그램을 수행할 수 있음</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>사용자의 수<ul>
+<li>단일 사용자<ul>
+<li>MS-DOS, MS Windows</li>
+</ul>
+</li>
+<li>다중 사용자<ul>
+<li>UNIX, NT server</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>처리 방식<ul>
+<li>일괄처리(batch processing)<ul>
+<li>작업 요청의 일정량 모아서 한꺼번에 처리</li>
+<li>작업이 완전 종료될 때까지 기다려야함</li>
+<li>초기 Punch Card 처리 시스템</li>
+</ul>
+</li>
+<li>시분할(time sharing)<ul>
+<li>여러 작업을 수행할때 컴퓨터 처리 능력을 일정한 시간 단위로 분할하여 사용</li>
+<li>interactive한 방식</li>
+<li>짧은 응답시간을 가짐</li>
+</ul>
+</li>
+<li>실시간(Realtime OS)<ul>
+<li>정해진 시간안에 어떠한 일이 반드시 종료됨이 보장되어야 하는 실시간 시스템을 위한 OS</li>
+<li>원자로/공장제어, 미사일제어, 반도체 장비, 로보트제어</li>
+<li>Hard realtime system / Soft realtime system</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="몇-가지-용어"><a href="#몇-가지-용어" class="headerlink" title="몇 가지 용어"></a>몇 가지 용어</h2><ul>
+<li>Multitasking<ul>
+<li>여러 프로그램을 동시에 수행한다는 뜻</li>
+</ul>
+</li>
+<li>Multiprogramming<ul>
+<li>메모리에 여러 프로그램이 올라가 있음을 강조</li>
+</ul>
+</li>
+<li>Time sharing<ul>
+<li>CPU의 시간을 분할하여 나누어쓴다는 의미</li>
+</ul>
+</li>
+<li>Multiprocessor<ul>
+<li>하나의 컴퓨터에 CPU가 여러개 붙어 있음을 의미</li>
+</ul>
+</li>
+</ul>
+<h2 id="운영-체제의-예"><a href="#운영-체제의-예" class="headerlink" title="운영 체제의 예"></a>운영 체제의 예</h2><ul>
+<li>UNIX 계열<ul>
+<li>대형 컴퓨터를 위한 OS</li>
+<li>코드의 대부분을 C언어로 작성</li>
+<li>소스 코드 공개</li>
+<li>높은 이식성<ul>
+<li>하나의 컴퓨터에서 돌아가는 UNIX를 전혀 다른 컴퓨터에 이식하기 쉬움</li>
+</ul>
+</li>
+<li>최소한의 커널 구조<ul>
+<li>핵심적인 것만 커널에 넣음</li>
+</ul>
+</li>
+<li>다양한 버전<ul>
+<li>System V, FreeBSD, SunOS, Solaris</li>
+<li>Linux</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Windows 계열<ul>
+<li>DOS<ul>
+<li>MS사에서 개인용 PC를 위해 개발</li>
+<li>메모리 관리 능력의 한계 </li>
+</ul>
+</li>
+<li>MS Windows <ul>
+<li>다중 작업용 GUI 기반 OS</li>
+<li>풍부한 지원 소프트웨어</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="운영체제의-구조"><a href="#운영체제의-구조" class="headerlink" title="운영체제의 구조"></a>운영체제의 구조</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/oss103.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/10/01/Introduction/" data-id="cjp7t3x3s00gricx7f0y7shnu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-실패율" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/30/실패율/" class="article-date">
+  <time datetime="2018-09-29T15:00:00.000Z" itemprop="datePublished">2018-09-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/30/실패율/">실패율</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.welcomekakao.com/learn/courses/30/lessons/42889?language=java" target="_blank" rel="noopener">https://www.welcomekakao.com/learn/courses/30/lessons/42889?language=java</a></p>
+<p>2019 카카오 신입 공채 1차 코딩 테스트</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li>stages 배열을 순회하며 각 스테이지마다 남아 있는 인원수를 체크한다.</li>
+<li>각 스테이지마다 실패율을 계산하여 스테이지 번호와 실패율을 리스트에 저장한다.</li>
+<li>리스트를 실패율을 기준으로 내림차순 정렬한다.</li>
+</ol>
+<p>예를 들어, 스테이지 개수는 5개, 사용자가 각 스테이지에 현재 도전중인 스테이지 번호는 [2, 1, 2, 6, 2, 4, 3, 3]  </p>
+<p>각 스테이지의 실패율은 다음 그림과 같이 구한다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/failStage01.png" alt="img"></p>
+<h2 id="개념"><a href="#개념" class="headerlink" title="개념"></a>개념</h2><p>Java 에서 정렬하기 위해서 java.util.Collections 클래스의 메소드인 sort()를 사용한다.</p>
+<p>객체를 원소로 가진 리스트를 정렬하고자 할 때는, 객체가 Comparable interface를 구현해야 한다.</p>
+<p>본 문제에서는 Fail class를 원소로 가지는 arrayList를, Fail class의 rate를 기준으로 내림차순 정렬하고 있다.</p>
+<p>이를 위해, Fail class에 compareTo 메소드를 오버라이딩하고 있다.</p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/failStage02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/failrate033.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/09/30/실패율/" data-id="cjp7t3x3u00h0icx7kx7j5qqp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-오픈채팅방" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/30/오픈채팅방/" class="article-date">
+  <time datetime="2018-09-29T15:00:00.000Z" itemprop="datePublished">2018-09-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/30/오픈채팅방/">오픈채팅방</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.welcomekakao.com/learn/courses/30/lessons/42888?language=java" target="_blank" rel="noopener">https://www.welcomekakao.com/learn/courses/30/lessons/42888?language=java</a></p>
+<p>2019 카카오 신입 공채 1차 코딩 테스트</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li><p>HashMap으로 이름 변경 이력을 저장한다. </p>
+<p>( key : id / value : name )</p>
+</li>
+<li><p>records 배열을 순회하며 리턴할 배열을 생성한다.</p>
+</li>
+</ol>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/openChat01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/openChat02.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/09/30/오픈채팅방/" data-id="cjp7t3x3u00gyicx7e06cm6pt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-구슬탈출2" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/26/구슬탈출2/" class="article-date">
+  <time datetime="2018-09-25T15:00:00.000Z" itemprop="datePublished">2018-09-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/26/구슬탈출2/">구슬탈출2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.acmicpc.net/problem/13460" target="_blank" rel="noopener">https://www.acmicpc.net/problem/13460</a></p>
+<p>삼성 기출문제이다. 해설을 보고 이해하였다.</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li>완전탐색이고 최소 횟수를 구하는 것이므로, BFS를 사용한다.</li>
+<li>삼성 기출 문제 ‘2048’ 에서 블록 이동이 문제 해결의 관건이듯이, 이 문제 역시 공을 이동하는 것이 문제 해결의 관건이다. </li>
+</ol>
+<p><br></p>
+<p>구슬 이동 방법 : 상대 공을 무시하고 각자 공을 이동시킴</p>
+<ul>
+<li>B가 구멍에 빠지는 경우 : 큐에 넣지 않고 넘긴다</li>
+<li>B와 R이 겹치는 경우 : B와 R의 초기 상태를 확인해서 이동한다.<ul>
+<li>예를 들어, 동쪽으로 이동하는 경우, 초기에 B가 R의 왼쪽에 있었다고 하자.</li>
+<li>그렇다면, B를 R의 왼쪽으로 한 칸 이동시켜야한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ballmove01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ballmove02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ballmove03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ballmove04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ballmove05.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/09/26/구슬탈출2/" data-id="cjp7t3x3s00gticx7h5162aty" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-뱀" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/24/뱀/" class="article-date">
+  <time datetime="2018-09-23T15:00:00.000Z" itemprop="datePublished">2018-09-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/24/뱀/">뱀</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.acmicpc.net/problem/3190" target="_blank" rel="noopener">https://www.acmicpc.net/problem/3190</a></p>
+<p>삼성 기출문제이다. 쉬운 문제였다. </p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p>핵심은 뱀의 이동 흔적을 남기는 것이다. 이를 위해, Queue를 사용하였다.</p>
+<ul>
+<li><p>뱀이 머리만 이동할 경우</p>
+<ul>
+<li>이동할 위치를 Enqueue</li>
+</ul>
+</li>
+<li><p>뱀이 완전히 한 칸 이동할 경우</p>
+<ul>
+<li>뱀의 시작점(Queue에 가장 먼저 Enqueue된 요소)을 Dequeue</li>
+</ul>
+</li>
+</ul>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/snakeMove01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/snakeMove02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/snakeMove03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/snakeMove04.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/09/24/뱀/" data-id="cjp7t3x3r00gpicx7u1s18dna" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2048" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/24/2048/" class="article-date">
+  <time datetime="2018-09-23T15:00:00.000Z" itemprop="datePublished">2018-09-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/24/2048/">2048</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.acmicpc.net/problem/12100" target="_blank" rel="noopener">https://www.acmicpc.net/problem/12100</a></p>
+<p>삼성 기출문제이다. DFS 문제이다. 블록을 이동하는 것이 어려운 문제였다.</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p>블록을 5번 이동 시키는 것은 다음 그림과 같이 DFS로 구현한다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/204801.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/204802.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/204803.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/204804.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/204805.png" alt="img"></p>
+<p>문제의 핵심은 블록을 이동하는 것이다. 블록 이동을 구현하기 위해 Queue를 사용한다.</p>
+<p>moveBlocks 메소드가 이를 구현한 코드이다.</p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/204806.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/204807.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/204808.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/204809.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/204810.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/09/24/2048/" data-id="cjp7t3x3q00gnicx7mel4rqx1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-시험감독" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/24/시험감독/" class="article-date">
+  <time datetime="2018-09-23T15:00:00.000Z" itemprop="datePublished">2018-09-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/24/시험감독/">시험감독</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.acmicpc.net/problem/13458" target="_blank" rel="noopener">https://www.acmicpc.net/problem/13458</a></p>
+<p>삼성 기출문제이다. 매우 쉬운 문제였다. </p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p>문제에서 주어진 대로 풀면 된다.</p>
+<p>처음에 틀렸다. </p>
+<p>ans 변수를 int로 선언하였을 때는 틀렸다고 나온다.</p>
+<p>long 형으로 선언하였더니 맞았다.</p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/exameSee.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/09/24/시험감독/" data-id="cjp7t3x3t00gwicx7g154dj51" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-주사위 굴리기" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/19/주사위 굴리기/" class="article-date">
+  <time datetime="2018-09-18T15:00:00.000Z" itemprop="datePublished">2018-09-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/19/주사위 굴리기/">주사위 굴리기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.acmicpc.net/problem/14499" target="_blank" rel="noopener">https://www.acmicpc.net/problem/14499</a></p>
+<p>삼성 기출문제이다. 쉬운 문제이다. 문제 이해만 잘 하면 된다. </p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p>문제의 핵심은 주사위를 ‘옮기는 것’ 아니라, ‘굴리는 것’이다.</p>
+<p>다음 그림과 같이 처음 상태에서 동, 서, 북, 남으로 굴림에 따라서 방향에 대한 값이 바뀐다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dice011.png" alt="img"></p>
+<p>회전하고 문제에서 주어진 대로 풀면 된다.</p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dicee02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dicee03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dicee04.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/09/19/주사위 굴리기/" data-id="cjp7t3x3o00gjicx7jpogo2ym" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-사다리 조작" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/19/사다리 조작/" class="article-date">
+  <time datetime="2018-09-18T15:00:00.000Z" itemprop="datePublished">2018-09-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/19/사다리 조작/">사다리 조작</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.acmicpc.net/problem/14499" target="_blank" rel="noopener">https://www.acmicpc.net/problem/14499</a></p>
+<p>삼성 기출문제이다. DFS 문제이다.</p>
+<p>어려웠다. 해설을 보고 이해를 했지만, 직집 해결해보기 위해 며칠 동안 붙잡고 있던 문제이다.</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li>사다리를 어떻게 코드로 표현해야 하는지 파악한다.</li>
+<li>사디리는 어디에 둘 수 있는지 파악한다.</li>
+<li>탐색을 어떻게 진행할지 생각한다.</li>
+</ol>
+<p>사다리를 코드로 표현하는 방법은 다음 그림과 같이 이차원 배열을 이용한다. 사다리를 1과 2로 표현한다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr02.png" alt="img"></p>
+<p>사다리를 둘 수 있는 곳의 조건은 다음과 같다.</p>
+<ol>
+<li>i행의 j번째의 값과 j+1번째의 값이 0 : 연속되지 않고, 사다리를 둘 수 있는 빈 칸 이라는 의미</li>
+<li>j+1&lt;=n : 동일한 행에 사다리를 둘 수 있다는 의미</li>
+</ol>
+<p>탐색은 DFS로 진행한다. 사다리는 최대 3개 까지 둘 수 있다.</p>
+<p>사다리를 최대 0개 둘 수 있는 경우, 최대 1개 둘수 있는 경우, 최대 2개 둘수 있는 경우, 최대 3개 둘수 있는 경우로 나눈다.</p>
+<p>각 경우에서 DFS를 시작한다. 설명을 위해 빈 칸을 A, B, C.. 로 표현하였다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/speLadder01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/speLadder02.png" alt="img"></p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/laddeerr05.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/09/19/사다리 조작/" data-id="cjp7t3x3p00glicx7qd8ptxtm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-테트로미노" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/18/테트로미노/" class="article-date">
+  <time datetime="2018-09-17T15:00:00.000Z" itemprop="datePublished">2018-09-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/18/테트로미노/">테트로미노</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.acmicpc.net/problem/14500" target="_blank" rel="noopener">https://www.acmicpc.net/problem/14500</a></p>
+<p>삼성 기출문제이다. 매우 어려운 문제였다. </p>
+<p>처음에, 도형의 모든 경우의 수를 하나 하나 놓아봐서 최대값을 구해야하는지 생각했다.</p>
+<p>하지만, DFS로 해결할 수 있다.</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p>다음 그림과 같이 DFS를 이용하여 최대한 깊이 탐색한다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ttr01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ttr02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ttr03.png" alt="img"></p>
+<p>ㅗ 모양을 제외한 모양은 DFS로 탐색이 가능하다. 4개의 탐색(깊이 3) 까지 마쳤을 때, 최대값을 계산한다. </p>
+<p>ㅗ 모양은 현재 위치를 기준으로 동, 서, 남, 북을 조사하여 4개 중에 최소 값을 빼서 최대값을 계산할 수 있다.</p>
+<p>다음 그림처럼 A를 기준으로 B, C, D, E 네 방향을 탐색한다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ttr07.png" alt="img"></p>
+<p>만약에, E가 B, C, D, E 네 개 중에 최소값이라면, 다음 그림처럼 E를 제외하고 합을 구한다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ttr08.png" alt="img"></p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ttr04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ttr05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ttr06.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/09/18/테트로미노/" data-id="cjp7t3x3m00gdicx7yr4kkpjf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIP/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dataStructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareEngineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

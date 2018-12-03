@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>로또 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="풀이https://www.acmicpc.net/problem/6603  DFS 를 수행하며, 해당 정점을 스택에 담는다.  스택의 크기가 6이면 출력한다 출력 후 탐색을 종료하고, 이전 번호로 돌아가서 다시 DFS 수행  결과">
+<meta property="og:type" content="article">
+<meta property="og:title" content="로또">
+<meta property="og:url" content="http://junheeko.com/2018/04/08/로또/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="풀이https://www.acmicpc.net/problem/6603  DFS 를 수행하며, 해당 정점을 스택에 담는다.  스택의 크기가 6이면 출력한다 출력 후 탐색을 종료하고, 이전 번호로 돌아가서 다시 DFS 수행  결과">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lotto01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lotto02.png">
+<meta property="og:updated_time" content="2018-04-16T03:59:56.132Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="로또">
+<meta name="twitter:description" content="풀이https://www.acmicpc.net/problem/6603  DFS 를 수행하며, 해당 정점을 스택에 담는다.  스택의 크기가 6이면 출력한다 출력 후 탐색을 종료하고, 이전 번호로 돌아가서 다시 DFS 수행  결과">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lotto01.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-로또" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/08/로또/" class="article-date">
+  <time datetime="2018-04-07T15:00:00.000Z" itemprop="datePublished">2018-04-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      로또
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/6603" target="_blank" rel="noopener">https://www.acmicpc.net/problem/6603</a></p>
+<ul>
+<li>DFS 를 수행하며, 해당 정점을 스택에 담는다. </li>
+<li>스택의 크기가 6이면 출력한다</li>
+<li>출력 후 탐색을 종료하고,</li>
+<li>이전 번호로 돌아가서 다시 DFS 수행</li>
+</ul>
+<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lotto01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/lotto02.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/04/08/로또/" data-id="cjp7t3x100093icx7hg1y67oj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/09/적록색약/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          적록색약
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/04/06/Adapter Pattern01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Adapter Pattern01</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIP/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dataStructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareEngineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Process Management | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) 프로세스 생성 부모 프로세스가 자식 프로세스 생성 프로세스의 트리(계층 구조) 생성 프로세스는 자원을 필요로 함 운영체제로부터 받는다 부모와 공유한다   주소 공간 자식은 부모의 공간을 복사 자식은 그 공간에 새로운 프로그">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Process Management">
+<meta property="og:url" content="http://junheeko.com/2018/10/04/Process Managemnet/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) 프로세스 생성 부모 프로세스가 자식 프로세스 생성 프로세스의 트리(계층 구조) 생성 프로세스는 자원을 필요로 함 운영체제로부터 받는다 부모와 공유한다   주소 공간 자식은 부모의 공간을 복사 자식은 그 공간에 새로운 프로그">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100401.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100402.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100403.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100404.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100405.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100406.png">
+<meta property="og:updated_time" content="2018-10-04T06:02:19.461Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Process Management">
+<meta name="twitter:description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) 프로세스 생성 부모 프로세스가 자식 프로세스 생성 프로세스의 트리(계층 구조) 생성 프로세스는 자원을 필요로 함 운영체제로부터 받는다 부모와 공유한다   주소 공간 자식은 부모의 공간을 복사 자식은 그 공간에 새로운 프로그">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100401.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Process Managemnet" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/04/Process Managemnet/" class="article-date">
+  <time datetime="2018-10-03T15:00:00.000Z" itemprop="datePublished">2018-10-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/OS/">OS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Process Management
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
+<h2 id="프로세스-생성"><a href="#프로세스-생성" class="headerlink" title="프로세스 생성"></a>프로세스 생성</h2><ul>
+<li>부모 프로세스가 자식 프로세스 생성</li>
+<li>프로세스의 트리(계층 구조) 생성</li>
+<li>프로세스는 자원을 필요로 함<ul>
+<li>운영체제로부터 받는다</li>
+<li>부모와 공유한다</li>
+</ul>
+</li>
+<li>주소 공간<ul>
+<li>자식은 부모의 공간을 복사</li>
+<li>자식은 그 공간에 새로운 프로그램을 올림</li>
+</ul>
+</li>
+<li>유닉스의 예 : 복제 생성하고 덮어씌움<ul>
+<li>fork() 시스템 콜이 새로운 프로세스를 복제 생성<ul>
+<li>부모를 그대로 복사</li>
+<li>주소 공간 할당</li>
+</ul>
+</li>
+<li>exec()<ul>
+<li>fork 다음에 이어지는  exec() 시스템 콜을 통해 새로운 프로그램을 메모리에 올림 (덮어 씌움)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="프로세스-종료"><a href="#프로세스-종료" class="headerlink" title="프로세스 종료"></a>프로세스 종료</h2><ul>
+<li>exit<ul>
+<li>exit 시스템 콜을 통해 프로세스가 마지막 명령을 수행한후 운영체제에게 이를 알려줌</li>
+<li>자식이 부모에게 output data를 보냄(via wait system call)</li>
+<li>프로세의 각종 자원들이 운영체제에게 반납됨</li>
+</ul>
+</li>
+<li>abort<ul>
+<li>부모 프로세스가 자식의 수행을 종료시킴</li>
+<li>자식이 할당 자원의 한계치를 넘어섬</li>
+<li>자식에게 할당된 테스크가 더 이사 필요하지 않음</li>
+<li>부모가 종료하는 경우<ul>
+<li>운영체제는 부모 프로세스가 종료하는 경우 자식이 더 이상 수행되도록 두지 않음</li>
+<li>단계적인 종료</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="fork-system-call"><a href="#fork-system-call" class="headerlink" title="fork() system call"></a>fork() system call</h2><p>왼쪽은 부모, 오른쪽은 자식. 자식은 fork() 이후의 라인부터 실행</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100401.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100402.png" alt="img"></p>
+<h2 id="exec-system-call"><a href="#exec-system-call" class="headerlink" title="exec() system call"></a>exec() system call</h2><p>새로운 프로그램을 덮어씌움. </p>
+<p>부모가 자식을 만든다음에, 자식은 오른쪽의 date라는 프로그램으로 완전히 덮어씌었음</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100403.png" alt="img"></p>
+<h2 id="wait-system-call"><a href="#wait-system-call" class="headerlink" title="wait() system call"></a>wait() system call</h2><p>프로세스 A가 wait() system call을 하면, </p>
+<p>커널은 child가 종료될 때까지 프로세스 A를 slepp 시킴(block 상태)</p>
+<p>child process가 종료되면 커널은 프로세스 A를 깨움(ready 상태)</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100404.png" alt="img"></p>
+<h2 id="exit-system-call"><a href="#exit-system-call" class="headerlink" title="exit() system call"></a>exit() system call</h2><p>프로세스의 종료</p>
+<ul>
+<li>자발적 종료<ul>
+<li>마지막 statement 수행 후에 exit() 시스템 콜 통해</li>
+<li>프로그램에 명싱적으로 적어주지 않아도 main 함수가 리턴되는 위치에 컴파일러가 넣어줌</li>
+</ul>
+</li>
+<li>비자발적 종료<ul>
+<li>부모가 자식을 죽임<ul>
+<li>자식이 한계치 넘어서는 자원 자원 요청</li>
+<li>자식에게 할당된 테스크가 더이상 필요하지 않음</li>
+</ul>
+</li>
+<li>키모드로 kill, break 친 경우</li>
+<li>부모가 종료하는 경우<ul>
+<li>부모가 종료하기 전에 자식들이 먼저 종료됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="프로세스-간-협력"><a href="#프로세스-간-협력" class="headerlink" title="프로세스 간 협력"></a>프로세스 간 협력</h2><ul>
+<li>독릭접 프로세스<ul>
+<li>프로세는 각자의 주소 공간을 가지고 수행되므로 원친적으로 하나의 프로세스가 다른 프로세스의 수행에 영향을 미치지 못함</li>
+</ul>
+</li>
+<li>협력 프로세스<ul>
+<li>하나의 프로세스가 다른 프로세싀의 수행에 여향을 미칠 수 있음</li>
+</ul>
+</li>
+<li>프로세스 간 협력 메커니즘(IPC : Interprocess Communication)<ul>
+<li>메세지를 전달하는 방법 (message passing)<ul>
+<li>커널을 통해 메세지 전달</li>
+</ul>
+</li>
+<li>주소 공간을 공유하는 방법 (shraed memory)<ul>
+<li>서로 다른 프로세 간에도 일부 주소 공간을 공유하게하는 메커니즘</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100405.png" alt="img"></p>
+<h2 id="Message-Passing"><a href="#Message-Passing" class="headerlink" title="Message Passing"></a>Message Passing</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/os100406.png" alt="img"></p>
+<ul>
+<li><p>Direcit Communicaiton</p>
+<ul>
+<li>통신하려는 프로세스의 이름을 명시적으료 표시</li>
+</ul>
+</li>
+<li><p>Indirecit Communicaiton</p>
+<ul>
+<li>mailbot or port 를 통해 메시지를 간접 전달</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/10/04/Process Managemnet/" data-id="cjp7t3x3w00h6icx7dcfkhord" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/06/Process Synchronization/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Process Sysncronization
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/04/보물상자 비밀번호/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">보물상자 비밀번호</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIP/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dataStructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareEngineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

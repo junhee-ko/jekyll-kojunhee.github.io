@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>browser 동작 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Rroweser comonents   UI Browser engine : 소스코드 실행해서 화면에 보여주는. 브롸우저 소프트웨어를 동작시켜주는 핵심 엔진 Rendering engine : 화면에 위치를 잡고 색칠을 해줌 Data Persistence : 브라우저도 일부 데이터를 케쉬하고 저장을 해 Networking : 서버와 HTTP로 정보를 주고 받을">
+<meta property="og:type" content="article">
+<meta property="og:title" content="browser 동작">
+<meta property="og:url" content="http://junheeko.com/2018/05/05/browser 동작/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Rroweser comonents   UI Browser engine : 소스코드 실행해서 화면에 보여주는. 브롸우저 소프트웨어를 동작시켜주는 핵심 엔진 Rendering engine : 화면에 위치를 잡고 색칠을 해줌 Data Persistence : 브라우저도 일부 데이터를 케쉬하고 저장을 해 Networking : 서버와 HTTP로 정보를 주고 받을">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Browsercomponents.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rendering.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/webkit.png">
+<meta property="og:updated_time" content="2018-05-05T15:03:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="browser 동작">
+<meta name="twitter:description" content="Rroweser comonents   UI Browser engine : 소스코드 실행해서 화면에 보여주는. 브롸우저 소프트웨어를 동작시켜주는 핵심 엔진 Rendering engine : 화면에 위치를 잡고 색칠을 해줌 Data Persistence : 브라우저도 일부 데이터를 케쉬하고 저장을 해 Networking : 서버와 HTTP로 정보를 주고 받을">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Browsercomponents.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-browser 동작" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/05/browser 동작/" class="article-date">
+  <time datetime="2018-05-04T15:00:00.000Z" itemprop="datePublished">2018-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      browser 동작
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>Rroweser comonents</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Browsercomponents.png" alt="img"></p>
+<ul>
+<li>UI</li>
+<li>Browser engine : 소스코드 실행해서 화면에 보여주는. 브롸우저 소프트웨어를 동작시켜주는 핵심 엔진</li>
+<li>Rendering engine : 화면에 위치를 잡고 색칠을 해줌</li>
+<li>Data Persistence : 브라우저도 일부 데이터를 케쉬하고 저장을 해</li>
+<li>Networking : 서버와 HTTP로 정보를 주고 받을 수 있는 네트워크 모듈</li>
+<li>JavaScript Intetpreter : 자바스크림트 코드 처리</li>
+<li>UI Backend : UI 영역 처리</li>
+</ul>
+</li>
+<li><p>Rendering Engines</p>
+<ul>
+<li><p>브라우져별로 다르게 가지고 있어</p>
+</li>
+<li><p>main flow</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/rendering.png" alt="img"></p>
+<ul>
+<li>Parsing HTML to construct the DOM tree<ul>
+<li>HTML을 먼저 파싱. 문자 단위로 해석을해서 의미 파악.   </li>
+<li>DOM : Document Objedt Model<ul>
+<li>HTML을 해석해서 일종의 트리구조로 데이터들을 가지고 있어</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Render tree construction</li>
+<li>Layout of the render tree : 스타일 정보와 구조를 합쳐서 화면에 어떠게 배치할지</li>
+<li>Paining the render tree : 화면에 직접 그림 </li>
+<li>diplay</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>사파리 브라우저에서 처리되는 webkit렌더링엔진의 처리과정</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/webkit.png" alt="img"></p>
+<ul>
+<li>HTML을 해석해서 DOM Tree를 만들고 </li>
+<li>CSS를 해석해서 CSS Tree(CSS Object Model)을 만든다</li>
+<li>이 두 과정에서 Parsing 과정이 필요<ul>
+<li>토큰 단위로 해석되는 방식은 일반적인 소스코드의 컴파일 과정이라고 보면 된다</li>
+</ul>
+</li>
+<li>DOM Tree와 CSS Tree, 이 두 개는 연관되어 있으므로 Render Tree로 다시 조합</li>
+<li>이렇게 조합된 결과는 화면에 어떻게 배치할지 크기와 위치 정보를 담고 있습니다.</li>
+<li>이후에 이렇게 구성된 Render Tree정보를 통해서 화면에 어떤 부분에 어떻게 색칠을 할지 Painting과정을 거치게 된다</li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li><a href="https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Introduction" target="_blank" rel="noopener">https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Introduction</a></li>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/05/browser 동작/" data-id="cjp7t3x1m00avicx7mc5uvpof" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/05/ 웹 서버/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          웹 서버
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/05/프론트엔드, 백엔드/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">프론트엔드, 백엔드</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIP/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dataStructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareEngineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

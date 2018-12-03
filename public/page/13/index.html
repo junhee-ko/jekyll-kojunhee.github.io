@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://junheeko.com/page/13/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Histogram Equalization" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/21/Histogram Equalization/" class="article-date">
+  <time datetime="2018-05-20T15:00:00.000Z" itemprop="datePublished">2018-05-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DIP/">DIP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/Histogram Equalization/">Histogram Equalization</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Histogram-Equalization"><a href="#Histogram-Equalization" class="headerlink" title="Histogram Equalization"></a>Histogram Equalization</h2><ul>
+<li><p>Histogram equalization is used to enhance contrast.</p>
+</li>
+<li><p>Lets start histogram equalization by taking this image below as a simple image.</p>
+</li>
+<li><p>The histogram of this image has been shown below.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE02.png" alt="img"></p>
+</li>
+<li><p>Now we will perform histogram equalization to it.</p>
+</li>
+<li><p>First we have to calculate the PMF (probability mass function) of all the pixels in this image.</p>
+</li>
+<li><p>Our next step involves calculation of CDF (cumulative distributive function).  </p>
+</li>
+</ul>
+<h2 id="Calculate-CDF-according-to-gray-levels"><a href="#Calculate-CDF-according-to-gray-levels" class="headerlink" title="Calculate CDF according to gray levels"></a>Calculate CDF according to gray levels</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE03.png" alt="img"></p>
+<ul>
+<li><p>Then in this step you will multiply the CDF value with (Gray levels (minus) 1) .</p>
+</li>
+<li><p>Considering we have an 3 bpp image. </p>
+</li>
+<li><p>Then number of levels we have are 8.</p>
+</li>
+<li><p>And 1 subtracts 8 is 7. So we multiply CDF by 7. Here what we got after multiplying.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE04.png" alt="img"></p>
+</li>
+<li><p>we have to map the new gray level values into number of pixels.</p>
+</li>
+<li><p>Lets assume our old gray levels values has these number of pixels.</p>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE05.png" alt="img"></p>
+<ul>
+<li><p>Now if we map our new values to , then this is what we got.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE06.png" alt="img"></p>
+</li>
+<li><p>Now map these new values you are onto histogram, and you are done.</p>
+</li>
+<li><p>Lets apply this technique to our original image. </p>
+</li>
+<li><p>After applying we got the following image and its following histogram.</p>
+</li>
+</ul>
+<h2 id="Cumulative-Distributive-function-of-this-image"><a href="#Cumulative-Distributive-function-of-this-image" class="headerlink" title="Cumulative Distributive function of this image"></a>Cumulative Distributive function of this image</h2><p> <img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE07.png" alt="img"></p>
+<h2 id="Histogram-Equalization-histogram"><a href="#Histogram-Equalization-histogram" class="headerlink" title="Histogram Equalization histogram"></a>Histogram Equalization histogram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE08.png" alt="img"></p>
+<h2 id="Comparing-both-the-histograms-and-images"><a href="#Comparing-both-the-histograms-and-images" class="headerlink" title="Comparing both the histograms and images"></a>Comparing both the histograms and images</h2><p> <img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisE09.png" alt="img"></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><ul>
+<li>during histogram equalization the overall shape of the histogram changes, </li>
+<li>where as in histogram stretching the overall shape of histogram remains same.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/21/Histogram Equalization/" data-id="cjp7t3x2c00d3icx7harxqkna" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Types of Images" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/21/Types of Images/" class="article-date">
+  <time datetime="2018-05-20T15:00:00.000Z" itemprop="datePublished">2018-05-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DIP/">DIP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/Types of Images/">Types of Images</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="8-bit-color-format"><a href="#8-bit-color-format" class="headerlink" title="8 bit color format"></a>8 bit color format</h4><ul>
+<li>8 bit color format is one of the most famous image format. </li>
+<li>It has 256 different shades of colors in it. </li>
+<li>It is commonly known as Grayscale image.</li>
+<li>The range of the colors in 8 bit vary from 0-255.</li>
+</ul>
+<h4 id="16-bit-color-format"><a href="#16-bit-color-format" class="headerlink" title="16 bit color format"></a>16 bit color format</h4><ul>
+<li><p>A 16 bit format is actually divided into three further formats which are Red , Green and Blue. The famous (RGB) format.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/16bit.png" alt="img"></p>
+</li>
+<li><p>5 bits for R, 6 bits for G, 5 bits for B.</p>
+</li>
+<li><p>The additional bit that was left behind is added into the green bit. </p>
+</li>
+<li><p>Because green is the color which is most soothing to eyes in all of these three colors.</p>
+</li>
+</ul>
+<h4 id="24-bit-color-format"><a href="#24-bit-color-format" class="headerlink" title="24 bit color format"></a>24 bit color format</h4><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/24bit.png" alt="img"></p>
+<ul>
+<li>8 bits for R, 8 bits for G, 8 bits for B.</li>
+<li>a 24 bit image has three different matrices of R, G, B.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/21/Types of Images/" data-id="cjp7t3x2f00dbicx7859nclsw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Histogram Sliding" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/21/Histogram Sliding/" class="article-date">
+  <time datetime="2018-05-20T15:00:00.000Z" itemprop="datePublished">2018-05-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DIP/">DIP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/Histogram Sliding/">Histogram Sliding</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Histogram-sliding"><a href="#Histogram-sliding" class="headerlink" title="Histogram sliding"></a>Histogram sliding</h2><ul>
+<li>In histogram sliding, we just simply shift a complete histogram rightwards or leftwards. </li>
+<li>Due to shifting or sliding of histogram towards right or left, </li>
+<li>a clear change can be seen in the image.</li>
+</ul>
+<h2 id="Increasing-brightness-using-histogram-sliding"><a href="#Increasing-brightness-using-histogram-sliding" class="headerlink" title="Increasing brightness using histogram sliding"></a>Increasing brightness using histogram sliding</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisSl01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisSl02.png" alt="img"></p>
+<ul>
+<li>On the y axis of this histogram are the frequency or count. </li>
+<li>And on the x axis, we have gray level values. </li>
+<li>As you can see from the above histogram, that those gray level intensities whose count is more then 700, lies in the first half portion, means towards blacker portion. </li>
+<li>Thats why we got an image that is a bit darker.</li>
+<li>In order to bright it, we will slide its histogram towards right, or towards whiter portion. </li>
+<li>In order to do we need to add atleast a value of 50 to this image. </li>
+<li>Because we can see from the histogram above, that this image also has 0 pixel intensities, that are pure black. </li>
+<li>So if we add 0 to 50, we will shift all the values lies at 0 intensity to 50 intensity and all the rest of the values will be shifted accordingly.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisSl03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisSl04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hisSl05.png" alt="img"></p>
+<h2 id="Decreasing-brightness-using-histogram-sliding"><a href="#Decreasing-brightness-using-histogram-sliding" class="headerlink" title="Decreasing brightness using histogram sliding"></a>Decreasing brightness using histogram sliding</h2><ul>
+<li>Now if we were to decrease brightness of this new image to such an extent that the old image look brighter, </li>
+<li>we got to subtract some value from all the matrix of the new image. </li>
+<li>The value which we are going to subtract is 80. </li>
+<li>Because we already add 50 to the original image and we got a new brighter image, </li>
+<li>now if we want to make it darker, we have to subtract at least more than 50 from it.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/21/Histogram Sliding/" data-id="cjp7t3x2a00czicx78ketf5qz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Bits Per Pixel" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/21/Bits Per Pixel/" class="article-date">
+  <time datetime="2018-05-20T15:00:00.000Z" itemprop="datePublished">2018-05-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DIP/">DIP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/Bits Per Pixel/">Bits Per Pixel</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Bpp or bits per pixel denotes the number of bits per pixel.</p>
+<h4 id="Number-of-different-colors"><a href="#Number-of-different-colors" class="headerlink" title="Number of different colors"></a>Number of different colors</h4><ul>
+<li><p>the number of different colors depend on the number of bits per pixel.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bppTable.png" alt="img"></p>
+</li>
+</ul>
+<h4 id="Shades"><a href="#Shades" class="headerlink" title="Shades"></a>Shades</h4><ul>
+<li>Shades = number of colors = (2)<sup>bpp<sup></sup></sup></li>
+<li>black color<ul>
+<li>0 pixel value always denotes black color. </li>
+</ul>
+</li>
+<li>white color<ul>
+<li>(2)<sup>bpp<sup> -1</sup></sup></li>
+<li>In case of 1 bpp, 0 denotes black, and 1 denotes white.</li>
+<li>In case 8 bpp, 0 denotes black, and 255 denotes white.</li>
+</ul>
+</li>
+<li>gray color<ul>
+<li>Gray color is actually the mid point of black and white.</li>
+<li>In case of 8bpp, the pixel value that denotes gray color is 127 or 128bpp (if you count from 1, not from 0).</li>
+</ul>
+</li>
+</ul>
+<h4 id="Image-Size"><a href="#Image-Size" class="headerlink" title="Image Size"></a>Image Size</h4><ul>
+<li>Size of an image = rows <em> cols </em> bpp</li>
+<li>Assuming it has 1024 rows and it has 1024 columns. </li>
+<li>And since it is a gray scale image, it has 256 different shades of gray or it has bits per pixel</li>
+<li>rows <em> cols </em> bpp = 1024 <em> 1024 </em> 8 = 8388608 bits.</li>
+<li>Converting it into bytes = 8388608 / 8 = 1048576 bytes.</li>
+<li>Converting into kilo bytes = 1048576 / 1024 = 1024kb.</li>
+<li>Converting into Mega bytes = 1024 / 1024 = 1 Mb.</li>
+</ul>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><ul>
+<li><a href="https://www.tutorialspoint.com/dip/concept_of_bits_per_pixel.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/dip/concept_of_bits_per_pixel.htm</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/21/Bits Per Pixel/" data-id="cjp7t3x2800csicx7oqxgsnag" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Brightness and Contrast" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/21/Brightness and Contrast/" class="article-date">
+  <time datetime="2018-05-20T15:00:00.000Z" itemprop="datePublished">2018-05-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DIP/">DIP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/Brightness and Contrast/">Brightness and Contrast</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Brightness"><a href="#Brightness" class="headerlink" title="Brightness"></a>Brightness</h2><ul>
+<li><p>Brightness is a relative term. </p>
+</li>
+<li><p>It depends on your visual perception. </p>
+</li>
+<li><p>Since brightness is a relative term, so brightness can be defined as the amount of energy output by a source of light relative to the source we are comparing it to. </p>
+</li>
+<li><p>In some cases we can easily say that the image is bright, and in some cases, its not easy to perceive.</p>
+</li>
+<li><p>Consider this black image of 5 rows and 5 columns</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bri01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bri02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bri03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bri04.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="Contrast"><a href="#Contrast" class="headerlink" title="Contrast"></a>Contrast</h2><ul>
+<li><p>Contrast can be simply explained as the difference between maximum and minimum pixel intensity in an image.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bri04.png" alt="img"></p>
+<ul>
+<li><p>The maximum value in this matrix is 100.</p>
+</li>
+<li><p>The minimum value in this matrix is 100.</p>
+</li>
+<li><p>Contrast = maximum pixel intensity(subtracted by) minimum pixel intensity</p>
+<p>= 100 (subtracted by) 100</p>
+<p>= 0</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/21/Brightness and Contrast/" data-id="cjp7t3x2900cuicx70lqmdamw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Sampling, Quantization" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/15/Sampling, Quantization/" class="article-date">
+  <time datetime="2018-05-14T15:00:00.000Z" itemprop="datePublished">2018-05-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DIP/">DIP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/15/Sampling, Quantization/">Sampling, Quantization</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>Conversion of analog signal to digital signal</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sampling.png" alt="img"></p>
+<ul>
+<li>The output of most of the image sensors is an analog signal, </li>
+<li>and we can not apply digital processing on it </li>
+<li>because we can not store it. </li>
+<li>We can not store it because it requires infinite memory </li>
+<li>to store a signal that can have infinite values.</li>
+<li>So we have to convert an analog signal into a digital signal.</li>
+<li>To create an image which is digital, </li>
+<li>we need to covert continuous data into digital form. </li>
+<li>There are two steps in which it is done.<ul>
+<li>Sampling</li>
+<li>Quantization</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sampling</p>
+<ul>
+<li><p>It is done on X axis.</p>
+</li>
+<li><p>It is the conversion of x axis (infinite values) to digital values.</p>
+</li>
+</ul>
+</li>
+<li><p>Quantization</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/quantization.png" alt="img"></p>
+<ul>
+<li>It is done on Y axis.</li>
+<li>digitizing the amplitudes is known as Quantization</li>
+<li>In the figure shown above, </li>
+<li>these vertically ranging values have been quantized into 5 different levels or partitions. </li>
+<li>Ranging from 0 black to 4 white. </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/15/Sampling, Quantization/" data-id="cjp7t3x2a00cwicx76vtk2xeu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-안전영역" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/15/안전영역/" class="article-date">
+  <time datetime="2018-05-14T15:00:00.000Z" itemprop="datePublished">2018-05-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/15/안전영역/">안전영역</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.acmicpc.net/problem/2468" target="_blank" rel="noopener">https://www.acmicpc.net/problem/2468</a></p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p>비의 높이(지역 높이 최소~최대) 로 다음을 반복</p>
+<ol>
+<li>물에 잠긴 영역 체크</li>
+<li>BFS로 안정 영역 개수 체크</li>
+</ol>
+<h2 id="오답-원인"><a href="#오답-원인" class="headerlink" title="오답 원인"></a>오답 원인</h2><p>최소 답을 0으로 설정하였기 때문에 계속 틀렸었다.</p>
+<h2 id="해결"><a href="#해결" class="headerlink" title="해결"></a>해결</h2><p>최소 답은 1이다. </p>
+<p>왜냐하면, 아무 것도 잠기지 않는다면 하나의 영역이기 때문이다.</p>
+<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/safeArea01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/safeArea02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/safeArea03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/safeArea04.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/15/안전영역/" data-id="cjp7t3x2i00dhicx7zuz4gdah" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Pixel" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/15/Pixel/" class="article-date">
+  <time datetime="2018-05-14T15:00:00.000Z" itemprop="datePublished">2018-05-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DIP/">DIP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/15/Pixel/">Pixel</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Pixel"><a href="#Pixel" class="headerlink" title="Pixel"></a>Pixel</h4><ul>
+<li>Pixel is the smallest element of an image.</li>
+<li>Each pixel correspond to any one value.<ul>
+<li>In an 8-bit gray scale image, the value of the pixel between 0 and 255</li>
+<li>each value denotes the intensity of light at that point of the image.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Calculation-of-total-number-of-pixels"><a href="#Calculation-of-total-number-of-pixels" class="headerlink" title="Calculation of total number of pixels"></a>Calculation of total number of pixels</h4><ul>
+<li>We have define an image as a two dimensional signal or matrix.</li>
+<li>Total number of pixels<ul>
+<li>number of rows ( X ) number of columns</li>
+<li>the number of (x,y) coordinate pairs</li>
+</ul>
+</li>
+</ul>
+<h4 id="Gray-Scale"><a href="#Gray-Scale" class="headerlink" title="Gray Scale"></a>Gray Scale</h4><ul>
+<li>The value of the pixel at any point denotes the intensity of image at that location, and that is also known as gray level.</li>
+</ul>
+<h4 id="Pixel-value-0"><a href="#Pixel-value-0" class="headerlink" title="Pixel value (0)"></a>Pixel value (0)</h4><ul>
+<li><p>each pixel can have only one value and each value denotes the intensity of light at that point of the image.</p>
+</li>
+<li><p>The value 0 means absence of light. </p>
+</li>
+<li><p>It means that 0 denotes dark, </p>
+</li>
+<li><p>and it further means that when ever a pixel has a value of 0, it means at that point, black color would be formed.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/pixelTable.png" alt="img"></p>
+</li>
+<li><p>this image matrix has all filled up with 0. </p>
+</li>
+<li><p>All the pixels have a value of 0. </p>
+</li>
+<li><p>an image would be formed with 9 pixels, </p>
+</li>
+<li><p>and that image would have a dimension of 3 rows and 3 column </p>
+</li>
+<li><p>and most importantly that image would be black.</p>
+</li>
+<li><p>Because all the pixels in the image had a value of 0.</p>
+</li>
+</ul>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><ul>
+<li><a href="https://www.tutorialspoint.com/dip/concept_of_pixel.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/dip/concept_of_pixel.htm</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/15/Pixel/" data-id="cjp7t3x2700cnicx7s0htgjwk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-숨바꼭질" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/13/숨바꼭질/" class="article-date">
+  <time datetime="2018-05-12T15:00:00.000Z" itemprop="datePublished">2018-05-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/13/숨바꼭질/">숨바꼭질</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/1697" target="_blank" rel="noopener">https://www.acmicpc.net/problem/1697</a></p>
+<ul>
+<li>현재 위치에서 이동 가능한 곳 체크<ul>
+<li>X - 1</li>
+<li>X + 1</li>
+<li>X * 2</li>
+</ul>
+</li>
+<li>체크 조건<ul>
+<li>이동 가능한 곳이 범위 안에 있나?</li>
+<li>아직 방문하지 않은 곳인가?</li>
+</ul>
+</li>
+<li>Queue에서 이동 가능한 곳을 뽑아냄<ul>
+<li>동생의 위치이면 그래프의 Depth를 출력</li>
+</ul>
+</li>
+<li>그래프의 Depth를 표현하기 위해 <ul>
+<li>Class는 위치와 depth로 구성</li>
+</ul>
+</li>
+</ul>
+<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hide01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hide02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hide03.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/13/숨바꼭질/" data-id="cjp7t3x2800cpicx7zzeqhtii" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Factory Method Pattern02" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/13/Factory Method Pattern02/" class="article-date">
+  <time datetime="2018-05-12T15:00:00.000Z" itemprop="datePublished">2018-05-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/13/Factory Method Pattern02/">Factory Method Pattern02</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>객체를 생성하는 코드를 별도의 클래스/메소드로 분리함으로써 객체 생성 방식의 변화에 대비하는데 유용하다.</p>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/factorymethodpa01.png" alt="img"></p>
+<ul>
+<li>Product <ul>
+<li>펙토리 메서드로 생설될 객체의 공통 인터페이스</li>
+</ul>
+</li>
+<li>ConcreteProduct<ul>
+<li>구체적으로 객체가 생성되는 클래스</li>
+</ul>
+</li>
+<li>Creator<ul>
+<li>팩토리 메서드를 갖는 클래스</li>
+</ul>
+</li>
+<li>ConcreteCreator<ul>
+<li>팩토리 매서드를 구현하는 클래스</li>
+<li>ConcreteProduct 객체를 생성 </li>
+</ul>
+</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/factorymethodpa02.png" alt="img"></p>
+<ul>
+<li>ElevatorScheduler interface<ul>
+<li>Prudct</li>
+</ul>
+</li>
+<li>ResponseTimeScheduler, ThroughputScheduler<ul>
+<li>ConcretePrudct</li>
+</ul>
+</li>
+<li>ElevatorManger<ul>
+<li>Creator</li>
+</ul>
+</li>
+<li>ElevatorMangerWithThroughputScheduling, ElevatorMangerWithDynamicScheduling, ElevatorManagerWithResponseTimeScheduling<ul>
+<li>ConcreteCreator</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Java 객체 지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/05/13/Factory Method Pattern02/" data-id="cjp7t3x2600clicx72wl0i3a3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIP/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dataStructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareEngineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
