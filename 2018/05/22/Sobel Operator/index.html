@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Sobel Operator | junhee.ko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="The sobel operator is very similar to Prewitt operator.  It is also a derivate mask and is used for edge detection. Like Prewitt operator sobel operator is also used to detect two kinds of edges in an">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sobel Operator">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/22/Sobel Operator/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="The sobel operator is very similar to Prewitt operator.  It is also a derivate mask and is used for edge detection. Like Prewitt operator sobel operator is also used to detect two kinds of edges in an">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel02.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel03.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel04.png">
+<meta property="og:updated_time" content="2018-05-22T07:35:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sobel Operator">
+<meta name="twitter:description" content="The sobel operator is very similar to Prewitt operator.  It is also a derivate mask and is used for edge detection. Like Prewitt operator sobel operator is also used to detect two kinds of edges in an">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel01.png">
+  
+    <link rel="alternate" href="/atom.xml" title="junhee.ko" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">junhee.ko</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Sobel Operator" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/22/Sobel Operator/" class="article-date">
+  <time datetime="2018-05-21T15:00:00.000Z" itemprop="datePublished">2018-05-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/dip/">DIP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sobel Operator
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The sobel operator is very similar to Prewitt operator. </p>
+<p>It is also a derivate mask and is used for edge detection. Like Prewitt operator sobel operator is also used to detect two kinds of edges in an image:</p>
+<ul>
+<li>Vertical direction</li>
+<li>Horizontal direction</li>
+</ul>
+<h2 id="Difference-with-Prewitt-Operator"><a href="#Difference-with-Prewitt-Operator" class="headerlink" title="Difference with Prewitt Operator"></a>Difference with Prewitt Operator</h2><p>The major difference is that in sobel operator the coefficients of masks are not fixed and they can be adjusted according to our requirement unless they do not violate any property of derivative masks.</p>
+<h2 id="Vertical-Mask-of-Sobel-Operator"><a href="#Vertical-Mask-of-Sobel-Operator" class="headerlink" title="Vertical Mask of Sobel Operator"></a>Vertical Mask of Sobel Operator</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel01.png" alt="img"></p>
+<p>This mask works exactly same as the Prewitt operator vertical mask. </p>
+<p>There is only one difference that is it has “2” and “-2” values in center of first and third column. </p>
+<p>When applied on an image this mask will highlight the vertical edges.</p>
+<h2 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works</h2><p>When we apply this mask on the image it prominent vertical edges. </p>
+<p>It simply works like as first order derivate and calculates the difference of pixel intensities in a edge region.</p>
+<p>As the center column is of zero so it does not include the original values of an image but rather it calculates the difference of right and left pixel values around that edge. </p>
+<p>Also the center values of both the first and third column is 2 and -2 respectively.</p>
+<p>This give more weight age to the pixel values around the edge region. </p>
+<p>This increase the edge intensity and it become enhanced comparatively to the original image.</p>
+<h2 id="Horizontal-Mask-of-Sobel-Operator"><a href="#Horizontal-Mask-of-Sobel-Operator" class="headerlink" title="Horizontal Mask of Sobel Operator"></a>Horizontal Mask of Sobel Operator</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel02.png" alt="img"></p>
+<p>Above mask will find edges in horizontal direction and it is because that zeros column is in horizontal direction. </p>
+<p>When you will convolve this mask onto an image it would prominent horizontal edges in the image. </p>
+<p>The only difference between it is that it have 2 and -2 as a center element of first and third row.</p>
+<h2 id="How-it-works-1"><a href="#How-it-works-1" class="headerlink" title="How it works"></a>How it works</h2><p>This mask will prominent the horizontal edges in an image. </p>
+<p>It also works on the principle of above mask and calculates difference among the pixel intensities of a particular edge. </p>
+<p>As the center row of mask is consist of zeros so it does not include the original values of edge in the image but rather it calculate the difference of above and below pixel intensities of the particular edge. </p>
+<p>Thus increasing the sudden change of intensities and making the edge more visible.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel03.png" alt="img"></p>
+<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p>As you can see that in the first picture on which we apply vertical mask, all the vertical edges are more visible than the original image. </p>
+<p>Similarly in the second picture we have applied the horizontal mask and in result all the horizontal edges are visible.</p>
+<p>So in this way you can see that we can detect both horizontal and vertical edges from an image. </p>
+<p>Also if you compare the result of sobel operator with Prewitt operator, you will find that sobel operator finds more edges or make edges more visible as compared to Prewitt Operator.</p>
+<p>This is because in sobel operator we have allotted more weight to the pixel intensities around the edges.</p>
+<h2 id="Applying-more-weight-to-mask"><a href="#Applying-more-weight-to-mask" class="headerlink" title="Applying more weight to mask"></a>Applying more weight to mask</h2><p>Now we can also see that if we apply more weight to the mask, the more edges it will get for us. </p>
+<p>There is no fixed coefficients in sobel operator, so here is another weighted operator</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sobel04.png" alt="img"></p>
+<p>If you can compare the result of this mask with of the Prewitt vertical mask, </p>
+<p>it is clear that this mask will give out more edges as compared to Prewitt one just because we have allotted more weight in the mask.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/22/Sobel Operator/" data-id="cjp7xh0ei00dh6hx71uqmq8ov" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/27/나이트의 이동/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          나이트의 이동
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/22/Prewitt Operator/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Prewitt Operator</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/dip/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/designpattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/datastructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareengineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/03/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 junhee.ko<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

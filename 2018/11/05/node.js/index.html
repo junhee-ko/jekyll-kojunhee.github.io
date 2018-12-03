@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>node.js | junhee.ko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Node.js 란Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosyst">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node.js">
+<meta property="og:url" content="https://kojunhee.github.io/2018/11/05/node.js/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="Node.js 란Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosyst">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/nodejsaa01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/nodejsaa02.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/nodejsaa03.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/nodejsaa04.png">
+<meta property="og:updated_time" content="2018-11-05T03:49:44.531Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node.js">
+<meta name="twitter:description" content="Node.js 란Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosyst">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/nodejsaa01.png">
+  
+    <link rel="alternate" href="/atom.xml" title="junhee.ko" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">junhee.ko</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node.js" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/05/node.js/" class="article-date">
+  <time datetime="2018-11-04T15:00:00.000Z" itemprop="datePublished">2018-11-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node.js
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Node-js-란"><a href="#Node-js-란" class="headerlink" title="Node.js 란"></a>Node.js 란</h2><p>Node.js® is a <strong>JavaScript runtime</strong> built on Chrome’s V8 JavaScript engine. Node.js uses an <strong>event-driven</strong>, <strong>non-blocking I/O model</strong> that makes it lightweight and efficient. Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world. </p>
+<p>추가 설명 : <a href="http://junheeko.com/2018/02/27/Node-Architecture/" target="_blank" rel="noopener">http://junheeko.com/2018/02/27/Node-Architecture/</a> </p>
+<h2 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h2><ol>
+<li><p>생산성이 높다.</p>
+<p>Javascript를 이용해서 BE를 개발할 수 있기 때문에, FE와 BE의 기술 셋을 나눌 필요가 없다.</p>
+</li>
+<li><p>socket.io를 이용한 웹 push 구현이 가능하다.</p>
+<p>push 를 지원하는 WebSocket은 브라우져 종류나 버전에 따라서 제한적으로 동작한다. 반면, node.js의 경우 웹브라우져의 종류에 따라서 WebSocket뿐만 아니라, Long Polling등 다른 push 메커니즘을 브라우져 종류에 따라서 자동으로 선택하여 사용한다.</p>
+</li>
+<li><p>non-blocking I/O model을 지원한다.</p>
+<p>io 요청이 있으면 io 처리를 던져 놓고, thread나 process는 다른 일을 하고 있다가, io 처리가 끝나면 이에 대한 이벤트를 받아서, 응답을 처리하는 형태가 된다.</p>
+<p>추가 설명 : <a href="http://junheeko.com/2018/10/01/System-Structure,-Program-Execution/" target="_blank" rel="noopener">http://junheeko.com/2018/10/01/System-Structure,-Program-Execution/</a></p>
+</li>
+<li><p>Single Thread 기반이다. (내부적으로 multi thread를 사용하기도 한다.)</p>
+<p>하나의 Thread만을 사용해서 여러 Client로부터 오는 Request를 처리한다. 단, IO 작업이 있을 경우 앞에서 설명한 비동기 IO방식으로 IO 요청을 던져놓고, 다시 돌아와서 다른 작업을 하다가 IO 작업이 끝나면 이벤트를 받아서 처리하는 구조이다.</p>
+</li>
+</ol>
+<h2 id="Multi-Thread"><a href="#Multi-Thread" class="headerlink" title="Multi Thread"></a>Multi Thread</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/nodejsaa01.png" alt="img"></p>
+<ol>
+<li><p>작동 방식</p>
+<p>Client에서부터 요청이 오면, 미리 만들어 놓은 Thread Pool에서 Thread를 꺼내서 Client의 요청을 처리하게 하고, 요청이 끝나면 Thread Pool로 돌려보낸 후, 다른 요청이 오면 다시 꺼내서 요청을 처리하게 하는 구조이다. </p>
+</li>
+<li><p>동시에 처리할 수 있는 client 수</p>
+<p>동시에 서비스 할 수 있는 Client의 수는 Thread Pool의 Thread 수와 같은데, 물리적으로 생성할 수 있는 Thread의 수는 한계가 있다. 예를 들어 Tomcat의 경우 500개 정도의 쓰레드를 생성할 수 있다. (물론 2,000개 정도까지도 생성할 수 있지만, 한계가 있다.) 즉 동시에 처리할 수 있는 Client 수에 한계가 있다.</p>
+</li>
+<li><p>io 효율</p>
+<p>또한 IO 효율면에서도 보면, Client에 할당된 Thread는 IO 작업 (DB,Network,File)이 있을 경우 IO 호출을 해놓고, Thread는 CPU를 사용하지 않는 Wait상태로 빠져 버리게 된다.</p>
+</li>
+</ol>
+<h2 id="Single-Thread"><a href="#Single-Thread" class="headerlink" title="Single Thread"></a>Single Thread</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/nodejsaa02.png" alt="img"></p>
+<ol>
+<li><p>작동 방식</p>
+<p>하나의 Thread만을 사용해서 여러 Client로부터 오는 Request를 처리한다. 단, IO 작업이 있을 경우 앞에서 설명한 비동기 IO방식으로 IO 요청을 던져놓고, 다시 돌아와서 다른 작업을 하다가 IO 작업이 끝나면 이벤트를 받아서 처리하는 구조이다.</p>
+</li>
+<li><p>io 효율</p>
+<p>Client A가 요청을 받으면, CPU 작업을 먼저하다가 IO작업을 던져놓고, Client B에서 요청이 오면, CPU작업을 하다가 IO작업을 던져놓고, Client A의 IO작업이 끝나면 이를 받아서 Client A에 리턴하는 식의 구조이다. IO작업시 기다리지 않기 때문에(Block 되지 않기 때문에), 하나의 Thread가 다른 요청을 받아서 작업을 처리할 수 있는 구조가 된다.  이 요청을 받아서 처리하는 Thread를 ELP(Event Loop Thread) 라고 한다.</p>
+</li>
+<li><p>thread pool</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/nodejsaa03.png" alt="img"></p>
+<p>file open등과 같은 일부 IO는 OS에 따라서 nonblocking function을 지원하지 않는 경우가 있기 때문에, 이러한 blocking io function을 호출할 경우에는 blocking이 발생한다. 이 경우 single thread로 구현된 event loop thread가 정지된다. 이러한 문제를 해결 하기 위해서 내부적으로 thread pool을 별도로 운영하면서 blocking function call의 경우에는 thread pool의 thread를 이용하여 IO 처리를 하여 event loop thread가 io에 의해서 block되지 않게 한다.</p>
+</li>
+</ol>
+<h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/nodejsaa04.png" alt="img"></p>
+<p>하나의 Thread로 여러 클라이언트의 요청, 즉 여러 개의 socket connection을 처리하는 방법은 Multiplexing이다. 여러 개의 socket이 동시에 연결되어 있는 상태에서 하나의 Thread는 어느 socket 으로부터 메시지가 들어오는지 보고 있는다. socket에서 메시지가 들어오면, 그 메시지를 꺼내 받아서 처리를 하는 방식이다. epoll, kqueue, dev/poll ,select등을 이용한다.</p>
+<h2 id="Node-js-사용-용도"><a href="#Node-js-사용-용도" class="headerlink" title="Node.js 사용 용도"></a>Node.js 사용 용도</h2><ol>
+<li>prototyping</li>
+<li>file upload/download와 같은 network streaming 서비스에 유리 (async io를 사용하기 때문에)</li>
+<li>채팅 서비스 같은  real time web application에서 socket.io를 이용해 만들 수 있음</li>
+<li>간단한 로직을 가지면서 대용량 그리고 빠른 응답 시간을 요구로 하는 애플리케이션</li>
+</ol>
+<h2 id="Node-js-비사용-용도"><a href="#Node-js-비사용-용도" class="headerlink" title="Node.js 비사용 용도"></a>Node.js 비사용 용도</h2><ol>
+<li><p>CPU 작업이 많은 애플리케이션</p>
+<p>Node.js는 single thread 구조이다. 그래서 하나의  request를 처리할 때 CPU를 많이 사용하면 다른 요청 처리가 지연되게 되고, 전체적인 응답시간 저하로 연결된다.</p>
+</li>
+<li><p>trouble shooting이 중요한 애플리케이션</p>
+<p>Javascript 언어의 특성상 에러를 가지고 있는 코드 위치에 진입할 때 그때 에러가 나고, 에러가 나면 대부분 서버가 죽어버린다. 따라서, 운영 관점에서 trouble shooting 등이 어려울 수 있다. single event loop의 특성상, 하나의 코드가 잘못되서 시스템이 느려지게 되면 전체 request 처리에 문제가 있을 수 있다. 코드가 잘못되면  전체 시스템이 hang up (멈춤) 된다.</p>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://bcho.tistory.com/881" target="_blank" rel="noopener">http://bcho.tistory.com/881</a></p>
+<p><a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/11/05/node.js/" data-id="cjp7xh0ge00iv6hx70o8mn4qx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/06/초보자를 위한 점프대 배치하기/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          초보자를 위한 점프대 배치하기
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/05/러시아 국기 같은 깃발/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">러시아 국기 같은 깃발</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/dip/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/designpattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/datastructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareengineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/03/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 junhee.ko<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

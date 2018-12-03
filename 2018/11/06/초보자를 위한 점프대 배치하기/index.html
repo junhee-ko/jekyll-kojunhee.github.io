@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>초보자를 위한 점프대 배치하기 | junhee.ko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWGsV8IaAXsDFAVW 오답 풀이https://github.com/KoJunHee/algorithm/blob/master/src/swa_3503/Solution.java  정렬해서 나올 수 있는 모든 경우를">
+<meta property="og:type" content="article">
+<meta property="og:title" content="초보자를 위한 점프대 배치하기">
+<meta property="og:url" content="https://kojunhee.github.io/2018/11/06/초보자를 위한 점프대 배치하기/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWGsV8IaAXsDFAVW 오답 풀이https://github.com/KoJunHee/algorithm/blob/master/src/swa_3503/Solution.java  정렬해서 나올 수 있는 모든 경우를">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/maxHeightDFS.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/maxHeightsort.png">
+<meta property="og:updated_time" content="2018-11-06T08:11:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="초보자를 위한 점프대 배치하기">
+<meta name="twitter:description" content="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWGsV8IaAXsDFAVW 오답 풀이https://github.com/KoJunHee/algorithm/blob/master/src/swa_3503/Solution.java  정렬해서 나올 수 있는 모든 경우를">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/maxHeightDFS.png">
+  
+    <link rel="alternate" href="/atom.xml" title="junhee.ko" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">junhee.ko</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-초보자를 위한 점프대 배치하기" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/06/초보자를 위한 점프대 배치하기/" class="article-date">
+  <time datetime="2018-11-05T15:00:00.000Z" itemprop="datePublished">2018-11-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      초보자를 위한 점프대 배치하기
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWGsV8IaAXsDFAVW" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWGsV8IaAXsDFAVW</a></p>
+<h2 id="오답-풀이"><a href="#오답-풀이" class="headerlink" title="오답 풀이"></a>오답 풀이</h2><p><a href="https://github.com/KoJunHee/algorithm/blob/master/src/swa_3503/Solution.java" target="_blank" rel="noopener">https://github.com/KoJunHee/algorithm/blob/master/src/swa_3503/Solution.java</a></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/maxHeightDFS.png" alt="img"></p>
+<p>정렬해서 나올 수 있는 모든 경우를 탐색하기 위해 DFS를 하였다. 원형이기 때문에, 시작점을 하나로 DFS 탐색을 시작해도 모든 경우가 커버 가능하다. 예를 들어, 2 4 5 7 9 의 경우에 2를 시작으로 DFS를 탐색한다. 탐색을 하며 높이 차를 계산한다. 시간 초과가 났다. 탐색으로 모든 케이스를 따져보는 것이 아닌 문제라는 것이다. </p>
+<h2 id="정답-풀이"><a href="#정답-풀이" class="headerlink" title="정답 풀이"></a>정답 풀이</h2><p><a href="https://github.com/KoJunHee/algorithm/blob/master/src/swa_3503_02/Solution.java" target="_blank" rel="noopener">https://github.com/KoJunHee/algorithm/blob/master/src/swa_3503_02/Solution.java</a></p>
+<ol>
+<li>오름 차순으로 정렬한다. </li>
+<li>가장 작은 값을 가운데에 둔다.</li>
+<li>맨 앞에, 다음으로 작은 값을 둔다.</li>
+<li>맨 뒤에, 다음으로 작은 값을 둔다.</li>
+<li>3,4를 반복한다.</li>
+</ol>
+<p>이와 같이 하면, 가장 큰 높이 차가 최소가 되도록 정렬된다. 구현을 위해서, 두개의 큐를 사용하였다.</p>
+<p>다음 그림을 보자.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/maxHeightsort.png" alt="img"></p>
+<ol>
+<li>주어진 수를 오름 차순 정렬한다.</li>
+<li>가장 작은 2를 가운데에 둔다.</li>
+<li>그 다음으로 작은 4를 맨 앞에 둔다.</li>
+<li>그 다음으로 작은 5를 맨 뒤에 둔다.</li>
+<li>3, 4를 반복한다.</li>
+<li>최종적으로 7 4 2 5 9 배열이 얻어졌고, 가장 큰 높이 차(4) 가 최소가 되로록 정렬되었다.</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/11/06/초보자를 위한 점프대 배치하기/" data-id="cjp7xh0g400hz6hx76697v23p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/08/TCP:IP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TCP/IP
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/05/node.js/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node.js</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/dip/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/designpattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/datastructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareengineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/03/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 junhee.ko<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

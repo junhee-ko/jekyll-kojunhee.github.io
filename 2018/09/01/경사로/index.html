@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>경사로 | junhee.ko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="https://www.acmicpc.net/problem/14890 삼성 코딩 테스트 기출 문제이다. 시뮬레이션 문제이다. 풀이 행을 모두 체크한다.  i행의 j열은 세 가지 경우로 나뉜다.  j+1열과 같은 높이 j+1열을 체크한다.   j+1열 높이보다 1작음 왼쪽 방향으로 경사로를 세울 수 있는지 체크한다.  다음 그림과 같이 1번 지점은 j+1열 높">
+<meta property="og:type" content="article">
+<meta property="og:title" content="경사로">
+<meta property="og:url" content="https://kojunhee.github.io/2018/09/01/경사로/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="https://www.acmicpc.net/problem/14890 삼성 코딩 테스트 기출 문제이다. 시뮬레이션 문제이다. 풀이 행을 모두 체크한다.  i행의 j열은 세 가지 경우로 나뉜다.  j+1열과 같은 높이 j+1열을 체크한다.   j+1열 높이보다 1작음 왼쪽 방향으로 경사로를 세울 수 있는지 체크한다.  다음 그림과 같이 1번 지점은 j+1열 높">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy011.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy002.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy03.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy04.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy05.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy06.png">
+<meta property="og:updated_time" content="2018-09-02T09:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="경사로">
+<meta name="twitter:description" content="https://www.acmicpc.net/problem/14890 삼성 코딩 테스트 기출 문제이다. 시뮬레이션 문제이다. 풀이 행을 모두 체크한다.  i행의 j열은 세 가지 경우로 나뉜다.  j+1열과 같은 높이 j+1열을 체크한다.   j+1열 높이보다 1작음 왼쪽 방향으로 경사로를 세울 수 있는지 체크한다.  다음 그림과 같이 1번 지점은 j+1열 높">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy011.png">
+  
+    <link rel="alternate" href="/atom.xml" title="junhee.ko" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">junhee.ko</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-경사로" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/01/경사로/" class="article-date">
+  <time datetime="2018-08-31T15:00:00.000Z" itemprop="datePublished">2018-09-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      경사로
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.acmicpc.net/problem/14890" target="_blank" rel="noopener">https://www.acmicpc.net/problem/14890</a></p>
+<p>삼성 코딩 테스트 기출 문제이다.</p>
+<p>시뮬레이션 문제이다.</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li><p>행을 모두 체크한다.</p>
+<ul>
+<li><p>i행의 j열은 세 가지 경우로 나뉜다.</p>
+<ul>
+<li>j+1열과 같은 높이<ul>
+<li>j+1열을 체크한다.</li>
+</ul>
+</li>
+<li>j+1열 높이보다 1작음<ul>
+<li>왼쪽 방향으로 경사로를 세울 수 있는지 체크한다. </li>
+<li>다음 그림과 같이 1번 지점은 j+1열 높이보다 1 작기 때문에 2번 방향으로 체크한다.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy011.png" alt="img"></p>
+<ul>
+<li>j+1열 높이보다 1높음<ul>
+<li>오른쪽 방향으로 경사로를 세울 수 있는지 체크한다. </li>
+<li>다음 그림과 같이 1번 지점은 j+1열 높이보다 1 높기 때문에 2번 방향으로 체크한다. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy002.png" alt="img"></p>
+</li>
+<li><p>열을 모두 체크한다.</p>
+<p>행을 체크하는 경우와 동일하다.</p>
+</li>
+</ol>
+<p>코드로 옮기는 것이 쉽지 않아 해설을 보고 해결했다.</p>
+<h2 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/runwayy06.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/09/01/경사로/" data-id="cjp7xh0f900fh6hx7maup9e96" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/04/톱니바퀴/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          톱니바퀴
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/31/스타트와링크/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">스타트와링크</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/dip/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/designpattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/datastructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareengineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/03/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 junhee.ko<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>was | junhee.ko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MiddleWare     클라이언트 쪽에 비즈니스 로직이 많을 경우,  클라이언트 관리(배포 등)로 인해 비용이 많이 발생하는 문제가 있습니다. 비즈니스 로직을 클라이언트와 DBMS사이의 미들웨어 서버에서 동작하도록 함으로써  클라이언트는 입력과 출력만 담당하도록 합니다.   WAS   일종의 미들웨어로 웹 클라이언트(보통 웹 브라우저)의 요청 중 웹">
+<meta property="og:type" content="article">
+<meta property="og:title" content="was">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/05/was/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="MiddleWare     클라이언트 쪽에 비즈니스 로직이 많을 경우,  클라이언트 관리(배포 등)로 인해 비용이 많이 발생하는 문제가 있습니다. 비즈니스 로직을 클라이언트와 DBMS사이의 미들웨어 서버에서 동작하도록 함으로써  클라이언트는 입력과 출력만 담당하도록 합니다.   WAS   일종의 미들웨어로 웹 클라이언트(보통 웹 브라우저)의 요청 중 웹">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/middleW.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/wasimge.png">
+<meta property="og:updated_time" content="2018-05-05T15:03:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="was">
+<meta name="twitter:description" content="MiddleWare     클라이언트 쪽에 비즈니스 로직이 많을 경우,  클라이언트 관리(배포 등)로 인해 비용이 많이 발생하는 문제가 있습니다. 비즈니스 로직을 클라이언트와 DBMS사이의 미들웨어 서버에서 동작하도록 함으로써  클라이언트는 입력과 출력만 담당하도록 합니다.   WAS   일종의 미들웨어로 웹 클라이언트(보통 웹 브라우저)의 요청 중 웹">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/middleW.png">
+  
+    <link rel="alternate" href="/atom.xml" title="junhee.ko" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">junhee.ko</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-was" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/05/was/" class="article-date">
+  <time datetime="2018-05-04T15:00:00.000Z" itemprop="datePublished">2018-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      was
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>MiddleWare  </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/middleW.png" alt="img"></p>
+<ul>
+<li>클라이언트 쪽에 비즈니스 로직이 많을 경우, </li>
+<li>클라이언트 관리(배포 등)로 인해 비용이 많이 발생하는 문제가 있습니다.</li>
+<li>비즈니스 로직을 클라이언트와 DBMS사이의 미들웨어 서버에서 동작하도록 함으로써 </li>
+<li>클라이언트는 입력과 출력만 담당하도록 합니다.</li>
+</ul>
+</li>
+<li><p>WAS</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/wasimge.png" alt="img"></p>
+<ul>
+<li><p>일종의 미들웨어로 웹 클라이언트(보통 웹 브라우저)의 요청 중 웹 애플리케이션이 동작하도록 지원하는 목적</p>
+</li>
+<li><p>프로그램 실행환경과 데이터베이스 접속 기능 제공</p>
+</li>
+<li>여러개의 트렌젝션(논리적인 작업 단위)을 관리</li>
+<li>업무를 처리하는 비지니스 로직 처리</li>
+</ul>
+</li>
+<li><p>웹서버 vs WAS </p>
+<ul>
+<li>웹서버 : 정적인 컨텐츠를 웹 브라우저에게 전달</li>
+<li>WAS : 동적 결과를 웹 브라우저에게 전달</li>
+<li>WAS도 보통 자체적으로 웹 서버 기능을 내장하고 있습니다.</li>
+<li>현재는 WAS가 가지고 있는 웹 서버도 정적인 콘텐츠를 처리하는 데 있어서 성능상 큰 차이가 없습니다.</li>
+<li>규모가 커질수록 웹 서버와 WAS를 분리합니다.</li>
+<li>자원 이용의 효율성 및 장애 극복, 배포 및 유지보수의 편의성을 위해 웹서버와 WAS를 대체로 분리합니다.</li>
+</ul>
+</li>
+<li>웹 서버가 왜 WAS 앞단에서 동작?<ul>
+<li>웹 서버는 WAS보다 단단</li>
+<li>대용량 어플리케이션은 서버의 수가 여러대일 수 있어</li>
+<li>와스에서 동작하도록 만든 프로그램이 오작동이 발생해서 </li>
+<li>와스 자체에 문제가 발생할수 있어</li>
+<li>이 경우에,</li>
+<li>와스를 재시작 해야할 수 있어</li>
+<li>이런 경우 웹서버가 먼저, 해당 와스를 이용하지 못하도록 해</li>
+<li>그리고 와스를 재시작한다면</li>
+<li>사용자는 와스의 문제가 발생한지 모를 수 있어</li>
+<li>이러한 처리를 ‘장애 극복 기능’ 이라고 함</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/05/05/was/" data-id="cjp7xh0dk00az6hx7u4fjm7kh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/05/CSS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/05/ 웹 서버/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">웹 서버</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/dip/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/designpattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/datastructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareengineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/03/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 junhee.ko<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

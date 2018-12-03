@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Heap | junhee.ko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Heap 이란우선순위 큐를 위한 완전이진트리 우선순위 큐데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적. Heap의 종류  최대힙부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리 최소">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Heap">
+<meta property="og:url" content="https://kojunhee.github.io/2018/11/11/Heap/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="Heap 이란우선순위 큐를 위한 완전이진트리 우선순위 큐데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적. Heap의 종류  최대힙부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리 최소">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap01.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap02.png">
+<meta property="og:updated_time" content="2018-11-12T13:21:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Heap">
+<meta name="twitter:description" content="Heap 이란우선순위 큐를 위한 완전이진트리 우선순위 큐데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적. Heap의 종류  최대힙부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리 최소">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap01.png">
+  
+    <link rel="alternate" href="/atom.xml" title="junhee.ko" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">junhee.ko</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Heap" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/11/Heap/" class="article-date">
+  <time datetime="2018-11-10T15:00:00.000Z" itemprop="datePublished">2018-11-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/datastructure/">dataStructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Heap
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Heap-이란"><a href="#Heap-이란" class="headerlink" title="Heap 이란"></a>Heap 이란</h2><p>우선순위 큐를 위한 완전이진트리</p>
+<h2 id="우선순위-큐"><a href="#우선순위-큐" class="headerlink" title="우선순위 큐"></a>우선순위 큐</h2><p>데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.<br>우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적.</p>
+<h2 id="Heap의-종류"><a href="#Heap의-종류" class="headerlink" title="Heap의 종류"></a>Heap의 종류</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap01.png" alt="img"></p>
+<ol>
+<li>최대힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리</li>
+<li>최소힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리</li>
+</ol>
+<h2 id="Heap의-구현"><a href="#Heap의-구현" class="headerlink" title="Heap의 구현"></a>Heap의 구현</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap02.png" alt="img"></p>
+<p>배열로 구현한다.<br>부모 노드와 자식 노드의 관계는 다음과 같다.</p>
+<ul>
+<li>왼쪽 자식의 인덱스 = (부모의 인덱스) * 2</li>
+<li>오른쪽 자식의 인덱스 = (부모의 인덱스) * 2 + 1</li>
+<li>부모의 인덱스 = (자식의 인덱스) / 2</li>
+</ul>
+<h2 id="Heap의-삽입"><a href="#Heap의-삽입" class="headerlink" title="Heap의 삽입"></a>Heap의 삽입</h2><ol>
+<li>힙에 새로운 요소가 들어오면, 일단 새로운 노드를 힙의 마지막 노드에 이어서 삽입한다.</li>
+<li>새로운 노드를 부모 노드들과 교환해서 힙의 성질을 만족시킨다.</li>
+</ol>
+<h2 id="Heap의-삭제"><a href="#Heap의-삭제" class="headerlink" title="Heap의 삭제"></a>Heap의 삭제</h2><ol>
+<li>최대 힙에서 최댓값은 루트 노드이므로 루트 노드가 삭제된다.<br>최대 힙(max heap)에서 삭제 연산은 최댓값을 가진 요소를 삭제하는 것이다.<br>최소 힙(min heap)에서 삭제 연산은 최솟값을 가진 요소를 삭제하는 것이다.</li>
+<li>삭제된 루트 노드에는 힙의 마지막 노드를 가져온다.</li>
+<li>힙을 재구성한다.</li>
+</ol>
+<h2 id="Heap-정렬"><a href="#Heap-정렬" class="headerlink" title="Heap 정렬"></a>Heap 정렬</h2><p>최대 힙 트리나 최소 힙 트리를 구성해 정렬을 하는 방법</p>
+<h2 id="Heap-정렬의-시간-복잡도"><a href="#Heap-정렬의-시간-복잡도" class="headerlink" title="Heap 정렬의 시간 복잡도"></a>Heap 정렬의 시간 복잡도</h2><p>힙 트리의 전체 높이가 거의 log₂n(완전 이진 트리이므로)이므로 하나의 요소를 힙에 삽입하거나 삭제할 때 힙을 재정비하는 시간이 log₂n만큼 소요된다.</p>
+<p>요소의 개수가 n개 이므로 전체적으로 O(nlog₂n)의 시간이 걸린다.</p>
+<p>T(n) = O(nlog₂n)</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kojunhee.github.io/2018/11/11/Heap/" data-id="cjp7xh0g500i36hx7gwdyafyz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/11/삽입정렬/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          삽입정렬
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/11/점근 표기법/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">점근 표기법</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/dip/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/designpattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/datastructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareengineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/03/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 junhee.ko<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
