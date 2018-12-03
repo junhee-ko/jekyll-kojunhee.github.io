@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>JDBC - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nJDBC\n\n자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약\n자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API\nSQL과 프로그래밍 언어의 통합 접근 중 한 형태\nJAVA는 표준 인터페이스인 JDBC API를 제공\n데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.\n\n\nJDBC를 이용한 프로그래밍 방법\n\n\nimport java.sql.*;\n\n드라이버를 로드 한다.\n\n1Class.forName( \"com.mysql.jdbc.Driver\" );\n\n\n\nConnection 객체를 생성한다.\n\n123String dburl  = \"jdbc:mysql://localhost/dbName\";Connection con =  DriverManager.getConnection ( dburl, ID, PWD );\n\n\n\nStatement 객체를 생성 및 질의 수행\n\n123456Statement stmt = con.createStatement(); ResultSet rs = stmt.executeQuery(\"select no from user\" );stmt.execute(“query”);             //any SQLstmt.executeQuery(“query”);     //SELECTstmt.executeUpdate(“query”);   //INSERT, UPDATE, DELETE\n\n\n\nSQL문에 결과물이 있다면 ResultSet 객체를 생성한다.\n\n123ResultSet rs =  stmt.executeQuery( \"select no from user\" );while ( rs.next() )      System.out.println( rs.getInt( \"no\") );\n\n\n\n모든 객체를 닫는다.\n\n123rs.close();stmt.close();con.close();\n\n\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-08T00:00:00+09:00","dateModified":"2018-05-08T10:07:37+09:00","datePublished":"2018-05-08T00:00:00+09:00","description":"","headline":"JDBC","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/05/08/JDBC/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/05/08/JDBC/"}</script>
+    <meta name="description" content="JDBC  자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약 자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API SQL과 프로그래밍 언어의 통합 접근 중 한 형태 JAVA는 표준 인터페이스인 JDBC API를 제공 데이터베이스 벤더, 또는 기타 써드파티에서는 JDB">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="JDBC">
+<meta property="og:url" content="https://kojunhee.github.io/2018/05/08/JDBC/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="JDBC  자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약 자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API SQL과 프로그래밍 언어의 통합 접근 중 한 형태 JAVA는 표준 인터페이스인 JDBC API를 제공 데이터베이스 벤더, 또는 기타 써드파티에서는 JDB">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/jdbc.png">
+<meta property="og:updated_time" content="2018-05-08T01:07:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JDBC">
+<meta name="twitter:description" content="JDBC  자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약 자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API SQL과 프로그래밍 언어의 통합 접근 중 한 형태 JAVA는 표준 인터페이스인 JDBC API를 제공 데이터베이스 벤더, 또는 기타 써드파티에서는 JDB">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/jdbc.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            JDBC
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-05-08T00:00:00+09:00">
+	
+		    May 08, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/boostcourse/">boostcourse</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <ul>
+<li><p>JDBC</p>
+<ul>
+<li>자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약</li>
+<li>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API</li>
+<li>SQL과 프로그래밍 언어의 통합 접근 중 한 형태</li>
+<li>JAVA는 표준 인터페이스인 JDBC API를 제공</li>
+<li>데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.</li>
+</ul>
+</li>
+<li><p>JDBC를 이용한 프로그래밍 방법</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/jdbc.png" alt="img"></p>
+<ul>
+<li><p>import java.sql.*;</p>
+</li>
+<li><p>드라이버를 로드 한다.</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName( <span class="string">"com.mysql.jdbc.Driver"</span> );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Connection 객체를 생성한다.</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String dburl  = <span class="string">"jdbc:mysql://localhost/dbName"</span>;</span><br><span class="line"></span><br><span class="line">Connection con =  DriverManager.getConnection ( dburl, ID, PWD );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Statement 객체를 생성 및 질의 수행</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Statement stmt = con.createStatement(); </span><br><span class="line">ResultSet rs = stmt.executeQuery(<span class="string">"select no from user"</span> );</span><br><span class="line"></span><br><span class="line">stmt.execute(“query”);             <span class="comment">//any SQL</span></span><br><span class="line">stmt.executeQuery(“query”);     <span class="comment">//SELECT</span></span><br><span class="line">stmt.executeUpdate(“query”);   <span class="comment">//INSERT, UPDATE, DELETE</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>SQL문에 결과물이 있다면 ResultSet 객체를 생성한다.</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ResultSet rs =  stmt.executeQuery( <span class="string">"select no from user"</span> );</span><br><span class="line"><span class="keyword">while</span> ( rs.next() )</span><br><span class="line">      System.out.println( rs.getInt( <span class="string">"no"</span>) );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>모든 객체를 닫는다.</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rs.close();</span><br><span class="line">stmt.close();</span><br><span class="line">con.close();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li>NAVER edwith boostcourse Full-Stack Web Developer </li>
+</ul>
+</li>
+</ul>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/08/Spring MVC/" data-tooltip="Spring MVC" aria-label="PREVIOUS: Spring MVC">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/08/Database/" data-tooltip="Database" aria-label="NEXT: Database">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/JDBC/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/JDBC/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/JDBC/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/08/Spring MVC/" data-tooltip="Spring MVC" aria-label="PREVIOUS: Spring MVC">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/08/Database/" data-tooltip="Database" aria-label="NEXT: Database">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/JDBC/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/JDBC/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/JDBC/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/JDBC/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/JDBC/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/JDBC/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
