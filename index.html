@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://junheeko.com/index.html">
+<meta property="og:url" content="http://kojunhee.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kojunhee.github.io"></form>
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2018/11/22/Components/" data-id="cjp7vdj9i00jq5kx742d1k7u6" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2018/11/22/Components/" data-id="cjp7vlcg800jxzjx7h4vrvqez" class="article-share-link">Share</a>
       
       
     </footer>
@@ -154,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2018/11/21/flow, congestion control/" data-id="cjp7vdj9i00js5kx78a7ptk3i" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2018/11/21/flow, congestion control/" data-id="cjp7vlcg500jrzjx77l0eo6ix" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2018/11/21/flow control/" data-id="cjp7vdj9h00jo5kx7b1w49tid" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2018/11/21/flow control/" data-id="cjp7vlcg500jpzjx7z4weu8wb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -253,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2018/11/21/길찾기/" data-id="cjp7vdj9f00ji5kx76vhbw763" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2018/11/21/길찾기/" data-id="cjp7vlcg700jvzjx7mck4tf8b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -313,65 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2018/11/13/SOLID/" data-id="cjp7vdj9g00jk5kx7xrdzxsst" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Hash Table" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/13/Hash Table/" class="article-date">
-  <time datetime="2018-11-12T15:00:00.000Z" itemprop="datePublished">2018-11-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/13/Hash Table/">Hash Table</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hash-Table이란"><a href="#Hash-Table이란" class="headerlink" title="Hash Table이란"></a>Hash Table이란</h2><p>Key에 Value를 저장하는 데이타 구조</p>
-<h2 id="Hash-Function"><a href="#Hash-Function" class="headerlink" title="Hash Function"></a>Hash Function</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hashtable01.png" alt="img"></p>
-<p>key에 대한 데이터를 찾을때, hash_function을 한번만 수행하면 array내에 저장된 index 위치를 찾아낼 수 있</p>
-<p>기 때문에, 데이타의 저장과 삭제가 빠르다.</p>
-<p>하지만 어설픈 hash functio을 통해서 key 값들을 결정한다면 동일한 값이 도출될 수가 있다. </p>
-<p>이렇게 되면 동일한 key 값에 복수 개의 데이터가 하나의 테이블에 존재할 수 있게 되는 것인데  </p>
-<p>이를 Collision 이라고 한다.</p>
-<p>Collision을 해결하는 방법으로, <strong>Separate chaining</strong>과 <strong>Open addressing</strong> 이 있다.</p>
-<h2 id="Separate-Chaining"><a href="#Separate-Chaining" class="headerlink" title="Separate Chaining"></a>Separate Chaining</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hashtable02.png" alt="img"></p>
-<p>Linked List를 이용하는 방식이다.</p>
-<p>각 index에 데이터를 저장하는 Linked list 에 대한 포인터를 가지는 방식이다.</p>
-<p>동일 index로 인해서 충돌이 발생하면 그 index가 가리키고 있는 Linked list에 노드를 추가하여 값을 추가한다.</p>
-<h2 id="Open-Addressing"><a href="#Open-Addressing" class="headerlink" title="Open Addressing"></a>Open Addressing</h2><p>Open addressing  방식은 index에 대한 충돌 처리에 대해서 </p>
-<p>Linked List와 같은 추가적인 메모리 공간을 사용하지 않고, hash table array의 빈공간을 사용하는 방법이다. </p>
-<p>여러 가지 구현 방식이 있다. Linear Probing 방식은 index에 대해서 충돌 이 발생했을 때, </p>
-<p>index 뒤에 있는 버킷중에 빈 버킷을 찾아서 데이터를 넣는 방식이다. </p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist</a></p>
-<p><a href="http://bcho.tistory.com/1072" target="_blank" rel="noopener">http://bcho.tistory.com/1072</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://junheeko.com/2018/11/13/Hash Table/" data-id="cjp7vdj9e00jg5kx7tuhq2beh" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2018/11/13/SOLID/" data-id="cjp7vlcg400jnzjx7putl56dm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -430,7 +372,131 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2018/11/13/View Life Cycle/" data-id="cjp7vdj9g00jm5kx7amtys3i4" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2018/11/13/View Life Cycle/" data-id="cjp7vlcg300jlzjx7rdo6xt4x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Hash Table" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/13/Hash Table/" class="article-date">
+  <time datetime="2018-11-12T15:00:00.000Z" itemprop="datePublished">2018-11-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/13/Hash Table/">Hash Table</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hash-Table이란"><a href="#Hash-Table이란" class="headerlink" title="Hash Table이란"></a>Hash Table이란</h2><p>Key에 Value를 저장하는 데이타 구조</p>
+<h2 id="Hash-Function"><a href="#Hash-Function" class="headerlink" title="Hash Function"></a>Hash Function</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hashtable01.png" alt="img"></p>
+<p>key에 대한 데이터를 찾을때, hash_function을 한번만 수행하면 array내에 저장된 index 위치를 찾아낼 수 있</p>
+<p>기 때문에, 데이타의 저장과 삭제가 빠르다.</p>
+<p>하지만 어설픈 hash functio을 통해서 key 값들을 결정한다면 동일한 값이 도출될 수가 있다. </p>
+<p>이렇게 되면 동일한 key 값에 복수 개의 데이터가 하나의 테이블에 존재할 수 있게 되는 것인데  </p>
+<p>이를 Collision 이라고 한다.</p>
+<p>Collision을 해결하는 방법으로, <strong>Separate chaining</strong>과 <strong>Open addressing</strong> 이 있다.</p>
+<h2 id="Separate-Chaining"><a href="#Separate-Chaining" class="headerlink" title="Separate Chaining"></a>Separate Chaining</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hashtable02.png" alt="img"></p>
+<p>Linked List를 이용하는 방식이다.</p>
+<p>각 index에 데이터를 저장하는 Linked list 에 대한 포인터를 가지는 방식이다.</p>
+<p>동일 index로 인해서 충돌이 발생하면 그 index가 가리키고 있는 Linked list에 노드를 추가하여 값을 추가한다.</p>
+<h2 id="Open-Addressing"><a href="#Open-Addressing" class="headerlink" title="Open Addressing"></a>Open Addressing</h2><p>Open addressing  방식은 index에 대한 충돌 처리에 대해서 </p>
+<p>Linked List와 같은 추가적인 메모리 공간을 사용하지 않고, hash table array의 빈공간을 사용하는 방법이다. </p>
+<p>여러 가지 구현 방식이 있다. Linear Probing 방식은 index에 대해서 충돌 이 발생했을 때, </p>
+<p>index 뒤에 있는 버킷중에 빈 버킷을 찾아서 데이터를 넣는 방식이다. </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist</a></p>
+<p><a href="http://bcho.tistory.com/1072" target="_blank" rel="noopener">http://bcho.tistory.com/1072</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://kojunhee.github.io/2018/11/13/Hash Table/" data-id="cjp7vlcg200jizjx7xzb4i3gz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Transaction" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/12/Transaction/" class="article-date">
+  <time datetime="2018-11-11T15:00:00.000Z" itemprop="datePublished">2018-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/database/">database</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/12/Transaction/">Transaction</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="트랜잭션이란"><a href="#트랜잭션이란" class="headerlink" title="트랜잭션이란"></a>트랜잭션이란</h2><p>하나의 논리적인 작업 단위를 구성하는 연산들의 집합</p>
+<h2 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h2><ol>
+<li><p>Atomicity</p>
+<p>만약 트랜잭션 중간에 어떠한 문제가 발생한다면 트랜잭션에 해당하는 어떠한 작업 내용도 수행되어서는 안되<br>며, 아무런 문제가 발생되지 않았을 경우에만 모든 작업이 수행되어야 한다.</p>
+</li>
+<li><p>Consistency</p>
+<p>트랜잭션이 완료된 다음의 상태에서도 트랜잭션이 일어나기 전의 상황과 동일하게 데이터의 일관성을 보장해<br>야 한다. </p>
+<p>예를 들어 계좌이체를 성공적으로 실행했다면, A계좌의 잔액과 B계좌의 잔액의 합이 트랜잭션 실행 전의 합<br>과 동일해야한다.</p>
+</li>
+<li><p>Isolation</p>
+<p>각각의 트랜잭션은 서로 간섭없이 독립적으로 수행되어야 한다.</p>
+</li>
+<li><p>Durability</p>
+<p>트랜잭션이 정상적으로 종료된 다음에는 영구적으로 데이터베이스에 작업의 결과가 저장되어야 한다.</p>
+</li>
+</ol>
+<h2 id="Commit-Rollback"><a href="#Commit-Rollback" class="headerlink" title="Commit, Rollback"></a>Commit, Rollback</h2><ol>
+<li><p>Commit</p>
+<p>모든 작업을 정상적으로 처리하겠다고 확정하는 명령어이다. 트랜젝션의 처리 과정을 데이터베이스에 반영하<br>기 위해서, 변경된 내용을 모두 영구 저장한다.</p>
+</li>
+<li><p>Rollback</p>
+<p>작업 중 문제가 발생했을 때, 트랜젝션의 처리 과정에서 발생한 변경 사항을 취소하고, 트랜젝션 과정을 종료<br>시킨는 명령어이다. 트랜젝션으로 인한 하나의 묶음 처리가 시작되기 이전의 상태로 되돌린다.</p>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction</a></p>
+<p><a href="https://wikidocs.net/4096" target="_blank" rel="noopener">https://wikidocs.net/4096</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://kojunhee.github.io/2018/11/12/Transaction/" data-id="cjp7vlcg200jgzjx7icju46hb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -505,7 +571,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2018/11/12/퀵정렬/" data-id="cjp7vdj9d00je5kx70jjej6tt" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2018/11/12/퀵정렬/" data-id="cjp7vlcg600jtzjx73w5c0f7o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -515,14 +581,14 @@
 
 
   
-    <article id="post-Transaction" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Linked List, Array" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/11/12/Transaction/" class="article-date">
+    <a href="/2018/11/12/Linked List, Array/" class="article-date">
   <time datetime="2018-11-11T15:00:00.000Z" itemprop="datePublished">2018-11-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/database/">database</a>
+    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
   </div>
 
   </div>
@@ -533,7 +599,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/12/Transaction/">Transaction</a>
+      <a class="article-title" href="/2018/11/12/Linked List, Array/">Array, Linked List</a>
     </h1>
   
 
@@ -541,93 +607,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="트랜잭션이란"><a href="#트랜잭션이란" class="headerlink" title="트랜잭션이란"></a>트랜잭션이란</h2><p>하나의 논리적인 작업 단위를 구성하는 연산들의 집합</p>
-<h2 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h2><ol>
-<li><p>Atomicity</p>
-<p>만약 트랜잭션 중간에 어떠한 문제가 발생한다면 트랜잭션에 해당하는 어떠한 작업 내용도 수행되어서는 안되<br>며, 아무런 문제가 발생되지 않았을 경우에만 모든 작업이 수행되어야 한다.</p>
-</li>
-<li><p>Consistency</p>
-<p>트랜잭션이 완료된 다음의 상태에서도 트랜잭션이 일어나기 전의 상황과 동일하게 데이터의 일관성을 보장해<br>야 한다. </p>
-<p>예를 들어 계좌이체를 성공적으로 실행했다면, A계좌의 잔액과 B계좌의 잔액의 합이 트랜잭션 실행 전의 합<br>과 동일해야한다.</p>
-</li>
-<li><p>Isolation</p>
-<p>각각의 트랜잭션은 서로 간섭없이 독립적으로 수행되어야 한다.</p>
-</li>
-<li><p>Durability</p>
-<p>트랜잭션이 정상적으로 종료된 다음에는 영구적으로 데이터베이스에 작업의 결과가 저장되어야 한다.</p>
-</li>
-</ol>
-<h2 id="Commit-Rollback"><a href="#Commit-Rollback" class="headerlink" title="Commit, Rollback"></a>Commit, Rollback</h2><ol>
-<li><p>Commit</p>
-<p>모든 작업을 정상적으로 처리하겠다고 확정하는 명령어이다. 트랜젝션의 처리 과정을 데이터베이스에 반영하<br>기 위해서, 변경된 내용을 모두 영구 저장한다.</p>
-</li>
-<li><p>Rollback</p>
-<p>작업 중 문제가 발생했을 때, 트랜젝션의 처리 과정에서 발생한 변경 사항을 취소하고, 트랜젝션 과정을 종료<br>시킨는 명령어이다. 트랜젝션으로 인한 하나의 묶음 처리가 시작되기 이전의 상태로 되돌린다.</p>
-</li>
-</ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction</a></p>
-<p><a href="https://wikidocs.net/4096" target="_blank" rel="noopener">https://wikidocs.net/4096</a></p>
+        <h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>배열은 연관된 데이터를 모아서 관리하기 위해 사용되는 자료구조이다. 논리적 저장 순서와 물리적 저장 순서가 일치한다. 따라서 인덱스(index)로 해당 원소(element)에 접근할 수 있다. 그렇기 때문에 찾고자 하는 원소의 인덱스 값을 알고 있으면  Big-O(1) 에 해당 원소로 접근할 수 있다. 즉 random access가 가능하다.</p>
+<p>하지만 삭제 또는 삽입의 과정에서는 해당 원소에 접근하여 작업을 완료한 뒤(O(1)), 또 한 가지의 작업을 추가적으로 해줘야 하기 때문에, 시간이 더 걸린다. 만약 배열의 원소 중 어느 원소를 삭제했다고 했을 때, 배열의 연속적인 특징이 깨지게 된다. 즉 빈 공간이 생기는 것이다. 따라서 삭제한 원소보다 큰 인덱스를 갖는 원소들을 shift해줘야 하는 비용(cost)이 발생하고 이 경우의 시간 복잡도는 O(n)가 된다. 그렇기 때문에 Array 자료구조에서 삭제 기능에 대한 time complexity 의 worst case 는 O(n)이 된다.</p>
+<p>삽입의 경우도 마찬가지이다. 만약 첫번째 자리에 새로운 원소를 추가하고자 한다면 모든 원소들의 인덱스를 1 씩 shift 해줘야 하므로 이 경우도 O(n)의 시간을 요구하게 된다.</p>
+<h2 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h2><p>Element 간의 연결을 이용해서 리스트를 구현한 것이다. 원하는 위치에 삽입을 하고자 하면 원하는 위치를 Search 과정에 있어서 첫번째 원소부터 다 확인해봐야 한다는 것이다. Array 와는 달리 논리적 저장 순서와 물리적 저장 순서가 일치하지 않기 때문이다. 이것은 일단 삽입하고 정렬하는 것과 마찬가지이다. 이 과정 때문에, 어떠한 원소를 삭제 또는 삽입하고자 했을 때, 그 원소를 찾기 위해서 O(n)의 시간이 추가적으로 발생하게 된다.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist</a></p>
+<p><a href="https://opentutorials.org/course/62/5133" target="_blank" rel="noopener">https://opentutorials.org/course/62/5133</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2018/11/12/Transaction/" data-id="cjp7vdj9d00jb5kx75nlxjlk0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-워터폴,에자일" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/12/워터폴,에자일/" class="article-date">
-  <time datetime="2018-11-11T15:00:00.000Z" itemprop="datePublished">2018-11-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/softwareEngineering/">softwareEngineering</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/12/워터폴,에자일/">워터폴,에자일</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Waterfall-Model"><a href="#Waterfall-Model" class="headerlink" title="Waterfall Model"></a>Waterfall Model</h2><p>순차적인 소프트웨어 개발 프로세스이다.</p>
-<p>개발의 흐름이 마치 폭포수처럼 지속적으로 아래로 향하는 것처럼 보이는 데서 이름이 붙여졌다. </p>
-<p>이 폭포수 모델의 흐름은 다음과 같다.</p>
-<ol>
-<li>요구사항 분석</li>
-<li>설계</li>
-<li>구현</li>
-<li>유지보수</li>
-</ol>
-<h2 id="Agile-Model"><a href="#Agile-Model" class="headerlink" title="Agile Model"></a>Agile Model</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/agile01.png" alt="img"></p>
-<p>개발과 즉시 피드백을 받아 유동적으로 개발하는 방법론이다.</p>
-<p>애자일 모델은 전체적인 플랜을 짜고 문서를 통해 주도해 나가던 과거의 방식(워터폴 모델)과 달리 </p>
-<p>앞을 예측하며 개발하지 않고, 일정한 주기를 가지고 끊임없이 프로토 타입을 만들어 내며 필요할 때마다 요구사항을 더하고 수정</p>
-<p>하여 커다란 소프트웨어를 개발해 나가는 방식이다.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ko.wikipedia.org/wiki/%ED%8F%AD%ED%8F%AC%EC%88%98_%EB%AA%A8%EB%8D%B8" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/%ED%8F%AD%ED%8F%AC%EC%88%98_%EB%AA%A8%EB%8D%B8</a></p>
-<p><a href="http://blog.rightbrain.co.kr/?p=5810" target="_blank" rel="noopener">http://blog.rightbrain.co.kr/?p=5810</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://junheeko.com/2018/11/12/워터폴,에자일/" data-id="cjp7vdj9c00j95kx7xtftbibe" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2018/11/12/Linked List, Array/" data-id="cjp7vlcg000jbzjx77cg33ro6" class="article-share-link">Share</a>
       
       
     </footer>

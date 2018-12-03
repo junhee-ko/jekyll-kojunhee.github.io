@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://junheeko.com/page/32/index.html">
+<meta property="og:url" content="http://kojunhee.github.io/page/32/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,89 +54,13 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kojunhee.github.io"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-계단오르기" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/20/계단오르기/" class="article-date">
-  <time datetime="2017-10-19T15:00:00.000Z" itemprop="datePublished">2017-10-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/20/계단오르기/">2579:계단오르기</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://www.acmicpc.net/problem/2579" target="_blank" rel="noopener">https://www.acmicpc.net/problem/2579</a></p>
-<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
-<li>d[i]<ul>
-<li>a[i]를 밟았을 경우, 0~i 번째까지 최대 점수</li>
-</ul>
-</li>
-<li>d[i]<ul>
-<li>max( a[i]+a[i-1]+d[i-3] , a[i]+d[i-2] )</li>
-</ul>
-</li>
-<li><p>example : 10    20    15    25    10    20</p>
-<ul>
-<li>20 X     15 O    25 O : a[i]+a[i-1]+d[i-3]</li>
-<li>15 X     25 O : a[i]+d[i-2]</li>
-</ul>
-</li>
-<li><p>근데, 여기서 사소한 문제 !</p>
-<ul>
-<li>n을 입력받고, 배열을 생성할 때<br>0~n-1 인덱스로 할 것이냐,<br>1~n 인덱스로 할 것이냐에 따라 문제가 생김</li>
-</ul>
-</li>
-<li><p>0~n-1 인덱스로 다음과 같이 하면 틀렸음. </p>
-<ul>
-<li>왜냐하면, d[2]를 구하지 않았기 때문.</li>
-</ul>
-</li>
-</ol>
-<p><img src="http://cfile3.uf.tistory.com/image/9920A43359E752E439E48B" alt="img"></p>
-<ol start="6">
-<li>따라서 다음과 같이 d[2]를 구해야함</li>
-</ol>
-<p><img src="http://cfile28.uf.tistory.com/image/9941113359E75310248E9B" alt="img"></p>
-<ol start="7">
-<li>1~n 인덱스로 범위 잡으면, 상관 없음</li>
-</ol>
-<p><img src="http://cfile6.uf.tistory.com/image/99E8393359E7532D22AC37" alt="img"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://junheeko.com/2017/10/20/계단오르기/" data-id="cjp7vdj2j00245kx7to7dldbh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-제곱수의합" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
@@ -206,7 +130,83 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2017/10/20/제곱수의합/" data-id="cjp7vdj2j00265kx7pgyawgkt" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2017/10/20/제곱수의합/" data-id="cjp7vlc7z0028zjx70pi5bwup" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-계단오르기" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/20/계단오르기/" class="article-date">
+  <time datetime="2017-10-19T15:00:00.000Z" itemprop="datePublished">2017-10-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/20/계단오르기/">2579:계단오르기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.acmicpc.net/problem/2579" target="_blank" rel="noopener">https://www.acmicpc.net/problem/2579</a></p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><ol>
+<li>d[i]<ul>
+<li>a[i]를 밟았을 경우, 0~i 번째까지 최대 점수</li>
+</ul>
+</li>
+<li>d[i]<ul>
+<li>max( a[i]+a[i-1]+d[i-3] , a[i]+d[i-2] )</li>
+</ul>
+</li>
+<li><p>example : 10    20    15    25    10    20</p>
+<ul>
+<li>20 X     15 O    25 O : a[i]+a[i-1]+d[i-3]</li>
+<li>15 X     25 O : a[i]+d[i-2]</li>
+</ul>
+</li>
+<li><p>근데, 여기서 사소한 문제 !</p>
+<ul>
+<li>n을 입력받고, 배열을 생성할 때<br>0~n-1 인덱스로 할 것이냐,<br>1~n 인덱스로 할 것이냐에 따라 문제가 생김</li>
+</ul>
+</li>
+<li><p>0~n-1 인덱스로 다음과 같이 하면 틀렸음. </p>
+<ul>
+<li>왜냐하면, d[2]를 구하지 않았기 때문.</li>
+</ul>
+</li>
+</ol>
+<p><img src="http://cfile3.uf.tistory.com/image/9920A43359E752E439E48B" alt="img"></p>
+<ol start="6">
+<li>따라서 다음과 같이 d[2]를 구해야함</li>
+</ol>
+<p><img src="http://cfile28.uf.tistory.com/image/9941113359E75310248E9B" alt="img"></p>
+<ol start="7">
+<li>1~n 인덱스로 범위 잡으면, 상관 없음</li>
+</ol>
+<p><img src="http://cfile6.uf.tistory.com/image/99E8393359E7532D22AC37" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://kojunhee.github.io/2017/10/20/계단오르기/" data-id="cjp7vlc80002azjx7cskut4ou" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2017/10/17/연속합/" data-id="cjp7vdj2h00205kx7ct6qe3xu" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2017/10/17/연속합/" data-id="cjp7vlc7x0022zjx712z3tdj1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -334,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2017/10/16/가장긴바이토닉부분수열/" data-id="cjp7vdj2k00285kx78omnlhra" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2017/10/16/가장긴바이토닉부분수열/" data-id="cjp7vlc7x0024zjx792xgwesn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2017/10/13/network/" data-id="cjp7vdj2i00225kx7gyxtczi9" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2017/10/13/network/" data-id="cjp7vlc7v001yzjx724jove25" class="article-share-link">Share</a>
       
       
     </footer>
@@ -443,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2017/10/12/baseconversion/" data-id="cjp7vdj2g001y5kx79xsp9ciz" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2017/10/12/baseconversion/" data-id="cjp7vlc7w0020zjx746h075no" class="article-share-link">Share</a>
       
       
     </footer>
@@ -492,7 +492,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2017/10/11/이진수/" data-id="cjp7vdj2f001w5kx7r6fftuop" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2017/10/11/이진수/" data-id="cjp7vlc7u001wzjx7bgvbty8y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -542,7 +542,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2017/10/11/bcrypt-password 암호화/" data-id="cjp7vdj2f001u5kx77lk1ju2x" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2017/10/11/bcrypt-password 암호화/" data-id="cjp7vlc7t001szjx7j0fro4r8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -596,7 +596,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2017/10/10/login-token authentication/" data-id="cjp7vdj2d001q5kx7n6mntjml" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2017/10/10/login-token authentication/" data-id="cjp7vlc7t001uzjx7oew3epzw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -649,7 +649,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://junheeko.com/2017/10/08/진법변환/" data-id="cjp7vdj2e001s5kx72p84ys66" class="article-share-link">Share</a>
+      <a data-url="http://kojunhee.github.io/2017/10/08/진법변환/" data-id="cjp7vlc7s001qzjx7fybraeae" class="article-share-link">Share</a>
       
       
     </footer>
