@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>그래프 - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\n그래프\n\n자료구조의 일종\n정점(node, vertex)\n주로 번호가 써있음\n\n\n간선(edge) :  정점 사이 연결\n그래프 G =(V,E)로 나타냄\n\n\n그래프를 저장하는 방법\n\n인접 행렬\n정점 개수를 v라고 할때,\nv 제곱 크기의 인차원 배열 이용\na[i][j]=1\ni에서 j 로 가는 간선이 있으면 \n\n\na[i][j]=0\ni에서 j 로 가는 간선이 없으면 \n\n\na[i][j] = w\ni에서 j로의 간선 가중치가 w 이면\n\n\n없는 간선도 저장하기 때문에 자주 사용하지 않는 방법\n쉬운 문제 풀 때 주로 사용\n\n\n인접 리스트\n링크드 리스트를 이용해서 구현\na[i] = i와 연결된 정점이 링크드리스트 형태로 저장\na[1] : 2, 5 \n1과 연결된 정점이 2, 5\n\n\n링크드 리스트는 구현하는데 시간이 오래걸림\n그래서, vector / arraylist로 함\n\n\n가중치가 있으면\n정점과 가중치를 같이 저장\na[1] : (2,2), (5,7)\n\n\n\n\n\n\n그래프의 탐색\n\n목적 : 모든 정점을 한 번씩 방문\n\n깊이 우선 탐색 (DFS)\n\n최대한 깊숙히 많이 감\n스택 사용\n스택을 이용해서 갈수 있는 만큼 많이 가고\n갈 수 없으면 이전 정점으로 돌아감 (스택에서 pop해서)\ncheck라는 배열이 필요함\n0 : 아직 방문 X\n1 : 방문 O\n\n\n갈 수 있는 정점이 여러개면\n번호가 작은 것부터\n\n\npop 계속하다가 스택이 비면 탐색 종료\n구현\n\n1234567891011121314151617void dfs(int x)&#123;\t//방문 했다고 체크    check[x] = true;        //a[x] : x와 연결된 정점들이 저장되어 있음    for(int i=0; i&lt;a[x].size; i++)&#123;        \t//x와 연결된 정점        int y = a[x][i];                //방문하지 않았으면 방문        if(check[y] == false)&#123;            dfs(y);        &#125;    &#125;&#125;\n​\n\n너비 우선 탐색 (BFS)\n\n최대한 넓게 가는 것\n큐 사용\n모든 가중치가 1이면 최단 거리 찾는 알고리즘\n큐를 이용해서 아직 방문하지 않았고, 지금 위치에서 갈 수 있는 것을 모두 큐에 넣는 방식\n큐에 넣을 때 방문했다고 체크\ncheck라는 배열이 필요함\n0 : 아직 방문 X\n1 : 방문 O\n\n\n구현\n\n12345678910111213queue&lt;int&gt; q;check[1] = true; q.push(1);while(!q.empty())&#123;    int x = q.front(); q.pop();    printf(&quot;%d &quot; , x);    for(int i=0; i&lt;a[x].size; i++)&#123;        int y = a[x][i];        if(check[y] == false)&#123;            check[y] = true; q.push(y);        &#125;    &#125;&#125;\n​\n\n\n\n\n","dateCreated":"2018-03-10T00:00:00+09:00","dateModified":"2018-04-16T13:00:16+09:00","datePublished":"2018-03-10T00:00:00+09:00","description":"","headline":"그래프","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/03/10/그래프/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/03/10/그래프/"}</script>
+    <meta name="description" content="그래프  자료구조의 일종 정점(node, vertex) 주로 번호가 써있음   간선(edge) :  정점 사이 연결 그래프 G =(V,E)로 나타냄   그래프를 저장하는 방법  인접 행렬 정점 개수를 v라고 할때, v 제곱 크기의 인차원 배열 이용 a[i][j]=1 i에서 j 로 가는 간선이 있으면    a[i][j]=0 i에서 j 로 가는 간선이 없으면">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="그래프">
+<meta property="og:url" content="https://kojunhee.github.io/2018/03/10/그래프/index.html">
+<meta property="og:site_name" content="junhee.ko">
+<meta property="og:description" content="그래프  자료구조의 일종 정점(node, vertex) 주로 번호가 써있음   간선(edge) :  정점 사이 연결 그래프 G =(V,E)로 나타냄   그래프를 저장하는 방법  인접 행렬 정점 개수를 v라고 할때, v 제곱 크기의 인차원 배열 이용 a[i][j]=1 i에서 j 로 가는 간선이 있으면    a[i][j]=0 i에서 j 로 가는 간선이 없으면">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-16T04:00:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="그래프">
+<meta name="twitter:description" content="그래프  자료구조의 일종 정점(node, vertex) 주로 번호가 써있음   간선(edge) :  정점 사이 연결 그래프 G =(V,E)로 나타냄   그래프를 저장하는 방법  인접 행렬 정점 개수를 v라고 할때, v 제곱 크기의 인차원 배열 이용 a[i][j]=1 i에서 j 로 가는 간선이 있으면    a[i][j]=0 i에서 j 로 가는 간선이 없으면">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            그래프
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-03-10T00:00:00+09:00">
+	
+		    Mar 10, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/algorithm/">algorithm</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <ul>
+<li><p>그래프</p>
+<ul>
+<li>자료구조의 일종</li>
+<li>정점(node, vertex)<ul>
+<li>주로 번호가 써있음</li>
+</ul>
+</li>
+<li>간선(edge) :  정점 사이 연결</li>
+<li>그래프 G =(V,E)로 나타냄</li>
+</ul>
+</li>
+<li><p>그래프를 저장하는 방법</p>
+<ul>
+<li>인접 행렬<ul>
+<li>정점 개수를 v라고 할때,</li>
+<li>v 제곱 크기의 인차원 배열 이용</li>
+<li>a[i][j]=1<ul>
+<li>i에서 j 로 가는 간선이 있으면 </li>
+</ul>
+</li>
+<li>a[i][j]=0<ul>
+<li>i에서 j 로 가는 간선이 없으면 </li>
+</ul>
+</li>
+<li>a[i][j] = w<ul>
+<li>i에서 j로의 간선 가중치가 w 이면</li>
+</ul>
+</li>
+<li>없는 간선도 저장하기 때문에 자주 사용하지 않는 방법</li>
+<li>쉬운 문제 풀 때 주로 사용</li>
+</ul>
+</li>
+<li>인접 리스트<ul>
+<li>링크드 리스트를 이용해서 구현</li>
+<li>a[i] = i와 연결된 정점이 링크드리스트 형태로 저장</li>
+<li>a[1] : 2, 5 <ul>
+<li>1과 연결된 정점이 2, 5</li>
+</ul>
+</li>
+<li>링크드 리스트는 구현하는데 시간이 오래걸림<ul>
+<li>그래서, vector / arraylist로 함</li>
+</ul>
+</li>
+<li>가중치가 있으면<ul>
+<li>정점과 가중치를 같이 저장</li>
+<li>a[1] : (2,2), (5,7)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>그래프의 탐색</p>
+<ul>
+<li><p>목적 : 모든 정점을 한 번씩 방문</p>
+</li>
+<li><p>깊이 우선 탐색 (DFS)</p>
+<ul>
+<li>최대한 깊숙히 많이 감</li>
+<li>스택 사용</li>
+<li>스택을 이용해서 갈수 있는 만큼 많이 가고</li>
+<li>갈 수 없으면 이전 정점으로 돌아감 (스택에서 pop해서)</li>
+<li>check라는 배열이 필요함<ul>
+<li>0 : 아직 방문 X</li>
+<li>1 : 방문 O</li>
+</ul>
+</li>
+<li>갈 수 있는 정점이 여러개면<ul>
+<li>번호가 작은 것부터</li>
+</ul>
+</li>
+<li>pop 계속하다가 스택이 비면 탐색 종료</li>
+<li>구현</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void dfs(int x)&#123;</span><br><span class="line"></span><br><span class="line">	//방문 했다고 체크</span><br><span class="line">    check[x] = true;</span><br><span class="line">    </span><br><span class="line">    //a[x] : x와 연결된 정점들이 저장되어 있음</span><br><span class="line">    for(int i=0; i&lt;a[x].size; i++)&#123;</span><br><span class="line">    </span><br><span class="line">    	//x와 연결된 정점</span><br><span class="line">        int y = a[x][i];</span><br><span class="line">        </span><br><span class="line">        //방문하지 않았으면 방문</span><br><span class="line">        if(check[y] == false)&#123;</span><br><span class="line">            dfs(y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>너비 우선 탐색 (BFS)</p>
+<ul>
+<li>최대한 넓게 가는 것</li>
+<li>큐 사용</li>
+<li>모든 가중치가 1이면 최단 거리 찾는 알고리즘</li>
+<li>큐를 이용해서 아직 방문하지 않았고, 지금 위치에서 갈 수 있는 것을 모두 큐에 넣는 방식</li>
+<li>큐에 넣을 때 방문했다고 체크</li>
+<li>check라는 배열이 필요함<ul>
+<li>0 : 아직 방문 X</li>
+<li>1 : 방문 O</li>
+</ul>
+</li>
+<li>구현</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">queue&lt;int&gt; q;</span><br><span class="line">check[1] = true; q.push(1);</span><br><span class="line"></span><br><span class="line">while(!q.empty())&#123;</span><br><span class="line">    int x = q.front(); q.pop();</span><br><span class="line">    printf(&quot;%d &quot; , x);</span><br><span class="line">    for(int i=0; i&lt;a[x].size; i++)&#123;</span><br><span class="line">        int y = a[x][i];</span><br><span class="line">        if(check[y] == false)&#123;</span><br><span class="line">            check[y] = true; q.push(y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/03/12/최대상금/" data-tooltip="최대상금" aria-label="PREVIOUS: 최대상금">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/03/09/최빈수 구하기/" data-tooltip="최빈수" aria-label="NEXT: 최빈수">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/03/10/그래프/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/03/10/그래프/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/03/10/그래프/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/03/12/최대상금/" data-tooltip="최대상금" aria-label="PREVIOUS: 최대상금">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/03/09/최빈수 구하기/" data-tooltip="최빈수" aria-label="NEXT: 최빈수">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/03/10/그래프/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/03/10/그래프/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/03/10/그래프/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/03/10/그래프/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/03/10/그래프/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/03/10/그래프/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
