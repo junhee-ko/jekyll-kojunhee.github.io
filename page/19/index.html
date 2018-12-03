@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://kojunhee.github.io/page/19/index.html">
+<meta property="og:url" content="https://junheeko.com/page/19/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kojunhee.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
       </div>
     </div>
   </div>
@@ -62,14 +62,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-양치기 꿍" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Singleton Pattern" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/04/13/양치기 꿍/" class="article-date">
+    <a href="/2018/04/13/Singleton Pattern/" class="article-date">
   <time datetime="2018-04-12T15:00:00.000Z" itemprop="datePublished">2018-04-13</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
   </div>
 
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/13/양치기 꿍/">양치기 꿍</a>
+      <a class="article-title" href="/2018/04/13/Singleton Pattern/">Singleton Pattern</a>
     </h1>
   
 
@@ -88,27 +88,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/3187" target="_blank" rel="noopener">https://www.acmicpc.net/problem/3187</a></p>
-<ol>
-<li>이차원 배열의 각 index에 순차적으로 접근</li>
-<li>양, 늑대 count</li>
-<li><p>현재 위치를 기준으로 상하좌우 조사</p>
+        <ul>
+<li><p>Intent</p>
 <ul>
-<li>울타리가 X &amp;&amp; 방문 X</li>
-<li>이동</li>
+<li>Ensure that only one instance of a class is created.</li>
+<li>Provide a global point of access to the object.</li>
 </ul>
 </li>
-</ol>
-<ol start="3">
-<li>2번 다시 수행</li>
-</ol>
-<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/shape01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/shape02.png" alt="img"></p>
+<li><p>Implementation</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/si.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li>EX</li>
+</ul>
+<h4 id="01-Early-instantiation-using-implementation-with-static-field"><a href="#01-Early-instantiation-using-implementation-with-static-field" class="headerlink" title="01 : Early instantiation using implementation with static field"></a>01 : Early instantiation using implementation with static field</h4><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/SingleObject.png" alt="img"></p>
+<h4 id="02-Lazy-instantiation-using-double-locking-mechanism"><a href="#02-Lazy-instantiation-using-double-locking-mechanism" class="headerlink" title="02 : Lazy instantiation using double locking mechanism"></a>02 : Lazy instantiation using double locking mechanism</h4><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/sgg.png" alt="img"></p>
+<h4 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h4><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/SingletonPatternDemo.png" alt="img"></p>
+<ul>
+<li>Reference<ul>
+<li><a href="http://www.oodesign.com/singleton-pattern.html" target="_blank" rel="noopener">http://www.oodesign.com/singleton-pattern.html</a></li>
+<li><a href="https://www.tutorialspoint.com/design_pattern/singleton_pattern.html" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/singleton_pattern.html</a></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/04/13/양치기 꿍/" data-id="cjp7vlcb4009ozjx7fpv0f7hw" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/04/13/Singleton Pattern/" data-id="cjp7w58fm009j80x7dv9eowxx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/04/13/Observer Pattern/" data-id="cjp7vlcb1009kzjx7hpdad4jr" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/04/13/Observer Pattern/" data-id="cjp7w58fl009h80x7tn8dlhkh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -253,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/04/10/Facade Pattern/" data-id="cjp7vlcb3009mzjx7m8jb4lhm" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/04/10/Facade Pattern/" data-id="cjp7w58fk009f80x7bzsmijt8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -263,9 +271,9 @@
 
 
   
-    <article id="post-SRP" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-OCP" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/04/09/SRP/" class="article-date">
+    <a href="/2018/04/09/OCP/" class="article-date">
   <time datetime="2018-04-08T15:00:00.000Z" itemprop="datePublished">2018-04-09</time>
 </a>
     
@@ -281,83 +289,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/09/SRP/">SRP</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="SRP란"><a href="#SRP란" class="headerlink" title="SRP란"></a>SRP란</h2><p>Single Responsibility Principle (단일 책임 원칙)</p>
-<ul>
-<li><p>Intent</p>
-<ul>
-<li>A class should have only one reason to change.</li>
-<li>객체는 단 하나의 책임(변경 이유)만 가져야 한다.</li>
-</ul>
-</li>
-<li>산탄총 수술<ul>
-<li>수의사가 산탄총을 맞은 동물을 치료하는 상황처럼,</li>
-<li>어떤 변경이 있을 때 하나가 아닌 여러 클래스를 변경해야한다</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Bad Example</p>
-<ul>
-<li>each change for a responsibility might affect the other one:<ul>
-<li>Adding a new protocol will create the need to add code for parsing and serializing the content for each type of field.</li>
-<li>Adding a new content type (like html) make us to add code for each protocol implemented.</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp02.png" alt="img"></p>
-</li>
-<li><p>Good Example</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp04.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp05.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="http://www.oodesign.com/single-responsibility-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/single-responsibility-principle.html</a></li>
-<li>JAVA 객체지향 디자인 패턴 (정인상, 채흥석 지음)</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/04/09/SRP/" data-id="cjp7vlcaz009ezjx7u8u091ff" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DIP" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/09/DIP/" class="article-date">
-  <time datetime="2018-04-08T15:00:00.000Z" itemprop="datePublished">2018-04-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/09/DIP/">DIP</a>
+      <a class="article-title" href="/2018/04/09/OCP/">OCP</a>
     </h1>
   
 
@@ -366,46 +298,41 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>Dependency Inversion Principle ( 의존 역전 법칙 )</li>
-</ul>
-<ul>
-<li><p>Intent</p>
-<ul>
-<li>High-level modules should not depend on low-level modules. Both should depend on abstractions.</li>
-<li>Abstractions should not depend on details. Details should depend on abstractions.</li>
-<li>의존 관계를 맺을 때 변화하기 쉬운 것 또는 자주 변화하는 것보다는 </li>
-<li>변화하기 어려운 것, 거의 변화가 없는 것에 의존하라는 원칙</li>
-<li>DIP를 만족하려면,</li>
-<li>어떤 클래스가 도움을 받을 때, 구체적인 클래스보다는 인터페이스나 추상 클래스와 의존 관계를 맺도록.</li>
+<li>Open-Closed Principle (개방-폐쇄 원칙)</li>
+<li>Intent<ul>
+<li>Software entities like classes, modules and functions should be <strong>open for extension</strong> but <strong>closed for modifications</strong>.</li>
+<li>기존의 코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계되어야 한다.</li>
 </ul>
 </li>
+<li>단위 테스트<ul>
+<li>테스트 대상 기능이 사용하는 실제 외부의 서비스를 흉내내는 가짜 객체를 만들어 테스트의 효율성을 높임</li>
+</ul>
+</li>
+</ul>
+<ul>
 <li><p>Bad Example</p>
 <ul>
-<li>the manager class which is a high level class, and the low level class called Worker</li>
-<li>now we have to change Manager class in order to introduce the new SuperWorker<ul>
-<li>Adding a new protocol will create the need to add code for parsing and serializing the content for each type of field.</li>
-<li>Adding a new content type (like html) make us to add code for each protocol implemented.</li>
+<li>GraphicEditor class has to be modified for every new shape class that has to be added</li>
 </ul>
-</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip011.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip022.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip033.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ocp01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op011.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op022.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op033.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op044.png" alt="img"></p>
 </li>
 <li><p>Good Example</p>
 <ul>
-<li>Manager class doesn’t require changes when adding SuperWorkers.</li>
+<li>GraphicEditor is not changed when a new shape class is added</li>
 </ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip044.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip055.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip066.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip077.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ocp03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op055.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op066.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op077.png" alt="img"></p>
 </li>
 </ul>
 <ul>
 <li>Reference<ul>
-<li><a href="http://www.oodesign.com/dependency-inversion-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/dependency-inversion-principle.html</a></li>
-<li>Java 객체지향 디자인 패턴 (정인상, 채흥석 지음)</li>
+<li><a href="http://www.oodesign.com/open-close-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/open-close-principle.html</a></li>
 </ul>
 </li>
 </ul>
@@ -413,7 +340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/04/09/DIP/" data-id="cjp7vlcay009azjx7jm31pr81" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/04/09/OCP/" data-id="cjp7w58fi009b80x7f92ifwoi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -511,7 +438,150 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/04/09/ISP/" data-id="cjp7vlcax0098zjx7nfecp2sk" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/04/09/ISP/" data-id="cjp7w58fi009980x7v2r7ieyx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-적록색약" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/09/적록색약/" class="article-date">
+  <time datetime="2018-04-08T15:00:00.000Z" itemprop="datePublished">2018-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/09/적록색약/">적록색약</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/10026" target="_blank" rel="noopener">https://www.acmicpc.net/problem/10026</a></p>
+<ol>
+<li><p>이차원 배열의 각 index에 순차적으로 접근</p>
+</li>
+<li><p>현재 위치를 기준으로 상하좌우 조사</p>
+<ul>
+<li>현재 위치와 같은 색깔 &amp;&amp; 아직 방문 하지 않았으면</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>이동</li>
+</ul>
+<ol start="3">
+<li>2번 다시 수행</li>
+</ol>
+<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/greeRed01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/newgreeRed02.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/newgreeRed03.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/04/09/적록색약/" data-id="cjp7w58fp009t80x70vltkyvh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-DIP" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/09/DIP/" class="article-date">
+  <time datetime="2018-04-08T15:00:00.000Z" itemprop="datePublished">2018-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/09/DIP/">DIP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Dependency Inversion Principle ( 의존 역전 법칙 )</li>
+</ul>
+<ul>
+<li><p>Intent</p>
+<ul>
+<li>High-level modules should not depend on low-level modules. Both should depend on abstractions.</li>
+<li>Abstractions should not depend on details. Details should depend on abstractions.</li>
+<li>의존 관계를 맺을 때 변화하기 쉬운 것 또는 자주 변화하는 것보다는 </li>
+<li>변화하기 어려운 것, 거의 변화가 없는 것에 의존하라는 원칙</li>
+<li>DIP를 만족하려면,</li>
+<li>어떤 클래스가 도움을 받을 때, 구체적인 클래스보다는 인터페이스나 추상 클래스와 의존 관계를 맺도록.</li>
+</ul>
+</li>
+<li><p>Bad Example</p>
+<ul>
+<li>the manager class which is a high level class, and the low level class called Worker</li>
+<li>now we have to change Manager class in order to introduce the new SuperWorker<ul>
+<li>Adding a new protocol will create the need to add code for parsing and serializing the content for each type of field.</li>
+<li>Adding a new content type (like html) make us to add code for each protocol implemented.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip011.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip022.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip033.png" alt="img"></p>
+</li>
+<li><p>Good Example</p>
+<ul>
+<li>Manager class doesn’t require changes when adding SuperWorkers.</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip044.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip055.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip066.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/dip077.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li>Reference<ul>
+<li><a href="http://www.oodesign.com/dependency-inversion-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/dependency-inversion-principle.html</a></li>
+<li>Java 객체지향 디자인 패턴 (정인상, 채흥석 지음)</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/04/09/DIP/" data-id="cjp7w58fg009580x741i279qf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -600,7 +670,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/04/09/Composite Pattern/" data-id="cjp7vlcaw0096zjx7uue8qb08" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/04/09/Composite Pattern/" data-id="cjp7w58ff009380x7rprr8shk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -676,7 +746,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/04/09/Bridge Pattern/" data-id="cjp7vlcav0094zjx71p1qvk68" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/04/09/Bridge Pattern/" data-id="cjp7w58fc009180x7q7awqsz1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -686,9 +756,9 @@
 
 
   
-    <article id="post-OCP" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-SRP" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/04/09/OCP/" class="article-date">
+    <a href="/2018/04/09/SRP/" class="article-date">
   <time datetime="2018-04-08T15:00:00.000Z" itemprop="datePublished">2018-04-09</time>
 </a>
     
@@ -704,7 +774,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/09/OCP/">OCP</a>
+      <a class="article-title" href="/2018/04/09/SRP/">SRP</a>
     </h1>
   
 
@@ -712,109 +782,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>Open-Closed Principle (개방-폐쇄 원칙)</li>
-<li>Intent<ul>
-<li>Software entities like classes, modules and functions should be <strong>open for extension</strong> but <strong>closed for modifications</strong>.</li>
-<li>기존의 코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계되어야 한다.</li>
+        <h2 id="SRP란"><a href="#SRP란" class="headerlink" title="SRP란"></a>SRP란</h2><p>Single Responsibility Principle (단일 책임 원칙)</p>
+<ul>
+<li><p>Intent</p>
+<ul>
+<li>A class should have only one reason to change.</li>
+<li>객체는 단 하나의 책임(변경 이유)만 가져야 한다.</li>
 </ul>
 </li>
-<li>단위 테스트<ul>
-<li>테스트 대상 기능이 사용하는 실제 외부의 서비스를 흉내내는 가짜 객체를 만들어 테스트의 효율성을 높임</li>
+<li>산탄총 수술<ul>
+<li>수의사가 산탄총을 맞은 동물을 치료하는 상황처럼,</li>
+<li>어떤 변경이 있을 때 하나가 아닌 여러 클래스를 변경해야한다</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li><p>Bad Example</p>
 <ul>
-<li>GraphicEditor class has to be modified for every new shape class that has to be added</li>
+<li>each change for a responsibility might affect the other one:<ul>
+<li>Adding a new protocol will create the need to add code for parsing and serializing the content for each type of field.</li>
+<li>Adding a new content type (like html) make us to add code for each protocol implemented.</li>
 </ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ocp01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op011.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op022.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op033.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op044.png" alt="img"></p>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp01.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp02.png" alt="img"></p>
 </li>
 <li><p>Good Example</p>
-<ul>
-<li>GraphicEditor is not changed when a new shape class is added</li>
-</ul>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/ocp03.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op055.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op066.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/op077.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp03.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/srpp05.png" alt="img"></p>
 </li>
 </ul>
-<ul>
-<li>Reference<ul>
-<li><a href="http://www.oodesign.com/open-close-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/open-close-principle.html</a></li>
-</ul>
-</li>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://www.oodesign.com/single-responsibility-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/single-responsibility-principle.html</a></li>
+<li>JAVA 객체지향 디자인 패턴 (정인상, 채흥석 지음)</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/04/09/OCP/" data-id="cjp7vlcb0009gzjx7cgo97g0l" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-적록색약" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/09/적록색약/" class="article-date">
-  <time datetime="2018-04-08T15:00:00.000Z" itemprop="datePublished">2018-04-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/09/적록색약/">적록색약</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://www.acmicpc.net/problem/10026" target="_blank" rel="noopener">https://www.acmicpc.net/problem/10026</a></p>
-<ol>
-<li><p>이차원 배열의 각 index에 순차적으로 접근</p>
-</li>
-<li><p>현재 위치를 기준으로 상하좌우 조사</p>
-<ul>
-<li>현재 위치와 같은 색깔 &amp;&amp; 아직 방문 하지 않았으면</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>이동</li>
-</ul>
-<ol start="3">
-<li>2번 다시 수행</li>
-</ol>
-<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/greeRed01.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/newgreeRed02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/newgreeRed03.png" alt="img"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/04/09/적록색약/" data-id="cjp7vlcay009czjx7e6viwynm" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/04/09/SRP/" data-id="cjp7w58fj009d80x7qso20k6j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -883,7 +891,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/13/SOLID/">SOLID</a>
+            <a href="/2018/11/13/Hash Table/">Hash Table</a>
           </li>
         
       </ul>

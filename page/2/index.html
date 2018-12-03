@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://kojunhee.github.io/page/2/index.html">
+<meta property="og:url" content="https://junheeko.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kojunhee.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
       </div>
     </div>
   </div>
@@ -62,14 +62,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-워터폴,에자일" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Linked List, Array" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/11/12/워터폴,에자일/" class="article-date">
+    <a href="/2018/11/12/Linked List, Array/" class="article-date">
   <time datetime="2018-11-11T15:00:00.000Z" itemprop="datePublished">2018-11-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/softwareEngineering/">softwareEngineering</a>
+    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
   </div>
 
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/12/워터폴,에자일/">워터폴,에자일</a>
+      <a class="article-title" href="/2018/11/12/Linked List, Array/">Array, Linked List</a>
     </h1>
   
 
@@ -88,27 +88,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Waterfall-Model"><a href="#Waterfall-Model" class="headerlink" title="Waterfall Model"></a>Waterfall Model</h2><p>순차적인 소프트웨어 개발 프로세스이다.</p>
-<p>개발의 흐름이 마치 폭포수처럼 지속적으로 아래로 향하는 것처럼 보이는 데서 이름이 붙여졌다. </p>
-<p>이 폭포수 모델의 흐름은 다음과 같다.</p>
-<ol>
-<li>요구사항 분석</li>
-<li>설계</li>
-<li>구현</li>
-<li>유지보수</li>
-</ol>
-<h2 id="Agile-Model"><a href="#Agile-Model" class="headerlink" title="Agile Model"></a>Agile Model</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/agile01.png" alt="img"></p>
-<p>개발과 즉시 피드백을 받아 유동적으로 개발하는 방법론이다.</p>
-<p>애자일 모델은 전체적인 플랜을 짜고 문서를 통해 주도해 나가던 과거의 방식(워터폴 모델)과 달리 </p>
-<p>앞을 예측하며 개발하지 않고, 일정한 주기를 가지고 끊임없이 프로토 타입을 만들어 내며 필요할 때마다 요구사항을 더하고 수정</p>
-<p>하여 커다란 소프트웨어를 개발해 나가는 방식이다.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ko.wikipedia.org/wiki/%ED%8F%AD%ED%8F%AC%EC%88%98_%EB%AA%A8%EB%8D%B8" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/%ED%8F%AD%ED%8F%AC%EC%88%98_%EB%AA%A8%EB%8D%B8</a></p>
-<p><a href="http://blog.rightbrain.co.kr/?p=5810" target="_blank" rel="noopener">http://blog.rightbrain.co.kr/?p=5810</a></p>
+        <h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>배열은 연관된 데이터를 모아서 관리하기 위해 사용되는 자료구조이다. 논리적 저장 순서와 물리적 저장 순서가 일치한다. 따라서 인덱스(index)로 해당 원소(element)에 접근할 수 있다. 그렇기 때문에 찾고자 하는 원소의 인덱스 값을 알고 있으면  Big-O(1) 에 해당 원소로 접근할 수 있다. 즉 random access가 가능하다.</p>
+<p>하지만 삭제 또는 삽입의 과정에서는 해당 원소에 접근하여 작업을 완료한 뒤(O(1)), 또 한 가지의 작업을 추가적으로 해줘야 하기 때문에, 시간이 더 걸린다. 만약 배열의 원소 중 어느 원소를 삭제했다고 했을 때, 배열의 연속적인 특징이 깨지게 된다. 즉 빈 공간이 생기는 것이다. 따라서 삭제한 원소보다 큰 인덱스를 갖는 원소들을 shift해줘야 하는 비용(cost)이 발생하고 이 경우의 시간 복잡도는 O(n)가 된다. 그렇기 때문에 Array 자료구조에서 삭제 기능에 대한 time complexity 의 worst case 는 O(n)이 된다.</p>
+<p>삽입의 경우도 마찬가지이다. 만약 첫번째 자리에 새로운 원소를 추가하고자 한다면 모든 원소들의 인덱스를 1 씩 shift 해줘야 하므로 이 경우도 O(n)의 시간을 요구하게 된다.</p>
+<h2 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h2><p>Element 간의 연결을 이용해서 리스트를 구현한 것이다. 원하는 위치에 삽입을 하고자 하면 원하는 위치를 Search 과정에 있어서 첫번째 원소부터 다 확인해봐야 한다는 것이다. Array 와는 달리 논리적 저장 순서와 물리적 저장 순서가 일치하지 않기 때문이다. 이것은 일단 삽입하고 정렬하는 것과 마찬가지이다. 이 과정 때문에, 어떠한 원소를 삭제 또는 삽입하고자 했을 때, 그 원소를 찾기 위해서 O(n)의 시간이 추가적으로 발생하게 된다.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist</a></p>
+<p><a href="https://opentutorials.org/course/62/5133" target="_blank" rel="noopener">https://opentutorials.org/course/62/5133</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/11/12/워터폴,에자일/" data-id="cjp7vlcfz00j8zjx7ayr7s08k" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/11/12/Linked List, Array/" data-id="cjp7w58j500j280x7g04j4m6w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -166,7 +156,56 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/11/12/REST/" data-id="cjp7vlcg100jdzjx79cbtosf4" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/11/12/REST/" data-id="cjp7w58j400j180x7960e58yr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-삽입정렬" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/11/삽입정렬/" class="article-date">
+  <time datetime="2018-11-10T15:00:00.000Z" itemprop="datePublished">2018-11-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/11/삽입정렬/">삽입정렬</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="삽입정렬이란"><a href="#삽입정렬이란" class="headerlink" title="삽입정렬이란"></a>삽입정렬이란</h2><p>배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘이다.</p>
+<p>두 번째 자료는 첫 번째 자료, 세 번째 자료는 두 번째와 첫 번째 자료, 네 번째 자료는 세 번째, 두 번째, 첫 번째 자료와 비교한 후 자료가 삽입될 위치를 찾는다. 자료가 삽입될 위치를 찾았다면 그 위치에 자료를 삽입하기 위해 자료를 한 칸씩 뒤로 이동시킨다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/insertionSort01.png" alt="img"></p>
+<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ol>
+<li>for 루프는 n-1번 반복 되고</li>
+<li>최악의 경우 데이터 삽입을 위한 비교는 i-1번 비교</li>
+</ol>
+<p>따라서 최악의 경우 T(n) = (n-1) + (n-2) + … + 2 + 1 = n(n-1)/2 = O(n^2)</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ko.wikipedia.org/wiki/삽입_정렬" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/삽입_정렬</a><br><a href="https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/" target="_blank" rel="noopener">https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/11/11/삽입정렬/" data-id="cjp7w58j000it80x7ivmksja1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/11/11/점근 표기법/" data-id="cjp7vlcfy00j6zjx71ndmzj8e" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/11/11/점근 표기법/" data-id="cjp7w58j300iy80x74qutavl3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +322,122 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/11/11/선택정렬/" data-id="cjp7vlcfx00j3zjx7zic72w58" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/11/11/선택정렬/" data-id="cjp7w58j100iw80x74x8882yd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Heap" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/11/Heap/" class="article-date">
+  <time datetime="2018-11-10T15:00:00.000Z" itemprop="datePublished">2018-11-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/11/Heap/">Heap</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Heap-이란"><a href="#Heap-이란" class="headerlink" title="Heap 이란"></a>Heap 이란</h2><p>우선순위 큐를 위한 완전이진트리</p>
+<h2 id="우선순위-큐"><a href="#우선순위-큐" class="headerlink" title="우선순위 큐"></a>우선순위 큐</h2><p>데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.<br>우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적.</p>
+<h2 id="Heap의-종류"><a href="#Heap의-종류" class="headerlink" title="Heap의 종류"></a>Heap의 종류</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap01.png" alt="img"></p>
+<ol>
+<li>최대힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리</li>
+<li>최소힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리</li>
+</ol>
+<h2 id="Heap의-구현"><a href="#Heap의-구현" class="headerlink" title="Heap의 구현"></a>Heap의 구현</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap02.png" alt="img"></p>
+<p>배열로 구현한다.<br>부모 노드와 자식 노드의 관계는 다음과 같다.</p>
+<ul>
+<li>왼쪽 자식의 인덱스 = (부모의 인덱스) * 2</li>
+<li>오른쪽 자식의 인덱스 = (부모의 인덱스) * 2 + 1</li>
+<li>부모의 인덱스 = (자식의 인덱스) / 2</li>
+</ul>
+<h2 id="Heap의-삽입"><a href="#Heap의-삽입" class="headerlink" title="Heap의 삽입"></a>Heap의 삽입</h2><ol>
+<li>힙에 새로운 요소가 들어오면, 일단 새로운 노드를 힙의 마지막 노드에 이어서 삽입한다.</li>
+<li>새로운 노드를 부모 노드들과 교환해서 힙의 성질을 만족시킨다.</li>
+</ol>
+<h2 id="Heap의-삭제"><a href="#Heap의-삭제" class="headerlink" title="Heap의 삭제"></a>Heap의 삭제</h2><ol>
+<li>최대 힙에서 최댓값은 루트 노드이므로 루트 노드가 삭제된다.<br>최대 힙(max heap)에서 삭제 연산은 최댓값을 가진 요소를 삭제하는 것이다.<br>최소 힙(min heap)에서 삭제 연산은 최솟값을 가진 요소를 삭제하는 것이다.</li>
+<li>삭제된 루트 노드에는 힙의 마지막 노드를 가져온다.</li>
+<li>힙을 재구성한다.</li>
+</ol>
+<h2 id="Heap-정렬"><a href="#Heap-정렬" class="headerlink" title="Heap 정렬"></a>Heap 정렬</h2><p>최대 힙 트리나 최소 힙 트리를 구성해 정렬을 하는 방법</p>
+<h2 id="Heap-정렬의-시간-복잡도"><a href="#Heap-정렬의-시간-복잡도" class="headerlink" title="Heap 정렬의 시간 복잡도"></a>Heap 정렬의 시간 복잡도</h2><p>힙 트리의 전체 높이가 거의 log₂n(완전 이진 트리이므로)이므로 하나의 요소를 힙에 삽입하거나 삭제할 때 힙을 재정비하는 시간이 log₂n만큼 소요된다.</p>
+<p>요소의 개수가 n개 이므로 전체적으로 O(nlog₂n)의 시간이 걸린다.</p>
+<p>T(n) = O(nlog₂n)</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/11/11/Heap/" data-id="cjp7w58iy00im80x7hpihlnzp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-버블정렬" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/11/버블정렬/" class="article-date">
+  <time datetime="2018-11-10T15:00:00.000Z" itemprop="datePublished">2018-11-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/11/버블정렬/">버블정렬</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="버블정렬이란"><a href="#버블정렬이란" class="headerlink" title="버블정렬이란"></a>버블정렬이란</h2><p>서로 인접한 두 원소를 검사하여 정렬하는 알고리즘이다.<br>첫 번째 자료와 두 번째 자료를, 두 번째 자료와 세 번째 자료를, 세 번째와 네 번째를, … 이런 식으로 (마지막-1)번째 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬한다.<br><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bubbleSort01.png" alt="img"></p>
+<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ul>
+<li>비교 횟수<br>최상, 평균, 최악 모두 일정하다.  n-1, n-2, … , 2, 1 번 = n(n-1)/2</li>
+<li>교환 횟수<br>입력 자료가 역순으로 정렬되어 있는 최악의 경우, 한 번 교환하기 위하여 3번의 이동(SWAP 함수의 작업)이 필<br>요하므로 (비교 횟수 * 3) 번 = 3n(n-1)/2</li>
+<li>T(n) = O(n^2)</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/11/11/버블정렬/" data-id="cjp7w58j000ir80x7v2k09a4s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -391,171 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/11/11/MongoDB/" data-id="cjp7vlcfx00j1zjx7zhb2ug9e" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-버블정렬" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/11/버블정렬/" class="article-date">
-  <time datetime="2018-11-10T15:00:00.000Z" itemprop="datePublished">2018-11-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/11/버블정렬/">버블정렬</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="버블정렬이란"><a href="#버블정렬이란" class="headerlink" title="버블정렬이란"></a>버블정렬이란</h2><p>서로 인접한 두 원소를 검사하여 정렬하는 알고리즘이다.<br>첫 번째 자료와 두 번째 자료를, 두 번째 자료와 세 번째 자료를, 세 번째와 네 번째를, … 이런 식으로 (마지막-1)번째 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬한다.<br><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/bubbleSort01.png" alt="img"></p>
-<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ul>
-<li>비교 횟수<br>최상, 평균, 최악 모두 일정하다.  n-1, n-2, … , 2, 1 번 = n(n-1)/2</li>
-<li>교환 횟수<br>입력 자료가 역순으로 정렬되어 있는 최악의 경우, 한 번 교환하기 위하여 3번의 이동(SWAP 함수의 작업)이 필<br>요하므로 (비교 횟수 * 3) 번 = 3n(n-1)/2</li>
-<li>T(n) = O(n^2)</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/11/11/버블정렬/" data-id="cjp7vlcfw00izzjx7kehiiabn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-삽입정렬" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/11/삽입정렬/" class="article-date">
-  <time datetime="2018-11-10T15:00:00.000Z" itemprop="datePublished">2018-11-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/11/삽입정렬/">삽입정렬</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="삽입정렬이란"><a href="#삽입정렬이란" class="headerlink" title="삽입정렬이란"></a>삽입정렬이란</h2><p>배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘이다.</p>
-<p>두 번째 자료는 첫 번째 자료, 세 번째 자료는 두 번째와 첫 번째 자료, 네 번째 자료는 세 번째, 두 번째, 첫 번째 자료와 비교한 후 자료가 삽입될 위치를 찾는다. 자료가 삽입될 위치를 찾았다면 그 위치에 자료를 삽입하기 위해 자료를 한 칸씩 뒤로 이동시킨다.</p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/insertionSort01.png" alt="img"></p>
-<h2 id="시간-복잡도"><a href="#시간-복잡도" class="headerlink" title="시간 복잡도"></a>시간 복잡도</h2><ol>
-<li>for 루프는 n-1번 반복 되고</li>
-<li>최악의 경우 데이터 삽입을 위한 비교는 i-1번 비교</li>
-</ol>
-<p>따라서 최악의 경우 T(n) = (n-1) + (n-2) + … + 2 + 1 = n(n-1)/2 = O(n^2)</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ko.wikipedia.org/wiki/삽입_정렬" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/삽입_정렬</a><br><a href="https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/" target="_blank" rel="noopener">https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/11/11/삽입정렬/" data-id="cjp7vlcfv00iwzjx712d1jtqz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Heap" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/11/Heap/" class="article-date">
-  <time datetime="2018-11-10T15:00:00.000Z" itemprop="datePublished">2018-11-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/11/Heap/">Heap</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Heap-이란"><a href="#Heap-이란" class="headerlink" title="Heap 이란"></a>Heap 이란</h2><p>우선순위 큐를 위한 완전이진트리</p>
-<h2 id="우선순위-큐"><a href="#우선순위-큐" class="headerlink" title="우선순위 큐"></a>우선순위 큐</h2><p>데이터들이 우선순위를 가지고 있고, 우선순위가 높은 데이터가 먼저 출력되는 자료구조.<br>우선순위 큐는 배열, 연결리스트, 힙 으로 구현이 가능하다. 이 중에서 힙(heap)으로 구현하는 것이 가장 효율적.</p>
-<h2 id="Heap의-종류"><a href="#Heap의-종류" class="headerlink" title="Heap의 종류"></a>Heap의 종류</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap01.png" alt="img"></p>
-<ol>
-<li>최대힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리</li>
-<li>최소힙<br>부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리</li>
-</ol>
-<h2 id="Heap의-구현"><a href="#Heap의-구현" class="headerlink" title="Heap의 구현"></a>Heap의 구현</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/heap02.png" alt="img"></p>
-<p>배열로 구현한다.<br>부모 노드와 자식 노드의 관계는 다음과 같다.</p>
-<ul>
-<li>왼쪽 자식의 인덱스 = (부모의 인덱스) * 2</li>
-<li>오른쪽 자식의 인덱스 = (부모의 인덱스) * 2 + 1</li>
-<li>부모의 인덱스 = (자식의 인덱스) / 2</li>
-</ul>
-<h2 id="Heap의-삽입"><a href="#Heap의-삽입" class="headerlink" title="Heap의 삽입"></a>Heap의 삽입</h2><ol>
-<li>힙에 새로운 요소가 들어오면, 일단 새로운 노드를 힙의 마지막 노드에 이어서 삽입한다.</li>
-<li>새로운 노드를 부모 노드들과 교환해서 힙의 성질을 만족시킨다.</li>
-</ol>
-<h2 id="Heap의-삭제"><a href="#Heap의-삭제" class="headerlink" title="Heap의 삭제"></a>Heap의 삭제</h2><ol>
-<li>최대 힙에서 최댓값은 루트 노드이므로 루트 노드가 삭제된다.<br>최대 힙(max heap)에서 삭제 연산은 최댓값을 가진 요소를 삭제하는 것이다.<br>최소 힙(min heap)에서 삭제 연산은 최솟값을 가진 요소를 삭제하는 것이다.</li>
-<li>삭제된 루트 노드에는 힙의 마지막 노드를 가져온다.</li>
-<li>힙을 재구성한다.</li>
-</ol>
-<h2 id="Heap-정렬"><a href="#Heap-정렬" class="headerlink" title="Heap 정렬"></a>Heap 정렬</h2><p>최대 힙 트리나 최소 힙 트리를 구성해 정렬을 하는 방법</p>
-<h2 id="Heap-정렬의-시간-복잡도"><a href="#Heap-정렬의-시간-복잡도" class="headerlink" title="Heap 정렬의 시간 복잡도"></a>Heap 정렬의 시간 복잡도</h2><p>힙 트리의 전체 높이가 거의 log₂n(완전 이진 트리이므로)이므로 하나의 요소를 힙에 삽입하거나 삭제할 때 힙을 재정비하는 시간이 log₂n만큼 소요된다.</p>
-<p>요소의 개수가 n개 이므로 전체적으로 O(nlog₂n)의 시간이 걸린다.</p>
-<p>T(n) = O(nlog₂n)</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html" target="_blank" rel="noopener">https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/11/11/Heap/" data-id="cjp7vlcfv00iuzjx7c49kwz7z" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/11/11/MongoDB/" data-id="cjp7w58iz00ip80x7te4af2pk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -604,7 +594,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/11/08/숫자 고르기/" data-id="cjp7vlcfu00iszjx7khrocgse" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/11/08/숫자 고르기/" data-id="cjp7w58ix00ii80x7k93djih4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -694,7 +684,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/11/08/TCP:IP/" data-id="cjp7vlcfs00ilzjx7c6dymm7p" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/11/08/TCP:IP/" data-id="cjp7w58ix00ik80x78ni112zs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -763,7 +753,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/13/SOLID/">SOLID</a>
+            <a href="/2018/11/13/Hash Table/">Hash Table</a>
           </li>
         
       </ul>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://kojunhee.github.io/page/10/index.html">
+<meta property="og:url" content="https://junheeko.com/page/10/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,84 +54,13 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kojunhee.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-Strategy Pattern01" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/06/Strategy Pattern01/" class="article-date">
-  <time datetime="2018-06-05T15:00:00.000Z" itemprop="datePublished">2018-06-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/06/Strategy Pattern01/">Strategy Pattern01</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>There are common situations when classes differ only in their behavior. For this cases is a good idea to isolate the algorithms in separate classes in order to have the ability to select different algorithms at runtime. </p>
-<h2 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h2><p>Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it. </p>
-<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern01.png" alt="img"> </p>
-<ul>
-<li>The context object receives requests from the client and delegates them to the strategy object. Usually the ConcreteStartegy is created by the client and passed to the context. From this point the clients interacts only with the context.</li>
-<li>Strategy <ul>
-<li>defines an interface common to all supported algorithms. Context uses this interface to call the algorithm defined by a ConcreteStrategy.</li>
-</ul>
-</li>
-<li>Context<ul>
-<li>contains a reference to a strategy object.</li>
-<li>may define an interface that lets strategy accessing its data.</li>
-<li>The Context objects contains a reference to the ConcreteStrategy that should be used. When an operation is required then the algorithm is run from the strategy object. The Context is not aware of the strategy implementation. If necessary, addition objects can be defined to pass data from context object to strategy. </li>
-</ul>
-</li>
-<li>ConcreteStrategy <ul>
-<li>each concrete strategy implements an algorithm.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern02.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern03.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern04.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern05.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern06.png" alt="img">  </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern07.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/Strategy Pattern08.png" alt="img"> </p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="https://www.oodesign.com/strategy-pattern.html" target="_blank" rel="noopener">https://www.oodesign.com/strategy-pattern.html</a></li>
-<li><a href="https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/06/06/Strategy Pattern01/" data-id="cjp7vlce500euzjx77t9s2ido" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-Strategy Pattern02" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
@@ -174,7 +103,84 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/06/06/Strategy Pattern02/" data-id="cjp7vlce300eozjx75yv21h6l" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/06/06/Strategy Pattern02/" data-id="cjp7w58hg00em80x74a5urcqw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Command Pattern03" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/06/Command Pattern03/" class="article-date">
+  <time datetime="2018-06-05T15:00:00.000Z" itemprop="datePublished">2018-06-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/06/Command Pattern03/">Command Pattern03</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/com01.png" alt="img"> </p>
+<ul>
+<li>Command<ul>
+<li>싱핼됭 기능에 대한 인터페이스. 실행될 기능을 execute method로 선언</li>
+</ul>
+</li>
+<li>ConcreteCommand<ul>
+<li>실제로 실행되는 기능을 구현.</li>
+<li>즉, Command라는 인터페이스를 구현</li>
+</ul>
+</li>
+<li>Invoker <ul>
+<li>기능의 실행을 요청하는 호출자 클래스</li>
+</ul>
+</li>
+<li>Receiver<ul>
+<li>ConcreteCommand 에서 execute method를 구현할 때 필요한 클래스</li>
+<li>즉, Concrete Command 의 기능을 실행하기 위해 사용하는 수신자 클래스</li>
+</ul>
+</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/com02.png" alt="img"> </p>
+<ul>
+<li>Button<ul>
+<li>Invoker</li>
+</ul>
+</li>
+<li>LampOnCommand, LampOffCommand<ul>
+<li>ConcreteCommand</li>
+</ul>
+</li>
+<li>Lamp<ul>
+<li>Receiver</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Java 객체지향 디자인 패턴 &lt;정인상, 채흥석 지음&gt;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/06/06/Command Pattern03/" data-id="cjp7w58hp00f880x7jr4b53v1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,7 +264,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/06/04/탈출/" data-id="cjp7vlce400eszjx7ocbqrqeu" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/06/04/탈출/" data-id="cjp7w58hg00ek80x7mozoelpt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -342,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/06/01/스타트링크/" data-id="cjp7vlce100ekzjx70vxzr65m" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/06/01/스타트링크/" data-id="cjp7w58hf00ei80x79pw14znw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,109 +422,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/05/31/Template Method Pattern04/" data-id="cjp7vlce300eqzjx74ymhurlk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Template Method Pattern03" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/31/Template Method Pattern03/" class="article-date">
-  <time datetime="2018-05-30T15:00:00.000Z" itemprop="datePublished">2018-05-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/31/Template Method Pattern03/">Template Method Pattern03</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The Template Method Pattern defines the skeleton of an algorithm in a method, deferring some steps to subclasses. </p>
-<p>Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure. </p>
-<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/templateh01.png" alt="img"></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern01.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern02.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern03.png" alt="img"></p>
-<h2 id="Using-the-hook"><a href="#Using-the-hook" class="headerlink" title="Using the hook"></a>Using the hook</h2><p>To use the hook, we override it in our subclass. </p>
-<p>Here, the hook controls whether the CaffeineBeverage evaluates a certain part of the algorithm; </p>
-<p>that is, whether it adds a condiment to the beverage. </p>
-<p>How do we know whether the customer wants the condiment? Just ask ! </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern04.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern05.png" alt="img"></p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern06.png" alt="img"></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/05/31/Template Method Pattern03/" data-id="cjp7vlce200emzjx7atdqfqxq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Template Method Pattern02" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/31/Template Method Pattern02/" class="article-date">
-  <time datetime="2018-05-30T15:00:00.000Z" itemprop="datePublished">2018-05-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/31/Template Method Pattern02/">Template Method Pattern02</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate02.png" alt="img"> </p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate03.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate04.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate05.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate06.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate07.png" alt="img"> </p>
-<p>##Reference</p>
-<p><a href="https://www.tutorialspoint.com/design_pattern/template_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/template_pattern.htm</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/05/31/Template Method Pattern02/" data-id="cjp7vlcdz00egzjx7afzuhd1l" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/05/31/Template Method Pattern04/" data-id="cjp7w58he00ee80x7amwmpl43" class="article-share-link">Share</a>
       
       
     </footer>
@@ -575,7 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/05/31/Template Method Pattern01/" data-id="cjp7vlcdy00eezjx7h4z9bmzh" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/05/31/Template Method Pattern01/" data-id="cjp7w58hd00ec80x7jn5crmew" class="article-share-link">Share</a>
       
       
     </footer>
@@ -585,9 +489,9 @@
 
 
   
-    <article id="post-State Pattern01" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Template Method Pattern02" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/31/State Pattern01/" class="article-date">
+    <a href="/2018/05/31/Template Method Pattern02/" class="article-date">
   <time datetime="2018-05-30T15:00:00.000Z" itemprop="datePublished">2018-05-31</time>
 </a>
     
@@ -603,7 +507,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/31/State Pattern01/">State Pattern01</a>
+      <a class="article-title" href="/2018/05/31/Template Method Pattern02/">Template Method Pattern02</a>
     </h1>
   
 
@@ -611,33 +515,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The State Pattern allows an object to alter its behavior when its internal state changes. </p>
-<p>The object will appear to change its class. </p>
-<h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><ul>
-<li>The first part of this description makes a lot of sense, right?  Because the pattern encapsulates state into separate classes and delegates to the object representing the current state, we know that behavior changes along with the internal state. The Gumball Machine provides a good example: when the gumball machine is in the NoQuarterState and you insert a quarter, you get different behavior (the machine accepts the quarter) than if you insert a quarter when it’s in the HasQuarterState (the machine rejects the quarter). </li>
-<li>What about the second part of the definition? What does it mean for an object to “appear to change its class?” Think about it from the perspective of a client: if an object you’re using can completely change its behavior, then it appears to you that the object is actually instantiated from another class. In reality, however, you know that we are using composition to give the appearance of a class change by simply referencing different state objects. </li>
-</ul>
-<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML01.png" alt="img"> </p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML02.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML03.png" alt="img"> </p>
-<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML04.png" alt="img"> </p>
-<h2 id="Compared-to-‘Strategy-Pattern’"><a href="#Compared-to-‘Strategy-Pattern’" class="headerlink" title="Compared to ‘Strategy Pattern’"></a>Compared to ‘Strategy Pattern’</h2><p>The State and Strategy Patterns have the same class diagram, but they differ in intent. </p>
-<ul>
-<li>Strategy Pattern <ul>
-<li>typically configures Context classes with a behavior or algorithm. </li>
-</ul>
-</li>
-<li>State Pattern <ul>
-<li>allows a Context to change its behavior as the state of the Context changes.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
+        <h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate02.png" alt="img"> </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate03.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate04.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate05.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate06.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmplate07.png" alt="img"> </p>
+<p>##Reference</p>
+<p><a href="https://www.tutorialspoint.com/design_pattern/template_pattern.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/design_pattern/template_pattern.htm</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/05/31/State Pattern01/" data-id="cjp7vlcdy00eczjx7pzkuxtvy" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/05/31/Template Method Pattern02/" data-id="cjp7w58hd00ea80x767f5shuy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -714,7 +604,123 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/05/31/State Pattern02/" data-id="cjp7vlcdx00eazjx7a2r54oke" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/05/31/State Pattern02/" data-id="cjp7w58hc00e880x7cp98c1fq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-State Pattern01" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/State Pattern01/" class="article-date">
+  <time datetime="2018-05-30T15:00:00.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/State Pattern01/">State Pattern01</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The State Pattern allows an object to alter its behavior when its internal state changes. </p>
+<p>The object will appear to change its class. </p>
+<h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><ul>
+<li>The first part of this description makes a lot of sense, right?  Because the pattern encapsulates state into separate classes and delegates to the object representing the current state, we know that behavior changes along with the internal state. The Gumball Machine provides a good example: when the gumball machine is in the NoQuarterState and you insert a quarter, you get different behavior (the machine accepts the quarter) than if you insert a quarter when it’s in the HasQuarterState (the machine rejects the quarter). </li>
+<li>What about the second part of the definition? What does it mean for an object to “appear to change its class?” Think about it from the perspective of a client: if an object you’re using can completely change its behavior, then it appears to you that the object is actually instantiated from another class. In reality, however, you know that we are using composition to give the appearance of a class change by simply referencing different state objects. </li>
+</ul>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML01.png" alt="img"> </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML02.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML03.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/statePatternUML04.png" alt="img"> </p>
+<h2 id="Compared-to-‘Strategy-Pattern’"><a href="#Compared-to-‘Strategy-Pattern’" class="headerlink" title="Compared to ‘Strategy Pattern’"></a>Compared to ‘Strategy Pattern’</h2><p>The State and Strategy Patterns have the same class diagram, but they differ in intent. </p>
+<ul>
+<li>Strategy Pattern <ul>
+<li>typically configures Context classes with a behavior or algorithm. </li>
+</ul>
+</li>
+<li>State Pattern <ul>
+<li>allows a Context to change its behavior as the state of the Context changes.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/05/31/State Pattern01/" data-id="cjp7w58hb00e680x7wt13n7m5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Template Method Pattern03" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/Template Method Pattern03/" class="article-date">
+  <time datetime="2018-05-30T15:00:00.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/Template Method Pattern03/">Template Method Pattern03</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>The Template Method Pattern defines the skeleton of an algorithm in a method, deferring some steps to subclasses. </p>
+<p>Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure. </p>
+<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/templateh01.png" alt="img"></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern01.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern02.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern03.png" alt="img"></p>
+<h2 id="Using-the-hook"><a href="#Using-the-hook" class="headerlink" title="Using the hook"></a>Using the hook</h2><p>To use the hook, we override it in our subclass. </p>
+<p>Here, the hook controls whether the CaffeineBeverage evaluates a certain part of the algorithm; </p>
+<p>that is, whether it adds a condiment to the beverage. </p>
+<p>How do we know whether the customer wants the condiment? Just ask ! </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern04.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern05.png" alt="img"></p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/tmppattern06.png" alt="img"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>Head First Design Pattern</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/05/31/Template Method Pattern03/" data-id="cjp7w58hf00eg80x7yo92ekz3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -783,7 +789,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/13/SOLID/">SOLID</a>
+            <a href="/2018/11/13/Hash Table/">Hash Table</a>
           </li>
         
       </ul>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://kojunhee.github.io/page/23/index.html">
+<meta property="og:url" content="https://junheeko.com/page/23/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,13 +54,115 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kojunhee.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Centralized Workflow " class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/29/Centralized Workflow /" class="article-date">
+  <time datetime="2018-01-28T15:00:00.000Z" itemprop="datePublished">2018-01-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/29/Centralized Workflow /">Centralized Workflow</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h2><ul>
+<li><p>Clone the central repository</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone ssh://user@host/path/to/repo.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Make changes and commit</p>
+</li>
+</ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status # View the state of the repo</span><br><span class="line">git add &lt;some-file&gt; # Stage a file</span><br><span class="line">git commit # Commit a file&lt;/some-file&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>Push new commits to central repository</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>Managing conflicts</li>
+</ul>
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><ul>
+<li><p>John works on his feature</p>
+<ul>
+<li>edit, stage, and commit.</li>
+</ul>
+</li>
+<li><p>Mary works on her feature</p>
+<ul>
+<li>edit, stage, and commit.</li>
+</ul>
+</li>
+<li><p>John publishes his feature</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Mary tries to publish her feature</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<pre><code>- error
+- Mary needs to pull John’s updates into her repository
+</code></pre><ul>
+<li>Mary rebases on top of John’s commit(s)</li>
+</ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>Mary resolves a merge conflict</p>
+<ul>
+<li><p>충돌이 발생하면 다음과 같은 에러</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFLICT (content): Merge conflict in &lt;some-file&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- Unmerged paths section에서 conflict file이 무엇인지 확인 가능
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Unmerged paths:</span><br><span class="line"># (use &quot;git reset HEAD &lt;some-file&gt;...&quot; to unstage)</span><br><span class="line"># (use &quot;git add/rm &lt;some-file&gt;...&quot; as appropriate to mark resolution)</span><br><span class="line">#</span><br><span class="line"># both modified: &lt;some-file&gt;</span><br></pre></td></tr></table></figure>
+
+
+- 파일 수정 후
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;some-file&gt;</span><br><span class="line">git rebase --continue</span><br><span class="line">git rebase --abort</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/01/29/Centralized Workflow /" data-id="cjp7w58ef007780x7aha4emek" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-데이터 타입 고급" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
@@ -201,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/29/데이터 타입 고급/" data-id="cjp7vlcgg00k5zjx75ebtd24u" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/29/데이터 타입 고급/" data-id="cjp7w58ji00k080x7z51y2ii1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,109 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/29/데이터 타입 기본/" data-id="cjp7vlca4007mzjx7rb79hbyy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Centralized Workflow " class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/29/Centralized Workflow /" class="article-date">
-  <time datetime="2018-01-28T15:00:00.000Z" itemprop="datePublished">2018-01-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/git/">git</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/29/Centralized Workflow /">Centralized Workflow</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h2><ul>
-<li><p>Clone the central repository</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone ssh://user@host/path/to/repo.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Make changes and commit</p>
-</li>
-</ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status # View the state of the repo</span><br><span class="line">git add &lt;some-file&gt; # Stage a file</span><br><span class="line">git commit # Commit a file&lt;/some-file&gt;</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>Push new commits to central repository</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>Managing conflicts</li>
-</ul>
-<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><ul>
-<li><p>John works on his feature</p>
-<ul>
-<li>edit, stage, and commit.</li>
-</ul>
-</li>
-<li><p>Mary works on her feature</p>
-<ul>
-<li>edit, stage, and commit.</li>
-</ul>
-</li>
-<li><p>John publishes his feature</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>Mary tries to publish her feature</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<pre><code>- error
-- Mary needs to pull John’s updates into her repository
-</code></pre><ul>
-<li>Mary rebases on top of John’s commit(s)</li>
-</ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>Mary resolves a merge conflict</p>
-<ul>
-<li><p>충돌이 발생하면 다음과 같은 에러</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFLICT (content): Merge conflict in &lt;some-file&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>- Unmerged paths section에서 conflict file이 무엇인지 확인 가능
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Unmerged paths:</span><br><span class="line"># (use &quot;git reset HEAD &lt;some-file&gt;...&quot; to unstage)</span><br><span class="line"># (use &quot;git add/rm &lt;some-file&gt;...&quot; as appropriate to mark resolution)</span><br><span class="line">#</span><br><span class="line"># both modified: &lt;some-file&gt;</span><br></pre></td></tr></table></figure>
-
-
-- 파일 수정 후
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;some-file&gt;</span><br><span class="line">git rebase --continue</span><br><span class="line">git rebase --abort</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/29/Centralized Workflow /" data-id="cjp7vlca2007fzjx7qmhku5wa" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/29/데이터 타입 기본/" data-id="cjp7w58ei007e80x7gp42hr0b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -449,7 +449,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/26/수이어쓰기/" data-id="cjp7vlca1007azjx7xflrr0rs" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/26/수이어쓰기/" data-id="cjp7w58ee007680x7xhhc211d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -541,7 +541,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/24/타일/" data-id="cjp7vlc9y0074zjx7izfg7ppb" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/24/타일/" data-id="cjp7w58ed007580x74coqco89" class="article-share-link">Share</a>
       
       
     </footer>
@@ -600,7 +600,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/20/슈퍼마리오/" data-id="cjp7vlc9y0072zjx7oeb2bg77" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/20/슈퍼마리오/" data-id="cjp7w58ed007480x7gmuii1u6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -650,7 +650,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/19/벽장문의 이동/" data-id="cjp7vlc9z0076zjx7whukdfp4" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/19/벽장문의 이동/" data-id="cjp7w58dg006s80x7qz0oubep" class="article-share-link">Share</a>
       
       
     </footer>
@@ -695,7 +695,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/18/올림픽/" data-id="cjp7vlc9x0070zjx7ey95fp85" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/18/올림픽/" data-id="cjp7w58df006q80x7at7vbr0k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -777,7 +777,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/17/01타일/" data-id="cjp7vlc9w006wzjx7gvinjakw" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/17/01타일/" data-id="cjp7w58df006o80x7tcb0wg82" class="article-share-link">Share</a>
       
       
     </footer>
@@ -845,7 +845,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/16/줄어들지않아/" data-id="cjp7vlc9x006yzjx7tc3oepii" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/16/줄어들지않아/" data-id="cjp7w58dd006m80x72w1lc8u0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -914,7 +914,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/13/SOLID/">SOLID</a>
+            <a href="/2018/11/13/Hash Table/">Hash Table</a>
           </li>
         
       </ul>

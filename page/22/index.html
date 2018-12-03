@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://kojunhee.github.io/page/22/index.html">
+<meta property="og:url" content="https://junheeko.com/page/22/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -54,7 +54,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kojunhee.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://junheeko.com"></form>
       </div>
     </div>
   </div>
@@ -101,7 +101,69 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/02/06/구조체,클래스/" data-id="cjp7vlca7007uzjx7qtn5hz9y" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/02/06/구조체,클래스/" data-id="cjp7w58it00ia80x7cnb0nkgx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-옵셔널" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/06/옵셔널/" class="article-date">
+  <time datetime="2018-02-05T15:00:00.000Z" itemprop="datePublished">2018-02-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/06/옵셔널/">옵셔널</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
+<ul>
+<li><p>You use optionals in situations where a value may be absen</p>
+</li>
+<li><p>An optional represents two possibilities: </p>
+<ul>
+<li>Either there is a value, and you can unwrap the optional to access that value, </li>
+<li>or there isn’t a value at all.</li>
+</ul>
+</li>
+<li><p>The example below uses the initializer to try to convert a String into an Int:</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let possibleNumber = &quot;123&quot;</span><br><span class="line">let convertedNumber = Int(possibleNumber)</span><br><span class="line">// convertedNumber is inferred to be of type &quot;Int?&quot;, or &quot;optional Int&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Because the initializer might fail, it returns an optional Int, rather than an Int. </li>
+<li>An optional Int is written as Int?, not Int. </li>
+<li>The question mark indicates that the value it contains is optional, </li>
+<li>meaning that it might contain some Int value, </li>
+<li>or it might contain no value at all. </li>
+<li>(It can’t contain anything else, such as a Bool value or a String value. It’s either an Int, or it’s nothing at all.)</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/02/06/옵셔널/" data-id="cjp7w58ey008380x7li7fv2he" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,78 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/02/06/class,struct/" data-id="cjp7vlcab0084zjx7bjrx33ef" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-프로퍼티와 메서드" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/02/06/프로퍼티와 메서드/" class="article-date">
-  <time datetime="2018-02-05T15:00:00.000Z" itemprop="datePublished">2018-02-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ios/">ios</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/06/프로퍼티와 메서드/">프로퍼티와 메서드</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
-<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><ul>
-<li>Properties associate values with a particular class, structure, or enumeration. <ul>
-<li>Stored properties store constant and variable values as part of an instance. Stored properties are provided only by classes and structures.</li>
-<li>computed properties calculate (rather than store) a value. Computed properties are provided by classes, structures, and enumerations. </li>
-</ul>
-</li>
-</ul>
-<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ul>
-<li>Methods are functions that are associated with a particular type. </li>
-<li><p>Classes, structures, and enumerations can all define instance methods, </p>
-<ul>
-<li>which encapsulate specific tasks and functionality for working with an instance of a given type. - Classes, structures, and enumerations can also define type methods, </li>
-<li>which are associated with the type itself. Type methods are similar to class methods in Objective-C.</li>
-</ul>
-</li>
-<li><p>Instance methods are functions </p>
-</li>
-<li>that belong to instances of a particular class, structure, or enumeration. </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Counter &#123;</span><br><span class="line">    var count = 0</span><br><span class="line">    func increment() &#123;</span><br><span class="line">        count += 1</span><br><span class="line">    &#125;</span><br><span class="line">    func increment(by amount: Int) &#123;</span><br><span class="line">        count += amount</span><br><span class="line">    &#125;</span><br><span class="line">    func reset() &#123;</span><br><span class="line">        count = 0</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>The Counter class defines three instance methods:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">increment() increments the counter by 1.</span><br><span class="line">increment(by: Int) increments the counter by a specified integer amount.</span><br><span class="line">reset() resets the counter to zero.</span><br></pre></td></tr></table></figure>
-<ul>
-<li>can also define methods that are called on the type itself. These kinds of methods are called type methods</li>
-<li>You indicate type methods by writing the static keyword before the method’s func keyword. </li>
-<li>Classes may also use the class keyword to allow subclasses to override the superclass’s implementation of that method</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">struct LevelTracker &#123;</span><br><span class="line">    static var highestUnlockedLevel = 1</span><br><span class="line">    var currentLevel = 1</span><br><span class="line">    </span><br><span class="line">    static func unlock(_ level: Int) &#123;</span><br><span class="line">        if level &gt; highestUnlockedLevel &#123; highestUnlockedLevel = level &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    static func isUnlocked(_ level: Int) -&gt; Bool &#123;</span><br><span class="line">        return level &lt;= highestUnlockedLevel</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @discardableResult</span><br><span class="line">    mutating func advance(to level: Int) -&gt; Bool &#123;</span><br><span class="line">        if LevelTracker.isUnlocked(level) &#123;</span><br><span class="line">            currentLevel = level</span><br><span class="line">            return true</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return false</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/02/06/프로퍼티와 메서드/" data-id="cjp7vlcaa0082zjx7npe6o1sx" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/02/06/class,struct/" data-id="cjp7w58ez008580x72sbhewrg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/02/03/단어수학/" data-id="cjp7vlca6007qzjx7gf3unkt6" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/02/03/단어수학/" data-id="cjp7w58eo007n80x7lf8wwzqi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -386,7 +377,77 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/02/02/책페이지/" data-id="cjp7vlca7007szjx79ona2jdh" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/02/02/책페이지/" data-id="cjp7w58el007k80x7wohtwnur" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-함수" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/30/함수/" class="article-date">
+  <time datetime="2018-01-29T15:00:00.000Z" itemprop="datePublished">2018-01-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/30/함수/">함수</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158</a></p>
+<ul>
+<li>Defining and Calling Functions</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func greet(person: String) -&gt; String &#123;</span><br><span class="line">    let greeting = &quot;Hello, &quot; + person + &quot;!&quot;</span><br><span class="line">    return greeting</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(greet(person: &quot;Anna&quot;))</span><br><span class="line">// Prints &quot;Hello, Anna!&quot;</span><br><span class="line">print(greet(person: &quot;Brian&quot;))</span><br><span class="line">// Prints &quot;Hello, Brian!&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Functions with Multiple Return Values</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">func minMax(array: [Int]) -&gt; (min: Int, max: Int) &#123;</span><br><span class="line">    var currentMin = array[0]</span><br><span class="line">    var currentMax = array[0]</span><br><span class="line">    for value in array[1..&lt;array.count] &#123;</span><br><span class="line">        if value &lt; currentMin &#123;</span><br><span class="line">            currentMin = value</span><br><span class="line">        &#125; else if value &gt; currentMax &#123;</span><br><span class="line">            currentMax = value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return (currentMin, currentMax)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Function Argument Labels and Parameter Names</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func greet(person: String, from hometown: String) -&gt; String &#123;</span><br><span class="line">    return &quot;Hello \(person)!  Glad you could visit from \(hometown).&quot;</span><br><span class="line">&#125;</span><br><span class="line">print(greet(person: &quot;Bill&quot;, from: &quot;Cupertino&quot;))</span><br><span class="line">// Prints &quot;Hello Bill!  Glad you could visit from Cupertino.&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Variadic Parameters</p>
+<ul>
+<li>A variadic parameter accepts zero or more values of a specified type</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func arithmeticMean(_ numbers: Double...) -&gt; Double &#123;</span><br><span class="line">    var total: Double = 0</span><br><span class="line">    for number in numbers &#123;</span><br><span class="line">        total += number</span><br><span class="line">    &#125;</span><br><span class="line">    return total / Double(numbers.count)</span><br><span class="line">&#125;</span><br><span class="line">arithmeticMean(1, 2, 3, 4, 5)</span><br><span class="line">// returns 3.0, which is the arithmetic mean of these five numbers</span><br><span class="line">arithmeticMean(3, 8.25, 18.75)</span><br><span class="line">// returns 10.0, which is the arithmetic mean of these three numbers</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>In-Out Parameters</p>
+<ul>
+<li>If you want a function to modify a parameter’s value, and you want those changes to persist after the function call has ended, define that parameter as an in-out parameter instead.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func swapTwoInts(_ a: inout Int, _ b: inout Int) &#123;</span><br><span class="line">    let temporaryA = a</span><br><span class="line">    a = b</span><br><span class="line">    b = temporaryA</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var someInt = 3</span><br><span class="line">var anotherInt = 107</span><br><span class="line">swapTwoInts(&amp;someInt, &amp;anotherInt)</span><br><span class="line">print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;)</span><br><span class="line">// Prints &quot;someInt is now 107, and anotherInt is now 3&quot;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/01/30/함수/" data-id="cjp7w58ej007h80x7e9xwrc97" class="article-share-link">Share</a>
       
       
     </footer>
@@ -457,77 +518,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/30/흐름제어/" data-id="cjp7vlca5007ozjx74f1lwtr0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-함수" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/30/함수/" class="article-date">
-  <time datetime="2018-01-29T15:00:00.000Z" itemprop="datePublished">2018-01-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ios/">ios</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/30/함수/">함수</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158" target="_blank" rel="noopener">https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158</a></p>
-<ul>
-<li>Defining and Calling Functions</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func greet(person: String) -&gt; String &#123;</span><br><span class="line">    let greeting = &quot;Hello, &quot; + person + &quot;!&quot;</span><br><span class="line">    return greeting</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(greet(person: &quot;Anna&quot;))</span><br><span class="line">// Prints &quot;Hello, Anna!&quot;</span><br><span class="line">print(greet(person: &quot;Brian&quot;))</span><br><span class="line">// Prints &quot;Hello, Brian!&quot;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Functions with Multiple Return Values</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">func minMax(array: [Int]) -&gt; (min: Int, max: Int) &#123;</span><br><span class="line">    var currentMin = array[0]</span><br><span class="line">    var currentMax = array[0]</span><br><span class="line">    for value in array[1..&lt;array.count] &#123;</span><br><span class="line">        if value &lt; currentMin &#123;</span><br><span class="line">            currentMin = value</span><br><span class="line">        &#125; else if value &gt; currentMax &#123;</span><br><span class="line">            currentMax = value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return (currentMin, currentMax)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Function Argument Labels and Parameter Names</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func greet(person: String, from hometown: String) -&gt; String &#123;</span><br><span class="line">    return &quot;Hello \(person)!  Glad you could visit from \(hometown).&quot;</span><br><span class="line">&#125;</span><br><span class="line">print(greet(person: &quot;Bill&quot;, from: &quot;Cupertino&quot;))</span><br><span class="line">// Prints &quot;Hello Bill!  Glad you could visit from Cupertino.&quot;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>Variadic Parameters</p>
-<ul>
-<li>A variadic parameter accepts zero or more values of a specified type</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func arithmeticMean(_ numbers: Double...) -&gt; Double &#123;</span><br><span class="line">    var total: Double = 0</span><br><span class="line">    for number in numbers &#123;</span><br><span class="line">        total += number</span><br><span class="line">    &#125;</span><br><span class="line">    return total / Double(numbers.count)</span><br><span class="line">&#125;</span><br><span class="line">arithmeticMean(1, 2, 3, 4, 5)</span><br><span class="line">// returns 3.0, which is the arithmetic mean of these five numbers</span><br><span class="line">arithmeticMean(3, 8.25, 18.75)</span><br><span class="line">// returns 10.0, which is the arithmetic mean of these three numbers</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>In-Out Parameters</p>
-<ul>
-<li>If you want a function to modify a parameter’s value, and you want those changes to persist after the function call has ended, define that parameter as an in-out parameter instead.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func swapTwoInts(_ a: inout Int, _ b: inout Int) &#123;</span><br><span class="line">    let temporaryA = a</span><br><span class="line">    a = b</span><br><span class="line">    b = temporaryA</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var someInt = 3</span><br><span class="line">var anotherInt = 107</span><br><span class="line">swapTwoInts(&amp;someInt, &amp;anotherInt)</span><br><span class="line">print(&quot;someInt is now \(someInt), and anotherInt is now \(anotherInt)&quot;)</span><br><span class="line">// Prints &quot;someInt is now 107, and anotherInt is now 3&quot;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/30/함수/" data-id="cjp7vlca4007kzjx7dj5kipcy" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/30/흐름제어/" data-id="cjp7w58ek007j80x7vd8tonr3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -586,7 +577,89 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/30/연산자/" data-id="cjp7vlca3007hzjx7bc8i9297" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/30/연산자/" data-id="cjp7w58ej007g80x73kozgrky" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-swift" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/29/swift/" class="article-date">
+  <time datetime="2018-01-28T15:00:00.000Z" itemprop="datePublished">2018-01-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/29/swift/">swift</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="features"><a href="#features" class="headerlink" title="features"></a>features</h2><p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
+<ul>
+<li><p>Playgrounds and REPL in Xcode</p>
+<ul>
+<li>Type a line of code and the result appears immediately.</li>
+<li>The result view can display graphics, lists of results, or graphs of a value over time</li>
+</ul>
+</li>
+<li><p>Read-Eval-Print-Loop (REPL)</p>
+<ul>
+<li>Read – 유저의 값을 입력 받아 메모리에 저장</li>
+<li>Eval – 데이터를 처리(Evaluate)</li>
+<li>Print – 결과값을 출력</li>
+<li><p>Loop – Read, Eval, Print 를 유저가 Ctrl+C를 두번 눌러 종료할때까지 반복</p>
+</li>
+<li><p>Available from within the Xcode console or in Terminal.</p>
+</li>
+</ul>
+</li>
+<li><p>Package Manager</p>
+<ul>
+<li>A cross-platform tool for building Swift libraries and executables, making it easy to create and manage dependencies.</li>
+</ul>
+</li>
+<li><p>Fast and Powerful</p>
+<ul>
+<li>low-level primitives such as types, flow control, and operators</li>
+<li>object-oriented features</li>
+</ul>
+</li>
+<li><p>Designed for Safety</p>
+<ul>
+<li>Variables are always initialized before use, </li>
+<li>arrays and integers are checked for overflow, </li>
+<li>and memory is managed automatically.</li>
+<li>Swift objects can never be nil</li>
+<li>optionals : there are cases where nil is valid and appropriate</li>
+</ul>
+</li>
+<li><p>Objective-C Interoperability</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://junheeko.com/2018/01/29/swift/" data-id="cjp7w58eh007b80x7tyb02rxb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -676,89 +749,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/29/swift 처음 시작하기/" data-id="cjp7vlca00078zjx7m8kwrdxu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-swift" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/29/swift/" class="article-date">
-  <time datetime="2018-01-28T15:00:00.000Z" itemprop="datePublished">2018-01-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ios/">ios</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/29/swift/">swift</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="features"><a href="#features" class="headerlink" title="features"></a>features</h2><p><a href="https://developer.apple.com/swift/" target="_blank" rel="noopener">https://developer.apple.com/swift/</a></p>
-<ul>
-<li><p>Playgrounds and REPL in Xcode</p>
-<ul>
-<li>Type a line of code and the result appears immediately.</li>
-<li>The result view can display graphics, lists of results, or graphs of a value over time</li>
-</ul>
-</li>
-<li><p>Read-Eval-Print-Loop (REPL)</p>
-<ul>
-<li>Read – 유저의 값을 입력 받아 메모리에 저장</li>
-<li>Eval – 데이터를 처리(Evaluate)</li>
-<li>Print – 결과값을 출력</li>
-<li><p>Loop – Read, Eval, Print 를 유저가 Ctrl+C를 두번 눌러 종료할때까지 반복</p>
-</li>
-<li><p>Available from within the Xcode console or in Terminal.</p>
-</li>
-</ul>
-</li>
-<li><p>Package Manager</p>
-<ul>
-<li>A cross-platform tool for building Swift libraries and executables, making it easy to create and manage dependencies.</li>
-</ul>
-</li>
-<li><p>Fast and Powerful</p>
-<ul>
-<li>low-level primitives such as types, flow control, and operators</li>
-<li>object-oriented features</li>
-</ul>
-</li>
-<li><p>Designed for Safety</p>
-<ul>
-<li>Variables are always initialized before use, </li>
-<li>arrays and integers are checked for overflow, </li>
-<li>and memory is managed automatically.</li>
-<li>Swift objects can never be nil</li>
-<li>optionals : there are cases where nil is valid and appropriate</li>
-</ul>
-</li>
-<li><p>Objective-C Interoperability</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kojunhee.github.io/2018/01/29/swift/" data-id="cjp7vlca1007dzjx73aos28b6" class="article-share-link">Share</a>
+      <a data-url="https://junheeko.com/2018/01/29/swift 처음 시작하기/" data-id="cjp7w58eg007980x7uzlmd9ak" class="article-share-link">Share</a>
       
       
     </footer>
@@ -827,7 +818,7 @@
           </li>
         
           <li>
-            <a href="/2018/11/13/SOLID/">SOLID</a>
+            <a href="/2018/11/13/Hash Table/">Hash Table</a>
           </li>
         
       </ul>
