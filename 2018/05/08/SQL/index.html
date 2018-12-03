@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
 
-  
-  <title>SQL | junhee.ko</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SQL(Structured Query Language)  SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다. 관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다. DML (Data Manipulation Language) 데이터를 조작하기 위해 사용합니다. INSERT, UPDATE">
-<meta property="og:type" content="article">
+<!DOCTYPE html>
+<html lang="">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>SQL - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"\nSQL(Structured Query Language)\n\nSQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다.\n관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다.\nDML (Data Manipulation Language)\n데이터를 조작하기 위해 사용합니다.\nINSERT, UPDATE, DELETE, SELECT 등이 여기에 해당합니다.\n\n\nDDL (Data Definition Language)\n데이터베이스의 스키마를 정의하거나 조작하기 위해 사용합니다.\nCREATE, DROP, ALTER 등이 여기에 해당합니다.\n\n\nDCL (Data Control Language) \n데이터를 제어하는 언어입니다. 권한을 관리하고, 테이터의 보안, 무결성 등을 정의합니다.\nGRANT, REVOKE 등이 여기에 해당합니다.\n\n\n\n\nDatabase 생성하기\n1mysql –uroot  -p\n\nMySQL 관리자 계정인 root로 데이터베이스 관리 시스템에 접속하겠다는 것입니다.\nMySQL DBMS에 접속하면 “mysql&gt;” 프롬프트가 보입니다.\n\n1mysql&gt; create database connectdb;\n\n다음과 같은 명령을 실행하여 DB이름을 “connectdb＂로 생성하도록 하겠습니다.\n\n\nDatabase 사용자 생성과 권한 주기\n123grant all privileges on db이름.* to 계정이름@&apos;%&apos; identified by ＇암호’;grant all privileges on db이름.* to 계정이름@&apos;localhost&apos; identified by ＇암호’;flush privileges;\n\nDatabase를 생성했다면, 해당 데이터베이스를 사용하는 계정을 생성해야 합니다.\n또한, 해당 계정이 데이터베이스를 이용할 수 있는 권한을 줘야 합니다.\ndb이름 뒤의 * 는 모든 권한을 의미한다.\n@’%’는 어떤 클라이언트에서든 접근 가능하다는 의미이고, @’localhost’는 해당 컴퓨터에서만 접근 가능하다는 의미입니다.\nflush privileges는 DBMS에게 적용을 하라는 의미입니다.\n해당 명령을 반드시 실행해줘야 합니다.\n\n12345grant all privileges on connectdb.* to connectuser@&apos;%&apos; identified by &apos;connect123!@#&apos;;grant all privileges on connectdb.* to connectuser@&apos;localhost&apos; identified by &apos;connect123!@#&apos;;flush privileges;\n\n생성한 Database에 접속하기\n1mysql&gt; –h호스트명 –uDB계정명 –p 데이터베이스이름\n\ndb이름이 connectdb, db계정이 connectuser, 암호가 connect123!@# 일 경우 콘솔창에서 다음과 같이 입력합니다.\n\n1mysql –h127.0.0.1 –uconnectuser –p connectdb [enter]\n\nDBMS에 존재하는 데이터베이스 확인하기\n1mysql&gt; show databases;\n\n사용중인 데이터베이스 전환하기\n1mysql&gt; use mydb;\n\n데이터베이스를 전환하려면, \n이미 데이터베이스가 존재해야 하며 \n현재 접속 중인 계정이 해당 데이터베이스를 사용할 수 있는 권한이 있어야 합니다.\n\n\n데이터를 저장하는 공간 테이블(Table)\n\n\n마이크로소프트의 엑셀(Excel)을 실행하면 표가 나옵니다. 이러한 표에 각종 값을 저장할 수 있습니다.\n데이터베이스도 엑셀의 표와 유사한 테이블을 가질 수 있습니다.\n엑셀과 다른 점은 데이터베이스를 생성해도 테이블은 존재하지 않는다는 것입니다.\n테이블을 사용하려면 테이블을 생성하는 SQL을 사용해야 합니다.\n그리고, 테이블에 값을 저장하려면 저장하기 위한 SQL을 사용해야 합니다.\n\n\n현재 데이터베이스에 존재하는 테이블 목록 확인하기\n1mysql&gt; show tables;\n\n테이블 구조를 확인하기 위한 DESCRIBE 명령\n1mysql&gt; desc EMPLOYEE;\n\n\n\nReference\n\nNAVER edwith boostcourse Full-Stack Web Developer \n\n\n\n","dateCreated":"2018-05-08T00:00:00+09:00","dateModified":"2018-05-08T17:14:36+09:00","datePublished":"2018-05-08T00:00:00+09:00","description":"","headline":"SQL","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/05/08/SQL/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/05/08/SQL/"}</script>
+    <meta name="description" content="SQL(Structured Query Language)  SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다. 관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다. DML (Data Manipulation Language) 데이터를 조작하기 위해 사용합니다. INSERT, UPDATE">
+<meta property="og:type" content="blog">
 <meta property="og:title" content="SQL">
 <meta property="og:url" content="https://kojunhee.github.io/2018/05/08/SQL/index.html">
 <meta property="og:site_name" content="junhee.ko">
@@ -20,79 +25,171 @@
 <meta name="twitter:title" content="SQL">
 <meta name="twitter:description" content="SQL(Structured Query Language)  SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다. 관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다. DML (Data Manipulation Language) 데이터를 조작하기 위해 사용합니다. INSERT, UPDATE">
 <meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/table.png">
-  
-    <link rel="alternate" href="/atom.xml" title="junhee.ko" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
 </head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">junhee.ko</a>
-      </h1>
-      
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    
         
-          <a class="main-nav-link" href="/">Home</a>
+            <a class="header-right-picture " href="#about">
         
-          <a class="main-nav-link" href="/archives">Archives</a>
         
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
-      </div>
-    </div>
-  </div>
+        </a>
+    
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-SQL" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/08/SQL/" class="article-date">
-  <time datetime="2018-05-07T15:00:00.000Z" itemprop="datePublished">2018-05-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/boostcourse/">boostcourse</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
         
-  
-    <h1 class="article-title" itemprop="name">
-      SQL
-    </h1>
-  
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
 
-      </header>
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            SQL
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-05-08T00:00:00+09:00">
+	
+		    May 08, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/boostcourse/">boostcourse</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <ul>
 <li><p>SQL(Structured Query Language)</p>
 <ul>
 <li>SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다.</li>
@@ -180,131 +277,237 @@
 </li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kojunhee.github.io/2018/05/08/SQL/" data-id="cjp7xh0e400ch6hx74yivcldq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2018/05/09/Chain of Responsibility Pattern01/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Chain of Responsibility Pattern01
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/05/08/Spring MVC 구성요소/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Spring MVC 구성요소</div>
-    </a>
-  
-</nav>
+            
 
-  
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/09/Chain of Responsibility Pattern01/" data-tooltip="Chain of Responsibility Pattern01" aria-label="PREVIOUS: Chain of Responsibility Pattern01">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/08/Spring MVC 구성요소/" data-tooltip="Spring MVC 구성요소" aria-label="NEXT: Spring MVC 구성요소">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/SQL/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/SQL/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/SQL/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/dip/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/designpattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/datastructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareengineering/">softwareEngineering</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/12/03/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/22/Components/">Components</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/21/flow control/">flow control</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 junhee.ko<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
 </footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/09/Chain of Responsibility Pattern01/" data-tooltip="Chain of Responsibility Pattern01" aria-label="PREVIOUS: Chain of Responsibility Pattern01">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/08/Spring MVC 구성요소/" data-tooltip="Spring MVC 구성요소" aria-label="NEXT: Spring MVC 구성요소">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/SQL/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/SQL/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/SQL/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/05/08/SQL/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/05/08/SQL/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/05/08/SQL/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
+    </body>
 </html>

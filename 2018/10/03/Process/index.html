@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
 
-  
-  <title>Process | junhee.ko</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) Process실행중인 프로그램  Context CPU 수행상태를 나타내는 하드웨어 문맥  Prgram Counter  각종 register에 무엇을 저장하고 있나  프로세스의 주소 공간  code data stack에 어떤">
-<meta property="og:type" content="article">
+<!DOCTYPE html>
+<html lang="">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>Process - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323)\nProcess실행중인 프로그램\n\nContext\nCPU 수행상태를 나타내는 하드웨어 문맥\n\nPrgram Counter\n\n각종 register에 무엇을 저장하고 있나\n\n프로세스의 주소 공간\n\ncode data stack에 어떤 값이 들어있나\n\n\n프로세스 관련 커널 자료 구조\n운영체제가 프로세스의 어떤 값을 가지고 있나\nPCB\nKernel stack\n프로세스마다 별도로 가지고 있어\n\n\n\n\n\n프로세스의 상태 (Process State)프로세스는 상태가 변경되며 수행된다.\n\n\nRunning\nCPU를 잡고 instruction을 수행중인 상태\n\n\nReady\nCPU를 기다리는 상태(메모리 등 다른 조건을 모두 만족하고)\n\n\nBlocked (wait, sleep)\nCPU를 주어도 당장 instruction을 수행할 수 없는 상태 \n프로세스 자신이 요청한 event(io같은거)가 만족되지않아 이를 기다리는 상태\n자신이 요청한 event 만족되면 ready\n\n\nNew \n프로세스가 생성중인 상태\n\n\nTerminated\nexecution이 끝난 상태\n\n\nSuspended (stopped)\n프로세스는 통째로 메모리에서 쫓겨남\n디스크에 swap out 된다\n외부에서 resume해 주어야 active\n\n\n\n\nPCB운영체제가 각 프로세스를 관리하기 위해 프로세스당 유지하는 정보\n \n\nOS가 관리상 사용하는 부분\nCPU 수행 관련 하드웨어 값\n메모리 관련\n파일 관련\n\n문맥 교환 (context switch)CPU를 한 프로세스에서 다른 프로세스로 넘겨누는 과정\nsystem call이나 interrupt 발생시 context switch가 반드시 일어나는 것은 아님\n \n프로세스 스케쥴링 큐의 모습 \n스케쥴러\nLong-term scheduler (job scheduler)\n메모리를 어떤 프로세스에게 줄지 결정\n시작 프로세스 중 어떤 것들을 ready queue로 보낼지 결정\n\n\nShort-term scheduler (cpu scheduler)\n어떤 프로세스에게 cpu 줄지 결정\n어떤 프로세스를 다음번에 running시킬지 결정\n\n\nMedum-term scheduler (swapper)\n메모리에 많은 프로그램이 올라가있으면 일부를 골라서 쫓아내\n프로세스에게서 메모리를 뺏는 문제\n\n\n\nThread \n \n\n프로세스의 내부의 CPU 수행단위\n프로세스 하나에서 공유할수 있는건 다 공유\n스레드의 구성\nPC\nregister set\nstack space\n\n\n스레드끼리 공유하는부분 (task)\ncode section\ndata sectin\nOS resources\n\n\n장점\nResponsiveness\nif one thread is blocked(network), another thread continues(display)\n\n\nResource Sharing\nn threads can shre code, data, resource of the process\n\n\nEconomy\nUtilization of MP(Multi Processor) Architectures\n\n\n\n","dateCreated":"2018-10-03T00:00:00+09:00","dateModified":"2018-10-03T08:11:07+09:00","datePublished":"2018-10-03T00:00:00+09:00","description":"","headline":"Process","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/10/03/Process/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/10/03/Process/"}</script>
+    <meta name="description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) Process실행중인 프로그램  Context CPU 수행상태를 나타내는 하드웨어 문맥  Prgram Counter  각종 register에 무엇을 저장하고 있나  프로세스의 주소 공간  code data stack에 어떤">
+<meta property="og:type" content="blog">
 <meta property="og:title" content="Process">
 <meta property="og:url" content="https://kojunhee.github.io/2018/10/03/Process/index.html">
 <meta property="og:site_name" content="junhee.ko">
@@ -27,79 +32,171 @@
 <meta name="twitter:title" content="Process">
 <meta name="twitter:description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) Process실행중인 프로그램  Context CPU 수행상태를 나타내는 하드웨어 문맥  Prgram Counter  각종 register에 무엇을 저장하고 있나  프로세스의 주소 공간  code data stack에 어떤">
 <meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100201.png">
-  
-    <link rel="alternate" href="/atom.xml" title="junhee.ko" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
 </head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">junhee.ko</a>
-      </h1>
-      
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    
         
-          <a class="main-nav-link" href="/">Home</a>
+            <a class="header-right-picture " href="#about">
         
-          <a class="main-nav-link" href="/archives">Archives</a>
         
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
-      </div>
-    </div>
-  </div>
+        </a>
+    
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-Process" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/03/Process/" class="article-date">
-  <time datetime="2018-10-02T15:00:00.000Z" itemprop="datePublished">2018-10-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/os/">OS</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
         
-  
-    <h1 class="article-title" itemprop="name">
-      Process
-    </h1>
-  
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
 
-      </header>
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Process
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-10-03T00:00:00+09:00">
+	
+		    Oct 03, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/os/">OS</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
 <h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><p>실행중인 프로그램</p>
 <p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100201.png" alt="img"></p>
 <h2 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h2><ul>
@@ -218,131 +315,237 @@
 </li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kojunhee.github.io/2018/10/03/Process/" data-id="cjp7xh0fm00gn6hx7xri6qx41" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2018/10/04/보물상자 비밀번호/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          보물상자 비밀번호
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/10/01/System Structure, Program Execution/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">System Structure, Program Execution</div>
-    </a>
-  
-</nav>
+            
 
-  
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/04/보물상자 비밀번호/" data-tooltip="보물상자 비밀번호" aria-label="PREVIOUS: 보물상자 비밀번호">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/01/System Structure, Program Execution/" data-tooltip="System Structure, Program Execution" aria-label="NEXT: System Structure, Program Execution">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/10/03/Process/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/10/03/Process/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/10/03/Process/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/dip/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/designpattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/datastructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareengineering/">softwareEngineering</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/12/03/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/22/Components/">Components</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/21/flow control/">flow control</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 junhee.ko<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
 </footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/04/보물상자 비밀번호/" data-tooltip="보물상자 비밀번호" aria-label="PREVIOUS: 보물상자 비밀번호">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/10/01/System Structure, Program Execution/" data-tooltip="System Structure, Program Execution" aria-label="NEXT: System Structure, Program Execution">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/10/03/Process/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/10/03/Process/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/10/03/Process/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/10/03/Process/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/10/03/Process/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/10/03/Process/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
+    </body>
 </html>

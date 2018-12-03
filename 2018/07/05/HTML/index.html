@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
 
-  
-  <title>HTML | junhee.ko</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HTMLHTML 의 본질 : 정보  HyperText   하이퍼텍스트를 가장 중요한 특징으로 하는   Markup  마크업이라는 형식을 가진    Language  컴퓨터 프로그래밍 언어    Tag &amp;amp; 속성1&amp;lt;a href=&quot;test.com&quot; target=&quot;_blank&quot; title=&quot;test&quot;&amp;gt;test&amp;lt;/a&amp;gt;  a 태그   hr">
-<meta property="og:type" content="article">
+<!DOCTYPE html>
+<html lang="">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="junhee.ko">
+    <title>HTML - junhee.ko</title>
+    <meta name="author" content="junhee.ko">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"articleBody":"HTMLHTML 의 본질 : 정보\n\nHyperText \n\n하이퍼텍스트를 가장 중요한 특징으로 하는\n\n\nMarkup\n\n마크업이라는 형식을 가진 \n\n\nLanguage\n\n컴퓨터 프로그래밍 언어\n\n\n\nTag &amp; 속성1&lt;a href=\"test.com\" target=\"_blank\" title=\"test\"&gt;test&lt;/a&gt;\n\na\n태그\n\n\nhref / target / title\n속성\n\n\n\nordered list &amp; unordered list123456789101112&lt;ol&gt;\t&lt;li&gt; test1 &lt;/li&gt;\t&lt;li&gt; test2 &lt;/li&gt;\t&lt;li&gt; test3 &lt;/li&gt;\t&lt;li&gt; test4 &lt;/li&gt;&lt;ol&gt;&lt;ul&gt;\t&lt;li&gt; test1 &lt;/li&gt;\t&lt;li&gt; test2 &lt;/li&gt;\t&lt;li&gt; test3 &lt;/li&gt;\t&lt;li&gt; test4 &lt;/li&gt;&lt;ul&gt;\n문서 구조123456789&lt;!DOCTYPE html&gt;&lt;html&gt;    &lt;head&gt;        &lt;title&gt; &lt;/title&gt;        &lt;meta charset=&quot;utf-8&quot;&gt;    &lt;/head&gt;    &lt;body&gt;    &lt;/body&gt;\t&lt;/html&gt;\nDOCTYPEDcocument type declaration\n브라우저에게 이것은 어떤 표준을 따르고 있는 태그들이야! 라고 말함\n\nhtml 5\n&lt;!DOCTYPE html&gt;\n\n\n\np단락\nbr줄바꿈 \nimg1&lt;img src=\"test.jpg\" width=\"200\" height=\"330\" alt=\"test image\" title=\"test image\"&gt;\ntable1234567891011&lt;table border=\"2\"&gt;    &lt;tr&gt;        &lt;td&gt;이름&lt;/td&gt;     &lt;td&gt;성별&lt;/td&gt;   &lt;td&gt;주소&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;        &lt;td&gt;최진혁&lt;/td&gt;  &lt;td&gt;남&lt;/td&gt;      &lt;td &gt;청주&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;        &lt;td&gt;최유빈&lt;/td&gt;  &lt;td&gt;여&lt;/td&gt;      &lt;td&gt;청주&lt;/td&gt;    &lt;/tr&gt;&lt;/table&gt;\n1234567891011121314151617181920&lt;table border=\"2\"&gt;    &lt;thead&gt;        &lt;tr&gt;            &lt;th&gt;이름&lt;/th&gt;     &lt;th&gt;성별&lt;/th&gt;   &lt;th&gt;주소&lt;/th&gt; &lt;th&gt;회비&lt;/th&gt;        &lt;/tr&gt;    &lt;/thead&gt;    &lt;tbody&gt;        &lt;tr&gt;            &lt;td&gt;최진혁&lt;/td&gt;  &lt;td&gt;남&lt;/td&gt;      &lt;td &gt;청주&lt;/td&gt; &lt;td&gt;1000&lt;/td&gt;        &lt;/tr&gt;        &lt;tr&gt;            &lt;td&gt;최유빈&lt;/td&gt;  &lt;td&gt;여&lt;/td&gt;      &lt;td&gt;청주&lt;/td&gt; &lt;td&gt;500&lt;/td&gt;        &lt;/tr&gt;    &lt;/tbody&gt;    &lt;tfoot&gt;        &lt;tr&gt;            &lt;td&gt;합계&lt;/td&gt;  &lt;td&gt;&lt;/td&gt;      &lt;td&gt;&lt;/td&gt; &lt;td&gt;1500&lt;/td&gt;        &lt;/tr&gt;    &lt;/tfoot&gt;&lt;/table&gt;\n123456789101112131415161718192021&lt;table border=\"2\"&gt;    &lt;thead&gt;        &lt;tr&gt;            &lt;th&gt;이름&lt;/th&gt;     &lt;th&gt;성별&lt;/th&gt;   &lt;th&gt;주소&lt;/th&gt; &lt;th&gt;회비&lt;/th&gt;        &lt;/tr&gt;    &lt;/thead&gt;    &lt;tbody&gt;        &lt;tr&gt;            &lt;td&gt;최진혁&lt;/td&gt;  &lt;td&gt;남&lt;/td&gt;      &lt;td rowspan=\"2\"&gt;청주&lt;/td&gt; &lt;td&gt;1000&lt;/td&gt;        &lt;/tr&gt;        &lt;tr&gt;            &lt;td&gt;최유빈&lt;/td&gt;  &lt;td&gt;여&lt;/td&gt;      &lt;td&gt;500&lt;/td&gt;        &lt;/tr&gt;    &lt;/tbody&gt;    &lt;tfoot&gt;        &lt;tr&gt;            &lt;td colspan=\"3\"&gt;합계&lt;/td&gt;      &lt;td&gt;1500&lt;/td&gt;        &lt;/tr&gt;    &lt;/tfoot&gt; &lt;/table&gt;\nform123456&lt;form action=\"http://localhost/login.php\"&gt;    &lt;p&gt;아이디 : &lt;input type=\"text\" name=\"id\"&gt;&lt;/p&gt;    &lt;p&gt;비밀번호 : &lt;input type=\"password\" name=\"pwd\"&gt;&lt;/p&gt;    &lt;p&gt;주소 : &lt;input type=\"text\" name=\"address\"&gt;&lt;/p&gt;    &lt;input type=\"submit\"&gt;&lt;/form&gt;\n텍스트 입력1234567&lt;form action=\"\"&gt;        &lt;p&gt;text : &lt;input type=\"text\" name=\"id\" value=\"default value\"&gt;&lt;/p&gt;        &lt;p&gt;password : &lt;input type=\"password\" name=\"pwd\" value=\"default value\"&gt;&lt;/p&gt;        &lt;p&gt;textarea :            &lt;textarea cols=\"50\" rows=\"2\"&gt;default value&lt;/textarea&gt;        &lt;/p&gt;    &lt;/form&gt;\nDropdown list123456789101112131415&lt;form action=\"http://localhost/color.php\"&gt;            &lt;h1&gt;색상&lt;/h1&gt;            &lt;select name=\"color\"&gt;                &lt;option value=\"red\"&gt;붉은색&lt;/option&gt;                &lt;option value=\"black\"&gt;검은색&lt;/option&gt;                &lt;option value=\"blue\"&gt;파란색&lt;/option&gt;            &lt;/select&gt;            &lt;h1&gt;색상2 (다중선택)&lt;/h1&gt;            &lt;select name=\"color2\" multiple&gt;                &lt;option value=\"red\"&gt;붉은색&lt;/option&gt;                &lt;option value=\"black\"&gt;검은색&lt;/option&gt;                &lt;option value=\"blue\"&gt;파란색&lt;/option&gt;            &lt;/select&gt;            &lt;input type=\"submit\"&gt;&lt;/form&gt;\nRadio button, Check box123456789101112131415 &lt;form action=\"http://localhost/order.php\"&gt;            &lt;p&gt;                &lt;h1&gt;색상(단일선택)&lt;/h1&gt;                붉은색 : &lt;input type=\"radio\" name=\"color\" value=\"red\"&gt;                검은색 : &lt;input type=\"radio\" name=\"color\" value=\"black\" checked&gt;                파란색 : &lt;input type=\"radio\" name=\"color\" value=\"blue\"&gt;            &lt;/p&gt;            &lt;p&gt;                &lt;h1&gt;사이즈(다중선택)&lt;/h1&gt;                95 : &lt;input type=\"checkbox\" name=\"size\" value=\"95\"&gt;                100 : &lt;input type=\"checkbox\" name=\"size\" value=\"100\" checked&gt;                105 : &lt;input type=\"checkbox\" name=\"size\" value=\"105\" checked&gt;            &lt;/p&gt;            &lt;input type=\"submit\"&gt;&lt;/form&gt;\nButton123456&lt;form action=\"http://localhost/form.php\"&gt;        &lt;input type=\"text\"&gt;        &lt;input type=\"submit\" value=\"전송\"&gt;        &lt;input type=\"button\" value=\"버튼\" onclick=\"alert('hello world')\"&gt;        &lt;input type=\"reset\"&gt;&lt;/form&gt;\nHidden field12345 &lt;form action=\"http://localhost/hidden.php\"&gt;            &lt;input type=\"text\" name=\"id\"&gt;            &lt;input type=\"hidden\" name=\"hide\" value=\"egoing\"&gt;            &lt;input type=\"submit\"&gt;&lt;/form&gt;\nLabel123456789101112131415161718192021222324&lt;form action=\"\"&gt; \t&lt;p&gt; \t\t&lt;label for=\"id_txt\"&gt;text:&lt;/label&gt; \t\t&lt;input id=\"id_txt\" name=\"id\" type=\"text\" value=\"default value\"/&gt; \t&lt;/p&gt; \t&lt;p&gt; \t\t&lt;label for=\"password\"&gt;password:&lt;/label&gt; \t\t&lt;input id=\"password\" name=\"pwd\" type=\"password\" value=\"default value\"/&gt;&lt;/p&gt; \t&lt;p&gt; \t\t&lt;label&gt;textarea: \t\t\t&lt;textarea cols=\"50\" rows=\"2\"&gt;default value&lt;/textarea&gt; \t\t&lt;/label&gt; \t&lt;/p&gt;  \t&lt;p&gt; \t\t&lt;label&gt; \t\t\t&lt;input name=\"color\" type=\"checkbox\" value=\"red\"&gt;붉은색 \t\t&lt;/label&gt;          &lt;label for=\"color_blue\"&gt;             &lt;input id=\"color_blue\" name=\"color\" type=\"checkbox\" value=\"blue\"&gt;파란색         &lt;/label&gt; \t&lt;/p&gt; &lt;/form&gt;\nMethod12345&lt;form action=\"http://localhost/method.php\" method=\"post\"&gt;            &lt;input type=\"text\" name=\"id\"&gt;            &lt;input type=\"password\" name=\"pwd\"&gt;            &lt;input type=\"submit\"&gt;&lt;/form&gt;\n파일 업로드1234&lt;form action=\"http://localhost/upload.php\" method=\"post\" enctype=\"multipart/form-data\"&gt;            &lt;input type=\"file\" name=\"profile\"&gt;            &lt;input type=\"submit\"&gt;&lt;/form&gt;\nsemantic12345678910111213141516&lt;header&gt;&lt;/header&gt;&lt;nav&gt;&lt;/nav&gt;&lt;section&gt;\t&lt;article&gt;\t&lt;/article&gt;\t\t&lt;article&gt;\t&lt;/article&gt;&lt;/section&gt;&lt;footer&gt;&lt;/footer&gt;\nReference생활코딩\n","dateCreated":"2018-07-05T00:00:00+09:00","dateModified":"2018-07-07T13:26:12+09:00","datePublished":"2018-07-05T00:00:00+09:00","description":"","headline":"HTML","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://kojunhee.github.io/2018/07/05/HTML/"},"publisher":{"@type":"Organization","name":"junhee.ko","sameAs":["https://github.com/kojunhee","https://facebook.com/kojunheee","https://www.linkedin.com/in/junheeko","mailto"]},"url":"https://kojunhee.github.io/2018/07/05/HTML/"}</script>
+    <meta name="description" content="HTMLHTML 의 본질 : 정보  HyperText   하이퍼텍스트를 가장 중요한 특징으로 하는   Markup  마크업이라는 형식을 가진    Language  컴퓨터 프로그래밍 언어    Tag &amp;amp; 속성1&amp;lt;a href=&quot;test.com&quot; target=&quot;_blank&quot; title=&quot;test&quot;&amp;gt;test&amp;lt;/a&amp;gt;  a 태그   hr">
+<meta property="og:type" content="blog">
 <meta property="og:title" content="HTML">
 <meta property="og:url" content="https://kojunhee.github.io/2018/07/05/HTML/index.html">
 <meta property="og:site_name" content="junhee.ko">
@@ -18,79 +23,171 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML">
 <meta name="twitter:description" content="HTMLHTML 의 본질 : 정보  HyperText   하이퍼텍스트를 가장 중요한 특징으로 하는   Markup  마크업이라는 형식을 가진    Language  컴퓨터 프로그래밍 언어    Tag &amp;amp; 속성1&amp;lt;a href=&quot;test.com&quot; target=&quot;_blank&quot; title=&quot;test&quot;&amp;gt;test&amp;lt;/a&amp;gt;  a 태그   hr">
-  
-    <link rel="alternate" href="/atom.xml" title="junhee.ko" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-du2xmrqdqrl2ollgeiw050kpl6l4nbyz7bumjuurjgsxyopifvukebxc9lqe.min.css">
+    <!--STYLES END-->
+    
+
+    
 </head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">junhee.ko</a>
-      </h1>
-      
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">junhee.ko</a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    
         
-          <a class="main-nav-link" href="/">Home</a>
+            <a class="header-right-picture " href="#about">
         
-          <a class="main-nav-link" href="/archives">Archives</a>
         
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kojunhee.github.io"></form>
-      </div>
-    </div>
-  </div>
+        </a>
+    
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-HTML" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/05/HTML/" class="article-date">
-  <time datetime="2018-07-04T15:00:00.000Z" itemprop="datePublished">2018-07-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/cs/">cs</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
         
-  
-    <h1 class="article-title" itemprop="name">
-      HTML
-    </h1>
-  
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/kojunhee" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/kojunheee" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/in/junheeko" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
 
-      </header>
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML 의 본질 : 정보</p>
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            HTML
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-07-05T00:00:00+09:00">
+	
+		    Jul 05, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/cs/">cs</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML 의 본질 : 정보</p>
 <ul>
 <li><p>HyperText </p>
 <ul>
@@ -147,131 +244,237 @@
 <h2 id="semantic"><a href="#semantic" class="headerlink" title="semantic"></a>semantic</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;header&gt;</span><br><span class="line">&lt;/header&gt;</span><br><span class="line"></span><br><span class="line">&lt;nav&gt;</span><br><span class="line">&lt;/nav&gt;</span><br><span class="line"></span><br><span class="line">&lt;section&gt;</span><br><span class="line">	&lt;article&gt;</span><br><span class="line">	&lt;/article&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;article&gt;</span><br><span class="line">	&lt;/article&gt;</span><br><span class="line">&lt;/section&gt;</span><br><span class="line"></span><br><span class="line">&lt;footer&gt;</span><br><span class="line">&lt;/footer&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>생활코딩</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kojunhee.github.io/2018/07/05/HTML/" data-id="cjp7xh0ff00g16hx77onzyonz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2018/07/06/CSS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          CSS
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/06/17/Iterator Pattern/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Iterator Pattern</div>
-    </a>
-  
-</nav>
+            
 
-  
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/06/CSS/" data-tooltip="CSS" aria-label="PREVIOUS: CSS">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/17/Iterator Pattern/" data-tooltip="Iterator Pattern" aria-label="NEXT: Iterator Pattern">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/07/05/HTML/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/07/05/HTML/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/07/05/HTML/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/dip/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/designpattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/datastructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareengineering/">softwareEngineering</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/12/03/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/22/Components/">Components</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/21/길찾기/">길찾기</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/21/flow control/">flow control</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 junhee.ko<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 junhee.ko. All Rights Reserved.
+    </span>
 </footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/06/CSS/" data-tooltip="CSS" aria-label="PREVIOUS: CSS">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/17/Iterator Pattern/" data-tooltip="Iterator Pattern" aria-label="NEXT: Iterator Pattern">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/07/05/HTML/" title="Share on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/07/05/HTML/" title="Share on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/07/05/HTML/" title="Share on Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kojunhee.github.io/2018/07/05/HTML/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://kojunhee.github.io/2018/07/05/HTML/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://kojunhee.github.io/2018/07/05/HTML/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">junhee.ko</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-vufjrm3fmbuttogo1hxuu0w9w0sesk5iyysjuguc2hdhufot9szxg8twijry.min.js"></script>
+<!--SCRIPTS END-->
+
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
+    </body>
 </html>
