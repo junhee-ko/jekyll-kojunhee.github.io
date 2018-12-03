@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://junheeko.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Components" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/22/Components/" class="article-date">
+  <time datetime="2018-11-21T15:00:00.000Z" itemprop="datePublished">2018-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/android/">android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/22/Components/">Components</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>안드로이드 애플리케이션은 컴포넌트(component)로 구성되어있습니다. 안드로이드의 4대 컴포넌트는 액티비티(activity), 서비스(service), 콘텐트 제공자(content provider), 방송수신자(broadcast receiver) 입니다.<br>각 컴포넌트들은 하나의 독립된 형태로 존재하며, 정해진 역할을 수행합니다. 이때, 인텐트를 통하여 다른 애플리케이션의 컴포넌트를 활성화시킬 수 있습니다. 인텐트는 서로 독립적으로 동작하는 4가지 컴포넌트들 간의 상호 통신을 위한 장치입니다. 즉, 컴포넌트 간의 통신수단입니다. 인텐트를 통하여 다른 애플리케이션의 컴포넌트를 활성화시킬 수 있습니다.</p>
+<h2 id="액티비티-activity"><a href="#액티비티-activity" class="headerlink" title="액티비티(activity)"></a>액티비티(activity)</h2><p>사용자 인터페이스 화면을 가지며 특정한 작업을 담당하는 컴포넌트입니다. </p>
+<p>일반적으로 UI를 갖는 하나의 스크린을 나타냅니다. 안드로이드 애플리케이션은 반드시 하나의 activity를 가지고 있어야합니다. 각 액티비티는 manifest 파일에 등록되어 있어야 합니다. 엑티비티는 하나 이상의 View를 가질 수 있습니다.</p>
+<p>예를 들어 이메일 앱이라면 새 이메일 목록을 표시하는 액티비티가 하나 있고, 이메일을 작성하는 액티비티가 또 하나, 그리고 이메일을 읽는 데 쓰는 액티비티가 또 하나 있을 수 있습니다. 여러 액티비티가 함께 작동하여 해당 이메일 앱에서 짜임새 있는 사용자 환경을 형성하는 것은 사실이지만, 각자 서로와는 독립적인 형태입니다</p>
+<h2 id="서비스-service"><a href="#서비스-service" class="headerlink" title="서비스(service)"></a>서비스(service)</h2><p>백그라운드에서 실행되는 컴포넌트로 오랫동안 실행되는 작업이나 원격 프로세스를 위한 작업을 할 때 사용됩니다.</p>
+<p>UI가 없습니다. 한번 시작된 Service는 애플리케이션이 종료되고 다른 애플리케이션으로 이동해도 계속 백그라운드에서 실행됩니다. 모든 서비스는 Service 클래스를 상속받아서 작성됩니다. </p>
+<p>예를 들어 서비스는 사용자가 다른 앱에 있는 동안에 백그라운드에서 음악을 재생할 수도 있고, 아니면 사용자와 액티비티 사이의 상호작용을 차단하지 않고 네트워크를 가로질러 데이터를 가져올 수도 있습니다. 또 다른 구성 요소(예: 액티비티)가 서비스를 시작한 다음 실행되도록 두거나 자신에게 바인드하여 상호작용하도록 할 수도 있습니다.</p>
+<h2 id="콘텐트-제공자-content-provider"><a href="#콘텐트-제공자-content-provider" class="headerlink" title="콘텐트 제공자(content provider)"></a>콘텐트 제공자(content provider)</h2><p>데이터를 관리하고 다른 애플리케이션 데이터를 제공하는 컴포넌트입니다.</p>
+<p>데이터는 파일 시스템이나 SQLite 데이터베이스, 웹상에 저장될 수 있습니다. 콘텐트 제공자를 통해서 다른 애플리케이션의 데이터를 쿼리하거나 변경 가능합니다.</p>
+<p>예를 들어, Android 시스템은 사용자의 연락처 정보를 관리하는 콘텐츠 제공자를 제공합니다. 따라서, 적절한 권한을 가진 앱이라면 어떤 것이든 해당 콘텐츠 제공자의 일부를 쿼리하여(예를 들어 ContactsContract.Data 등) 특정한 사람에 대한 정보를 읽고 쓸 수 있습니다.</p>
+<h2 id="방송수신자-broadcast-receiver"><a href="#방송수신자-broadcast-receiver" class="headerlink" title="방송수신자(broadcast receiver)"></a>방송수신자(broadcast receiver)</h2><p>안드로이드 단말기에서 발생하는 다양한 이벤트/정보를 받고 반응하는 컴포넌트입니다.</p>
+<p>예를들면 시스템부팅, 배터리 부족, 전화/문자 수신, 네트워크 끊김을 알려주는 것이 방송입니다. 단말기에서 발생하는 일 중에서 어플리케이션이 알아야 하는 상황이 발생하면 방송을 해줍니다. 수신기(BroadcastReceiver)를 통해 상황을 감지하고 적절한 작업을 수행합니다. 일반적으로 UI가 없습니다.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://developer.android.com/guide/components/fundamentals?hl=ko" target="_blank" rel="noopener">https://developer.android.com/guide/components/fundamentals?hl=ko</a></p>
+<p><a href="http://ggodol.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-4%EB%8C%80-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8" target="_blank" rel="noopener">http://ggodol.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-4%EB%8C%80-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/22/Components/" data-id="cjp7qqoid00jxmcx7mjr6gpyu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-길찾기" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/21/길찾기/" class="article-date">
+  <time datetime="2018-11-20T15:00:00.000Z" itemprop="datePublished">2018-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/길찾기/">길찾기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV14geLqABQCFAYD&amp;categoryId=AV14geLqABQCFAYD&amp;categoryType=CODE" target="_blank" rel="noopener">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV14geLqABQCFAYD&amp;categoryId=AV14geLqABQCFAYD&amp;categoryType=CODE</a></p>
+<p>오랜만에 푸는 관계로, 쉬운 문제를 선택하였습니다. 탐색 기본 문제입니다.</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p><a href="https://github.com/KoJunHee/algorithm/blob/master/src/swa_1219/Solution.java" target="_blank" rel="noopener">https://github.com/KoJunHee/algorithm/blob/master/src/swa_1219/Solution.java</a></p>
+<ol>
+<li><p>그래프 그리기</p>
+<p>주어진 그래프를 두 개의 배열로 표현합니다. 한 지점에서 최대 두 개의 길이 있기 때문입니다.</p>
+<p>예를 들어, 1번 지점에서  3번과 4번의 길로 갈 수 있다면 다음과 같이 배열에 저장합니다.</p>
+<p>arr01[1] =3 , arr02[1] =4</p>
+<p>마찬가지로 3번 지점에서 7번 길로만 갈 수 있다면 다음과 같이 배열에 저장합니다.</p>
+<p>arr01[3] = 7, arr02[3] = 0</p>
+</li>
+<li><p>경로 유무 찾기</p>
+<p>DFS를 사용합니다. 최대한 깊게 들어가다가 99번 위치에 도착하면 탐색을 종료합니다.</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/21/길찾기/" data-id="cjp7qqoid00jvmcx7tcdpcmdi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-flow control" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/21/flow control/" class="article-date">
+  <time datetime="2018-11-20T15:00:00.000Z" itemprop="datePublished">2018-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/network/">network</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/flow control/">flow control</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>flow control은 송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 방법입니다. stop and wait 와 sliding window 방식이 있습니다.</p>
+<h2 id="stop-and-wait"><a href="#stop-and-wait" class="headerlink" title="stop and wait"></a>stop and wait</h2><p>매번 전송한 패킷에 대해 확인응답을 받아야만 그 다음 패킷을 전송하는 방법입니다. 다음 그림과 같이 동작합니다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/flowcontrol01.png" alt="img"></p>
+<h2 id="sliding-window"><a href="#sliding-window" class="headerlink" title="sliding window"></a>sliding window</h2><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://jwprogramming.tistory.com/36" target="_blank" rel="noopener">http://jwprogramming.tistory.com/36</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/21/flow control/" data-id="cjp7qqoi900jrmcx7lhxq67p3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-flow, congestion control" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/21/flow, congestion control/" class="article-date">
+  <time datetime="2018-11-20T15:00:00.000Z" itemprop="datePublished">2018-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/network/">network</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>flow control은 host와 host 간에 데이터 처리를 효율적으로 하기 위한 방법입니다.<br>congestion control은 host와 network 간의 데이터 처리를 효율적으로 하기 위한 방법입니다.</p>
+<h2 id="flow-control-이란"><a href="#flow-control-이란" class="headerlink" title="flow control 이란?"></a>flow control 이란?</h2><p>송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 방법입니다. </p>
+<p>수신측의 데이터 처리 속도가 송신측의 데이터 처리 속도보다 빠르면 문제가 되지 않습니다. 하지만, 송신측의 데<br>이터 처리 속도가 더 빠르면 문제가 됩니다. 수신측에서 제한된 저장용량을 초과한 이후에 도착하는 데이터는, 손<br>실 될 수 있으며 만약 손실 된다면 불필요하게 응답과 데이터 전송이 송/수신 측 간에 빈번이 발생합니다. 이러한 위험을 줄이기 위해 송신 측의 데이터 전송량을 수신측에 따라 조절하는 flow control 이 필요합니다. </p>
+<p>stop and wait, sliding window 방식이 있습니다.</p>
+<h2 id="congestion-control-이란"><a href="#congestion-control-이란" class="headerlink" title="congestion control 이란?"></a>congestion control 이란?</h2><p>송신측과 네트워크의 데이터 처리 속도 차이를 해결하기 위한 방법입니다.</p>
+<p>송신측의 데이터는 지역망이나 인터넷으로 연결된 대형 네트워크를 통해 전달됩니다. 만약 한 라우터에 데이터가<br>몰릴 경우, 자신에게 온 데이터를 모두 처리 할 수 없게 됩니다. 이런 경우 호스트들은 또 다시 재전송을 하게되고<br>결국 혼잡만 가중시켜 오버플로우나 데이터 손실을 발생시키게 됩니다. 이러한 네트워크의 혼잡을 피하기 위해 송신측에서 보내는 데이터의 전송 속도를  강제로 줄이는 congestion control 이 필요합니다.</p>
+<p>AIMD, Slow Start, Fast Transmit, Fast Recovery 방식이 있습니다.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://jwprogramming.tistory.com/36" target="_blank" rel="noopener">http://jwprogramming.tistory.com/36</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/21/flow, congestion control/" data-id="cjp7qqoic00jtmcx7rvoki7bo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SOLID" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/13/SOLID/" class="article-date">
+  <time datetime="2018-11-12T15:00:00.000Z" itemprop="datePublished">2018-11-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/13/SOLID/">SOLID</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SOLID란"><a href="#SOLID란" class="headerlink" title="SOLID란"></a>SOLID란</h2><p>객체지향 개발 5대 원리</p>
+<ol>
+<li><p>S : SRP - Single Responsibility Principle (단일 책임 원칙)</p>
+<p>객체는 단 하나의 책임(변경 이유)만 가져야 한다.</p>
+</li>
+<li><p>O : OCP - Open-Closed Principle (개방-폐쇄 원칙)</p>
+<p>open for extension, closed for modifications.</p>
+</li>
+<li><p>L : LSP - Liskov Subsititution Principle ( 리스코프 치환 법칙 )</p>
+<p>자식 클래스는 최소한 부모 클래스에서 가능한 행위는 수행할 수 있어야 한다</p>
+</li>
+<li><p>I : ISP - Interface Segregation Principle ( 인터페이스 분리 법칙 )</p>
+<p>인터페이스를 클라이언트에 특화되도록 분리시키는 설계 원칙</p>
+</li>
+<li><p>D : DIP - Dependency Inversion Principle ( 의존 역전 법칙 )</p>
+<p>어떤 클래스가 도움을 받을 때, 구체적인 클래스보다는 인터페이스나 추상 클래스와 의존 관계를 맺도록.</p>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://www.oodesign.com/single-responsibility-principle.html" target="_blank" rel="noopener">http://www.oodesign.com/single-responsibility-principle.html</a></p>
+<p>JAVA 객체지향 디자인 패턴 (정인상, 채흥석 지음)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/13/SOLID/" data-id="cjp7qqoi700jnmcx7y4l0dvxl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Hash Table" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/13/Hash Table/" class="article-date">
+  <time datetime="2018-11-12T15:00:00.000Z" itemprop="datePublished">2018-11-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/dataStructure/">dataStructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/13/Hash Table/">Hash Table</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hash-Table이란"><a href="#Hash-Table이란" class="headerlink" title="Hash Table이란"></a>Hash Table이란</h2><p>Key에 Value를 저장하는 데이타 구조</p>
+<h2 id="Hash-Function"><a href="#Hash-Function" class="headerlink" title="Hash Function"></a>Hash Function</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hashtable01.png" alt="img"></p>
+<p>key에 대한 데이터를 찾을때, hash_function을 한번만 수행하면 array내에 저장된 index 위치를 찾아낼 수 있</p>
+<p>기 때문에, 데이타의 저장과 삭제가 빠르다.</p>
+<p>하지만 어설픈 hash functio을 통해서 key 값들을 결정한다면 동일한 값이 도출될 수가 있다. </p>
+<p>이렇게 되면 동일한 key 값에 복수 개의 데이터가 하나의 테이블에 존재할 수 있게 되는 것인데  </p>
+<p>이를 Collision 이라고 한다.</p>
+<p>Collision을 해결하는 방법으로, <strong>Separate chaining</strong>과 <strong>Open addressing</strong> 이 있다.</p>
+<h2 id="Separate-Chaining"><a href="#Separate-Chaining" class="headerlink" title="Separate Chaining"></a>Separate Chaining</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/hashtable02.png" alt="img"></p>
+<p>Linked List를 이용하는 방식이다.</p>
+<p>각 index에 데이터를 저장하는 Linked list 에 대한 포인터를 가지는 방식이다.</p>
+<p>동일 index로 인해서 충돌이 발생하면 그 index가 가리키고 있는 Linked list에 노드를 추가하여 값을 추가한다.</p>
+<h2 id="Open-Addressing"><a href="#Open-Addressing" class="headerlink" title="Open Addressing"></a>Open Addressing</h2><p>Open addressing  방식은 index에 대한 충돌 처리에 대해서 </p>
+<p>Linked List와 같은 추가적인 메모리 공간을 사용하지 않고, hash table array의 빈공간을 사용하는 방법이다. </p>
+<p>여러 가지 구현 방식이 있다. Linear Probing 방식은 index에 대해서 충돌 이 발생했을 때, </p>
+<p>index 뒤에 있는 버킷중에 빈 버킷을 찾아서 데이터를 넣는 방식이다. </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist</a></p>
+<p><a href="http://bcho.tistory.com/1072" target="_blank" rel="noopener">http://bcho.tistory.com/1072</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/13/Hash Table/" data-id="cjp7qqoi700jlmcx7h5i8m7m2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-View Life Cycle" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/13/View Life Cycle/" class="article-date">
+  <time datetime="2018-11-12T15:00:00.000Z" itemprop="datePublished">2018-11-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ios/">ios</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/13/View Life Cycle/">View Life Cycle</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Life-Cycle"><a href="#Life-Cycle" class="headerlink" title="Life Cycle"></a>Life Cycle</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/iosViewLifeCycle.png" alt="img"></p>
+<ol>
+<li><p>ViewDidLoad</p>
+<p>뷰 컨트롤러 클래스가 생성될 때, 가장 먼저 실행됩니다. 특별한 경우가 아니라면 <strong>딱 한 번</strong> 실행되기 때문<br>에 초기화 할 때 사용 할 수 있습니다.</p>
+</li>
+<li><p>ViewWillAppear</p>
+<p>뷰가 생성되기 직전에 <strong>항상</strong> 실행이 되기 때문에 뷰가 나타나기 전에 실행해야 하는 작업들을 여기서 할<br>수 있습니다.</p>
+</li>
+<li><p>ViewDidAppear</p>
+<p>뷰가 생성되고 난 뒤에 실행 됩니다. 데이터를 받아서 화면에 뿌려주거나 애니메이션 등의 작업을 하는 로직을<br>위치시킬 수 있습니다. ViewWillAppear 에서 로직을 넣었다가 뷰에 반영이 안되는 경우가 있기 때문입니다.</p>
+</li>
+<li><p>ViewWillDisappear</p>
+<p>뷰가 사라지기 직전에 실행 됩니다.</p>
+</li>
+<li><p>ViewDidDisappear</p>
+<p>뷰가 사라지고 난 뒤에 실행 됩니다.</p>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://developer.apple.com/documentation/uikit/uiviewcontroller" target="_blank" rel="noopener">https://developer.apple.com/documentation/uikit/uiviewcontroller</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/13/View Life Cycle/" data-id="cjp7qqoi800jpmcx7487u3vry" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-워터폴,에자일" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/12/워터폴,에자일/" class="article-date">
+  <time datetime="2018-11-11T15:00:00.000Z" itemprop="datePublished">2018-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/softwareEngineering/">softwareEngineering</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/12/워터폴,에자일/">워터폴,에자일</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Waterfall-Model"><a href="#Waterfall-Model" class="headerlink" title="Waterfall Model"></a>Waterfall Model</h2><p>순차적인 소프트웨어 개발 프로세스이다.</p>
+<p>개발의 흐름이 마치 폭포수처럼 지속적으로 아래로 향하는 것처럼 보이는 데서 이름이 붙여졌다. </p>
+<p>이 폭포수 모델의 흐름은 다음과 같다.</p>
+<ol>
+<li>요구사항 분석</li>
+<li>설계</li>
+<li>구현</li>
+<li>유지보수</li>
+</ol>
+<h2 id="Agile-Model"><a href="#Agile-Model" class="headerlink" title="Agile Model"></a>Agile Model</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/agile01.png" alt="img"></p>
+<p>개발과 즉시 피드백을 받아 유동적으로 개발하는 방법론이다.</p>
+<p>애자일 모델은 전체적인 플랜을 짜고 문서를 통해 주도해 나가던 과거의 방식(워터폴 모델)과 달리 </p>
+<p>앞을 예측하며 개발하지 않고, 일정한 주기를 가지고 끊임없이 프로토 타입을 만들어 내며 필요할 때마다 요구사항을 더하고 수정</p>
+<p>하여 커다란 소프트웨어를 개발해 나가는 방식이다.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ko.wikipedia.org/wiki/%ED%8F%AD%ED%8F%AC%EC%88%98_%EB%AA%A8%EB%8D%B8" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/%ED%8F%AD%ED%8F%AC%EC%88%98_%EB%AA%A8%EB%8D%B8</a></p>
+<p><a href="http://blog.rightbrain.co.kr/?p=5810" target="_blank" rel="noopener">http://blog.rightbrain.co.kr/?p=5810</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/12/워터폴,에자일/" data-id="cjp7qqoi500jgmcx7mhpcbdnk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Transaction" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/12/Transaction/" class="article-date">
+  <time datetime="2018-11-11T15:00:00.000Z" itemprop="datePublished">2018-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/database/">database</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/12/Transaction/">Transaction</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="트랜잭션이란"><a href="#트랜잭션이란" class="headerlink" title="트랜잭션이란"></a>트랜잭션이란</h2><p>하나의 논리적인 작업 단위를 구성하는 연산들의 집합</p>
+<h2 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h2><ol>
+<li><p>Atomicity</p>
+<p>만약 트랜잭션 중간에 어떠한 문제가 발생한다면 트랜잭션에 해당하는 어떠한 작업 내용도 수행되어서는 안되<br>며, 아무런 문제가 발생되지 않았을 경우에만 모든 작업이 수행되어야 한다.</p>
+</li>
+<li><p>Consistency</p>
+<p>트랜잭션이 완료된 다음의 상태에서도 트랜잭션이 일어나기 전의 상황과 동일하게 데이터의 일관성을 보장해<br>야 한다. </p>
+<p>예를 들어 계좌이체를 성공적으로 실행했다면, A계좌의 잔액과 B계좌의 잔액의 합이 트랜잭션 실행 전의 합<br>과 동일해야한다.</p>
+</li>
+<li><p>Isolation</p>
+<p>각각의 트랜잭션은 서로 간섭없이 독립적으로 수행되어야 한다.</p>
+</li>
+<li><p>Durability</p>
+<p>트랜잭션이 정상적으로 종료된 다음에는 영구적으로 데이터베이스에 작업의 결과가 저장되어야 한다.</p>
+</li>
+</ol>
+<h2 id="Commit-Rollback"><a href="#Commit-Rollback" class="headerlink" title="Commit, Rollback"></a>Commit, Rollback</h2><ol>
+<li><p>Commit</p>
+<p>모든 작업을 정상적으로 처리하겠다고 확정하는 명령어이다. 트랜젝션의 처리 과정을 데이터베이스에 반영하<br>기 위해서, 변경된 내용을 모두 영구 저장한다.</p>
+</li>
+<li><p>Rollback</p>
+<p>작업 중 문제가 발생했을 때, 트랜젝션의 처리 과정에서 발생한 변경 사항을 취소하고, 트랜젝션 과정을 종료<br>시킨는 명령어이다. 트랜젝션으로 인한 하나의 묶음 처리가 시작되기 이전의 상태로 되돌린다.</p>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction" target="_blank" rel="noopener">https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#transaction</a></p>
+<p><a href="https://wikidocs.net/4096" target="_blank" rel="noopener">https://wikidocs.net/4096</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/12/Transaction/" data-id="cjp7qqoi400jemcx707jz3mi3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-REST" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/12/REST/" class="article-date">
+  <time datetime="2018-11-11T15:00:00.000Z" itemprop="datePublished">2018-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/android/">android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/12/REST/">REST</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="REST란"><a href="#REST란" class="headerlink" title="REST란"></a>REST란</h2><p>소프트웨어 아키텍처의 한 형식이다.</p>
+<h2 id="구성-요소"><a href="#구성-요소" class="headerlink" title="구성 요소"></a>구성 요소</h2><ol>
+<li><p>URI</p>
+<p>자원의 주소이다.</p>
+</li>
+<li><p>HTTP Method</p>
+<p>어떤 자원에 행할 수 있는 행위이다. CRDU로 나타낸다.</p>
+<ul>
+<li>POST : 해당 URI를 요청하면 리소스를 생성한다.</li>
+<li>GET : 해당 리소스를 조회하고 해당 도큐먼트에 대한 자세한 정보를 가져온다.</li>
+<li>PUT : 해당 리소스를 수정한다.</li>
+<li>DELETE : 리소스를 삭제한다.</li>
+</ul>
+</li>
+<li><p>Representation</p>
+<p>자원의 URI에 특정 행위를 요청하면 그 결과로 Representation 을 응답 받는다. html, xml, text, json,<br>rss 등 다양한 형태로 표현될 수 있다.</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/11/12/REST/" data-id="cjp7qqoi400jcmcx7ewb5e2y2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIP/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dataStructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareEngineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

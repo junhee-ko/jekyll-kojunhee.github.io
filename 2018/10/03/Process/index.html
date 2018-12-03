@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Process | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) Process실행중인 프로그램  Context CPU 수행상태를 나타내는 하드웨어 문맥  Prgram Counter  각종 register에 무엇을 저장하고 있나  프로세스의 주소 공간  code data stack에 어떤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Process">
+<meta property="og:url" content="http://junheeko.com/2018/10/03/Process/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) Process실행중인 프로그램  Context CPU 수행상태를 나타내는 하드웨어 문맥  Prgram Counter  각종 register에 무엇을 저장하고 있나  프로세스의 주소 공간  code data stack에 어떤">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100201.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100202.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100203.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100204.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100205.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100206.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100207.png">
+<meta property="og:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100208.png">
+<meta property="og:updated_time" content="2018-10-02T23:11:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Process">
+<meta name="twitter:description" content="출처 : 이화여자대학교 반효경 (http://www.kocw.net/home/search/kemView.do?kemId=1046323) Process실행중인 프로그램  Context CPU 수행상태를 나타내는 하드웨어 문맥  Prgram Counter  각종 register에 무엇을 저장하고 있나  프로세스의 주소 공간  code data stack에 어떤">
+<meta name="twitter:image" content="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100201.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://junheeko.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Process" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/03/Process/" class="article-date">
+  <time datetime="2018-10-02T15:00:00.000Z" itemprop="datePublished">2018-10-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/OS/">OS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Process
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>출처 : 이화여자대학교 반효경 (<a href="http://www.kocw.net/home/search/kemView.do?kemId=1046323" target="_blank" rel="noopener">http://www.kocw.net/home/search/kemView.do?kemId=1046323</a>)</p>
+<h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><p>실행중인 프로그램</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100201.png" alt="img"></p>
+<h2 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h2><ul>
+<li><p>CPU 수행상태를 나타내는 하드웨어 문맥</p>
+</li>
+<li><p>Prgram Counter</p>
+</li>
+<li><p>각종 register에 무엇을 저장하고 있나</p>
+</li>
+<li><p>프로세스의 주소 공간</p>
+<ul>
+<li>code data stack에 어떤 값이 들어있나</li>
+</ul>
+</li>
+<li>프로세스 관련 커널 자료 구조<ul>
+<li>운영체제가 프로세스의 어떤 값을 가지고 있나</li>
+<li>PCB</li>
+<li>Kernel stack<ul>
+<li>프로세스마다 별도로 가지고 있어</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="프로세스의-상태-Process-State"><a href="#프로세스의-상태-Process-State" class="headerlink" title="프로세스의 상태 (Process State)"></a>프로세스의 상태 (Process State)</h2><p>프로세스는 상태가 변경되며 수행된다.</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100202.png" alt="img"></p>
+<ul>
+<li>Running<ul>
+<li>CPU를 잡고 instruction을 수행중인 상태</li>
+</ul>
+</li>
+<li>Ready<ul>
+<li>CPU를 기다리는 상태(메모리 등 다른 조건을 모두 만족하고)</li>
+</ul>
+</li>
+<li>Blocked (wait, sleep)<ul>
+<li>CPU를 주어도 당장 instruction을 수행할 수 없는 상태 </li>
+<li>프로세스 자신이 요청한 event(io같은거)가 만족되지않아 이를 기다리는 상태</li>
+<li>자신이 요청한 event 만족되면 ready</li>
+</ul>
+</li>
+<li>New <ul>
+<li>프로세스가 생성중인 상태</li>
+</ul>
+</li>
+<li>Terminated<ul>
+<li>execution이 끝난 상태</li>
+</ul>
+</li>
+<li>Suspended (stopped)<ul>
+<li>프로세스는 통째로 메모리에서 쫓겨남</li>
+<li>디스크에 swap out 된다</li>
+<li>외부에서 resume해 주어야 active</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100203.png" alt="img"></p>
+<h2 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a>PCB</h2><p>운영체제가 각 프로세스를 관리하기 위해 프로세스당 유지하는 정보</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100204.png" alt="img"> </p>
+<ul>
+<li>OS가 관리상 사용하는 부분</li>
+<li>CPU 수행 관련 하드웨어 값</li>
+<li>메모리 관련</li>
+<li>파일 관련</li>
+</ul>
+<h2 id="문맥-교환-context-switch"><a href="#문맥-교환-context-switch" class="headerlink" title="문맥 교환 (context switch)"></a>문맥 교환 (context switch)</h2><p>CPU를 한 프로세스에서 다른 프로세스로 넘겨누는 과정</p>
+<p>system call이나 interrupt 발생시 context switch가 반드시 일어나는 것은 아님</p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100205.png" alt="img"> </p>
+<h2 id="프로세스-스케쥴링-큐의-모습"><a href="#프로세스-스케쥴링-큐의-모습" class="headerlink" title="프로세스 스케쥴링 큐의 모습"></a>프로세스 스케쥴링 큐의 모습</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100206.png" alt="img"> </p>
+<h2 id="스케쥴러"><a href="#스케쥴러" class="headerlink" title="스케쥴러"></a>스케쥴러</h2><ul>
+<li>Long-term scheduler (job scheduler)<ul>
+<li>메모리를 어떤 프로세스에게 줄지 결정</li>
+<li>시작 프로세스 중 어떤 것들을 ready queue로 보낼지 결정</li>
+</ul>
+</li>
+<li>Short-term scheduler (cpu scheduler)<ul>
+<li>어떤 프로세스에게 cpu 줄지 결정</li>
+<li>어떤 프로세스를 다음번에 running시킬지 결정</li>
+</ul>
+</li>
+<li>Medum-term scheduler (swapper)<ul>
+<li>메모리에 많은 프로그램이 올라가있으면 일부를 골라서 쫓아내</li>
+<li>프로세스에게서 메모리를 뺏는 문제</li>
+</ul>
+</li>
+</ul>
+<h2 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h2><p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100207.png" alt="img"> </p>
+<p><img src="https://github.com/KoJunHee/kojunhee.github.io/raw/master/img/100208.png" alt="img"> </p>
+<ul>
+<li>프로세스의 내부의 CPU 수행단위</li>
+<li>프로세스 하나에서 공유할수 있는건 다 공유</li>
+<li>스레드의 구성<ul>
+<li>PC</li>
+<li>register set</li>
+<li>stack space</li>
+</ul>
+</li>
+<li>스레드끼리 공유하는부분 (task)<ul>
+<li>code section</li>
+<li>data sectin</li>
+<li>OS resources</li>
+</ul>
+</li>
+<li>장점<ul>
+<li>Responsiveness<ul>
+<li>if one thread is blocked(network), another thread continues(display)</li>
+</ul>
+</li>
+<li>Resource Sharing<ul>
+<li>n threads can shre code, data, resource of the process</li>
+</ul>
+</li>
+<li>Economy</li>
+<li>Utilization of MP(Multi Processor) Architectures</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://junheeko.com/2018/10/03/Process/" data-id="cjp7qqoh900hamcx71mmksta0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/04/Process Managemnet/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Process Management
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/01/Introduction/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Introduction</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIP/">DIP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DesignPattern/">DesignPattern</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/boostcourse/">boostcourse</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dataStructure/">dataStructure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/softwareEngineering/">softwareEngineering</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/22/Components/">Components</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/길찾기/">길찾기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow control/">flow control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/flow, congestion control/">flow, congestion control</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/13/SOLID/">SOLID</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
